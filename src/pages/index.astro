@@ -1,0 +1,193 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HorizontalCard from "../components/HorizontalCard.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+import GitHub from "@components/icons/GitHub.astro";
+import LinkedIn from "@components/icons/LinkedIn.astro";
+import Youtube from "@components/icons/Youtube.astro";
+import Instagram from "@components/icons/Instagram.astro";
+import Work from "@components/icons/Work.astro";
+import PencilEducation from "@components/icons/PencilEducation.astro";
+import Branch from "@components/icons/Branch.astro";
+
+// import { getCollection } from "astro:content";
+// import createSlug from "../lib/createSlug"
+
+// const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// const last_posts = posts.slice(0, 3);
+---
+
+<BaseLayout sideBarActiveItemID="home">
+  <div class="pb-12 mt-5">
+    <div class="text-xl py-1">Bienvenidos todos 👋</div>
+    <div class="text-5xl font-bold">Soy Edgar Delgado Vega = edelve</div>
+    <div class="text-3xl py-3 font-bold">Artista y live coder</div>
+    <div class="py-2">
+      <text class="text-lg">
+        He escrito un artículo de Teoría Matemática de la Música indexado en
+        Scopus: <a
+          href="https://link.springer.com/chapter/10.1007/978-3-031-07015-0_30"
+          target="_blank"
+        >
+          <b class="text-xl text-primary">
+            Formal Structures of a Harmony in the Parabola (¡haz click!).
+          </b></a
+        >
+        Además de mi experiencia docente en el nivel superior, tanto en modalidad
+        presencial como virtual, en 2023 empecé a desarrollar una librería en <i
+          >TypeScript</i
+        > especializada en musicología matemática, a la que he llamado <a
+          href="https://www.npmjs.com/package/ts-tonnetz"
+          target="_blank"
+        >
+          <b class="text-xl text-primary">ts-tonnetz</b></a
+        >.
+        <br />
+        En la actualidad colaboro internacionalmente en el desarrollo de software
+        libre para nuevos entornos de live coding, como
+        <a
+          class="text-xl text-primary"
+          href="https://github.com/edelveart/zifferjs"><b> zifferjs</b></a
+        > y <a
+          class="text-xl text-primary"
+          href="https://github.com/edelveart/topos"><b>topos</b></a
+        >, mientras disfruto programar música con Sonic Pi.
+      </text>
+    </div>
+    <div class="mt-8">
+      <a
+        class="btn btn-outline ml-5 mb-5 w-36"
+        href="https://www.linkedin.com/in/edgararmandodelgadovega/"
+        target="_blank"
+      >
+        <LinkedIn class="size-6" />
+        LinkedIn
+      </a>
+      <a
+        class="btn btn-neutral ml-5 mb-5 w-36"
+        href="https://youtube.com/@edelvemusic"
+        target="_blank"
+      >
+        <Youtube class="size-6" />
+        Youtube
+      </a>
+      <a
+        class="btn btn-neutral ml-5 mb-5 w-36"
+        href="https://github.com/edelveart"
+        target="_blank"
+      >
+        <GitHub class="size-6" />
+        GitHub
+      </a>
+      <a
+        href="https://www.instagram.com/edgardelgadomusic/"
+        target="_blank"
+        class="btn btn-neutral ml-5 mb-5 w-36"
+      >
+        <Instagram class="size-6" />
+        Instagram
+      </a>
+    </div>
+  </div>
+
+    <div class="text-3xl w-full font-bold flex items-center" id="PROJECTS">
+      <Branch class="size-10 ml-0 mr-4" /> Proyectos
+    </div>
+
+    <div class=" mb-10">
+    <HorizontalCard
+      title="Documentation of ts-tonnetz in web live coding environment TOPOS"
+      img="/topos-docs.png"
+      desc="Written in TypeScript, my 'ts-tonnetz' library is a dependence of Ziffers, a numerical notation system for algorithmic composition. Since December 2023, you can improvise with it within Topos (a new live coding environment designed by Raphaël Forment and Miika Alonen). Topos has exceptionally simplified but sufficient documentation of ts-tonnetz, where many of the ideas of 2 doctoral theses on mathematical theory of music are explained (see Bigo, 2013; Cannas, 2018), among other most notable research articles on the area. "
+      url="https://topos.live/#ziffers_tonnetz"
+      badge="TypeScript | Topos.live"
+    />
+
+    <div class="divider my-2"></div>
+
+    <HorizontalCard
+      title="A new library in npm for live coders: TS-TONNETZ"
+      img="/ts-tonnetz.png"
+      desc="A complete library of Neo-Riemannian Theory (67 functions and many graphs) written in TypeScript  for musicians, mathematicians and engineers interested in Mathematical Music Theory. It is based on two doctoral theses and notable articles on the subject. It is a perfect access point to this fascinating area where music, mathematics and computing at the highest level come together. Playing with ts-tonnetz will lead you to propose questions and new musical systems in an expressive and creative way."
+      url="https://www.npmjs.com/package/ts-tonnetz"
+      badge="npm | TypeScript"
+    />
+  </div>
+
+    <div class="mb-5" id="EDUCATION">
+      <div class="text-3xl w-full font-bold flex items-center">
+        <Work class="size-10 ml-0 mr-4" />Experiencia
+      </div>
+    </div>
+
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="EEST Toulouse Lautrec - Docente de producción musical "
+      subtitle="jun.2022 - actualidad | Lima, Perú"
+    >
+      Responsable de enseñanza de cursos de producción musical usando
+      tecnologías como Musescore 4, Reaper 6 y Ableton 11. Los comentarios
+      anónimos sobre mi práctica docente son mayoritariamente favorables.
+      Modalidad virtual.
+    </TimeLineElement>
+    <TimeLineElement
+      title="Universidad Nacional Daniel Alomia Robles - Docente a tiempo completo"
+      subtitle=" may.2019 - dic.2019 | Huánuco, Perú"
+    >
+      Responsable por los cursos de la carrera de educador musical y artista e
+      intérprete profesional. Cursos impartidos: psicología del aprendizaje,
+      didáctica de la música y didáctica general de la educación. Escribí un
+      artículo expositivo sobre "Escalas musicales cuánticas", primer artículo
+      sobre la temática en la institución. Tecnologías: Musescore 3, LaTex.
+    </TimeLineElement>
+    <TimeLineElement
+      title="PAENFTS - Docente de área de música"
+      subtitle="jun.2015 - oct.2017 | Lima, Perú"
+    >
+      Responsable de enseñanza instrumental y teoría musical para niños con
+      altas capacidades y superdotación. En 2017 creamos un proyecto de
+      aprendizaje centrado en conceptos geométricos y matemáticos titulado
+      "Geometría de acordes", pionero en Perú y probablemente en Hispanoamérica.
+      Tecnologías: Musescore 2.
+    </TimeLineElement>
+  </div>
+
+  <div class="mb-5" id="EDUCATION">
+    <div class="text-3xl w-full font-bold flex items-center">
+      <PencilEducation class="size-10 ml-0 mr-4" />Educación
+    </div>
+  </div>
+
+  <div class="time-line-container grid gap-4 mb-10">
+    <TimeLineElement
+      title="UNIR - Máster en Investigación Musical"
+      subtitle="2019 - 2021 | España"
+      >Matrícula de honor en Análisis Musical Informatizado. Promedio general:
+      Sobresaliente 9.4</TimeLineElement
+    >
+    <TimeLineElement
+      title="USMP - Licenciatura en Educación, Dirección e Interpretación Musical"
+      subtitle="2009 - 2015 | Lima, Perú"
+    />
+  </div>
+
+  <!-- <div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+  </div> -->
+  <!-- {
+    last_posts.map((post) => (
+      <>
+        <HorizontalCard
+          title={post.data.title}
+          img={post.data.heroImage}
+          desc={post.data.description}
+          url={"/blog/" + createSlug(post.data.title, post.slug)}
+          target="_self"
+          badge={post.data.badge}
+        />
+        <div class="divider my-0" />
+      </>
+    ))
+  } -->
+</BaseLayout>
