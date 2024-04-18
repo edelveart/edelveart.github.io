@@ -21,7 +21,7 @@ import Branch from "@components/icons/Branch.astro";
 <BaseLayout sideBarActiveItemID="home">
   <div class="pb-12 mt-5">
     <div class="text-xl py-1">Bienvenidos todos 👋</div>
-    <div class="text-5xl font-bold">Soy Edgar Delgado Vega = edelve</div>
+    <div class="text-5xl font-bold leading-snug">Soy Edgar Delgado Vega = edelve</div>
     <div class="text-3xl py-3 font-bold">Artista y live coder</div>
     <div class="py-2">
       <text class="text-lg">
@@ -44,6 +44,7 @@ import Branch from "@components/icons/Branch.astro";
           <b class="text-xl text-primary">ts-tonnetz</b></a
         >.
         <br />
+        <br />
         En la actualidad colaboro internacionalmente en el desarrollo de software
         libre para nuevos entornos de live coding, como
         <a
@@ -55,9 +56,10 @@ import Branch from "@components/icons/Branch.astro";
         >, mientras disfruto programar música con Sonic Pi.
       </text>
     </div>
-    <div class="mt-8">
+    <!-- ml-5 mb-5 -->
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       <a
-        class="btn btn-outline ml-5 mb-5 w-36"
+        class="btn btn-outline"
         href="https://www.linkedin.com/in/edgararmandodelgadovega/"
         target="_blank"
       >
@@ -65,7 +67,7 @@ import Branch from "@components/icons/Branch.astro";
         LinkedIn
       </a>
       <a
-        class="btn btn-neutral ml-5 mb-5 w-36"
+        class="btn btn-neutral"
         href="https://youtube.com/@edelvemusic"
         target="_blank"
       >
@@ -73,7 +75,7 @@ import Branch from "@components/icons/Branch.astro";
         Youtube
       </a>
       <a
-        class="btn btn-neutral ml-5 mb-5 w-36"
+        class="btn btn-neutral"
         href="https://github.com/edelveart"
         target="_blank"
       >
@@ -81,27 +83,27 @@ import Branch from "@components/icons/Branch.astro";
         GitHub
       </a>
       <a
+        class="btn btn-neutral"
         href="https://www.instagram.com/edgardelgadomusic/"
         target="_blank"
-        class="btn btn-neutral ml-5 mb-5 w-36"
       >
-        <Instagram class="size-6" />
+        <Instagram class="size-6"   />
         Instagram
       </a>
     </div>
   </div>
 
-    <div class="text-3xl w-full font-bold flex items-center" id="PROJECTS">
-      <Branch class="size-10 ml-0 mr-4" /> Proyectos
-    </div>
+  <div class="text-3xl w-full font-bold flex items-center" id="PROJECTS">
+    <Branch class="size-10 ml-0 mr-4" /> Proyectos
+  </div>
 
-    <div class=" mb-10">
+  <div class="mb-10">
     <HorizontalCard
-      title="Documentation of ts-tonnetz in web live coding environment TOPOS"
+      title="ts-tonnetz in the new live coding enviroment TOPOS!"
       img="/topos-docs.png"
-      desc="Written in TypeScript, my 'ts-tonnetz' library is a dependence of Ziffers, a numerical notation system for algorithmic composition. Since December 2023, you can improvise with it within Topos (a new live coding environment designed by Raphaël Forment and Miika Alonen). Topos has exceptionally simplified but sufficient documentation of ts-tonnetz, where many of the ideas of 2 doctoral theses on mathematical theory of music are explained (see Bigo, 2013; Cannas, 2018), among other most notable research articles on the area. "
+      desc="Since December 2023, you can improvise with my library 'ts-tonnetz' within Topos (a new live coding environment designed by Raphaël Forment and Miika Alonen). 'ts-tonnetz'  serves as a dependency for Ziffers, a numerical notation system for algorithmic composition. Topos has exceptionally simplified but sufficient documentation of ts-tonnetz, where many of the ideas of 2 doctoral theses on mathematical theory of music are explained (see Bigo, 2013; Cannas, 2018), among other most notable research articles in the field. "
       url="https://topos.live/#ziffers_tonnetz"
-      badge="TypeScript | Topos.live"
+      badge="Topos.live | TypeScript"
     />
 
     <div class="divider my-2"></div>
@@ -115,11 +117,11 @@ import Branch from "@components/icons/Branch.astro";
     />
   </div>
 
-    <div class="mb-5" id="EDUCATION">
-      <div class="text-3xl w-full font-bold flex items-center">
-        <Work class="size-10 ml-0 mr-4" />Experiencia
-      </div>
+  <div class="mb-5" id="EDUCATION">
+    <div class="text-3xl w-full font-bold flex items-center">
+      <Work class="size-10 ml-0 mr-4" />Experiencia
     </div>
+  </div>
 
   <div class="time-line-container mb-10">
     <TimeLineElement
@@ -147,7 +149,7 @@ import Branch from "@components/icons/Branch.astro";
     >
       Responsable de enseñanza instrumental y teoría musical para niños con
       altas capacidades y superdotación. En 2017 creamos un proyecto de
-      aprendizaje centrado en conceptos geométricos y matemáticos titulado
+      aprendizaje centrado en conceptos geométricos titulado
       "Geometría de acordes", pionero en Perú y probablemente en Hispanoamérica.
       Tecnologías: Musescore 2.
     </TimeLineElement>
