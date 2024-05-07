@@ -19,9 +19,15 @@ const {
 ---
 
 <!doctype html>
-<html lang="en" data-theme="synthwave">
+<html lang="en" data-theme="coffee">
   <head>
-    <BaseHead title={title} description={description} image={image} , ogType={ogType} />
+    <BaseHead
+      title={title}
+      description={description}
+      image={image}
+      ,
+      ogType={ogType}
+    />
     {TRANSITION_API && <ViewTransitions />}
   </head>
   <body>
@@ -38,13 +44,11 @@ const {
       </div>
       {includeSidebar && <SideBar sideBarActiveItemID={sideBarActiveItemID} />}
     </div>
+    <style is:global>
+      html {
+        font-family: "Iosevka", monospace;
+        scroll-behavior: smooth;
+      }
+    </style>
   </body>
 </html>
-
-<style is:global>
-  html {
-    font-family: "Iosevka", monospace;
-    scroll-behavior: smooth;
-  }
-</style>
-

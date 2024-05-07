@@ -1,40 +1,43 @@
 ---
 import Branch from "./icons/Branch.astro";
-// import PencilEducation from "./icons/PencilEducation.astro";
 import Work from "./icons/Work.astro";
 import Home from "./icons/Home.astro";
+import Curriculum from "./icons/Curriculum.astro";
 
 const { sideBarActiveItemID } = Astro.props;
-const activeClass = "bg-secondary"; // For primary color replace with `active` class
+const activeClass = "bg-base-300"; // For primary color replace with `active` class
 ---
 
 <ul class="menu grow shrink menu-md overflow-y-auto">
   <li>
-    <a class="py-3 text-base" id="home" href="/"><Home/>
-      <span class="ml-[6px]">  Inicio</span>
+    <a class="py-3 text-base" id="home" href="/"
+      ><Home />
+      <span class="ml-[4px]"> Inicio</span>
     </a>
   </li>
   <li>
-    <a class="py-3 text-base" id="projects" href="/projects"><Branch />
-      <span class="ml-2">  Proyectos</span>
+    <a class="py-3 text-base" id="projects" href="/projects"
+      ><Branch />
+      <span class="ml-2"> Proyectos</span>
     </a>
   </li>
   <li>
-    <a class="py-3 text-base" id="cv" href="/cv"><Work />
-      <span class="ml-[10px]">  Curriculum Vitae</span>
+    <a class="py-3 text-base" id="cv" href="/cv">
+      <Curriculum />
+      <span class="ml-[6px]"> Curriculum Vitae</span>
     </a>
   </li>
   <li>
     <!-- <a class="py-3 text-base" id="writings" href="/"><PencilEducation /> -->
-      <!-- <span class="ml-[6px]">  Educación</span> -->
+    <!-- <span class="ml-[6px]">  Educación</span> -->
     <!-- </a> -->
-  <!-- </li> -->
-  <!-- <li><a class="py-3 text-base" id="projects" href="/projects">Projects</a></li> -->
-  <!-- <li><a class="py-3 text-base" id="services" href="/services">Services</a></li> -->
-  <!-- <li><a class="py-3 text-base" id="store" href="/store">Store</a></li> -->
-  <!-- <li><a class="py-3 text-base" id="blog" href="/blog/">Blog</a></li> -->
-  <!-- <li><a class="py-3 text-base" id="cv" href="/cv">CV</a></li> -->
-  <!-- <li>
+    <!-- </li> -->
+    <!-- <li><a class="py-3 text-base" id="projects" href="/projects">Projects</a></li> -->
+    <!-- <li><a class="py-3 text-base" id="services" href="/services">Services</a></li> -->
+    <!-- <li><a class="py-3 text-base" id="store" href="/store">Store</a></li> -->
+    <!-- <li><a class="py-3 text-base" id="blog" href="/blog/">Blog</a></li> -->
+    <!-- <li><a class="py-3 text-base" id="cv" href="/cv">CV</a></li> -->
+    <!-- <li>
         <a
             class="py-3 text-base"
             href="mailto:"
@@ -42,9 +45,15 @@ const activeClass = "bg-secondary"; // For primary color replace with `active` c
             referrerpolicy="no-referrer-when-downgrade">Contact</a
         >
     </li> -->
-</ul>
+  </li>
 
-<script define:vars={{ sideBarActiveItemID: sideBarActiveItemID, activeClass: activeClass }}>
- const activeItemElem = document.getElementById(sideBarActiveItemID);
- activeItemElem && activeItemElem.classList.add(activeClass);
-</script>
+  <script
+    define:vars={{
+      sideBarActiveItemID: sideBarActiveItemID,
+      activeClass: activeClass,
+    }}
+  >
+    const activeItemElem = document.getElementById(sideBarActiveItemID);
+    activeItemElem && activeItemElem.classList.add(activeClass);
+  </script>
+</ul>
