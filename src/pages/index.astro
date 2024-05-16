@@ -10,6 +10,8 @@ import Work from "@components/icons/Work.astro"
 import PencilEducation from "@components/icons/PencilEducation.astro"
 import Branch from "@components/icons/Branch.astro"
 import Skills from "@components/icons/Skills.astro"
+import { Image } from "astro:assets"
+import Experience from "@components/Experience.astro"
 
 // import { getCollection } from "astro:content";
 // import createSlug from "../lib/createSlug"
@@ -22,7 +24,9 @@ import Skills from "@components/icons/Skills.astro"
 <BaseLayout sideBarActiveItemID="home">
   <div class="pb-12 mt-5">
     <div class="text-xl py-1">Bienvenidos todos 👋</div>
-    <div class="text-5xl font-bold leading-snug text-primary">Soy Edgar Delgado Vega = edelve</div>
+    <div class="text-5xl font-bold leading-snug text-primary">
+      Soy Edgar Delgado Vega = edelve
+    </div>
     <div class="text-3xl py-3 font-bold text-secondary">Artista y live coder</div>
     <div class="py-2">
       <text class="text-lg">
@@ -34,15 +38,18 @@ import Skills from "@components/icons/Skills.astro"
             Formal Structures of a Harmony in the Parabola (¡haz click!).
           </b></a
         >
-        Además de mi experiencia docente en el nivel superior, tanto en modalidad presencial como virtual,
-        en 2023 empecé a desarrollar una librería en <i>TypeScript</i> especializada en musicología matemática,
-        a la que he llamado <a href="https://www.npmjs.com/package/ts-tonnetz" target="_blank">
+        Además de mi experiencia docente en el nivel superior, tanto en modalidad presencial
+        como virtual, en 2023 empecé a desarrollar una librería en <i>TypeScript</i> especializada
+        en musicología matemática, a la que he llamado <a
+          href="https://www.npmjs.com/package/ts-tonnetz"
+          target="_blank"
+        >
           <b class="text-xl text-primary">ts-tonnetz</b></a
         >.
         <br />
         <br />
-        En la actualidad colaboro internacionalmente en el desarrollo de software libre para nuevos entornos
-        de live coding, como
+        En la actualidad colaboro internacionalmente en el desarrollo de software libre
+        para nuevos entornos de live coding, como
         <a class="text-xl text-primary" href="https://github.com/edelveart/zifferjs"
           ><b> zifferjs</b></a
         > y <a class="text-xl text-primary" href="https://github.com/edelveart/topos"
@@ -60,7 +67,11 @@ import Skills from "@components/icons/Skills.astro"
         <LinkedIn class="size-6" />
         LinkedIn
       </a>
-      <a class="btn btn-outline" href="https://youtube.com/@edelvemusic" target="_blank">
+      <a
+        class="btn btn-outline"
+        href="https://youtube.com/@edelvemusic"
+        target="_blank"
+      >
         <Youtube class="size-6" />
         Youtube
       </a>
@@ -110,24 +121,7 @@ import Skills from "@components/icons/Skills.astro"
   </div>
 
   <div class="time-line-container mb-10">
-    <TimeLineElement
-      title="EEST Toulouse Lautrec - Docente de producción musical "
-      subtitle="jun.2022 - actualidad | Lima, Perú"
-    >
-      <!-- Put something -->
-    </TimeLineElement>
-    <TimeLineElement
-      title="Universidad Nacional Daniel Alomía Robles - Docente a tiempo completo"
-      subtitle=" may.2019 - dic.2019 | Huánuco, Perú"
-    >
-      <!-- Put something-->
-    </TimeLineElement>
-    <TimeLineElement
-      title="PAENFTS - Docente de área de música"
-      subtitle="jun.2015 - oct.2017 | Lima, Perú"
-    >
-      <!-- Put something-->
-    </TimeLineElement>
+    <Experience />
   </div>
 
   <div class="mb-5">
@@ -156,7 +150,9 @@ import Skills from "@components/icons/Skills.astro"
   </div>
 
   <div class="time-line-container grid gap-4 mb-10">
-    <TimeLineElement title="UNIR - Máster en Investigación Musical" subtitle="2019 - 2021 | España"
+    <TimeLineElement
+      title="UNIR - Máster en Investigación Musical"
+      subtitle="2019 - 2021 | España"
       >Matrícula de honor en Análisis Musical Informatizado.</TimeLineElement
     >
     <TimeLineElement
