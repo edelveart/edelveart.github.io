@@ -22,12 +22,13 @@ const {
 <html lang="en" data-theme="coffee">
   <head>
     <BaseHead
-      title={title}
-      description={description}
+      title={SITE_TITLE}
+      description={SITE_DESCRIPTION}
       image={image}
       ,
       ogType={ogType}
     />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     {TRANSITION_API && <ViewTransitions />}
   </head>
   <body>
