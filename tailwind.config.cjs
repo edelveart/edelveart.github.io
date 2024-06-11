@@ -1,9 +1,14 @@
 /** @type {import('tailwindcss').Config} */
+import defaultTheme from 'tailwindcss/defaultTheme'
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
 
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Iosevka', ...defaultTheme.fontFamily.mono],
+      },
+    },
   },
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
