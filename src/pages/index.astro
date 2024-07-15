@@ -13,6 +13,7 @@ import Skills from "@components/icons/Skills.astro"
 import { Image } from "astro:assets"
 import Experience from "@components/Experience.astro"
 import ProjectsComponent from "@components/ProjectsComponent.astro"
+import ListOfSkills from "@components/ListOfSkills.astro"
 // import { getCollection } from "astro:content";
 // import createSlug from "../lib/createSlug"
 
@@ -117,19 +118,7 @@ import ProjectsComponent from "@components/ProjectsComponent.astro"
       <Skills class="ml-0 mr-4" />Habilidades
     </div>
   </div>
-
-  <ul class="list-disc md:columns-5 columns-2 mx-6 mb-10">
-    <li>TypeScript, JavaScript, NodeJS</li>
-    <li>Git, command line</li>
-    <li>HTML, CSS</li>
-    <li>LaTex</li>
-    <li>Zotero, BibTeX</li>
-    <li>TeXstudio</li>
-    <li>Musescore 4</li>
-    <li>Sonic Pi 4</li>
-    <li>Geogebra</li>
-    <li>Reaper</li>
-  </ul>
+  <ListOfSkills />
 
   <div class="mb-5" id="EDUCATION">
     <div class="text-3xl w-full font-bold flex items-center">
