@@ -7,5 +7,9 @@ const LIVE_URL = "https://edelveart.github.io"
 // https://astro.build/config
 export default defineConfig({
   site: 'https://edelveart.github.io',
-  integrations: [mdx(), sitemap(), tailwind()]
+  integrations: [mdx(), sitemap(), tailwind()],
+  i18n: {
+    defaultLocale: "en",
+    locales: ["es", "en"],
+  }
 });
