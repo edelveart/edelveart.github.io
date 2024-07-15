@@ -3,6 +3,7 @@ import BaseLayout from "@layouts/BaseLayout.astro"
 import TimeLineElement from "@components/cv/TimeLine.astro"
 import Experience from "@components/Experience.astro"
 import ListOfSkills from "@components/ListOfSkills.astro"
+import Education from "@components/Education.astro"
 ---
 
 <BaseLayout title="Resume" sideBarActiveItemID="cv">
@@ -35,18 +36,7 @@ import ListOfSkills from "@components/ListOfSkills.astro"
       <div class="text-3xl w-full font-bold">Educación</div>
     </div>
 
-    <div class="time-line-container grid gap-4 mb-10">
-      <TimeLineElement
-        title="UNIR - Máster en Investigación Musical"
-        subtitle="2019 - 2020 | España"
-        >Matrícula de honor en Análisis Musical Informatizado. Promedio general:
-        Sobresaliente 9.4</TimeLineElement
-      >
-      <TimeLineElement
-        title="USMP - Licenciatura en Educación, Dirección e Interpretación Musical"
-        subtitle="2009 - 2015 | Lima, Perú"
-      />
-    </div>
+    <Education />
 
     <div class="mb-5 mt-10">
       <div class="text-3xl w-full font-bold">Participación en Congresos</div>
