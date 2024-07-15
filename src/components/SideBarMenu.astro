@@ -1,30 +1,29 @@
 ---
-import Branch from "./icons/Branch.astro";
-import Work from "./icons/Work.astro";
-import Home from "./icons/Home.astro";
-import Curriculum from "./icons/Curriculum.astro";
+import Home from "./icons/Home.astro"
+import Branch from "./icons/Branch.astro"
+import Curriculum from "./icons/Curriculum.astro"
 
-const { sideBarActiveItemID } = Astro.props;
-const activeClass = "bg-base-300"; // For primary color replace with `active` class
+const { sideBarActiveItemID } = Astro.props
+const activeClass = "bg-base-300" // For primary color replace with `active` class
 ---
 
 <ul class="menu grow shrink menu-md overflow-y-auto">
   <li>
     <a class="py-3 text-base" id="home" href="/"
       ><Home />
-      <span class="ml-[4px]"> Inicio</span>
+      <span class="ml-[4px]">Inicio</span>
     </a>
   </li>
   <li>
     <a class="py-3 text-base" id="projects" href="/projects"
       ><Branch />
-      <span class="ml-2"> Proyectos</span>
+      <span class="ml-2">Proyectos</span>
     </a>
   </li>
   <li>
     <a class="py-3 text-base" id="cv" href="/cv">
       <Curriculum />
-      <span class="ml-[6px]"> Curriculum Vitae</span>
+      <span class="ml-[6px]">Curriculum Vitae</span>
     </a>
   </li>
   <li>
@@ -53,7 +52,7 @@ const activeClass = "bg-base-300"; // For primary color replace with `active` cl
       activeClass: activeClass,
     }}
   >
-    const activeItemElem = document.getElementById(sideBarActiveItemID);
-    activeItemElem && activeItemElem.classList.add(activeClass);
+    const activeItemElem = document.getElementById(sideBarActiveItemID)
+    activeItemElem && activeItemElem.classList.add(activeClass)
   </script>
 </ul>

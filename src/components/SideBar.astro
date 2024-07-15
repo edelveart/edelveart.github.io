@@ -1,8 +1,8 @@
 ---
-import SideBarFooter from "./SideBarFooter.astro";
-import { Image } from "astro:assets";
-import SideBarMenu from "./SideBarMenu.astro";
-const { sideBarActiveItemID } = Astro.props;
+import SideBarFooter from "./SideBarFooter.astro"
+import { Image } from "astro:assets"
+import SideBarMenu from "./SideBarMenu.astro"
+const { sideBarActiveItemID } = Astro.props
 ---
 
 <div class="drawer-side z-40">
@@ -12,17 +12,15 @@ const { sideBarActiveItemID } = Astro.props;
   >
     <div class="w-fit mx-auto mt-5 mb-6">
       <a href="/">
-        <div
-          class="avatar transition ease-in-out hover:scale-[102%] block m-auto"
-        >
-          <div class="w-[8.5rem]">
+        <div class="avatar transition ease-in-out hover:scale-[102%] block m-auto">
+          <div class="w-[9rem]">
             <Image
               class="mask mask-circle"
               format="webp"
               width={300}
               height={300}
-              src="/edelvephoto.jpg"
-              alt="Profile photo Edgar Delgado Vega"
+              src="/edelvephoto.webp"
+              alt="Photo Edgar Delgado Vega"
             />
           </div>
         </div>
