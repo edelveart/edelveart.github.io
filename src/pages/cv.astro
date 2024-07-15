@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
 import TimeLineElement from "../components/cv/TimeLine.astro"
+import Experience from "../components/Experience.astro"
 import ListOfSkills from "@components/ListOfSkills.astro"
 ---
 
@@ -21,113 +22,77 @@ import ListOfSkills from "@components/ListOfSkills.astro"
     <div class="text-3xl w-full font-bold">Experiencia</div>
   </div>
 
+  <Experience />
+
   <div class="time-line-container mb-10">
-    <TimeLineElement
-      title="Escuela de Posgrado Newman - Docente de Maestría en Musicología"
-      subtitle="may.2024 - actualidad | Lima, Perú"
-    >
-      Asignaturas a mi cargo:
-      <br />
-      &bullet; Técnicas de búsqueda, documentación y difusión en investigación musicológica
-      <br />
-      &bullet; Industrias culturales
-    </TimeLineElement>
-    <TimeLineElement
-      title="EEST Toulouse Lautrec - Docente de producción musical "
-      subtitle="jun.2022 - actualidad | Lima, Perú"
-    >
-      Responsable de enseñanza de cursos de producción musical usando tecnologías
-      como Musescore 4, Reaper 6 y Ableton 11. Los comentarios anónimos sobre mi
-      práctica docente son mayoritariamente favorables. Modalidad virtual.
-    </TimeLineElement>
-    <TimeLineElement
-      title="Universidad Nacional Daniel Alomía Robles - Docente a tiempo completo"
-      subtitle=" may.2019 - dic.2019 | Huánuco, Perú"
-    >
-      Responsable por los cursos de la carrera de educador musical y artista e
-      intérprete profesional. Cursos impartidos: psicología del aprendizaje,
-      didáctica de la música y didáctica general de la educación. Escribí un artículo
-      expositivo sobre "Escalas musicales cuánticas", primer artículo sobre la
-      temática en la institución. Tecnologías: Musescore 3, LaTex.
-    </TimeLineElement>
-    <TimeLineElement
-      title="PAENFTS - Docente de área de música"
-      subtitle="jun.2015 - oct.2017 | Lima, Perú"
-    >
-      Responsable de enseñanza instrumental y teoría musical para niños con altas
-      capacidades y superdotación. En 2017 creamos un proyecto de aprendizaje
-      centrado en conceptos geométricos titulado "Geometría de acordes", pionero en
-      Perú y probablemente en Hispanoamérica. Tecnologías: Musescore 2.
-    </TimeLineElement>
-  </div>
+    <div class="mb-5">
+      <div class="text-3xl w-full font-bold">Habilidades tecnológicas</div>
+    </div>
 
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Educación</div>
-  </div>
+    <ListOfSkills />
 
-  <div class="time-line-container grid gap-4 mb-10">
-    <TimeLineElement
-      title="UNIR - Máster en Investigación Musical"
-      subtitle="2019 - 2020 | España"
-      >Matrícula de honor en Análisis Musical Informatizado. Promedio general:
-      Sobresaliente 9.4</TimeLineElement
-    >
-    <TimeLineElement
-      title="USMP - Licenciatura en Educación, Dirección e Interpretación Musical"
-      subtitle="2009 - 2015 | Lima, Perú"
-    />
-  </div>
+    <div class="mb-5">
+      <div class="text-3xl w-full font-bold">Educación</div>
+    </div>
 
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Habilidades tecnológicas</div>
-  </div>
-
-  <ListOfSkills />
-
-  <div class="mb-5 mt-10">
-    <div class="text-3xl w-full font-bold">Participación en Congresos</div>
-  </div>
-
-  <ul class="list-disc mx-6 mb-5 grid gap-2">
-    <li>
-      Ponente en Constelaciones: Congreso Interdisciplinario de Arte, Ciencia y
-      Tecnología organizado por UTEC, PUCP, MAC-LIMA y Fundación Telefónica (2022).
-      Ponencia: <b
-        >¿Euclides en el live coding? Algoritmos y conceptos matemáticos durante la
-        codificación en tiempo real.</b
+    <div class="time-line-container grid gap-4 mb-10">
+      <TimeLineElement
+        title="UNIR - Máster en Investigación Musical"
+        subtitle="2019 - 2020 | España"
+        >Matrícula de honor en Análisis Musical Informatizado. Promedio general:
+        Sobresaliente 9.4</TimeLineElement
       >
-    </li>
-    <li>
-      Conferencista invitado en el marco del 32° Festival Internacional de Guitarra
-      del Ipcna (2021). Ponencia: <b
-        >Teorías Transformacionales de la Teoría Matemática de la Música.</b
-      >
-    </li>
-    <li>
-      PUCP (2015). Participante oyente en la <b
-        >Conferencia Regional Latinoamericana y Panamericana de Educación Musical</b
-      > - ISME.
-    </li>
-  </ul>
-  <div class="mb-5 mt-10">
-    <div class="text-3xl w-full font-bold">Cursos y certificaciones</div>
-  </div>
+      <TimeLineElement
+        title="USMP - Licenciatura en Educación, Dirección e Interpretación Musical"
+        subtitle="2009 - 2015 | Lima, Perú"
+      />
+    </div>
 
-  <ul class="list-disc mx-6 mb-5 grid gap-2">
-    <li>
-      Universidad Nacional de Ingeniería e Instituto de Matemáticas y Ciencias
-      Afines, IMCA (2022). <b
-        >Minicurso Antología de Ingenios Matemáticos. Proyecto final en GitHub.</b
-      >
-    </li>
-    <li>
-      PUCP (2016). <b
-        >Creatividad en el aula de música. Estrategias didácticas y evaluativas.
-      </b> Dictado por la Dra. Ana Lucía Frega.
-    </li>
-    <li>
-      PUCP (2015). <b>Metodologías de la Investigación en Música.</b> Dictado por la Dra.
-      Ana Lucía Frega.
-    </li>
-  </ul>
+    <div class="mb-5 mt-10">
+      <div class="text-3xl w-full font-bold">Participación en Congresos</div>
+    </div>
+
+    <ul class="list-disc mx-6 mb-5 grid gap-2">
+      <li>
+        Ponente en Constelaciones: Congreso Interdisciplinario de Arte, Ciencia y
+        Tecnología organizado por UTEC, PUCP, MAC-LIMA y Fundación Telefónica (2022).
+        Ponencia: <b
+          >¿Euclides en el live coding? Algoritmos y conceptos matemáticos durante la
+          codificación en tiempo real.</b
+        >
+      </li>
+      <li>
+        Conferencista invitado en el marco del 32° Festival Internacional de Guitarra
+        del Ipcna (2021). Ponencia: <b
+          >Teorías Transformacionales de la Teoría Matemática de la Música.</b
+        >
+      </li>
+      <li>
+        PUCP (2015). Participante oyente en la <b
+          >Conferencia Regional Latinoamericana y Panamericana de Educación Musical</b
+        > - ISME.
+      </li>
+    </ul>
+    <div class="mb-5 mt-10">
+      <div class="text-3xl w-full font-bold">Cursos y certificaciones</div>
+    </div>
+
+    <ul class="list-disc mx-6 mb-5 grid gap-2">
+      <li>
+        Universidad Nacional de Ingeniería e Instituto de Matemáticas y Ciencias
+        Afines, IMCA (2022). <b
+          >Minicurso Antología de Ingenios Matemáticos. Proyecto final en GitHub.</b
+        >
+      </li>
+      <li>
+        PUCP (2016). <b
+          >Creatividad en el aula de música. Estrategias didácticas y evaluativas.
+        </b> Dictado por la Dra. Ana Lucía Frega.
+      </li>
+      <li>
+        PUCP (2015). <b>Metodologías de la Investigación en Música.</b> Dictado por la
+        Dra. Ana Lucía Frega.
+      </li>
+    </ul>
+  </div>
 </BaseLayout>
