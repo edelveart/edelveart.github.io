@@ -19,16 +19,16 @@ import Education from "@components/Education.astro"
 ---
 
 <BaseLayout sideBarActiveItemID="home">
-  <div class="pb-12 mt-0">
-    <div class="text-xl py-1">¡Bienvenidos todos! 👋</div>
-    <div class="text-3xl font-bold leading-snug text-primary">
+  <div class="pb-3 mt-0">
+    <div class="py-2">¡Bienvenidos todos! 👋</div>
+    <div class="text-3xl font-bold leading-snug text-primary py-0">
       Soy Edgar Delgado Vega
     </div>
-    <div class="text-2xl py-3 font-bold text-secondary">
+    <div class="py-1 font-bold text-secondary">
       Desarrollador de software y live coder
     </div>
 
-    <div class="py-2">
+    <div class="py-2 mt-4">
       <Biography />
     </div>
     <div class="mt-5 flex justify-start gap-5 flex-wrap">
@@ -37,7 +37,7 @@ import Education from "@components/Education.astro"
         href="https://www.linkedin.com/in/edgararmandodelgadovega/"
         target="_blank"
       >
-        <LinkedIn class="size-6" />
+        <LinkedIn class="w-6" />
         Contáctame
       </a>
       <a
@@ -45,21 +45,21 @@ import Education from "@components/Education.astro"
         href="https://youtube.com/@edelvemusic"
         target="_blank"
       >
-        <Youtube class="size-6" />
+        <Youtube class="w-6" />
       </a>
       <a
         class="btn btn-circle btn-outline"
         href="https://github.com/edelveart"
         target="_blank"
       >
-        <GitHub class="size-6" />
+        <GitHub class="w-6" />
       </a>
       <a
         class="btn btn-circle btn-outline"
         href="https://www.instagram.com/edgardelgadovega/"
         target="_blank"
       >
-        <Instagram class="size-6" />
+        <Instagram class="w-6" />
       </a>
     </div>
 
@@ -69,8 +69,8 @@ import Education from "@components/Education.astro"
     <Experience workExperiences={allExperiences} indices={[0, 1]} />
 
     <ListOfSkills />
-
     <Education />
+
     <!-- <div>
     <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
     </div> -->
