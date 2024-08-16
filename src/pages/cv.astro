@@ -3,22 +3,26 @@ import BaseLayout from "@layouts/BaseLayout.astro"
 import Experience, { allExperiences } from "@components/Experience.astro"
 import ListOfSkills from "@components/ListOfSkills.astro"
 import Education from "@components/Education.astro"
+import Curriculum from "@components/icons/Curriculum.astro"
 ---
 
 <BaseLayout title="Resume" sideBarActiveItemID="cv">
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Perfil</div>
+  <div class="mb-5" id="EDUCATION">
+    <div class="text-2xl w-full font-bold flex items-center">
+      <Curriculum class="ml-0 mr-4" />Perfil
+    </div>
   </div>
 
   <div class="mb-10">
+    Soy un apasionado de la resolución de problemas y del autoaprendizaje en
+    entornos tecnológicos, con un especial interés en el desarrollo de software.
+    <br />
     Cuento con experiencia en docencia presencial y virtual en el nivel superior
-    y posgrado (teoría y tecnología para la producción musical, live coding y
-    programación en Sonic Pi, musicología).
+    y posgrado, abarcando áreas como teoría y tecnología para la producción musical,
+    live coding en Sonic Pi y musicología.
     <br />
-    Soy un apasionado por la resolución de problemas y el autoaprendizaje en entornos
-    tecnológicos e interesado en investigaciones interdisciplinarias de ciencia y
-    arte. <br />
     <br />
+
     Líneas de investigación:
     <ul>
       <li>- Teoría matemática de la música</li>
@@ -27,9 +31,9 @@ import Education from "@components/Education.astro"
     </ul>
   </div>
 
-  <Experience workExperiences={allExperiences} />
-
   <ListOfSkills />
+
+  <Experience workExperiences={allExperiences} />
 
   <Education />
 

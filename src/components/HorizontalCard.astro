@@ -31,7 +31,7 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag"
         <div class="card-actions justify-end">
           {
             tags &&
-              tags.map((tag) => (
+              tags.map((tag: string) => (
                 <a href={`${tag_url}/${tag}`} class="badge badge-outline">
                   {tag}
                 </a>
