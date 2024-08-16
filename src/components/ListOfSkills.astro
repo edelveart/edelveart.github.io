@@ -8,7 +8,38 @@ import Skills from "./icons/Skills.astro"
   </div>
 </div>
 
-<ul class="list-disc md:columns-5 columns-2 mx-6 mb-10">
+<ul id="skill-list" class="list-disc md:columns-5 columns-2 mx-6 mb-10">
+  <!-- Primeras 5 habilidades visibles por defecto -->
+  <li>TypeScript, JavaScript, NodeJS</li>
+  <li>Git, command line</li>
+  <li>HTML, CSS</li>
+  <li>LaTex, TeXstudio</li>
+  <li>Musescore</li>
+
+  <!-- Las siguientes 5 habilidades están ocultas inicialmente -->
+  <li class="hidden">Sonic Pi</li>
+  <li class="hidden">Geogebra</li>
+  <li class="hidden">Reaper</li>
+  <li class="hidden">Zotero, BibTeX</li>
+</ul>
+
+<!-- Botón para mostrar más habilidades -->
+<!-- <button id="show-more" class="mx-6 mb-10 text-blue-500 hover:text-blue-700"> -->
+
+<button id="show-more" class="btn btn-outline"> Ver Completo </button>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const button = document.getElementById("show-more")
+    const hiddenItems = document.querySelectorAll("#skill-list .hidden")
+
+    button!.addEventListener("click", () => {
+      hiddenItems.forEach((item) => item.classList.remove("hidden"))
+      button!.style.display = "none" // Ocultar el botón después de mostrar todos los elementos
+    })
+  })
+</script>
+
+<!-- <ul class="list-disc md:columns-5 columns-2 mx-6 mb-10">
   <li>TypeScript, JavaScript, NodeJS</li>
   <li>Git, command line</li>
   <li>HTML, CSS</li>
@@ -18,4 +49,4 @@ import Skills from "./icons/Skills.astro"
   <li>Geogebra</li>
   <li>Reaper</li>
   <li>Zotero, BibTeX</li>
-</ul>
+</ul> -->

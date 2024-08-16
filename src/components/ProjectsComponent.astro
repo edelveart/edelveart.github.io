@@ -1,6 +1,38 @@
 ---
 import HorizontalCard from "./HorizontalCard.astro"
 import Branch from "./icons/Branch.astro"
+
+export const allProjects = [
+  {
+    title: "ts-tonnetz in the new live coding environment TOPOS!",
+    img: "/topos-docs.webp",
+    desc: "Since December 2023, you can improvise with my library 'ts-tonnetz' within Topos...",
+    url: "https://topos.live/#ziffers_tonnetz",
+    badge: "Topos.live | TypeScript",
+  },
+  {
+    title: "A new library in npm for live coders: TS-TONNETZ",
+    img: "/ts-tonnetz-socialmedia.webp",
+    desc: "A complete library of Neo-Riemannian Theory (67 functions and many graphs)...",
+    url: "https://www.npmjs.com/package/ts-tonnetz",
+    badge: "npm | TypeScript",
+  },
+  {
+    title: "Ruby module to generate infinite sequences of figurate numbers",
+    img: "/figurate-numbers-socialmedia.webp",
+    desc: "This Ruby gem enables the generation of 241 infinite sequences of plane, spatial, and multidimensional figurate numbers...",
+    url: "https://rubygems.org/gems/figurate_numbers",
+    badge: "RubyGems | Ruby",
+  },
+  {
+    title: "New figurate numbers package for Python",
+    img: "/figuratenum-socialmedia.webp",
+    desc: "This is the Pythonic implementation of figurate_numbers...",
+    url: "https://pypi.org/project/figuratenum/",
+    badge: "PyPi | Python",
+  },
+]
+const { projects } = Astro.props
 ---
 
 <div class="text-3xl w-full font-bold flex items-center" id="PROJECTS">
@@ -8,6 +40,25 @@ import Branch from "./icons/Branch.astro"
 </div>
 
 <div class="mb-10 mt-2">
+  {
+    projects.map((project, index) => (
+      <>
+        <HorizontalCard
+          key={index}
+          title={project.title}
+          img={project.img}
+          desc={project.desc}
+          url={project.url}
+          badge={project.badge}
+        />
+
+        {index < projects.length - 1 && <div class="divider my-2" />}
+      </>
+    ))
+  }
+</div>
+
+<!-- <div class="mb-10 mt-2">
   <HorizontalCard
     title="ts-tonnetz in the new live coding environment TOPOS!"
     img="/topos-docs.webp"
@@ -46,3 +97,4 @@ import Branch from "./icons/Branch.astro"
     badge="PyPi | Python"
   />
 </div>
+ -->
