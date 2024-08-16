@@ -20,9 +20,11 @@ import Education from "@components/Education.astro"
 
 <BaseLayout sideBarActiveItemID="home">
   <div class="pb-3 mt-0">
-    <div class="py-2">¡Bienvenidos todos! 👋</div>
+    <!-- <div class="py-2"></div> -->
+    <!-- <span class=""> ¡Bienvenidos! </span> -->
     <div class="text-3xl font-bold leading-snug text-primary py-0">
-      Soy Edgar Delgado Vega
+      Hola 👋, soy
+      <strong>Edgar Delgado Vega</strong>
     </div>
     <div class="py-1 font-bold text-secondary">
       Desarrollador de software y live coder
@@ -63,11 +65,8 @@ import Education from "@components/Education.astro"
       </a>
     </div>
 
-    <div class="mt-5"></div>
     <ProjectsComponent projects={allProjects} indices={[0, 1]} />
-
     <Experience workExperiences={allExperiences} indices={[0, 1]} />
-
     <ListOfSkills />
     <Education />
 
