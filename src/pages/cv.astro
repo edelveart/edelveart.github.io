@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro"
-import TimeLineElement from "@components/cv/TimeLine.astro"
-import Experience from "@components/Experience.astro"
+import Experience, { allExperiences } from "@components/Experience.astro"
 import ListOfSkills from "@components/ListOfSkills.astro"
 import Education from "@components/Education.astro"
 ---
@@ -28,7 +27,7 @@ import Education from "@components/Education.astro"
     </ul>
   </div>
 
-  <Experience />
+  <Experience workExperiences={allExperiences} />
 
   <ListOfSkills />
 

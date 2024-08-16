@@ -5,7 +5,7 @@ import LinkedIn from "@components/icons/LinkedIn.astro"
 import Youtube from "@components/icons/Youtube.astro"
 import Instagram from "@components/icons/Instagram.astro"
 import Bio from "@components/Bio.astro"
-import Experience from "@components/Experience.astro"
+import Experience, { allExperiences } from "@components/Experience.astro"
 import ProjectsComponent, {
   allProjects,
 } from "@components/ProjectsComponent.astro"
@@ -19,12 +19,12 @@ import Education from "@components/Education.astro"
 ---
 
 <BaseLayout sideBarActiveItemID="home">
-  <div class="pb-12 mt-3">
-    <div class="text-xl py-1">Bienvenidos todos! 👋</div>
-    <div class="text-5xl font-bold leading-snug text-primary">
+  <div class="pb-12 mt-0">
+    <div class="text-xl py-1">¡Bienvenidos todos! 👋</div>
+    <div class="text-3xl font-bold leading-snug text-primary">
       Soy Edgar Delgado Vega
     </div>
-    <div class="text-3xl py-3 font-bold text-secondary">
+    <div class="text-2xl py-3 font-bold text-secondary">
       Desarrollador de software y live coder
     </div>
 
@@ -41,21 +41,21 @@ import Education from "@components/Education.astro"
         Contáctame
       </a>
       <a
-        class="btn btn-circle btn-info"
+        class="btn btn-circle btn-outline"
         href="https://youtube.com/@edelvemusic"
         target="_blank"
       >
         <Youtube class="size-6" />
       </a>
       <a
-        class="btn btn-circle btn-info"
+        class="btn btn-circle btn-outline"
         href="https://github.com/edelveart"
         target="_blank"
       >
         <GitHub class="size-6" />
       </a>
       <a
-        class="btn btn-circle btn-info"
+        class="btn btn-circle btn-outline"
         href="https://www.instagram.com/edgardelgadovega/"
         target="_blank"
       >
@@ -66,7 +66,7 @@ import Education from "@components/Education.astro"
     <div class="mt-5"></div>
     <ProjectsComponent projects={allProjects} indices={[0, 1]} />
 
-    <Experience />
+    <Experience workExperiences={allExperiences} indices={[0, 1]} />
 
     <ListOfSkills />
 
