@@ -32,7 +32,8 @@ export const allProjects = [
     badge: "PyPi | Python",
   },
 ]
-const { projects } = Astro.props
+const { projects, indices } = Astro.props
+const filteredProjects = indices.map((index) => projects[index]).filter(Boolean)
 ---
 
 <div class="text-3xl w-full font-bold flex items-center" id="PROJECTS">
@@ -41,7 +42,7 @@ const { projects } = Astro.props
 
 <div class="mb-10 mt-2">
   {
-    projects.map((project, index) => (
+    filteredProjects.map((project, index) => (
       <>
         <HorizontalCard
           key={index}
@@ -52,7 +53,7 @@ const { projects } = Astro.props
           badge={project.badge}
         />
 
-        {index < projects.length - 1 && <div class="divider my-2" />}
+        {index < filteredProjects.length - 1 && <div class="divider my-2" />}
       </>
     ))
   }

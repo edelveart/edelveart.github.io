@@ -68,7 +68,7 @@ import Education from "@components/Education.astro"
     </div>
 
     <div class="mt-5"></div>
-    <ProjectsComponent projects={allProjects} />
+    <ProjectsComponent projects={allProjects} indices={[0, 1]} />
 
     <Experience />
 
@@ -77,21 +77,21 @@ import Education from "@components/Education.astro"
     <Education />
     <!-- <div>
     <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
-  </div> -->
+    </div> -->
     <!-- {
-    last_posts.map((post) => (
-      <>
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + createSlug(post.data.title, post.slug)}
-          target="_self"
-          badge={post.data.badge}
-        />
-        <div class="divider my-0" />
-      </>
-    ))
-  } -->
+      last_posts.map((post) => (
+        <>
+          <HorizontalCard
+            title={post.data.title}
+            img={post.data.heroImage}
+            desc={post.data.description}
+            url={"/blog/" + createSlug(post.data.title, post.slug)}
+            target="_self"
+            badge={post.data.badge}
+          />
+          <div class="divider my-0" />
+        </>
+      ))
+    } -->
   </div>
 </BaseLayout>
