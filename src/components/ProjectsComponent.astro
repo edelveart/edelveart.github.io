@@ -32,8 +32,11 @@ export const allProjects = [
     badge: "PyPi | Python",
   },
 ]
+
 const { projects, indices } = Astro.props
-const filteredProjects = indices.map((index) => projects[index]).filter(Boolean)
+const filteredProjects = indices
+  ? indices.map((index) => projects[index]).filter(Boolean)
+  : projects
 ---
 
 <div class="text-3xl w-full font-bold flex items-center" id="PROJECTS">

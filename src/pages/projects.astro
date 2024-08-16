@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro"
-import ProjectsComponent from "@components/ProjectsComponent.astro"
+import ProjectsComponent, {
+  allProjects,
+} from "@components/ProjectsComponent.astro"
 ---
 
 <BaseLayout title="Projects" sideBarActiveItemID="projects">
-  <!-- <ProjectsComponent /> -->
+  <ProjectsComponent projects={allProjects} />
 </BaseLayout>
