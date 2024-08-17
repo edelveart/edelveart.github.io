@@ -1,0 +1,103 @@
+---
+import TimeLineElement from "../cv/TimeLine.astro"
+import Work from "../icons/Work.astro"
+
+export const allExperiences = [
+  {
+    title:
+      "Newman Graduate School - Professor of the Master's Degree in Musicology",
+    subtitle: "may.2024 - present | Lima, Perú",
+    description:
+      "Teaching modality through flipped classroom. Courses I am responsible for in the master's program: techniques for research, documentation, and dissemination in musicological research and cultural industries.",
+  },
+  {
+    title: "EEST Toulouse Lautrec - Music production instructor",
+    subtitle: "jun.2022 - present | Lima, Perú",
+    description:
+      "In charge of the music production and music theory courses. Anonymous feedback on my teaching practice is mostly positive. Online modality. Technologies: Musescore 4, Reaper 6.",
+  },
+  {
+    title: "National University Daniel Alomía Robles - Full-time Professor",
+    subtitle: "may.2019 - dec.2019 | Huánuco, Perú",
+    description:
+      "In-person teaching modality. Courses I am responsible for: general education didactics, learning psychology, and music didactics. Technologies: Musescore 3, LaTeX.",
+  },
+  {
+    title: "PAENFTS - Music Educator",
+    subtitle: "jun.2015 - oct.2017 | Lima, Perú",
+    description:
+      "Teaching music theory and performance for children with high abilities and giftedness. Technologies: Musescore 2.",
+  },
+]
+
+const { workExperiences, indices } = Astro.props
+const filteredExperiences = indices
+  ? indices.map((index) => workExperiences[index]).filter(Boolean)
+  : workExperiences
+---
+
+<div class="mb-5 mt-0" id="EXPERIENCE">
+  <div class="text-2xl w-full font-bold flex items-center">
+    <Work class="ml-0 mr-4" />Experience
+  </div>
+</div>
+
+<div class="time-line-container mb-8 grid gap-4">
+  {
+    filteredExperiences.map((experience, index) => (
+      <>
+        <TimeLineElement
+          key={index}
+          title={experience.title}
+          subtitle={experience.subtitle}
+        >
+          {experience.description}
+        </TimeLineElement>
+      </>
+    ))
+  }
+</div>
+
+<!--
+<div class="time-line-container mb-10">
+  <TimeLineElement
+    title="Escuela de Posgrado Newman - Docente de Maestría en Musicología"
+    subtitle="may.2024 - actualidad | Lima, Perú"
+  >
+    Modalidad de enseñanza mediante aula invertida. Asignaturas de la maestría a
+    mi cargo:
+    <br />
+    &bullet; Técnicas de búsqueda, documentación y difusión en investigación musicológica
+    <br />
+    &bullet; Industrias culturales
+  </TimeLineElement>
+
+  <TimeLineElement
+    title="EEST Toulouse Lautrec - Docente de producción musical "
+    subtitle="jun.2022 - actualidad | Lima, Perú"
+  >
+    Responsable de los cursos de producción musical y teoría musical. <br />
+    Los comentarios anónimos sobre mi práctica docente son mayoritariamente favorables.
+    <br /> Modalidad virtual. Tecnologías: Musescore 4, Reaper 6.
+  </TimeLineElement>
+
+  <TimeLineElement
+    title="Universidad Nacional Daniel Alomía Robles - Docente a tiempo completo"
+    subtitle=" may.2019 - dic.2019 | Huánuco, Perú"
+  >
+    Modalidad de enseñanza presencial. Asignaturas a mi cargo: <br />
+    Didáctica general de la educación, psicología del aprendizaje y didáctica de
+    la música.
+    <br />
+    Tecnologías: Musescore 3, LaTex.
+  </TimeLineElement>
+
+  <TimeLineElement
+    title="PAENFTS - Docente de área de música"
+    subtitle="jun.2015 - oct.2017 | Lima, Perú"
+  >
+    Enseñanza de teoría musical e interpretación para niños con altas
+    capacidades y superdotación. <br />
+    Tecnologías: Musescore 2.
+  </TimeLineElement>
+</div> -->
