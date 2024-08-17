@@ -23,20 +23,28 @@ import { spanishFlag, englishFlag } from "./Languages.astro"
       </label>
     </div>
     <div class="navbar-center">
-      <a class="btn btn-ghost normal-case text-xl" href="/">
-        Edgar Delgado Vega
-      </a>
+      {
+        currentLang === "es" ? (
+          <a class="btn btn-ghost normal-case text-xl" href="/">
+            Edgar Delgado Vega
+          </a>
+        ) : (
+          <a class="btn btn-ghost normal-case text-xl" href="/en">
+            Edgar Delgado Vega
+          </a>
+        )
+      }
     </div>
 
     <div class="navbar-end">
       {
         currentLang === "es" ? (
           <a href="/en">
-            <span class={`btn btn-square btn-ghost ${englishFlag} w-7 mx-2`} />
+            <span class={`btn btn-square btn-ghost ${englishFlag} w-8 mx-3`} />
           </a>
         ) : (
           <a href="/">
-            <span class={`btn btn-square btn-ghost ${spanishFlag} w-7 mx-2`} />
+            <span class={`btn btn-square btn-ghost ${spanishFlag} w-8 mx-3`} />
           </a>
         )
       }
