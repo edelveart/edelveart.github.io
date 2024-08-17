@@ -1,3 +1,7 @@
+---
+const currentLang = Astro.url.pathname.startsWith("/en") ? "en" : "es"
+---
+
 <div
   class="sticky lg:hidden top-0 z-30 flex h-16 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100 bg-base-200 text-base-content shadow-sm mb-[-1rem]"
 >
@@ -20,21 +24,23 @@
     <div class="navbar-center">
       <a class="btn btn-ghost normal-case text-xl" href="/"
         >Edgar Delgado Vega
-        <!-- <Image
-          class="mask mask-circle"
-          format="webp"
-          width={28}
-          height={28}
-          src="/edelvephoto.webp"
-          alt="Photo Edgar Delgado Vega"
-        /> -->
       </a>
     </div>
 
-    <div class="navbar-end flex gap-6 mr-3">
-      <!-- Lipis/ flag-icons -->
-      <a class="text-lg" href="/en"><span class="fi fi-gb mr-1"></span>EN</a>
-      <a class="text-lg" href="/"><span class="fi fi-es mr-1"></span>ES</a>
+    <div class="navbar-end">
+      {
+        currentLang === "es" ? (
+          <a class="m-2" href="/en">
+            <span class="fi fi-gb"> </span>
+            EN
+          </a>
+        ) : (
+          <a class="m-2" href="/">
+            <span class="fi fi-es"> </span>
+            ES
+          </a>
+        )
+      }
     </div>
   </div>
 </div>
