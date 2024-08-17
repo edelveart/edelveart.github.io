@@ -1,7 +1,19 @@
+---
+// const currentLang = Astro.url.pathname.startsWith("/en") ? "en" : "es"
+export const spanishFlag = "fi fi-es"
+export const englishFlag = "fi fi-gb"
+---
+
 <!-- Lipis/ flag-icons --><!-- It uses in BaseLayout and en/BaseLayout -->
-<div class="hidden lg:flex gap-6 flex-wrap justify-end mt-[-1.5rem]">
-  <a class="text-lg" href="/en"> <span class="fi fi-gb mr-1"></span>EN</a>
-  <a class="text-lg" href="/"> <span class="fi fi-es mr-1"></span>ES</a>
+<div class="hidden lg:flex gap-2 flex-wrap justify-end mt-[-1.5rem]">
+  <a class="text-lg btn btn-ghost" href="/en">
+    <span class={`mr-1  ${englishFlag}`}> </span>
+    EN
+  </a>
+  <a class="text-lg btn btn-ghost" href="/">
+    <span class={`mr-1  ${spanishFlag}`}> </span>
+    ES
+  </a>
 </div>
 <!-- Lipis/ flag-icons -->
 

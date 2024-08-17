@@ -1,9 +1,10 @@
 ---
 const currentLang = Astro.url.pathname.startsWith("/en") ? "en" : "es"
+import { spanishFlag, englishFlag } from "./Languages.astro"
 ---
 
 <div
-  class="sticky lg:hidden top-0 z-30 flex h-16 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100 bg-base-200 text-base-content shadow-sm mb-[-1rem]"
+  class="sticky lg:hidden top-0 z-30 flex h-16 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100 bg-base-200 text-base-content shadow-sm mb-[-1rem] flex-wrap"
 >
   <div class="navbar w-full">
     <div class="navbar-start">
@@ -12,7 +13,7 @@ const currentLang = Astro.url.pathname.startsWith("/en") ? "en" : "es"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          class="inline-block w-5 h-5 stroke-current"
+          class="inline-block w-8 h-6 stroke-current"
           ><path
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -22,22 +23,20 @@ const currentLang = Astro.url.pathname.startsWith("/en") ? "en" : "es"
       </label>
     </div>
     <div class="navbar-center">
-      <a class="btn btn-ghost normal-case text-xl" href="/"
-        >Edgar Delgado Vega
+      <a class="btn btn-ghost normal-case text-xl" href="/">
+        Edgar Delgado Vega
       </a>
     </div>
 
     <div class="navbar-end">
       {
         currentLang === "es" ? (
-          <a class="m-2" href="/en">
-            <span class="fi fi-gb"> </span>
-            EN
+          <a href="/en">
+            <span class={`btn btn-square btn-ghost ${englishFlag} w-7 mx-2`} />
           </a>
         ) : (
-          <a class="m-2" href="/">
-            <span class="fi fi-es"> </span>
-            ES
+          <a href="/">
+            <span class={`btn btn-square btn-ghost ${spanishFlag} w-7 mx-2`} />
           </a>
         )
       }
