@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@astrojs/mdx':
         specifier: ^2.0.3
-        version: 2.0.3(astro@4.0.2(@types/node@17.0.45))
+        version: 2.0.3(astro@4.0.2)
       '@astrojs/rss':
         specifier: ^3.0.0
         version: 3.0.0
@@ -19,13 +19,13 @@ importers:
         version: 3.0.1
       '@astrojs/tailwind':
         specifier: ^5.0.3
-        version: 5.0.3(astro@4.0.2(@types/node@17.0.45))(tailwindcss@3.3.5)
+        version: 5.0.3(astro@4.0.2)(tailwindcss@3.3.5)
       '@fontsource/iosevka':
         specifier: ^5.0.7
         version: 5.0.7
       astro:
         specifier: ^4.0.2
-        version: 4.0.2(@types/node@17.0.45)
+        version: 4.0.2
       daisyui:
         specifier: ^4.4.10
         version: 4.4.10(postcss@8.4.32)
@@ -609,8 +609,8 @@ packages:
     resolution: {integrity: sha512-xlx1yCK2Oc1APsPXDL2LdlNP6+uu8OCDdhOBSVT279M/S+y75O30C2VuD8T2ogdePBBl7PfPF4504tnLgX3zfw==}
     engines: {node: '>=14.16'}
 
-  caniuse-lite@1.0.30001564:
-    resolution: {integrity: sha512-DqAOf+rhof+6GVx1y+xzbFPeOumfQnhYzVnZD6LAXijR77yPtm9mfOcqOnT3mpnJiZVT+kwLAFnRlZcIz+c6bg==}
+  caniuse-lite@1.0.30001651:
+    resolution: {integrity: sha512-9Cf+Xv1jJNe1xPZLGuUXLNkE1BoDkqRqYyFJ9TDYSqhduqA4hu4oR9HluGoWYQC/aj8WHjsGVV+bwkh0+tegRg==}
 
   ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
@@ -2133,10 +2133,10 @@ snapshots:
 
   '@astrojs/internal-helpers@0.2.1': {}
 
-  '@astrojs/markdown-remark@4.0.0(astro@4.0.2(@types/node@17.0.45))':
+  '@astrojs/markdown-remark@4.0.0(astro@4.0.2)':
     dependencies:
       '@astrojs/prism': 3.0.0
-      astro: 4.0.2(@types/node@17.0.45)
+      astro: 4.0.2
       github-slugger: 2.0.0
       import-meta-resolve: 4.0.0
       mdast-util-definitions: 6.0.0
@@ -2172,12 +2172,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@2.0.3(astro@4.0.2(@types/node@17.0.45))':
+  '@astrojs/mdx@2.0.3(astro@4.0.2)':
     dependencies:
       '@astrojs/markdown-remark': 4.0.1
       '@mdx-js/mdx': 3.0.0
       acorn: 8.11.2
-      astro: 4.0.2(@types/node@17.0.45)
+      astro: 4.0.2
       es-module-lexer: 1.4.1
       estree-util-visit: 2.0.0
       github-slugger: 2.0.0
@@ -2207,9 +2207,9 @@ snapshots:
       sitemap: 7.1.1
       zod: 3.21.1
 
-  '@astrojs/tailwind@5.0.3(astro@4.0.2(@types/node@17.0.45))(tailwindcss@3.3.5)':
+  '@astrojs/tailwind@5.0.3(astro@4.0.2)(tailwindcss@3.3.5)':
     dependencies:
-      astro: 4.0.2(@types/node@17.0.45)
+      astro: 4.0.2
       autoprefixer: 10.4.16(postcss@8.4.32)
       postcss: 8.4.32
       postcss-load-config: 4.0.2(postcss@8.4.32)
@@ -2647,11 +2647,11 @@ snapshots:
 
   astring@1.8.6: {}
 
-  astro@4.0.2(@types/node@17.0.45):
+  astro@4.0.2:
     dependencies:
       '@astrojs/compiler': 2.3.2
       '@astrojs/internal-helpers': 0.2.1
-      '@astrojs/markdown-remark': 4.0.0(astro@4.0.2(@types/node@17.0.45))
+      '@astrojs/markdown-remark': 4.0.0(astro@4.0.2)
       '@astrojs/telemetry': 3.0.4
       '@babel/core': 7.23.5
       '@babel/generator': 7.23.5
@@ -2705,8 +2705,8 @@ snapshots:
       tsconfck: 3.0.0
       unist-util-visit: 5.0.0
       vfile: 6.0.1
-      vite: 5.0.5(@types/node@17.0.45)
-      vitefu: 0.2.5(vite@5.0.5(@types/node@17.0.45))
+      vite: 5.0.5
+      vitefu: 0.2.5(vite@5.0.5)
       which-pm: 2.1.1
       yargs-parser: 21.1.1
       zod: 3.22.4
@@ -2726,7 +2726,7 @@ snapshots:
   autoprefixer@10.4.16(postcss@8.4.32):
     dependencies:
       browserslist: 4.21.10
-      caniuse-lite: 1.0.30001564
+      caniuse-lite: 1.0.30001651
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -2779,7 +2779,7 @@ snapshots:
 
   browserslist@4.21.10:
     dependencies:
-      caniuse-lite: 1.0.30001564
+      caniuse-lite: 1.0.30001651
       electron-to-chromium: 1.4.496
       node-releases: 2.0.13
       update-browserslist-db: 1.0.11(browserslist@4.21.10)
@@ -2798,7 +2798,7 @@ snapshots:
 
   camelcase@7.0.1: {}
 
-  caniuse-lite@1.0.30001564: {}
+  caniuse-lite@1.0.30001651: {}
 
   ccount@2.0.1: {}
 
@@ -4635,18 +4635,17 @@ snapshots:
       unist-util-stringify-position: 4.0.0
       vfile-message: 4.0.2
 
-  vite@5.0.5(@types/node@17.0.45):
+  vite@5.0.5:
     dependencies:
       esbuild: 0.19.9
       postcss: 8.4.32
       rollup: 4.6.1
     optionalDependencies:
-      '@types/node': 17.0.45
       fsevents: 2.3.3
 
-  vitefu@0.2.5(vite@5.0.5(@types/node@17.0.45)):
+  vitefu@0.2.5(vite@5.0.5):
     optionalDependencies:
-      vite: 5.0.5(@types/node@17.0.45)
+      vite: 5.0.5
 
   web-namespaces@2.0.1: {}
 
