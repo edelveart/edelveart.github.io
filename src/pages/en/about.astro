@@ -1,0 +1,18 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n"
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a class="btn btn-square bg-red-500" href={getRelativeLocaleUrl("en", "/")}>
+      Vamos al index
+    </a>
+    <h1>Página About</h1>
+  </body>
+</html>

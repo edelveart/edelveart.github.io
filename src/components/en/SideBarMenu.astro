@@ -1,0 +1,60 @@
+---
+import Home from "../icons/Home.astro"
+import Branch from "../icons/Branch.astro"
+import Curriculum from "../icons/Curriculum.astro"
+
+const { sideBarActiveItemID } = Astro.props
+const activeClass = "bg-base-300" // For primary color replace with `active` class
+---
+
+<ul class="menu grow shrink menu-md overflow-y-auto">
+  <strong class="flex justify-center mb-5">Edgar Delgado Vega</strong>
+  <li>
+    <!-- <a class="py-3 text-base" id="home" href="/" -->
+    <a class="py-3" id="home" href="/en"
+      ><Home />
+      <span class="ml-[4px]">Home</span>
+    </a>
+  </li>
+  <li>
+    <a class="py-3" id="projects" href="/en/projects"
+      ><Branch />
+      <span class="ml-[0.35em]">Projects</span>
+    </a>
+  </li>
+  <li>
+    <a class="py-3" id="cv" href="/en/cv">
+      <Curriculum />
+      <span class="ml-[6px]">Resume</span>
+    </a>
+  </li>
+  <li>
+    <!-- <a class="py-3 text-base" id="writings" href="/"><PencilEducation /> -->
+    <!-- <span class="ml-[6px]">  Educación</span> -->
+    <!-- </a> -->
+    <!-- </li> -->
+    <!-- <li><a class="py-3 text-base" id="projects" href="/projects">Projects</a></li> -->
+    <!-- <li><a class="py-3 text-base" id="services" href="/services">Services</a></li> -->
+    <!-- <li><a class="py-3 text-base" id="store" href="/store">Store</a></li> -->
+    <!-- <li><a class="py-3 text-base" id="blog" href="/blog/">Blog</a></li> -->
+    <!-- <li><a class="py-3 text-base" id="cv" href="/cv">CV</a></li> -->
+    <!-- <li>
+        <a
+            class="py-3 text-base"
+            href="mailto:"
+            target="_blank"
+            referrerpolicy="no-referrer-when-downgrade">Contact</a
+        >
+    </li> -->
+  </li>
+
+  <script
+    define:vars={{
+      sideBarActiveItemID: sideBarActiveItemID,
+      activeClass: activeClass,
+    }}
+  >
+    const activeItemElem = document.getElementById(sideBarActiveItemID)
+    activeItemElem && activeItemElem.classList.add(activeClass)
+  </script>
+</ul>

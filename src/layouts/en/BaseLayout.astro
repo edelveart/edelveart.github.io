@@ -1,14 +1,14 @@
 ---
 import "@fontsource/iosevka"
-import BaseHead from "../components/BaseHead.astro"
-import Header from "../components/Header.astro"
-import Footer from "../components/Footer.astro"
-import SideBar from "../components/SideBar.astro"
+import BaseHead from "../../components/BaseHead.astro"
+import Header from "../../components/Header.astro"
+import Footer from "../../components/Footer.astro"
+import SideBar from "../../components/en/SideBar.astro" // ESTE DEBE SER DIFERENTE
 import { ViewTransitions } from "astro:transitions"
-import FlagsLinkCss from "../components/FlagsLinkCss.astro"
-import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config"
-import Languages from "@components/Languages.astro"
 
+import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../../config"
+import Languages from "@components/Languages.astro"
+import FlagsLinkCss from "../../components/FlagsLinkCss.astro"
 const {
   image,
   title = SITE_TITLE,
@@ -30,9 +30,8 @@ const { currentLocale } = Astro
       ogType={ogType}
     />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <FlagsLinkCss />
-
     {TRANSITION_API && <ViewTransitions />}
+    <FlagsLinkCss />
   </head>
   <body>
     <div class="bg-base-100 drawer lg:drawer-open">

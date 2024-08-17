@@ -1,0 +1,104 @@
+---
+import HorizontalCard from "../HorizontalCard.astro"
+import Branch from "../icons/Branch.astro"
+
+export const allProjects = [
+  {
+    title: "ts-tonnetz in the new live coding environment TOPOS!",
+    img: "/topos-docs.webp",
+    desc: "Since December 2023, you can improvise with my library 'ts-tonnetz' within Topos (a new live coding environment designed by Raphaël Forment and Miika Alonen). 'ts-tonnetz'  serves as a dependency for Ziffers, a numerical notation system for algorithmic composition. Topos has exceptionally simplified but sufficient documentation of ts-tonnetz, where many of the ideas of 2 doctoral theses on mathematical music theory are explained (see Bigo, 2013; Cannas, 2018), among other most notable research articles in the field.",
+    url: "https://topos.live/#ziffers_tonnetz",
+    badge: "Topos.live | TypeScript",
+  },
+  {
+    title: "A new library in npm for live coders: TS-TONNETZ",
+    img: "/ts-tonnetz-socialmedia.webp",
+    desc: "A complete library of Neo-Riemannian Theory (67 functions and many graphs) written in TypeScript  for musicians, mathematicians and engineers interested in Mathematical Music Theory. It is based on two doctoral theses and notable articles on the subject. It is a perfect access point to this fascinating area where music, mathematics and computing at the highest level come together. Playing with ts-tonnetz will lead you to propose questions and new musical systems in an expressive and creative way.",
+    url: "https://www.npmjs.com/package/ts-tonnetz",
+    badge: "npm | TypeScript",
+  },
+  {
+    title: "Ruby module to generate infinite sequences of figurate numbers",
+    img: "/figurate-numbers-socialmedia.webp",
+    desc: "This Ruby gem enables the generation of 241 infinite sequences of plane, spatial, and multidimensional figurate numbers, as described in the book ‘Figurate Numbers’ (2012) by Elena Deza and Michel Deza. The methods, implemented using the Enumerator class, are designed for use in your math projects or in Sonic Pi.",
+    url: "https://rubygems.org/gems/figurate_numbers",
+    badge: "RubyGems | Ruby",
+  },
+  {
+    title: "New figurate numbers package for Python",
+    img: "/figuratenum-socialmedia.webp",
+    desc: "This is the Pythonic implementation of figurate_numbers. It includes a FigurateNum class that provides methods for retrieving sequence fragments.  These methods, in turn, can facilitate other scientific computing tasks.",
+    url: "https://pypi.org/project/figuratenum/",
+    badge: "PyPi | Python",
+  },
+]
+
+const { projects, indices } = Astro.props
+const filteredProjects = indices
+  ? indices.map((index) => projects[index]).filter(Boolean)
+  : projects
+---
+
+<div class="text-2xl w-full font-bold flex items-center mt-8" id="PROJECTS">
+  <Branch class="ml-0 mr-4" /> Projects
+</div>
+
+<div class="mb-10 mt-0">
+  {
+    filteredProjects.map((project, index) => (
+      <>
+        <HorizontalCard
+          key={index}
+          title={project.title}
+          img={project.img}
+          desc={project.desc}
+          url={project.url}
+          badge={project.badge}
+        />
+
+        {index < filteredProjects.length - 1 && <div class="divider my-0" />}
+      </>
+    ))
+  }
+</div>
+
+<!-- <div class="mb-10 mt-2">
+  <HorizontalCard
+    title="ts-tonnetz in the new live coding environment TOPOS!"
+    img="/topos-docs.webp"
+    desc="Since December 2023, you can improvise with my library 'ts-tonnetz' within Topos (a new live coding environment designed by Raphaël Forment and Miika Alonen). 'ts-tonnetz'  serves as a dependency for Ziffers, a numerical notation system for algorithmic composition. Topos has exceptionally simplified but sufficient documentation of ts-tonnetz, where many of the ideas of 2 doctoral theses on mathematical music theory are explained (see Bigo, 2013; Cannas, 2018), among other most notable research articles in the field. "
+    url="https://topos.live/#ziffers_tonnetz"
+    badge="Topos.live | TypeScript"
+  />
+
+  <div class="divider my-2"></div>
+
+  <HorizontalCard
+    title="A new library in npm for live coders: TS-TONNETZ"
+    img="/ts-tonnetz-socialmedia.webp"
+    desc="A complete library of Neo-Riemannian Theory (67 functions and many graphs) written in TypeScript  for musicians, mathematicians and engineers interested in Mathematical Music Theory. It is based on two doctoral theses and notable articles on the subject. It is a perfect access point to this fascinating area where music, mathematics and computing at the highest level come together. Playing with ts-tonnetz will lead you to propose questions and new musical systems in an expressive and creative way."
+    url="https://www.npmjs.com/package/ts-tonnetz"
+    badge="npm | TypeScript"
+  />
+
+  <div class="divider my-2"></div>
+
+  <HorizontalCard
+    title="Ruby module to generate infinite sequences of figurate numbers"
+    img="/figurate-numbers-socialmedia.webp"
+    desc="This Ruby gem enables the generation of 241 infinite sequences of plane, spatial, and multidimensional figurate numbers, as described in the book ‘Figurate Numbers’ (2012) by Elena Deza and Michel Deza. The methods, implemented using the Enumerator class, are designed for use in your math projects or in Sonic Pi."
+    url="https://rubygems.org/gems/figurate_numbers"
+    badge="RubyGems | Ruby"
+  />
+
+  <div class="divider my-2"></div>
+
+  <HorizontalCard
+    title="New figurate numbers package for Python"
+    img="/figuratenum-socialmedia.webp"
+    desc="This is the Pythonic implementation of figurate_numbers. It includes a FigurateNum class that provides methods for retrieving sequence fragments. These methods, in turn, can facilitate other scientific computing tasks."
+    url="https://pypi.org/project/figuratenum/"
+    badge="PyPi | Python"
+  />
+</div>
+ -->
