@@ -13,7 +13,7 @@ import { spanishFlag, englishFlag } from "./Languages.astro"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          class="inline-block w-8 h-8 stroke-current"
+          class="inline-block w-7 h-7 stroke-current"
           ><path
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -40,11 +40,11 @@ import { spanishFlag, englishFlag } from "./Languages.astro"
       {
         currentLang === "es" ? (
           <a class="mr-3 ml-4" href="/en">
-            <span class={`btn btn-square btn-ghost ${englishFlag} w-8`} />
+            <span class={`btn btn-square btn-ghost ${englishFlag} w-7`} />
           </a>
         ) : (
           <a class="mr-3 ml-4" href="/">
-            <span class={`btn btn-square btn-ghost ${spanishFlag} w-8`} />
+            <span class={`btn btn-square btn-ghost ${spanishFlag} w-7`} />
           </a>
         )
       }
