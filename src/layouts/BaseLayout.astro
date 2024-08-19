@@ -17,15 +17,15 @@ const {
   sideBarActiveItemID,
   ogType,
 } = Astro.props
-const { currentLocale } = Astro
+const { currentLocale } = Astro.props
 ---
 
 <!doctype html>
-<html lang={currentLocale} data-theme="emerald">
+<html lang={currentLocale} data-theme="autumn">
   <head>
     <BaseHead
-      title={SITE_TITLE}
-      description={SITE_DESCRIPTION}
+      title={title}
+      description={description}
       image={image}
       ogType={ogType}
     />
