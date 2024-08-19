@@ -1,12 +1,21 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro"
+const currentLang = Astro.url.pathname.startsWith("/en") ? "en" : "es"
 ---
 
-<BaseLayout title = "404: Not Found" includeSidebar={false}>
+<BaseLayout title="404: Not Found" includeSidebar={false}>
   <div class="text-center">
     <h1 class="text-9xl font-bold mb-4">🏝</h1>
     <h1 class="text-9xl font-bold mb-2">404</h1>
-    <h3 class="text-2xl">The page you're looking for couldn't be found.</h3>
-    <a class="btn btn-accent mt-9" href="/">Home</a>
+    {
+      currentLang === "es" ? (
+      <h3 class="text-2xl">No se pudo encontrar la página que estás buscando.</h3>
+      <a class="btn btn-accent mt-9" href="/">Inicio</a>
+      ) : (
+      <h3 class="text-2xl">The page you're looking for couldn't be found.</h3>
+      <a class="btn btn-accent mt-9" href="/en">Home</a>
+      )
+    }
+
   </div>
 </BaseLayout>
