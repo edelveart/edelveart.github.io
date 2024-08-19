@@ -3,7 +3,6 @@ import mdx from "@astrojs/mdx"
 import sitemap from "@astrojs/sitemap"
 import tailwind from "@astrojs/tailwind"
 
-const LIVE_URL = "https://edelveart.github.io"
 // https://astro.build/config
 export default defineConfig({
   site: "https://edelveart.github.io",
@@ -12,4 +11,10 @@ export default defineConfig({
     defaultLocale: "es",
     locales: ["es", "en"],
   },
+  plugins: [
+    sitemap({
+      // Routes of SiteMap excluded
+      exclude: ["/services/", "/store/", "/blog/"],
+    }),
+  ],
 })

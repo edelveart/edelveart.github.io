@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /blog/*?
+Disallow: /store/*?
+Disallow: /services/*?
 
 Sitemap: https://edelveart.github.io/sitemap-index.xml
