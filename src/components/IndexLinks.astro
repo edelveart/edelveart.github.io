@@ -1,0 +1,24 @@
+---
+import LinkedIn from "./icons/LinkedIn.astro"
+import Youtube from "./icons/Youtube.astro"
+import GitHub from "./icons/GitHub.astro"
+import { SOCIAL_MEDIA } from "../config"
+
+interface ContactText {
+  contactText?: string
+}
+const { contactText } = Astro.props as ContactText
+---
+
+<div class="mt-5 mb-10 flex justify-start gap-7 flex-wrap">
+  <a class="btn btm-nav-xs" href={SOCIAL_MEDIA.linkedin} target="_blank">
+    <LinkedIn class="w-6" />
+    {contactText}
+  </a>
+  <a class="btn btn-circle" href={SOCIAL_MEDIA.youtube} target="_blank">
+    <Youtube class="w-6" />
+  </a>
+  <a class="btn btn-circle" href={SOCIAL_MEDIA.github} target="_blank">
+    <GitHub class="w-6" />
+  </a>
+</div>

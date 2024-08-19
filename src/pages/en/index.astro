@@ -2,6 +2,8 @@
 import BaseLayout from "../../layouts/en/BaseLayout.astro"
 
 import Biography from "../../components/en/Biography.astro"
+import IndexLinks from "@components/IndexLinks.astro"
+
 import ProjectsComponent, {
   allProjects,
 } from "../../components/en/ProjectsComponent.astro"
@@ -10,16 +12,6 @@ import Experience, {
 } from "../../components/en/Experience.astro"
 import ListOfSkills from "../../components/en/ListOfSkills.astro"
 import Education from "../../components/en/Education.astro"
-
-import GitHub from "../../components/icons/GitHub.astro"
-import Youtube from "../../components/icons/Youtube.astro"
-import LinkedIn from "../../components/icons/LinkedIn.astro"
-
-// import { getRelativeLocaleUrl } from "astro:i18n"
-// <a
-//   class="btn btn-square bg-red-500"
-//   href={getRelativeLocaleUrl("en", "about")}
-// >
 ---
 
 <BaseLayout sideBarActiveItemID="home">
@@ -33,30 +25,7 @@ import LinkedIn from "../../components/icons/LinkedIn.astro"
     <div class="py-2 mt-4">
       <Biography />
     </div>
-    <div class="mt-5 mb-10 flex justify-start gap-7 flex-wrap">
-      <a
-        class="btn btm-nav-xs"
-        href="https://www.linkedin.com/in/edgararmandodelgadovega/"
-        target="_blank"
-      >
-        <LinkedIn class="w-6" />
-        Contact me
-      </a>
-      <a
-        class="btn btn-circle"
-        href="https://youtube.com/@edelvemusic"
-        target="_blank"
-      >
-        <Youtube class="w-6" />
-      </a>
-      <a
-        class="btn btn-circle"
-        href="https://github.com/edelveart"
-        target="_blank"
-      >
-        <GitHub class="w-6" />
-      </a>
-    </div>
+    <IndexLinks contactText="Contact me" />
 
     <ProjectsComponent projects={allProjects} indices={[0, 1]} />
     <Experience workExperiences={allExperiences} indices={[0, 1]} />

@@ -1,9 +1,7 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro"
-import GitHub from "@components/icons/GitHub.astro"
-import LinkedIn from "@components/icons/LinkedIn.astro"
-import Youtube from "@components/icons/Youtube.astro"
 import Biography from "@components/Biography.astro"
+import IndexLinks from "@components/IndexLinks.astro"
 import Experience, { allExperiences } from "@components/Experience.astro"
 import ProjectsComponent, {
   allProjects,
@@ -11,6 +9,7 @@ import ProjectsComponent, {
 
 import ListOfSkills from "@components/ListOfSkills.astro"
 import Education from "@components/Education.astro"
+
 // import { getCollection } from "astro:content";
 // import createSlug from "../lib/createSlug"
 // const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
@@ -28,30 +27,7 @@ import Education from "@components/Education.astro"
     <div class="py-2 mt-4">
       <Biography />
     </div>
-    <div class="mt-5 mb-10 flex justify-start gap-7 flex-wrap">
-      <a
-        class="btn btm-nav-xs"
-        href="https://www.linkedin.com/in/edgararmandodelgadovega/"
-        target="_blank"
-      >
-        <LinkedIn class="w-6" />
-        Contáctame
-      </a>
-      <a
-        class="btn btn-circle"
-        href="https://youtube.com/@edelvemusic"
-        target="_blank"
-      >
-        <Youtube class="w-6" />
-      </a>
-      <a
-        class="btn btn-circle"
-        href="https://github.com/edelveart"
-        target="_blank"
-      >
-        <GitHub class="w-6" />
-      </a>
-    </div>
+    <IndexLinks contactText="Contáctame" />
 
     <ProjectsComponent projects={allProjects} indices={[0, 1]} />
     <Experience workExperiences={allExperiences} indices={[0, 1]} />
