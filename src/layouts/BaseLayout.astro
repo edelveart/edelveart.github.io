@@ -8,6 +8,7 @@ import { ViewTransitions } from "astro:transitions"
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config"
 import FlagsLinkCss from "../components/FlagsLinkCss.astro"
 import Languages from "@components/Languages.astro"
+import { switchTheme } from "../components/Header.astro"
 
 const {
   image,
@@ -21,7 +22,7 @@ const { currentLocale } = Astro.props
 ---
 
 <!doctype html>
-<html lang={currentLocale} data-theme="autumn">
+<html lang={currentLocale} data-theme={switchTheme}>
   <head>
     <BaseHead
       title={title}

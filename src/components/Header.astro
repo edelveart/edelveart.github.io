@@ -1,6 +1,11 @@
 ---
 const currentLang = Astro.url.pathname.startsWith("/en") ? "en" : "es"
 import { spanishFlag, englishFlag } from "./Languages.astro"
+const COLOR_THEMES = {
+  dark: "sunset",
+  light: "autumn",
+}
+export let switchTheme = "sunset"
 ---
 
 <div
@@ -27,10 +32,20 @@ import { spanishFlag, englishFlag } from "./Languages.astro"
         currentLang === "es" ? (
           <a class="btn btn-ghost normal-case text-xl" href="/">
             Edgar Delgado Vega
+            <div class="hidden">
+              {switchTheme === COLOR_THEMES.dark
+                ? (switchTheme = COLOR_THEMES.light)
+                : (switchTheme = "sunset")}
+            </div>
           </a>
         ) : (
           <a class="btn btn-ghost normal-case text-xl" href="/en">
             Edgar Delgado Vega
+            <div class="hidden">
+              {switchTheme === COLOR_THEMES.light
+                ? (switchTheme = COLOR_THEMES.dark)
+                : (switchTheme = COLOR_THEMES.light)}
+            </div>
           </a>
         )
       }

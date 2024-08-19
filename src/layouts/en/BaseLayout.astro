@@ -18,10 +18,11 @@ const {
   ogType,
 } = Astro.props
 const { currentLocale } = Astro
+import { switchTheme } from "../../components/Header.astro"
 ---
 
 <!doctype html>
-<html lang={currentLocale} data-theme="emerald">
+<html lang={currentLocale} data-theme={switchTheme}>
   <head>
     <BaseHead
       title={SITE_TITLE}
