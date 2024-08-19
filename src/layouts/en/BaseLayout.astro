@@ -18,11 +18,11 @@ const {
   ogType,
 } = Astro.props
 const { currentLocale } = Astro
-import { getTheme } from "../../components/SwitcherTheme.astro"
+import { selectedTheme } from "../../components/switchTheme"
 ---
 
 <!doctype html>
-<html lang={currentLocale} data-theme={getTheme()}>
+<html lang={currentLocale} data-theme={selectedTheme}>
   <head>
     <BaseHead
       title={SITE_TITLE}
