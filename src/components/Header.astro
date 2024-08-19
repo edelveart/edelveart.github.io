@@ -39,11 +39,11 @@ import { spanishFlag, englishFlag } from "./Languages.astro"
     <div class="navbar-end">
       {
         currentLang === "es" ? (
-          <a class="mr-3 ml-4" href="/en">
+          <a class="mr-3 ml-4" href="/en" title="English">
             <span class={`btn btn-square btn-ghost ${englishFlag} w-7`} />
           </a>
         ) : (
-          <a class="mr-3 ml-4" href="/">
+          <a class="mr-3 ml-4" href="/" title="Español">
             <span class={`btn btn-square btn-ghost ${spanishFlag} w-7`} />
           </a>
         )
