@@ -1,7 +1,7 @@
 ---
 import HorizontalCard from "../HorizontalCard.astro"
 import Branch from "../icons/Branch.astro"
-
+import type { ProjectType } from "../HorizontalCard.astro"
 export const allProjects = [
   {
     title: "ts-tonnetz in the new live coding environment TOPOS!",
@@ -43,9 +43,9 @@ const filteredProjects = indices
   <Branch class="ml-0 mr-4" /> Projects
 </div>
 
-<div class="mb-10 mt-0">
+<section class="mb-10 mt-0">
   {
-    filteredProjects.map((project, index) => (
+    filteredProjects.map((project: ProjectType, index: number) => (
       <>
         <HorizontalCard
           key={index}
@@ -60,7 +60,7 @@ const filteredProjects = indices
       </>
     ))
   }
-</div>
+</section>
 
 <!-- <div class="mb-10 mt-2">
   <HorizontalCard

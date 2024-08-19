@@ -2,6 +2,14 @@
 const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props
 import { Image } from "astro:assets"
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag"
+
+export type ProjectType = {
+  title: string
+  img: string
+  desc: string
+  url: string
+  badge: string
+}
 ---
 
 <div
