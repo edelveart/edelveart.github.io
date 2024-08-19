@@ -1,21 +1,10 @@
----
-import ButtonLightDark from "./icons/ButtonLightDark.astro"
 const COLOR_THEMES = {
   dark: "sunset",
   light: "autumn",
 }
 export let selectedTheme = ""
-const switchTheme = () => {
+export const switchTheme = () => {
   selectedTheme === COLOR_THEMES.dark
     ? (selectedTheme = COLOR_THEMES.light)
     : (selectedTheme = COLOR_THEMES.dark)
 }
-export function getTheme() {
-  return selectedTheme
-}
----
-
-<ButtonLightDark />
-<div class="hidden">
-  {switchTheme}
-</div>

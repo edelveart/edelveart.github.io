@@ -1,15 +1,9 @@
 ---
 const currentLang = Astro.url.pathname.startsWith("/en") ? "en" : "es"
-// const currentURL = Astro.url.pathname
+const currentURL = Astro.url.pathname
 import { spanishFlag, englishFlag } from "./Languages.astro"
-// const COLOR_THEMES = {
-//   dark: "sunset",
-//   light: "autumn",
-// }
-// export let selectedTheme = "sunset"
-
-// import ButtonLightDark from "./icons/ButtonLightDark.astro"
-import SwitcherTheme from "./SwitcherTheme.astro"
+import { switchTheme } from "./switchTheme"
+import ButtonLightDark from "./icons/ButtonLightDark.astro"
 ---
 
 <div
@@ -34,13 +28,14 @@ import SwitcherTheme from "./SwitcherTheme.astro"
     <div class="navbar-center">
       {
         currentLang === "es" ? (
-          <div class="btn btn-ghost normal-case text-xl">
-            Edgar Delgado Vega <SwitcherTheme />
-          </div>
+          <a class="btn btn-ghost normal-case text-xl" href={currentURL}>
+            Edgar Delgado Vega <ButtonLightDark />
+            <div class="hidden">{switchTheme}</div>
+          </a>
         ) : (
-          <a class="btn btn-ghost normal-case text-xl" href="/en">
-            Edgar Delgado Vega
-            <SwitcherTheme />
+          <a class="btn btn-ghost normal-case text-xl" href={currentURL}>
+            Edgar Delgado Vega <ButtonLightDark />
+            <div class="hidden">{switchTheme}</div>
           </a>
         )
       }
