@@ -4,14 +4,14 @@ import Instagram from "./icons/Instagram.astro"
 import LinkedIn from "./icons/LinkedIn.astro"
 import Youtube from "./icons/Youtube.astro"
 import { SOCIAL_MEDIA } from "src/config"
-const cssFooterIcons = "mr-3 hover:scale-125 transition ease-in-out delay-50"
+const cssIconsClass = "mx-3 hover:scale-125 transition ease-in-out delay-50"
 ---
 
 <a
   href={SOCIAL_MEDIA.linkedin}
   target="_blank"
   title="LinkedIn"
-  class={cssFooterIcons}
+  class={cssIconsClass}
   aria-label="LinkedIn"
 >
   <LinkedIn />
@@ -21,7 +21,7 @@ const cssFooterIcons = "mr-3 hover:scale-125 transition ease-in-out delay-50"
   href={SOCIAL_MEDIA.github}
   target="_blank"
   title="GitHub"
-  class={cssFooterIcons}
+  class={cssIconsClass}
   aria-label="GitHub"
 >
   <GitHub />
@@ -31,7 +31,7 @@ const cssFooterIcons = "mr-3 hover:scale-125 transition ease-in-out delay-50"
   href={SOCIAL_MEDIA.youtube}
   title="Youtube"
   target="_blank"
-  class={cssFooterIcons}
+  class={cssIconsClass}
   aria-label="Youtube"
 >
   <Youtube />
@@ -41,7 +41,7 @@ const cssFooterIcons = "mr-3 hover:scale-125 transition ease-in-out delay-50"
   href={SOCIAL_MEDIA.instagram}
   target="_blank"
   title="Instagram"
-  class={cssFooterIcons}
+  class={cssIconsClass}
   aria-label="Instagram"
 >
   <Instagram />
