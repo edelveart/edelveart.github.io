@@ -3,42 +3,46 @@ import GitHub from "./icons/GitHub.astro"
 import Instagram from "./icons/Instagram.astro"
 import LinkedIn from "./icons/LinkedIn.astro"
 import Youtube from "./icons/Youtube.astro"
-
-const {} = Astro.props
+import { SOCIAL_MEDIA } from "src/config"
+const cssFooterIcons = "mr-3 hover:scale-125 transition ease-in-out delay-50"
 ---
 
 <a
-  href="https://www.linkedin.com/in/edgararmandodelgadovega/"
+  href={SOCIAL_MEDIA.linkedin}
   target="_blank"
-  class="mr-3 hover:scale-125 transition ease-in-out delay-50"
-  aria-label="Linkedin"
-  title="Linkedin"
+  title="LinkedIn"
+  class={cssFooterIcons}
+  aria-label="LinkedIn"
 >
   <LinkedIn />
 </a>
 
 <a
-  class="mx-3 hover:scale-125 transition ease-in-out delay-50"
+  href={SOCIAL_MEDIA.github}
   target="_blank"
-  href="https://github.com/edelveart/"
   title="GitHub"
+  class={cssFooterIcons}
+  aria-label="GitHub"
 >
   <GitHub />
 </a>
+
 <a
-  class="mx-3 hover:scale-125 transition ease-in-out delay-50"
+  href={SOCIAL_MEDIA.youtube}
+  title="Youtube"
   target="_blank"
-  href="https://www.youtube.com/@edelvemusic"
-  title="GitHub"
+  class={cssFooterIcons}
+  aria-label="Youtube"
 >
   <Youtube />
 </a>
+
 <a
-  href="https://www.instagram.com/edgardelgadovega/"
+  href={SOCIAL_MEDIA.instagram}
   target="_blank"
-  class="mx-3 hover:scale-125 transition ease-in-out delay-50"
-  aria-label="Instagram"
   title="Instagram"
+  class={cssFooterIcons}
+  aria-label="Instagram"
 >
   <Instagram />
 </a>
