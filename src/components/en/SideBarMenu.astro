@@ -5,27 +5,31 @@ import Curriculum from "../icons/Curriculum.astro"
 
 const { sideBarActiveItemID } = Astro.props
 const activeClass = "bg-base-300" // For primary color replace with `active` class
+import { sideMenuCss } from "@components/SideBarMenu.astro"
 ---
 
 <ul class="menu grow shrink menu-md overflow-y-auto">
-  <strong class="flex justify-center mb-5">Edgar Delgado Vega</strong>
+  <strong class="flex justify-center mb-5 text-2xl md:text-base"
+    >Edgar Delgado Vega</strong
+  >
   <li>
     <!-- <a class="py-3 text-base" id="home" href="/" -->
-    <a class="py-3" id="home" href="/en"
+    <a class=`${sideMenuCss.divCss}` id="home" href="/"
       ><Home />
-      <span class="ml-[4px]">Home</span>
+      <span class=`${sideMenuCss.spanText}`>Home</span>
     </a>
   </li>
   <li>
-    <a class="py-3" id="projects" href="/en/projects"
+    <a class=`${sideMenuCss.divCss}` id="projects" href="/projects"
       ><Branch />
-      <span class="ml-[0.35em]">Projects</span>
+
+      <span class=`${sideMenuCss.spanText}`>Projects</span>
     </a>
   </li>
   <li>
-    <a class="py-3" id="cv" href="/en/cv">
+    <a class=`${sideMenuCss.divCss}` id="cv" href="/cv">
       <Curriculum />
-      <span class="ml-[6px]">CV</span>
+      <span class=`${sideMenuCss.spanText}`>CV</span>
     </a>
   </li>
   <li>

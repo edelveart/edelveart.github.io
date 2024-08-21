@@ -5,8 +5,8 @@ import Curriculum from "./icons/Curriculum.astro"
 
 const { sideBarActiveItemID } = Astro.props
 const activeClass = "bg-base-300" // For primary color replace with `active` class
-const sideMenuCss = {
-  divCss: "justify-center md:justify-start",
+export const sideMenuCss = {
+  divCss: "py-3 justify-center md:justify-start",
   spanText: "text-xl md:text-sm",
 }
 ---
@@ -17,26 +17,22 @@ const sideMenuCss = {
   >
   <li>
     <!-- <a class="py-3 text-base" id="home" href="/" -->
-    <a class="py-3 justify-center md:justify-start" id="home" href="/"
+    <a class=`${sideMenuCss.divCss}` id="home" href="/"
       ><Home />
-      <span class=`ml-[4px] ${sideMenuCss.spanText}`>Inicio</span>
+      <span class=`${sideMenuCss.spanText}`>Inicio</span>
     </a>
   </li>
   <li>
-    <a
-      class="py-3 justify-center md:justify-start"
-      id="projects"
-      href="/projects"
+    <a class=`${sideMenuCss.divCss}` id="projects" href="/projects"
       ><Branch />
-      <span class=`ml-[0.35em] ${sideMenuCss.spanText}`
-        >Proyectos de software</span
-      >
+
+      <span class=`${sideMenuCss.spanText}`>Proyectos de software</span>
     </a>
   </li>
   <li>
-    <a class="py-3 justify-center md:justify-start" id="cv" href="/cv">
+    <a class=`${sideMenuCss.divCss}` id="cv" href="/cv">
       <Curriculum />
-      <span class=`ml-[6px] ${sideMenuCss.spanText}`>Curriculum Vitae</span>
+      <span class=`${sideMenuCss.spanText}`>Curriculum Vitae</span>
     </a>
   </li>
   <li>
