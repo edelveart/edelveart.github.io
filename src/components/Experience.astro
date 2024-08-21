@@ -32,7 +32,7 @@ export const allExperiences = [
 
 const { workExperiences, indices } = Astro.props
 const filteredExperiences = indices
-  ? indices.map((index) => workExperiences[index]).filter(Boolean)
+  ? indices.map((index: number) => workExperiences[index]).filter(Boolean)
   : workExperiences
 ---
 
@@ -44,7 +44,7 @@ const filteredExperiences = indices
 
 <div class="time-line-container mb-8 grid gap-4">
   {
-    filteredExperiences.map((experience, index) => (
+    filteredExperiences.map((experience, index: number) => (
       <>
         <TimeLineElement
           key={index}

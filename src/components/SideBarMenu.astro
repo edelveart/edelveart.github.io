@@ -5,27 +5,38 @@ import Curriculum from "./icons/Curriculum.astro"
 
 const { sideBarActiveItemID } = Astro.props
 const activeClass = "bg-base-300" // For primary color replace with `active` class
+const sideMenuCss = {
+  divCss: "justify-center md:justify-start",
+  spanText: "text-xl md:text-sm",
+}
 ---
 
 <ul class="menu grow shrink menu-md overflow-y-auto">
-  <strong class="flex justify-center mb-5">Edgar Delgado Vega</strong>
+  <strong class="flex justify-center mb-5 text-2xl md:text-base"
+    >Edgar Delgado Vega</strong
+  >
   <li>
     <!-- <a class="py-3 text-base" id="home" href="/" -->
-    <a class="py-3" id="home" href="/"
+    <a class="py-3 justify-center md:justify-start" id="home" href="/"
       ><Home />
-      <span class="ml-[4px]">Inicio</span>
+      <span class=`ml-[4px] ${sideMenuCss.spanText}`>Inicio</span>
     </a>
   </li>
   <li>
-    <a class="py-3" id="projects" href="/projects"
+    <a
+      class="py-3 justify-center md:justify-start"
+      id="projects"
+      href="/projects"
       ><Branch />
-      <span class="ml-[0.35em]">Proyectos de software</span>
+      <span class=`ml-[0.35em] ${sideMenuCss.spanText}`
+        >Proyectos de software</span
+      >
     </a>
   </li>
   <li>
-    <a class="py-3" id="cv" href="/cv">
+    <a class="py-3 justify-center md:justify-start" id="cv" href="/cv">
       <Curriculum />
-      <span class="ml-[6px]">Curriculum Vitae</span>
+      <span class=`ml-[6px] ${sideMenuCss.spanText}`>Curriculum Vitae</span>
     </a>
   </li>
   <li>

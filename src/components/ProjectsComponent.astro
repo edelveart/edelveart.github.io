@@ -36,7 +36,7 @@ export const allProjects = [
 
 const { projects, indices } = Astro.props
 const filteredProjects = indices
-  ? indices.map((index) => projects[index]).filter(Boolean)
+  ? indices.map((index: number) => projects[index]).filter(Boolean)
   : projects
 ---
 
