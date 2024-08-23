@@ -1,3 +1,10 @@
 .time-line-container>div:last-child .education__time>.education__line {
     display: none;
 }
+
+.mask-top {
+  /* mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 1%, rgb(21, 21, 160) 8%); */
+
+  /* -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 1) 98%); */
+  border-radius: 20%;
+}

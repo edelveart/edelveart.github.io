@@ -2,6 +2,7 @@
 import SideBarFooter from "../SideBarFooter.astro"
 import { Image } from "astro:assets"
 import SideBarMenu from "./SideBarMenu.astro"
+import PhotoProfile from "@components/PhotoProfile.astro"
 const { sideBarActiveItemID } = Astro.props
 ---
 
@@ -16,14 +17,7 @@ const { sideBarActiveItemID } = Astro.props
           class="avatar transition ease-in-out hover:scale-[102%] block m-auto"
         >
           <div class="w-28">
-            <Image
-              class="mask mask-circle"
-              format="webp"
-              width={300}
-              height={300}
-              src="/edelvephoto2.webp"
-              alt="Photo Edgar Delgado Vega"
-            />
+            <PhotoProfile />
           </div>
         </div>
       </a>
