@@ -1,5 +1,17 @@
 ---
 import Skills from "./icons/Skills.astro"
+
+export const techSkills: string[] = [
+  "TypeScript | Node.js | Express | SQL | Git",
+  "Cierto conocimiento de Ruby y Python",
+  "LaTex | BibTex | GeoGebra | Zotero",
+  "Sonic Pi | Musescore | Reaper",
+]
+
+const { indices = [] } = Astro.props
+const filteredSkills = indices
+  .map((index) => techSkills[index])
+  .filter((skill) => skill !== undefined)
 ---
 
 <div class="mb-5 mt-[-1rem]">
@@ -10,9 +22,15 @@ import Skills from "./icons/Skills.astro"
 
 <ul id="skill-list" class="list-disc columns-2 mx-6 mb-8">
   <div class="ml-3">
+    {filteredSkills.map((skill) => <li>{skill}</li>)}
+  </div>
+</ul>
+<!--
+<ul id="skill-list" class="list-disc columns-2 mx-6 mb-8">
+  <div class="ml-3">
     <li>TypeScript, Node, Express, SQL, Git</li>
     <li>Cierto conocimiento de Ruby y Python</li>
     <li>Sonic Pi, Musescore, Reaper</li>
     <li>LaTex, BibTeX, GeoGebra, Zotero</li>
   </div>
-</ul>
+</ul> -->

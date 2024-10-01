@@ -9,6 +9,7 @@ import ProjectsComponent, {
 
 import ListOfSkills from "@components/ListOfSkills.astro"
 import Education from "@components/Education.astro"
+import { techSkills } from "@components/ListOfSkills.astro"
 
 // import { getCollection } from "astro:content";
 // import createSlug from "../lib/createSlug"
@@ -33,7 +34,7 @@ import Education from "@components/Education.astro"
 
     <ProjectsComponent projects={allProjects} indices={[0, 2]} />
     <Experience workExperiences={allExperiences} indices={[0, 1]} />
-    <ListOfSkills />
+    <ListOfSkills listOfSkills={techSkills} indices={[0, 1]} />
     <Education />
 
     <!-- <div>

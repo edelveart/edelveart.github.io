@@ -2,6 +2,7 @@
 import BaseLayout from "@layouts/en/BaseLayout.astro"
 import Experience, { allExperiences } from "@components/en/Experience.astro"
 import ListOfSkills from "@components/en/ListOfSkills.astro"
+import { techSkills } from "@components/ListOfSkills.astro"
 import Education from "@components/en/Education.astro"
 import Curriculum from "@components/icons/Curriculum.astro"
 ---
@@ -32,7 +33,7 @@ import Curriculum from "@components/icons/Curriculum.astro"
     </ul>
   </div>
 
-  <ListOfSkills />
+  <ListOfSkills listOfSkills={techSkills} indices={[0, 1, 2, 3]} />
 
   <Experience workExperiences={allExperiences} />
 

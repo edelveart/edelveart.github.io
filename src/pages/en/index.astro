@@ -11,6 +11,7 @@ import Experience, {
   allExperiences,
 } from "../../components/en/Experience.astro"
 import ListOfSkills from "../../components/en/ListOfSkills.astro"
+import { techSkills } from "../../components/en/ListOfSkills.astro"
 import Education from "../../components/en/Education.astro"
 ---
 
@@ -31,7 +32,7 @@ import Education from "../../components/en/Education.astro"
 
     <ProjectsComponent projects={allProjects} indices={[0, 2]} />
     <Experience workExperiences={allExperiences} indices={[0, 1]} />
-    <ListOfSkills />
+    <ListOfSkills listOfSkills={techSkills} indices={[0, 1]} />
     <Education />
 
     <!-- <div>
