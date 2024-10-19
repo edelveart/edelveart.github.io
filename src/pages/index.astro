@@ -1,15 +1,15 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro"
-import Biography from "@components/Biography.astro"
-import IndexLinks from "@components/IndexLinks.astro"
-import Experience, { allExperiences } from "@components/Experience.astro"
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Biography from "@components/Biography.astro";
+import IndexLinks from "@components/IndexLinks.astro";
+import Experience, { allExperiences } from "@components/Experience.astro";
 import ProjectsComponent, {
   allProjects,
-} from "@components/ProjectsComponent.astro"
+} from "@components/ProjectsComponent.astro";
 
-import ListOfSkills from "@components/ListOfSkills.astro"
-import Education from "@components/Education.astro"
-import { techSkills } from "@components/ListOfSkills.astro"
+import ListOfSkills from "@components/ListOfSkills.astro";
+import Education from "@components/Education.astro";
+import { techSkills } from "@components/ListOfSkills.astro";
 
 // import { getCollection } from "astro:content";
 // import createSlug from "../lib/createSlug"
@@ -32,8 +32,8 @@ import { techSkills } from "@components/ListOfSkills.astro"
     </div>
     <IndexLinks contactText="Contáctame" />
 
-    <ProjectsComponent projects={allProjects} indices={[0, 2]} />
     <Experience workExperiences={allExperiences} indices={[0, 1]} />
+    <ProjectsComponent projects={allProjects} indices={[0, 2]} />
     <ListOfSkills listOfSkills={techSkills} indices={[0, 1]} />
     <Education />
 

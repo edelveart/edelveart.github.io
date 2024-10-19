@@ -1,18 +1,18 @@
 ---
-import BaseLayout from "../../layouts/en/BaseLayout.astro"
+import BaseLayout from "../../layouts/en/BaseLayout.astro";
 
-import Biography from "../../components/en/Biography.astro"
-import IndexLinks from "@components/IndexLinks.astro"
+import Biography from "../../components/en/Biography.astro";
+import IndexLinks from "@components/IndexLinks.astro";
 
 import ProjectsComponent, {
   allProjects,
-} from "../../components/en/ProjectsComponent.astro"
+} from "../../components/en/ProjectsComponent.astro";
 import Experience, {
   allExperiences,
-} from "../../components/en/Experience.astro"
-import ListOfSkills from "../../components/en/ListOfSkills.astro"
-import { techSkills } from "../../components/en/ListOfSkills.astro"
-import Education from "../../components/en/Education.astro"
+} from "../../components/en/Experience.astro";
+import ListOfSkills from "../../components/en/ListOfSkills.astro";
+import { techSkills } from "../../components/en/ListOfSkills.astro";
+import Education from "../../components/en/Education.astro";
 ---
 
 <BaseLayout sideBarActiveItemID="home">
@@ -30,8 +30,8 @@ import Education from "../../components/en/Education.astro"
     </div>
     <IndexLinks contactText="Contact me" />
 
-    <ProjectsComponent projects={allProjects} indices={[0, 2]} />
     <Experience workExperiences={allExperiences} indices={[0, 1]} />
+    <ProjectsComponent projects={allProjects} indices={[0, 2]} />
     <ListOfSkills listOfSkills={techSkills} indices={[0, 1]} />
     <Education />
 
