@@ -1,8 +1,14 @@
 ---
-import TimeLineElement from "../TimeLine.astro"
-import Work from "../icons/Work.astro"
+import TimeLineElement from "../TimeLine.astro";
+import Work from "../icons/Work.astro";
 
 export const allExperiences = [
+  {
+    title: "ZifferJS | TypeScript Software Developer",
+    subtitle: "oct.2023 - present | Remote",
+    description:
+      "I collaborate on the development of ZifferJS, a generative music notation and parser written entirely in TypeScript. It is designed for use in any live coding environment that supports web technologies. My responsibilities include implementing mathematical concepts from simplicial complexes, performing unit testing (Vitest), writing documentation for Topos, and creating generator functions to work with infinite sequences.",
+  },
   {
     title:
       "Newman Graduate School | Professor of the Master's Degree in Musicology",
@@ -28,12 +34,12 @@ export const allExperiences = [
     description:
       "Teaching music theory and performance. Technologies: MuseScore 2.",
   },
-]
+];
 
-const { workExperiences, indices } = Astro.props
+const { workExperiences, indices } = Astro.props;
 const filteredExperiences = indices
   ? indices.map((index) => workExperiences[index]).filter(Boolean)
-  : workExperiences
+  : workExperiences;
 ---
 
 <div class="mb-5 mt-0" id="EXPERIENCE">

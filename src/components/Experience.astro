@@ -1,8 +1,14 @@
 ---
-import TimeLineElement from "./TimeLine.astro"
-import Work from "./icons/Work.astro"
+import TimeLineElement from "./TimeLine.astro";
+import Work from "./icons/Work.astro";
 
 export const allExperiences = [
+  {
+    title: "ZifferJS | TypeScript Software Developer",
+    subtitle: "oct.2023 - currently | Finland | Remote ",
+    description:
+      "Colaboro en el desarrollo de ZifferJS, un analizador y notación musical generativo escrito completamente en TypeScript. Está diseñado para usarse en cualquier entorno de codificación en vivo que admita tecnologías web. Mis responsabilidades incluyen implementar conceptos matemáticos a partir de complejos simpliciales, hacer pruebas unitarias (vitest), escribir documentación para Topos y crear funciones generadoras para trabajar con secuencias infinitas.",
+  },
   {
     title: "Escuela de Posgrado Newman | Docente de Maestría en Musicología",
     subtitle: "may.2024 - actualidad | Lima, Perú | En remoto",
@@ -28,12 +34,12 @@ export const allExperiences = [
     description:
       "Enseñanza de teoría e interpretación musical. Tecnologías: MuseScore 2.",
   },
-]
+];
 
-const { workExperiences, indices } = Astro.props
+const { workExperiences, indices } = Astro.props;
 const filteredExperiences = indices
   ? indices.map((index: number) => workExperiences[index]).filter(Boolean)
-  : workExperiences
+  : workExperiences;
 ---
 
 <div class="mb-5 mt-0" id="EXPERIENCE">
