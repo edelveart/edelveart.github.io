@@ -1,13 +1,13 @@
 ---
-import HorizontalCard from "./HorizontalCard.astro"
-import Branch from "./icons/Branch.astro"
-import type { ProjectType } from "./HorizontalCard.astro"
+import HorizontalCard from "./HorizontalCard.astro";
+import Branch from "./icons/Branch.astro";
+import type { ProjectType } from "./HorizontalCard.astro";
 
 export const allProjects = [
   {
     title: "ts-tonnetz in the new live coding environment TOPOS!",
     img: "/topos-docs.webp",
-    desc: "Since December 2023, you can improvise with my library 'ts-tonnetz' within Topos (a new live coding environment designed by Raphaël Forment and Miika Alonen). 'ts-tonnetz'  serves as a dependency for Ziffers, a numerical notation system for algorithmic composition. Topos has exceptionally simplified but sufficient documentation of ts-tonnetz, where many of the ideas of 2 doctoral theses on mathematical music theory are explained (see Bigo, 2013; Cannas, 2018), among other most notable research articles in the field.",
+    desc: "Since December 2023, my library 'ts-tonnetz' is part of the Topos live coding environment created by Raphaël Forment and Miika Alonen. It serves as a dependency for Ziffers, a numerical notation system. For your convenience, I wrote documentation that synthesizes two PhD theses on mathematical music theory and other key research.",
     url: "https://topos.live/#ziffers_tonnetz",
     badge: "Topos.live | TypeScript",
   },
@@ -32,12 +32,12 @@ export const allProjects = [
     url: "https://pypi.org/project/figuratenum/",
     badge: "PyPi | Python",
   },
-]
+];
 
-const { projects, indices } = Astro.props
+const { projects, indices } = Astro.props;
 const filteredProjects = indices
   ? indices.map((index: number) => projects[index]).filter(Boolean)
-  : projects
+  : projects;
 ---
 
 <div class="text-2xl w-full font-bold flex items-center mt-8" id="PROJECTS">
