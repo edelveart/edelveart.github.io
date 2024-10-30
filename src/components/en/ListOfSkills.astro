@@ -1,16 +1,16 @@
 ---
-import Skills from "../icons/Skills.astro"
+import Skills from "../icons/Skills.astro";
 
 export const techSkills: string[] = [
-  "TypeScript | Node.js | Express | SQL | Git",
+  "TypeScript, Node.js, Express, SQL, Git",
   "Some knowledge of Ruby and Python",
-  "LaTex | BibTex | GeoGebra | Zotero",
-  "Sonic Pi | MuseScore | Reaper",
-]
-const { indices = [] } = Astro.props
+  "LaTex, BibTex, GeoGebra, Zotero",
+  "Sonic Pi, MuseScore, Reaper",
+];
+const { indices = [] } = Astro.props;
 const filteredSkills = indices
   .map((index) => techSkills[index])
-  .filter((skill) => skill !== undefined)
+  .filter((skill) => skill !== undefined);
 ---
 
 <div class="mb-5 mt-[-1rem]">
