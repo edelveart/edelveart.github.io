@@ -8,83 +8,90 @@ import Curriculum from "@components/icons/Curriculum.astro";
 ---
 
 <BaseLayout title="Resume" sideBarActiveItemID="cv">
-  <div class="mb-5 mt-5" id="CURRICULUM">
-    <div class="text-2xl w-full font-bold flex items-center">
-      <Curriculum class="ml-0 mr-4" />Profile
+  <div class="pb-3 mt-5 max-w-[700px]">
+    <div class="mb-5 mt-5" id="CURRICULUM">
+      <div class="text-2xl w-full font-bold flex items-center">
+        <Curriculum class="ml-0 mr-4" />Profile
+      </div>
     </div>
-  </div>
 
-  <div class="mb-10 max-w-[700px]">
-    I am passionate about problem-solving and self-learning in technological
-    environments, as well as a mathematics enthusiast with a particular interest
-    in software development.
-    <br />
-    I have experience teaching both in-person and online at the undergraduate and
-    graduate levels, with a focus on subjects such as music theory and technology,
-    musicology, and live coding.
-    <br />
-    <br />
+    <article class="mb-10 max-w-[700px]">
+      I am passionate about problem-solving and self-learning in technological
+      environments, as well as a mathematics enthusiast with a particular
+      interest in software development.
+      <br />
+      I have experience teaching both in-person and online at the undergraduate and
+      graduate levels, with a focus on subjects such as music theory and technology,
+      musicology, and live coding.
+      <br />
+      <br />
 
-    Research Areas:
-    <ul class="ml-9 list-none">
-      <li>⚫ Mathematical Music Theory</li>
-      <li>⚫ Domain-Specific Languages (DSLs) for Music</li>
-      <li>⚫ Computer-Assisted Music Composition and Improvisation</li>
+      Research Areas:
+      <ul class="ml-9 list-none">
+        <li>⚫ Mathematical Music Theory</li>
+        <li>⚫ Domain-Specific Languages (DSLs) for Music</li>
+        <li>⚫ Computer-Assisted Music Composition and Improvisation</li>
+      </ul>
+    </article>
+
+    <ListOfSkills listOfSkills={techSkills} indices={[0, 1, 2, 3]} />
+
+    <Experience workExperiences={allExperiences} />
+
+    <Education />
+
+    <div class="mb-5 mt-8">
+      <article class="text-2xl w-full font-bold">
+        Participation in Conferences
+      </article>
+    </div>
+
+    <ul class="list-disc ml-8 mb-5 grid gap-2 max-w-[700px]">
+      <li>
+        Speaker at Constelaciones: Interdisciplinary Congress on Art, Science,
+        and Technology organized by UTEC, PUCP, MAC-LIMA, and Fundación
+        Telefónica (2022). Presentation: <b
+          >Euclid in Live Coding? Algorithms and Mathematical Concepts During
+          Real-Time Coding.</b
+        >
+      </li>
+      <li>
+        Invited speaker at the 32nd International Guitar Festival of Ipcna
+        (2021). Presentation: <b
+          >Transformational Theories in Mathematical Music Theory.</b
+        >
+      </li>
+      <li>
+        PUCP (2015). Participant (observer) at the <b
+          >Latin American and Pan-American Conference on Music Education</b
+        > - ISME.
+      </li>
+    </ul>
+
+    <div class="mb-5 mt-8">
+      <article class="text-2xl w-full font-bold">
+        Courses and certifications
+      </article>
+    </div>
+
+    <ul class="list-disc ml-8 mb-8 grid gap-2 max-w-[700px]">
+      <li>
+        National University of Engineering and Institute of Mathematics and
+        Related Sciences, UNI-IMCA (2022). <b
+          >Mini-Course Anthology of Mathematical Ingenuities. Final project on
+          GitHub.</b
+        >
+      </li>
+      <li>
+        PUCP (2016). <b
+          >Creativity in the Music Classroom: Didactic and Evaluative
+          Strategies.
+        </b> Taught by Dr. Ana Lucía Frega.
+      </li>
+      <li>
+        PUCP (2015). <b>Methodologies of Research in Music.</b>
+        Taught by Dr. Ana Lucía Frega.
+      </li>
     </ul>
   </div>
-
-  <ListOfSkills listOfSkills={techSkills} indices={[0, 1, 2, 3]} />
-
-  <Experience workExperiences={allExperiences} />
-
-  <Education />
-
-  <div class="mb-5 mt-8">
-    <div class="text-2xl w-full font-bold">Participation in Conferences</div>
-  </div>
-
-  <ul class="list-disc ml-8 mb-5 grid gap-2 max-w-[700px]">
-    <li>
-      Speaker at Constelaciones: Interdisciplinary Congress on Art, Science, and
-      Technology organized by UTEC, PUCP, MAC-LIMA, and Fundación Telefónica
-      (2022). Presentation: <b
-        >Euclid in Live Coding? Algorithms and Mathematical Concepts During
-        Real-Time Coding.</b
-      >
-    </li>
-    <li>
-      Invited speaker at the 32nd International Guitar Festival of Ipcna (2021).
-      Presentation: <b
-        >Transformational Theories in Mathematical Music Theory.</b
-      >
-    </li>
-    <li>
-      PUCP (2015). Participant (observer) at the <b
-        >Latin American and Pan-American Conference on Music Education</b
-      > - ISME.
-    </li>
-  </ul>
-
-  <div class="mb-5 mt-8">
-    <div class="text-2xl w-full font-bold">Courses and certifications</div>
-  </div>
-
-  <ul class="list-disc ml-8 mb-8 grid gap-2 max-w-[700px]">
-    <li>
-      National University of Engineering and Institute of Mathematics and
-      Related Sciences, UNI-IMCA (2022). <b
-        >Mini-Course Anthology of Mathematical Ingenuities. Final project on
-        GitHub.</b
-      >
-    </li>
-    <li>
-      PUCP (2016). <b
-        >Creativity in the Music Classroom: Didactic and Evaluative Strategies.
-      </b> Taught by Dr. Ana Lucía Frega.
-    </li>
-    <li>
-      PUCP (2015). <b>Methodologies of Research in Music.</b>
-      Taught by Dr. Ana Lucía Frega.
-    </li>
-  </ul>
 </BaseLayout>

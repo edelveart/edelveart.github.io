@@ -18,7 +18,7 @@ import { techSkills } from "@components/ListOfSkills.astro";
 ---
 
 <BaseLayout sideBarActiveItemID="home">
-  <div class="pb-3 mt-5">
+  <div class="pb-3 mt-5 max-w-[700px]">
     <div class="text-3xl font-bold leading-snug text-secondary py-0">
       Hola, soy
       <strong>Edgar</strong>👋
@@ -29,8 +29,8 @@ import { techSkills } from "@components/ListOfSkills.astro";
 
     <div class="py-2 mt-4 max-w-[700px]">
       <Biography />
+      <IndexLinks contactText="Contáctame" />
     </div>
-    <IndexLinks contactText="Contáctame" />
 
     <Experience workExperiences={allExperiences} indices={[0, 1, 2]} />
     <ProjectsComponent projects={allProjects} indices={[0, 2]} />

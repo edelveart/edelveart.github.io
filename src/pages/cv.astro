@@ -8,83 +8,92 @@ import Curriculum from "@components/icons/Curriculum.astro";
 ---
 
 <BaseLayout title="Resume" sideBarActiveItemID="cv">
-  <div class="mb-5 mt-5" id="CURRICULUM">
-    <div class="text-2xl w-full font-bold flex items-center">
-      <Curriculum class="ml-0 mr-4" />Perfil
+  <div class="pb-3 mt-5 max-w-[700px]">
+    <div class="mb-5 mt-5" id="CURRICULUM">
+      <div class="text-2xl w-full font-bold flex items-center">
+        <Curriculum class="ml-0 mr-4 max-w-none" />Perfil
+      </div>
     </div>
-  </div>
 
-  <div class="mb-10 max-w-[700px]">
-    Soy un apasionado de la resolución de problemas y del autoaprendizaje en
-    entornos tecnológicos, así como entusiasta de las matemáticas con especial
-    interés en el desarrollo de software.
-    <br />
-    Cuento con experiencia en docencia presencial y virtual en el nivel superior
-    y posgrado, con énfasis en áreas como teoría y tecnología musical, musicología
-    y live coding.
-    <br />
-    <br />
+    <article class="mb-10 max-w-[700px]">
+      <p>
+        Soy un apasionado de la resolución de problemas y del autoaprendizaje en
+        entornos tecnológicos, así como entusiasta de las matemáticas con
+        especial interés en el desarrollo de software.
+        <br />
+        Cuento con experiencia en docencia presencial y virtual en el nivel superior
+        y posgrado, con énfasis en áreas como teoría y tecnología musical, musicología
+        y live coding.
+      </p>
+      <br />
 
-    Líneas de investigación:
-    <ul class="ml-9 list-none">
-      <li>⚫ Teoría matemática de la música</li>
-      <li>⚫ Lenguajes específicos de dominio (DSLs) para la música</li>
-      <li>⚫ Composición e improvisación musical asistida por ordenador</li>
+      Líneas de investigación:
+      <ul class="ml-9 list-none">
+        <li>⚫ Teoría matemática de la música</li>
+        <li>⚫ Lenguajes específicos de dominio (DSLs) para la música</li>
+        <li>⚫ Composición e improvisación musical asistida por ordenador</li>
+      </ul>
+    </article>
+
+    <ListOfSkills listOfSkills={techSkills} indices={[0, 1, 2, 3]} />
+
+    <Experience workExperiences={allExperiences} />
+
+    <Education />
+
+    <div class="mb-5 mt-8">
+      <article class="text-2xl w-full font-bold">
+        Participación en Congresos
+      </article>
+    </div>
+
+    <ul class="list-disc ml-8 mb-5 grid gap-2 max-w-[700px]">
+      <li>
+        Ponente en Constelaciones: Congreso Interdisciplinario de Arte, Ciencia
+        y Tecnología organizado por UTEC, PUCP, MAC-LIMA y Fundación Telefónica
+        (2022). Ponencia: <b
+          >¿Euclides en el live coding? Algoritmos y conceptos matemáticos
+          durante la codificación en tiempo real.</b
+        >
+      </li>
+      <li>
+        Conferencista invitado en el marco del 32° Festival Internacional de
+        Guitarra del Ipcna (2021). Ponencia: <b
+          >Teorías Transformacionales de la Teoría Matemática de la Música.</b
+        >
+      </li>
+      <li>
+        PUCP (2015). Participante oyente en la <b
+          >Conferencia Regional Latinoamericana y Panamericana de Educación
+          Musical</b
+        > - ISME.
+      </li>
+    </ul>
+
+    <div class="mb-5 mt-8">
+      <article class="text-2xl w-full font-bold">
+        Cursos y certificaciones
+      </article>
+    </div>
+
+    <ul class="list-disc ml-8 mb-8 grid gap-2 max-w-[700px]">
+      <li>
+        Universidad Nacional de Ingeniería e Instituto de Matemáticas y Ciencias
+        Afines, IMCA (2022). <b
+          >Minicurso Antología de Ingenios Matemáticos. Proyecto final en
+          GitHub.</b
+        >
+      </li>
+      <li>
+        PUCP (2016). <b
+          >Creatividad en el aula de música. Estrategias didácticas y
+          evaluativas.
+        </b> Dictado por la Dra. Ana Lucía Frega.
+      </li>
+      <li>
+        PUCP (2015). <b>Metodologías de la Investigación en Música.</b> Dictado por
+        la Dra. Ana Lucía Frega.
+      </li>
     </ul>
   </div>
-
-  <ListOfSkills listOfSkills={techSkills} indices={[0, 1, 2, 3]} />
-
-  <Experience workExperiences={allExperiences} />
-
-  <Education />
-
-  <div class="mb-5 mt-8">
-    <div class="text-2xl w-full font-bold">Participación en Congresos</div>
-  </div>
-
-  <ul class="list-disc ml-8 mb-5 grid gap-2 max-w-[700px]">
-    <li>
-      Ponente en Constelaciones: Congreso Interdisciplinario de Arte, Ciencia y
-      Tecnología organizado por UTEC, PUCP, MAC-LIMA y Fundación Telefónica
-      (2022). Ponencia: <b
-        >¿Euclides en el live coding? Algoritmos y conceptos matemáticos durante
-        la codificación en tiempo real.</b
-      >
-    </li>
-    <li>
-      Conferencista invitado en el marco del 32° Festival Internacional de
-      Guitarra del Ipcna (2021). Ponencia: <b
-        >Teorías Transformacionales de la Teoría Matemática de la Música.</b
-      >
-    </li>
-    <li>
-      PUCP (2015). Participante oyente en la <b
-        >Conferencia Regional Latinoamericana y Panamericana de Educación
-        Musical</b
-      > - ISME.
-    </li>
-  </ul>
-
-  <div class="mb-5 mt-8">
-    <div class="text-2xl w-full font-bold">Cursos y certificaciones</div>
-  </div>
-
-  <ul class="list-disc ml-8 mb-8 grid gap-2 max-w-[700px]">
-    <li>
-      Universidad Nacional de Ingeniería e Instituto de Matemáticas y Ciencias
-      Afines, IMCA (2022). <b
-        >Minicurso Antología de Ingenios Matemáticos. Proyecto final en GitHub.</b
-      >
-    </li>
-    <li>
-      PUCP (2016). <b
-        >Creatividad en el aula de música. Estrategias didácticas y evaluativas.
-      </b> Dictado por la Dra. Ana Lucía Frega.
-    </li>
-    <li>
-      PUCP (2015). <b>Metodologías de la Investigación en Música.</b> Dictado por
-      la Dra. Ana Lucía Frega.
-    </li>
-  </ul>
 </BaseLayout>
