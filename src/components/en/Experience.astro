@@ -6,15 +6,25 @@ export const allExperiences = [
   {
     title: "ZifferJS | TypeScript Software Developer",
     subtitle: "oct.2023 - present | Remote",
-    description:
-      "I collaborate on the development of ZifferJS, a generative music notation and parser written entirely in TypeScript. It is designed to fit into any live coding environment that supports web technologies. My responsibilities include implementing mathematical concepts from simplicial complexes, performing unit testing (Vitest), writing documentation for Topos, and creating generator functions to work with infinite sequences.",
+    description: `I collaborate on the development of ZifferJS, a generative music notation and parser written entirely in TypeScript. It is designed to fit into any live coding environment that supports web technologies.
+    My responsibilities include:
+    ⚫ Implementing mathematical algorithms applied to simplicial complexes and graph theory
+    ⚫ Creating unit tests (vitest) and writing documentation for Topos
+    ⚫ Creating generator functions to work with infinite sequences`,
   },
   {
     title:
-      "Newman Graduate School | Professor of the Master's Degree in Musicology",
+      "Newman Graduate School | Professor of the Master's in Musicology and Music Pedagogy",
     subtitle: "may.2024 - present | Remote",
-    description:
-      "Teaching modality through flipped classroom. Courses I am responsible for in the master's program: techniques for research, documentation, and dissemination in musicological research and music industries.",
+    description: `Courses I teach in the Master's in Musicology:
+    ⚫ Research Methods in Musicology: Techniques for Searching, Documenting, and Disseminating Knowledge
+    ⚫ Music Industries
+    ⚫ Performative Research: Historical and Analytical Perspectives on Musical Performance
+    ⚫ Musical Listening: A Historical and Cultural Approach
+
+    Courses I teach in the Master's in Music Pedagogy:
+    ⚫ Communication, Knowledge, and Digital Learning Applied to Music Education
+    `,
   },
   {
     title: "EEST Toulouse Lautrec | Music production instructor",
@@ -56,9 +66,8 @@ const filteredExperiences = indices
           key={index}
           title={experience.title}
           subtitle={experience.subtitle}
-        >
-          {experience.description}
-        </TimeLineElement>
+          description={experience.description}
+        />
       </>
     ))
   }
