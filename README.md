@@ -6,7 +6,6 @@ Welcome to my personal website, built with the <a href="https://astrofy-template
 
 I've made several customizations, including adding SVG elements and breaking the site into separate components for better performance and maintainability. The site is available in two languages:
 
-> Spanish - ES
+> <a href="https://edelveart.github.io/" target="_blank" class="font-bold">Spanish - ES  </a>
 
-> English - EN
-
+> <a href="https://edelveart.github.io/" target="_blank" class="font-bold">English - EN  </a>
