@@ -1,15 +1,15 @@
 ---
-const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props
-import { Image } from "astro:assets"
-const tag_url = url.split("/").slice(0, -1).join("/") + "/tag"
+const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
+import { Image } from "astro:assets";
+const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
 
 export type ProjectType = {
-  title: string
-  img: string
-  desc: string
-  url: string
-  badge: string
-}
+  title: string;
+  img: string;
+  desc: string;
+  url: string;
+  badge: string;
+};
 ---
 
 <div
@@ -17,23 +17,17 @@ export type ProjectType = {
   data-tip="Projects"
 >
   <a href={url} target={target}>
-    <div class="hero-content flex-col md:flex-row">
-      {
-        img && (
-          <Image
-            src={img}
-            width={750}
-            height={422}
-            format="webp"
-            alt={title}
-            class=" max-w-full md:max-w-[13rem] rounded-lg"
-          />
-        )
-      }
+    <div
+      class="hero-content flex-col md:flex-row rounded-xl shadow-lg shadow-blue-400/30"
+    >
       <div class="grow w-full">
-        <h1 class="text-lg font-bold">
+        {
+          badge && (
+            <div class="badge badge-secondary mx-[-0.25rem]">{badge}</div>
+          )
+        }
+        <h1 class="text-lg font-bold pt-2">
           {title}
-          {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
         </h1>
         <p class="text-pretty py-1 text-1xl">{desc}</p>
         <div class="card-actions justify-end">
@@ -47,6 +41,18 @@ export type ProjectType = {
           }
         </div>
       </div>
+      {
+        img && (
+          <Image
+            src={img}
+            width={750}
+            height={422}
+            format="webp"
+            alt={title}
+            class=" max-w-full md:max-w-[13rem] rounded-lg"
+          />
+        )
+      }
     </div>
   </a>
 </div>

@@ -47,7 +47,10 @@ const filteredProjects = indices
   : projects;
 ---
 
-<div class="text-2xl w-full font-bold flex items-center mt-8" id="PROJECTS">
+<div
+  class="text-2xl w-full font-bold flex items-center mt-8 mb-2"
+  id="PROJECTS"
+>
   <Branch class="ml-0 mr-4" /> Proyectos de software
 </div>
 
@@ -64,7 +67,7 @@ const filteredProjects = indices
           badge={project.badge}
         />
 
-        {index < filteredProjects.length - 1 && <div class="divider my-0" />}
+        {index < filteredProjects.length - 1 && <div class="divider my-3" />}
       </>
     ))
   }
