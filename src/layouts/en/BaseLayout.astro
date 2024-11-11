@@ -1,14 +1,18 @@
 ---
-import "@fontsource/iosevka"
-import BaseHead from "../../components/BaseHead.astro"
-import Header from "../../components/Header.astro"
-import Footer from "../../components/Footer.astro"
-import SideBar from "../../components/en/SideBar.astro" // ESTE DEBE SER DIFERENTE
-import { ViewTransitions } from "astro:transitions"
+import "@fontsource-variable/inter";
+// import "@fontsource/roboto";
+// import "@fontsource-variable/overpass";
+// import "@fontsource-variable/encode-sans";
 
-import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../../config"
-import FlagsLinkCss from "../../components/FlagsLinkCss.astro"
-import Languages from "@components/Languages.astro"
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import SideBar from "../../components/en/SideBar.astro"; // ESTE DEBE SER DIFERENTE
+import { ViewTransitions } from "astro:transitions";
+
+import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../../config";
+import FlagsLinkCss from "../../components/FlagsLinkCss.astro";
+import Languages from "@components/Languages.astro";
 const {
   image,
   title = SITE_TITLE,
@@ -16,8 +20,8 @@ const {
   includeSidebar = true,
   sideBarActiveItemID,
   ogType,
-} = Astro.props
-const { currentLocale } = Astro
+} = Astro.props;
+const { currentLocale } = Astro;
 ---
 
 <!doctype html>

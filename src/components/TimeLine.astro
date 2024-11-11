@@ -5,7 +5,6 @@ interface JobProps {
   description: string;
 }
 const { title, subtitle, description }: JobProps = Astro.props as JobProps;
-const ml = "ml-[0rem]";
 ---
 
 <div class="flex">
@@ -16,11 +15,11 @@ const ml = "ml-[0rem]";
     ></span>
   </div>
   <div class="experience__data bd-grid px-5">
-    <h3 class=`font-semibold mb-1 ${ml}`>
+    <h3 class="font-semibold">
       {title}
     </h3>
-    <span class=`font-light text-sm ${ml}`>{subtitle}</span>
-    <p class=`my-2 text-pretty whitespace-pre-line max-w-[700px] ${ml}`>
+    <span class="font-light text-sm">{subtitle}</span>
+    <p class="my-2 text-pretty whitespace-pre-line max-w-[700px]">
       {description}
     </p>
   </div>

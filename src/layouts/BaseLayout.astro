@@ -1,13 +1,17 @@
 ---
-import "@fontsource/iosevka"
-import BaseHead from "../components/BaseHead.astro"
-import Header from "../components/Header.astro"
-import Footer from "../components/Footer.astro"
-import SideBar from "../components/SideBar.astro"
-import { ViewTransitions } from "astro:transitions"
-import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config"
-import FlagsLinkCss from "../components/FlagsLinkCss.astro"
-import Languages from "@components/Languages.astro"
+import "@fontsource-variable/inter";
+// import "@fontsource/roboto";
+// import "@fontsource-variable/overpass";
+// import "@fontsource-variable/encode-sans";
+
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import SideBar from "../components/SideBar.astro";
+import { ViewTransitions } from "astro:transitions";
+import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
+import FlagsLinkCss from "../components/FlagsLinkCss.astro";
+import Languages from "@components/Languages.astro";
 
 const {
   image,
@@ -16,8 +20,8 @@ const {
   includeSidebar = true,
   sideBarActiveItemID,
   ogType,
-} = Astro.props
-const { currentLocale } = Astro.props
+} = Astro.props;
+const { currentLocale } = Astro.props;
 ---
 
 <!doctype html>
