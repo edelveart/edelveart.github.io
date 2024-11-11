@@ -1,5 +1,10 @@
 ---
-const { title, subtitle } = Astro.props
+interface JobProps {
+  title: string;
+  subtitle: string;
+  description: string;
+}
+const { title, subtitle, description }: JobProps = Astro.props as JobProps;
 ---
 
 <div class="flex">
@@ -14,8 +19,8 @@ const { title, subtitle } = Astro.props
       {title}
     </h3>
     <span class="font-light text-sm">{subtitle}</span>
-    <p class="my-2 text-pretty">
-      <slot />
+    <p class="my-2 text-pretty whitespace-pre-line">
+      {description}
     </p>
   </div>
 </div>
