@@ -2,8 +2,11 @@
 
 Hi there!
 
-This is my personal website. It is based on  <a href="https://astrofy-template.netlify.app/" target="_blank" class="font-bold">Astrofy Template ⚡️</a>.
+Welcome to my personal website, built with the <a href="https://astrofy-template.netlify.app/" target="_blank" class="font-bold">Astrofy Template ⚡️</a>.
 
-I have made several modifications to it and added svg elements and separate components. It is available in two languages:
-1. `spanish`
-2. `english`
+I've made several customizations, including adding SVG elements and breaking the site into separate components for better performance and maintainability. The site is available in two languages:
+
+> Spanish - ES
+
+> English - EN
+
