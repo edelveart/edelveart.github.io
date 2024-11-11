@@ -1,12 +1,12 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro"
+import BaseLayout from "@layouts/BaseLayout.astro";
 import ProjectsComponent, {
   allProjects,
-} from "@components/ProjectsComponent.astro"
+} from "@components/ProjectsComponent.astro";
 ---
 
 <BaseLayout title="Projects" sideBarActiveItemID="projects">
   <section class="mt-[-0.75rem]">
-    <ProjectsComponent projects={allProjects} indices={[0, 1, 2, 3]} />
+    <ProjectsComponent projects={allProjects} indices={[0, 1, 2, 3, 4]} />
   </section>
 </BaseLayout>
