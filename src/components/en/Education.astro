@@ -1,6 +1,13 @@
 ---
-import TimeLineElement from "@components/TimeLine.astro"
-import PencilEducation from "../icons/PencilEducation.astro"
+import TimeLineElement from "@components/TimeLine.astro";
+import PencilEducation from "../icons/PencilEducation.astro";
+
+const masterGradesAndAverage = {
+  title: "UNIR | Master's Degree in Music Research",
+  subtitle: "2019 - 2020 | Spain",
+  description: `I received the highest distinction with a perfect score in Computational Music Analysis.
+    Overall average: Outstanding`,
+};
 ---
 
 <div class="mb-5" id="EDUCATION">
@@ -11,12 +18,11 @@ import PencilEducation from "../icons/PencilEducation.astro"
 
 <div class="time-line-container grid gap-4 mb-0">
   <TimeLineElement
-    title="UNIR | Master's Degree in Music Research"
-    subtitle="2019 - 2020 | Spain"
-  >
-    First-class honors in Computerized Musical Analysis <br />
-    Overall average: 9.4 (Outstanding)
-  </TimeLineElement>
+    title={masterGradesAndAverage.title}
+    subtitle={masterGradesAndAverage.subtitle}
+    description={masterGradesAndAverage.description}
+  />
+
   <TimeLineElement
     title="USMP | B.A. in Music"
     subtitle="2009 - 2015 | Lima, Perú"

@@ -1,6 +1,13 @@
 ---
-import TimeLineElement from "@components/TimeLine.astro"
-import PencilEducation from "./icons/PencilEducation.astro"
+import TimeLineElement from "@components/TimeLine.astro";
+import PencilEducation from "./icons/PencilEducation.astro";
+
+const masterGradesAndAverage = {
+  title: "UNIR | Máster en Investigación Musical",
+  subtitle: "2019 - 2020 | España",
+  description: `Obtuve una matrícula de honor y puntaje perfecto en Análisis Musical Informatizado.
+    Promedio general: Sobresaliente.`,
+};
 ---
 
 <div class="mb-5" id="EDUCATION">
@@ -11,12 +18,11 @@ import PencilEducation from "./icons/PencilEducation.astro"
 
 <div class="time-line-container grid gap-4 mb-0">
   <TimeLineElement
-    title="UNIR | Máster en Investigación Musical"
-    subtitle="2019 - 2020 | España"
-  >
-    Matrícula de honor en Análisis Musical Informatizado <br />
-    Promedio general: 9.4 Sobresaliente
-  </TimeLineElement>
+    title={masterGradesAndAverage.title}
+    subtitle={masterGradesAndAverage.subtitle}
+    description={masterGradesAndAverage.description}
+  />
+
   <TimeLineElement
     title="USMP | Licenciatura en Música"
     subtitle="2009 - 2015 | Lima, Perú"
