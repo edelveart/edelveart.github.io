@@ -1,18 +1,18 @@
 ---
-import LinkedIn from "./icons/LinkedIn.astro"
-import Youtube from "./icons/Youtube.astro"
-import GitHub from "./icons/GitHub.astro"
-import { SOCIAL_MEDIA } from "../config"
+import LinkedIn from "./icons/LinkedIn.astro";
+import Youtube from "./icons/Youtube.astro";
+import GitHub from "./icons/GitHub.astro";
+import { SOCIAL_MEDIA } from "../config";
 
 interface ContactText {
-  contactText?: string
+  contactText?: string;
 }
-const { contactText } = Astro.props as ContactText
+const { contactText } = Astro.props as ContactText;
 ---
 
 <div class="mt-5 mb-10 flex justify-start gap-4 flex-wrap">
   <a
-    class="btn btm-nav-xs hover:scale-95"
+    class="btn btm-nav-xs hover:scale-95 shadow-lg shadow-primary/30"
     href={SOCIAL_MEDIA.linkedin}
     target="_blank"
   >

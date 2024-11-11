@@ -5,21 +5,22 @@ interface JobProps {
   description: string;
 }
 const { title, subtitle, description }: JobProps = Astro.props as JobProps;
+const ml = "ml-[0rem]";
 ---
 
 <div class="flex">
   <div class="education__time">
-    <span class="w-4 h-4 bg-primary block rounded-full mt-1"></span>
+    <span class="w-3 h-3 bg-primary block rounded-full mt-1"></span>
     <span
-      class="education__line bg-primary block h-full w-[2px] translate-x-[7px]"
+      class=`education__line bg-primary block h-full w-[2px] translate-x-[4.5px]`
     ></span>
   </div>
   <div class="experience__data bd-grid px-5">
-    <h3 class="font-semibold mb-1">
+    <h3 class=`font-semibold mb-1 ${ml}`>
       {title}
     </h3>
-    <span class="font-light text-sm">{subtitle}</span>
-    <p class="my-2 text-pretty whitespace-pre-line max-w-[700px]">
+    <span class=`font-light text-sm ${ml}`>{subtitle}</span>
+    <p class=`my-2 text-pretty whitespace-pre-line max-w-[700px] ${ml}`>
       {description}
     </p>
   </div>

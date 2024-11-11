@@ -19,8 +19,14 @@ const filteredSkills = indices
   </div>
 </div>
 
-<ul id="skill-list" class="list-disc columns-2 mx-6 mb-8">
-  <div class="ml-3">
-    {filteredSkills.map((skill) => <li class="list-none">{`⚫ ${skill}`}</li>)}
+<ul id="skill-list" class="list-disc columns-2 mb-8 ml-4">
+  <div>
+    {
+      filteredSkills.map((skill) => (
+        <li class="text-primary">
+          <p class="text-neutral-content">{skill}</p>
+        </li>
+      ))
+    }
   </div>
 </ul>
