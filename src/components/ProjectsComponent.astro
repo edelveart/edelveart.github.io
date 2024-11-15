@@ -21,7 +21,7 @@ export const allProjects = [
   {
     title: "Ruby module to generate infinite sequences of figurate numbers",
     img: "/figurate-numbers-socialmedia.webp",
-    desc: "This Ruby gem enables the generation of 241 infinite sequences of plane, spatial, and multidimensional figurate numbers, as described in the book ‘Figurate Numbers’ (2012) by Elena Deza and Michel Deza. The methods, implemented using the Enumerator class, are designed for use in your math projects or in Sonic Pi.",
+    desc: `This Ruby gem enables the generation of 241 infinite sequences of plane, spatial, and multidimensional figurate numbers, as described in the book "Figurate Numbers" (2012) by Elena Deza and Michel Deza. The methods, implemented using the Enumerator class, are designed for use in your math projects or in Sonic Pi.`,
     url: "https://rubygems.org/gems/figurate_numbers",
     badge: "RubyGems | Ruby",
   },
@@ -41,7 +41,13 @@ export const allProjects = [
   },
 ];
 
-const { projects, indices } = Astro.props;
+type Props = {
+  projects: ProjectType[];
+  indices: number[];
+  headTitle: string;
+};
+
+const { projects, indices, headTitle }: Props = Astro.props;
 const filteredProjects = indices
   ? indices.map((index: number) => projects[index]).filter(Boolean)
   : projects;
@@ -51,7 +57,8 @@ const filteredProjects = indices
   class="text-2xl w-full font-bold flex items-center mt-8 mb-4"
   id="PROJECTS"
 >
-  <Branch class="ml-0 mr-4" /> Proyectos de software
+  <Branch class="ml-0 mr-4" />
+  {headTitle}
 </div>
 
 <section class="mb-10 mt-0">
