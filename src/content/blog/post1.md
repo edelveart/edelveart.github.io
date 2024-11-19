@@ -1,6 +1,6 @@
 ---
 title: "Sonic Visualiser: Codificando la r de Pearson"
-description: "Tutorial básico para implementar la r de Pearson y divertirte."
+description: "Tutorial básico para implementar la r de Pearson y divertirte. "
 pubDate: "Sep 12 2024"
 heroImage: "/blog-1.webp"
 badge: "v0.6.0"

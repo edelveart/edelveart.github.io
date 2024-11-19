@@ -9,24 +9,25 @@ const posts = (await getCollection("blog")).sort(
 const last_posts = posts.slice(0, 3);
 ---
 
-<div class="mb-5 mt-5">
-  <div class="text-2xl w-full font-bold flex items-center">
-    <PencilEducation class="ml-0 mr-4" />Blog
-  </div>
+<div class="text-2xl w-full font-bold flex items-center mt-8 mb-4" id="BLOG">
+  <PencilEducation class="ml-0 mr-4" />
+  Blog
 </div>
 
-{
-  last_posts.map((post) => (
-    <>
-      <HorizontalCard
-        title={post.data.title}
-        img={post.data.heroImage}
-        desc={post.data.description}
-        url={"/blog/" + createSlug(post.data.title, post.slug)}
-        target="_self"
-        badge={post.data.badge}
-      />
-      <div class="divider my-0" />
-    </>
-  ))
-}
+<section class="mb-10 mt-0">
+  {
+    last_posts.map((post) => (
+      <>
+        <HorizontalCard
+          title={post.data.title}
+          img={post.data.heroImage}
+          desc={post.data.description}
+          url={"/blog/" + createSlug(post.data.title, post.slug)}
+          target="_self"
+          badge={post.data.badge}
+        />
+        {last_posts.length > 1 && <div class="divider my-3" />}
+      </>
+    ))
+  }
+</section>
