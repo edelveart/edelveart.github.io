@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+import HorizontalCard from "@components/HorizontalCard.astro";
+import createSlug from "../lib/createSlug";
+import PencilEducation from "./icons/PencilEducation.astro";
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const last_posts = posts.slice(0, 3);
+---
+
+<div class="mb-5 mt-5">
+  <div class="text-2xl w-full font-bold flex items-center">
+    <PencilEducation class="ml-0 mr-4" />Blog
+  </div>
+</div>
+
+{
+  last_posts.map((post) => (
+    <>
+      <HorizontalCard
+        title={post.data.title}
+        img={post.data.heroImage}
+        desc={post.data.description}
+        url={"/blog/" + createSlug(post.data.title, post.slug)}
+        target="_self"
+        badge={post.data.badge}
+      />
+      <div class="divider my-0" />
+    </>
+  ))
+}

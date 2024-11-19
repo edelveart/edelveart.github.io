@@ -10,11 +10,7 @@ import ProjectsComponent, {
 import ListOfSkills from "@components/ListOfSkills.astro";
 import Education from "@components/Education.astro";
 import { techSkills } from "@components/ListOfSkills.astro";
-
-// import { getCollection } from "astro:content";
-// import createSlug from "../lib/createSlug"
-// const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-// const last_posts = posts.slice(0, 3);
+import BlogEntry from "@components/BlogEntry.astro";
 ---
 
 <BaseLayout sideBarActiveItemID="home">
@@ -40,24 +36,6 @@ import { techSkills } from "@components/ListOfSkills.astro";
     />
     <ListOfSkills listOfSkills={techSkills} indices={[0, 1]} />
     <Education />
-
-    <!-- <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
-    </div> -->
-    <!-- {
-      last_posts.map((post) => (
-        <>
-          <HorizontalCard
-            title={post.data.title}
-            img={post.data.heroImage}
-            desc={post.data.description}
-            url={"/blog/" + createSlug(post.data.title, post.slug)}
-            target="_self"
-            badge={post.data.badge}
-          />
-          <div class="divider my-0" />
-        </>
-      ))
-    } -->
+    <BlogEntry />
   </div>
 </BaseLayout>
