@@ -6,10 +6,31 @@ heroImage: "/blog-1.webp"
 badge: "v0.6.0"
 tags: ["Sonic Visualiser", "statistics", "Pearson correlation coefficient", "TypeScript"]
 ---
-<script
+<!-- Script - LaTex -->
+<script async
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
   type="text/javascript">
 </script>
+
+<!-- <script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true},
+      jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"],
+      extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
+      TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
+      equationNumbers: {
+      autoNumber: "AMS"
+      }
+    }
+  });
+</script> -->
+<!-- Script - LaTex -->
 
 > Recuerda citar esta publicación
 
@@ -35,8 +56,7 @@ Las fórmulas matemáticas son sumamente bellas porque abstraen una infinidad de
 
 Vamos al grano, sin más preámbulo:
 
-$$
- r = \frac{\sum_{i=0}^{N-1}(x_i - \bar{x})(y_i - \bar{y})}
+$$ r_{xy} = \frac{\sum_{i=0}^{N-1}(x_i - \bar{x})(y_i - \bar{y})}
  {(\sum_{i=0}^{N-1}(x_i - \bar{x})^2 \sum_{i=0}^{N-1}(y_i - \bar{y})^2)^{1/2}}.
 $$
 
@@ -56,6 +76,8 @@ $$
 $$
 
 Nota, además, que no he mencionado las variables independiente y dependiente. En el contexto de una asociación, esa nomenclatura no sería la más adecuada.
+
+- **Observación**. Hay más condiciones para aplicar la correlación de Pearson  (**r**), como que los datos presenten distribución normal y la ausencia de valores atípicos. Por el momento, nos centraremos únicamente en descifrar la fórmula.
 
 Para dar respuesta a la tercera pregunta, nos centraremos de llenoen la implementación en `TypeScript`.
 
@@ -90,14 +112,20 @@ $$
   \bar{x} =  \frac{ \sum_{i=0}^{N-1} x_i}{N}.
 $$
 
-¿Cómo funcionan los índices? Traemos el valor de `x = [4, 8, 10, 3]` y sumamos los enteros accediendo mediante el índice:
+¿Cómo funcionan los índices? Tomamos el valor de `x = [4, 8, 10, 3]` y sumamos los elementos accediendo mediante índices:
+
 $$
-x[0] + x[1] + x[2] + x[3] = 4 + 7 + 10 + 3 = 24.
+x[0] + x[1] + x[2] + x[3]
 $$
+$$
+4 + 7 + 10 + 3 = 24.
+$$
+
 Contamos el número de elementos en el arreglo `x`:
 $$
 N = 4.
 $$
+
 Por último dividimos
 $$
 \bar{x} = 24 / 4 = 6.
@@ -145,14 +173,19 @@ $$
 Explayando los cálculos tenemos lo siguiente para el índice `0`:
 
 $$
-(x[0] - \bar{x} )  (y[0] - \bar{y}) = (4 - 4) \times (3 - 4) = 0
+(x[0] - \bar{x} )  (y[0] - \bar{y})
 $$
-Nuestro acumulador `sumProductDeviations` es cero.
+$$
+(4 - 4) \times (3 - 4) = 0
+$$
+
+Nuestro acumulador `sumProductDeviations` es cero todavía, no sumó nada a su valor inicial.
 Para el índice `1` repetimos lo mismo:
 $$
 (7-4) \times (5 - 4) =3
 $$
-Nuestro *acumulador* se ha actualizado a `0 + 3`, es decir, `3`.
+
+En este caso, nuestro *acumulador* se ha actualizado a `0 + 3`, es decir, `3`.
 
 Volvemos a repetir esta operación de producto de desviaciones hasta llegar al último índice y vamos agregándolos al acumulador `sumProductDeviations`. Eso es todo.
 
@@ -215,6 +248,5 @@ Lo que viene es un *misterio*: algún gráfico loco o el tutorial de cómo dibuj
 
 Y hablando de árboles, hasta la próxima, ¡mándale saludos al recordado Hebaristo Valdelomariano!"
 
-<!-- Script - LaTex -->
 
 
