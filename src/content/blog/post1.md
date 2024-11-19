@@ -2,10 +2,14 @@
 title: "Sonic Visualiser: Codificando la r de Pearson"
 description: "Tutorial básico para implementar la r de Pearson y divertirte."
 pubDate: "Sep 12 2024"
-heroImage: "/post_img.webp"
+heroImage: "/blog-1.webp"
 badge: "v0.6.0"
 tags: ["Sonic Visualiser", "statistics", "Pearson correlation coefficient", "TypeScript"]
 ---
+<script
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript">
+</script>
 
 > Recuerda citar esta publicación
 
@@ -21,9 +25,9 @@ Entonces, ¿cuál es el norte en esta publicación?
 
 Iniciamos prodigando una definición brumosa, como ciertas mañanas de verano al avistar el mar desde los acantilados de la costa limeña:
 
-- **Definición 1**. La correlación nos indica si dos variables, o más, presentan una dependencia lineal y qué tan fuerte es el grado de dependencia de dichas variables.
+- **Definición 1**. La correlación nos  indica si dos variables (o más) presentan una dependencia lineal y cuán fuerte es el grado de dicha dependencia.
 
-Lo lineal debe entenderse como el cambio en simultáneo, al mismo ritmo (en un momento volveremos a este punto). No obstante, debes saber que se trata de una **asociación** y no implica ni pretende dar una explicación del tipo **causa-efecto**.
+Lo *lineal* debe entenderse como un cambio simultáneo y a la misma velocidad (más adelante volveremos a este punto). Sin embargo, es importante aclarar que la correlación se refiere más a una **asociación** entre variables y no implica ni pretende establecer una relación de **causa y efecto**.
 
 ### Con las formulitas macizas
 
@@ -32,7 +36,7 @@ Las fórmulas matemáticas son sumamente bellas porque abstraen una infinidad de
 Vamos al grano, sin más preámbulo:
 
 $$
- r_{Pearson} = \frac{\sum_{i=0}^{N-1}(x_i - \bar{x})(y_i - \bar{y})}
+ r = \frac{\sum_{i=0}^{N-1}(x_i - \bar{x})(y_i - \bar{y})}
  {(\sum_{i=0}^{N-1}(x_i - \bar{x})^2 \sum_{i=0}^{N-1}(y_i - \bar{y})^2)^{1/2}}.
 $$
 
@@ -47,9 +51,9 @@ El coeficiente **r** de Pearson es una medida que normaliza la correlación line
 4. ¿Por qué sigo leyendo esto? :/
 
 En palabras llanas, las variables son secuencias de números y la normalización es el proceso que asegura que el coeficiente solo produzca valores comprendidos entre **-1** y +**1**. Más formalmente,
-\begin{align}
+$$
 -1 \leq r \leq 1, \ r \in \mathbb{R}.
-\end{align}
+$$
 
 Nota, además, que no he mencionado las variables independiente y dependiente. En el contexto de una asociación, esa nomenclatura no sería la más adecuada.
 
@@ -68,7 +72,7 @@ Las variables `x` y `y` son secuencias de números. El primer **rack** rectangul
 En TypeScript, los escribimos con sus tipos bien tranquilos así:
 ```ts
 const x: number[] = [4, 7, 10, 2];
-const y: number[] = [3, 5, 8, 1];
+const y: number[] = [3, 5, 8, 4];
 ```
 
 Continuando con la explicación de la fórmula, seguro observas una `N`, que representa el número de muestras o longitud de los arreglos. Desde un punto de vista programador, tendríamos que `N = 3` para `x` e `y`.
@@ -86,34 +90,31 @@ $$
   \bar{x} =  \frac{ \sum_{i=0}^{N-1} x_i}{N}.
 $$
 
-¿Cómo funcionan los índices? Traemos el valor de `x`:
+¿Cómo funcionan los índices? Traemos el valor de `x = [4, 8, 10, 3]` y sumamos los enteros accediendo mediante el índice:
+$$
+x[0] + x[1] + x[2] + x[3] = 4 + 7 + 10 + 3 = 24.
+$$
+Contamos el número de elementos en el arreglo `x`:
+$$
+N = 4.
+$$
+Por último dividimos
+$$
+\bar{x} = 24 / 4 = 6.
+$$
 
-```ts
-// const x: number[] = [4, 7, 10, 2];
-
-// sumamos los números de la secuencia x
-// x[0] + x[1] + x[2] + x[3] = 4 + 7 + 10 + 2 = 23.
-
-// N es la longitud de nuestra x, por lo que
-// x.length = N = 4 // son 4 numeritos
-
-// Terminamos con división: 23 / 4 = 5.75
-```
-
-Comenzaremos implementando este último ingrediente:
-
+En TypeScript, la media luce como:
 
 ```ts
 function mean(variable: number[]): number {
-  let sum = 0;
   const N = variable.length;
+  let sum = 0;
   for (let i = 0; i < N; i++) {
     sum += variable[i];
   }
   return sum / N;
 }
 ```
-
 Nada nuevo bajo el sol de noviembre en Lima. Sumas todas tus calificaciones y te esperas lo mejor.
 
 ### Lo que va arriba en la `r` de Pearson
@@ -125,21 +126,36 @@ function covariance(xVariable: number[], yVariable: number[]): number {
   const meanXVariable = mean(xVariable);
   const meanYVariable = mean(yVariable);
   const N = xVariable.length;
-  let sumProductDeviation = 0;
+  let sumProductDeviations = 0;
   for (let i = 0; i < N; i++) {
-    sumProductDeviation += (xVariable[i] - meanXVariable) * (yVariable[i] - meanYVariable);
+    sumProductDeviations += (xVariable[i] - meanXVariable) * (yVariable[i] - meanYVariable);
   }
-  return sumProductDeviation;
+  return sumProductDeviations;
 }
 ```
 
-Observa que le hemos puesto el nombre de **covarianza** para darle más promesa al asunto. Es broma, así también se le llama.  Lo que he hecho es únicamente sumar el producto de las desviaciones de ambas variables respecto a sus medias.
+Observa que le hemos puesto el nombre de **covarianza** para darle más promesa al asunto; así también se le llama.  Lo que he hecho es únicamente sumar el producto de las desviaciones de ambas variables respecto a sus medias.
 
-La `sumProductDeviation,` es la partecita de la fórmula que hace:
+La `sumProductDeviations,` es la partecita de la fórmula que hace:
 
 $$
   \sum_{i=0}^{N-1} (x_i - \bar{x})(y_i - \bar{y}).
 $$
+
+Explayando los cálculos tenemos lo siguiente para el índice `0`:
+
+$$
+(x[0] - \bar{x} )  (y[0] - \bar{y}) = (4 - 4) \times (3 - 4) = 0
+$$
+Nuestro acumulador `sumProductDeviations` es cero.
+Para el índice `1` repetimos lo mismo:
+$$
+(7-4) \times (5 - 4) =3
+$$
+Nuestro *acumulador* se ha actualizado a `0 + 3`, es decir, `3`.
+
+Volvemos a repetir esta operación de producto de desviaciones hasta llegar al último índice y vamos agregándolos al acumulador `sumProductDeviations`. Eso es todo.
+
 
 ### El piso de abajo en la `r` de Pearson:
 
@@ -201,8 +217,4 @@ Y hablando de árboles, hasta la próxima, ¡mándale saludos al recordado Hebar
 
 <!-- Script - LaTex -->
 
-<script
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-  type="text/javascript">
-</script>
 
