@@ -3,7 +3,7 @@ title: "Sonic Visualiser: Codificando la r de Pearson"
 description: "Tutorial básico para implementar la r de Pearson y divertirte."
 pubDate: "Sep 12 2024"
 heroImage: "/post_img.webp"
-badge: "v1.0.0"
+badge: "v0.6.0"
 tags: ["Sonic Visualiser", "statistics", "Pearson correlation coefficient", "TypeScript"]
 ---
 
@@ -67,8 +67,8 @@ Las variables `x` y `y` son secuencias de números. El primer **rack** rectangul
 
 En TypeScript, los escribimos con sus tipos bien tranquilos así:
 ```ts
-x: number[] = [4, 7, 10, 2]
-y: number[] = [3, 5, 8, 1]
+const x: number[] = [4, 7, 10, 2];
+const y: number[] = [3, 5, 8, 1];
 ```
 
 Continuando con la explicación de la fórmula, seguro observas una `N`, que representa el número de muestras o longitud de los arreglos. Desde un punto de vista programador, tendríamos que `N = 3` para `x` e `y`.
@@ -80,13 +80,27 @@ $$\sum_{i=0}^{N-1} x_i.$$
 
 Parece difícil, pero en realidad solo tendrás que sumar todos los elementos del arreglo `x`, desde el índice `i` hasta el último índice.
 
-Finalmente, el último ingrediente es el **promedio**; el que dejaba roja o azul tu libreta. Siendo más refinados, se le llama *media aritmética*, y la definimos como la suma de todos los elementos entre el número de elementos que tiene el arreglo (`N`). Se denota como sigue:
+Finalmente, el ingrediente faltante es el **promedio**; el que dejaba roja o azul tu libreta. Siendo más refinados, se le llama *media aritmética*, y la definimos como la suma de todos los elementos entre el número de elementos que tiene el arreglo (`N`). Se denota como sigue:
 
 $$
-  \bar{x} = \sum_{i=0}^{N-1}  \frac{x_i}{N}.
+  \bar{x} =  \frac{ \sum_{i=0}^{N-1} x_i}{N}.
 $$
 
-Comenzaremos por este último ingrediente:
+¿Cómo funcionan los índices? Traemos el valor de `x`:
+
+```ts
+// const x: number[] = [4, 7, 10, 2];
+
+// sumamos los números de la secuencia x
+// x[0] + x[1] + x[2] + x[3] = 4 + 7 + 10 + 2 = 23.
+
+// N es la longitud de nuestra x, por lo que
+// x.length = N = 4 // son 4 numeritos
+
+// Terminamos con división: 23 / 4 = 5.75
+```
+
+Comenzaremos implementando este último ingrediente:
 
 
 ```ts
