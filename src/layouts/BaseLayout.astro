@@ -21,11 +21,10 @@ const {
   sideBarActiveItemID,
   ogType,
 } = Astro.props;
-const { currentLocale } = Astro.props;
 ---
 
 <!doctype html>
-<html lang={currentLocale} data-theme="autumn">
+<html lang="es" data-theme="autumn">
   <head>
     <BaseHead
       title={title}
@@ -35,7 +34,6 @@ const { currentLocale } = Astro.props;
     />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <FlagsLinkCss />
-
     {TRANSITION_API && <ViewTransitions />}
   </head>
   <body>
