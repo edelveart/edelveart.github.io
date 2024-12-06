@@ -248,5 +248,144 @@ Lo que viene es un *misterio*: algún gráfico loco o el tutorial de cómo dibuj
 
 Y hablando de árboles, hasta la próxima, ¡mándale saludos al recordado Hebaristo Valdelomariano!"
 
+// Función curried más breve para 6 parámetros
+function curried(fn) {
+  return function curriedWrapper(...args) {
+    if (args.length >= fn.length) {
+      return fn(...args);
+    }
+    return function(...next) {
+      return curriedWrapper(...args, ...next);
+    };
+  };
+}
+
+// La función original con 6 parámetros
+function suma(a, b, c, d, e, f) {
+  return a + b + c + d + e + f;
+}
+
+# Generador de números triangulares grandes con BigInt
+function generador_triangulares_bigint()
+    n = BigInt(1)
+    while true
+        yield(n * (n + 1) ÷ 2)
+        n += 1
+    end
+end
+
+# Usar el generador para obtener los primeros 10 números triangulares muy grandes
+gen = generador_triangulares_bigint()
+for i in 1:10
+    println(fetch(gen))
+end
 
 
+# Generador de números triangulares usando función anónima (arrow function) y BigInt
+gen_triangulares = (x -> BigInt(x) * (BigInt(x) + 1) ÷ 2 for x in 1:BigInt("Inf"))
+
+# Imprimir los primeros 10 números triangulares
+for num in gen_triangulares
+    println(num)
+    # Puedes detenerlo después de imprimir 10 números, por ejemplo
+    break
+end
+
+BigInt: Es utilizado para trabajar con enteros de precisión arbitraria, permitiendo que los números crezcan sin límites fijos. Los números grandes no se verán restringidos a los valores máximos de Int64 u otros tipos enteros estándar.
+1:BigInt("Inf"): Esto crea un generador infinito, lo que significa que la secuencia de números comenzará en 1 y continuará hasta el infinito, generando valores según la regla de cada secuencia matemática.
+
+# Generador de números cuadrados usando función anónima (arrow function) y BigInt
+gen_cuadrados = (x -> BigInt(x)^2 for x in 1:BigInt("Inf"))
+
+# Imprimir los primeros 10 números cuadrados
+for num in gen_cuadrados
+    println(num)
+    # Detener el ciclo después de imprimir 10 números
+    break
+end
+
+###
+En Julia, Inf no es una librería externa, sino una constante incorporada en el lenguaje que representa el infinito. Sin embargo, en el contexto de tu código, hay un pequeño error. La constante Inf se utiliza para representar números de punto flotante infinitos, no para generar secuencias infinitas de enteros.
+
+Para generar una secuencia infinita de números enteros y elevarlos al cuadrado, puedes usar un enfoque diferente. Aquí tienes un ejemplo utilizando Iterators y BigInt:
+
+julia
+using Base.Iterators: State, done, iterate
+
+struct InfiniteSquares
+    state::BigInt
+end
+
+InfiniteSquares() = InfiniteSquares(BigInt(1))
+
+function Base.iterate(iter::InfiniteSquares, state=iter.state)
+    return state^2, state + 1
+end
+
+gen = InfiniteSquares()
+for i in 1:10
+    println(next(gen))
+end
+En este ejemplo, InfiniteSquares es un iterador que genera los cuadrados de números enteros de manera infinita utilizando BigInt para manejar números muy grandes. Este enfoque es más adecuado para trabajar con secuencias infinitas de enteros en Julia.
+
+Espero que esto te haya sido útil. Si tienes más preguntas o necesitas más ejemplos, ¡no dudes en preguntar!
+
+
+module FigurateNumbers
+
+# Write your package code here.
+using Base.Iterators: State, done, iterate
+
+# Generalizando un iterador para cualquier secuencia
+struct NumberSequence
+    state::Int
+    formula::Function  # Función para calcular el siguiente número en la secuencia
+end
+
+# Constructor de un iterador para cualquier secuencia
+NumberSequence(formula::Function) = NumberSequence(1, formula)
+
+# Función Base.iterate generalizada
+function Base.iterate(iter::NumberSequence, state=iter.state)
+    next_value = iter.formula(state)  # Usamos la función proporcionada para calcular el siguiente número
+    return next_value, state + 1
+end
+
+# Función para generar números triangulares
+function triangular_formula(n::BigInt)
+    return (n * (n + 1)) ÷ 2
+end
+
+# Función para generar números cuadrados
+function square_formula(n::BigInt)
+    return n^2
+end
+
+# Función para generar números pentagonales
+function pentagonal_formula(n::BigInt)
+    return (n * (3 * n - 1)) ÷ 2
+end
+pentagonal_formula = n -> (n * (3 * n - 1)) ÷ 2
+# Ejemplo de uso
+
+# Generar los primeros 10 números triangulares
+println("Primeros 10 números triangulares:")
+tri_gen = NumberSequence(triangular_formula)
+for i in 1:10
+    println(next(tri_gen))
+end
+
+# Generar los primeros 10 números cuadrados
+println("\nPrimeros 10 números cuadrados:")
+square_gen = NumberSequence(square_formula)
+for i in 1:10
+    println(next(square_gen))
+end
+
+# Generar los primeros 10 números pentagonales
+println("\nPrimeros 10 números pentagonales:")
+pent_gen = NumberSequence(pentagonal_formula)
+for i in 1:10
+    println(next(pent_gen))
+end
+end
