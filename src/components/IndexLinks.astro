@@ -19,22 +19,14 @@ const { contactText } = Astro.props as ContactText;
     <LinkedIn class="w-6" />
     {contactText}
   </a>
-  <a
-    class="btn btm-nav-label hover:scale-95"
-    href={SOCIAL_MEDIA.github}
-    target="_blank"
-  >
+  <a class="btn btm-nav-label hover:scale-95" href={SOCIAL_MEDIA.github} target="_blank">
     <GitHub class="w-6" />
   </a>
-  <a
-    class="btn btn-nav-label hover:scale-95"
-    href={SOCIAL_MEDIA.youtube}
-    target="_blank"
-  >
+  <a class="btn btn-nav-label hover:scale-95" href={SOCIAL_MEDIA.youtube} target="_blank">
     <Youtube class="w-6" />
   </a>
 
-  <a
+  <!-- <a
     class="btn btn-nav-label hover:scale-95"
     href="/Resume-Edgar-Delgado-LaTex-2024.pdf"
     download
@@ -42,5 +34,5 @@ const { contactText } = Astro.props as ContactText;
     title="Descargar Curriculum Vitae"
   >
     CV
-  </a>
+  </a> -->
 </div>
