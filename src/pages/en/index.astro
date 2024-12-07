@@ -4,12 +4,8 @@ import BaseLayout from "../../layouts/en/BaseLayout.astro";
 import Biography from "../../components/en/Biography.astro";
 import IndexLinks from "@components/IndexLinks.astro";
 
-import ProjectsComponent, {
-  allProjects,
-} from "../../components/ProjectsComponent.astro";
-import Experience, {
-  allExperiences,
-} from "../../components/en/Experience.astro";
+import ProjectsComponent, { allProjects } from "../../components/ProjectsComponent.astro";
+import Experience, { allExperiences } from "../../components/en/Experience.astro";
 import ListOfSkills from "../../components/en/ListOfSkills.astro";
 import { techSkills } from "../../components/en/ListOfSkills.astro";
 import Education from "../../components/en/Education.astro";
@@ -21,9 +17,7 @@ import Education from "../../components/en/Education.astro";
       Hi, I'm
       <strong>Edgar</strong>👋
     </div>
-    <div class="py-1 font-bold text-secondary">
-      Software Developer, Math Enthusiast
-    </div>
+    <div class="py-1 font-bold text-secondary">Software Developer, Math Enthusiast</div>
 
     <div class="py-2 mt-4 max-w-[700px]">
       <Biography />
@@ -31,11 +25,8 @@ import Education from "../../components/en/Education.astro";
     </div>
 
     <Experience workExperiences={allExperiences} indices={[0, 1]} />
-    <ProjectsComponent
-      headTitle={"Projects"}
-      projects={allProjects}
-      indices={[0, 2]}
-    />
+    <ProjectsComponent headTitle={"Projects"} projects={allProjects} indices={[0, 2]} />
+    <div class="m-16"></div>
     <ListOfSkills listOfSkills={techSkills} indices={[0, 1]} />
     <Education />
 

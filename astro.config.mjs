@@ -7,10 +7,6 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: "https://edelveart.github.io",
   integrations: [mdx(), sitemap(), tailwind()],
-  // i18n: {
-  //   defaultLocale: "es",
-  //   locales: ["es", "en"],
-  // },
   plugins: [
     sitemap({
       // Routes of SiteMap excluded

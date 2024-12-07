@@ -3,9 +3,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import Biography from "@components/Biography.astro";
 import IndexLinks from "@components/IndexLinks.astro";
 import Experience, { allExperiences } from "@components/Experience.astro";
-import ProjectsComponent, {
-  allProjects,
-} from "@components/ProjectsComponent.astro";
+import ProjectsComponent, { allProjects } from "@components/ProjectsComponent.astro";
 
 import ListOfSkills from "@components/ListOfSkills.astro";
 import Education from "@components/Education.astro";
@@ -19,9 +17,7 @@ import BlogEntry from "@components/BlogEntry.astro";
       Hola, soy
       <strong>Edgar</strong>👋
     </div>
-    <div class="py-1 font-bold text-secondary">
-      Desarrollo software y amo las matemáticas
-    </div>
+    <div class="py-1 font-bold text-secondary">Desarrollo software y amo las matemáticas</div>
 
     <div class="py-2 mt-4">
       <Biography />
@@ -34,6 +30,7 @@ import BlogEntry from "@components/BlogEntry.astro";
       projects={allProjects}
       indices={[0, 2]}
     />
+    <div class="m-16"></div>
     <ListOfSkills listOfSkills={techSkills} indices={[0, 1]} />
     <Education />
     <!-- <BlogEntry /> -->
