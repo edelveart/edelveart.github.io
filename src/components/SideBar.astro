@@ -1,9 +1,9 @@
 ---
-import SideBarFooter from "./SideBarFooter.astro"
-import { Image } from "astro:assets"
-import SideBarMenu from "./SideBarMenu.astro"
-import PhotoProfile from "./PhotoProfile.astro"
-const { sideBarActiveItemID } = Astro.props
+import SideBarFooter from "./SideBarFooter.astro";
+import { Image } from "astro:assets";
+import SideBarMenu from "./SideBarMenu.astro";
+import PhotoProfile from "./PhotoProfile.astro";
+const { sideBarActiveItemID } = Astro.props;
 ---
 
 <div class="drawer-side z-40">
@@ -13,9 +13,7 @@ const { sideBarActiveItemID } = Astro.props
   >
     <div class="w-fit mx-auto mt-5 mb-6">
       <a href="/">
-        <div
-          class="avatar transition ease-in-out hover:scale-[102%] block m-auto"
-        >
+        <div class="avatar transition ease-in-out hover:scale-[102%] block m-auto">
           <div class="w-28">
             <PhotoProfile />
           </div>
