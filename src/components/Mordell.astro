@@ -2,13 +2,17 @@
 import { Image } from "astro:assets";
 ---
 
-<div class="invert hue-rotate-180 flex justify-center">
-  <Image
-    class="rounded-lg"
-    format="webp"
-    width={250}
-    height={100}
-    src="/mordell-curve-edelve.webp"
-    alt="Mordell curve"
-  />
+<div class="w-full relative mx-auto h-auto overflow-hidden rounded-lg">
+  <div
+    class="transition-all duration-300 hover:scale-110 hover:-hue-rotate-90 hover:brightness-105"
+  >
+    <Image
+      class="rounded-lg"
+      format="webp"
+      width={700}
+      height={300}
+      src="/mordell-curve-edelve.webp"
+      alt="Mordell curve"
+    />
+  </div>
 </div>
