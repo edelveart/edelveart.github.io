@@ -19,10 +19,18 @@ const { contactText } = Astro.props as ContactText;
     <LinkedIn class="w-6" />
     {contactText}
   </a>
-  <a class="btn btm-nav-label hover:scale-95" href={SOCIAL_MEDIA.github} target="_blank">
+  <a
+    class="btn btm-nav-label hover:scale-95 outline outline-1"
+    href={SOCIAL_MEDIA.github}
+    target="_blank"
+  >
     <GitHub class="w-6" />
   </a>
-  <a class="btn btn-nav-label hover:scale-95" href={SOCIAL_MEDIA.youtube} target="_blank">
+  <a
+    class="btn btn-nav-label hover:scale-95 outline outline-1"
+    href={SOCIAL_MEDIA.youtube}
+    target="_blank"
+  >
     <Youtube class="w-6" />
   </a>
 
