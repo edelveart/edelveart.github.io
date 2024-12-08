@@ -1,12 +1,15 @@
 ---
-import TimeLineElement from "@components/TimeLine.astro";
+import TimeLine from "@components/TimeLine.astro";
 import PencilEducation from "./icons/PencilEducation.astro";
 
 const masterGradesAndAverage = {
   title: "UNIR | Máster en Investigación Musical",
   subtitle: "2019 - 2020 | España",
   description: `Obtuve una matrícula de honor y puntaje perfecto en Análisis Musical Informatizado.
-    Promedio general: Sobresaliente.`,
+    Promedio general: Sobresaliente.
+    • TFM: Apliqué la teoría de complejos simpliciales (MaMuth) para estudiar un estilo musical mediante herramientas de software.
+    💻 Tecnologías TFM: HexaChord, Geogebra, LaTex
+    `,
 };
 ---
 
@@ -17,11 +20,12 @@ const masterGradesAndAverage = {
 </div>
 
 <div class="time-line-container grid gap-3 mb-0">
-  <TimeLineElement
+  <TimeLine
     title={masterGradesAndAverage.title}
     subtitle={masterGradesAndAverage.subtitle}
     description={masterGradesAndAverage.description}
+    moreInfo="Ver más"
   />
 
-  <TimeLineElement title="USMP | Licenciatura en Música" subtitle="2009 - 2015 | Lima, Perú" />
+  <TimeLine title="USMP | Licenciatura en Música" subtitle="2009 - 2015 | Lima, Perú" />
 </div>

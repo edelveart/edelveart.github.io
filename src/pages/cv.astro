@@ -2,7 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Experience, { allExperiences } from "@components/Experience.astro";
 import ListOfSkills from "@components/ListOfSkills.astro";
-import { techSkills } from "@components/ListOfSkills.astro";
+import { techSkillsSpanish } from "@components/ListOfSkills.astro";
 import Education from "@components/Education.astro";
 import Curriculum from "@components/icons/Curriculum.astro";
 ---
@@ -17,13 +17,12 @@ import Curriculum from "@components/icons/Curriculum.astro";
 
     <article class="mb-10 max-w-[700px]">
       <p>
-        Soy un apasionado de la resolución de problemas y del autoaprendizaje en
-        entornos tecnológicos, así como entusiasta de las matemáticas con
-        especial interés en el desarrollo de software.
+        Soy un apasionado de la resolución de problemas y del autoaprendizaje en entornos
+        tecnológicos, así como entusiasta de las matemáticas con especial interés en el desarrollo
+        de software.
         <br />
-        Cuento con experiencia en docencia presencial y virtual en el nivel superior
-        y posgrado, con énfasis en áreas como teoría y tecnología musical, musicología
-        y live coding.
+        Cuento con experiencia en docencia presencial y virtual en el nivel superior y posgrado, con
+        énfasis en áreas como teoría y tecnología musical, musicología y live coding.
       </p>
       <br />
 
@@ -33,9 +32,7 @@ import Curriculum from "@components/icons/Curriculum.astro";
           <p class="text-neutral-content">Teoría matemática de la música</p>
         </li>
         <li class="text-primary">
-          <p class="text-neutral-content">
-            Lenguajes específicos de dominio (DSLs) para la música
-          </p>
+          <p class="text-neutral-content">Lenguajes específicos de dominio (DSLs) para la música</p>
         </li>
         <li class="text-primary">
           <p class="text-neutral-content">
@@ -45,7 +42,7 @@ import Curriculum from "@components/icons/Curriculum.astro";
       </ul>
     </article>
 
-    <ListOfSkills listOfSkills={techSkills} indices={[0, 1, 2, 3]} />
+    <ListOfSkills title="Tecnologías" techSkills={techSkillsSpanish} indices={[0, 1, 2, 3]} />
 
     <Experience workExperiences={allExperiences} />
 
@@ -60,27 +57,23 @@ import Curriculum from "@components/icons/Curriculum.astro";
     <ul class="list-disc ml-4 mb-5 grid gap-2 max-w-[700px]">
       <li class="text-primary">
         <p class="text-neutral-content">
-          Ponente en Constelaciones: Congreso Interdisciplinario de Arte,
-          Ciencia y Tecnología organizado por UTEC, PUCP, MAC-LIMA y Fundación
-          Telefónica (2022). Ponencia: <b
-            >¿Euclides en el live coding? Algoritmos y conceptos matemáticos
-            durante la codificación en tiempo real.</b
+          Ponente en Constelaciones: Congreso Interdisciplinario de Arte, Ciencia y Tecnología
+          organizado por UTEC, PUCP, MAC-LIMA y Fundación Telefónica (2022). Ponencia: <b
+            >¿Euclides en el live coding? Algoritmos y conceptos matemáticos durante la codificación
+            en tiempo real.</b
           >
         </p>
       </li>
       <li class="text-primary">
         <p class="text-neutral-content">
-          Conferencista invitado en el marco del 32° Festival Internacional de
-          Guitarra del Ipcna (2021). Ponencia: <b
-            >Teorías Transformacionales de la Teoría Matemática de la Música.</b
-          >
+          Conferencista invitado en el marco del 32° Festival Internacional de Guitarra del Ipcna
+          (2021). Ponencia: <b>Teorías Transformacionales de la Teoría Matemática de la Música.</b>
         </p>
       </li>
       <li class="text-primary">
         <p class="text-neutral-content">
           PUCP (2015). Participante oyente en la <b
-            >Conferencia Regional Latinoamericana y Panamericana de Educación
-            Musical</b
+            >Conferencia Regional Latinoamericana y Panamericana de Educación Musical</b
           > - ISME.
         </p>
       </li>
@@ -95,25 +88,21 @@ import Curriculum from "@components/icons/Curriculum.astro";
     <ul class="list-disc ml-4 mb-8 grid gap-2 max-w-[700px]">
       <li class="text-primary">
         <p class="text-neutral-content">
-          Universidad Nacional de Ingeniería e Instituto de Matemáticas y
-          Ciencias Afines, IMCA (2022). <b
-            >Minicurso Antología de Ingenios Matemáticos. Proyecto final en
-            GitHub.</b
-          >
+          Universidad Nacional de Ingeniería e Instituto de Matemáticas y Ciencias Afines, IMCA
+          (2022). <b>Minicurso Antología de Ingenios Matemáticos. Proyecto final en GitHub.</b>
         </p>
       </li>
       <li class="text-primary">
         <p class="text-neutral-content">
           PUCP (2016). <b
-            >Creatividad en el aula de música. Estrategias didácticas y
-            evaluativas.
+            >Creatividad en el aula de música. Estrategias didácticas y evaluativas.
           </b> Dictado por la Dra. Ana Lucía Frega.
         </p>
       </li>
       <li class="text-primary">
         <p class="text-neutral-content">
-          PUCP (2015). <b>Metodologías de la Investigación en Música.</b> Dictado
-          por la Dra. Ana Lucía Frega.
+          PUCP (2015). <b>Metodologías de la Investigación en Música.</b> Dictado por la Dra. Ana Lucía
+          Frega.
         </p>
       </li>
     </ul>

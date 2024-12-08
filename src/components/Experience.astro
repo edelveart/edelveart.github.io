@@ -1,15 +1,16 @@
 ---
-import TimeLineElement from "./TimeLine.astro";
+import TimeLine from "./TimeLine.astro";
 import Work from "./icons/Work.astro";
 
 export const allExperiences = [
   {
     title: "ZifferJS | TypeScript Software Developer",
     subtitle: "oct.2023 - actualidad | Finlandia | En remoto",
-    description: `Colaboro en el desarrollo de ZifferJS, una notación musical generativa y analizador en TypeScript. Está diseñado para adaptarse a cualquier entorno de live coding que admita tecnologías web. Mis responsabilidades incluyen:
+    description: `Colaboro en el desarrollo de ZifferJS, una notación musical generativa y analizador. Está diseñado para adaptarse a cualquier entorno de live coding que admita tecnologías web.
     • Implementar algoritmos matemáticos aplicados a complejos simpliciales y teoría de grafos
-    • Crear pruebas unitarias (vitest) y escribir documentación para Topos
-    • Crear funciones generadoras para trabajar con secuencias infinitas`,
+    • Crear pruebas unitarias y escribir documentación para Topos
+    • Crear funciones generadoras para trabajar con secuencias infinitas
+    💻 Tecnologías: TypeScript, Vitest`,
   },
   {
     title:
@@ -67,7 +68,7 @@ const filteredExperiences = indices
   {
     filteredExperiences.map((experience, index: number) => (
       <>
-        <TimeLineElement
+        <TimeLine
           key={index}
           title={experience.title}
           subtitle={experience.subtitle}

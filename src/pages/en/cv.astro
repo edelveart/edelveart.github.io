@@ -1,8 +1,8 @@
 ---
 import BaseLayout from "@layouts/en/BaseLayout.astro";
 import Experience, { allExperiences } from "@components/en/Experience.astro";
-import ListOfSkills from "@components/en/ListOfSkills.astro";
-import { techSkills } from "@components/ListOfSkills.astro";
+import ListOfSkills from "@components/ListOfSkills.astro";
+import { techSkillsEnglish } from "@components/ListOfSkills.astro";
 import Education from "@components/en/Education.astro";
 import Curriculum from "@components/icons/Curriculum.astro";
 ---
@@ -16,13 +16,11 @@ import Curriculum from "@components/icons/Curriculum.astro";
     </div>
 
     <article class="mb-10 max-w-[700px]">
-      I am passionate about problem-solving and self-learning in technological
-      environments, as well as a mathematics enthusiast with a particular
-      interest in software development.
+      I am passionate about problem-solving and self-learning in technological environments, as well
+      as a mathematics enthusiast with a particular interest in software development.
       <br />
-      I have experience teaching both in-person and online at the undergraduate and
-      graduate levels, with a focus on subjects such as music theory and technology,
-      musicology, and live coding.
+      I have experience teaching both in-person and online at the undergraduate and graduate levels,
+      with a focus on subjects such as music theory and technology, musicology, and live coding.
       <br />
       <br />
 
@@ -32,19 +30,15 @@ import Curriculum from "@components/icons/Curriculum.astro";
           <p class="text-neutral-content">Mathematical Music Theory</p>
         </li>
         <li class="text-primary">
-          <p class="text-neutral-content">
-            Domain-Specific Languages (DSLs) for Music
-          </p>
+          <p class="text-neutral-content">Domain-Specific Languages (DSLs) for Music</p>
         </li>
         <li class="text-primary">
-          <p class="text-neutral-content">
-            Computer-Assisted Music Composition and Improvisation
-          </p>
+          <p class="text-neutral-content">Computer-Assisted Music Composition and Improvisation</p>
         </li>
       </ul>
     </article>
 
-    <ListOfSkills listOfSkills={techSkills} indices={[0, 1, 2, 3]} />
+    <ListOfSkills title="Technologies" techSkills={techSkillsEnglish} indices={[0, 1, 2, 3]} />
 
     <Experience workExperiences={allExperiences} />
 
@@ -59,18 +53,15 @@ import Curriculum from "@components/icons/Curriculum.astro";
     <ul class="list-disc ml-4 mb-5 grid gap-2 max-w-[700px]">
       <li class="text-primary">
         <p class="text-neutral-content">
-          Speaker at Constelaciones: Interdisciplinary Congress on Art, Science,
-          and Technology organized by UTEC, PUCP, MAC-LIMA, and Fundación
-          Telefónica (2022). Presentation: <b
-            >Euclid in Live Coding? Algorithms and Mathematical Concepts During
-            Real-Time Coding.</b
+          Speaker at Constelaciones: Interdisciplinary Congress on Art, Science, and Technology
+          organized by UTEC, PUCP, MAC-LIMA, and Fundación Telefónica (2022). Presentation: <b
+            >Euclid in Live Coding? Algorithms and Mathematical Concepts During Real-Time Coding.</b
           >
         </p>
       </li>
       <li class="text-primary">
         <p class="text-neutral-content">
-          Invited speaker at the 32nd International Guitar Festival of Ipcna
-          (2021). Presentation: <b
+          Invited speaker at the 32nd International Guitar Festival of Ipcna (2021). Presentation: <b
             >Transformational Theories in Mathematical Music Theory.</b
           >
         </p>
@@ -93,10 +84,9 @@ import Curriculum from "@components/icons/Curriculum.astro";
     <ul class="list-disc ml-4 mb-8 grid gap-2 max-w-[700px]">
       <li class="text-primary">
         <p class="text-neutral-content">
-          National University of Engineering and Institute of Mathematics and
-          Related Sciences, UNI-IMCA (2022). <b
-            >Mini-Course Anthology of Mathematical Ingenuities. Final project on
-            GitHub.</b
+          National University of Engineering and Institute of Mathematics and Related Sciences,
+          UNI-IMCA (2022). <b
+            >Mini-Course Anthology of Mathematical Ingenuities. Final project on GitHub.</b
           >
         </p>
       </li>
@@ -104,8 +94,7 @@ import Curriculum from "@components/icons/Curriculum.astro";
       <li class="text-primary">
         <p class="text-neutral-content">
           PUCP (2016). <b
-            >Creativity in the Music Classroom: Didactic and Evaluative
-            Strategies.
+            >Creativity in the Music Classroom: Didactic and Evaluative Strategies.
           </b> Taught by Dr. Ana Lucía Frega.
         </p>
       </li>

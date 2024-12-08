@@ -6,10 +6,11 @@ export const allExperiences = [
   {
     title: "ZifferJS | TypeScript Software Developer",
     subtitle: "oct.2023 - present | Finland | Remote",
-    description: `I collaborate on the development of ZifferJS, a generative music notationand parser written in TypeScript. It is designed to fit into any live coding environment that supports web technologies. My responsibilities include:
+    description: `I collaborate on the development of ZifferJS, a generative music notation and parser. It is designed to fit into any live coding environment that supports web technologies.
     • Implementing mathematical algorithms applied to simplicial complexes and graph theory
-    • Creating unit tests (vitest) and writing documentation for Topos
-    • Creating generator functions to work with infinite sequences`,
+    • Creating unit tests and writing documentation for Topos
+    • Creating generator functions to work with infinite sequences
+    💻 Technologies: TypeScript, Vitest`,
   },
   {
     title:
@@ -71,6 +72,7 @@ const filteredExperiences = indices
           title={experience.title}
           subtitle={experience.subtitle}
           description={experience.description}
+          moreInfo="See more"
         />
       </>
     ))

@@ -1,14 +1,28 @@
 ---
 import Skills from "./icons/Skills.astro";
 
-export const techSkills: string[] = [
+export const techSkillsSpanish: string[] = [
   "TypeScript, Node.js, Express, SQL, Git",
   "Cierto conocimiento de Ruby y Python",
   "LaTex, BibTex, GeoGebra, Zotero",
   "Sonic Pi, MuseScore, Reaper",
 ];
 
-const { indices = [] } = Astro.props;
+export const techSkillsEnglish: string[] = [
+  "TypeScript, Node.js, Express, SQL, Git",
+  "Some knowledge of Ruby and Python",
+  "LaTex, BibTex, GeoGebra, Zotero",
+  "Sonic Pi, MuseScore, Reaper",
+];
+
+type Props = {
+  indices: number[];
+  title: string;
+  techSkills: string[];
+};
+
+const { indices = [], title, techSkills = [] } = Astro.props;
+
 const filteredSkills = indices
   .map((index) => techSkills[index])
   .filter((skill) => skill !== undefined);
@@ -16,7 +30,7 @@ const filteredSkills = indices
 
 <div class="mb-5 mt-[-1rem]">
   <div class="text-2xl w-full font-bold flex items-center">
-    <Skills class="ml-0 mr-4" />Tecnologías
+    <Skills class="ml-0 mr-4" />{title}
   </div>
 </div>
 

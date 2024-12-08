@@ -7,9 +7,11 @@ import ProjectsComponent, { allProjects } from "@components/ProjectsComponent.as
 
 import ListOfSkills from "@components/ListOfSkills.astro";
 import Education from "@components/Education.astro";
-import { techSkills } from "@components/ListOfSkills.astro";
+import { techSkillsSpanish } from "@components/ListOfSkills.astro";
+
 import BlogEntry from "@components/BlogEntry.astro";
 import Mordell from "@components/Mordell.astro";
+import { techSkillsEnglish } from "@components/ListOfSkills.astro";
 ---
 
 <BaseLayout sideBarActiveItemID="home">
@@ -32,7 +34,7 @@ import Mordell from "@components/Mordell.astro";
       indices={[0, 2]}
     />
     <div class="m-16"></div>
-    <ListOfSkills listOfSkills={techSkills} indices={[0, 1]} />
+    <ListOfSkills title="Tecnologías" techSkills={techSkillsSpanish} indices={[0, 1]} />
     <Education />
     <!-- <BlogEntry /> -->
   </div>
