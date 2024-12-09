@@ -10,7 +10,6 @@ export type ProjectType = {
   url: string;
   badge: string;
 };
-// shadow-green-400/30
 ---
 
 <div
@@ -18,15 +17,9 @@ export type ProjectType = {
   data-tip="Projects"
 >
   <a href={url} target={target}>
-    <div
-      class="hero-content flex-col md:flex-row rounded-lg shadow-lg shadow-primary/30"
-    >
+    <div class="hero-content flex-col md:flex-row rounded-lg shadow-lg shadow-primary/30">
       <div class="grow w-full">
-        {
-          badge && (
-            <div class="badge badge-secondary mx-[-0.25rem]">{badge}</div>
-          )
-        }
+        {badge && <div class="badge badge-secondary mx-[-0.25rem]">{badge}</div>}
         <h1 class="text-lg font-bold pt-2">
           {title}
         </h1>
