@@ -20,12 +20,10 @@ const { title, subtitle, description, moreInfo = "Ver más" }: JobProps = Astro.
 
     {
       description && (
-        <details class="mt-2 flex justify-center items-center ">
-          <summary class="text-sm cursor-pointer flex items-center gap-2 animate-pulse ">
-            {moreInfo}
-          </summary>
+        <details class="mt-2 flex justify-center items-center">
+          <summary class="text-sm cursor-pointer flex items-center gap-2">{moreInfo}</summary>
 
-          <p class="my-2 text-pretty whitespace-pre-line max-w-[700px] ">{description}</p>
+          <p class="my-2 text-pretty whitespace-pre-line max-w-[700px]">{description}</p>
         </details>
       )
     }
@@ -35,10 +33,6 @@ const { title, subtitle, description, moreInfo = "Ver más" }: JobProps = Astro.
 <style>
   summary {
     display: inline-flex;
-    align-items:;
-
-    justify-content: start;
-
     transition: background-color 0.3s ease-in-out;
   }
 
@@ -46,9 +40,9 @@ const { title, subtitle, description, moreInfo = "Ver más" }: JobProps = Astro.
     content: "";
     display: block;
 
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    border-left: 11px solid #2bbdf8;
+    border-top: 0.35rem solid transparent;
+    border-bottom: 0.35rem solid transparent;
+    border-left: 0.7rem solid #2bbdf8;
     transition: transform 0.3s ease-in-out;
   }
 
