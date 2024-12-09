@@ -1,9 +1,23 @@
 ---
 import SideBarMenu from "@components/SideBarMenu.astro";
-import SideBarFooter from "../SideBarFooter.astro";
+import SideBarFooter from "@components/SideBarFooter.astro";
 import PhotoProfile from "@components/PhotoProfile.astro";
-import { menuEnglish } from "@components/SideBar.astro";
 const { sideBarActiveItemID } = Astro.props;
+
+export const menuEnglish = {
+  homeMenu: {
+    text: "Home",
+    href: "./",
+  },
+  projectsMenu: {
+    text: "Projects",
+    href: "/en/projects",
+  },
+  cvMenu: {
+    text: "CV",
+    href: "/en/cv",
+  },
+};
 ---
 
 <div class="drawer-side z-40">
