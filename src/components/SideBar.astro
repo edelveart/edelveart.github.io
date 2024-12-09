@@ -7,15 +7,15 @@ const { sideBarActiveItemID } = Astro.props;
 export const menuSpanish = {
   homeMenu: {
     text: "Inicio",
-    href: "./",
+    href: "/",
   },
   projectsMenu: {
     text: "Proyectos",
-    href: "./projects",
+    href: "/projects",
   },
   cvMenu: {
     text: "Curriculum Vitae",
-    href: "./cv",
+    href: "/cv",
   },
 };
 ---
@@ -34,6 +34,7 @@ export const menuSpanish = {
         </div>
       </a>
     </div>
+
     <SideBarMenu
       homeMenu={menuSpanish.homeMenu.text}
       projectsMenu={menuSpanish.projectsMenu.text}
