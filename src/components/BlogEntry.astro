@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import HorizontalCard from "@components/HorizontalCard.astro";
 import createSlug from "../lib/createSlug";
-import PencilEducation from "./icons/PencilEducation.astro";
+import PencilEducation from "@icons/PencilEducation.astro";
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );

@@ -7,6 +7,7 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: "https://edelveart.github.io",
   integrations: [mdx(), sitemap(), tailwind()],
+
   plugins: [
     sitemap({
       // Routes of SiteMap excluded

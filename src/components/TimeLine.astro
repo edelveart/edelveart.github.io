@@ -1,12 +1,12 @@
 ---
-interface JobProps {
+interface Props {
+  key?: number;
   title: string;
   subtitle: string;
-  description: string;
-  buttonText: string;
-  moreInfo: string;
+  description?: string;
+  moreInfo?: string;
 }
-const { title, subtitle, description, moreInfo = "Ver más" }: JobProps = Astro.props as JobProps;
+const { title, subtitle, description, moreInfo = "Ver más" }: Props = Astro.props;
 ---
 
 <div class="flex">

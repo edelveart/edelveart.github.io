@@ -1,13 +1,13 @@
 ---
-import LinkedIn from "./icons/LinkedIn.astro";
-import Youtube from "./icons/Youtube.astro";
-import GitHub from "./icons/GitHub.astro";
+import LinkedIn from "@icons/LinkedIn.astro";
+import Youtube from "@icons/Youtube.astro";
+import GitHub from "@icons/GitHub.astro";
 import { SOCIAL_MEDIA } from "../config";
 
-interface ContactText {
+export interface Props {
   contactText?: string;
 }
-const { contactText } = Astro.props as ContactText;
+const { contactText } = Astro.props;
 ---
 
 <div class="mt-8 mb-10 flex justify-start gap-4 flex-wrap">
