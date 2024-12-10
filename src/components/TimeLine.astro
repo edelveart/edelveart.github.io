@@ -20,34 +20,34 @@ const { title, subtitle, description, moreInfo = "Ver más" }: Props = Astro.pro
 
     {
       description && (
-        <details class="mt-2 flex justify-center items-center">
-          <summary class="text-sm cursor-pointer flex items-center gap-2">{moreInfo}</summary>
+        <details class="mt-2 flex flex-col ">
+          <summary class="text-sm cursor-pointer items-center gap-2">{moreInfo}</summary>
 
-          <p class="my-2 text-pretty whitespace-pre-line max-w-[700px]">{description}</p>
+          <p class="my-2 text-pretty whitespace-pre-line max-w-[700px] ">{description}</p>
         </details>
       )
     }
   </div>
+
+  <style>
+    summary {
+      display: inline-flex;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    summary::after {
+      content: "";
+      display: block;
+
+      border-top: 0.35rem solid transparent;
+      border-bottom: 0.35rem solid transparent;
+      border-left: 0.7rem solid #2bbdf8;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    details[open] summary::after {
+      content: "";
+      transform: rotate(90deg);
+    }
+  </style>
 </div>
-
-<style>
-  summary {
-    display: inline-flex;
-    transition: background-color 0.3s ease-in-out;
-  }
-
-  summary::after {
-    content: "";
-    display: block;
-
-    border-top: 0.35rem solid transparent;
-    border-bottom: 0.35rem solid transparent;
-    border-left: 0.7rem solid #2bbdf8;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  details[open] summary::after {
-    content: "";
-    transform: rotate(90deg);
-  }
-</style>
