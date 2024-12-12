@@ -1,4 +1,4 @@
-# Personal Web Site of Edgar Delgado Vega
+# Personal WebSite of Edgar Delgado Vega
 
 Hi there!
 
