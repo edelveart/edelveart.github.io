@@ -125,7 +125,7 @@ Lo único que agregaremos para darle un toque de dinamismo es un *control desliz
 varphi = 2 pi
 Curva(sen³(u), cos³(u), u, 0, varphi)
 ```
-Agregamos algo de color y listo, ahí está nuestro astroide. Con el control deslizante $\varphi$ en acción, la figura toma vida, mostrando su dinamismo.
+Agregamos algo de color y listo, ahí está nuestro astroide. Con el control deslizante $\varphi$ en acción, la figura cobra vida, mostrando su ritmo.
 
 ![Astroid by Edelve](public/post1.png)
 
