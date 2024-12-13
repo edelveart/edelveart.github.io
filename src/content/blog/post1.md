@@ -3,7 +3,7 @@ title: "El parque de Magdalena del Mar es un astroide"
 description: "Hagamos las matemáticas de una plaza de la ciudad de Lima"
 pubDate: "December 08 2024"
 heroImage: "/plaza-magdalena-del-mar.png"
-badge: "v0.9.0"
+badge: "v0.8.0"
 tags: ["Plaza de Magdalena del Mar", "Astroide", "Curvas planas", "Geometría"]
 ---
 <!-- Script - LaTex -->
@@ -50,7 +50,7 @@ De repente, recordé el nombre de la ecuación: el **astroide**. Mientras camina
 
 ¿De dónde surge un astroide?
 
-Pensé en la estela que deja un punto $P$ de un círculo que rueda a lo largo de una línea recta fija $L$ (directriz). El nombre técnico es **trocoide**. Es una de las curvas ampliamente usadas para el diseño de engranajes.
+Pensé en la estela que deja un punto $P$ de un círculo que rueda a lo largo de una línea fija $L$ (la directriz). El nombre técnico es **trocoide**. Es una de las curvas ampliamente usadas para el diseño de engranajes.
 
 Aquí, de inmediato, me surgieron las clasificaciones:
 
