@@ -1,6 +1,6 @@
 ---
 title: "El parque de Magdalena del Mar es un astroide"
-description: "Hagamos las matemáticas de una plaza de la ciudad de Lima"
+description: "Explorando las matemáticas de una plaza de Lima"
 pubDate: "December 08 2024"
 heroImage: "/plaza-magdalena-del-mar.png"
 badge: "v0.8.0"
