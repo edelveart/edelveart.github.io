@@ -87,7 +87,7 @@ Una vez más, se abre una clasificación, pero esta vez, pensando en si el círc
 
 #### 6:55 pm
 
-Otra vez me siento incómodo con una clasificación incompleta. El simple hecho de que existan epicicloide e hipocicloide me hace regresar a la clasificación de rodar sobre la línea. ¿Y si $P$ es mayor o menor al radio  $r$ de este círculo rodante? Sí, efectivamente, también hay más opciones:
+Otra vez me siento incómodo con una clasificación incompleta. El simple hecho de que existan epicicloide e hipocicloide me hace regresar a la clasificación de rodar sobre la línea. ¿Y si $P$ es mayor o menor al radio $r$ de este círculo rodante? Sí, efectivamente, también hay más opciones:
 
 - Epitrocoide (círculo generatriz fuera del círculo estacionario)
     -  Epicicloide contraída ($P$ dentro del generador)
@@ -115,7 +115,7 @@ donde $0 \leq \varphi \leq 2\pi.$
 
 #### 10:00 pm
 
-Ya en casa, echemos mano a Geogebra para graficar el astroide del parque. Traemos el un par de ecuaciones paramétricas de más arriba.
+Ya en casa, vamos a echar mano de Geogebra para graficar el astroide del parque con las ecuaciones paramétricas de más arriba.
 
 Lo único que agregaremos para darle un toque de dinamismo es un *control deslizante*. Lo llamaremos $\varphi$, para que la figura se mueva mientras exploramos la curva.
 
@@ -135,4 +135,4 @@ Ahora, al compararla con la foto panorámica del parque de Magdalena del Mar, la
 
 ##  Coincidencia
 
-Es rarísimo topar con algo así, ¿no? Salir a divertirte y terminar haciendo hora con algo de geometría de curvas planas. Pero, claro, nunca sabes cuándo la matemática va a decidir aparecer… ¡y a veces lo hace justo mientras haces hora en una feria!
+Es rarísimo topar con algo así, salir a divertirte y terminar haciendo hora con algo de geometría de curvas planas. Pero, claro, nunca sabes cuándo la matemática va a decidir aparecer… ¡y a veces lo hace justo mientras haces hora en una feria!
