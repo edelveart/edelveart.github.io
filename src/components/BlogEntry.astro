@@ -2,16 +2,17 @@
 import { getCollection } from "astro:content";
 import HorizontalCard from "@components/HorizontalCard.astro";
 import createSlug from "../lib/createSlug";
-import PencilEducation from "@icons/PencilEducation.astro";
+import Blog from "@icons/Blog.astro";
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 const last_posts = posts.slice(0, 3);
 ---
 
-<div class="text-2xl w-full font-bold flex items-center mt-8 mb-4" id="BLOG">
-  <PencilEducation class="ml-0 mr-4" />
-  Blog
+<div class="mb-5" id="BLOG">
+  <div class="text-2xl w-full font-bold flex items-center mt-8 max-w-[700px]" id="BLOG">
+    <Blog class="ml-0 mr-4" /> Blog
+  </div>
 </div>
 
 <section class="mb-10 mt-0">

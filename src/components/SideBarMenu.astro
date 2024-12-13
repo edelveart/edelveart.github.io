@@ -2,23 +2,36 @@
 import Home from "@icons/Home.astro";
 import Branch from "@icons/Branch.astro";
 import Curriculum from "@icons/Curriculum.astro";
-import PencilEducation from "@icons/PencilEducation.astro";
+import Blog from "@icons/Blog.astro";
 type Props = {
   sideBarActiveItemID: unknown;
   homeMenu: string;
   projectsMenu: string;
   cvMenu: string;
+  blogMenu?: string;
   hrefHome: string;
   hrefProjects: string;
   hrefCV: string;
+  hrefBlog?: string;
 };
-const { sideBarActiveItemID, homeMenu, projectsMenu, cvMenu, hrefHome, hrefProjects, hrefCV } =
-  Astro.props;
+
+const {
+  sideBarActiveItemID,
+  homeMenu,
+  projectsMenu,
+  cvMenu,
+  blogMenu,
+  hrefHome,
+  hrefProjects,
+  hrefCV,
+  hrefBlog,
+} = Astro.props;
 const activeClass = "bg-base-300"; // For primary color replace with `active` class
 export const sideMenuCss = {
   divCss: "py-3 md:justify-start",
   spanText: "text-xl md:text-sm",
 };
+const currentLangBarMenu = Astro.url.pathname.startsWith("/en") ? "en" : "es";
 ---
 
 <ul class="menu grow shrink menu-md overflow-y-auto">
@@ -42,6 +55,12 @@ export const sideMenuCss = {
       <span class=`${sideMenuCss.spanText}`>{cvMenu}</span>
     </a>
   </li>
+  <li>
+    <a class=`${sideMenuCss.divCss}` id="blog" href={hrefBlog}>
+      {currentLangBarMenu === "es" ? <Blog /> : ""}
+      <span class=`${sideMenuCss.spanText}`>{blogMenu}</span>
+    </a>
+  </li>
 
   <!-- <li>
     <a class=`${sideMenuCss.divCss}` id="blog" href="/blog">
@@ -49,13 +68,6 @@ export const sideMenuCss = {
       <span class=`${sideMenuCss.spanText}`>Blog</span>
     </a>
   </li> -->
-  <li>
-    <!-- <li><a class="py-3 text-base" id="projects" href="/projects">Projects</a></li> -->
-    <!-- <li><a class="py-3 text-base" id="services" href="/services">Services</a></li> -->
-    <!-- <li><a class="py-3 text-base" id="store" href="/store">Store</a></li> -->
-    <!-- <li><a class="py-3 text-base" id="blog" href="/blog/">Blog</a></li> -->
-    <!-- <li><a class="py-3 text-base" id="cv" href="/cv">CV</a></li> -->
-  </li>
 </ul>
 
 <script
