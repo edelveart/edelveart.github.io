@@ -4,7 +4,7 @@ description: "Hagamos las matemáticas de una plaza de la ciudad de Lima"
 pubDate: "December 08 2024"
 heroImage: "/plaza-magdalena-del-mar.png"
 badge: "v0.9.0"
-tags: ["Plaza de Magdalena del Mar", "Astroide", "Curvas planas", "Geometría "]
+tags: ["Plaza de Magdalena del Mar", "Astroide", "Curvas planas", "Geometría"]
 ---
 <!-- Script - LaTex -->
 <!-- <script async
@@ -123,11 +123,11 @@ Curva(sen³(u), cos³(u), u, 0, varphi)
 ```
 Agregamos algo de color y listo, ahí está nuestro astroide. Con el control deslizante $\varphi$ en acción, la figura toma vida, mostrando su dinamismo.
 
-<img src="/post1.png" width="700px" alt="Map of Magdalena Del Mar Park" style="border-radius: 15px;"/>
+<!-- <img src="/post1.png" width="700px" alt="Map of Magdalena Del Mar Park" style="border-radius: 15px;"/> -->
 
 Ahora, al compararla con la foto panorámica del parque de Magdalena del Mar, la conexión entre la geometría y el paisaje se vuelve curioso. Tenemos un juego entre lo físico y lo abstracto.
 
-<img src="/post1-park.png" width="700px" alt="Map of " style="border-radius: 15px;"/>
+<!-- <img src="/post1-park.png" width="700px" alt="Map of " style="border-radius: 15px;"/> -->
 
 ##  Hora de ir a tomar desayuno
 
