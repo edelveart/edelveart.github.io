@@ -78,7 +78,7 @@ Mi mente, siempre inquieta, me llevó a una nueva reflexión:
 
 > Si rodamos sobre una línea $L$, ¿por qué no rodar sobre cualquier otra figura, sobre cualquier otra curva plana? ¿Qué pasaría si no nos limitáramos a la simpleza de la recta? Después de todo, las matemáticas no tienen límites.
 
-Una idea bastante natural es pensar que, en lugar de hacer rodar un círculo sobre una línea, ahora tenemos un círculo rodante que gira sobre otro *círculo base estacionario*. La estela de este giro de un círculo sobre un círculo base produce una nueva curva.
+Una idea bastante natural es pensar que, en lugar de hacer rodar un círculo sobre una línea, ahora tenemos un círculo rodante que gira sobre otro *círculo base estacionario*. La estela de este giro producirá una nueva curva.
 
 Una vez más, se abre una clasificación, pero esta vez, pensando en si el círculo generatriz rueda por fuera o por dentro del círculo base inmóvil.
 
@@ -135,5 +135,4 @@ Ahora, al compararla con la foto panorámica del parque de Magdalena del Mar, la
 
 ##  Coincidencia
 
-Es rarísimo topar con algo así, ¿verdad? Salir a divertirte y terminar haciendo hora con algo de geometría de curvas planas.
-
+Es rarísimo topar con algo así, ¿no? Salir a divertirte y terminar haciendo hora con algo de geometría de curvas planas. Pero, claro, nunca sabes cuándo la matemática va a decidir aparecer… ¡y a veces lo hace justo mientras haces hora en una feria!
