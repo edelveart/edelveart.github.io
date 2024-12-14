@@ -2,11 +2,11 @@
 title: "El parque de Magdalena del Mar es un astroide"
 description: "Explorando las matemáticas de una plaza de Lima."
 pubDate: "December 13 2024"
-heroImage: "/src/content/blog/post1/post1-z-hero.webp"
+heroImage: "/post1/z-hero.webp"
 badge: "v0.8.0"
 tags: ["Plaza de Magdalena del Mar", "Astroide", "Curvas planas", "Geometría"]
 ---
-
+ <!-- "/src/content/blog/post1/post1-z-hero.webp" -->
 > Recuerda citar esta publicación con horarios referenciales. ¿Quién recuerda la hora mientras sale a dar una vuelta?
 
 ### Crónica de hace un año
@@ -104,11 +104,11 @@ Curva(sen³(u), cos³(u), u, 0, varphi)
 ```
 Agregamos algo de color y listo, ahí está nuestro astroide. Con el control deslizante $\varphi$ en acción, la figura cobra vida, mostrando su ritmo.
 
-![Astroid by Edelve](src/content/blog/post1/post1-astroid.webp)
+![Astroid by Edelve](/post1/astroid.webp)
 
 Ahora, al compararla con la foto panorámica del parque de Magdalena del Mar, la conexión entre la geometría y el paisaje se vuelve interesante. Tenemos un juego entre lo físico y lo abstracto.
 
-![Map of Magdalena Del Mar Park](src/content/blog/post1/post1-park.webp)
+![Map of Magdalena Del Mar Park](/post1/park.webp)
 
 ##  Coincidencia
 
