@@ -6,13 +6,14 @@ heroImage: "/plaza-magdalena-del-mar.png"
 badge: "v0.8.0"
 tags: ["Plaza de Magdalena del Mar", "Astroide", "Curvas planas", "Geometría"]
 ---
-<!-- Script - LaTex -->
+
 <!-- <script async
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
   type="text/javascript">
 </script> -->
-<script async type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+
+<!-- <script async type="text/javascript"
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
 </script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
@@ -28,8 +29,26 @@ tags: ["Plaza de Magdalena del Mar", "Astroide", "Curvas planas", "Geometría"]
       }
     }
   });
+</script> -->
+
+<script>
+  if (window.MathJax) {
+  MathJax.Hub.Queue(
+    ["resetEquationNumbers",MathJax.InputJax.TeX],
+    ["Typeset",MathJax.Hub]
+    );
+  }
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
 </script>
-<!-- Script - LaTex -->
+
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
 > Recuerda citar esta publicación con horarios referenciales. ¿Quién recuerda la hora mientras sale a dar una vuelta?
 
 ## Crónica de hace un año
