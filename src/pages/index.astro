@@ -2,6 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Biography from "@components/Biography.astro";
 import IndexLinks from "@components/IndexLinks.astro";
+import Mordell from "@components/Mordell.astro";
 import Experience, { allExperiences } from "@components/Experience.astro";
 import ProjectsComponent, { allProjects } from "@components/ProjectsComponent.astro";
 
@@ -9,14 +10,20 @@ import ListOfSkills from "@components/ListOfSkills.astro";
 import Education from "@components/Education.astro";
 import { techSkillsSpanish } from "@components/ListOfSkills.astro";
 
-import BlogEntry from "@components/BlogEntry.astro";
-import Mordell from "@components/Mordell.astro";
+import Blog from "@icons/Blog.astro";
+import { getCollection } from "astro:content";
+import HorizontalCard from "@components/HorizontalCard.astro";
+import createSlug from "src/lib/createSlug";
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const last_posts = posts.slice(0, 3);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
   <div class="pb-8"></div>
   <Mordell />
-  <div class="pb-3 mt-5 max-w-[700px]">
+  <section class="pb-3 mt-5 max-w-[700px]">
     <div class="text-3xl font-bold leading-snug pt-0">
       Hola, soy <strong> Edgar </strong> 👋
     </div>
@@ -37,6 +44,24 @@ import Mordell from "@components/Mordell.astro";
     <div class="m-16"></div>
     <ListOfSkills title="Tecnologías" techSkills={techSkillsSpanish} indices={[0, 1]} />
     <Education />
-    <BlogEntry />
-  </div>
+
+    <div class="text-2xl w-full font-bold flex items-center my-6 ml-0">
+      <Blog />Blog
+    </div>
+    {
+      last_posts.map((post) => (
+        <>
+          <HorizontalCard
+            title={post.data.title}
+            img={post.data.heroImage}
+            desc={post.data.description}
+            url={"/blog/" + createSlug(post.data.title, post.slug)}
+            target="_self"
+            badge={post.data.badge}
+          />
+          <div class="divider my-3" />
+        </>
+      ))
+    }
+  </section>
 </BaseLayout>

@@ -1,53 +1,11 @@
 ---
 title: "El parque de Magdalena del Mar es un astroide"
-description: "Explorando las matemáticas de una plaza de Lima"
+description: "Explorando las matemáticas de una plaza de Lima. Explorando las matemáticas de una plaza de Lima. Explorando las matemáticas de una plaza de Lima. Explorando las matemáticas de una plaza de Lima."
 pubDate: "December 13 2024"
 heroImage: "/plaza-magdalena-del-mar.png"
 badge: "v0.8.0"
 tags: ["Plaza de Magdalena del Mar", "Astroide", "Curvas planas", "Geometría"]
 ---
-
-<!-- <script async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-  type="text/javascript">
-</script> -->
-
-<!-- <script async type="text/javascript"
- src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      processEscapes: true},
-      jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"],
-      extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
-      TeX: {
-      extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
-      equationNumbers: {
-      autoNumber: "AMS"
-      }
-    }
-  });
-</script> -->
-
-<script>
-  if (window.MathJax) {
-  MathJax.Hub.Queue(
-    ["resetEquationNumbers",MathJax.InputJax.TeX],
-    ["Typeset",MathJax.Hub]
-    );
-  }
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
-      }
-    };
-</script>
-
-<script id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-</script>
 
 > Recuerda citar esta publicación con horarios referenciales. ¿Quién recuerda la hora mientras sale a dar una vuelta?
 
