@@ -15,16 +15,11 @@ const { page } = Astro.props as any;
 ---
 
 <BaseLayout title="Blog" sideBarActiveItemID="blog">
-  <section class="pb-3 mt-5 max-w-[700px]">
-    <div class="pb-5 mt-5" id="BLOG">
-      <div class="text-2xl w-full font-bold flex items-center">
-        <Blog /> Blog
-      </div>
-    </div>
-
+  <section class="mb-5 mt-5 max-w-[700px]">
+    <div class="text-2xl w-full font-bold mb-5 flex"><Blog /> Blog</div>
     {
       page.data.length === 0 ? (
-        <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full ml-96">
+        <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
           <p class="font-bold">Sorry!</p>
           <p>There are no blog posts to show at the moment. Check back later!</p>
         </div>
@@ -87,6 +82,7 @@ const { page } = Astro.props as any;
           <div />
         )
       }
+      <!-- </div> -->
     </div>
   </section>
 </BaseLayout>
