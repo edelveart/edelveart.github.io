@@ -13,7 +13,7 @@ import { Image } from "astro:assets";
 ---
 
 <BaseLayout title={title} description={description} image={heroImage} , ogType="article">
-  <main class="md:flex md:justify-center mt-8">
+  <main class="md:flex md:justify-center my-8">
     <article class="prose prose-lg prose-img:mx-auto">
       {
         heroImage && (
@@ -27,7 +27,7 @@ import { Image } from "astro:assets";
           />
         )
       }
-      <h1 class="title my-2 text-4xl font-bold">{title}</h1>
+      <h1 class="title my-2 text-2xl font-bold">{title}</h1>
       {pubDate && <time>{displayDate}</time>}
       <br />
       {badge && <div class="badge badge-secondary my-1">{badge}</div>}
