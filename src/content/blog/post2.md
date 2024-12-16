@@ -25,16 +25,16 @@ Comencemos entonces.
 En TypeScript tenemos varias aproximaciones sintácticas y con ciertas minuciocidades que no vamos a sumergirnos demasiado. Empecemos por el conocimiento previo.
 
 ```ts
-function addFourValues(x: number, y: number, z: number, w: number): number{
+function sumFourNumbers(x: number, y: number, z: number, w: number): number{
   return x+ y + z + w;
 }
 ```
-Aquí tenemos la sencilla función declarada `addFourValues`, que recibe 4 parámetros y retorna la suma de esos números bien físicos.
+Aquí tenemos la sencilla función declarada `sumFourNumbers`, que recibe 4 parámetros y retorna la suma de esos números bien físicos.
 
 Ahora, pongámosle un toque de Curry... ¡es broma! Vamos a currificarla con un tipado no tan estricto en su retorno:
 
 ```ts
-function addFourValues(x: number)  {
+function sumFourNumbers(x: number)  {
   return function(y: number){
     return function(z: number) {
       return function(w: number): number {
@@ -55,7 +55,7 @@ Es importante notar que cada una de estas funciones recibe un único valor y ret
 Recuerda que desde ECMAScript 6 hay funciones flecha, las `() => {}`.  Pues apliquémoslas a nuestro código de arriba (es equivalente, pero recuerda cómo pelotea `this` en este contexto):
 
 ```ts
-function addFourValues(x: number)  {
+function sumFourNumbers(x: number)  {
   return (y: number) => {
     return (z: number) => {
       return (w: number): number => {
@@ -71,7 +71,7 @@ function addFourValues(x: number)  {
 Aún podemos ser más explícitos en el tipado, definiendo el tipo de cada función anidada:
 
 ```ts
-function addFourValues(x: number): (y: number) => (z: number) => (w: number) => number {
+function sumFourNumbers(x: number): (y: number) => (z: number) => (w: number) => number {
   return function(y: number): (z: number) => (w: number) => number {
     return function(z: number): (w: number) => number {
       return function(w: number): number {
@@ -87,7 +87,7 @@ Este es el *real Hadōken*, apúntalo.
 Pero, en realidad, no necesitamos ser tan explícitos ni repetitivos. Para eso existe la inferencia de tipos. Basta con definir la firma de la función en la cabecera. Aquí lo ves con las funciones flecha:
 
 ```ts
-function addFourValues(x: number): (y: number) => (z: number) => (w: number) => number {
+function sumFourNumbers(x: number): (y: number) => (z: number) => (w: number) => number {
   return (y: number)=> {
     return (z: number) => {
       return (w: number): number => {
@@ -107,7 +107,7 @@ Sin embargo, todo esto resulta aún verboso.
 Sí, el tipado está complicado, o mejor dicho, verborreico. Armemos la misma vaina con una *función expresada*, la montamos sobre una constante con el mismo nombre:
 
 ```ts
-const addFourValues = (x: number) => {
+const sumFourNumbers = (x: number) => {
   return (y:number) =>{
     return (z: number) => {
       return (w: number): number => {
@@ -121,9 +121,9 @@ const addFourValues = (x: number) => {
 ¿Más de lo mismo, no? Sí, pero ahora podemos agregar un alias de tipo para modularizar nuestro juego.
 
 ```ts
-type AddFourValues = (x: number) => (y: number) => (z: number) => (w: number) => number
+type SumFourNumbersType= (x: number) => (y: number) => (z: number) => (w: number) => number
 
-const addFourValues: AddFourValues = (x)=> {
+const sumFourNumbers: SumFourNumbersType = (x)=> {
   return (y) => {
     return (z) =>{
       return (w) => {
@@ -143,8 +143,8 @@ const addFourValues: AddFourValues = (x)=> {
 Pues, luego de tanto viaje, hemos llegado a la *belleza en una línea*:
 
 ```ts
-type AddFourValues = (x: number) => (y: number) => (z: number) => (w: number) => number
-const addFourValues: AddFourValues = (x) => (y) => (z) => (w) => x + y + z + w;
+type SumFourNumbersType = (x: number) => (y: number) => (z: number) => (w: number) => number
+const sumFourNumbers: SumFourNumbersType = (x) => (y) => (z) => (w) => x + y + z + w;
 ```
 
 ¡Eso es todo, amigos!
