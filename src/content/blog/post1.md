@@ -1,8 +1,8 @@
 ---
 title: "El parque de Magdalena del Mar es un astroide"
-description: "Explorando las matemáticas de una plaza de Lima."
+description: "¿Creíste que jamás caminarías sobre unas ecuaciones paramétricas en tu vida? Exploramos las matemáticas de la plaza de un distrito limeño."
 pubDate: "December 13 2024"
-heroImage: "/post1/z-hero-2.webp"
+heroImage: "/post1/z-hero.webp"
 badge: "v0.8.0"
 tags: ["Plaza de Magdalena del Mar", "Astroide", "Curvas planas", "Geometría"]
 ---
