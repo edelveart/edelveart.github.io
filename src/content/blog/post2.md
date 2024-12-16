@@ -1,6 +1,6 @@
 ---
 title: "Funciones currificadas para almorzar | Parte 1"
-description: "¿Te gusta la comida peruana? Desglosaremos en tres partes las funciones currificadas con TypeScript para que prepares tu platillo o trago favorito."
+description: "En la primera parte de los cuentos sobre funciones currificadas, nos enfocaremos en familiarizarnos con la noción y las diversas formas de plasmar en código esta idea."
 pubDate: "December 15 2024"
 heroImage: "/post2/curry-function.webp"
 badge: "v0.5.0"

@@ -1,6 +1,6 @@
 ---
 title: "Funciones currificadas para almorzar | Parte 2"
-description: "¿Te gusta la comida peruana? Desglosaremos en tres partes las funciones currificadas con TypeScript para que prepares tu platillo o trago favorito."
+description: "En la segunda parte de los cuentos de funciones currificadas, hablaremos de sus bondades, pero también del lado oscuro de su fuerza. Finalizamos con los parámetros nombrados en el modo Curry."
 pubDate: "December 16 2024"
 heroImage: "/post2/curry-function.webp"
 badge: "v0.5.0"
