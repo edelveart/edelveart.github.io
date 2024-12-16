@@ -16,7 +16,7 @@ En la [Parte 1](funciones-currificadas-para-almorzar--parte-1) nos habíamos que
 
 - Tú leyendo: ¡ya recordé!
 
-El truco para trabajar con estas funciones es pensar en paréntesis adyacentes según los parámetros que recibe la función.  De manera general, para una función cualquiera `f_n` con `n` parámetros, mandamos algo como esto:
+El truco para trabajar con estas funciones es visualizar paréntesis adyacentes, uno tras otro, según los parámetros que recibe la función. De manera general, para una función cualquiera `f_n` con `n` parámetros, mandamos algo como esto:
 
 $$
 f_n \left( \right)_1 \left( \right)_2 \left( \right)_3 \cdots \left( \right)_n
@@ -87,7 +87,7 @@ Por último, otra gran bondad, cuando escribimos los tests en el modo Curry de l
 
 - Tú leyendo: ¿Y los efectos secundarios?
 
-Estado global ni las variables fuera del *scope* presentan la realidad alterada. También somos más predecibles, estamos declarando con claridad cómo *baila* cada función.
+El estado global ni las variables fuera del *scope* presentan la realidad alterada. También somos más predecibles, estamos declarando con claridad cómo *baila* cada función.
 
 ### ¿Todo es color de *rose*?
 
@@ -139,14 +139,14 @@ const sumFourNumbers: SumWithDestructuring = ({ x}) =>  ({ y}) => ({ z }) => ({w
 const finalSum = sumFourNumbers({ x: 5 })({ y: 3 })({ z: 2 })({ w: 7 });
 ```
 
-gual lo puedes hacer por partes, para mañana y para la noche. ¿Más verboso? Sí, pero ahora es más explícito lo que estás cocinando.
+Igual lo puedes hacer por partes, para mañana y para la noche. ¿Más verboso? Sí, pero ahora es más explícito lo que estás cocinando.
 
 ¡Eso es todo, amigos!
 
 ###  ¿Qué veremos en la parte 3 de cuentos de las funciones currificadas?
 
 En esta publicación , hemos explorado tanto lo bueno como el lado oscuro de las funciones currificadas.
-- ¿Cómo puedo crear una función así para preparar mi comida? Pues, imagina que en lugar de solo sumar números, ¡estás sumando ingredientes!
+- ¿Cómo puedo crear una función así para preparar mi comida?
 
 En la tercera parte, plantearé una ligera variación en la que nos alejaremos de los números puros, pero mantendremos el quid de lo tratado, asi como si estuviéramos siguiendo una receta.
 
