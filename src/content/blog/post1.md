@@ -6,7 +6,6 @@ heroImage: "/post1/z-hero.webp"
 badge: "v0.8.0"
 tags: ["Plaza de Magdalena del Mar", "Astroide", "Curvas planas", "Geometría"]
 ---
-> Recuerda citar esta publicación con horarios referenciales. ¿Quién recuerda la hora mientras sale a dar una vuelta?
 
 ### Crónica de hace un año
 
@@ -109,6 +108,6 @@ Ahora, al compararla con la foto panorámica del parque de Magdalena del Mar, la
 
 ![Map of Magdalena Del Mar Park](/post1/park.webp)
 
-##  Coincidencia
+###  Coincidencia
 
 Es rarísimo topar con algo así, salir a divertirte y terminar haciendo hora con algo de geometría de curvas planas. Pero, claro, nunca sabes cuándo la matemática va a decidir aparecer… ¡y a veces lo hace justo mientras haces hora en una feria!

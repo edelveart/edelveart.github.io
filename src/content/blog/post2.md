@@ -6,7 +6,6 @@ heroImage: "/post2/curry-function.webp"
 badge: "v0.5.0"
 tags: ["typescript", "funciones currificadas", "programación funcional"]
 ---
-> Recuerda citar esta publicación.
 
 **Resumen**: En la primera parte de los cuentos sobre funciones currificadas, nos enfocaremos en familiarizarnos con la noción y las diversas formas de plasmar en código esta idea.
 

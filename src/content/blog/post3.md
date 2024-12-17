@@ -6,7 +6,6 @@ heroImage: "/post2/curry-function.webp"
 badge: "v0.5.0"
 tags: ["typescript", "funciones currificadas", "programación funcional"]
 ---
-> Recuerda citar esta publicación.
 
 **Resumen**: En la segunda parte de los cuentos de funciones currificadas, hablaremos de sus bondades, pero también del lado oscuro de su fuerza. Finalizamos con los parámetros nombrados en el modo Curry.
 

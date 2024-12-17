@@ -22,10 +22,10 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
       <div class="grow w-full">
         <h1 class="text-xl font-bold">
           {title}
-          {badge && <div class="badge badge-primary mx-2">{badge}</div>}
+          {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
         </h1>
         <p class="py-1 text-1xl">{desc}</p>
-        <div class="card-actions justify-end">
+        <div class="card-actions justify-end mt-2">
           {
             tags &&
               tags.map((tag) => (
