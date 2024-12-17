@@ -1,9 +1,9 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import HorizontalCard from "@components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
 import createSlug from "../../lib/createSlug";
 import Blog from "@icons/Blog.astro";
+import CardBlog from "@components/CardBlog.astro";
 
 export async function getStaticPaths({ paginate }) {
   const posts = await getCollection("blog");
@@ -27,7 +27,7 @@ const { page } = Astro.props as any;
         <ul>
           {page.data.map((post) => (
             <>
-              <HorizontalCard
+              <CardBlog
                 title={post.data.title}
                 img={post.data.heroImage}
                 desc={post.data.description}
@@ -82,7 +82,6 @@ const { page } = Astro.props as any;
           <div />
         )
       }
-      <!-- </div> -->
     </div>
   </section>
 </BaseLayout>

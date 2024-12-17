@@ -12,8 +12,8 @@ import { techSkillsSpanish } from "@components/ListOfSkills.astro";
 
 import Blog from "@icons/Blog.astro";
 import { getCollection } from "astro:content";
-import HorizontalCard from "@components/HorizontalCard.astro";
 import createSlug from "src/lib/createSlug";
+import CardBlog from "@components/CardBlog.astro";
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
@@ -24,8 +24,9 @@ const last_posts = posts.slice(0, 3);
   <div class="pb-8"></div>
   <Mordell />
   <section class="pb-3 mt-5 max-w-[700px]">
-    <div class="text-3xl font-bold leading-snug pt-0">
-      Hola, soy <strong> Edgar </strong> 👋
+    <div class="text-3xl font-bold leading-snug pt-0 flex">
+      Hola, soy Edgar
+      <p class="ml-2 animate-bounce">👋</p>
     </div>
 
     <div class="py-1 font-bold text-primary">Desarrollo software y amo las matemáticas</div>
@@ -51,7 +52,7 @@ const last_posts = posts.slice(0, 3);
     {
       last_posts.map((post) => (
         <>
-          <HorizontalCard
+          <CardBlog
             title={post.data.title}
             img={post.data.heroImage}
             desc={post.data.description}

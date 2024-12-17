@@ -12,7 +12,14 @@ tags: ["typescript", "funciones currificadas", "programación funcional"]
 
 ### Parte 2. La bondad del uno a uno
 
-En la [Parte 1](funciones-currificadas-para-almorzar--parte-1) nos habíamos quedado dando la hora con la belleza de una línea. Ahora es momento de aprender a aprovechar este superpoder que nos ha dejado.
+En la [Parte 1](funciones-currificadas-para-almorzar--parte-1) nos habíamos quedado dando la hora con la belleza de una línea:
+
+```ts
+type SumFourNumbersType = (x: number) => (y: number) => (z: number) => (w: number) => number
+const sumFourNumbers: SumFourNumbersType = (x) => (y) => (z) => (w) => x + y + z + w;
+```
+
+Ahora es momento de aprender a aprovechar este superpoder que nos ha dejado.
 
 - Tú leyendo: ¡ya recordé!
 

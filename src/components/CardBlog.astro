@@ -2,27 +2,11 @@
 const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
 import { Image } from "astro:assets";
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
-
-export type ProjectType = {
-  title: string;
-  img: string;
-  desc: string;
-  url: string;
-  badge: string;
-};
 ---
 
 <div class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[98%]">
   <a href={url} target={target}>
-    <div class="hero-content flex-col md:flex-row rounded-lg shadow-lg shadow-primary/30">
-      <div class="grow w-full">
-        <h1 class="text-lg font-bold">
-          {badge && <div class="badge badge-primary mr-2 animate-pulse">{badge}</div>}
-
-          {title}
-        </h1>
-        <p class="text-pretty py-1 text-1xl">{desc}</p>
-      </div>
+    <div class="hero-content flex-col md:flex-row">
       {
         img && (
           <Image
@@ -35,6 +19,23 @@ export type ProjectType = {
           />
         )
       }
+      <div class="grow w-full">
+        <h1 class="text-xl font-bold">
+          {title}
+          {badge && <div class="badge badge-primary mx-2">{badge}</div>}
+        </h1>
+        <p class="py-1 text-1xl">{desc}</p>
+        <div class="card-actions justify-end">
+          {
+            tags &&
+              tags.map((tag) => (
+                <a href={`${tag_url}/${tag}`} class="badge badge-outline">
+                  {tag}
+                </a>
+              ))
+          }
+        </div>
+      </div>
     </div>
   </a>
 </div>
