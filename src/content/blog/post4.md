@@ -1,13 +1,13 @@
 ---
 title: "Funciones currificadas para almorzar | Parte 3"
-description: "¿Te gusta la comida peruana? Desglosaremos en tres partes las funciones currificadas con TypeScript para que prepares tu platillo o trago favorito."
+description: "Todo lo que hemos visto sobre funciones currificadas tiene un fin: prepararnos unos tamales."
 pubDate: "December 17 2024"
 heroImage: "/post2/curry-function.webp"
 badge: "v0.5.0"
 tags: ["typescript", "funciones currificadas", "programación funcional"]
 ---
 
-**Resumen**: En la tercera parte de los cuentos de funciones currificadas, solo diré una cosa: nos preparamos unos tamales.
+**Resumen**: En esta tercera parte de los cuentos de funciones currificadas, solo diré una cosa: nos preparamos unos tamales.
 
 ### Parte 3. Haciendo de Chef
 

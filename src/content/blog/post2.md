@@ -1,13 +1,13 @@
 ---
 title: "Funciones currificadas para almorzar | Parte 1"
-description: "En la primera parte de los cuentos sobre funciones currificadas, nos enfocaremos en familiarizarnos con la noción y las diversas formas de plasmar en código esta idea."
+description: "Nos enfocaremos en familiarizarnos con la noción de currificación y las diversas formas de plasmar en código TypeScript esta idea."
 pubDate: "December 15 2024"
 heroImage: "/post2/curry-function.webp"
 badge: "v0.5.0"
 tags: ["typescript", "funciones currificadas", "programación funcional"]
 ---
 
-**Resumen**: En la primera parte de los cuentos sobre funciones currificadas, nos enfocaremos en familiarizarnos con la noción y las diversas formas de plasmar en código esta idea.
+**Resumen**: En esta primera parte de los cuentos sobre funciones currificadas, nos enfocaremos en familiarizarnos con la noción de currificación y las diversas formas de plasmar en código TypeScript esta idea.
 
 ### Parte 1. Currificando en TypeScript
 

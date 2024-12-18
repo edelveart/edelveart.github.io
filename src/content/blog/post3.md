@@ -1,13 +1,13 @@
 ---
 title: "Funciones currificadas para almorzar | Parte 2"
-description: "En la segunda parte de los cuentos de funciones currificadas, hablaremos de sus bondades, pero también del lado oscuro de su fuerza. Finalizamos con los parámetros nombrados en el modo Curry."
+description: "Exploraremos las bondades y el lado oscuro de la fuerza de las funciones currificadas, y cerraremos con el uso de parámetros nombrados en el estilo Curry."
 pubDate: "December 16 2024"
 heroImage: "/post2/curry-function.webp"
 badge: "v0.5.0"
 tags: ["typescript", "funciones currificadas", "programación funcional"]
 ---
 
-**Resumen**: En la segunda parte de los cuentos de funciones currificadas, hablaremos de sus bondades, pero también del lado oscuro de su fuerza. Finalizamos con los parámetros nombrados en el modo Curry.
+**Resumen**: En esta segunda parte de los cuentos de funciones currificadas, hablaremos de sus bondades, pero también del lado oscuro de su fuerza. Finalizamos con los parámetros nombrados en el modo Curry.
 
 ### Parte 2. La bondad del uno a uno
 
