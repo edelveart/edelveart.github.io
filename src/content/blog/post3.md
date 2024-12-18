@@ -20,8 +20,6 @@ const sumFourNumbers: SumFourNumbersType = (x) => (y) => (z) => (w) => x + y + z
 
 Ahora es momento de aprender a aprovechar este superpoder que nos ha dejado.
 
-- Tú leyendo: ¡ya recordé!
-
 El truco para trabajar con estas funciones es visualizar paréntesis adyacentes, uno tras otro, según los parámetros que recibe la función. De manera general, para una función cualquiera `f_n` con `n` parámetros, mandamos algo como esto:
 
 $$
@@ -42,24 +40,29 @@ console.log(totalSum);
 Aparentemente, como el título de la salsa de *Tony Vega*, hemos hecho todo por las puras. Pero, una de las cosas más chéveres que tienen las funciones currificadas es que te dejan separar tus bebidas para la mañana y para la tarde:
 
 ```ts
-const partialSum = sumFourNumbers(10)(20);
-const totalSum = partialSum(30)(40);
+const partialSum = sumFourNumbers(100)(100);
+const totalSum = partialSum(100)(100);
 ```
 
-Como ves, hemos separado dos tazas de café para el desayuno y dos para el lonche. Con las funciones tradicionales, tendríamos que tomarnos las 4 tazas de café a la vena, de un solo sorbo.
+Como ves, hemos separado dos tazas de café (en mg de cafeína) para el desayuno y dos para el lonche. Con las funciones tradicionales, tendríamos que tomarnos las 4 tazas de café a la vena, de un solo sorbo.
 
-Siendo muy meticulosos con nuestras 5 comidas, podríamos recargarnos con un único café:
+Siendo más meticulosos con nuestras bebidas, podríamos recargarnos con un único café y un té muy cargado para ir a descansar por día:
 
 ```ts
-const aCoffe = sumFourNumbers(10)
+const aCoffe = sumFourNumbers(100)
+const aTeaForDreams = aCoffe(150)
 ```
 
-Debes saber que si mandamos `aCoffe` por consola al *Playground*, nos muestra los números que faltan alimentar a nuestra función
+Debes saber que si mandamos `aCoffe` por consola al *Playground*, nos muestra los números que faltan alimentar a nuestra función y potenciar nuestro entusiasmo.
 
 ```ts
 console.log(aCoffe)
 // (y) => (z) => (w) => x + y + z + w
 ```
+
+Igual pasa con `aTeaForDreams`.
+
+En dos días completamos las 4 bebidas no espirituosas.
 
 ### Recibe y bota las funciones que quieras
 
@@ -105,7 +108,7 @@ En ese sentido, aunque todo suena de maravilla, hay algunos *handicaps* al trata
 El primer inconviente que observas es que, como la marea al atardecer, **crece la pila de llamadas**. Las funciones se llaman unas a otras, ¡míralas!
 Sin embargo, no te preocupe,  estamos lejos del *stack overflow*. La profundidad de la pila depende de la *aridad* de `fn`.
 
-El segundo inconveniente está en el ecosistema TypeScript. En la comunidad, la mayoría de las funciones con las que te encontrarás están en su forma tradicional o expresada, no currificada. Muchas bibliotecas y frameworks adoptan por defecto el enfoque convencional.
+El segundo inconveniente está en el ecosistema TypeScript. En la comunidad, la mayoría de las funciones con las que te encontrarás están en su forma tradicional o expresada, no currificada. Muchas bibliotecas y frameworks adoptan por defecto el enfoque convencional. (¡Sí, existe Ramda para el sabor funcional!)
 
 El tercer problemilla, que surge del segundo, es que el código puede parecer raro al principio (especialmente si trabajas en equipo), para aquellos que no están familiarizados con la idea de currificación.
 
