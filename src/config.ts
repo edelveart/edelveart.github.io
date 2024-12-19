@@ -3,7 +3,7 @@
 
 export const SITE_TITLE = "Edgar Delgado Vega";
 export const SITE_DESCRIPTION =
-  "Personal website of Edgar Armando Delgado Vega, musician and artist with a love for science and technology. I have 15 years of experience as a musical performer and 10 years of experience in music teaching, at all educational levels ( primary, secondary, higher and postgraduate). I have taught both in person and virtually. In recent years I have taught music programming courses.";
+  "TypeScript developer with knowledge of discrete algorithms and design patterns. In 2023, I launched ts-tonnetz, a package for algorithmic composition now used by Topos. Passionate about mathematics, I authored a Scopus-indexed article and created the figurate_numbers library, with over 2000 downloads. In addition to teaching at the postgraduate level, I collaborate on international open-source software projects.";
 
 export const SITE_URL = "https://edelveart.github.io/";
 export const GENERATE_SLUG_FROM_TITLE = true;
