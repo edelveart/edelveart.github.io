@@ -22,3 +22,7 @@ pnpm-debug.log*
 .astro/
 ideas.md
 r-pearson.md
+
+
+sequences-progress.md
+resume.ts
