@@ -21,7 +21,7 @@ export const allProjects = [
   {
     title: "Ruby module to generate infinite sequences of figurate numbers",
     img: "/figurate-numbers-socialmedia.webp",
-    desc: `This Ruby gem enables the generation of 241 infinite sequences of plane, spatial, and multidimensional figurate numbers, as described in the book "Figurate Numbers" (2012) by Elena Deza and Michel Deza. The methods, implemented using the Enumerator class, are designed for use in your math projects or in Sonic Pi.`,
+    desc: `This Ruby gem enables the generation of 241 infinite sequences of plane, spatial, and multidimensional figurate numbers. It is designed for use in your math projects or with Sonic Pi. Based on the book "Figurate Numbers" (2012) by Elena Deza and Michel Deza.`,
     url: "https://rubygems.org/gems/figurate_numbers",
     badge: "RubyGems | Ruby",
   },
@@ -42,7 +42,7 @@ export const allProjects = [
   {
     title: "Figurate numbers in npm",
     img: "/fignumbers-socialmedia.webp",
-    desc: "Fignumbers is a comprehensive TypeScript library designed to generate and explore figurate numbers, numbers that can be visualized as geometric shapes in 2D, 3D, and higher-dimensional spaces. Based on the book Figurate Numbers (2012) by Elena and Michel Deza, this library supports a wide range of infinite sequences.",
+    desc: `Fignumbers is a comprehensive TypeScript library designed to generate and explore figurate numbers,  which can be represented as geometric shapes in 2D, 3D, and higher-dimensional spaces. Based on the book "Figurate Numbers" (2012) by Elena Deza and Michel Deza.`,
     url: "https://www.npmjs.com/package/fignumbers",
     badge: "npm | TypeScript",
   },
@@ -55,9 +55,7 @@ type Props = {
 };
 
 const { projects, indices, headTitle }: Props = Astro.props;
-const filteredProjects = indices
-  ? indices.map((index: number) => projects[index]).filter(Boolean)
-  : projects;
+const filteredProjects = indices ? indices.map((index: number) => projects[index]).filter(Boolean) : projects;
 ---
 
 <div class="text-2xl w-full font-bold flex items-center mt-8 mb-6" id="PROJECTS">
@@ -69,14 +67,7 @@ const filteredProjects = indices
   {
     filteredProjects.map((project: ProjectType, index: number) => (
       <>
-        <HorizontalCard
-          key={index}
-          title={project.title}
-          img={project.img}
-          desc={project.desc}
-          url={project.url}
-          badge={project.badge}
-        />
+        <HorizontalCard key={index} title={project.title} img={project.img} desc={project.desc} url={project.url} badge={project.badge} />
 
         {index < filteredProjects.length - 1 && <div class="divider my-3" />}
       </>
