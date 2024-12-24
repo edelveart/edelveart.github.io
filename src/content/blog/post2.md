@@ -2,7 +2,7 @@
 title: "Funciones currificadas para almorzar"
 description: "Nos enfocaremos en familiarizarnos con la noción de currificación y las diversas formas de plasmar en código TypeScript esta idea."
 pubDate: "December 15 2024"
-heroImage: "/post2/curry-function.webp"
+heroImage: "/post2/hero-post2.webp"
 badge: "v0.5.0"
 tags: ["typescript", "funciones currificadas", "programación funcional"]
 ---

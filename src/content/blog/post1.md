@@ -2,7 +2,7 @@
 title: "El parque de Magdalena del Mar es un astroide"
 description: "¿Creíste que jamás caminarías sobre unas ecuaciones paramétricas en tu vida? Exploramos las matemáticas de la plaza de un distrito limeño."
 pubDate: "December 13 2024"
-heroImage: "/post1/z-hero.webp"
+heroImage: "/post1/hero-post1.webp"
 badge: "v0.8.0"
 tags: ["Plaza de Magdalena del Mar", "Astroide", "Curvas planas", "Geometría"]
 ---
