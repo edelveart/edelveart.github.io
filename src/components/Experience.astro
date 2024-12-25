@@ -7,14 +7,13 @@ export const allExperiences = [
     title: "ZifferJS | TypeScript Software Developer",
     subtitle: "oct.2023 - actualidad | Finlandia | En remoto",
     description: `Colaboro en el desarrollo de ZifferJS, una notación musical generativa y analizador. Está diseñado para adaptarse a cualquier entorno de live coding que admita tecnologías web.
-    • Implementar algoritmos matemáticos aplicados a complejos simpliciales y teoría de grafos
-    • Crear pruebas unitarias y escribir documentación para Topos
+    • Implementar algoritmos matemáticos de complejos simpliciales y teoría de grafos
+    • Crear pruebas unitarias y escribir documentación
     • Crear funciones generadoras para trabajar con secuencias infinitas
     💻 TypeScript, Vitest`,
   },
   {
-    title:
-      "Escuela de Posgrado Newman | Docente de las Maestrías en Musicología y Pedagogía Musical",
+    title: "Escuela de Posgrado Newman | Docente de las Maestrías en Musicología y Pedagogía Musical",
     subtitle: "may.2024 - actualidad | Tacna, Perú | En remoto",
     description: `Asignaturas que imparto en la Maestría en Musicología:
     • Técnicas de búsqueda, documentación y difusión en investigación musicológica
@@ -53,9 +52,7 @@ export const allExperiences = [
 ];
 
 const { workExperiences, indices } = Astro.props;
-const filteredExperiences = indices
-  ? indices.map((index: number) => workExperiences[index]).filter(Boolean)
-  : workExperiences;
+const filteredExperiences = indices ? indices.map((index: number) => workExperiences[index]).filter(Boolean) : workExperiences;
 ---
 
 <div class="mb-5 mt-0" id="EXPERIENCE">
@@ -68,12 +65,7 @@ const filteredExperiences = indices
   {
     filteredExperiences.map((experience, index: number) => (
       <>
-        <TimeLine
-          key={index}
-          title={experience.title}
-          subtitle={experience.subtitle}
-          description={experience.description}
-        />
+        <TimeLine key={index} title={experience.title} subtitle={experience.subtitle} description={experience.description} />
       </>
     ))
   }

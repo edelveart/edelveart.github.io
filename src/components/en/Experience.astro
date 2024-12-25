@@ -7,14 +7,13 @@ export const allExperiences = [
     title: "ZifferJS | TypeScript Software Developer",
     subtitle: "oct.2023 - present | Finland | Remote",
     description: `I collaborate on the development of ZifferJS, a generative music notation and parser. It is designed to fit into any live coding environment that supports web technologies.
-    • Implementing mathematical algorithms applied to simplicial complexes and graph theory
-    • Creating unit tests and writing documentation for Topos
+    • Implementing mathematical algorithms based on simplicial complexes and graph theory
+    • Creating unit tests and writing documentation
     • Creating generator functions to work with infinite sequences
     💻 TypeScript, Vitest`,
   },
   {
-    title:
-      "Escuela de Posgrado Newman | Lecturer in the Master's programs in Musicology and Music Pedagogy",
+    title: "Escuela de Posgrado Newman | Lecturer in the Master's programs in Musicology and Music Pedagogy",
     subtitle: "may.2024 - present | Tacna, Perú | Remote",
     description: `Courses I teach in the Master's in Musicology:
     • Search, Documentation, and Dissemination Techniques in Musicological Research
@@ -52,9 +51,7 @@ export const allExperiences = [
 ];
 
 const { workExperiences, indices } = Astro.props;
-const filteredExperiences = indices
-  ? indices.map((index) => workExperiences[index]).filter(Boolean)
-  : workExperiences;
+const filteredExperiences = indices ? indices.map((index) => workExperiences[index]).filter(Boolean) : workExperiences;
 ---
 
 <div class="mb-5 mt-0" id="EXPERIENCE">
@@ -67,13 +64,7 @@ const filteredExperiences = indices
   {
     filteredExperiences.map((experience, index) => (
       <>
-        <TimeLineElement
-          key={index}
-          title={experience.title}
-          subtitle={experience.subtitle}
-          description={experience.description}
-          moreInfo="See more"
-        />
+        <TimeLineElement key={index} title={experience.title} subtitle={experience.subtitle} description={experience.description} moreInfo="See more" />
       </>
     ))
   }
