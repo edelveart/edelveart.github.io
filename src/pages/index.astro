@@ -14,9 +14,7 @@ import Blog from "@icons/Blog.astro";
 import { getCollection } from "astro:content";
 import createSlug from "src/lib/createSlug";
 import CardBlog from "@components/CardBlog.astro";
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const last_posts = posts.slice(0, 3);
 ---
 
@@ -37,14 +35,10 @@ const last_posts = posts.slice(0, 3);
     </div>
 
     <Experience workExperiences={allExperiences} indices={[0, 1]} />
-    <ProjectsComponent
-      headTitle={"Proyectos de software"}
-      projects={allProjects}
-      indices={[0, 2, 5]}
-    />
+    <ProjectsComponent headTitle={"Proyectos de software"} projects={allProjects} indices={[0, 2, 5]} />
     <div class="m-16"></div>
     <ListOfSkills title="Tecnologías" techSkills={techSkillsSpanish} indices={[0, 1]} />
-    <Education />
+    <!-- <Education /> -->
 
     <div class="text-2xl w-full font-bold flex items-center my-6 ml-0">
       <Blog />Blog
