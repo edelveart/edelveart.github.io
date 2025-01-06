@@ -10,7 +10,7 @@ export const allExperiences = [
     • Implementing mathematical algorithms based on simplicial complexes and graph theory
     • Creating unit tests and writing documentation
     • Creating generator functions to work with infinite sequences
-    💻 TypeScript, Vitest`,
+    💻 TypeScript, Vitest, Git`,
   },
   {
     title: "Escuela de Posgrado Newman | Lecturer in the Master's programs in Musicology and Music Pedagogy",
@@ -64,7 +64,13 @@ const filteredExperiences = indices ? indices.map((index) => workExperiences[ind
   {
     filteredExperiences.map((experience, index) => (
       <>
-        <TimeLineElement key={index} title={experience.title} subtitle={experience.subtitle} description={experience.description} moreInfo="See more" />
+        <TimeLineElement
+          key={index}
+          title={experience.title}
+          subtitle={experience.subtitle}
+          description={experience.description}
+          moreInfo="See more"
+        />
       </>
     ))
   }
