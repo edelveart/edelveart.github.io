@@ -30,7 +30,7 @@ export const allProjects = [
     img: "/figuratenum.webp",
     desc: "This is the Pythonic implementation of figurate_numbers. It includes a FigurateNum class that provides methods for retrieving sequence fragments.  These methods, in turn, can facilitate other scientific computing tasks.",
     url: "https://pypi.org/project/figuratenum/",
-    badge: "PyPi | Python",
+    badge: "PyPI | Python",
   },
   {
     title: "Figurate Numbers Library for Lua",
@@ -55,7 +55,9 @@ type Props = {
 };
 
 const { projects, indices, headTitle }: Props = Astro.props;
-const filteredProjects = indices ? indices.map((index: number) => projects[index]).filter(Boolean) : projects;
+const filteredProjects = indices
+  ? indices.map((index: number) => projects[index]).filter(Boolean)
+  : projects;
 ---
 
 <div class="text-2xl w-full font-bold flex items-center mt-8 mb-6" id="PROJECTS">
@@ -67,7 +69,14 @@ const filteredProjects = indices ? indices.map((index: number) => projects[index
   {
     filteredProjects.map((project: ProjectType, index: number) => (
       <>
-        <HorizontalCard key={index} title={project.title} img={project.img} desc={project.desc} url={project.url} badge={project.badge} />
+        <HorizontalCard
+          key={index}
+          title={project.title}
+          img={project.img}
+          desc={project.desc}
+          url={project.url}
+          badge={project.badge}
+        />
 
         {index < filteredProjects.length - 1 && <div class="divider my-3" />}
       </>
