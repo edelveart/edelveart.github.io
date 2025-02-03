@@ -150,7 +150,7 @@ const sumFourNumbers: SumFourNumbersType = (x) => (y) => (z) => (w) => x + y + z
 
 ### Parte 2. La bondad del uno a uno
 
-En la [Parte 1](funciones-currificadas-para-almorzar--parte-1) nos habíamos quedado dando la hora con la belleza de una línea:
+En la parte 1 nos habíamos quedado dando la hora con la belleza de una línea:
 
 ```ts
 type SumFourNumbersType = (x: number) => (y: number) => (z: number) => (w: number) => number
