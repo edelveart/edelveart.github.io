@@ -7,8 +7,6 @@ badge: "v0.5.0"
 tags: ["typescript", "funciones currificadas", "programación funcional"]
 ---
 
-**Resumen**: En esta primera parte de los cuentos sobre funciones currificadas, nos enfocaremos en familiarizarnos con la noción de currificación y las diversas formas de plasmar en código TypeScript esta idea.
-
 ### Parte 1. Currificando en TypeScript
 
 Currificar, en palabras simples y comunes (como diría *Chayanne*), consiste en convertir una función con varios argumentos en una serie de funciones más simples, cada una tomando solo uno de esos argumentos.
@@ -149,8 +147,6 @@ const sumFourNumbers: SumFourNumbersType = (x) => (y) => (z) => (w) => x + y + z
 ¡Eso es todo, amigos!
 
 ---
-
-**Resumen**: En esta segunda parte de los cuentos de funciones currificadas, hablaremos de sus bondades, pero también del lado oscuro de su fuerza. Finalizamos con los parámetros nombrados en el modo Curry.
 
 ### Parte 2. La bondad del uno a uno
 
@@ -296,8 +292,6 @@ Igual lo puedes hacer por partes, para mañana y para la noche. ¿Más verboso? 
 ¡Eso es todo, amigos!
 
 ---
-
-**Resumen**: En esta tercera parte de los cuentos de funciones currificadas, solo diré una cosa: nos preparamos unos tamales.
 
 ### Parte 3. Haciendo de Chef
 
