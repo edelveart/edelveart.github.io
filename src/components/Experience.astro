@@ -13,7 +13,8 @@ export const allExperiences = [
     💻 TypeScript, Vitest, Git`,
   },
   {
-    title: "Escuela de Posgrado Newman | Docente de las Maestrías en Musicología y Pedagogía Musical",
+    title:
+      "Escuela de Posgrado Newman | Docente de las Maestrías en Musicología y Pedagogía Musical",
     subtitle: "may.2024 - actualidad | Tacna, Perú | En remoto",
     description: `Asignaturas que imparto en la Maestría en Musicología:
     • Técnicas de búsqueda, documentación y difusión en investigación musicológica
@@ -26,13 +27,14 @@ export const allExperiences = [
    `,
   },
   {
-    title: "EEST Toulouse Lautrec | Docente de producción musical",
+    title: "EEST Toulouse Lautrec | Docente de producción musical y electrónica",
     subtitle: "jun.2022 - actualidad | Lima, Perú | En remoto",
 
     description: `Los comentarios anónimos sobre mi práctica docente son mayoritariamente favorables. Módulos que imparto en el programa:
+    • Síntesis aplicada: modelado físico, síntesis aditiva, síntesis sustractiva, síntesis por modulación de frecuencia (FM) y sampling
     • Fundamentos y herramientas de producción musical
     • Teoría musical, armonía funcional y arreglos
-    💻 MuseScore 4, Reaper 7`,
+    💻 MuseScore 4, Reaper 7, Ableton Live`,
   },
   {
     title: "Universidad Nacional Daniel Alomía Robles | Docente a tiempo completo",
@@ -52,7 +54,9 @@ export const allExperiences = [
 ];
 
 const { workExperiences, indices } = Astro.props;
-const filteredExperiences = indices ? indices.map((index: number) => workExperiences[index]).filter(Boolean) : workExperiences;
+const filteredExperiences = indices
+  ? indices.map((index: number) => workExperiences[index]).filter(Boolean)
+  : workExperiences;
 ---
 
 <div class="mb-5 mt-0" id="EXPERIENCE">
@@ -65,7 +69,12 @@ const filteredExperiences = indices ? indices.map((index: number) => workExperie
   {
     filteredExperiences.map((experience, index: number) => (
       <>
-        <TimeLine key={index} title={experience.title} subtitle={experience.subtitle} description={experience.description} />
+        <TimeLine
+          key={index}
+          title={experience.title}
+          subtitle={experience.subtitle}
+          description={experience.description}
+        />
       </>
     ))
   }
