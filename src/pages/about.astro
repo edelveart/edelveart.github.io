@@ -5,24 +5,31 @@ import ListOfSkills from "@components/ListOfSkills.astro";
 import { techSkillsSpanish } from "@components/ListOfSkills.astro";
 import Education from "@components/Education.astro";
 import Curriculum from "@icons/Curriculum.astro";
+import { menuSpanish } from "@components/SideBar.astro";
 ---
 
 <BaseLayout title="Resume" sideBarActiveItemID="cv">
   <section class="pb-3 mt-5">
     <div class="mb-5 mt-5" id="CURRICULUM">
       <div class="text-2xl w-full font-bold flex items-center">
-        <Curriculum class="ml-0 mr-4 max-w-none" />Perfil
+        <Curriculum class="ml-0 mr-4 max-w-none" />Acerca de mí
       </div>
     </div>
 
     <article class="mb-10">
       <p>
-        Soy un apasionado de la resolución de problemas y del autoaprendizaje en entornos
-        tecnológicos, así como entusiasta de las matemáticas con especial interés en el desarrollo
-        de software.
+        Me apasiona resolver problemas y crear abstracciones, con un enfoque en el autoaprendizaje
+        dentro de entornos tecnológicos. Mi interés por las matemáticas me motiva a explorar
+        continuamente su aplicación, especialmente en el desarrollo de software, lo que me lleva a
+        crear <a class="text-primary" id="projects" href={menuSpanish.projectsMenu.href}
+          >bibliotecas</a
+        > para abordar problemas difíciles o complejos.
         <br />
-        Tengo experiencia en docencia presencial y virtual a nivel superior y posgrado, con énfasis en
-        musicología, tecnología y live coding..
+        <br />
+        También cuento con amplia experiencia en docencia presencial y virtual a nivel superior y posgrado,
+        con especialización en tecnología, musicología y live coding. Los comentarios sobre mi práctica
+        docente suelen ser mayormente favorables, destacando mi capacidad para comunicar conceptos complejos
+        de manera clara y accesible.
       </p>
       <br />
 
@@ -42,9 +49,9 @@ import Curriculum from "@icons/Curriculum.astro";
       </ul>
     </article>
 
-    <ListOfSkills title="Tecnologías" techSkills={techSkillsSpanish} indices={[0, 1, 2, 3]} />
-
     <Experience workExperiences={allExperiences} />
+
+    <ListOfSkills title="Tecnologías" techSkills={techSkillsSpanish} indices={[0, 1, 2, 3]} />
 
     <Education />
 

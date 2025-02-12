@@ -43,16 +43,16 @@ const currentLangBarMenu = Astro.url.pathname.startsWith("/en") ? "en" : "es";
     </a>
   </li>
   <li>
+    <a class=`${sideMenuCss.divCss}` id="cv" href={hrefCV}>
+      <Curriculum />
+      <span class=`${sideMenuCss.spanText}`>{cvMenu}</span>
+    </a>
+  </li>
+  <li>
     <a class=`${sideMenuCss.divCss}` id="projects" href={hrefProjects}
       ><Branch />
 
       <span class=`${sideMenuCss.spanText}`>{projectsMenu}</span>
-    </a>
-  </li>
-  <li>
-    <a class=`${sideMenuCss.divCss}` id="cv" href={hrefCV}>
-      <Curriculum />
-      <span class=`${sideMenuCss.spanText}`>{cvMenu}</span>
     </a>
   </li>
   <li>

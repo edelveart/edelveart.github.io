@@ -5,25 +5,33 @@ import ListOfSkills from "@components/ListOfSkills.astro";
 import { techSkillsEnglish } from "@components/ListOfSkills.astro";
 import Education from "@components/en/Education.astro";
 import Curriculum from "@icons/Curriculum.astro";
+import { menuEnglish } from "@components/en/SideBar.astro";
 ---
 
 <BaseLayout title="Resume" sideBarActiveItemID="cv">
   <section class="pb-3 mt-5">
     <div class="mb-5 mt-5" id="CURRICULUM">
       <div class="text-2xl w-full font-bold flex items-center">
-        <Curriculum class="ml-0 mr-4" />Profile
+        <Curriculum class="ml-0 mr-4" />About me
       </div>
     </div>
 
     <article class="mb-10">
-      I am passionate about problem-solving and self-learning in technological environments, as well
-      as a mathematics enthusiast with a special interest in software development.
+      <p>
+        I am passionate about problem-solving and creating abstractions, with a focus on
+        self-learning in technological environments. My interest in mathematics drives me to
+        continuously explore its application, especially in software development, which leads me to
+        create <a class="text-primary" id="projects" href={menuEnglish.projectsMenu.href}
+          >libraries</a
+        > to tackle difficult or complex problems.
+        <br />
+        <br />
+        I also have extensive experience in both in-person and online teaching at the undergraduate and
+        graduate levels, specializing in technology, musicology, and live coding. Feedback on my teaching
+        practice is generally favorable, highlighting my ability to communicate complex concepts in a
+        clear and accessible manner.
+      </p>
       <br />
-      I have experience in both in-person and online teaching at the higher education and postgraduate
-      levels, with a focus on musicology, technology, and live coding.
-      <br />
-      <br />
-
       Research Areas:
       <ul class="list-disc ml-4">
         <li class="text-primary">

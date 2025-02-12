@@ -2,7 +2,6 @@
 import Home from "@icons/Home.astro";
 import Branch from "@icons/Branch.astro";
 import Curriculum from "@icons/Curriculum.astro";
-// import PencilEducation from "@icons/PencilEducation.astro";
 type Props = {
   sideBarActiveItemID: unknown;
   homeMenu: string;
@@ -30,16 +29,16 @@ export const sideMenuCss = {
     </a>
   </li>
   <li>
+    <a class=`${sideMenuCss.divCss}` id="cv" href={hrefCV}>
+      <Curriculum />
+      <span class=`${sideMenuCss.spanText}`>{cvMenu}</span>
+    </a>
+  </li>
+  <li>
     <a class=`${sideMenuCss.divCss}` id="projects" href={hrefProjects}
       ><Branch />
 
       <span class=`${sideMenuCss.spanText}`>{projectsMenu}</span>
-    </a>
-  </li>
-  <li>
-    <a class=`${sideMenuCss.divCss}` id="cv" href={hrefCV}>
-      <Curriculum />
-      <span class=`${sideMenuCss.spanText}`>{cvMenu}</span>
     </a>
   </li>
   <!-- <li>
