@@ -12,6 +12,6 @@ export const TRANSITION_API = true;
 export const SOCIAL_MEDIA = {
   linkedin: "https://www.linkedin.com/in/edgararmandodelgadovega/",
   github: "https://github.com/edelveart",
-  youtube: "https://youtube.com/@edelvemusic",
+  youtube: "https://www.youtube.com/@edelve_code",
   instagram: "https://www.instagram.com/edgardelgadovega/",
 };
