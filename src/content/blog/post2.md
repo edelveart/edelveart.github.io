@@ -1,5 +1,5 @@
 ---
-title: "Funciones currificadas para almorzar"
+title: "Funciones currificadas en TypeScript"
 description: "Nos enfocaremos en familiarizarnos con la noción de currificación y las diversas formas de plasmar en código TypeScript esta idea."
 pubDate: "December 15 2024"
 heroImage: "/post2/hero-post2.webp"
