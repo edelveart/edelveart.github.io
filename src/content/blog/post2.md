@@ -1,6 +1,6 @@
 ---
 title: "Funciones currificadas en TypeScript"
-description: "Nos enfocaremos en familiarizarnos con la noción de currificación y las diversas formas de plasmar en código TypeScript esta idea."
+description: "Nos armaremos con la magia de la currificación y a jugar con las diferentes formas de darle giros en TypeScript.
 pubDate: "December 15 2024"
 heroImage: "/post2/hero-post2.webp"
 badge: "v0.5.0"
