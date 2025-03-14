@@ -9,7 +9,6 @@ import Experience, { allExperiences } from "../../components/en/Experience.astro
 import ListOfSkills from "@components/ListOfSkills.astro";
 import { techSkillsEnglish } from "../../components/ListOfSkills.astro";
 import Mordell from "@components/Mordell.astro";
-import Education from "@components/en/Education.astro";
 ---
 
 <BaseLayout sideBarActiveItemID="home">
@@ -28,9 +27,9 @@ import Education from "@components/en/Education.astro";
     </div>
 
     <Experience workExperiences={allExperiences} indices={[0, 1, 2, 3]} />
-    <ProjectsComponent headTitle={"Libraries"} projects={allProjects} indices={[0, 5, 3]} />
+    <ProjectsComponent headTitle={"Libraries"} projects={allProjects} indices={[1, 5, 3]} />
     <div class="m-16"></div>
     <ListOfSkills title="Technologies" techSkills={techSkillsEnglish} indices={[0, 1]} />
-    <Education />
+    <!-- <Education /> -->
   </div>
 </BaseLayout>

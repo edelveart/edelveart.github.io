@@ -1,33 +1,29 @@
+---
+import { menuEnglish } from "./SideBar.astro";
+---
+
 <section>
   <p class="mb-4">
     Software developer passionate about problem-solving through mathematical abstractions, discrete
     algorithms, and design patterns.
   </p>
   <p class="mb-4">
-    In 2023, I launched
-    <a href="https://www.npmjs.com/package/ts-tonnetz" target="_blank">
-      <strong class="text-primary hover:underline">ts-tonnetz</strong>,
-    </a> an advanced package for algorithmic composition, currently integrated into <a
-      href="https://topos.live/#ziffers_tonnetz"
-    >
-      <strong class="text-primary hover:underline">Topos (try it here!)</strong>.
+    I launched <em>ts-tonnetz</em>, an advanced package for algorithmic composition and live coding,
+    currently integrated into <a href="https://topos.live/#ziffers_tonnetz" target="_blank">
+      <span class="text-primary hover:underline"> <em>Topos</em> (try it here!)</span>
+      <i class="text-primary fas fa-external-link-alt" aria-hidden="true"></i>.
     </a>
-
-    I also authored a Scopus-indexed
+    Along with my figurate number
+    <a id="projects" href={menuEnglish.projectsMenu.href}>
+      <span class="text-primary hover:underline">libraries</span></a
+    >, they have surpassed 10,000 downloads. Previously, I published a Scopus-indexed
     <a href="https://link.springer.com/chapter/10.1007/978-3-031-07015-0_30" target="_blank">
-      <strong class="text-primary hover:underline">article</strong>
-    </a> and developed the libraries
-
-    <a href=" https://www.npmjs.com/package/fignumbers" target="_blank">
-      <strong class="text-primary hover:underline">fignumbers</strong>
-    </a>
-    and
-    <a href="https://rubygems.org/gems/figurate_numbers" target="_blank">
-      <strong class="text-primary hover:underline">figurate_numbers</strong>,
-    </a> the latter having over 3000 downloads.
+      <span class="text-primary hover:underline">paper</span>
+      <i class="text-primary fas fa-external-link-alt" aria-hidden="true"></i>
+    </a> on Mathematical Music Theory.
   </p>
   <p class="mb-4">
-    In addition to teaching at the postgraduate level, I collaborate on international open source
-    software projects.
+    In addition to teaching at the postgraduate level, I collaborate on international open-source
+    projects, always exploring how technology can transform the arts.
   </p>
 </section>
