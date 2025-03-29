@@ -3,6 +3,7 @@ import Home from "@icons/Home.astro";
 import Branch from "@icons/Branch.astro";
 import Curriculum from "@icons/Curriculum.astro";
 import Blog from "@icons/Blog.astro";
+import Mordell from "./Mordell.astro";
 type Props = {
   sideBarActiveItemID: unknown;
   homeMenu: string;
@@ -29,7 +30,7 @@ const {
 const activeClass = "bg-base-300";
 export const sideMenuCss = {
   divCss: "py-3 md:justify-start",
-  spanText: " md:text-sm",
+  spanText: "md:text-sm",
 };
 const currentLangBarMenu = Astro.url.pathname.startsWith("/en") ? "en" : "es";
 ---
