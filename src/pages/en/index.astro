@@ -12,7 +12,7 @@ import Mordell from "@components/Mordell.astro";
 ---
 
 <BaseLayout sideBarActiveItemID="home">
-  <div class="pb-8"></div>
+  <div class="pb-2"></div>
   <Mordell />
   <div class="pb-3 mt-5">
     <div class="text-3xl font-bold leading-snug py-0 flex">
@@ -26,7 +26,7 @@ import Mordell from "@components/Mordell.astro";
       <IndexLinks contactText="Contact me" />
     </div>
 
-    <Experience workExperiences={allExperiences} indices={[0, 1, 2, 3]} />
+    <Experience workExperiences={allExperiences} indices={[0, 1, 2]} />
     <ProjectsComponent headTitle={"Libraries"} projects={allProjects} indices={[1, 5, 3]} />
     <div class="m-16"></div>
     <ListOfSkills title="Technologies" techSkills={techSkillsEnglish} indices={[0, 1]} />

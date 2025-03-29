@@ -20,7 +20,7 @@ const last_posts = posts.slice(0, 3);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
-  <div class="pb-8"></div>
+  <div class="pb-2"></div>
   <Mordell />
   <section class="pb-3 mt-5">
     <div class="text-3xl font-bold leading-snug pt-0 flex">
@@ -30,12 +30,12 @@ const last_posts = posts.slice(0, 3);
 
     <div class="py-1 font-bold text-primary">Desarrollo software y amo las matemáticas</div>
 
-    <div class="py-2 mt-4">
+    <div class="py-2 mt-2">
       <Biography />
       <IndexLinks contactText="Contáctame" />
     </div>
 
-    <Experience workExperiences={allExperiences} indices={[0, 1, 2, 3]} />
+    <Experience workExperiences={allExperiences} indices={[0, 1, 2]} />
     <ProjectsComponent headTitle={"Bibliotecas"} projects={allProjects} indices={[1, 5, 3]} />
     <div class="m-16"></div>
     <ListOfSkills title="Tecnologías" techSkills={techSkillsSpanish} indices={[0, 1]} />
@@ -56,7 +56,7 @@ const last_posts = posts.slice(0, 3);
             badge={post.data.badge}
             tags={post.data.tags}
           />
-          <div class="divider my-3" />
+          <div class="divider my-0" />
         </>
       ))
     }
