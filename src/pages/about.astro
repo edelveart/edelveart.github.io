@@ -28,36 +28,40 @@ import { menuSpanish } from "@components/SideBar.astro";
         > para abordar problemas complejos.
         <br />
         <br />
-        También cuento con amplia experiencia en docencia presencial y virtual a nivel superior y posgrado,
-        con especialización en tecnología, musicología y live coding. Los comentarios sobre mi práctica
-        docente suelen ser mayormente favorables, destacando mi capacidad para comunicar conceptos complejos
+        Cuento con amplia experiencia en docencia presencial y virtual a nivel superior y posgrado, con
+        especialización en tecnología, musicología y live coding. Los comentarios sobre mi práctica docente
+        suelen ser mayormente favorables, destacando mi capacidad para comunicar conceptos complejos
         de manera clara y accesible.
       </p>
       <br />
 
-      Líneas de investigación:
-      <ul class="list-disc ml-4">
-        <li class="text-primary">
-          <p class="text-neutral-content">Teoría matemática de la música</p>
-        </li>
-        <li class="text-primary">
-          <p class="text-neutral-content">Lenguajes específicos de dominio (DSLs) para la música</p>
-        </li>
-        <li class="text-primary">
-          <p class="text-neutral-content">
-            Composición e improvisación musical asistida por ordenador
-          </p>
-        </li>
-      </ul>
+      <p>
+        Intereses de investigación:
+        <ul class="list-disc ml-4">
+          <li class="text-primary">
+            <p class="text-neutral-content">Teoría matemática de la música</p>
+          </li>
+          <li class="text-primary">
+            <p class="text-neutral-content">
+              Lenguajes específicos de dominio (DSLs) para la música
+            </p>
+          </li>
+          <li class="text-primary">
+            <p class="text-neutral-content">
+              Composición e improvisación musical asistida por ordenador
+            </p>
+          </li>
+        </ul>
+      </p>
     </article>
 
     <ListOfSkills title="Tecnologías" techSkills={techSkillsSpanish} indices={[0, 1, 2, 3]} />
 
-    <Experience workExperiences={allExperiences} />
+    <!-- <Experience workExperiences={allExperiences} /> -->
 
     <Education />
 
-    <div class="mb-5 mt-8">
+    <!-- <div class="mb-5 mt-8">
       <article class="text-2xl w-full font-bold flex items-center">
         <Curriculum class="ml-0 mr-4" /> Congresos
       </article>
@@ -114,6 +118,6 @@ import { menuSpanish } from "@components/SideBar.astro";
           Frega.
         </p>
       </li>
-    </ul>
+    </ul> -->
   </section>
 </BaseLayout>
