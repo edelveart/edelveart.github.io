@@ -3,17 +3,20 @@ import Home from "@icons/Home.astro";
 import Branch from "@icons/Branch.astro";
 import Curriculum from "@icons/Curriculum.astro";
 import Blog from "@icons/Blog.astro";
-import Mordell from "./Mordell.astro";
+import DocIco from "@icons/DocumentDownload.astro";
+
 type Props = {
   sideBarActiveItemID: unknown;
   homeMenu: string;
   projectsMenu: string;
   cvMenu: string;
   blogMenu?: string;
+  materialsMenu: string;
   hrefHome: string;
   hrefProjects: string;
   hrefCV: string;
   hrefBlog?: string;
+  hrefMaterial: string;
 };
 
 const {
@@ -22,15 +25,17 @@ const {
   projectsMenu,
   cvMenu,
   blogMenu,
+  materialsMenu,
   hrefHome,
   hrefProjects,
   hrefCV,
   hrefBlog,
+  hrefMaterial,
 } = Astro.props;
 const activeClass = "bg-base-300";
 export const sideMenuCss = {
-  divCss: "py-3 md:justify-start",
-  spanText: "md:text-sm",
+  divCss: "py-3  md:justify-start",
+  spanText: "md:text-base",
 };
 const currentLangBarMenu = Astro.url.pathname.startsWith("/en") ? "en" : "es";
 ---
@@ -60,6 +65,12 @@ const currentLangBarMenu = Astro.url.pathname.startsWith("/en") ? "en" : "es";
     <a class=`${sideMenuCss.divCss}` id="blog" href={hrefBlog}>
       {currentLangBarMenu === "es" ? <Blog /> : ""}
       <span class=`${sideMenuCss.spanText}`>{blogMenu}</span>
+    </a>
+  </li>
+  <li>
+    <a class=`${sideMenuCss.divCss}` id="blog" href={hrefMaterial}>
+      {currentLangBarMenu === "es" ? <DocIco /> : ""}
+      <span class=`${sideMenuCss.spanText}`>{materialsMenu}</span>
     </a>
   </li>
 

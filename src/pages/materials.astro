@@ -1,0 +1,60 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { menuSpanish } from "@components/SideBar.astro";
+import DocIco from "@icons/DocumentDownload.astro";
+---
+
+<BaseLayout title="Resume" sideBarActiveItemID="materials">
+  <section class="pb-3 mt-5">
+    <div class="mb-5 mt-5" id="MATERIALS">
+      <div class="text-2xl w-full font-bold flex items-center">
+        <DocIco class="ml-0 mr-4 max-w-none" />
+        Notas y lecturas
+      </div>
+    </div>
+
+    <p class="mb-5">
+      ¡Bienvenido a la zona VIP de <strong>notas y lecturas</strong>! Me encanta compartir los
+      recursos que he ido desarrollando sobre temas que cruzan las fronteras entre las matemáticas,
+      la música y sus aplicaciones a través de software. Este espacio recopila reflexiones,
+      artículos y notas de clase pensadas para inspirar y expandir tus conocimientos.
+    </p>
+    <p class="mb-5">
+      Ya seas estudiante, curioso o alguien que disfruta de las conexiones entre la lógica
+      matemática y el arte sonoro, aquí encontrarás algo que te motive. ¡Espero que disfrutes
+      explorando este contenido tanto como yo disfruto investigando y aprendiendo sobre estos
+      fascinantes mundos!
+    </p>
+
+    <section class="mb-10">
+      <header>
+        <h2 class="text-xl font-semibold">Notas de Clase</h2>
+      </header>
+      <article class="mb-6">
+        <h3 class="text-lg">Matemáticas y live coding</h3>
+
+        <!-- <ul class="list-disc pl-5">
+          <li>
+            <a href="./" class="text-primary hover:underline"
+              >Notas sobre matemáticas - PDF</a
+            >
+          </li>
+        </ul> -->
+      </article>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold">Erratas en libros</h2>
+      <ul class="list-disc ml-4 mt-3">
+        <li>
+          <a
+            class="text-primary hover:underline"
+            href="./errata-figurate-numbers.pdf"
+            title="Descargar Errata de Figurate Numbers"
+            target="_blank">Errata de Figurate Numbers (2012).pdf</a
+          >
+        </li>
+      </ul>
+    </section>
+  </section>
+</BaseLayout>
