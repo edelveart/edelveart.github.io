@@ -11,12 +11,12 @@ type Props = {
   projectsMenu: string;
   cvMenu: string;
   blogMenu?: string;
-  materialsMenu: string;
+  resourcesMenu: string;
   hrefHome: string;
   hrefProjects: string;
   hrefCV: string;
   hrefBlog?: string;
-  hrefMaterial: string;
+  hrefResources: string;
 };
 
 const {
@@ -25,12 +25,12 @@ const {
   projectsMenu,
   cvMenu,
   blogMenu,
-  materialsMenu,
+  resourcesMenu,
   hrefHome,
   hrefProjects,
   hrefCV,
   hrefBlog,
-  hrefMaterial,
+  hrefResources,
 } = Astro.props;
 const activeClass = "bg-base-300";
 export const sideMenuCss = {
@@ -68,9 +68,9 @@ const currentLangBarMenu = Astro.url.pathname.startsWith("/en") ? "en" : "es";
     </a>
   </li>
   <li>
-    <a class=`${sideMenuCss.divCss}` id="blog" href={hrefMaterial}>
+    <a class=`${sideMenuCss.divCss}` id="blog" href={hrefResources}>
       {currentLangBarMenu === "es" ? <DocIco /> : ""}
-      <span class=`${sideMenuCss.spanText}`>{materialsMenu}</span>
+      <span class=`${sideMenuCss.spanText}`>{resourcesMenu}</span>
     </a>
   </li>
 
