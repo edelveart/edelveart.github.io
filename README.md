@@ -11,4 +11,4 @@ I've made several customizations, including adding SVG elements and breaking the
 
 > <a href="https://edelveart.github.io/" target="_blank" class="font-bold">Spanish - ES  </a>
 
-> <a href="https://edelveart.github.io/" target="_blank" class="font-bold">English - EN  </a>
+> <a href="https://edelveart.github.io/en" target="_blank" class="font-bold">English - EN  </a>
