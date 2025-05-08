@@ -15,28 +15,23 @@ import { menuSpanish } from "@components/SideBar.astro";
         <Curriculum class="ml-0 mr-4 max-w-none" />Acerca de mí
       </div>
     </div>
-
     <article class="mb-10">
       <p>
-        Me apasiona resolver problemas y crear abstracciones, con un enfoque en el autoaprendizaje
-        dentro de entornos tecnológicos. Mi interés por las matemáticas me motiva a explorar
-        continuamente su aplicación, especialmente en el desarrollo de software, lo que me lleva a
-        crear <a
-          class="text-primary hover:underline"
-          id="projects"
-          href={menuSpanish.projectsMenu.href}>bibliotecas</a
+        Me apasiona <strong>resolver problemas</strong> y <strong>crear abstracciones</strong>, con
+        un enfoque centrado en el <strong>autoaprendizaje</strong> en entornos tecnológicos. Mi interés
+        por las matemáticas me motiva a explorar continuamente su aplicación, especialmente en el desarrollo
+        de software, lo que me lleva a crear
+        <a class="text-primary hover:underline" id="projects" href={menuSpanish.projectsMenu.href}
+          >bibliotecas</a
         > para abordar problemas complejos.
-        <br />
-        <br />
-        Cuento con amplia experiencia en docencia presencial y virtual a nivel superior y posgrado, con
-        especialización en tecnología, musicología y live coding. Los comentarios sobre mi práctica docente
-        suelen ser mayormente favorables, destacando mi capacidad para comunicar conceptos complejos
-        de manera clara y accesible.
       </p>
-      <br />
-
+      <h2 class="text-xl my-4">Experiencia</h2>
+      Cuento con amplia experiencia en docencia presencial y virtual a nivel superior y posgrado, con
+      especialización en live coding y musicología. Los comentarios sobre mi práctica docente suelen
+      ser mayormente favorables, destacando mi capacidad para comunicar conceptos complejos de manera
+      clara y accesible.
+      <h2 class="text-xl my-4">Intereses</h2>
       <p>
-        Intereses de investigación:
         <ul class="list-disc ml-4">
           <li class="text-primary">
             <p class="text-neutral-content">Teoría matemática de la música</p>
@@ -54,14 +49,24 @@ import { menuSpanish } from "@components/SideBar.astro";
         </ul>
       </p>
     </article>
+  </section>
 
-    <ListOfSkills title="Tecnologías" techSkills={techSkillsSpanish} indices={[0, 1, 2, 3]} />
+  <ListOfSkills title="Tecnologías" techSkills={techSkillsSpanish} indices={[0, 1, 2, 3]} />
 
-    <!-- <Experience workExperiences={allExperiences} /> -->
+  <!-- <Experience workExperiences={allExperiences} /> -->
 
-    <Education />
+  <Education />
+  <!-- <h2 class="my-4">El origen de mi interés por las matemáticas</h2>
+  <p class="text-xs">
+    Aunque mi atención estuvo dirigida hacia la música durante muchos años, mi interés por las
+    matemáticas comenzó a una edad temprana, cuando me pregunté: ¿Por qué los números se comportan
+    de manera diferente al cambiar su posición en el espacio? Dejé esa pregunta en el olvido durante
+    largo tiempo, hasta que, en 2021, descubrí la geometría aritmética y la intersección entre los
+    números, geometría y álgebra.
+  </p> -->
+</BaseLayout>
 
-    <!-- <div class="mb-5 mt-8">
+<!-- <div class="mb-5 mt-8">
       <article class="text-2xl w-full font-bold flex items-center">
         <Curriculum class="ml-0 mr-4" /> Congresos
       </article>
@@ -119,5 +124,3 @@ import { menuSpanish } from "@components/SideBar.astro";
         </p>
       </li>
     </ul> -->
-  </section>
-</BaseLayout>
