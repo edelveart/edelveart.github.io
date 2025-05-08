@@ -11,12 +11,12 @@ type Props = {
   projectsMenu: string;
   cvMenu: string;
   blogMenu?: string;
-  resourcesMenu: string;
+  resourcesMenu?: string;
   hrefHome: string;
   hrefProjects: string;
   hrefCV: string;
   hrefBlog?: string;
-  hrefResources: string;
+  hrefResources?: string;
 };
 
 const {
@@ -68,7 +68,7 @@ const currentLangBarMenu = Astro.url.pathname.startsWith("/en") ? "en" : "es";
     </a>
   </li>
   <li>
-    <a class=`${sideMenuCss.divCss}` id="blog" href={hrefResources}>
+    <a class=`${sideMenuCss.divCss}` id="resources-page" href={hrefResources}>
       {currentLangBarMenu === "es" ? <DocIco /> : ""}
       <span class=`${sideMenuCss.spanText}`>{resourcesMenu}</span>
     </a>
