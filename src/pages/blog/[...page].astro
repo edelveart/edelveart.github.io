@@ -2,7 +2,6 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import createSlug from "../../lib/createSlug";
-import Blog from "@icons/Blog.astro";
 import CardBlog from "@components/CardBlog.astro";
 
 export async function getStaticPaths({ paginate }) {
@@ -16,7 +15,7 @@ const { page } = Astro.props as any;
 
 <BaseLayout title="Blog" sideBarActiveItemID="blog">
   <section class="mb-5 mt-5">
-    <div class="text-2xl w-full font-bold mb-5 flex"><Blog /> Blog</div>
+    <div class="text-2xl w-full font-bold mb-5 flex">Blog</div>
     {
       page.data.length === 0 ? (
         <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
