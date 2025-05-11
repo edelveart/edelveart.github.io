@@ -8,12 +8,10 @@ type Props = {
   homeMenu: string;
   projectsMenu: string;
   cvMenu: string;
-  blogMenu?: string;
   resourcesMenu?: string;
   hrefHome: string;
   hrefProjects: string;
   hrefCV: string;
-  hrefBlog?: string;
   hrefResources?: string;
 };
 
@@ -22,12 +20,10 @@ const {
   homeMenu,
   projectsMenu,
   cvMenu,
-  blogMenu,
   resourcesMenu,
   hrefHome,
   hrefProjects,
   hrefCV,
-  hrefBlog,
   hrefResources,
 } = Astro.props;
 const activeClass = "bg-base-300";
