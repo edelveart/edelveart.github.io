@@ -2,9 +2,7 @@
 import Home from "@icons/Home.astro";
 import Branch from "@icons/Branch.astro";
 import Curriculum from "@icons/Curriculum.astro";
-import Blog from "@icons/Blog.astro";
-import DocIco from "@icons/DocumentDownload.astro";
-
+import Writing from "@icons/Writing.astro";
 type Props = {
   sideBarActiveItemID: unknown;
   homeMenu: string;
@@ -62,22 +60,15 @@ const currentLangBarMenu = Astro.url.pathname.startsWith("/en") ? "en" : "es";
     </a>
   </li>
   <li>
-    <a class=`${sideMenuCss.divCss}` id="blog" href={hrefBlog}>
-      {currentLangBarMenu === "es" ? <Blog /> : ""}
-      <span class=`${sideMenuCss.spanText}`>{blogMenu}</span>
-    </a>
-  </li>
-  <li>
     <a class=`${sideMenuCss.divCss}` id="resources-page" href={hrefResources}>
-      {currentLangBarMenu === "es" ? <DocIco /> : ""}
+      {currentLangBarMenu === "es" ? <Writing /> : ""}
       <span class=`${sideMenuCss.spanText}`>{resourcesMenu}</span>
     </a>
   </li>
-
   <!-- <li>
-    <a class=`${sideMenuCss.divCss}` id="blog" href="/blog">
-      <PencilEducation />
-      <span class=`${sideMenuCss.spanText}`>Blog</span>
+    <a class=`${sideMenuCss.divCss}` id="blog" href={hrefBlog}>
+      {currentLangBarMenu === "es" ? <Blog /> : ""}
+      <span class=`${sideMenuCss.spanText}`>{blogMenu}</span>
     </a>
   </li> -->
 </ul>
