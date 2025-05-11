@@ -2,12 +2,12 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Biography from "@components/Biography.astro";
 import IndexLinks from "@components/IndexLinks.astro";
-import Mordell from "@components/Mordell.astro";
 import Experience, { allExperiences } from "@components/Experience.astro";
 import ProjectsComponent, { allProjects } from "@components/ProjectsComponent.astro";
 
 import ListOfSkills from "@components/ListOfSkills.astro";
 import { techSkillsSpanish } from "@components/ListOfSkills.astro";
+import ModEcImg from "@components/ModEcImg.astro";
 
 // import { getCollection } from "astro:content";
 // const posts = (await getCollection("blog")).sort(
@@ -17,7 +17,8 @@ import { techSkillsSpanish } from "@components/ListOfSkills.astro";
 
 <BaseLayout sideBarActiveItemID="home">
   <div class="pb-2"></div>
-  <Mordell />
+
+  <ModEcImg />
   <section class="pb-3 mt-5">
     <div class="text-3xl font-bold leading-snug pt-0 flex">
       Hola, soy Edgar
