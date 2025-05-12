@@ -1,10 +1,12 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Writing from "@icons/Writing.astro";
+import Errata from "@components/resources-components/Errata.astro";
+import Miscellaneous from "@components/resources-components/Miscellaneous.astro";
 ---
 
 <BaseLayout title="Resources" sideBarActiveItemID="resources-page">
-  <section class="pb-3 mt-5">
+  <article class="pb-3 mt-5">
     <div class="mb-5 mt-5">
       <div class="text-2xl w-full font-bold flex items-center">
         <Writing class="ml-0 mr-4 max-w-none" />
@@ -23,51 +25,10 @@ import Writing from "@icons/Writing.astro";
       distantes del arte sonoro, aquí encontrarás algo que te motive. Espero que la pases bien
       explorando este contenido tanto como yo me divierto leyendo y aprendiendo.
     </p>
-    <section class="mb-10">
-      <header>
-        <h2 class="text-xl font-semibold">Notas de Clase</h2>
-      </header>
-      <article class="mb-6">
-        <h3 class="text-lg">Matemáticas y live coding</h3>
+  </article>
 
-        <!-- <ul class="list-disc pl-5">
-          <li>
-            <a href="./" class="text-primary hover:underline"
-            >Notas sobre matemáticas - PDF</a
-            >
-            </li>
-            </ul> -->
-      </article>
-    </section>
-
-    <section class="mb-10">
-      <h2 class="text-xl font-semibold">Erratas en libros y tesis</h2>
-      <ul class="list-disc ml-4 mt-3">
-        <li>
-          <a
-            class="text-primary hover:underline"
-            href="/resources-files/errata-phd-thesis-cannas.pdf"
-            title="Errata of PhD thesis by Sonia Cannas (2018) in PDF format"
-            target="_blank"
-            >Errata de la tesis doctoral (PhD) <em
-              >Geometric Representation and Algebraic Formalization of Musical Structures</em
-            > (2018) — PDF</a
-          >
-        </li>
-      </ul>
-      <ul class="list-disc ml-4 mt-3">
-        <li>
-          <a
-            class="text-primary hover:underline"
-            href="/resources-files/errata-figurate-numbers.pdf"
-            title="Errata of Figurate Numbers (2012) in PDF format"
-            target="_blank"
-            >Errata de <em> Figurate Numbers</em> (2012) — PDF
-          </a>
-        </li>
-      </ul>
-    </section>
-  </section>
+  <Errata />
+  <Miscellaneous />
 
   <section class="legal-notice text-xs mb-5">
     <h2 class="text-warning">Aviso Legal</h2>
