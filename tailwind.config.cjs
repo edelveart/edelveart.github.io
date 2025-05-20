@@ -7,8 +7,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Manrope Variable", ...defaultTheme.fontFamily.sans],
         // sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
+        // sans: ["Manrope Variable", ...defaultTheme.fontFamily.sans],
+        sans: ["Fira Sans", ...defaultTheme.fontFamily.sans],
       },
     },
   },

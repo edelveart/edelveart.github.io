@@ -26,6 +26,9 @@ importers:
       '@fontsource-variable/manrope':
         specifier: ^5.2.5
         version: 5.2.5
+      '@fontsource/fira-sans':
+        specifier: ^5.2.5
+        version: 5.2.5
       astro:
         specifier: ^4.0.2
         version: 4.0.2
@@ -340,6 +343,9 @@ packages:
 
   '@fontsource-variable/manrope@5.2.5':
     resolution: {integrity: sha512-6Mo3ldtgAhxvSSyy+bLbFRjkiYhVo6RLcasJfj9Du5k2nX16/RwjQdBbZJfvsofVt6GqQ+O6AVkazmS3Xw5R9A==}
+
+  '@fontsource/fira-sans@5.2.5':
+    resolution: {integrity: sha512-N+GrTGOTIeYE/Wi5tY0RAnc1Tl3ddCdwfZQncvA1zH/lOpKerj9ZS5nfniSXDZ9wrXFRdWTH7anyrRDc+cMpCg==}
 
   '@jridgewell/gen-mapping@0.3.3':
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}
@@ -2449,6 +2455,8 @@ snapshots:
   '@fontsource-variable/inter@5.1.0': {}
 
   '@fontsource-variable/manrope@5.2.5': {}
+
+  '@fontsource/fira-sans@5.2.5': {}
 
   '@jridgewell/gen-mapping@0.3.3':
     dependencies:
