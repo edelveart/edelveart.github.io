@@ -4,6 +4,7 @@ import Writing from "@icons/Writing.astro";
 import Errata from "@components/resources-components/Errata.astro";
 import MiscFiles from "@components/resources-components/MiscFiles.astro";
 import { SOCIAL_MEDIA } from "src/config";
+import LectureNotes from "@components/resources-components/LectureNotes.astro";
 ---
 
 <BaseLayout title="Resources" sideBarActiveItemID="resources-page">
@@ -37,7 +38,7 @@ import { SOCIAL_MEDIA } from "src/config";
       href={SOCIAL_MEDIA.linkedin}>LinkedIn</a
     >. Lo revisaré y corregiré con gusto en cuanto me sea posible.
   </section>
-
+  <LectureNotes />
   <MiscFiles />
   <Errata />
 
