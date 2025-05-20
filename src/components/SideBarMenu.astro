@@ -37,36 +37,36 @@ const currentLangBarMenu = Astro.url.pathname.startsWith("/en") ? "en" : "es";
 <strong class="flex justify-center mb-5 text-2xl md:text-base">Edgar Delgado Vega</strong>
 <ul class="menu grow shrink menu-md overflow-y-auto">
   <li>
-    <a class=`${sideMenuCss.divCss}` id="home" href={hrefHome}
+    <a class={sideMenuCss.divCss} id="home" href={hrefHome}
       ><Home />
-      <span class=`${sideMenuCss.spanText}`>{homeMenu}</span>
+      <span class={sideMenuCss.spanText}>{homeMenu}</span>
     </a>
   </li>
   <li>
-    <a class=`${sideMenuCss.divCss}` id="cv" href={hrefCV}>
+    <a class={sideMenuCss.divCss} id="cv" href={hrefCV}>
       <Curriculum />
-      <span class=`${sideMenuCss.spanText}`>{cvMenu}</span>
+      <span class={sideMenuCss.spanText}>{cvMenu}</span>
     </a>
   </li>
   <li>
-    <a class=`${sideMenuCss.divCss}` id="projects" href={hrefProjects}
+    <a class={sideMenuCss.divCss} id="projects" href={hrefProjects}
       ><Branch />
 
-      <span class=`${sideMenuCss.spanText}`>{projectsMenu}</span>
+      <span class={sideMenuCss.spanText}>{projectsMenu}</span>
     </a>
   </li>
   {
     resourcesMenu && hrefResources && (
       <li>
-        <a class={`${sideMenuCss.divCss}`} id="resources-page" href={hrefResources}>
+        <a class={sideMenuCss.divCss} id="resources-page" href={hrefResources}>
           {currentLangBarMenu === "es" ? <Writing /> : ""}
-          <span class={`${sideMenuCss.spanText}`}>{resourcesMenu}</span>
+          <span class={sideMenuCss.spanText}>{resourcesMenu}</span>
         </a>
       </li>
     )
   }
   <!-- <li>
-    <a class=`${sideMenuCss.divCss}` id="blog" href={hrefBlog}>
+    <a class=sideMenuCss.divCss id="blog" href={hrefBlog}>
       {currentLangBarMenu === "es" ? <Blog /> : ""}
       <span class=`${sideMenuCss.spanText}`>{blogMenu}</span>
     </a>
