@@ -25,12 +25,12 @@ import { spanishFlag, englishFlag } from "./Languages.astro";
     <div class="navbar-center">
       {
         currentLang === "es" ? (
-          <a class="btn btn-ghost normal-case text-xl" href="/">
-            Edgar Delgado Vega
+          <a class="btn btn-ghost normal-case text-base font-bold" href="/">
+            Edgar Delgado
           </a>
         ) : (
-          <a class="btn btn-ghost normal-case text-xl" href="/en">
-            Edgar Delgado Vega
+          <a class="btn btn-ghost normal-case text-base font-bold" href="/en">
+            Edgar Delgado
           </a>
         )
       }
@@ -39,12 +39,22 @@ import { spanishFlag, englishFlag } from "./Languages.astro";
     <div class="navbar-end">
       {
         currentLang === "es" ? (
-          <a class="btn btn-ghost" href="/en" title="English">
-            <span class={`${englishFlag} w-7 h-7`} />
+          <a
+            class="btn btn-ghost text-xs"
+            href="/en"
+            title="Switch to English"
+            aria-label="Switch to English"
+          >
+            <span class={`${englishFlag} w-4 h-4`} /> English
           </a>
         ) : (
-          <a class="btn btn-ghost" href="/" title="Español">
-            <span class={`${spanishFlag} w-7 h-7`} />
+          <a
+            class="btn btn-ghost text-xs"
+            href="/"
+            title="Cambiar a Español"
+            aria-label="Cambiar a Español"
+          >
+            <span class={`${spanishFlag} w-4 h-4`} /> Español
           </a>
         )
       }
