@@ -23,6 +23,9 @@ importers:
       '@fontsource-variable/inter':
         specifier: ^5.1.0
         version: 5.1.0
+      '@fontsource-variable/ubuntu-sans':
+        specifier: ^5.2.7
+        version: 5.2.7
       astro:
         specifier: ^4.0.2
         version: 4.0.2
@@ -334,6 +337,9 @@ packages:
 
   '@fontsource-variable/inter@5.1.0':
     resolution: {integrity: sha512-Wj2dUGP0vUpxRGQTXQTCNJO+aLcFcQm+gUPXfj/aS877bQkEPBPv9JvZJpwdm2vzelt8NTZ+ausKlBCJjh2XIg==}
+
+  '@fontsource-variable/ubuntu-sans@5.2.7':
+    resolution: {integrity: sha512-6/RFU63nSFuWFyILZLNWxCVJivFdze5PUJ+5TCWlPE7Q8vcBg8bdsw+3HF2YixzHRuDp6tlg/hRF/TXd7ceaNQ==}
 
   '@jridgewell/gen-mapping@0.3.3':
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}
@@ -2441,6 +2447,8 @@ snapshots:
     optional: true
 
   '@fontsource-variable/inter@5.1.0': {}
+
+  '@fontsource-variable/ubuntu-sans@5.2.7': {}
 
   '@jridgewell/gen-mapping@0.3.3':
     dependencies:
