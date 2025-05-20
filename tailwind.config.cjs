@@ -8,8 +8,8 @@ module.exports = {
     extend: {
       fontFamily: {
         // sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
-        // sans: ["Manrope Variable", ...defaultTheme.fontFamily.sans],
-        sans: ["Fira Sans", ...defaultTheme.fontFamily.sans],
+        sans: ["Manrope Variable", ...defaultTheme.fontFamily.sans],
+        // sans: ["Fira Sans", ...defaultTheme.fontFamily.sans],
       },
     },
   },
