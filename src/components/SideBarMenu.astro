@@ -34,8 +34,8 @@ export const sideMenuCss = {
 const currentLangBarMenu = Astro.url.pathname.startsWith("/en") ? "en" : "es";
 ---
 
+<strong class="flex justify-center mb-5 text-2xl md:text-base">Edgar Delgado Vega</strong>
 <ul class="menu grow shrink menu-md overflow-y-auto">
-  <strong class="flex justify-center mb-5 text-2xl md:text-base">Edgar Delgado Vega</strong>
   <li>
     <a class=`${sideMenuCss.divCss}` id="home" href={hrefHome}
       ><Home />
@@ -55,12 +55,16 @@ const currentLangBarMenu = Astro.url.pathname.startsWith("/en") ? "en" : "es";
       <span class=`${sideMenuCss.spanText}`>{projectsMenu}</span>
     </a>
   </li>
-  <li>
-    <a class=`${sideMenuCss.divCss}` id="resources-page" href={hrefResources}>
-      {currentLangBarMenu === "es" ? <Writing /> : ""}
-      <span class=`${sideMenuCss.spanText}`>{resourcesMenu}</span>
-    </a>
-  </li>
+  {
+    resourcesMenu && hrefResources && (
+      <li>
+        <a class={`${sideMenuCss.divCss}`} id="resources-page" href={hrefResources}>
+          {currentLangBarMenu === "es" ? <Writing /> : ""}
+          <span class={`${sideMenuCss.spanText}`}>{resourcesMenu}</span>
+        </a>
+      </li>
+    )
+  }
   <!-- <li>
     <a class=`${sideMenuCss.divCss}` id="blog" href={hrefBlog}>
       {currentLangBarMenu === "es" ? <Blog /> : ""}
