@@ -4,6 +4,7 @@ import HorizontalCard from "./HorizontalCard.astro";
 import Branch from "@icons/Branch.astro";
 import type { ProjectType } from "./HorizontalCard.astro";
 
+import ModularFormsImg from "../assets/libraries-webp/modular_forms.webp";
 import ToposImg from "../assets/libraries-webp/topos-docs.webp";
 import TSTonnetz from "../assets/libraries-webp/ts-tonnetz.webp";
 import FigurateNumbersRuby from "../assets/libraries-webp/figurate_numbers.webp";
@@ -12,6 +13,13 @@ import FigurateNumPython from "../assets/libraries-webp/figuratenum.webp";
 import FigNumbersTS from "../assets/libraries-webp/fignumbers.webp";
 
 export const allProjects = [
+  {
+    title: "Modular Forms Meets Sonic Pi",
+    img: ModularFormsImg,
+    desc: "An early-stage toolkit for exploring modular forms and elliptic curves through Sonic Pi. It makes abstract math concepts like Eisenstein series Eₖ(τ), Dedekind eta functions η(τ), SL(2,ℤ) group, theta functions ϑ, Hecke operators Tₚ, Dirichlet characters χ, elliptic curves over ℚ and 𝔽ₚ, creatively accessible. Inspired by SageMath, Pari/GP, and the LMFDB database, it aims to bridge deep number theory with algorithmic music.",
+    url: "https://rubygems.org/gems/modular_forms",
+    badge: "RubyGems | Ruby",
+  },
   {
     title: "ts-tonnetz in the new live coding environment Topos!",
     img: ToposImg,
