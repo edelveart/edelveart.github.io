@@ -22,9 +22,7 @@ const { contactText, linkedin, github, youtube } = Astro.props;
   >
     <LinkedIn class="w-6 animate-pulse" />
     {contactText}
-    <span style="border:1px solid #333; padding:2px 6px; border-radius:3px; font-family: monospace;"
-      >{linkedin}</span
-    >
+    <span style="border:1px solid #333; padding:2px 6px; border-radius:3px;">{linkedin}</span>
   </a>
   <a
     id="github-btn"
@@ -33,9 +31,7 @@ const { contactText, linkedin, github, youtube } = Astro.props;
     target="_blank"
   >
     <GitHub class="w-6" />
-    <span style="border:1px solid #333; padding:2px 6px; border-radius:3px; font-family: monospace;"
-      >{github}</span
-    >
+    <span style="border:1px solid #333; padding:2px 6px; border-radius:3px; ">{github}</span>
   </a>
   <a
     id="youtube-btn"
@@ -44,9 +40,7 @@ const { contactText, linkedin, github, youtube } = Astro.props;
     target="_blank"
   >
     <Youtube class="w-6" />
-    <span style="border:1px solid #333; padding:2px 6px; border-radius:3px; font-family: monospace;"
-      >{youtube}</span
-    >
+    <span style="border:1px solid #333; padding:2px 6px; border-radius:3px; ">{youtube}</span>
   </a>
 </div>
 
