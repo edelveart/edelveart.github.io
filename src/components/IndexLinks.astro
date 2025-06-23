@@ -6,23 +6,69 @@ import { SOCIAL_MEDIA } from "../config";
 
 export interface Props {
   contactText?: string;
+  linkedin: string;
+  github: string;
+  youtube: string;
 }
-const { contactText } = Astro.props;
+const { contactText, linkedin, github, youtube } = Astro.props;
 ---
 
 <div class="mt-8 mb-10 flex justify-start gap-4 flex-wrap">
   <a
+    id="linkedin-btn"
     class="btn btm-nav-xs hover:scale-95 shadow-lg shadow-primary/30"
     href={SOCIAL_MEDIA.linkedin}
     target="_blank"
   >
     <LinkedIn class="w-6 animate-pulse" />
     {contactText}
+    <span style="border:1px solid #333; padding:2px 6px; border-radius:3px; font-family: monospace;"
+      >{linkedin}</span
+    >
   </a>
-  <a class="btn btm-nav-xs hover:scale-95" href={SOCIAL_MEDIA.github} target="_blank">
+  <a
+    id="github-btn"
+    class="btn btm-nav-xs hover:scale-95"
+    href={SOCIAL_MEDIA.github}
+    target="_blank"
+  >
     <GitHub class="w-6" />
+    <span style="border:1px solid #333; padding:2px 6px; border-radius:3px; font-family: monospace;"
+      >{github}</span
+    >
   </a>
-  <a class="btn btm-nav-xs hover:scale-95" href={SOCIAL_MEDIA.youtube} target="_blank">
+  <a
+    id="youtube-btn"
+    class="btn btm-nav-xs hover:scale-95"
+    href={SOCIAL_MEDIA.youtube}
+    target="_blank"
+  >
     <Youtube class="w-6" />
+    <span style="border:1px solid #333; padding:2px 6px; border-radius:3px; font-family: monospace;"
+      >{youtube}</span
+    >
   </a>
 </div>
+
+<script is:inline>
+  const keyToBtnId = {
+    l: "linkedin-btn",
+    g: "github-btn",
+    y: "youtube-btn",
+  };
+
+  window.addEventListener("keydown", (e) => {
+    const tag = document.activeElement?.tagName.toLowerCase();
+    if (tag === "input" || tag === "textarea") return;
+
+    const key = e.key.toLowerCase();
+    const btnId = keyToBtnId[key];
+
+    if (btnId) {
+      const btn = document.getElementById(btnId);
+      if (btn) {
+        btn.click();
+      }
+    }
+  });
+</script>
