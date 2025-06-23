@@ -4,7 +4,7 @@ Hi there!
 
 Welcome to my personal website, a fork of <a href="https://astrofy-template.netlify.app/" target="_blank" class="font-bold">Astrofy Template ⚡️</a>.
 
-<img src="webpage-home-image.png" width="400" />
+<img src="webpage-image.png" width="400" />
 
 
 I've made several customizations, including adding SVG elements and breaking the site into separate components for better maintainability. The site is available in two languages:
