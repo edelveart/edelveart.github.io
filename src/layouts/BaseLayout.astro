@@ -1,23 +1,17 @@
 ---
-import "@fontsource-variable/ibm-plex-sans";
 // import "@fontsource-variable/inter";
-// import "@fontsource/roboto";
-// import "@fontsource-variable/ubuntu-sans";
-// import "@fontsource-variable/sora";
-// import "@fontsource-variable/space-grotesk";
-// import "@fontsource-variable/public-sans";
+import "@fontsource-variable/ibm-plex-sans";
 // import "@fontsource-variable/manrope";
-// import "@fontsource/fira-sans";
 
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import SideBar from "../components/es/SideBar.astro";
+import BaseHead from "@components/BaseHead.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import SideBar from "@components/SideBar.astro"; // This must be different
 import { ViewTransitions } from "astro:transitions";
-import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
-import FlagsLinkCss from "../components/FlagsLinkCss.astro";
-import Languages from "@components/Languages.astro";
 
+import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
+import FlagsLinkCss from "@components/FlagsLinkCss.astro";
+import Languages from "@components/Languages.astro";
 const {
   image,
   title = SITE_TITLE,
@@ -29,16 +23,16 @@ const {
 ---
 
 <!doctype html>
-<html lang="es" data-theme="night">
+<html lang="en" data-theme="night">
   <head>
     <BaseHead title={title} description={description} image={image} ogType={ogType} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <!-- <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
     /> -->
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <FlagsLinkCss />
     {TRANSITION_API && <ViewTransitions />}
+    <FlagsLinkCss />
   </head>
   <body>
     <div class="bg-base-100 drawer lg:drawer-open">
