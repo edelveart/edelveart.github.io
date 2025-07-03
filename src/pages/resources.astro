@@ -5,6 +5,9 @@ import Errata from "@components/resources-components/Errata.astro";
 import MiscFiles from "@components/resources-components/MiscFiles.astro";
 import { SOCIAL_MEDIA } from "src/config";
 import LectureNotes from "@components/resources-components/LectureNotes.astro";
+import Image from "astro/components/Image.astro";
+import { imageConfig } from "astro:assets";
+import { loadContentConfig } from "node_modules/astro/dist/content/utils";
 ---
 
 <BaseLayout title="Resources" sideBarActiveItemID="resources-page">
@@ -15,13 +18,11 @@ import LectureNotes from "@components/resources-components/LectureNotes.astro";
         Resources, Notes, and Lectures
       </div>
     </div>
-
     <p class="mb-5">
       Welcome to the <strong>materials, notes, and readings</strong> section. All resources are created
       using <strong>LaTeX</strong> and are available in <strong>PDF</strong> format. Here, I have compiled
       documents on mathematics, music, and their applications through software.
     </p>
-
     <p class="mb-5">
       Whether you are a student, a curious mind, or someone who enjoys the connections between sound
       and art, you will find something here to inspire you. I hope you enjoy exploring this content
@@ -36,16 +37,22 @@ import LectureNotes from "@components/resources-components/LectureNotes.astro";
     <a class="text-primary" target="_blank" href={SOCIAL_MEDIA.linkedin}>LinkedIn</a>. I will be
     happy to review and correct them as soon as possible.
   </section>
-  <LectureNotes />
-  <MiscFiles />
-  <Errata />
+
+  <LectureNotes title="I. Lecture Notes and Versioned Documents" />
+  <MiscFiles title="II. Miscellaneous Files" />
+  <Errata title="III. Errata in Books and Theses" />
 
   <section class="text-xs mb-5 border-l-4 border-error p-4 rounded">
     <h3 class="text-error">Legal Notice</h3>
     <p>
       All content available on this website, including the documents and related resources, is
       protected by copyright and distributed under the Creative Commons
-      <a class="text-primary" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+      <a
+        class="text-primary"
+        target="_blank"
+        href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+        blank-
+      >
         CC BY-NC-ND 4.0
       </a>
       (Attribution-NonCommercial-NoDerivatives) license.

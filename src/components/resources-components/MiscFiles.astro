@@ -1,5 +1,13 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
 <section class="mb-10">
-  <h2 class="text-xl font-bold">II. Archivos varios</h2>
+  <h2 class="text-xl font-bold">{title}</h2>
 
   <ul class="list-disc ml-4 mt-3">
     <li>

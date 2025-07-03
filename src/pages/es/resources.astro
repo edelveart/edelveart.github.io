@@ -15,13 +15,11 @@ import LectureNotes from "@components/resources-components/LectureNotes.astro";
         Recursos, notas y lecturas
       </div>
     </div>
-
     <p class="mb-5">
       Bienvenido a la sección de <strong>materiales, notas y lecturas</strong>. Todos los recursos
       están elaborados en <strong>LaTeX</strong> y disponibles en <strong>PDF</strong>. Aquí
       recopilo documentos sobre matemáticas, música y sus aplicaciones a través de software.
     </p>
-
     <p class="mb-5">
       Si eres estudiante, curioso o disfrutas de las conexiones entre el arte sonoro, aquí
       encontrarás algo que te motive. Espero que disfrutes explorando este contenido tanto como yo
@@ -38,17 +36,20 @@ import LectureNotes from "@components/resources-components/LectureNotes.astro";
       href={SOCIAL_MEDIA.linkedin}>LinkedIn</a
     >. Lo revisaré y corregiré con gusto en cuanto me sea posible.
   </section>
-  <LectureNotes />
-  <MiscFiles />
-  <Errata />
+
+  <LectureNotes title="I. Notas de Lectura y documentos versionados" />
+  <MiscFiles title="II. Archivos varios" />
+  <Errata title="III. Erratas en libros y tesis" />
 
   <section class="text-xs mb-5 border-l-4 border-error p-4 rounded">
     <h3 class="text-error">Aviso Legal</h3>
     <p>
       Todo el contenido disponible en este sitio web, incluyendo los documentos y recursos
       relacionados, está protegido por derechos de autor y se distribuye bajo la licencia Creative
-      Commons <a class="text-primary" href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
-        >CC BY-NC-ND 4.0</a
+      Commons <a
+        class="text-primary"
+        target="_blank"
+        href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a
       > (Atribución-No Comercial-SinDerivados).
     </p>
     <p>

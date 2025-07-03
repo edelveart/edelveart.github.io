@@ -1,7 +1,13 @@
-<section class="mb-10">
-  <h2 class="text-xl font-bold">Notas de Lectura y documentos versionados</h2>
+---
+interface Props {
+  title: string;
+}
 
-  <h3 class="text-lg">B. Documentos versionados</h3>
+const { title } = Astro.props;
+---
+
+<section class="mb-10">
+  <h2 class="text-xl font-bold">{title}</h2>
   <ul class="list-disc ml-4 mt-3">
     <li>
       <a

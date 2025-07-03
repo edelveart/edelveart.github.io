@@ -1,7 +1,15 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
 <section class="mb-10">
-  <h2 class="text-xl font-bold mb-4">III. Erratas en libros y tesis</h2>
-  Al desarrollar mis bibliotecas, surgieron dudas al revisar estos textos. Con respeto y aprecio por
-  los autores, registré las erratas con ánimo constructivo.
+  <h2 class="text-xl font-bold mb-4">{title}</h2>
+  <!-- Al desarrollar mis bibliotecas, surgieron dudas al revisar estos textos. Con respeto y aprecio por
+  los autores, registré las erratas con ánimo constructivo. -->
 
   <div class="my-4"></div>
   <ul class="list-disc ml-4">
