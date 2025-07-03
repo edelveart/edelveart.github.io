@@ -1,5 +1,5 @@
 ---
-const currentLang = Astro.url.pathname.startsWith("/en") ? "en" : "es";
+const currentLang = Astro.url.pathname.startsWith("/es") ? "es" : "en";
 import { spanishFlag, englishFlag } from "./Languages.astro";
 ---
 
@@ -25,11 +25,11 @@ import { spanishFlag, englishFlag } from "./Languages.astro";
     <div class="navbar-center">
       {
         currentLang === "es" ? (
-          <a class="btn btn-ghost normal-case text-base font-bold" href="/">
+          <a class="btn btn-ghost normal-case text-base font-bold" href="/en">
             Edgar Delgado
           </a>
         ) : (
-          <a class="btn btn-ghost normal-case text-base font-bold" href="/en">
+          <a class="btn btn-ghost normal-case text-base font-bold" href="/">
             Edgar Delgado
           </a>
         )
@@ -38,10 +38,10 @@ import { spanishFlag, englishFlag } from "./Languages.astro";
 
     <div class="navbar-end">
       {
-        currentLang === "es" ? (
+        currentLang === "en" ? (
           <a
             class="btn btn-ghost text-xs"
-            href="/en"
+            href="/"
             title="Switch to English"
             aria-label="Switch to English"
           >
@@ -51,7 +51,7 @@ import { spanishFlag, englishFlag } from "./Languages.astro";
         ) : (
           <a
             class="btn btn-ghost text-xs"
-            href="/"
+            href="/es"
             title="Cambiar a Español"
             aria-label="Cambiar a Español"
           >

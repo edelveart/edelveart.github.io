@@ -2,36 +2,24 @@
 import Home from "@icons/Home.astro";
 import Branch from "@icons/Branch.astro";
 import Curriculum from "@icons/Curriculum.astro";
-import Writing from "@icons/Writing.astro";
 type Props = {
   sideBarActiveItemID: unknown;
   homeMenu: string;
   projectsMenu: string;
   cvMenu: string;
-  resourcesMenu?: string;
   hrefHome: string;
   hrefProjects: string;
   hrefCV: string;
-  hrefResources?: string;
 };
 
-const {
-  sideBarActiveItemID,
-  homeMenu,
-  projectsMenu,
-  cvMenu,
-  resourcesMenu,
-  hrefHome,
-  hrefProjects,
-  hrefCV,
-  hrefResources,
-} = Astro.props;
-const activeClass = "bg-base-300";
+const { sideBarActiveItemID, homeMenu, projectsMenu, cvMenu, hrefHome, hrefProjects, hrefCV } =
+  Astro.props;
+
+const activeClass = "bg-base-300"; // For primary color replace with `active` class
 export const sideMenuCss = {
   divCss: "py-3  md:justify-start",
   spanText: "text-base",
 };
-const currentLangBarMenu = Astro.url.pathname.startsWith("/en") ? "en" : "es";
 ---
 
 <strong class="flex justify-center mb-5 text-base">Edgar Delgado</strong>
@@ -51,26 +39,9 @@ const currentLangBarMenu = Astro.url.pathname.startsWith("/en") ? "en" : "es";
   <li>
     <a class={sideMenuCss.divCss} id="projects" href={hrefProjects}
       ><Branch />
-
       <span class={sideMenuCss.spanText}>{projectsMenu}</span>
     </a>
   </li>
-  {
-    resourcesMenu && hrefResources && (
-      <li>
-        <a class={sideMenuCss.divCss} id="resources-page" href={hrefResources}>
-          {currentLangBarMenu === "es" ? <Writing /> : ""}
-          <span class={sideMenuCss.spanText}>{resourcesMenu}</span>
-        </a>
-      </li>
-    )
-  }
-  <!-- <li>
-    <a class=sideMenuCss.divCss id="blog" href={hrefBlog}>
-      {currentLangBarMenu === "es" ? <Blog /> : ""}
-      <span class=`${sideMenuCss.spanText}`>{blogMenu}</span>
-    </a>
-  </li> -->
 </ul>
 
 <script

@@ -1,31 +1,30 @@
 ---
-import TimeLine from "@components/TimeLine.astro";
-import EducationBooks from "@icons/Education.astro";
+import TimeLineElement from "@components/TimeLine.astro";
+import EducationSVG from "@icons/Education.astro";
 
 const masterGradesAndAverage = {
-  title: "UNIR | Máster en Investigación Musical",
-  subtitle: "2019 - 2020 | España",
-  description: `Obtuve una matrícula de honor y puntaje perfecto en Análisis Musical Informatizado.
-    Promedio general: Sobresaliente.
-    • TFM: Apliqué la teoría de complejos simpliciales (MaMuTh) para analizar un estilo musical utilizando software especializado.
-    💻 HexaChord, Geogebra, LaTex
-    `,
+  title: "UNIR | Master's Degree in Music Research",
+  subtitle: "2019 - 2020 | Spain",
+  description: `I received the highest distinction with a perfect score in Computational Music Analysis.
+    Overall average: Outstanding
+    • TFM: I applied the theory of simplicial complexes (MaMuTh) to analyze a musical style using specialized software.
+    💻 HexaChord, Geogebra, LaTex`,
 };
 ---
 
-<div class="mb-5 mt-10" id="EDUCATION">
-  <div class="text-2xl w-full font-bold flex items-center">
-    <EducationBooks class="ml-0 mr-4" />Educación
+<div class="mb-5" id="EDUCATION">
+  <div class="text-2xl w-full font-bold flex items-center mt-[-0.5rem]">
+    <EducationSVG class="ml-0 mr-4" />Education
   </div>
 </div>
 
 <div class="time-line-container grid gap-3 mb-0">
-  <TimeLine
+  <TimeLineElement
     title={masterGradesAndAverage.title}
     subtitle={masterGradesAndAverage.subtitle}
     description={masterGradesAndAverage.description}
-    moreInfo="Ver más"
+    moreInfo="See more"
   />
 
-  <TimeLine title="USMP | Bachiller y Licenciatura en Música" subtitle="2009 - 2015 | Lima, Perú" />
+  <TimeLineElement title="USMP | B.A. in Music" subtitle="2009 - 2015 | Lima, Perú" />
 </div>

@@ -1,0 +1,82 @@
+---
+import TimeLine from "../TimeLine.astro";
+import Work from "@icons/Work.astro";
+
+export const allExperiences = [
+  {
+    title: "ZifferJS | TypeScript Software Developer",
+    subtitle: "oct.2023 - actualidad | Finlandia | En remoto",
+    description: `Contribuyo al desarrollo de ZifferJS, una notación musical generativa y analizador. Está diseñado para adaptarse a cualquier entorno de live coding que admita tecnologías web.
+    • Implementar algoritmos matemáticos de complejos simpliciales y teoría de grafos
+    • Crear pruebas unitarias y escribir documentación
+    • Crear funciones generadoras para trabajar con secuencias infinitas
+    💻 TypeScript, Vitest, Git`,
+  },
+  {
+    title:
+      "Escuela de Posgrado Newman | Docente de las Maestrías en Musicología y Pedagogía Musical",
+    subtitle: "may.2024 - actualidad | Tacna, Perú | En remoto",
+    description: `Asignaturas que imparto en la Maestría en Musicología:
+    • Técnicas de búsqueda, documentación y difusión en investigación musicológica
+    • Industrias musicales
+    • Investigación performativa: perspectivas históricas y analíticas de la interpretación
+    • La escucha musical: una aproximación histórica y cultural
+    💻 Sonic Visualiser
+    Asignaturas que imparto en la Maestría en Pedagogía Musical:
+    • Comunicación, conocimiento y aprendizaje digital aplicadas a la enseñanza de la música
+
+   `,
+  },
+  {
+    title: "Toulouse Lautrec, EEST | Docente de producción musical y producción electrónica",
+    subtitle: "jun.2022 - actualidad | Lima, Perú | En remoto",
+
+    description: `Módulos que imparto en los programas:
+    • Síntesis aplicada: modelado físico, síntesis aditiva, síntesis sustractiva, síntesis por modulación de frecuencia (FM) y sampling
+    • Fundamentos y herramientas de producción musical
+    • Teoría musical, armonía funcional y arreglos
+    💻 MuseScore 4, Reaper 7`,
+  },
+  {
+    title: "Universidad Nacional Daniel Alomía Robles | Docente a tiempo completo",
+    subtitle: "may.2019 - dic.2019 | Huánuco, Perú | Presencial",
+    description: `Asignaturas que impartí en la licenciatura:
+    • Didáctica general de la educación
+    • Psicología del aprendizaje
+    • Didáctica de la música
+    💻 MuseScore 3, LaTex`,
+  },
+  {
+    title: "PAENFTS | Docente del área de música",
+    subtitle: "jun.2015 - oct.2017 | Lima, Perú | Presencial",
+    description: `Enseñanza de teoría e interpretación musical.
+    💻 MuseScore 2`,
+  },
+];
+
+const { workExperiences, indices } = Astro.props;
+const filteredExperiences = indices
+  ? indices.map((index: number) => workExperiences[index]).filter(Boolean)
+  : workExperiences;
+---
+
+<div class="mb-5 mt-0" id="EXPERIENCE">
+  <div class="text-2xl w-full font-bold flex items-center">
+    <Work class="ml-0 mr-4" />Experiencia
+  </div>
+</div>
+
+<div class="time-line-container mb-8 grid gap-3">
+  {
+    filteredExperiences.map((experience, index: number) => (
+      <>
+        <TimeLine
+          key={index}
+          title={experience.title}
+          subtitle={experience.subtitle}
+          description={experience.description}
+        />
+      </>
+    ))
+  }
+</div>

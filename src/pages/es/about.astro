@@ -1,0 +1,125 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ListOfSkills from "@components/ListOfSkills.astro";
+import { techSkillsSpanish } from "@components/ListOfSkills.astro";
+import Education from "@components/Education.astro";
+import Curriculum from "@icons/Curriculum.astro";
+import { menuSpanish } from "@components/es/SideBar.astro";
+---
+
+<BaseLayout title="Resume" sideBarActiveItemID="cv">
+  <section class="pb-3 mt-5">
+    <div class="mb-5 mt-5" id="CURRICULUM">
+      <div class="text-2xl w-full font-bold flex items-center">
+        <Curriculum class="ml-0 mr-4 max-w-none" />Acerca de mí
+      </div>
+    </div>
+    <article class="mb-10">
+      <p>
+        Me apasiona <strong>resolver problemas</strong> y <strong>crear abstracciones</strong>, con
+        un enfoque centrado en el <strong>autoaprendizaje</strong> en entornos tecnológicos. Mi interés
+        por las matemáticas me motiva a explorar continuamente su aplicación, especialmente en el desarrollo
+        de software, lo que me lleva a crear
+        <a class="text-primary hover:underline" id="projects" href={menuSpanish.projectsMenu.href}
+          >bibliotecas</a
+        > para abordar problemas complejos.
+      </p>
+      <h2 class="text-xl my-4">Experiencia</h2>
+      Cuento con amplia experiencia en docencia presencial y virtual a nivel superior y posgrado, con
+      especialización en live coding y musicología. Los comentarios sobre mi práctica docente suelen
+      ser mayormente favorables, destacando mi capacidad para comunicar conceptos complejos de manera
+      clara y accesible.
+      <h2 class="text-xl my-4">Intereses</h2>
+      <p>
+        <ul class="list-disc ml-4">
+          <li class="text-primary">
+            <p class="text-neutral-content">Teoría matemática de la música</p>
+          </li>
+          <li class="text-primary">
+            <p class="text-neutral-content">
+              Lenguajes específicos de dominio (DSLs) para la música
+            </p>
+          </li>
+          <li class="text-primary">
+            <p class="text-neutral-content">
+              Composición e improvisación musical asistida por ordenador
+            </p>
+          </li>
+        </ul>
+      </p>
+    </article>
+  </section>
+
+  <ListOfSkills title="Tecnologías" techSkills={techSkillsSpanish} indices={[0, 1, 2, 3]} />
+
+  <!-- <Experience workExperiences={allExperiences} /> -->
+
+  <Education />
+  <!-- <h2 class="my-4">El origen de mi interés por las matemáticas</h2>
+  <p class="text-xs">
+    Aunque mi atención estuvo dirigida hacia la música durante muchos años, mi interés por las
+    matemáticas comenzó a una edad temprana, cuando me pregunté: ¿Por qué los números se comportan
+    de manera diferente al cambiar su posición en el espacio? Dejé esa pregunta en el olvido durante
+    largo tiempo, hasta que, en 2021, descubrí la geometría aritmética y la intersección entre los
+    números, geometría y álgebra.
+  </p> -->
+</BaseLayout>
+
+<!-- <div class="mb-5 mt-8">
+      <article class="text-2xl w-full font-bold flex items-center">
+        <Curriculum class="ml-0 mr-4" /> Congresos
+      </article>
+    </div>
+
+    <ul class="list-disc ml-4 mb-5 grid gap-2">
+      <li class="text-primary">
+        <p class="text-neutral-content">
+          Ponente en Constelaciones: Congreso Interdisciplinario de Arte, Ciencia y Tecnología
+          organizado por UTEC, PUCP, MAC-LIMA y Fundación Telefónica (2022). Ponencia: <b
+            >¿Euclides en el live coding? Algoritmos y conceptos matemáticos durante la codificación
+            en tiempo real.</b
+          >
+        </p>
+      </li>
+      <li class="text-primary">
+        <p class="text-neutral-content">
+          Conferencista invitado en el marco del 32° Festival Internacional de Guitarra del Ipcna
+          (2021). Ponencia: <b>Teorías Transformacionales de la Teoría Matemática de la Música.</b>
+        </p>
+      </li>
+      <li class="text-primary">
+        <p class="text-neutral-content">
+          PUCP (2015). Participante oyente en la <b
+            >Conferencia Regional Latinoamericana y Panamericana de Educación Musical</b
+          > - ISME.
+        </p>
+      </li>
+    </ul>
+
+    <div class="mb-5 mt-8">
+      <article class="text-2xl w-full font-bold flex items-center">
+        <Curriculum class="ml-0 mr-4" /> Certificaciones
+      </article>
+    </div>
+
+    <ul class="list-disc ml-4 mb-8 grid gap-2">
+      <li class="text-primary">
+        <p class="text-neutral-content">
+          Universidad Nacional de Ingeniería e Instituto de Matemáticas y Ciencias Afines, IMCA
+          (2022). <b>Minicurso Antología de Ingenios Matemáticos. Proyecto final en GitHub.</b>
+        </p>
+      </li>
+      <li class="text-primary">
+        <p class="text-neutral-content">
+          PUCP (2016). <b
+            >Creatividad en el aula de música. Estrategias didácticas y evaluativas.
+          </b> Dictado por la Dra. Ana Lucía Frega.
+        </p>
+      </li>
+      <li class="text-primary">
+        <p class="text-neutral-content">
+          PUCP (2015). <b>Metodologías de la Investigación en Música.</b> Dictado por la Dra. Ana Lucía
+          Frega.
+        </p>
+      </li>
+    </ul> -->

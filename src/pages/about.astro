@@ -1,96 +1,86 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
+import BaseLayout from "@layouts/en/BaseLayout.astro";
+import Experience, { allExperiences } from "@components/Experience.astro";
 import ListOfSkills from "@components/ListOfSkills.astro";
-import { techSkillsSpanish } from "@components/ListOfSkills.astro";
+import { techSkillsEnglish } from "@components/ListOfSkills.astro";
 import Education from "@components/Education.astro";
 import Curriculum from "@icons/Curriculum.astro";
-import { menuSpanish } from "@components/SideBar.astro";
+import { menuEnglish } from "@components/SideBar.astro";
 ---
 
 <BaseLayout title="Resume" sideBarActiveItemID="cv">
   <section class="pb-3 mt-5">
     <div class="mb-5 mt-5" id="CURRICULUM">
       <div class="text-2xl w-full font-bold flex items-center">
-        <Curriculum class="ml-0 mr-4 max-w-none" />Acerca de mí
+        <Curriculum class="ml-0 mr-4" />About me
       </div>
     </div>
+
     <article class="mb-10">
       <p>
-        Me apasiona <strong>resolver problemas</strong> y <strong>crear abstracciones</strong>, con
-        un enfoque centrado en el <strong>autoaprendizaje</strong> en entornos tecnológicos. Mi interés
-        por las matemáticas me motiva a explorar continuamente su aplicación, especialmente en el desarrollo
-        de software, lo que me lleva a crear
-        <a class="text-primary hover:underline" id="projects" href={menuSpanish.projectsMenu.href}
-          >bibliotecas</a
-        > para abordar problemas complejos.
+        I am passionate about <strong>solving problems</strong> and <strong
+          >creating abstractions</strong
+        >, with a focus on <strong>self-learning</strong> in technological environments. My interest
+        in mathematics drives me to continuously explore its application, especially in software development,
+        which leads me to create
+        <a class="text-primary hover:underline" id="projects" href={menuEnglish.projectsMenu.href}
+          >libraries</a
+        > to tackle complex problems.
       </p>
-      <h2 class="text-xl my-4">Experiencia</h2>
-      Cuento con amplia experiencia en docencia presencial y virtual a nivel superior y posgrado, con
-      especialización en live coding y musicología. Los comentarios sobre mi práctica docente suelen
-      ser mayormente favorables, destacando mi capacidad para comunicar conceptos complejos de manera
-      clara y accesible.
-      <h2 class="text-xl my-4">Intereses</h2>
+      <h2 class="text-xl my-4">Experience</h2>
+      I have extensive experience in both in-person and online teaching at the undergraduate and graduate
+      levels, specializing in live coding and musicology. Feedback on my teaching practice is mostly
+      favorable, highlighting my ability to communicate complex concepts clearly and accessibly.
+      <h2 class="text-xl my-4">Interests</h2>
       <p>
         <ul class="list-disc ml-4">
           <li class="text-primary">
-            <p class="text-neutral-content">Teoría matemática de la música</p>
+            <p class="text-neutral-content">Mathematical theory of music</p>
+          </li>
+          <li class="text-primary">
+            <p class="text-neutral-content">Domain-specific languages (DSLs) for music</p>
           </li>
           <li class="text-primary">
             <p class="text-neutral-content">
-              Lenguajes específicos de dominio (DSLs) para la música
-            </p>
-          </li>
-          <li class="text-primary">
-            <p class="text-neutral-content">
-              Composición e improvisación musical asistida por ordenador
+              Computer-assisted music composition and improvisation
             </p>
           </li>
         </ul>
       </p>
     </article>
-  </section>
 
-  <ListOfSkills title="Tecnologías" techSkills={techSkillsSpanish} indices={[0, 1, 2, 3]} />
+    <ListOfSkills title="Technologies" techSkills={techSkillsEnglish} indices={[0, 1, 2, 3]} />
 
-  <!-- <Experience workExperiences={allExperiences} /> -->
+    <!-- <Experience workExperiences={allExperiences} /> -->
 
-  <Education />
-  <!-- <h2 class="my-4">El origen de mi interés por las matemáticas</h2>
-  <p class="text-xs">
-    Aunque mi atención estuvo dirigida hacia la música durante muchos años, mi interés por las
-    matemáticas comenzó a una edad temprana, cuando me pregunté: ¿Por qué los números se comportan
-    de manera diferente al cambiar su posición en el espacio? Dejé esa pregunta en el olvido durante
-    largo tiempo, hasta que, en 2021, descubrí la geometría aritmética y la intersección entre los
-    números, geometría y álgebra.
-  </p> -->
-</BaseLayout>
+    <Education />
 
-<!-- <div class="mb-5 mt-8">
+    <div class="mb-5 mt-8">
       <article class="text-2xl w-full font-bold flex items-center">
-        <Curriculum class="ml-0 mr-4" /> Congresos
+        <Curriculum class="ml-0 mr-4" /> Participation in Conferences
       </article>
     </div>
 
     <ul class="list-disc ml-4 mb-5 grid gap-2">
       <li class="text-primary">
         <p class="text-neutral-content">
-          Ponente en Constelaciones: Congreso Interdisciplinario de Arte, Ciencia y Tecnología
-          organizado por UTEC, PUCP, MAC-LIMA y Fundación Telefónica (2022). Ponencia: <b
-            >¿Euclides en el live coding? Algoritmos y conceptos matemáticos durante la codificación
-            en tiempo real.</b
+          Speaker at Constelaciones: Interdisciplinary Congress on Art, Science, and Technology
+          organized by UTEC, PUCP, MAC-LIMA, and Fundación Telefónica (2022). Presentation: <b
+            >Euclid in Live Coding? Algorithms and Mathematical Concepts During Real-Time Coding.</b
           >
         </p>
       </li>
       <li class="text-primary">
         <p class="text-neutral-content">
-          Conferencista invitado en el marco del 32° Festival Internacional de Guitarra del Ipcna
-          (2021). Ponencia: <b>Teorías Transformacionales de la Teoría Matemática de la Música.</b>
+          Invited speaker at the 32nd International Guitar Festival of Ipcna (2021). Presentation: <b
+            >Transformational Theories in Mathematical Music Theory.</b
+          >
         </p>
       </li>
       <li class="text-primary">
         <p class="text-neutral-content">
-          PUCP (2015). Participante oyente en la <b
-            >Conferencia Regional Latinoamericana y Panamericana de Educación Musical</b
+          PUCP (2015). Participant (observer) at the <b
+            >Latin American and Pan-American Conference on Music Education</b
           > - ISME.
         </p>
       </li>
@@ -98,28 +88,34 @@ import { menuSpanish } from "@components/SideBar.astro";
 
     <div class="mb-5 mt-8">
       <article class="text-2xl w-full font-bold flex items-center">
-        <Curriculum class="ml-0 mr-4" /> Certificaciones
+        <Curriculum class="ml-0 mr-4" /> Courses and certifications
       </article>
     </div>
 
     <ul class="list-disc ml-4 mb-8 grid gap-2">
       <li class="text-primary">
         <p class="text-neutral-content">
-          Universidad Nacional de Ingeniería e Instituto de Matemáticas y Ciencias Afines, IMCA
-          (2022). <b>Minicurso Antología de Ingenios Matemáticos. Proyecto final en GitHub.</b>
+          National University of Engineering and Institute of Mathematics and Related Sciences,
+          UNI-IMCA (2022). <b
+            >Mini-Course Anthology of Mathematical Ingenuities. Final project on GitHub.</b
+          >
         </p>
       </li>
+
       <li class="text-primary">
         <p class="text-neutral-content">
           PUCP (2016). <b
-            >Creatividad en el aula de música. Estrategias didácticas y evaluativas.
-          </b> Dictado por la Dra. Ana Lucía Frega.
+            >Creativity in the Music Classroom: Didactic and Evaluative Strategies.
+          </b> Taught by Dr. Ana Lucía Frega.
         </p>
       </li>
+
       <li class="text-primary">
         <p class="text-neutral-content">
-          PUCP (2015). <b>Metodologías de la Investigación en Música.</b> Dictado por la Dra. Ana Lucía
-          Frega.
+          PUCP (2015). <b>Methodologies of Research in Music.</b>
+          Taught by Dr. Ana Lucía Frega.
         </p>
       </li>
-    </ul> -->
+    </ul>
+  </section>
+</BaseLayout>

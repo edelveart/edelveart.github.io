@@ -1,60 +1,32 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
-import Biography from "@components/Biography.astro";
+import BaseLayout from "../layouts/en/BaseLayout.astro";
+
+import Biography from "../components/Biography.astro";
 import IndexLinks from "@components/IndexLinks.astro";
-import Experience, { allExperiences } from "@components/Experience.astro";
-import ProjectsComponent, { allProjects } from "@components/ProjectsComponent.astro";
 
-import ListOfSkills from "@components/ListOfSkills.astro";
-import { techSkillsSpanish } from "@components/ListOfSkills.astro";
+import ProjectsComponent, { allProjects } from "../components/ProjectsComponent.astro";
+import Experience, { allExperiences } from "../components/Experience.astro";
 import ModEcImg from "@components/ModEcImg.astro";
-
-// import { getCollection } from "astro:content";
-// const posts = (await getCollection("blog")).sort(
-//   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-// );
 ---
 
 <BaseLayout sideBarActiveItemID="home">
   <ModEcImg />
   <section class="pb-3 mt-5">
-    <div class="text-3xl font-bold leading-snug pt-0 flex">
+    <div class="text-3xl font-bold leading-snug py-0 flex">
       Edgar Delgado
       <!-- <p class="ml-2 animate-bounce">👋</p> -->
     </div>
-
-    <div class="py-1 font-bold text-primary">
-      Desarrollador de software y entusiasta de las matemáticas
-    </div>
+    <div class="py-1 font-bold text-primary">Software Developer and Math Enthusiast</div>
 
     <div class="py-2 mt-4">
       <Biography />
-      <IndexLinks contactText="Contáctame" linkedin="L" github="G" youtube="Y" />
+      <IndexLinks contactText="Contact me" linkedin="L" github="G" youtube="Y" />
     </div>
 
     <Experience workExperiences={allExperiences} indices={[0, 1]} />
-    <ProjectsComponent headTitle={"Bibliotecas"} projects={allProjects} indices={[0, 1, 2]} />
+    <ProjectsComponent headTitle={"Libraries"} projects={allProjects} indices={[0, 1, 2]} />
     <div class="m-16"></div>
-    <!-- <ListOfSkills title="Tecnologías" techSkills={techSkillsSpanish} indices={[0, 1]} /> -->
-    <!--
-    <div class="text-2xl w-full font-bold flex items-center my-6 ml-0">
-      <Blog />Blog
-    </div>
-    {
-      last_posts.map((post) => (
-        <>
-          <CardBlog
-            title={post.data.title}
-            img={post.data.heroImage}
-            desc={post.data.description}
-            url={"/blog/" + createSlug(post.data.title, post.slug)}
-            target="_self"
-            badge={post.data.badge}
-            tags={post.data.tags}
-          />
-          <div class="divider my-0" />
-        </>
-      ))
-    } -->
+    <!-- <ListOfSkills title="Technologies" techSkills={techSkillsEnglish} indices={[0, 1]} /> -->
+    <!-- <Education /> -->
   </section>
 </BaseLayout>
