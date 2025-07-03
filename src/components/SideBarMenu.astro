@@ -2,18 +2,30 @@
 import Home from "@icons/Home.astro";
 import Branch from "@icons/Branch.astro";
 import Curriculum from "@icons/Curriculum.astro";
+import Writing from "@icons/Writing.astro";
 type Props = {
   sideBarActiveItemID: unknown;
   homeMenu: string;
-  projectsMenu: string;
-  cvMenu: string;
   hrefHome: string;
-  hrefProjects: string;
+  cvMenu: string;
   hrefCV: string;
+  projectsMenu: string;
+  hrefProjects: string;
+  resourcesMenu?: string;
+  hrefResources?: string;
 };
 
-const { sideBarActiveItemID, homeMenu, projectsMenu, cvMenu, hrefHome, hrefProjects, hrefCV } =
-  Astro.props;
+const {
+  sideBarActiveItemID,
+  homeMenu,
+  projectsMenu,
+  cvMenu,
+  hrefHome,
+  hrefProjects,
+  hrefCV,
+  resourcesMenu,
+  hrefResources,
+} = Astro.props;
 
 const activeClass = "bg-base-300"; // For primary color replace with `active` class
 export const sideMenuCss = {
@@ -40,6 +52,12 @@ export const sideMenuCss = {
     <a class={sideMenuCss.divCss} id="projects" href={hrefProjects}
       ><Branch />
       <span class={sideMenuCss.spanText}>{projectsMenu}</span>
+    </a>
+  </li>
+  <li>
+    <a class={sideMenuCss.divCss} id="projects" href={hrefResources}
+      ><Writing />
+      <span class={sideMenuCss.spanText}>{resourcesMenu}</span>
     </a>
   </li>
 </ul>

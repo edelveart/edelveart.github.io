@@ -6,12 +6,12 @@ import Writing from "@icons/Writing.astro";
 type Props = {
   sideBarActiveItemID: unknown;
   homeMenu: string;
-  projectsMenu: string;
-  cvMenu: string;
-  resourcesMenu?: string;
   hrefHome: string;
-  hrefProjects: string;
+  cvMenu: string;
   hrefCV: string;
+  projectsMenu: string;
+  hrefProjects: string;
+  resourcesMenu?: string;
   hrefResources?: string;
 };
 
@@ -32,7 +32,7 @@ export const sideMenuCss = {
   divCss: "py-3  md:justify-start",
   spanText: "text-base",
 };
-const currentLangBarMenu = Astro.url.pathname.startsWith("/en") ? "en" : "es";
+// const currentLangBarMenu = Astro.url.pathname.startsWith("/en") ? "en" : "es";
 ---
 
 <strong class="flex justify-center mb-5 text-base">Edgar Delgado</strong>
@@ -56,7 +56,15 @@ const currentLangBarMenu = Astro.url.pathname.startsWith("/en") ? "en" : "es";
       <span class={sideMenuCss.spanText}>{projectsMenu}</span>
     </a>
   </li>
-  {
+
+  <li>
+    <a class={sideMenuCss.divCss} id="projects" href={hrefResources}
+      ><Writing />
+
+      <span class={sideMenuCss.spanText}>{resourcesMenu}</span>
+    </a>
+  </li>
+  <!-- {
     resourcesMenu && hrefResources && (
       <li>
         <a class={sideMenuCss.divCss} id="resources-page" href={hrefResources}>
@@ -65,7 +73,7 @@ const currentLangBarMenu = Astro.url.pathname.startsWith("/en") ? "en" : "es";
         </a>
       </li>
     )
-  }
+  } -->
   <!-- <li>
     <a class=sideMenuCss.divCss id="blog" href={hrefBlog}>
       {currentLangBarMenu === "es" ? <Blog /> : ""}
