@@ -8,7 +8,7 @@ import { spanishFlag, englishFlag } from "./Languages.astro";
 >
   <div class="navbar w-full">
     <div class="navbar-start">
-      <label for="my-drawer" class="btn btn-square btn-ghost w-24">
+      <label for="my-drawer" class="btn btn-square btn-ghost w-24 rounded-3xl">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -41,7 +41,7 @@ import { spanishFlag, englishFlag } from "./Languages.astro";
       {
         currentLang === "es" ? (
           <a
-            class="btn btn-ghost"
+            class="btn btn-ghost rounded-3xl"
             href="/"
             title="Switch to English"
             aria-label="Switch to English"
@@ -51,7 +51,7 @@ import { spanishFlag, englishFlag } from "./Languages.astro";
           </a>
         ) : (
           <a
-            class="btn btn-ghost "
+            class="btn btn-ghost rounded-3xl"
             href="/es"
             title="Cambiar a Español"
             aria-label="Cambiar a Español"
