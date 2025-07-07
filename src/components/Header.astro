@@ -8,7 +8,7 @@ import { spanishFlag, englishFlag } from "./Languages.astro";
 >
   <div class="navbar w-full">
     <div class="navbar-start">
-      <label for="my-drawer" class="btn btn-square btn-ghost">
+      <label for="my-drawer" class="btn btn-square btn-ghost w-24">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -20,10 +20,13 @@ import { spanishFlag, englishFlag } from "./Languages.astro";
             stroke-width="2"
             d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
+        <!-- <div class="font-bold"> -->
+        {currentLang == "es" ? "Menú" : "Menu"}
+        <!-- </div> -->
       </label>
     </div>
     <div class="navbar-center">
-      {
+      <!-- {
         currentLang === "es" ? (
           <a class="btn btn-ghost normal-case text-base font-bold" href="/es">
             Edgar Delgado
@@ -33,30 +36,30 @@ import { spanishFlag, englishFlag } from "./Languages.astro";
             Edgar Delgado
           </a>
         )
-      }
+      } -->
     </div>
 
     <div class="navbar-end">
       {
         currentLang === "es" ? (
           <a
-            class="btn btn-ghost text-xs"
+            class="btn btn-ghost"
             href="/"
             title="Switch to English"
             aria-label="Switch to English"
           >
-            <span class={`${englishFlag} w-4 h-4`} />
-            English
+            <span class={`${englishFlag} w-6 h-6`} />
+            ENG
           </a>
         ) : (
           <a
-            class="btn btn-ghost text-xs"
+            class="btn btn-ghost "
             href="/es"
             title="Cambiar a Español"
             aria-label="Cambiar a Español"
           >
-            <span class={`${spanishFlag} w-4 h-4`} />
-            Español
+            <span class={`${spanishFlag} w-6 h-6`} />
+            ESP
           </a>
         )
       }

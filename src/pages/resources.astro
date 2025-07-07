@@ -5,9 +5,6 @@ import Errata from "@components/resources-components/Errata.astro";
 import MiscFiles from "@components/resources-components/MiscFiles.astro";
 import { SOCIAL_MEDIA } from "src/config";
 import LectureNotes from "@components/resources-components/LectureNotes.astro";
-import Image from "astro/components/Image.astro";
-import { imageConfig } from "astro:assets";
-import { loadContentConfig } from "node_modules/astro/dist/content/utils";
 ---
 
 <BaseLayout title="Resources" sideBarActiveItemID="resources-page">
@@ -19,7 +16,7 @@ import { loadContentConfig } from "node_modules/astro/dist/content/utils";
       </div>
     </div>
     <p class="mb-5">
-      Welcome to the <strong>materials, notes, and readings</strong> section. All resources are created
+      Welcome to the <strong>materials, notes, and files </strong> section. All resources are created
       using <strong>LaTeX</strong> and are available in <strong>PDF</strong> format. Here, I have compiled
       documents on mathematics, music, and their applications through software.
     </p>

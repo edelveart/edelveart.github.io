@@ -4,9 +4,6 @@ import Biography from "@components/es/Biography.astro";
 import IndexLinks from "@components/IndexLinks.astro";
 import Experience, { allExperiences } from "@components/es/Experience.astro";
 import ProjectsComponent, { allProjects } from "@components/ProjectsComponent.astro";
-
-import ListOfSkills from "@components/ListOfSkills.astro";
-import { techSkillsSpanish } from "@components/ListOfSkills.astro";
 import ModEcImg from "@components/ModEcImg.astro";
 
 // import { getCollection } from "astro:content";
@@ -18,13 +15,13 @@ import ModEcImg from "@components/ModEcImg.astro";
 <BaseLayout sideBarActiveItemID="home">
   <ModEcImg />
   <section class="pb-3 mt-5">
-    <div class="text-3xl font-bold leading-snug pt-0 flex text-content">
+    <div class="text-3xl font-bold leading-snug pt-0 flex text-neutral-300">
       Edgar Delgado
       <!-- <p class="ml-2 animate-bounce">👋</p> -->
     </div>
 
-    <div class="py-1 font-bold text-emerald-400">
-      Desarrollador de software matemático | Sistemas creativos
+    <div class="py-1 font-bold text-content">
+      Desarrollador de software matemático, Sistemas creativos
     </div>
 
     <div class="py-2 mt-4">
