@@ -10,9 +10,9 @@ import LectureNotes from "@components/resources-components/LectureNotes.astro";
 <BaseLayout title="Resources" sideBarActiveItemID="resources-page">
   <article class="pb-3 mt-5">
     <div class="mb-5 mt-5">
-      <div class="text-3xl w-full font-bold flex items-center">
+      <div class="text-xl w-full font-bold flex items-center">
         <Writing class="ml-0 mr-4 max-w-none" />
-        Recursos, notas y lecturas
+        Recursos y notas
       </div>
     </div>
     <p class="mb-5">
@@ -27,19 +27,21 @@ import LectureNotes from "@components/resources-components/LectureNotes.astro";
     </p> -->
   </article>
 
-  <section class="text-sm border-l-4 border-warning p-4 rounded mb-5">
+  <section class="text-xs border-l-4 border-warning p-4 rounded mb-5">
     <h3 class="text-warning">Correcciones y versiones</h3>
-    Estos documentos son borradores y pueden contener errores u omisiones. Si encuentras alguna errata
-    o inconsistencia, te agradecería que me lo informaras a través de <a
-      class="text-primary"
-      target="_blank"
-      href={SOCIAL_MEDIA.linkedin}>LinkedIn</a
-    >. Lo revisaré y corregiré con gusto en cuanto me sea posible.
+    <p>
+      Estos documentos son borradores y pueden contener errores u omisiones. Si encuentras alguna
+      errata o inconsistencia, te agradecería que me lo informaras a través de <a
+        class="text-primary"
+        target="_blank"
+        href={SOCIAL_MEDIA.linkedin}>LinkedIn</a
+      >. Lo revisaré y corregiré con gusto en cuanto me sea posible.
+    </p>
   </section>
 
-  <LectureNotes title="I. Notas de Lectura y documentos versionados" />
-  <MiscFiles title="II. Archivos varios" />
-  <Errata title="III. Erratas en libros y tesis" />
+  <LectureNotes title="Notas de Lectura y documentos versionados" />
+  <MiscFiles title="Archivos varios" />
+  <Errata title="Erratas en libros y tesis" />
 
   <section class="text-xs mb-5 border-l-4 border-error p-4 rounded">
     <h3 class="text-error">Aviso Legal</h3>

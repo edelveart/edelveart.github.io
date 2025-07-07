@@ -1,5 +1,5 @@
 ---
-import TimeLineElement from "@components/TimeLine.astro";
+import TimeLine from "@components/TimeLine.astro";
 import EducationSVG from "@icons/Education.astro";
 
 const masterGradesAndAverage = {
@@ -12,19 +12,19 @@ const masterGradesAndAverage = {
 };
 ---
 
-<div class="mb-5" id="EDUCATION">
-  <div class="text-3xl w-full font-bold flex items-center mt-[-0.5rem]">
+<section class="my-5" id="EDUCATION">
+  <div class="text-2xl w-full font-bold flex items-center mt-[-0.5rem]">
     <EducationSVG class="ml-0 mr-4" />Education
   </div>
-</div>
 
-<div class="time-line-container grid gap-3 mb-0">
-  <TimeLineElement
-    title={masterGradesAndAverage.title}
-    subtitle={masterGradesAndAverage.subtitle}
-    description={masterGradesAndAverage.description}
-    moreInfo="See more"
-  />
+  <div class="time-line-container grid gap-3 mb-0 mt-5">
+    <TimeLine
+      title={masterGradesAndAverage.title}
+      subtitle={masterGradesAndAverage.subtitle}
+      description={masterGradesAndAverage.description}
+      moreInfo="See more"
+    />
 
-  <TimeLineElement title="USMP | B.A. in Music" subtitle="2009 - 2015 | Lima, Perú" />
-</div>
+    <TimeLine title="USMP | B.A. in Music" subtitle="2009 - 2015 | Lima, Perú" />
+  </div>
+</section>
