@@ -18,12 +18,12 @@ type Props = {
 const {
   sideBarActiveItemID,
   homeMenu,
-  projectsMenu,
-  cvMenu,
-  resourcesMenu,
   hrefHome,
-  hrefProjects,
+  cvMenu,
   hrefCV,
+  projectsMenu,
+  hrefProjects,
+  resourcesMenu,
   hrefResources,
 } = Astro.props;
 
@@ -32,54 +32,34 @@ export const sideMenuCss = {
   divCss: "py-3  md:justify-start",
   spanText: "text-base",
 };
-// const currentLangBarMenu = Astro.url.pathname.startsWith("/en") ? "en" : "es";
 ---
 
 <strong class="flex justify-center mb-5 text-lg">Edgar Delgado</strong>
 <ul class="menu grow shrink menu-md overflow-y-auto">
   <li>
-    <a class={sideMenuCss.divCss} id="home" href={hrefHome}
+    <a class={sideMenuCss.divCss} id="HOME_ACTIVE_PAGE" href={hrefHome}
       ><Home />
       <span class={sideMenuCss.spanText}>{homeMenu}</span>
     </a>
   </li>
   <li>
-    <a class={sideMenuCss.divCss} id="cv" href={hrefCV}>
+    <a class={sideMenuCss.divCss} id="CV_ACTIVE_PAGE" href={hrefCV}>
       <Curriculum />
       <span class={sideMenuCss.spanText}>{cvMenu}</span>
     </a>
   </li>
   <li>
-    <a class={sideMenuCss.divCss} id="projects" href={hrefProjects}
+    <a class={sideMenuCss.divCss} id="PROJECTS_ACTIVE_PAGE" href={hrefProjects}
       ><Branch />
-
       <span class={sideMenuCss.spanText}>{projectsMenu}</span>
     </a>
   </li>
-
   <li>
-    <a class={sideMenuCss.divCss} id="projects" href={hrefResources}
+    <a class={sideMenuCss.divCss} id="RESOURCES_ACTIVE_PAGE" href={hrefResources}
       ><Writing />
-
       <span class={sideMenuCss.spanText}>{resourcesMenu}</span>
     </a>
   </li>
-  <!-- {
-    resourcesMenu && hrefResources && (
-      <li>
-        <a class={sideMenuCss.divCss} id="resources-page" href={hrefResources}>
-          {currentLangBarMenu === "es" ? <Writing /> : ""}
-          <span class={sideMenuCss.spanText}>{resourcesMenu}</span>
-        </a>
-      </li>
-    )
-  } -->
-  <!-- <li>
-    <a class=sideMenuCss.divCss id="blog" href={hrefBlog}>
-      {currentLangBarMenu === "es" ? <Blog /> : ""}
-      <span class=`${sideMenuCss.spanText}`>{blogMenu}</span>
-    </a>
-  </li> -->
 </ul>
 
 <script
