@@ -94,7 +94,9 @@ const filteredProjects = indices
           badge={project.badge}
         />
 
-        {index < filteredProjects.length - 1 && <div class="divider my-2" />}
+        {index < filteredProjects.length - 1 && (
+          <div class="divider my-1 before:bg-content after:bg-content" />
+        )}
       </>
     ))
   }
