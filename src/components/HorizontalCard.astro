@@ -20,8 +20,8 @@ export type ProjectType = {
     > -->
     <div class="hero-content flex-col md:flex-row rounded-xl shadow-md shadow-primary/10">
       <div class="grow w-full">
+        {badge && <div class="badge badge-primary mb-2">{badge}</div>}
         <h1 class="text-lg font-bold">
-          {badge && <div class="badge badge-primary mr-2">{badge}</div>}
           {title}
         </h1>
         <p class="text-pretty py-1 text-1xl">{desc}</p>

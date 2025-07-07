@@ -30,12 +30,12 @@ const {
 const activeClass = "bg-base-300";
 export const sideMenuCss = {
   divCss: "py-3  md:justify-start",
-  spanText: "text-base",
+  spanText: "text-xl",
 };
 // const currentLangBarMenu = Astro.url.pathname.startsWith("/en") ? "en" : "es";
 ---
 
-<strong class="flex justify-center mb-5 text-base">Edgar Delgado</strong>
+<strong class="flex justify-center mb-5 text-xl">Edgar Delgado</strong>
 <ul class="menu grow shrink menu-md overflow-y-auto">
   <li>
     <a class={sideMenuCss.divCss} id="home" href={hrefHome}
