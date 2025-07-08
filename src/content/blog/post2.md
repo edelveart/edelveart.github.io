@@ -1,8 +1,8 @@
-<!-- ---
+---
 title: "Funciones currificadas en TypeScript"
 description: "Nos armaremos con la magia de la currificación y le daremos diferentes giros en TypeScript."
 pubDate: "December 15 2024"
-heroImage: "/post2/hero-post2.webp"
+heroImage: "/itemPreview.webp"
 badge: "v0.5.0"
 tags: ["typescript", "funciones currificadas", "programación funcional"]
 ---
@@ -356,4 +356,4 @@ Nuestros tamales **envueltos** están listos para ir a la olla de barro. Espero 
 
 ### Conclusión
 
-Y así, llegamos al final de esta breve introducción a las funciones **currificadas** en TypeScript. Algunos las adoran, otros no les encuentran sentido, y algunos piensan que solo son útiles en casos muy específicos. Pero ahora, ¡ya forman parte de tu **lonchera** para divertirte programando! -->
+Y así, llegamos al final de esta breve introducción a las funciones **currificadas** en TypeScript. Algunos las adoran, otros no les encuentran sentido, y algunos piensan que solo son útiles en casos muy específicos. Pero ahora, ¡ya forman parte de tu **lonchera** para divertirte programando!
