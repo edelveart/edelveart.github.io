@@ -10,9 +10,13 @@ export default defineConfig({
     mdx(),
     sitemap({
       filter: (page) =>
-        page !== "https://edelveart.github.io/blog/*?" &&
-        page !== "https://edelveart.github.io/store/*?" &&
-        page !== "https://edelveart.github.io/services/*?",
+        page !== "https://edelveart.github.io/blog/" &&
+        page !== "https://edelveart.github.io/store/" &&
+        page !== "https://edelveart.github.io/store/item1/" &&
+        page !== "https://edelveart.github.io/store/item2/" &&
+        page !== "https://edelveart.github.io/store/item3/" &&
+        page !== "https://edelveart.github.io/blog/tag/" &&
+        page !== "https://edelveart.github.io/services/",
     }),
     tailwind(),
   ],
