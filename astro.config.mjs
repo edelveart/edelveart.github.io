@@ -8,16 +8,15 @@ export default defineConfig({
   site: "https://edelveart.github.io",
   integrations: [
     mdx(),
-    sitemap({ exclude: ["/services/", "/services", "/store/", "/store", "/blog/", "/blog"] }),
+    sitemap({
+      filter: (page) =>
+        page !== "https://edelveart.github.io/blog/" &&
+        page !== "https://edelveart.github.io/store/" &&
+        page !== "https://edelveart.github.io/services/",
+    }),
     tailwind(),
   ],
   image: {
     service: passthroughImageService(),
   },
-  // plugins: [
-  //   sitemap({
-  //     // Routes of SiteMap excluded
-  //     exclude: ["/services/", "/store/", "/blog"],
-  //   }),
-  // ],
 });
