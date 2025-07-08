@@ -6,14 +6,18 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: "https://edelveart.github.io",
-  integrations: [mdx(), sitemap(), tailwind()],
+  integrations: [
+    mdx(),
+    sitemap({ exclude: ["/services/", "/services", "/store/", "/store", "/blog/", "/blog"] }),
+    tailwind(),
+  ],
   image: {
     service: passthroughImageService(),
   },
-  plugins: [
-    sitemap({
-      // Routes of SiteMap excluded
-      exclude: ["/services/", "/store/"],
-    }),
-  ],
+  // plugins: [
+  //   sitemap({
+  //     // Routes of SiteMap excluded
+  //     exclude: ["/services/", "/store/", "/blog"],
+  //   }),
+  // ],
 });
