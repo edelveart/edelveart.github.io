@@ -4,9 +4,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Biography from "../components/Biography.astro";
 import IndexLinks from "@components/IndexLinks.astro";
 
-import ProjectsComponent, { allProjects } from "../components/ProjectsComponent.astro";
+import { allProjects } from "../components/ProjectsComponent.astro";
 import Experience, { allExperiences } from "../components/Experience.astro";
 import ModEcImg from "@components/ModEcImg.astro";
+import ProjectsComponentIndex from "@components/ProjectsComponentIndex.astro";
 ---
 
 <BaseLayout sideBarActiveItemID="HOME_ACTIVE_PAGE">
@@ -26,8 +27,11 @@ import ModEcImg from "@components/ModEcImg.astro";
     </div>
 
     <Experience workExperiences={allExperiences} indices={[0, 1]} />
-    <ProjectsComponent headTitle={"Libraries"} projects={allProjects} indices={[0, 1, 2]} />
-    <div class="m-16"></div>
+    <ProjectsComponentIndex
+      headTitle="Libraries"
+      projects={allProjects}
+      indices={[...Array(allProjects.length).keys()]}
+    />
     <!-- <ListOfSkills title="Technologies" techSkills={techSkillsEnglish} indices={[0, 1]} /> -->
     <!-- <Education /> -->
   </section>

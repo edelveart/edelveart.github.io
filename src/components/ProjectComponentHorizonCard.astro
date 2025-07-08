@@ -1,0 +1,33 @@
+---
+const { img, url, badge, target = "_blank" } = Astro.props;
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+export type ProjectType = {
+  img: ImageMetadata | string;
+  url: string;
+  badge: string;
+};
+---
+
+<div class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:bg-base-200">
+  <a href={url} target={target}>
+    <div class="hero-content flex-col md:flex-row rounded-lg shadow-sm shadow-primary/50">
+      <div class="text-start">
+        {badge && <div class="badge badge-primary mb-2">{badge}</div>}
+        {
+          img && (
+            <Image
+              src={img}
+              width={750}
+              height={422}
+              format="webp"
+              alt={badge}
+              class="max-w-full lg:max-w-[13rem]  rounded-lg"
+            />
+          )
+        }
+      </div>
+    </div>
+  </a>
+</div>

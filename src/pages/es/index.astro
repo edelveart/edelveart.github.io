@@ -3,9 +3,9 @@ import BaseLayout from "@layouts/es/BaseLayout.astro";
 import Biography from "@components/es/Biography.astro";
 import IndexLinks from "@components/IndexLinks.astro";
 import Experience, { allExperiences } from "@components/es/Experience.astro";
-import ProjectsComponent, { allProjects } from "@components/ProjectsComponent.astro";
+import { allProjects } from "@components/ProjectsComponent.astro";
 import ModEcImg from "@components/ModEcImg.astro";
-
+import ProjectsComponentIndex from "@components/ProjectsComponentIndex.astro";
 // import { getCollection } from "astro:content";
 // const posts = (await getCollection("blog")).sort(
 //   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -30,8 +30,11 @@ import ModEcImg from "@components/ModEcImg.astro";
     </div>
 
     <Experience workExperiences={allExperiences} indices={[0, 1]} />
-    <ProjectsComponent headTitle={"Bibliotecas"} projects={allProjects} indices={[0, 1, 2]} />
-    <div class="m-16"></div>
+    <ProjectsComponentIndex
+      headTitle={"Bibliotecas"}
+      projects={allProjects}
+      indices={[...Array(allProjects.length).keys()]}
+    />
     <!-- <ListOfSkills title="Tecnologías" techSkills={techSkillsSpanish} indices={[0, 1]} /> -->
     <!--
     <div class="text-2xl w-full font-bold flex items-center my-6 ml-0">

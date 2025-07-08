@@ -1,0 +1,30 @@
+---
+// It is a perfect access point to this fascinating area where music, mathematics and computing at the highest level come together. Playing with ts-tonnetz will lead you to propose questions and new musical systems in an expressive and creative way.
+import HorizontalCard from "./ProjectComponentHorizonCard.astro";
+import Branch from "@icons/Branch.astro";
+import type { ProjectType } from "./ProjectComponentHorizonCard.astro";
+
+type Props = {
+  projects: ProjectType[];
+  indices: number[];
+  headTitle: string;
+};
+
+const { projects, indices, headTitle }: Props = Astro.props;
+const filteredIndexLibraries = indices
+  ? indices.map((index: number) => projects[index]).filter(Boolean)
+  : projects;
+---
+
+<div class="text-2xl w-full font-bold flex items-center mt-8 mb-6" id="PROJECTS">
+  <Branch class="ml-0 mr-4" />
+  {headTitle}
+</div>
+
+<section class="grid gap-6 mb-10 mt-0 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-3">
+  {
+    filteredIndexLibraries.map((project: ProjectType, index: number) => (
+      <HorizontalCard key={index} img={project.img} url={project.url} badge={project.badge} />
+    ))
+  }
+</section>
