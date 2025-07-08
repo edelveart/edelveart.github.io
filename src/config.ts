@@ -3,14 +3,14 @@
 
 export const SITE_TITLE = "Edgar Delgado Vega";
 export const SITE_DESCRIPTION =
-  "Software developer passionate about problem-solving through mathematical abstractions, discrete algorithms, and design patterns. I launched ts-tonnetz, an advanced package for algorithmic composition and live coding, currently integrated into Topos. My figurate number libraries have surpassed 10,000 downloads. Previously, I published a Scopus-indexed paper on Mathematical Music Theory. In addition to teaching at the postgraduate level, I collaborate on international open-source projects.";
+  "I develop modular_forms, an interactive interface for exploring modular forms and elliptic curves in real time through musical algorithms, designed for live coders interested in number theory. In 2023, I launched ts-tonnetz, an algorithmic composition package integrated into Topos (https://topos.live/#ziffers_tonnetz). My libraries on figurate numbers have surpassed 14,000 downloads. Previously, I published an article indexed in Scopus on Mathematical Music Theory. In addition to teaching at the graduate level, I collaborate on international open-source projects.";
 
 export const SITE_URL = "https://edelveart.github.io/";
 export const GENERATE_SLUG_FROM_TITLE = true;
 export const TRANSITION_API = true;
 
 export const SOCIAL_MEDIA = {
-  linkedin: "https://www.linkedin.com/in/edgararmandodelgadovega/",
+  linkedin: "https://www.linkedin.com/in/edgararmandodelgadovega/?locale=en_US",
   github: "https://github.com/edelveart",
   youtube: "https://www.youtube.com/@edelve_math_code",
   instagram: "https://www.instagram.com/edgardelgadovega/",
