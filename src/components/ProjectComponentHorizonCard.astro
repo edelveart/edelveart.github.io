@@ -12,9 +12,10 @@ export type ProjectType = {
 
 <div class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:bg-base-200">
   <a href={url} target={target}>
-    <div class="hero-content flex-col md:flex-row rounded-lg shadow-sm shadow-primary/50">
-      <div class="mt-[-0.6rem] mb-[-0.5rem] mx-[-0.5rem]">
-        {badge && <p class="badge badge-primary  break-words sm:text-xs  px-[0.5rem] ">{badge}</p>}
+    <div class="hero-content flex-col md:flex-row rounded-lg shadow-sm shadow-primary/50 p-0">
+      <div class="m-2">
+        {badge && <p class="badge badge-primary break-words sm:text-xs px-2 mt-0">{badge}</p>}
+
         {
           img && (
             <Image
@@ -23,7 +24,7 @@ export type ProjectType = {
               height={422}
               format="webp"
               alt={badge}
-              class="rounded-lg mt-2"
+              class="rounded-lg mt-2 w-full"
             />
           )
         }
