@@ -7,6 +7,7 @@ import Curriculum from "@icons/Curriculum.astro";
 import { menuSpanish } from "@components/es/SideBar.astro";
 ---
 
+<!-- https://math.uchicago.edu/~chonoles/miscellany/quotations/ -->
 <BaseLayout title="Resume" sideBarActiveItemID="CV_ACTIVE_PAGE">
   <section class="pb-3 mt-5">
     <div class="mb-5 mt-5" id="CURRICULUM">
@@ -15,6 +16,12 @@ import { menuSpanish } from "@components/es/SideBar.astro";
       </div>
     </div>
     <article class="mb-10">
+      <blockquote class="mb-4">
+        <p class="font-thin text-right text-sm italic">
+          Los números son creaciones libres de la mente humana.
+        </p>
+        <footer class="text-right text-xs font-light mt-1">— Richard Dedekind</footer>
+      </blockquote>
       <p>
         Me apasiona <strong>resolver problemas</strong> y <strong>crear abstracciones</strong>, con
         un enfoque centrado en el <strong>autoaprendizaje</strong> en entornos tecnológicos. Mi interés
@@ -24,6 +31,7 @@ import { menuSpanish } from "@components/es/SideBar.astro";
           >bibliotecas</a
         > para abordar problemas complejos.
       </p>
+
       <h2 class="text-xl my-4 font-semibold">Experiencia</h2>
       <p>
         Cuento con amplia experiencia en docencia presencial y virtual a nivel superior y posgrado,
@@ -53,8 +61,9 @@ import { menuSpanish } from "@components/es/SideBar.astro";
     <ListOfSkills title="Tecnologías" techSkills={techSkillsSpanish} indices={[0, 1, 2, 3]} />
     <Education />
   </section>
+</BaseLayout>
 
-  <!-- <h2 class="my-4">El origen de mi interés por las matemáticas</h2>
+<!-- <h2 class="my-4">El origen de mi interés por las matemáticas</h2>
   <p class="text-xs">
     Aunque mi atención estuvo dirigida hacia la música durante muchos años, mi interés por las
     matemáticas comenzó a una edad temprana, cuando me pregunté: ¿Por qué los números se comportan
@@ -62,7 +71,6 @@ import { menuSpanish } from "@components/es/SideBar.astro";
     largo tiempo, hasta que, en 2021, descubrí la geometría aritmética y la intersección entre los
     números, geometría y álgebra.
   </p> -->
-</BaseLayout>
 
 <!-- <div class="mb-5 mt-8">
       <article class="text-2xl w-full font-bold flex items-center">
