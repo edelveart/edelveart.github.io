@@ -1,5 +1,6 @@
 ---
 import { menuSpanish } from "./SideBar.astro";
+import { linksTo } from "@components/Biography.astro";
 ---
 
 <section class="leading-relaxed">
@@ -11,19 +12,19 @@ import { menuSpanish } from "./SideBar.astro";
     Actualmente desarrollo <a
       href="https://rubygems.org/gems/modular_forms"
       target="_blank"
-      class="text-primary hover:underline"
+      class={linksTo}
     >
-      modular_forms</a
+      modular forms</a
     > (inspirado en SageMath y LMFDB) y <a
       href="https://topos.live/#ziffers_tonnetz"
       target="_blank"
-      class="text-primary hover:underline"
+      class={linksTo}
     >
       ts-tonnetz</a
     >, paquetes de composición algorítmica en tiempo real. Además, mis bibliotecas para generar <a
       id="projects"
       href={menuSpanish.projectsMenu.href}
-      class="text-primary hover:underline"
+      class={linksTo}
     >
       números figurados</a
     >
@@ -34,7 +35,7 @@ import { menuSpanish } from "./SideBar.astro";
     <a
       href="https://link.springer.com/chapter/10.1007/978-3-031-07015-0_30"
       target="_blank"
-      class="text-primary hover:underline">artículo indexado en Scopus</a
+      class={linksTo}>artículo indexado en Scopus</a
     >
     sobre Teoría Matemática de la Música, enseño a nivel de posgrado y contribuyo a proyectos internacionales
     de código abierto.

@@ -1,5 +1,6 @@
 ---
 import { menuEnglish } from "./SideBar.astro";
+export const linksTo = 'text-primary underline  hover:decoration-2'
 ---
 
 <section class="leading-relaxed">
@@ -11,19 +12,19 @@ import { menuEnglish } from "./SideBar.astro";
     I currently develop <a
       href="https://rubygems.org/gems/modular_forms"
       target="_blank"
-      class="text-primary hover:underline"
+      class={linksTo}
     >
-      modular_forms</a
+      modular forms</a
     > (inspired by SageMath and LMFDB) and <a
       href="https://topos.live/#ziffers_tonnetz"
       target="_blank"
-      class="text-primary hover:underline"
+      class={linksTo}
     >
       ts-tonnetz</a
     >, packages for real-time algorithmic composition. Moreover, my libraries for generating <a
       id="projects"
       href={menuEnglish.projectsMenu.href}
-      class="text-primary hover:underline"
+      class={linksTo}
     >
       figurate numbers</a
     >
@@ -34,7 +35,7 @@ import { menuEnglish } from "./SideBar.astro";
     <a
       href="https://link.springer.com/chapter/10.1007/978-3-031-07015-0_30"
       target="_blank"
-      class="text-primary hover:underline"
+      class={linksTo}
     >
       article indexed in Scopus
     </a>
