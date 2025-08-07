@@ -5,6 +5,7 @@ import { techSkillsSpanish } from "@components/ListOfSkills.astro";
 import Education from "@components/es/Education.astro";
 import Curriculum from "@icons/Curriculum.astro";
 import { menuSpanish } from "@components/es/SideBar.astro";
+import { linksTo } from "@components/Biography.astro";
 ---
 
 <!-- https://math.uchicago.edu/~chonoles/miscellany/quotations/ -->
@@ -16,24 +17,23 @@ import { menuSpanish } from "@components/es/SideBar.astro";
       </div>
     </div>
     <article class="mb-10">
-      <blockquote class="mb-4">
+      <blockquote class="mb-4 mt-[-1rem]">
         <p class="font-thin text-right text-sm italic">
           Los números son creaciones libres de la mente humana.
         </p>
         <footer class="text-right text-xs font-light mt-1">— Richard Dedekind</footer>
       </blockquote>
       <p class="mb-4">
-        Me apasiona <strong>resolver problemas</strong> y <strong>crear abstracciones</strong>,
-        mientras cultivo el <strong>autoaprendizaje</strong> en entornos tecnológicos. Mi curiosidad
-        por las matemáticas me motiva a desarrollar
-        <a class="text-primary hover:underline" id="projects" href={menuSpanish.projectsMenu.href}
-          >bibliotecas</a
-        > para abordar problemas complejos.
+        Tengo pasión por <strong>resolver problemas</strong>, <strong>crear abstracciones</strong> y
+        el <strong>autoaprendizaje</strong> en entornos tecnológicos. Mi curiosidad por las matemáticas
+        me motiva a desarrollar
+        <a class={linksTo} id="projects" href={menuSpanish.projectsMenu.href}>bibliotecas</a> para abordar
+        problemas complejos.
       </p>
       <p class="mb-4">
-        Me interesa pensar en la matemática, la computación y la música como objetos integrantes de
-        un mismo espacio, donde pueden transformarse y desplazarse de un punto a otro mediante
-        analogías estructurales formalizables (no solo matemáticamente).
+        Me entusiasma profundamente pensar la matemática, la computación y la música como objetos
+        integrantes de un mismo espacio, donde pueden transformarse y desplazarse de un punto a otro
+        mediante analogías estructurales formalizables (no solo matemáticamente).
       </p>
       <p>
         Para mí, un algoritmo no es solo un procedimiento, sino un objeto en sí mismo, tan musical

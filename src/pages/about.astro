@@ -6,6 +6,7 @@ import { techSkillsEnglish } from "@components/ListOfSkills.astro";
 import Education from "@components/Education.astro";
 import Curriculum from "@icons/Curriculum.astro";
 import { menuEnglish } from "@components/SideBar.astro";
+import { linksTo } from "@components/Biography.astro";
 ---
 
 <BaseLayout title="Resume" sideBarActiveItemID="CV_ACTIVE_PAGE">
@@ -17,25 +18,24 @@ import { menuEnglish } from "@components/SideBar.astro";
     </div>
 
     <article class="mb-10">
-      <blockquote class="mb-4">
+      <blockquote class="mb-4 mt-[-1rem]">
         <p class="font-thin text-right text-sm italic">
           Numbers are the free creation of the human mind.
         </p>
         <footer class="text-right text-xs font-light mt-1">— Richard Dedekind</footer>
       </blockquote>
       <p class="mb-4">
-        I am passionate about <strong>solving problems</strong> and <strong
+        I have a passion for <strong>solving problems</strong>, <strong
           >creating abstractions
-        </strong>while cultivating <strong>self-directed learning</strong> in technology settings. My
-        curiosity about mathematics motivates me to develop
-        <a class="text-primary hover:underline" id="projects" href={menuEnglish.projectsMenu.href}
-          >libraries</a
-        > to tackle complex problems.
+        </strong>, and <strong> self-directed learning</strong> in technology settings. My curiosity
+        about mathematics motivates me to develop
+        <a class={linksTo} id="projects" href={menuEnglish.projectsMenu.href}>libraries</a> to tackle
+        complex problems.
       </p>
       <p class="mb-4">
-        I am interested in thinking of mathematics, computing, and music as objects within the same
-        space, where they can transform and move from one point to another through formalizable
-        structural analogies (not only mathematical ones).
+        I am deeply enthusiastic about thinking of mathematics, computing, and music as objects that
+        exist within the same space, where they can transform and move from one point to another
+        through formalizable structural analogies (not only mathematical ones).
       </p>
       <p>
         For me, an algorithm is not just a procedure but an object in itself, as musical as it is
