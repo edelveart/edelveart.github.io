@@ -1,28 +1,30 @@
 \documentclass{article}
 \usepackage{cheatsheet-style}
-\title{\textbf{FigurateNum}}
+
+\title{\huge \textbf{FigurateNum} \\
+   \Large  A Python library for generating infinite figurate number sequences across dimensions.}
 \author{}
 \date{}
 
 \begin{document}
 
-\begin{tcolorbox}[leftrule=2mm, rightrule=2mm, bottomrule=0mm, toprule=2mm ]
+\begin{tcolorbox}[leftrule=1mm, rightrule=1mm, toprule=1mm, bottomrule=1mm ]
   \maketitle
   \vspace{-4.5em}
   \begin{multicols}{2}
-    \begin{tcolorbox}[leftrule=2mm,  colframe=teal, colback=teal!12]
+    \begin{tcolorbox}[leftrule=2mm, rightrule=0mm, toprule=0mm, bottomrule=0mm,  colframe=SpringGreen4, colback=SpringGreen4!12, height=1.7cm]
       \textbf{\large Installation}
       \begin{lstlisting}
       pip install figuratenum
       \end{lstlisting}
     \end{tcolorbox}
-    \begin{tcolorbox}[leftrule=2mm,  colframe=teal, colback=teal!12]
+    \begin{tcolorbox}[leftrule=2mm, rightrule=0mm, toprule=0mm, bottomrule=0mm,  colframe=SpringGreen4, colback=SpringGreen4!12, height=1.7cm]
       \textbf{\large Main Class}
       \begin{lstlisting}
       from figuratenum import FigurateNum as fgn
       \end{lstlisting}
     \end{tcolorbox}
-    \begin{tcolorbox}[leftrule=2mm,  colframe=teal, colback=teal!12]
+    \begin{tcolorbox}[leftrule=2mm, rightrule=0mm, toprule=0mm, bottomrule=0mm,  colframe=SpringGreen4, colback=SpringGreen4!12, height=3.6cm]
       \textbf{\large Classes}
       \begin{lstlisting}
       from figuratenum import PlaneFigurateNum as pfgn
@@ -38,7 +40,7 @@
 \thispagestyle{fancy}
 
 \begin{multicols}{2}
-  \begin{tcolorbox}[title= Computing FigurateNum Without Using a Loop]
+  \begin{tcolorbox}[title= Generating FigurateNum Sequences Step by Step]
     \begin{lstlisting}
     >>> seq = fgn()
     >>> hyperdodecahedral = seq.hyperdodecahedral()
@@ -57,12 +59,10 @@
     \begin{lstlisting}
     >>> seq_loop = mfgn()
     >>> k_dimensional_centered_hypertetrahedron = seq_loop.k_dimensional_centered_hypertetrahedron(21)
-
     >>> figuratenum_arr = []
     >>> for _ in range(1, 15):
     >>>     next_num = next(k_dimensional_centered_hypertetrahedron)
     >>>     figuratenum_arr.append(next_num)
-
     >>> print(figuratenum_arr)
     [1, 23, 276, 2300, 14950, 80730, 376740, 1560780, 5852925, 20160075, 64512240, 193536720, 548354040, 1476337800]
     \end{lstlisting}
