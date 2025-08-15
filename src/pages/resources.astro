@@ -5,6 +5,7 @@ import Errata from "@components/resources-components/Errata.astro";
 import MiscFiles from "@components/resources-components/MiscFiles.astro";
 import { SOCIAL_MEDIA } from "src/config";
 import LectureNotes from "@components/resources-components/LectureNotes.astro";
+import CheatSheets from "@components/resources-components/CheatSheets.astro";
 ---
 
 <BaseLayout title="Resources" sideBarActiveItemID="RESOURCES_ACTIVE_PAGE">
@@ -37,9 +38,9 @@ import LectureNotes from "@components/resources-components/LectureNotes.astro";
     </p>
   </section>
 
-  <!-- <LectureNotes title="Lecture Notes" /> -->
   <MiscFiles title="Miscellaneous Files" />
   <Errata title="Errata in Books and Theses" />
+  <CheatSheets title="Library Cheatsheets Collection" />
 
   <section class="text-xs mb-5 border-l-4 border-error p-4 rounded">
     <h3 class="text-error">Legal Notice</h3>

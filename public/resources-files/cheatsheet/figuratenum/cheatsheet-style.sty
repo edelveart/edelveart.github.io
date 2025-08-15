@@ -1,0 +1,62 @@
+\ProvidesPackage{cheatsheet-style}[2025/05/11 For Math Projects]
+
+\usepackage{lmodern}
+\RequirePackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\RequirePackage{amsfonts, amsmath, amssymb, amsthm}
+\RequirePackage{graphicx}
+\newcommand{\bera}[1]{{\fontfamily{fvm}\selectfont #1}}
+\usepackage[scaled]{beramono}
+\renewcommand{\familydefault}{\sfdefault}
+\RequirePackage[legalpaper,  bottom=2cm, top=1cm, left=1cm, right=1cm, landscape]{geometry}
+
+\RequirePackage{hyperref}
+\RequirePackage{fontawesome}
+
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[L]{ \large
+  \href{https://edelveart.github.io/}{\ Home \faHome \ } \quad  \href{https://www.github.com/edelveart/figuratenum}{\ GitHub \faGithub \ }
+}
+\fancyfoot[C]{\copyright~2025 Edgar Delgado Vega}
+\fancyfoot[R]{\large [\thepage]}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\RequirePackage{multicol}
+
+\RequirePackage{xcolor}
+\RequirePackage[most]{tcolorbox}
+\tcbset{colback=teal!10!white,  colframe=teal,  arc=2mm, fonttitle=\sffamily\bfseries\large, enhanced, toprule=1mm, leftrule=0mm, rightrule=0mm, bottomrule=0mm}
+
+\RequirePackage{enumitem}
+
+\RequirePackage{microtype}
+
+\RequirePackage{listings}
+
+\lstdefinelanguage{PythonCustom}{
+  language=Python,
+  keywords={and, pip, as, assert, break, class, continue, def, del, elif, else, except, False, finally, for, from, global, if, import, in, is, lambda, None, nonlocal, not, or, pass, raise, return, True, try, while, with, yield},
+  keywordstyle=\color{teal}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=true,
+  comment=[l]{\#},
+  commentstyle=\color{gray}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]",
+}
+
+\lstset{
+breaklines=true,
+breakatwhitespace=true,
+basicstyle=\ttfamily,
+language=PythonCustom,
+inputencoding=utf8,
+extendedchars=true,
+literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1,
+}
