@@ -31,3 +31,23 @@ ico.png
 public/resources-files/tex-files
 
 thesis.md
+
+# LaTex / Temp
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
+*.nav
+*.snm
+*.lof
+*.lot
+*.blg
+*.xdv
+*.pdfsync
+*.synctex
+*.dvi
+*.bcf
+*.run.xml
