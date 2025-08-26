@@ -29,6 +29,9 @@ importers:
       '@fontsource-variable/manrope':
         specifier: ^5.2.5
         version: 5.2.5
+      '@fontsource-variable/space-grotesk':
+        specifier: ^5.2.8
+        version: 5.2.8
       '@fontsource/fira-sans':
         specifier: ^5.2.5
         version: 5.2.5
@@ -349,6 +352,9 @@ packages:
 
   '@fontsource-variable/manrope@5.2.5':
     resolution: {integrity: sha512-6Mo3ldtgAhxvSSyy+bLbFRjkiYhVo6RLcasJfj9Du5k2nX16/RwjQdBbZJfvsofVt6GqQ+O6AVkazmS3Xw5R9A==}
+
+  '@fontsource-variable/space-grotesk@5.2.8':
+    resolution: {integrity: sha512-ei9jNXzZVgBGEBVfHZqPe6F9ZxpPUG8kJYrtlLsivlWJZLCfrfSxcayjnMYAmslEGvvfjth7qybl7PNNqE8ZHw==}
 
   '@fontsource/fira-sans@5.2.5':
     resolution: {integrity: sha512-N+GrTGOTIeYE/Wi5tY0RAnc1Tl3ddCdwfZQncvA1zH/lOpKerj9ZS5nfniSXDZ9wrXFRdWTH7anyrRDc+cMpCg==}
@@ -2463,6 +2469,8 @@ snapshots:
   '@fontsource-variable/inter@5.1.0': {}
 
   '@fontsource-variable/manrope@5.2.5': {}
+
+  '@fontsource-variable/space-grotesk@5.2.8': {}
 
   '@fontsource/fira-sans@5.2.5': {}
 
