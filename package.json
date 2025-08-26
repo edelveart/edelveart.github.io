@@ -19,6 +19,7 @@
     "@fontsource-variable/ibm-plex-sans": "^5.2.5",
     "@fontsource-variable/inter": "^5.1.0",
     "@fontsource-variable/manrope": "^5.2.5",
+    "@fontsource-variable/space-grotesk": "^5.2.8",
     "@fontsource/fira-sans": "^5.2.5",
     "astro": "^4.0.2",
     "daisyui": "^4.4.10",
