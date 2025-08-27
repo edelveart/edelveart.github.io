@@ -6,6 +6,8 @@ import Education from "@components/es/Education.astro";
 import Curriculum from "@icons/Curriculum.astro";
 import { menuSpanish } from "@components/es/SideBar.astro";
 import { linksTo } from "@components/Biography.astro";
+import { Image } from "astro:assets";
+import sonicPiImage from "../../assets/libraries-webp/sonic-pi.webp";
 ---
 
 <!-- https://math.uchicago.edu/~chonoles/miscellany/quotations/ -->
@@ -28,7 +30,10 @@ import { linksTo } from "@components/Biography.astro";
         Me apasiona ver las matemáticas, la informática y la música como herramientas para mejorar
         la <strong>resolución de problemas</strong>, <strong>crear abstracciones</strong> y <strong
           >fomentar el autoaprendizaje</strong
-        >. ¿Por qué no considerarlas como disciplinas que existen en el mismo espacio, donde pueden
+        >.
+      </p>
+      <p class="mb-4">
+        ¿Por qué no considerarlas como disciplinas que existen en el mismo espacio, donde pueden
         transformarse de un punto a otro mediante analogías estructurales (no limitadas a las
         matemáticas)? Esto me motiva a desarrollar <a
           class={linksTo}
@@ -36,6 +41,22 @@ import { linksTo } from "@components/Biography.astro";
           href={menuSpanish.projectsMenu.href}>bibliotecas</a
         > para abordar problemas complejos.
       </p>
+
+      <figure class="text-center my-10 text-gray-400">
+        <a
+          title="Modular Forms"
+          target="_blank"
+          rel="noopener"
+          href="https://rubygems.org/gems/modular_forms"
+        >
+          <Image
+            src={sonicPiImage}
+            alt="modular forms library on Sonic Pi"
+            class="w-[95%] mx-auto rounded-xl hover:scale-[103%] transition-transform duration-300 ease-in-out"
+          />
+        </a>
+        <figcaption class="mt-3 text-sm text-gray-400">Modular Forms en Sonic Pi.</figcaption>
+      </figure>
 
       <p>
         Para mí, un algoritmo no es solo un procedimiento, sino un objeto en sí mismo, tan musical
