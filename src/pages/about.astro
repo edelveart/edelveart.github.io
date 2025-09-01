@@ -9,6 +9,7 @@ import { menuEnglish } from "@components/SideBar.astro";
 import { linksTo } from "@components/Biography.astro";
 import { Image } from "astro:assets";
 import sonicPiImage from "../assets/libraries-webp/sonicpi-background.png";
+import FigurateNumImages from "@components/FigurateNumImages.astro";
 ---
 
 <BaseLayout title="Resume" sideBarActiveItemID="CV_ACTIVE_PAGE">
@@ -53,7 +54,9 @@ import sonicPiImage from "../assets/libraries-webp/sonicpi-background.png";
             class="w-[98%] mx-auto rounded-xl hover:scale-[103%] transition-transform duration-300 ease-in-out"
           />
         </a>
-        <figcaption class="mt-3 text-sm text-gray-400">Modular Forms on Sonic Pi.</figcaption>
+        <figcaption class="mt-3 text-sm text-gray-400">
+          Creating music in Sonic Pi using <code>modular_forms</code>.
+        </figcaption>
       </figure>
 
       <p>
@@ -61,6 +64,14 @@ import sonicPiImage from "../assets/libraries-webp/sonicpi-background.png";
         mathematical. Likewise, a musical score can be composed of systems similar to compilers, and
         number fields can be understood as extensions of a harmony.
       </p>
+
+      <FigurateNumImages>
+        <span slot="caption">
+          Plot 5D hyperoctahedron and centered decagonal pyramidal numbers with <code
+            >figuratenum</code
+          >.
+        </span>
+      </FigurateNumImages>
 
       <h2 class="text-xl my-4 font-semibold">Experience</h2>
       <p>
@@ -87,14 +98,14 @@ import sonicPiImage from "../assets/libraries-webp/sonicpi-background.png";
         </ul>
       </p>
     </article>
-
     <ListOfSkills title="Technologies" techSkills={techSkillsEnglish} indices={[0, 1, 2, 3]} />
     <Education />
   </section>
+</BaseLayout>
 
-  <!-- <Experience workExperiences={allExperiences} /> -->
+<!-- <Experience workExperiences={allExperiences} /> -->
 
-  <!-- <div class="mb-5 mt-8">
+<!-- <div class="mb-5 mt-8">
       <article class="text-2xl w-full font-bold flex items-center">
         <Curriculum class="ml-0 mr-4" /> Participation in Conferences
       </article>
@@ -156,4 +167,3 @@ import sonicPiImage from "../assets/libraries-webp/sonicpi-background.png";
         </p>
       </li>
     </ul> -->
-</BaseLayout>

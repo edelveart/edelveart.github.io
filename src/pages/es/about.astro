@@ -8,6 +8,7 @@ import { menuSpanish } from "@components/es/SideBar.astro";
 import { linksTo } from "@components/Biography.astro";
 import { Image } from "astro:assets";
 import sonicPiImage from "../../assets/libraries-webp/sonicpi-background.png";
+import FigurateNumImages from "@components/FigurateNumImages.astro";
 ---
 
 <!-- https://math.uchicago.edu/~chonoles/miscellany/quotations/ -->
@@ -51,10 +52,12 @@ import sonicPiImage from "../../assets/libraries-webp/sonicpi-background.png";
           <Image
             src={sonicPiImage}
             alt="modular forms library on Sonic Pi"
-            class="w-[98%] mx-auto rounded-xl hover:scale-[103%] transition-transform duration-300 ease-in-out"
+            class="w-[98%] mx-auto rounded-lg hover:scale-[103%] transition-transform duration-300 ease-in-out"
           />
         </a>
-        <figcaption class="mt-3 text-sm text-gray-400">Modular Forms en Sonic Pi.</figcaption>
+        <figcaption class="mt-3 text-sm text-gray-400">
+          Música en Sonic Pi con <code>modular_forms</code>.
+        </figcaption>
       </figure>
 
       <p>
@@ -63,6 +66,12 @@ import sonicPiImage from "../../assets/libraries-webp/sonicpi-background.png";
         a compiladores, y los cuerpos numéricos pueden entenderse como extensiones de una armonía.
       </p>
 
+      <FigurateNumImages>
+        <span slot="caption">
+          Hiperoctaedro 5D y números piramidales decagonales centrados con <code>figuratenum</code>.
+        </span>
+      </FigurateNumImages>
+
       <h2 class="text-xl my-4 font-semibold">Experiencia</h2>
       <p>
         Cuento con amplia experiencia en docencia presencial y virtual a nivel superior y posgrado,
@@ -70,8 +79,8 @@ import sonicPiImage from "../../assets/libraries-webp/sonicpi-background.png";
         suelen ser mayormente favorables, destacando mi capacidad para comunicar conceptos complejos
         de manera clara y accesible.
       </p>
-      <h2 class="text-xl my-4 font-semibold">Intereses</h2>
 
+      <h2 class="text-xl my-4 font-semibold">Intereses</h2>
       <p>
         <ul class="pl-2">
           <li class="relative pl-5 text-content text-base">
