@@ -42,18 +42,11 @@ import FigurateNumImages from "@components/FigurateNumImages.astro";
       </p>
 
       <figure class="text-center my-10 text-gray-400">
-        <a
-          title="Modular Forms"
-          target="_blank"
-          rel="noopener"
-          href="https://rubygems.org/gems/modular_forms"
-        >
-          <Image
-            src={sonicPiImage}
-            alt="modular forms library on Sonic Pi"
-            class="w-[98%] mx-auto rounded-xl hover:scale-[103%] transition-transform duration-300 ease-in-out"
-          />
-        </a>
+        <Image
+          src={sonicPiImage}
+          alt="modular forms library on Sonic Pi"
+          class="w-full mx-auto rounded-xl"
+        />
         <figcaption class="mt-3 text-sm text-gray-400">
           Creating music in Sonic Pi using <code>modular_forms</code>.
         </figcaption>
@@ -67,9 +60,8 @@ import FigurateNumImages from "@components/FigurateNumImages.astro";
 
       <FigurateNumImages>
         <span slot="caption">
-          Plot 5D hyperoctahedron and centered decagonal pyramidal numbers with <code
-            >figuratenum</code
-          >.
+          Plot 5D hyperoctahedron and centered decagonal pyramidal numbers with
+          <code>figuratenum</code>.
         </span>
       </FigurateNumImages>
 
