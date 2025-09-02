@@ -9,377 +9,386 @@
 \begin{document}
 
 \begin{tcolorbox}[leftrule=1mm, rightrule=1mm, toprule=1mm, bottomrule=1mm ]
-  \maketitle
-  \vspace{-4.5em}
-  \begin{multicols}{2}
-    \begin{tcolorbox}[leftrule=2mm, rightrule=0mm, toprule=0mm, bottomrule=0mm,  colframe=SpringGreen4, colback=SpringGreen4!12, height=1.7cm]
-      \textbf{\large Installation}
-      \begin{lstlisting}
-      pip install figuratenum
-      \end{lstlisting}
-    \end{tcolorbox}
-    \begin{tcolorbox}[leftrule=2mm, rightrule=0mm, toprule=0mm, bottomrule=0mm,  colframe=SpringGreen4, colback=SpringGreen4!12, height=1.7cm]
-      \textbf{\large Main Class}
-      \begin{lstlisting}
+    \maketitle
+    \vspace{-5em}
+    \begin{multicols}{2}
+
+        \begin{tcolorbox}[leftrule=2mm, rightrule=0mm, toprule=0mm, bottomrule=0mm,  colframe=SpringGreen4, colback=SpringGreen4!12, height=1.9cm]
+            \textbf{\large Installation}
+            \begin{lstlisting}
+        pip install figuratenum
+        pip install figuratenum[figurate-viz] # Optional: Visualization (v2.1.0)
+            \end{lstlisting}
+        \end{tcolorbox}
+
+        \begin{tcolorbox}[leftrule=2mm, rightrule=0mm, toprule=0mm, bottomrule=0mm,  colframe=SpringGreen4, colback=SpringGreen4!12, height=1.7cm]
+            \textbf{\large Main Class}
+            \begin{lstlisting}
       from figuratenum import FigurateNum as fgn
-      \end{lstlisting}
-    \end{tcolorbox}
-    \begin{tcolorbox}[leftrule=2mm, rightrule=0mm, toprule=0mm, bottomrule=0mm,  colframe=SpringGreen4, colback=SpringGreen4!12, height=3.6cm]
-      \textbf{\large Classes}
-      \begin{lstlisting}
-      from figuratenum import PlaneFigurateNum as pfgn
-      from figuratenum import SpaceFigurateNum as sfgn
-      from figuratenum import MultidimensionalFigurateNum as mfgn
-      from figuratenum import ZooFigurateNum as zfgn
-      from figuratenum import NumCollector as nc
-      \end{lstlisting}
-    \end{tcolorbox}
-  \end{multicols}
+             \end{lstlisting}
+        \end{tcolorbox}
+
+        \begin{tcolorbox}[leftrule=2mm, rightrule=0mm, toprule=0mm, bottomrule=0mm,  colframe=SpringGreen4, colback=SpringGreen4!12, height=3.6cm]
+            \textbf{\large Classes}
+            \begin{lstlisting}
+        from figuratenum import PlaneFigurateNum as pfgn
+        from figuratenum import SpaceFigurateNum as sfgn
+        from figuratenum import MultidimensionalFigurateNum as mfgn
+        from figuratenum import ZooFigurateNum as zfgn
+        from figuratenum import NumCollector as nc
+        from figuratenum.figurate_viz.FigurateViz import FigurateViz
+             \end{lstlisting}
+        \end{tcolorbox}
+
+    \end{multicols}
 \end{tcolorbox}
 
 \thispagestyle{fancy}
 
 \begin{multicols}{2}
-  \begin{tcolorbox}[title= Generating FigurateNum Sequences Step by Step]
-    \begin{lstlisting}
-    >>> seq = fgn()
-    >>> hyperdodecahedral = seq.hyperdodecahedral()
+    \begin{tcolorbox}[title= Import and generate sequences with FigurateNum and related classes]
+        \begin{lstlisting}
+    from figuratenum import FigurateNum, MultidimensionalFigurateNum
+    # 1. General use: generate any figurate sequence via FigurateNum
+    seq = FigurateNum()
+    hyperdodecahedral_gen = seq.hyperdodecahedral()
+    print([next(hyperdodecahedral_gen) for _ in range(4)])
+    # Output: [1, 600, 4983, 19468]
+    # 2. Specialized classes: PlaneFigurateNum, SpaceFigurateNum,
+    #    MultidimensionalFigurateNum, ZooFigurateNum
+    multi = MultidimensionalFigurateNum()
+    hypertetrahedron_gen = multi.k_dimensional_centered_hypertetrahedron(21)
+    print([next(hypertetrahedron_gen) for _ in range(10)])
+    # Output: [1, 23, 276, 2300, 14950, 80730, 376740, 1560780, 5852925, 20160075]
+        \end{lstlisting}
+    \end{tcolorbox}
 
-    >>> first = next(hyperdodecahedral)
-    >>> second = next(hyperdodecahedral)
-    >>> third = next(hyperdodecahedral)
-    >>> fourth = next(hyperdodecahedral)
-
-    >>> print(first, second, third, fourth)
-    1 600 4983 19468
-    \end{lstlisting}
-  \end{tcolorbox}
-
-  \begin{tcolorbox}[title = Example Using a Specific Class with a Loop]
-    \begin{lstlisting}
-    >>> seq_loop = mfgn()
-    >>> k_dimensional_centered_hypertetrahedron = seq_loop.k_dimensional_centered_hypertetrahedron(21)
-    >>> figuratenum_arr = []
-    >>> for _ in range(1, 15):
-    >>>     next_num = next(k_dimensional_centered_hypertetrahedron)
-    >>>     figuratenum_arr.append(next_num)
-    >>> print(figuratenum_arr)
-    [1, 23, 276, 2300, 14950, 80730, 376740, 1560780, 5852925, 20160075, 64512240, 193536720, 548354040, 1476337800]
-    \end{lstlisting}
-  \end{tcolorbox}
+    \begin{tcolorbox}[title = Using FigurateViz to visualize and export]
+        \begin{lstlisting}
+    from figuratenum import FigurateNum as fgn
+    from figuratenum.figurate_viz.FigurateViz import FigurateViz
+    seq_loop = fgn()
+    gen = seq_loop.five_dimensional_hyperoctahedron()
+    figuratenum_seq = [next(gen) for _ in range(704)]
+    # Create and draw the Gaussian plot
+    viz = FigurateViz(figuratenum_seq, figsize=(6, 6))
+    viz.gaussian_plot(circ_color="m", bg_color="k", num_text=False,
+        num_color="g", ext_circle=True, rotate=-1).draw()
+    # Export plots as .svg, .pdf, .png (matplotlib compatible),
+    # with options e.g., dpi, transparent, bbox_inches, pad_inches, etc.
+    viz.export_plot("figure1.svg", circ_color="cyan", transparent=True)
+        \end{lstlisting}
+    \end{tcolorbox}
 
 \end{multicols}
 
 \begin{multicols}{2}
-  \begin{tcolorbox}[title= NumberCollector Class: Method Summary]
-    \begin{itemize}[noitemsep, topsep=0pt]
-      \item \bera{take(n)}
-      \item \bera{take\_to\_list(stop, start, step)}
-      \item \bera{take\_to\_array(stop, start, step)}
-      \item \bera{take\_to\_tuple(stop, start, step)}
-      \item \bera{pick(n)}
-    \end{itemize}
-  \end{tcolorbox}
+    \begin{tcolorbox}[title= NumberCollector Class: Method Summary]
+        \begin{itemize}[noitemsep, topsep=0pt]
+            \item \bera{take(n)}
+            \item \bera{take\_to\_list(stop, start, step)}
+            \item \bera{take\_to\_array(stop, start, step)}
+            \item \bera{take\_to\_tuple(stop, start, step)}
+            \item \bera{pick(n)}
+        \end{itemize}
+    \end{tcolorbox}
 
-  \begin{tcolorbox}[title= Working with the NumberCollector Class]
-    \begin{lstlisting}
-    >>> seq = fgn()
-    >>> pentatope = seq.pentatope()
-
-    >>> print(nc.take_to_list(pentatope, 10))
-    [1, 5, 15, 35, 70, 126, 210, 330, 495, 715]
-    \end{lstlisting}
-  \end{tcolorbox}
+    \begin{tcolorbox}[title= Working with the NumberCollector Class]
+        \begin{lstlisting}
+    from figuratenum import NumCollector as nc, FigurateNum
+    gen = FigurateNum().pentatope()
+    print(nc.take_to_tuple(gen, 10))  # first 10 values as tuple
+    # Output: (1, 5, 15, 35, 70, 126, 210, 330, 495, 715)
+        \end{lstlisting}
+    \end{tcolorbox}
 \end{multicols}
-
 
 \pagebreak
 
-
 \begin{multicols}{2}
-  \begin{tcolorbox}[title= Plane Figurate Numbers]
-    \begin{itemize}[noitemsep, topsep=0pt]
-      \item \bera{polygonal}
-      \item \bera{triangular}
-      \item \bera{square}
-      \item \bera{pentagonal}
-      \item \bera{hexagonal}
-      \item \bera{heptagonal}
-      \item \bera{octagonal}
-      \item \bera{nonagonal}
-      \item \bera{decagonal}
-      \item \bera{hendecagonal}
-      \item \bera{dodecagonal}
-      \item \bera{tridecagonal}
-      \item \bera{tetradecagonal}
-      \item \bera{pentadecagonal}
-      \item \bera{hexadecagonal}
-      \item \bera{heptadecagonal}
-      \item \bera{octadecagonal}
-      \item \bera{nonadecagonal}
-      \item \bera{icosagonal}
-      \item \bera{icosihenagonal}
-      \item \bera{icosidigonal}
-      \item \bera{icositrigonal}
-      \item \bera{icositetragonal}
-      \item \bera{icosipentagonal}
-      \item \bera{icosihexagonal}
-      \item \bera{icosiheptagonal}
-      \item \bera{icosioctagonal}
-      \item \bera{icosinonagonal}
-      \item \bera{triacontagonal}
-      \item \bera{centered\_triangular}
-      \item \bera{centered\_square = diamond}
-      \item \bera{centered\_pentagonal}
-      \item \bera{centered\_hexagonal}
-      \item \bera{centered\_heptagonal}
-      \item \bera{centered\_octagonal}
-      \item \bera{centered\_nonagonal}
-      \item \bera{centered\_decagonal}
-      \item \bera{centered\_hendecagonal}
-      \item \bera{centered\_dodecagonal = star}
-      \item \bera{centered\_tridecagonal}
-    \end{itemize}
-  \end{tcolorbox}
+    \begin{tcolorbox}[title= Plane Figurate Numbers]
+        \begin{itemize}[noitemsep, topsep=0pt]
+            \item \bera{polygonal}
+            \item \bera{triangular}
+            \item \bera{square}
+            \item \bera{pentagonal}
+            \item \bera{hexagonal}
+            \item \bera{heptagonal}
+            \item \bera{octagonal}
+            \item \bera{nonagonal}
+            \item \bera{decagonal}
+            \item \bera{hendecagonal}
+            \item \bera{dodecagonal}
+            \item \bera{tridecagonal}
+            \item \bera{tetradecagonal}
+            \item \bera{pentadecagonal}
+            \item \bera{hexadecagonal}
+            \item \bera{heptadecagonal}
+            \item \bera{octadecagonal}
+            \item \bera{nonadecagonal}
+            \item \bera{icosagonal}
+            \item \bera{icosihenagonal}
+            \item \bera{icosidigonal}
+            \item \bera{icositrigonal}
+            \item \bera{icositetragonal}
+            \item \bera{icosipentagonal}
+            \item \bera{icosihexagonal}
+            \item \bera{icosiheptagonal}
+            \item \bera{icosioctagonal}
+            \item \bera{icosinonagonal}
+            \item \bera{triacontagonal}
+            \item \bera{centered\_triangular}
+            \item \bera{centered\_square = diamond}
+            \item \bera{centered\_pentagonal}
+            \item \bera{centered\_hexagonal}
+            \item \bera{centered\_heptagonal}
+            \item \bera{centered\_octagonal}
+            \item \bera{centered\_nonagonal}
+            \item \bera{centered\_decagonal}
+            \item \bera{centered\_hendecagonal}
+            \item \bera{centered\_dodecagonal = star}
+            \item \bera{centered\_tridecagonal}
+        \end{itemize}
+    \end{tcolorbox}
 
-  \begin{tcolorbox}[title= Plane Figurate Numbers]
-    \begin{itemize}[noitemsep, topsep=0pt]
-      \item \bera{centered\_tetradecagonal}
-      \item \bera{centered\_pentadecagonal}
-      \item \bera{centered\_hexadecagonal}
-      \item \bera{centered\_heptadecagonal}
-      \item \bera{centered\_octadecagonal}
-      \item \bera{centered\_nonadecagonal}
-      \item \bera{centered\_icosagonal}
-      \item \bera{centered\_icosihenagonal}
-      \item \bera{centered\_icosidigonal}
-      \item \bera{centered\_icositrigonal}
-      \item \bera{centered\_icositetragonal}
-      \item \bera{centered\_icosipentagonal}
-      \item \bera{centered\_icosihexagonal}
-      \item \bera{centered\_icosiheptagonal}
-      \item \bera{centered\_icosioctagonal}
-      \item \bera{centered\_icosinonagonal}
-      \item \bera{centered\_triacontagonal}
-      \item \bera{centered\_mgonal(m)}
-      \item \bera{pronic = heteromecic = oblong}
-      \item \bera{polite}
-      \item \bera{impolite}
-      \item \bera{cross}
-      \item \bera{aztec\_diamond}
-      \item \bera{polygram(m) = centered\_star\_polygonal(m)}
-      \item \bera{pentagram}
-      \item \bera{gnomic}
-      \item \bera{truncated\_triangular}
-      \item \bera{truncated\_square}
-      \item \bera{truncated\_pronic}
-      \item \bera{truncated\_centered\_pol(m) = truncated\_centered\_mgonal(m)}
-      \item \bera{truncated\_centered\_triangular}
-      \item \bera{truncated\_centered\_square}
-      \item \bera{truncated\_centered\_pentagonal}
-      \item \bera{truncated\_centered\_hexagonal = truncated\_hex}
-      \item \bera{generalized\_mgonal(m, start\_numb)}
-      \item \bera{generalized\_pentagonal(start\_numb)}
-      \item \bera{generalized\_hexagonal(start\_numb)}
-      \item \bera{generalized\_centered\_pol(m, start\_numb)}
-      \item \bera{generalized\_pronic(start\_numb)}
-    \end{itemize}
-  \end{tcolorbox}
+    \begin{tcolorbox}[title= Plane Figurate Numbers]
+        \begin{itemize}[noitemsep, topsep=0pt]
+            \item \bera{centered\_tetradecagonal}
+            \item \bera{centered\_pentadecagonal}
+            \item \bera{centered\_hexadecagonal}
+            \item \bera{centered\_heptadecagonal}
+            \item \bera{centered\_octadecagonal}
+            \item \bera{centered\_nonadecagonal}
+            \item \bera{centered\_icosagonal}
+            \item \bera{centered\_icosihenagonal}
+            \item \bera{centered\_icosidigonal}
+            \item \bera{centered\_icositrigonal}
+            \item \bera{centered\_icositetragonal}
+            \item \bera{centered\_icosipentagonal}
+            \item \bera{centered\_icosihexagonal}
+            \item \bera{centered\_icosiheptagonal}
+            \item \bera{centered\_icosioctagonal}
+            \item \bera{centered\_icosinonagonal}
+            \item \bera{centered\_triacontagonal}
+            \item \bera{centered\_mgonal(m)}
+            \item \bera{pronic = heteromecic = oblong}
+            \item \bera{polite}
+            \item \bera{impolite}
+            \item \bera{cross}
+            \item \bera{aztec\_diamond}
+            \item \bera{polygram(m) = centered\_star\_polygonal(m)}
+            \item \bera{pentagram}
+            \item \bera{gnomic}
+            \item \bera{truncated\_triangular}
+            \item \bera{truncated\_square}
+            \item \bera{truncated\_pronic}
+            \item \bera{truncated\_centered\_pol(m) = truncated\_centered\_mgonal(m)}
+            \item \bera{truncated\_centered\_triangular}
+            \item \bera{truncated\_centered\_square}
+            \item \bera{truncated\_centered\_pentagonal}
+            \item \bera{truncated\_centered\_hexagonal = truncated\_hex}
+            \item \bera{generalized\_mgonal(m, start\_numb)}
+            \item \bera{generalized\_pentagonal(start\_numb)}
+            \item \bera{generalized\_hexagonal(start\_numb)}
+            \item \bera{generalized\_centered\_pol(m, start\_numb)}
+            \item \bera{generalized\_pronic(start\_numb)}
+        \end{itemize}
+    \end{tcolorbox}
 \end{multicols}
 
 \pagebreak
 \begin{multicols}{3}
-  \begin{tcolorbox}[title= Space Figurate Numbers]
-    \begin{itemize}[noitemsep, topsep=0pt]
-      \item \bera{m\_pyramidal(m)}
-      \item \bera{triangular\_pyramidal}
-      \item \bera{square\_pyramidal = pyramidal}
-      \item \bera{pentagonal\_pyramidal}
-      \item \bera{hexagonal\_pyramidal}
-      \item \bera{heptagonal\_pyramidal}
-      \item \bera{octagonal\_pyramidal}
-      \item \bera{nonagonal\_pyramidal}
-      \item \bera{decagonal\_pyramidal}
-      \item \bera{hendecagonal\_pyramidal}
-      \item \bera{dodecagonal\_pyramidal}
-      \item \bera{tridecagonal\_pyramidal}
-      \item \bera{tetradecagonal\_pyramidal}
-      \item \bera{pentadecagonal\_pyramidal}
-      \item \bera{hexadecagonal\_pyramidal}
-      \item \bera{heptadecagonal\_pyramidal}
-      \item \bera{octadecagonal\_pyramidal}
-      \item \bera{nonadecagonal\_pyramidal}
-      \item \bera{icosagonal\_pyramidal}
-      \item \bera{icosihenagonal\_pyramidal}
-      \item \bera{icosidigonal\_pyramidal}
-      \item \bera{icositrigonal\_pyramidal}
-      \item \bera{icositetragonal\_pyramidal}
-      \item \bera{icosipentagonal\_pyramidal}
-      \item \bera{icosihexagonal\_pyramidal}
-      \item \bera{icosiheptagonal\_pyramidal}
-      \item \bera{icosioctagonal\_pyramidal}
-      \item \bera{icosinonagonal\_pyramidal}
-      \item \bera{triacontagonal\_pyramidal}
-      \item \bera{triangular\_tetrahedral[finite]}
-      \item \bera{triangular\_square\_pyramidal[finite]}
-      \item \bera{square\_tetrahedral[finite]}
-      \item \bera{square\_square\_pyramidal[finite]}
-      \item \bera{tetrahedral\_square\_pyramidal[finite]}
-      \item \bera{cubic}
-      \item \bera{tetrahedral}
-      \item \bera{octahedral}
-      \item \bera{dodecahedral}
-      \item \bera{icosahedral}
-      \item \bera{truncated\_tetrahedral}
-    \end{itemize}
-  \end{tcolorbox}
+    \begin{tcolorbox}[title= Space Figurate Numbers]
+        \begin{itemize}[noitemsep, topsep=0pt]
+            \item \bera{m\_pyramidal(m)}
+            \item \bera{triangular\_pyramidal}
+            \item \bera{square\_pyramidal = pyramidal}
+            \item \bera{pentagonal\_pyramidal}
+            \item \bera{hexagonal\_pyramidal}
+            \item \bera{heptagonal\_pyramidal}
+            \item \bera{octagonal\_pyramidal}
+            \item \bera{nonagonal\_pyramidal}
+            \item \bera{decagonal\_pyramidal}
+            \item \bera{hendecagonal\_pyramidal}
+            \item \bera{dodecagonal\_pyramidal}
+            \item \bera{tridecagonal\_pyramidal}
+            \item \bera{tetradecagonal\_pyramidal}
+            \item \bera{pentadecagonal\_pyramidal}
+            \item \bera{hexadecagonal\_pyramidal}
+            \item \bera{heptadecagonal\_pyramidal}
+            \item \bera{octadecagonal\_pyramidal}
+            \item \bera{nonadecagonal\_pyramidal}
+            \item \bera{icosagonal\_pyramidal}
+            \item \bera{icosihenagonal\_pyramidal}
+            \item \bera{icosidigonal\_pyramidal}
+            \item \bera{icositrigonal\_pyramidal}
+            \item \bera{icositetragonal\_pyramidal}
+            \item \bera{icosipentagonal\_pyramidal}
+            \item \bera{icosihexagonal\_pyramidal}
+            \item \bera{icosiheptagonal\_pyramidal}
+            \item \bera{icosioctagonal\_pyramidal}
+            \item \bera{icosinonagonal\_pyramidal}
+            \item \bera{triacontagonal\_pyramidal}
+            \item \bera{triangular\_tetrahedral[finite]}
+            \item \bera{triangular\_square\_pyramidal[finite]}
+            \item \bera{square\_tetrahedral[finite]}
+            \item \bera{square\_square\_pyramidal[finite]}
+            \item \bera{tetrahedral\_square\_pyramidal[finite]}
+            \item \bera{cubic}
+            \item \bera{tetrahedral}
+            \item \bera{octahedral}
+            \item \bera{dodecahedral}
+            \item \bera{icosahedral}
+            \item \bera{truncated\_tetrahedral}
+        \end{itemize}
+    \end{tcolorbox}
 
-  \begin{tcolorbox}[title= Space Figurate Numbers]
-    \begin{itemize}[noitemsep, topsep=0pt]
-      \item \bera{truncated\_cubic}
-      \item \bera{truncated\_octahedral}
-      \item \bera{stella\_octangula}
-      \item \bera{centered\_cube}
-      \item \bera{rhombic\_dodecahedral}
-      \item \bera{hauy\_rhombic\_dodecahedral}
-      \item \bera{centered\_tetrahedron = centered\_tetrahedral}
-      \item \bera{centered\_square\_pyramid = centered\_pyramid}
-      \item \bera{centered\_mgonal\_pyramid(m)}
-      \item \bera{centered\_pentagonal\_pyramid}
-      \item \bera{centered\_hexagonal\_pyramid}
-      \item \bera{centered\_heptagonal\_pyramid}
-      \item \bera{centered\_octagonal\_pyramid}
-      \item \bera{centered\_octahedron}
-      \item \bera{centered\_icosahedron = centered\_cuboctahedron}
-      \item \bera{centered\_dodecahedron}
-      \item \bera{centered\_truncated\_tetrahedron}
-      \item \bera{centered\_truncated\_cube}
-      \item \bera{centered\_truncated\_octahedron}
-      \item \bera{centered\_mgonal\_pyramidal(m)}
-      \item \bera{centered\_triangular\_pyramidal}
-      \item \bera{centered\_square\_pyramidal}
-      \item \bera{centered\_pentagonal\_pyramidal}
-      \item \bera{centered\_heptagonal\_pyramidal}
-      \item \bera{centered\_octagonal\_pyramidal}
-      \item \bera{centered\_nonagonal\_pyramidal}
-      \item \bera{centered\_decagonal\_pyramidal}
-      \item \bera{centered\_hendecagonal\_pyramidal}
-      \item \bera{centered\_dodecagonal\_pyramidal}
-      \item \bera{centered\_hexagonal\_pyramidal = hex\_pyramidal}
-      \item \bera{hexagonal\_prism}
-      \item \bera{mgonal\_prism(m)}
-      \item \bera{generalized\_mgonal\_pyramidal(m, start\_num)}
-      \item \bera{generalized\_pentagonal\_pyramidal(start\_num)}
-      \item \bera{generalized\_hexagonal\_pyramidal(start\_num)}
-      \item \bera{generalized\_cubic(start\_num)}
-      \item \bera{generalized\_octahedral(start\_num)}
-    \end{itemize}
-  \end{tcolorbox}
+    \begin{tcolorbox}[title= Space Figurate Numbers]
+        \begin{itemize}[noitemsep, topsep=0pt]
+            \item \bera{truncated\_cubic}
+            \item \bera{truncated\_octahedral}
+            \item \bera{stella\_octangula}
+            \item \bera{centered\_cube}
+            \item \bera{rhombic\_dodecahedral}
+            \item \bera{hauy\_rhombic\_dodecahedral}
+            \item \bera{centered\_tetrahedron = centered\_tetrahedral}
+            \item \bera{centered\_square\_pyramid = centered\_pyramid}
+            \item \bera{centered\_mgonal\_pyramid(m)}
+            \item \bera{centered\_pentagonal\_pyramid}
+            \item \bera{centered\_hexagonal\_pyramid}
+            \item \bera{centered\_heptagonal\_pyramid}
+            \item \bera{centered\_octagonal\_pyramid}
+            \item \bera{centered\_octahedron}
+            \item \bera{centered\_icosahedron = centered\_cuboctahedron}
+            \item \bera{centered\_dodecahedron}
+            \item \bera{centered\_truncated\_tetrahedron}
+            \item \bera{centered\_truncated\_cube}
+            \item \bera{centered\_truncated\_octahedron}
+            \item \bera{centered\_mgonal\_pyramidal(m)}
+            \item \bera{centered\_triangular\_pyramidal}
+            \item \bera{centered\_square\_pyramidal}
+            \item \bera{centered\_pentagonal\_pyramidal}
+            \item \bera{centered\_heptagonal\_pyramidal}
+            \item \bera{centered\_octagonal\_pyramidal}
+            \item \bera{centered\_nonagonal\_pyramidal}
+            \item \bera{centered\_decagonal\_pyramidal}
+            \item \bera{centered\_hendecagonal\_pyramidal}
+            \item \bera{centered\_dodecagonal\_pyramidal}
+            \item \bera{centered\_hexagonal\_pyramidal = hex\_pyramidal}
+            \item \bera{hexagonal\_prism}
+            \item \bera{mgonal\_prism(m)}
+            \item \bera{generalized\_mgonal\_pyramidal(m, start\_num)}
+            \item \bera{generalized\_pentagonal\_pyramidal(start\_num)}
+            \item \bera{generalized\_hexagonal\_pyramidal(start\_num)}
+            \item \bera{generalized\_cubic(start\_num)}
+            \item \bera{generalized\_octahedral(start\_num)}
+        \end{itemize}
+    \end{tcolorbox}
 
-  \begin{tcolorbox}[title= Space Figurate Numbers]
-    \begin{itemize}[noitemsep, topsep=0pt]
-      \item \bera{generalized\_icosahedral(start\_num)}
-      \item \bera{generalized\_dodecahedral(start\_num)}
-      \item \bera{generalized\_centered\_cube(start\_num)}
-      \item \bera{generalized\_centered\_tetrahedron(start\_num)}
-      \item \bera{generalized\_centered\_square\_pyramid(start\_num)}
-      \item \bera{generalized\_rhombic\_dodecahedral(start\_num)}
-      \item \bera{generalized\_centered\_mgonal\_pyramidal(m, start\_num)}
-      \item \bera{generalized\_mgonal\_prism(m, start\_num)}
-      \item \bera{generalized\_hexagonal\_prism(start\_num)}
-    \end{itemize}
-  \end{tcolorbox}
+    \begin{tcolorbox}[title= Space Figurate Numbers]
+        \begin{itemize}[noitemsep, topsep=0pt]
+            \item \bera{generalized\_icosahedral(start\_num)}
+            \item \bera{generalized\_dodecahedral(start\_num)}
+            \item \bera{generalized\_centered\_cube(start\_num)}
+            \item \bera{generalized\_centered\_tetrahedron(start\_num)}
+            \item \bera{generalized\_centered\_square\_pyramid(start\_num)}
+            \item \bera{generalized\_rhombic\_dodecahedral(start\_num)}
+            \item \bera{generalized\_centered\_mgonal\_pyramidal(m, start\_num)}
+            \item \bera{generalized\_mgonal\_prism(m, start\_num)}
+            \item \bera{generalized\_hexagonal\_prism(start\_num)}
+        \end{itemize}
+    \end{tcolorbox}
 \end{multicols}
 
 \begin{multicols}{2}
-  \begin{tcolorbox}[bottomrule=0mm, title= Multidimensional Figurate Numbers]
-    \begin{itemize}[noitemsep, topsep=0pt]
-      \item \bera{k\_dimensional\_hypertetrahedron(k) = k\_hypertetrahedron(k) = regular\_k\_polytopic(k) = figurate\_of\_order\_k(k)}
-      \item \bera{five\_dimensional\_hypertetrahedron}
-      \item \bera{six\_dimensional\_hypertetrahedron}
-      \item \bera{k\_dimensional\_hypercube(k) = k\_hypercube(k)}
-      \item \bera{five\_dimensional\_hypercube}
-      \item \bera{six\_dimensional\_hypercube}
-      \item \bera{hypertetrahedral = pentachoron = pentatope = triangulotriangular = cell\_5}
-      \item \bera{hypercube = octachoron = tesseract = biquadratic = cell\_8 }
-      \item \bera{hyperoctahedral = hexadecachoron = four\_cross\_polytope = four\_orthoplex = cell\_16}
-      \item \bera{hypericosahedral = hexacosichoron = polytetrahedron = tetraplex = cell\_600}
-      \item \bera{hyperdodecahedral = hecatonicosachoron = dodecaplex = polydodecahedron = cell\_120}
-      \item \bera{polyoctahedral = icositetrachoron = octaplex = hyperdiamond = cell\_24}
-      \item \bera{four\_dimensional\_hyperoctahedron}
-      \item \bera{five\_dimensional\_hyperoctahedron}
-      \item \bera{six\_dimensional\_hyperoctahedron}
-      \item \bera{seven\_dimensional\_hyperoctahedron}
-      \item \bera{eight\_dimensional\_hyperoctahedron}
-      \item \bera{nine\_dimensional\_hyperoctahedron}
-      \item \bera{ten\_dimensional\_hyperoctahedron}
-      \item \bera{k\_dimensional\_hyperoctahedron(k) = k\_cross\_polytope(k)}
-      \item \bera{four\_dimensional\_mgonal\_pyramidal(m) = mgonal\_pyramidal\_of\_the\_second\_order(m)}
-      \item \bera{four\_dimensional\_square\_pyramidal}
-      \item \bera{four\_dimensional\_pentagonal\_pyramidal}
-      \item \bera{four\_dimensional\_hexagonal\_pyramidal}
-      \item \bera{four\_dimensional\_heptagonal\_pyramidal}
-      \item \bera{four\_dimensional\_octagonal\_pyramidal}
-      \item \bera{four\_dimensional\_nonagonal\_pyramidal}
-      \item \bera{four\_dimensional\_decagonal\_pyramidal}
-      \item \bera{four\_dimensional\_hendecagonal\_pyramidal}
-      \item \bera{four\_dimensional\_dodecagonal\_pyramidal}
-      \item \bera{k\_dimensional\_mgonal\_pyramidal(k,m) = mgonal\_pyramidal\_of\_the\_k\_2\_th\_order(k,m)}
-      \item \bera{five\_dimensional\_mgonal\_pyramidal(m)}
-      \item \bera{five\_dimensional\_square\_pyramidal}
-      \item \bera{five\_dimensional\_pentagonal\_pyramidal}
-      \item \bera{five\_dimensional\_hexagonal\_pyramidal}
-      \item \bera{five\_dimensional\_heptagonal\_pyramidal}
-      \item \bera{five\_dimensional\_octagonal\_pyramidal}
-    \end{itemize}
-  \end{tcolorbox}
+    \begin{tcolorbox}[bottomrule=0mm, title= Multidimensional Figurate Numbers]
+        \begin{itemize}[noitemsep, topsep=0pt]
+            \item \bera{k\_dimensional\_hypertetrahedron(k) = k\_hypertetrahedron(k) = regular\_k\_polytopic(k) = figurate\_of\_order\_k(k)}
+            \item \bera{five\_dimensional\_hypertetrahedron}
+            \item \bera{six\_dimensional\_hypertetrahedron}
+            \item \bera{k\_dimensional\_hypercube(k) = k\_hypercube(k)}
+            \item \bera{five\_dimensional\_hypercube}
+            \item \bera{six\_dimensional\_hypercube}
+            \item \bera{hypertetrahedral = pentachoron = pentatope = triangulotriangular = cell\_5}
+            \item \bera{hypercube = octachoron = tesseract = biquadratic = cell\_8 }
+            \item \bera{hyperoctahedral = hexadecachoron = four\_cross\_polytope = four\_orthoplex = cell\_16}
+            \item \bera{hypericosahedral = hexacosichoron = polytetrahedron = tetraplex = cell\_600}
+            \item \bera{hyperdodecahedral = hecatonicosachoron = dodecaplex = polydodecahedron = cell\_120}
+            \item \bera{polyoctahedral = icositetrachoron = octaplex = hyperdiamond = cell\_24}
+            \item \bera{four\_dimensional\_hyperoctahedron}
+            \item \bera{five\_dimensional\_hyperoctahedron}
+            \item \bera{six\_dimensional\_hyperoctahedron}
+            \item \bera{seven\_dimensional\_hyperoctahedron}
+            \item \bera{eight\_dimensional\_hyperoctahedron}
+            \item \bera{nine\_dimensional\_hyperoctahedron}
+            \item \bera{ten\_dimensional\_hyperoctahedron}
+            \item \bera{k\_dimensional\_hyperoctahedron(k) = k\_cross\_polytope(k)}
+            \item \bera{four\_dimensional\_mgonal\_pyramidal(m) = mgonal\_pyramidal\_of\_the\_second\_order(m)}
+            \item \bera{four\_dimensional\_square\_pyramidal}
+            \item \bera{four\_dimensional\_pentagonal\_pyramidal}
+            \item \bera{four\_dimensional\_hexagonal\_pyramidal}
+            \item \bera{four\_dimensional\_heptagonal\_pyramidal}
+            \item \bera{four\_dimensional\_octagonal\_pyramidal}
+            \item \bera{four\_dimensional\_nonagonal\_pyramidal}
+            \item \bera{four\_dimensional\_decagonal\_pyramidal}
+            \item \bera{four\_dimensional\_hendecagonal\_pyramidal}
+            \item \bera{four\_dimensional\_dodecagonal\_pyramidal}
+            \item \bera{k\_dimensional\_mgonal\_pyramidal(k,m) = mgonal\_pyramidal\_of\_the\_k\_2\_th\_order(k,m)}
+            \item \bera{five\_dimensional\_mgonal\_pyramidal(m)}
+            \item \bera{five\_dimensional\_square\_pyramidal}
+            \item \bera{five\_dimensional\_pentagonal\_pyramidal}
+            \item \bera{five\_dimensional\_hexagonal\_pyramidal}
+            \item \bera{five\_dimensional\_heptagonal\_pyramidal}
+            \item \bera{five\_dimensional\_octagonal\_pyramidal}
+        \end{itemize}
+    \end{tcolorbox}
 
-  \begin{tcolorbox}[bottomrule=0mm, title= Multidimensional Figurate Numbers]
-    \begin{itemize}[noitemsep, topsep=0pt]
+    \begin{tcolorbox}[bottomrule=0mm, title= Multidimensional Figurate Numbers]
+        \begin{itemize}[noitemsep, topsep=0pt]
 
-      \item \bera{six\_dimensional\_mgonal\_pyramidal(m)}
-      \item \bera{six\_dimensional\_square\_pyramidal}
-      \item \bera{six\_dimensional\_pentagonal\_pyramidal}
-      \item \bera{six\_dimensional\_hexagonal\_pyramidal}
-      \item \bera{six\_dimensional\_heptagonal\_pyramidal}
-      \item \bera{six\_dimensional\_octagonal\_pyramidal}
-      \item \bera{centered\_biquadratic}
-      \item \bera{k\_dimensional\_centered\_hypercube(k)}
-      \item \bera{five\_dimensional\_centered\_hypercube}
-      \item \bera{six\_dimensional\_centered\_hypercube}
-      \item \bera{centered\_polytope}
-      \item \bera{k\_dimensional\_centered\_hypertetrahedron(k)}
-      \item \bera{five\_dimensional\_centered\_hypertetrahedron}
-      \item \bera{six\_dimensional\_centered\_hypertetrahedron}
-      \item \bera{centered\_hyperoctahedral}
-      \item \bera{nexus(k)}
-      \item \bera{k\_dimensional\_centered\_hyperoctahedron(k)}
-      \item \bera{five\_dimensional\_centered\_hyperoctahedron}
-      \item \bera{six\_dimensional\_centered\_hyperoctahedron}
-      \item \bera{generalized\_pentatope(start\_num = 0)}
-      \item \bera{generalized\_k\_dimensional\_hypertetrahedron(k = 5, start\_num = 0)}
-      \item \bera{generalized\_biquadratic(start\_num = 0)}
-      \item \bera{generalized\_k\_dimensional\_hypercube(k = 5, start\_num = 0)}
-      \item \bera{generalized\_hyperoctahedral(start\_num = 0)}
-      \item \bera{generalized\_k\_dimensional\_hyperoctahedron(k = 5, start\_num = 0)}
-      \item \bera{generalized\_hyperdodecahedral(start\_num = 0)}
-      \item \bera{generalized\_hypericosahedral(start\_num = 0)}
-      \item \bera{generalized\_polyoctahedral(start\_num = 0)}
-      \item \bera{generalized\_k\_dimensional\_mgonal\_pyramidal(k, m, start\_num = 0)}
-      \item \bera{generalized\_k\_dimensional\_centered\_hypercube(k, start\_num = 0)}
-      \item \bera{generalized\_nexus(k, start\_num = 0)}
-    \end{itemize}
-  \end{tcolorbox}
+            \item \bera{six\_dimensional\_mgonal\_pyramidal(m)}
+            \item \bera{six\_dimensional\_square\_pyramidal}
+            \item \bera{six\_dimensional\_pentagonal\_pyramidal}
+            \item \bera{six\_dimensional\_hexagonal\_pyramidal}
+            \item \bera{six\_dimensional\_heptagonal\_pyramidal}
+            \item \bera{six\_dimensional\_octagonal\_pyramidal}
+            \item \bera{centered\_biquadratic}
+            \item \bera{k\_dimensional\_centered\_hypercube(k)}
+            \item \bera{five\_dimensional\_centered\_hypercube}
+            \item \bera{six\_dimensional\_centered\_hypercube}
+            \item \bera{centered\_polytope}
+            \item \bera{k\_dimensional\_centered\_hypertetrahedron(k)}
+            \item \bera{five\_dimensional\_centered\_hypertetrahedron}
+            \item \bera{six\_dimensional\_centered\_hypertetrahedron}
+            \item \bera{centered\_hyperoctahedral}
+            \item \bera{nexus(k)}
+            \item \bera{k\_dimensional\_centered\_hyperoctahedron(k)}
+            \item \bera{five\_dimensional\_centered\_hyperoctahedron}
+            \item \bera{six\_dimensional\_centered\_hyperoctahedron}
+            \item \bera{generalized\_pentatope(start\_num = 0)}
+            \item \bera{generalized\_k\_dimensional\_hypertetrahedron(k = 5, start\_num = 0)}
+            \item \bera{generalized\_biquadratic(start\_num = 0)}
+            \item \bera{generalized\_k\_dimensional\_hypercube(k = 5, start\_num = 0)}
+            \item \bera{generalized\_hyperoctahedral(start\_num = 0)}
+            \item \bera{generalized\_k\_dimensional\_hyperoctahedron(k = 5, start\_num = 0)}
+            \item \bera{generalized\_hyperdodecahedral(start\_num = 0)}
+            \item \bera{generalized\_hypericosahedral(start\_num = 0)}
+            \item \bera{generalized\_polyoctahedral(start\_num = 0)}
+            \item \bera{generalized\_k\_dimensional\_mgonal\_pyramidal(k, m, start\_num = 0)}
+            \item \bera{generalized\_k\_dimensional\_centered\_hypercube(k, start\_num = 0)}
+            \item \bera{generalized\_nexus(k, start\_num = 0)}
+        \end{itemize}
+    \end{tcolorbox}
 
 \end{multicols}
 
 \begin{multicols}{2}
-  \begin{tcolorbox}[bottomrule=0mm, title= Zoo Figurate Numbers]
-    \begin{itemize}[noitemsep, topsep=0pt]
-      \item \bera{cuban\_prime}
-      \item \bera{pell}
-    \end{itemize}
-  \end{tcolorbox}
+    \begin{tcolorbox}[bottomrule=0mm, title= Zoo Figurate Numbers]
+        \begin{itemize}[noitemsep, topsep=0pt]
+            \item \bera{cuban\_prime}
+            \item \bera{pell}
+        \end{itemize}
+    \end{tcolorbox}
 \end{multicols}
 
 \end{document}
