@@ -8,8 +8,8 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
   class="rounded-lg bg-base-100 hover:bg-base-300 transition ease-in-out shadow-sm shadow-primary/50"
 >
   <a href={url} target={target}>
-    <div class="hero-content flex-col md:flex-row">
-      {
+    <div class="flex-col md:flex-row p-6">
+      <!-- {
         img && (
           <Image
             src={img}
@@ -20,11 +20,11 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
             class="max-w-full md:max-w-[13rem] rounded-lg"
           />
         )
-      }
+      } -->
       <div class="grow w-full">
         {
           badge && (
-            <div class="badge badge-sm badge-secondary mx-0 mb-3 p-2 rounded-md">{badge}</div>
+            <div class="badge badge-sm badge-secondary mx-0 mb-3 p-3 rounded-md ">{badge}</div>
           )
         }
         <h1 class="text-xl font-bold flex flex-col pb-2">
