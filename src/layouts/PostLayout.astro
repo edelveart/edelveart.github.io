@@ -12,8 +12,10 @@ const displayDate = dayjs(pubDate).format("ll");
 ---
 
 <BaseLayout title={title} description={description} , ogType="article">
-  <main class="md:flex md:justify-center my-8">
-    <article class="p-4 prose prose-img:mx-auto lg:max-w-[700px] max-w-[100vw]">
+  <main class="px-0 sm:px-4 md:px-0 my-[-0.25rem] flex justify-center">
+    <article class="prose prose-img:mx-auto w-full max-w-[90vw] sm:max-w-[70vw] lg:max-w-[625px]">
+      <!-- <main class="md:flex md:justify-center my-8"> -->
+      <!-- <article class="prose prose-img:mx-auto lg:max-w-[625px] sm:max-w-[70vw]"> -->
       <!-- {
         heroImage && (
           <Image
@@ -26,30 +28,32 @@ const displayDate = dayjs(pubDate).format("ll");
           />
         )
       } -->
-      <h1 class="title my-6 text-3xl font-bold"># {title}</h1>
-      <div class="border-l-4 border-secondary pl-4 my-4 py-2">
-        {pubDate && <time>{displayDate}</time>}
+      <h1 class="title my-6 text-3xl font-bold break-words"># {title}</h1>
+      <div class="border-l-4 border-secondary pl-4 py-2">
+        {pubDate && <time class="text-lg">{displayDate}</time>}
         <br />
-        {badge && <div class="badge badge-secondary rounded-md p-3 mt-2">{badge}</div>}
-        {
-          tags &&
-            tags.map((tag) => (
-              <a
-                href={`/blog/tag/${tag}`}
-                class="badge badge-outline rounded-md p-3 ml-2 no-underline"
-              >
-                {tag}
-              </a>
-            ))
-        }
-        {
-          updatedDate && (
-            <div class="">
-              {" "}
-              Last updated on <time>{updatedDate}</time>{" "}
-            </div>
-          )
-        }
+        <div class="ml-[-8px] gap-2 flex flex-wrap mt-2">
+          {badge && <div class="ml-2 badge badge-secondary rounded-md p-3 mb-2">{badge}</div>}
+          {
+            tags &&
+              tags.map((tag) => (
+                <a
+                  href={`/blog/tag/${tag}`}
+                  class="badge badge-outline rounded-md p-3 ml-2 no-underline"
+                >
+                  {tag}
+                </a>
+              ))
+          }
+          {
+            updatedDate && (
+              <div class="">
+                {" "}
+                Last updated on <time>{updatedDate}</time>{" "}
+              </div>
+            )
+          }
+        </div>
       </div>
 
       <!-- <div class="divider my-5"></div> -->

@@ -27,7 +27,7 @@ export default defineConfig({
       theme: "poimandres",
       // theme: "material-theme-ocean",
       // theme: "rose-pine-moon",
-      wrap: true,
+      wrap: false, //code wrap
     },
   },
 });

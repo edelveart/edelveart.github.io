@@ -1,5 +1,5 @@
 ---
-title: "Funciones currificadas en TypeScript"
+title: "Curried functions in TypeScript"
 description: "Nos armaremos con la magia de la currificación y le daremos diferentes giros en TypeScript."
 pubDate: "December 15 2024"
 heroImage: "/itemPreview.webp"
