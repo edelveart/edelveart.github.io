@@ -9,9 +9,9 @@ module.exports = {
       fontFamily: {
         // sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
         // sans: ["IBM Plex Sans Variable", ...defaultTheme.fontFamily.sans],
-        sans: ["Rubik Variable", ...defaultTheme.fontFamily.sans],
+        // sans: ["Rubik Variable", ...defaultTheme.fontFamily.sans],
         // sans: ["Manrope Variable", ...defaultTheme.fontFamily.sans],
-        // sans: ["Sora Variable", ...defaultTheme.fontFamily.sans],
+        sans: ["Sora Variable", ...defaultTheme.fontFamily.sans],
         // sans: ["Space Grotesk Variable", ...defaultTheme.fontFamily.sans],
         mono: ["JetBrains Mono Variable", ...defaultTheme.fontFamily.mono],
         // sans: ["Ubuntu Sans Variable", ...defaultTheme.fontFamily.sans],
