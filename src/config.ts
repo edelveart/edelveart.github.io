@@ -3,7 +3,7 @@
 
 export const SITE_TITLE = "Edgar Delgado Vega";
 export const SITE_DESCRIPTION =
-  "I develop modular_forms, an interactive interface for exploring modular forms and elliptic curves in real time through musical algorithms, designed for live coders interested in number theory. In 2023, I launched ts-tonnetz, an algorithmic composition package integrated into Topos (https://topos.live/#ziffers_tonnetz). My libraries on figurate numbers have surpassed 14,000 downloads. Previously, I published an article indexed in Scopus on Mathematical Music Theory. In addition to teaching at the graduate level, I collaborate on international open-source projects.";
+  "I design creative systems that integrate mathematical structures with computational tools for live coders, musicians, and curious minds. I currently develop modular forms, inspired by SageMath and LMFDB, and ts-tonnetz, two packages for real-time algorithmic composition. Moreover, my libraries for generating multidimensional figurate numbers have surpassed 17,000 downloads. I have published an article indexed in Scopus on Mathematical Music Theory, teach at the postgraduate level, and contribute to international open-source projects.";
 
 export const SITE_URL = "https://edelveart.github.io/";
 export const GENERATE_SLUG_FROM_TITLE = true;
