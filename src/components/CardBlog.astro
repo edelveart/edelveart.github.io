@@ -2,9 +2,12 @@
 const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
 import { Image } from "astro:assets";
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
+import dayjs from "dayjs";
 ---
 
-<div class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[98%]">
+<div
+  class="rounded-lg bg-base-100 hover:bg-base-300 transition ease-in-out shadow-sm shadow-primary/50"
+>
   <a href={url} target={target}>
     <div class="hero-content flex-col md:flex-row">
       {
@@ -20,17 +23,20 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
         )
       }
       <div class="grow w-full">
+        {
+          badge && (
+            <div class="badge badge-sm badge-secondary mx-0 mb-3 p-2 rounded-md">{badge}</div>
+          )
+        }
         <h1 class="text-1xl font-bold flex flex-col">
-          {title}
-
-          <!-- {badge && <div class="badge badge-xs badge-secondary ml-2 ">{badge}</div>} -->
+          # {title}
         </h1>
         <p class="py-1 text-md">{desc}</p>
-        <div class="card-actions justify-center mt-2">
+        <div class="card-actions justify-start mt-4">
           {
             tags &&
               tags.map((tag) => (
-                <a href={`${tag_url}/${tag}`} class="badge badge-sm badge-neutral">
+                <a href={`${tag_url}/${tag}`} class="badge badge-outline badge-sm  rounded-md p-3 ">
                   {tag}
                 </a>
               ))

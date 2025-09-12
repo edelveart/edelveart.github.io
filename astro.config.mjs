@@ -22,4 +22,12 @@ export default defineConfig({
   image: {
     service: passthroughImageService(),
   },
+  markdown: {
+    shikiConfig: {
+      theme: "poimandres",
+      // theme: "material-theme-ocean",
+      // theme: "rose-pine-moon",
+      wrap: true,
+    },
+  },
 });

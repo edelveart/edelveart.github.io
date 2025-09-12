@@ -4,7 +4,7 @@ const blogSchema = z.object({
   description: z.string(),
   pubDate: z.coerce.date(),
   updatedDate: z.string().optional(),
-  heroImage: z.string().optional(),
+  // heroImage: z.string().optional(), REMOVE HEROIMAGE IN BLOG
   badge: z.string().optional(),
   tags: z
     .array(z.string())
