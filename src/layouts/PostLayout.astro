@@ -39,7 +39,7 @@ const displayDate = dayjs(pubDate).format("ll");
               tags.map((tag) => (
                 <a
                   href={`/blog/tag/${tag}`}
-                  class="badge badge-outline rounded-md p-3 ml-2 no-underline"
+                  class="badge badge-outline badge-sm text-sm rounded-md p-3 hover:badge-secondary ease-in-out duration-200 hover:bg-inherit no-underline"
                 >
                   {tag}
                 </a>
