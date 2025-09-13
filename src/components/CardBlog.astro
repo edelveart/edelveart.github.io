@@ -4,45 +4,36 @@ import { Image } from "astro:assets";
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
 ---
 
-<div
-  class="rounded-lg bg-base-100 hover:bg-base-300 transition ease-in-out shadow-sm shadow-primary/50"
->
-  <a href={url} target={target}>
-    <div class="flex-col md:flex-row p-6">
-      <!-- {
-        img && (
-          <Image
-            src={img}
-            width={750}
-            height={422}
-            format="webp"
-            alt={title}
-            class="max-w-full md:max-w-[13rem] rounded-lg"
-          />
-        )
-      } -->
-      <div class="grow w-full">
+<div class="rounded-lg bg-base-100 px-0">
+  <!-- <div class="rounded-lg bg-base-100 border border-gray-700 shadow-primary/50 mb-6"> -->
+  <div class="flex-col md:flex-row">
+    <div class="grow w-full">
+      <!-- {badge && <div class="badge badge-sm badge-secondary mx-0 mb-3 p-3 rounded-md ">{badge}</div>} -->
+      <h1 class="text-2xl font-bold flex flex-col pb-2">
+        # {title}
+      </h1>
+      <p class="py-1 text-md">{desc}</p>
+      <div class="card-actions justify-start mt-3 gap-3 items-baseline">
         {
-          badge && (
-            <div class="badge badge-sm badge-secondary mx-0 mb-3 p-3 rounded-md ">{badge}</div>
-          )
+          tags &&
+            tags.map((tag) => (
+              <a
+                href={`${tag_url}/${tag}`}
+                class="badge badge-outline badge-sm text-sm rounded-md p-3 hover:badge-secondary ease-in-out duration-200 hover:bg-inherit"
+              >
+                {tag}
+              </a>
+            ))
         }
-        <h1 class="text-xl font-bold flex flex-col pb-2">
-          # {title}
-        </h1>
-        <p class="py-1 text-md">{desc}</p>
-        <div class="card-actions justify-end mt-3 gap-3">
-          <!-- {badge && <div class="badge badge-sm badge-secondary  p-3 rounded-md">{badge}</div>} -->
-          {
-            tags &&
-              tags.map((tag) => (
-                <a href={`${tag_url}/${tag}`} class="badge badge-outline badge-sm rounded-md p-3">
-                  {tag}
-                </a>
-              ))
-          }
-        </div>
       </div>
+      <a
+        href={url}
+        target={target}
+        class="badge badge-neutral p-5 text-base mx-0 mb-3 rounded-md hover:badge-secondary ease-in-out duration-100 mt-3"
+      >
+        Read ➜
+      </a>
     </div>
-  </a>
+    <div class="divider divider-secondary"></div>
+  </div>
 </div>
