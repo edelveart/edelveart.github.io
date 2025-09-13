@@ -247,7 +247,7 @@ En ese sentido, aunque todo suena de maravilla, hay algunos *handicaps* al trata
 El primer inconviente que observas es que, como la marea al atardecer, **crece la pila de llamadas**. Las funciones se llaman unas a otras, ¡míralas!
 Sin embargo, no te preocupe,  estamos lejos del *stack overflow*. La profundidad de la pila depende de la *aridad* de `fn`.
 
-El segundo inconveniente está en el ecosistema TypeScript. En la comunidad, la mayoría de las funciones con las que te encontrarás están en su forma tradicional o expresada, no currificada. Muchas bibliotecas y frameworks adoptan por defecto el enfoque convencional. (¡Sí, existe Ramda para el sabor funcional!)
+El segundo inconveniente está en el ecosistema TypeScript. En la comunidad, la mayoría de las funciones con las que te encontrarás están en su forma tradicional o expresada, no currificada. Muchas bibliotecas y frameworks adoptan por defecto el enfoque convencional. ¡Sí, existe Ramda para el sabor funcional!
 
 El tercer problemilla, que surge del segundo, es que el código puede parecer raro al principio (especialmente si trabajas en equipo), para aquellos que no están familiarizados con la idea de currificación.
 
@@ -357,3 +357,4 @@ Nuestros tamales **envueltos** están listos para ir a la olla de barro. Espero 
 ### Conclusión
 
 Y así, llegamos al final de esta breve introducción a las funciones **currificadas** en TypeScript. Algunos las adoran, otros no les encuentran sentido, y algunos piensan que solo son útiles en casos muy específicos. Pero ahora, ¡ya forman parte de tu **lonchera** para divertirte programando!
+

@@ -12,9 +12,26 @@ const displayDate = dayjs(pubDate).format("ll");
 ---
 
 <BaseLayout title={title} description={description} , ogType="article">
+  <!-- CSS KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+
+  <!-- JS - KaTeX AUTO-RENDER -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false}
+          ],
+          errorCallback: console.error,
+          throwOnError: false
+        });"
+  ></script>
+
   <main class="px-0 sm:px-4 md:px-0 my-[-0.25rem] flex justify-center">
     <article class="prose prose-img:mx-auto w-full max-w-[90vw] sm:max-w-[70vw] lg:max-w-[700px]">
-      <!-- <main class="md:flex md:justify-center my-8"> -->
       <!-- <article class="prose prose-img:mx-auto lg:max-w-[625px] sm:max-w-[70vw]"> -->
       <!-- {
         heroImage && (
@@ -56,44 +73,7 @@ const displayDate = dayjs(pubDate).format("ll");
         </div>
       </div>
 
-      <!-- <div class="divider my-5"></div> -->
       <slot />
     </article>
   </main>
 </BaseLayout>
-
-<script
-  type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"
-></script>
-
-<script type="text/x-mathjax-config">
-  if (window.MathJax) {
-    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-  }
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [
-        ["$", "$"],
-        ["\\(", "\\)"],
-      ],
-      processEscapes: true,
-    },
-    jax: ["input/TeX", "input/MathML", "input/AsciiMath", "output/CommonHTML"],
-    extensions: [
-      "tex2jax.js",
-      "mml2jax.js",
-      "asciimath2jax.js",
-      "MathMenu.js",
-      "MathZoom.js",
-      "AssistiveMML.js",
-      "[Contrib]/a11y/accessibility-menu.js",
-    ],
-    TeX: {
-      extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"],
-      equationNumbers: {
-        autoNumber: "AMS",
-      },
-    },
-  });
-</script>
