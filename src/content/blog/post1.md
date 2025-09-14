@@ -30,7 +30,7 @@ For example, the definition of hypertetrahedron numbers in
 \\(k\\) dimensions is the following (my admiration for the Gamma functions stems from Artin’s profound insights):
 
 \\[
-H_k = \frac{\Gamma(n+k)}{\Gamma(n) \Gamma(k+1)}
+H_k(n) = \frac{\Gamma(n+k)}{\Gamma(n) \Gamma(k+1)}
 \\]
 
 \\[
