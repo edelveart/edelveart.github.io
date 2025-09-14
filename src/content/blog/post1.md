@@ -93,8 +93,6 @@ Thus, a new phase of the library was born, revealing fascinating mathematical sy
 
 Today, I share this journey between mathematics, art, and music, with the satisfaction of having connected with a community passionate about these topics. I’m thinking about what other types of mappings could be useful to represent these beauties.
 
-> I’m not solely drawn to symmetries; this is just one perspective. Mathematics, nature, and art also speak through their asymmetries. Ideas like non-commutativity offer a deeper, more intriguing beauty.
-
 You can try both libraries here:
 
 ```bash
