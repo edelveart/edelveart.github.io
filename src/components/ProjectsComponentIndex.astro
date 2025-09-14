@@ -16,12 +16,12 @@ const filteredIndexLibraries = indices
   : projects;
 ---
 
-<div class="text-2xl w-full font-bold flex items-center mt-8 mb-6" id="PROJECTS">
+<div class="text-3xl w-full font-bold flex items-center mt-8 mb-6" id="PROJECTS">
   <Branch class="ml-0 mr-4" />
   {headTitle}
 </div>
 
-<section class="grid gap-6 mb-10 mt-0 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-3">
+<section class="grid gap-8 my-8 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-3 wrap">
   {
     filteredIndexLibraries.map((project: ProjectType, index: number) => (
       <HorizontalCard key={index} img={project.img} url={project.url} badge={project.badge} />

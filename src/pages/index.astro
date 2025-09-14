@@ -12,17 +12,19 @@ import ProjectsComponentIndex from "@components/ProjectsComponentIndex.astro";
 
 <BaseLayout sideBarActiveItemID="HOME_ACTIVE_PAGE">
   <ModEcImg />
-  <section class="pb-3 mt-5">
-    <h1 class="text-4xl font-bold leading-snug py-0 flex text-center">
-      Edgar Delgado
-      <!-- <p class="ml-2 animate-bounce">👋</p> -->
-    </h1>
-    <h2 class="py-1 text-2xl font-semibold text-content">Math and Creative Systems Developer</h2>
+  <section class="pb-3 mt-12">
+    <article>
+      <h1 class="text-4xl font-bold leading-snug py-0 flex text-center">
+        Edgar Delgado
+        <!-- <p class="ml-2 animate-bounce">👋</p> -->
+      </h1>
+      <h2 class="py-3 text-2xl font-bold text-content">Math and Creative Systems Developer</h2>
 
-    <div class="py-2 mt-4">
-      <Biography />
-      <IndexLinks contactText="LinkedIn" linkedin="L" github="G" youtube="Y" />
-    </div>
+      <div class="py-2 my-4">
+        <Biography />
+        <IndexLinks contactText="LinkedIn" linkedin="L" github="G" youtube="Y" />
+      </div>
+    </article>
 
     <Experience workExperiences={allExperiences} indices={[0, 1]} />
     <ProjectsComponentIndex
@@ -30,8 +32,7 @@ import ProjectsComponentIndex from "@components/ProjectsComponentIndex.astro";
       projects={allProjects}
       indices={[0, 1, 2, 3, 4, 5]}
     />
+
     <!-- indices={[...Array(allProjects.length).keys()]} -->
-    <!-- <ListOfSkills title="Technologies" techSkills={techSkillsEnglish} indices={[0, 1]} /> -->
-    <!-- <Education /> -->
   </section>
 </BaseLayout>
