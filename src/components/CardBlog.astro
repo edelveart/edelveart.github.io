@@ -1,24 +1,19 @@
 ---
-const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
+const { title, img, desc, url, badge, pubDate, tags, target = "_blank" } = Astro.props;
 // import { Image } from "astro:assets";
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
 
 // PubDATE from md files
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
-import { getCollection } from "astro:content";
-const posts = await getCollection("blog");
-const pubDates = posts.map((post) => post.data.pubDate);
 dayjs.extend(localizedFormat);
-const displayDate = dayjs(pubDates[0]).format("ll");
+const displayDate = dayjs(pubDate).format("ll");
 ---
 
 <div class="rounded-lg bg-base-100 px-0 my-10">
-  <!-- <div class="rounded-lg bg-base-100 border border-gray-700 shadow-primary/50 mb-6"> -->
   <div class="flex-col md:flex-row">
     <div class="grow w-full">
-      <!-- {badge && <div class="badge badge-secondary flex-row mx-0 mb-3 p-3 rounded-3xl">{badge}</div>} -->
-      {pubDates && <time class="text-lg">{displayDate}</time>}
+      {pubDate && <time class="text-lg">{displayDate}</time>}
       <h1 class="text-2xl font-bold flex flex-row pb-2 mt-3">
         # {title}
       </h1>
@@ -54,6 +49,5 @@ const displayDate = dayjs(pubDates[0]).format("ll");
         </svg>
       </a>
     </div>
-    <!-- <div class="divider divider-secondary"></div> -->
   </div>
 </div>
