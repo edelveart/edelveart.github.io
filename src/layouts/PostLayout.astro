@@ -32,15 +32,9 @@ const displayDate = dayjs(pubDate).format("ll");
     src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
     integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
     crossorigin="anonymous"
-    onload="renderMathInElement(document.body, {
-    delimiters: [
-      { left: '$$', right: '$$', display: true },
-      { left: '$', right: '$', display: false }
-    ]
-  });"
-  ></script>
+    onload="renderMathInElement(document.body)"></script>
 
-  <main class="px-0 sm:px-4 md:px-0 my-[-0.25rem] flex justify-center">
+  <main class="px-0 sm:px-4 md:px-0 my-[-0.25rem] flex justify-center mb-6">
     <article class="prose prose-img:mx-auto w-full max-w-[90vw] sm:max-w-[70vw] lg:max-w-[700px]">
       <!-- <article class="prose prose-img:mx-auto lg:max-w-[625px] sm:max-w-[70vw]"> -->
       <!-- {
@@ -59,8 +53,8 @@ const displayDate = dayjs(pubDate).format("ll");
       <div class="border-l-4 border-secondary pl-4 py-2">
         {pubDate && <time class="text-lg">{displayDate}</time>}
         <br />
-        <div class="ml-[-8px] gap-2 flex flex-wrap mt-2">
-          {badge && <div class="ml-2 badge badge-secondary rounded-md p-3 mb-2">{badge}</div>}
+        <div class="gap-2 flex flex-wrap mt-2">
+          {badge && <div class=" badge badge-secondary rounded-3xl p-3 mb-2">{badge}</div>}
           {
             tags &&
               tags.map((tag) => (

@@ -4,14 +4,16 @@ import { Image } from "astro:assets";
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
 ---
 
-<div class="rounded-lg bg-base-100 px-0">
+<div class="rounded-lg bg-base-100 px-0 my-10">
   <!-- <div class="rounded-lg bg-base-100 border border-gray-700 shadow-primary/50 mb-6"> -->
   <div class="flex-col md:flex-row">
     <div class="grow w-full">
-      <!-- {badge && <div class="badge badge-sm badge-secondary mx-0 mb-3 p-3 rounded-md ">{badge}</div>} -->
-      <h1 class="text-2xl font-bold flex flex-col pb-2">
+      <!-- {badge && <div class="badge badge-secondary flex-row mx-0 mb-3 p-3 rounded-3xl">{badge}</div>} -->
+      <h1 class="text-2xl font-bold flex flex-row pb-2">
         # {title}
       </h1>
+      <!-- <div class="flex justify-start">
+        </div> -->
       <p class="py-1 text-md">{desc}</p>
       <div class="card-actions justify-start mt-3 gap-3 items-baseline">
         {
@@ -19,7 +21,7 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
             tags.map((tag) => (
               <a
                 href={`${tag_url}/${tag}`}
-                class="badge badge-neutral badge-sm rounded-2xl p-3 hover:badge-secondary  ease-in-out duration-200 "
+                class="badge badge-neutral badge-sm rounded-md p-3 hover:badge-secondary  ease-in-out duration-200 "
               >
                 {tag}
               </a>
@@ -44,6 +46,6 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
         </svg>
       </a>
     </div>
-    <div class="divider divider-secondary"></div>
+    <!-- <div class="divider divider-secondary"></div> -->
   </div>
 </div>
