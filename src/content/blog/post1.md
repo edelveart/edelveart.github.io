@@ -19,14 +19,14 @@ The first thing that caught my attention was a book by Fernando Zalamea Traba: R
         alt="Figurate Number in Polar Coordinates"
         class="w-72"
       />
-  <p align="center"><em>Pentagonal and triangular numbers</em></p>
+  <p align="center"><em>Pentagonal and Triangular Numbers</em></p>
 </p>
 
 ## The Foundation
 
 My curiosity led me to Greece, where I studied the solids and figurate numbers in Plato. From there, I came across a Beamer presentation of the book Figurate Numbers by Michel Deza and Elena Deza (2012). This book is one of the most systematic compendium of this topic  through recursive and iterative definitions and their proofs.
 
-This work became the foundation for creating figurate number generators in both Ruby and Python. What is wonderful about this book is that it covers everything from plane and spatial numbers to multidimensional numbers. For example, the definition of hypertetrahedron numbers in
+For example, the definition of hypertetrahedron numbers in
 \\(k\\) dimensions is the following (my admiration for the Gamma functions stems from Artin’s profound insights):
 
 \\[
@@ -37,6 +37,7 @@ H_k = \frac{\Gamma(n+k)}{\Gamma(n) \Gamma(k+1)}
 = \frac{\int_0^\infty t^{n+k-1} e^{-t} \ dt}{\left( \int_0^\infty t^{n-1} e^{-t} \ dt \right) \left( \int_0^\infty t^k e^{-t} \ dt \right)}.
 \\]
 
+This work became the foundation for creating figurate number generators in both Ruby and Python. What is wonderful about this book is that it covers everything from plane and spatial numbers to multidimensional numbers.
 
 ## Implementation in Ruby and Sonic Pi
 
@@ -58,7 +59,7 @@ end
 
 It didn’t take long before I created a version in Python, with the idea that it would be useful for scientific calculations and mathematical exploration. To date, over 13,000 people have downloaded **figuratenum**, showing the community’s interest in applying mathematical concepts to various fields.
 
-Finally, the generators were adapted to a more computationally efficient form:
+Finally, I adapted generators to a more computationally efficient form:
 
 ```py
 def k_dimensional_hypertetrahedron(k: int) -> Generator[int]:
@@ -86,7 +87,7 @@ Thus, a new phase of the library was born, revealing fascinating mathematical sy
         alt="Figurate Number in Polar Coordinates"
         class="w-72 h-72 mb-[-2rem]"
       />
-  <p align="center"><em>Centered HExagonal Pyramidal</em></p>
+  <p align="center"><em>Centered Hexagonal Pyramidal</em></p>
 </p>
 
 ## What’s Next?
