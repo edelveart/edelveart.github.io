@@ -60,31 +60,35 @@ import FigurateNumImages from "@components/FigurateNumImages.astro";
 
       <FigurateNumImages />
 
-      <h2 class="text-xl my-4 font-semibold">Experience</h2>
-      <p>
-        I have extensive experience in both in-person and online teaching at the undergraduate and
-        graduate levels, specializing in live coding and musicology. Feedback on my teaching
-        practice is mostly favorable, highlighting my ability to communicate complex concepts
-        clearly and accessibly.
-      </p>
-      <h2 class="text-xl my-4 font-semibold">Interests</h2>
-      <p>
-        <ul class="pl-2">
-          <li class="relative pl-5 text-content text-base">
-            <span class="absolute left-0 top-[0.55rem] w-2 h-2 bg-primary rounded-full"></span>
-            Mathematical Music Theory
-          </li>
-          <li class="relative pl-5 text-content text-base">
-            <span class="absolute left-0 top-[0.55rem] w-2 h-2 bg-primary rounded-full"></span>
-            Domain-specific languages (DSLs) for music
-          </li>
-          <li class="relative pl-5 text-content text-base">
-            <span class="absolute left-0 top-[0.55rem] w-2 h-2 bg-primary rounded-full"></span>
-            Computer-assisted music composition and improvisation
-          </li>
-        </ul>
-      </p>
+      <blockquote class="quote p-2 border-l-4 border-primary italic my-6">
+        I am not solely drawn to symmetries; this is just one perspective. Mathematics, nature, and
+        art also speak through their asymmetries. Ideas like non-commutativity offer a deeper, more
+        intriguing beauty.
+      </blockquote>
     </article>
+
+    <h2 class="text-2xl my-4 font-semibold">Experience</h2>
+    <p>
+      I have extensive experience in both in-person and online teaching at the undergraduate and
+      graduate levels, specializing in live coding and musicology. Feedback on my teaching practice
+      is mostly favorable, highlighting my ability to communicate complex concepts clearly and
+      accessibly.
+    </p>
+    <h2 class="text-2xl my-4 font-semibold">Interests</h2>
+    <ul class="pl-2">
+      <li class="relative pl-5 text-content text-base">
+        <span class="absolute left-0 top-[0.55rem] w-2 h-2 bg-primary rounded-full"></span>
+        Mathematical Music Theory
+      </li>
+      <li class="relative pl-5 text-content text-base">
+        <span class="absolute left-0 top-[0.55rem] w-2 h-2 bg-primary rounded-full"></span>
+        Domain-specific languages (DSLs) for music
+      </li>
+      <li class="relative pl-5 text-content text-base">
+        <span class="absolute left-0 top-[0.55rem] w-2 h-2 bg-primary rounded-full"></span>
+        Computer-assisted music composition and improvisation
+      </li>
+    </ul>
     <ListOfSkills title="Technologies" techSkills={techSkillsEnglish} indices={[0, 1, 2, 3]} />
     <Education />
   </section>
