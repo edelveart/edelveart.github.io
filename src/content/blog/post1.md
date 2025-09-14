@@ -1,6 +1,6 @@
 ---
 title: "My Journey with Figurate Numbers"
-description: "A personal journey through the creation of my two most downloaded libraries."
+description: "How I developed two of my most downloaded libraries that fuse mathematics, art, and music."
 pubDate: "September 13 2025"
 heroImage: "/itemPreview.webp"
 badge: "algorithms"
