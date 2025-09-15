@@ -24,7 +24,8 @@ The first thing that caught my attention was a book by Fernando Zalamea Traba: R
 
 ## The Foundation
 
-My curiosity led me to Greece, where I studied the solids and figurate numbers in Plato. From there, I came across a Beamer presentation of the book Figurate Numbers by Michel Deza and Elena Deza (2012). This book is one of the most systematic compendium of this topic  through recursive and iterative definitions and their proofs.
+My curiosity led me to Greece, where I studied the solids and figurate numbers in Plato. From there, I came across a <a href="https://www.fields.utoronto.ca/programs/scientific/11-12/Mtl-To-numbertheory/slides/Deza.pdf" target="_blank" rel="noopener noreferrer">**Beamer**</a> presentation of the book Figurate Numbers by Michel Deza and Elena Deza (2012).
+This book is one of the most systematic compendium of this topic  through recursive and iterative definitions and their proofs.
 
 For example, the definition of hypertetrahedron numbers in
 \\(k\\) dimensions is the following (my admiration for the Gamma functions stems from Artin’s profound insights):
@@ -41,7 +42,7 @@ This work became the foundation for creating figurate number generators in both 
 
 ## Implementation in Ruby and Sonic Pi
 
-Inspired by Ziffers, an algorithmic composition and code improvisation system by Miika Alonen, I integrated figurate numbers into Sonic Pi to generate sonic representations of these sequences. I sent him a couple of pull requests with some sequences, like the dodecahedral numbers, which he later merged into Ziffers. In that enthusiasm, I decided to create **figurate_numbers**, a complete version of the book in Ruby, which currently has over 4,200 downloads. With it, you can experiment with the sonification of the sequences using different musical algorithms and parameters.
+Inspired by Ziffers, an algorithmic composition and code improvisation system by Miika Alonen, I integrated figurate numbers into Sonic Pi to generate sonic representations of these sequences. I sent him a couple of pull requests with some sequences, like the dodecahedral numbers, which he later merged into Ziffers. In that enthusiasm, I decided to create <a href="https://github.com/edelveart/figurate_numbers" target="_blank" rel="noopener noreferrer">**figurate_numbers**</a>, a complete version of the book in Ruby, which currently has over 4,200 downloads. With it, you can experiment with the sonification of the sequences using different musical algorithms and parameters.
 
 ```rb
 # Sonic Pi
@@ -57,7 +58,7 @@ end
 
 ## Implementation in Python
 
-It didn’t take long before I created a version in Python, with the idea that it would be useful for scientific calculations and mathematical exploration. To date, over 13,000 people have downloaded **figuratenum**, showing the community’s interest in applying mathematical concepts to various fields.
+It didn’t take long before I created a version in Python, with the idea that it would be useful for scientific calculations and mathematical exploration. To date, over 13,000 people have downloaded <a href="https://github.com/edelveart/figuratenum" target="_blank" rel="noopener noreferrer">**figuratenum**</a>, showing the community’s interest in applying mathematical concepts to various fields.
 
 Finally, I adapted generators to a more computationally efficient form:
 
@@ -81,11 +82,11 @@ Recently, I came across an autobiographical note by Rogelio Pérez Buendía, a M
 
 Thus, a new phase of the library was born, revealing fascinating mathematical symmetries in the representations of figurate numbers, and creating truly beautiful visualizations with just a few algorithms using `matplotlib` and `numpy`.
 
-<p align="center">
+<p class="center">
     <img
         src="/svg-ggb/centered-hexagonal-pyramidal.svg"
         alt="Figurate Number in Polar Coordinates"
-        class="w-72 h-72 mb-[-2rem]"
+        class="w-72 h-72 my-0 "
       />
   <p align="center"><em>Centered Hexagonal Pyramidal</em></p>
 </p>
