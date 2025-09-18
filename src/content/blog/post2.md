@@ -7,7 +7,7 @@ badge: "algorithms"
 tags: ["python", "ruby", "figurate numbers", "live coding", "integer sequences", "gamma function"]
 ---
 
-## A Remark
+## Extended Figurate Numbers via Gamma function
 
 During the development of multidimensional figurate number generators in my libraries **figuratenum** and **figurate_numbers**, I encoded several sequences using the factorial and its companions.
 
@@ -42,7 +42,7 @@ $$
 All these expressions unite in the object: `k_hypertetrahedron` $H_k(n)$, where combinatorics geometry and analysis converge.
 Seen through the lens of the Gamma function it becomes malleable and extends to fractional or complex values $H_k(z)$, provided the constraints on the real part are respected.
 
-## What are the alternative of generators?
+## Generators as Symbolic Journeys
 
 I have thought of building generators as a form of navigation. It is not just about producing sequences, but about following a winding path through ideas, like a symbolic river.
 
