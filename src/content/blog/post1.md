@@ -30,13 +30,13 @@ This book is one of the most systematic compendium of this topic  through recurs
 For example, the definition of hypertetrahedron numbers in
 \\(k\\) dimensions is the following (my admiration for the Gamma functions stems from Artin’s profound insights):
 
-\\[
+$$
 H_k(n) = \frac{\Gamma(n+k)}{\Gamma(n) \Gamma(k+1)}
-\\]
+$$
 
-\\[
+$$
 = \frac{\int_0^\infty t^{n+k-1} e^{-t} \ dt}{\left( \int_0^\infty t^{n-1} e^{-t} \ dt \right) \left( \int_0^\infty t^k e^{-t} \ dt \right)}.
-\\]
+$$
 
 This work became the foundation for creating figurate number generators in both Ruby and Python. What is wonderful about this book is that it covers everything from plane and spatial numbers to multidimensional numbers.
 

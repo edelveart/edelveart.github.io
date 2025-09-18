@@ -12,26 +12,13 @@ const displayDate = dayjs(pubDate).format("ll");
 ---
 
 <BaseLayout title={title} description={description} ogType="article">
-  <!-- CSS KaTeX -->
+  <!-- KaTeX VIA:  remarkPlugins: [remarkMath],   rehypePlugins: [rehypeKatex] -->
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
     integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP"
     crossorigin="anonymous"
   />
-  <!-- JS - KaTeX AUTO-RENDER -->
-  <script
-    defer
-    src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"
-    integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6"
-    crossorigin="anonymous"></script>
-
-  <script
-    defer
-    src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
-    integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
-    crossorigin="anonymous"
-    onload="renderMathInElement(document.body);"></script>
 
   <main class="px-0 sm:px-4 md:px-0 my-[-0.25rem] flex justify-center mb-10">
     <article class="prose prose-img:mx-auto w-full max-w-[90vw] sm:max-w-[70vw] lg:max-w-[700px]">

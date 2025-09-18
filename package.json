@@ -5,14 +5,15 @@
   "version": "3.0.0",
   "private": true,
   "scripts": {
-    "dev": "astro dev --host",
+    "dev": "astro dev",
+    "dev:host": "astro dev --host",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^2.0.3",
+    "@astrojs/mdx": "^4.3.5",
     "@astrojs/rss": "^3.0.0",
     "@astrojs/sitemap": "^3.0.1",
     "@astrojs/tailwind": "^5.0.3",
@@ -24,9 +25,11 @@
     "@fontsource-variable/sora": "^5.2.6",
     "@fontsource-variable/space-grotesk": "^5.2.8",
     "@fontsource-variable/ubuntu-sans": "^5.2.8",
-    "astro": "^4.0.2",
+    "astro": "^5.13.8",
     "daisyui": "^4.4.10",
     "dayjs": "^1.11.9",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
     "sharp": "^0.32.6",
     "tailwindcss": "^3.3.5"
   },
