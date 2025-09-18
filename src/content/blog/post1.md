@@ -28,7 +28,7 @@ My curiosity led me to Greece, where I studied the solids and figurate numbers i
 This book is one of the most systematic compendium of this topic  through recursive and iterative definitions and their proofs.
 
 For example, the definition of hypertetrahedron numbers in
-\\(k\\) dimensions is the following (my admiration for the Gamma functions stems from Artin’s profound insights):
+$k$ dimensions is the following (my admiration for the Gamma functions stems from Artin’s profound insights):
 
 $$
 H_k(n) = \frac{\Gamma(n+k)}{\Gamma(n) \Gamma(k+1)}
