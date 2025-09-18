@@ -47,7 +47,7 @@ Seen through the lens of the Gamma function it becomes malleable and extends to 
 I have thought of building generators as a form of navigation. It is not just about producing sequences, but about following a winding path through ideas, like a symbolic river.
 
 ```py
-def generalized_k_dimensional_hyperoctahedron(k: int = 5, start_num: int = 0) -> Generator[int]:
+def generalized_k_dimensional_hyperoctahedron(k: int = 5, start_num: int = 1) -> Generator[int]:
     """Incrementally optimized generalized hyperoctahedron generator."""
     den = factorial(k)
     bin_coeffs = [binomial_coefficient(k - 1, i) for i in range(k)]
