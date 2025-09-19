@@ -4,6 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import remarkMath from "remark-math"; // KaTeX
 import rehypeKatex from "rehype-katex"; // KaTex
+// https://expressive-code.com/ -> alternative for KaTeX
 
 // https://astro.build/config
 export default defineConfig({
@@ -28,7 +29,7 @@ export default defineConfig({
     remarkPlugins: [remarkMath], // KaTeX
     rehypePlugins: [rehypeKatex], // KaTeX
     shikiConfig: {
-      theme: "tokyo-night",
+      theme: "aurora-x",
       // theme: "material-theme-ocean",
       // theme: "rose-pine-moon",
       wrap: false, //code wrap
