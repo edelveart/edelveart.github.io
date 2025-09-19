@@ -1,5 +1,5 @@
 ---
-title: "What Are Figurate Numbers Generators to Me?"
+title: "Generators as Symbolic Exploration"
 description: "A reflection on the extension and unification of figurate numbers within broader mathematical contexts."
 pubDate: "September 18 2025"
 heroImage: "/itemPreview.webp"
@@ -7,13 +7,13 @@ badge: "algorithms"
 tags: ["python", "ruby", "figurate numbers", "live coding", "integer sequences", "gamma function"]
 ---
 
-## Extended Figurate Numbers via Gamma function
+## First Domain Extension via Gamma Function
 
-During the development of multidimensional figurate number generators in my libraries **figuratenum** and **figurate_numbers**, I encoded several sequences using the factorial and its companions.
+During the development of $k$-dimensional figurate number generators in my libraries **figuratenum** and **figurate_numbers**, I encoded several sequences using the factorial and its companions.
 
-Both the rising factorial $n^{\overline{k}}$ and the classical factorial, a special case of the falling factorial $k^{\underline{k}}$, are perhaps at their core a very natural way of counting dimensions and building geometric universes through monotonic multiplications along complementary paths.
+Both the rising factorial $n^{\overline{k}}$ and the classical factorial, interpreted as a special case of the falling factorial  $k^{\underline{k}}$, are perhaps at their core a very natural way of counting dimensions and constructing geometric universes through monotonic multiplications along complementary paths.
 
-Yet, seeking a different perspective to address my concerns, I often think of sequences as an enriched, flowing, serpentine wave connecting the discrete world of counting with the continuity of analysis (inspired by [Artin's book](https://ncatlab.org/nlab/files/Artin-TheGammaFunction.pdf)).
+Yet, seeking a different perspective to address my concerns, I often think of sequences as an enriched, serpentine wave connecting the discrete world of counting with the continuity of analysis (inspired by [Artin's book](https://ncatlab.org/nlab/files/Artin-TheGammaFunction.pdf)).
 The order in which I present the following winding identities simply reflects my personal taste.
 
 $$
@@ -38,33 +38,29 @@ $$
 {\left( \int_0^\infty \tau^{n-1} e^{-\tau} \ d\tau \right) \left( \int_0^\infty \tau^k e^{-\tau} \ d\tau \right)}.
 $$
 
+All these expressions unite in the object called the `k_hypertetrahedron` $H_k(n)$, following [Figurate Numbers (2012)](https://www.worldscientific.com/worldscibooks/10.1142/8188#t=aboutBook), where combinatorics, geometry, and analysis converge.
+On the purely combinatorial side, $H_k(n)$ is tightly connected to integer partitions.
 
-All these expressions unite in the object: `k_hypertetrahedron` $H_k(n)$, where combinatorics geometry and analysis converge.
+In a geometry view, it counts the integer points $(x_1, \dots, x_k) \in \mathbb{N}^k$ satisfying the equation $\sum_{i=1}^k x_i = n$, forming a discrete $k$-simplex. This often reminds me of a modified Tonnetz, where simplices tile symbolic space.
+
 Seen through the lens of the Gamma function it becomes malleable and extends to fractional or complex values $H_k(z)$, provided the constraints on the real part are respected.
 
-## Generators as Symbolic Journeys
+## Towards a Symbolic Extension in Each Term
 
 I have thought of building generators as a form of navigation. It is not just about producing sequences, but about following a winding path through ideas, like a symbolic river.
 
-```py
-def generalized_k_dimensional_hyperoctahedron(k: int = 5, start_num: int = 1) -> Generator[int]:
-    """Incrementally optimized generalized hyperoctahedron generator."""
-    den = factorial(k)
-    bin_coeffs = [binomial_coefficient(k - 1, i) for i in range(k)]
-    delta = start_num
-    risings = [rising_factorial(delta - i, k) for i in range(k)]
-    while True:
-        yield sum(bin_coeffs[i] * risings[i] // den for i in range(k))
-        delta += 1
-        for i in range(k):
-            d_m_i_m_1 = delta - i - 1
-            if d_m_i_m_1 != 0:
-                risings[i] = risings[i] * (d_m_i_m_1 + k) // d_m_i_m_1
-            else:
-                risings[i] = rising_factorial(delta - i, k)
-```
+Although implementations may appear rigid for the sake of efficiency, as I mentioned in the [previous post](https://edelveart.github.io/blog/my-journey-with-figurate-numbers/), I also included book-style versions. That choice made me reflect on the possibility of creating broader, more elegant functions.
 
-Though implementations may seem rigid for efficiency, these figurate number formulas remain adaptable, able to evolve and flow through topological structures across dimensions.
+```py
+def k_dimensional_hypertetrahedron_from_book(k: int) -> Generator[int]:
+    """Book definition. For reference only."""
+    delta = 1
+    while True:
+        yield rising_factorial(delta, k) // factorial(k)
+        # One alternative under the analytic mantle:
+        # yield pochhammer_symbol(delta, k) / gamma_func(k + 1)
+        delta += 1
+```
 
 I always keep these ideas in mind as the conceptual foundation for designing generators more deeply rooted in different mathematical spaces. In that spirit, I hold on to this question:
 
