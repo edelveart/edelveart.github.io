@@ -4,35 +4,32 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import remarkMath from "remark-math"; // KaTeX
 import rehypeKatex from "rehype-katex"; // KaTex
-// https://expressive-code.com/ -> alternative for KaTeX
+// https://expressive-code.com/
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://edelveart.github.io",
   integrations: [
     mdx(),
+    tailwind(),
     sitemap({
       filter: (page) => {
         return (
-          !page.startsWith("https://edelveart.github.io/blog/") &&
           !page.startsWith("https://edelveart.github.io/store/") &&
           !page.startsWith("https://edelveart.github.io/services/")
         );
       },
     }),
-    tailwind(),
   ],
-  image: {
-    service: passthroughImageService(),
-  },
   markdown: {
     remarkPlugins: [remarkMath], // KaTeX
     rehypePlugins: [rehypeKatex], // KaTeX
     shikiConfig: {
       theme: "aurora-x",
-      // theme: "material-theme-ocean",
-      // theme: "rose-pine-moon",
       wrap: false, //code wrap
     },
+  },
+  image: {
+    service: passthroughImageService(),
   },
 });
