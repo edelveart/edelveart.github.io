@@ -41,7 +41,7 @@ const displayDate = dayjs(pubDate).format("ll");
       <h1 class="title my-6 text-3xl font-bold break-words"># {title}</h1>
       <div class="border-l-4 border-secondary pl-4 py-2">
         <div class="gap-2 flex flex-wrap mt-2">
-          {badge && <div class=" badge badge-secondary rounded-3xl p-3 mb-2">{badge}</div>}
+          {badge && <div class=" badge badge-secondary rounded-3xl p-3 ">{badge}</div>}
           {
             tags &&
               tags.map((tag) => (
