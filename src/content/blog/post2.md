@@ -13,7 +13,8 @@ During the development of $k$-dimensional figurate number generators in my libra
 
 Both the rising factorial $n^{\overline{k}}$ and the classical factorial, interpreted as a special case of the falling factorial  $k^{\underline{k}}$, are perhaps at their core a very natural way of counting dimensions and constructing geometric universes through monotonic multiplications along complementary paths.
 
-Yet, seeking a different perspective to address my concerns, I often think of sequences as an enriched, serpentine wave connecting the discrete world of counting with the continuity of analysis (inspired by [Artin's book](https://ncatlab.org/nlab/files/Artin-TheGammaFunction.pdf)).
+Yet, seeking a different perspective to address my concerns, I often think of sequences as an enriched, serpentine wave connecting the discrete world of counting with the continuity of analysis (inspired by
+<a href="https://ncatlab.org/nlab/files/Artin-TheGammaFunction.pdf" target="_blank" rel="noopener noreferrer">Artin's book</a> ).
 The order in which I present the following winding identities simply reflects my personal taste.
 
 $$
@@ -38,7 +39,8 @@ $$
 {\left( \int_0^\infty \tau^{n-1} e^{-\tau} \ d\tau \right) \left( \int_0^\infty \tau^k e^{-\tau} \ d\tau \right)}.
 $$
 
-All these expressions unite in the object called the `k_hypertetrahedron` $H_k(n)$, following [Figurate Numbers (2012)](https://www.worldscientific.com/worldscibooks/10.1142/8188#t=aboutBook), where combinatorics, geometry, and analysis converge.
+All these expressions unite in the object called the `k_hypertetrahedron` $H_k(n)$, following  <a href="https://www.worldscientific.com/worldscibooks/10.1142/8188#t=aboutBook" target="_blank" rel="noopener noreferrer">Figurate Numbers (2012)</a>, where combinatorics, geometry, and analysis converge.
+
 On the purely combinatorial side, $H_k(n)$ is tightly connected to integer partitions.
 
 In a geometry view, it counts the integer points $(x_1, \dots, x_k) \in \mathbb{N}^k$ satisfying the equation $\sum_{i=1}^k x_i = n$, forming a discrete $k$-simplex. This often reminds me of a modified Tonnetz, where simplices tile symbolic space.
@@ -49,7 +51,8 @@ Seen through the lens of the Gamma function it becomes malleable and extends to 
 
 I have thought of building generators as a form of navigation. It is not just about producing sequences, but about following a winding path through ideas, like a symbolic river.
 
-Although implementations may appear rigid for the sake of efficiency, as I mentioned in the [previous post](https://edelveart.github.io/blog/my-journey-with-figurate-numbers/), I also included book-style versions. That choice made me reflect on the possibility of creating broader, more elegant functions.
+Although implementations may appear rigid for the sake of efficiency, as I mentioned in the
+ <a href="https://edelveart.github.io/blog/my-journey-with-figurate-numbers/" target="_blank" rel="noopener noreferrer">previous post</a>, I also included book-style versions. That choice made me reflect on the possibility of creating broader, more elegant functions.
 
 ```py
 def k_dimensional_hypertetrahedron_from_book(k: int) -> Generator[int]:
