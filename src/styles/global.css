@@ -26,5 +26,20 @@
 
 /* Only with Shiki */
 .astro-code {
-  @apply  rounded-lg border border-gray-600 overflow-x-auto p-4 text-sm;
+  @apply  rounded-lg border border-gray-600 overflow-x-auto p-4 text-sm ;
+}
+
+/* Inline code in md files */
+/* Primary Color in Daisy UI: oklch(var(--p) / 1); */
+.prose :not(pre) > code {
+  padding: 2px 2px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  --tw-text-opacity: 0.2;
+  background-color: oklch(var(--p)/var(--tw-text-opacity));
+}
+
+/* Links to previous post and references in md files */
+.prose :not(div) > a {
+  color: oklch(var(--p));
 }
