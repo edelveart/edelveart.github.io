@@ -9,12 +9,12 @@ tags: ["python", "ruby", "figurate numbers", "live coding", "integer sequences",
 
 ## First Domain Extension via Gamma Function
 
-During the development of $k$-dimensional figurate number generators in my libraries **figuratenum** and **figurate_numbers**, I encoded several sequences using the factorial and its companions.
+During the development of $k$-dimensional figurate number generators in my libraries <a href="https://pypi.org/project/figuratenum/" target="_blank" rel="noopener noreferrer">figuratenum</a> and <a href="https://rubygems.org/gems/figurate_numbers" target="_blank" rel="noopener noreferrer">figurate_numbers</a>, I encoded several sequences using the factorial and its companions.
 
 Both the rising factorial $n^{\overline{k}}$ and the classical factorial, interpreted as a special case of the falling factorial  $k^{\underline{k}}$, are perhaps at their core a very natural way of counting dimensions and constructing geometric universes through monotonic multiplications along complementary paths.
 
 Yet, seeking a different perspective to address my concerns, I often think of sequences as an enriched, serpentine wave connecting the discrete world of counting with the continuity of analysis (inspired by
-<a href="https://ncatlab.org/nlab/files/Artin-TheGammaFunction.pdf" target="_blank" rel="noopener noreferrer">Artin's book</a> ).
+<a href="https://ncatlab.org/nlab/files/Artin-TheGammaFunction.pdf" target="_blank" rel="noopener noreferrer">Artin's book</a>).
 The order in which I present the following winding identities simply reflects my personal taste.
 
 $$
