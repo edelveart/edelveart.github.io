@@ -26,17 +26,18 @@
 
 /* Only with Shiki */
 .astro-code {
-  @apply rounded-lg border border-gray-600 overflow-x-auto p-4 text-sm ;
+  @apply rounded-lg border border-gray-600 overflow-x-auto p-4 text-sm font-normal;
 }
 
 /* Inline code in md files */
 /* Primary Color in Daisy UI: oklch(var(--p) / 1); */
+/* Neutral Color in Daisy UI: oklch(var(--n) / 1); */
 .prose :not(pre) > code {
   padding: 2px 4px;
   border-radius: 4px;
-  font-size: 0.95rem;
-  --tw-text-opacity: 0.15;
-  background-color: oklch(var(--p)/var(--tw-text-opacity));
+  font-size: 0.9rem;
+  --tw-text-opacity: 1;
+  background-color: oklch(var(--n)/var(--tw-text-opacity));
 }
 
 /* Links to previous post and references in md files */

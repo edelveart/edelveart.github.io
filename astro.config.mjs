@@ -10,8 +10,8 @@ import rehypeKatex from "rehype-katex"; // KaTex
 export default defineConfig({
   site: "https://edelveart.github.io",
   integrations: [
-    mdx(),
     tailwind(),
+    mdx(),
     sitemap({
       filter: (page) => {
         return (
@@ -25,7 +25,7 @@ export default defineConfig({
     remarkPlugins: [remarkMath], // KaTeX
     rehypePlugins: [rehypeKatex], // KaTeX
     shikiConfig: {
-      theme: "aurora-x",
+      theme: "catppuccin-macchiato",
       wrap: false, //code wrap
     },
   },
