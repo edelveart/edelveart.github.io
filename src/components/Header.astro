@@ -1,12 +1,13 @@
 ---
 const currentLang = Astro.url.pathname.startsWith("/es") ? "es" : "en";
 import { spanishFlag, englishFlag } from "./Languages.astro";
+//  <div class="navbar w-full (((md:px-5 sm:px-3)))"> (header(()))
 ---
 
 <div
-  class="sticky lg:hidden top-0 z-30 flex h-16 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100 bg-base-200 text-base-content shadow-sm mb-[-2rem] flex-wrap"
+  class="sticky lg:hidden top-0 z-30 flex w-full justify-center bg-opacity-70 backdrop-blur transition-all duration-100 bg-base-200 text-base-content mt-0 shadow-sm flex-wrap"
 >
-  <div class="navbar w-full">
+  <div class="navbar w-full md:px-5 sm:px-3">
     <div class="navbar-start">
       <label for="my-drawer" class="btn btn-square btn-ghost w-24 rounded-lg">
         <svg

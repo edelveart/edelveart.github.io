@@ -39,9 +39,9 @@ const {
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content bg-base-100 flex flex-col">
         <Header title={SITE_TITLE} />
+        <Languages />
         <div class="md:flex md:justify-center">
-          <main class="p-6 pt-10 lg:max-w-[700px] max-w-[100vw]">
-            <Languages />
+          <main class="p-5 sm:p-6 md:p-8 mt-4 lg:max-w-[700px] max-w-[100vw]">
             <slot />
           </main>
         </div>

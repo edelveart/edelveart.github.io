@@ -3,7 +3,6 @@ import { type BlogSchema } from "../content/config";
 import BaseLayout from "./BaseLayout.astro";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
-import Image from "astro/components/Image.astro";
 export interface Props extends BlogSchema {}
 
 const { title, description, pubDate, updatedDate, badge, heroImage, tags = [] } = Astro.props;
@@ -21,8 +20,8 @@ const displayDate = dayjs(pubDate).format("ll");
   />
 
   <main class="px-0 sm:px-4 md:px-0 my-[-0.25rem] flex justify-center mb-10">
-    <article class="prose prose-img:mx-auto w-full max-w-[90vw] sm:max-w-[70vw] lg:max-w-[700px]">
-      <!-- <article class="prose prose-img:mx-auto lg:max-w-[625px] sm:max-w-[70vw]"> -->
+    <article class="prose prose-img:mx-auto w-full md:max-w-[65vw] lg:max-w-[600px]">
+      <!-- <article class="prose prose-img:mx-auto w-full max-w-[90vw] sm:max-w-[70vw] lg:max-w-[700px]"> -->
       <!-- {
         heroImage && (
           <Image
@@ -35,19 +34,19 @@ const displayDate = dayjs(pubDate).format("ll");
           />
         )
       } -->
-      <div class="mt-6">
-        {pubDate && <time class="text-xl">{displayDate}</time>}
+      <h1 class="title mt-6 text-3xl font-bold break-words mb-2 text-primary"># {title}</h1>
+      <div class="mb-4">
+        {pubDate && <time class="text-md">{displayDate}</time>}
       </div>
-      <h1 class="title my-6 text-3xl font-bold break-words"># {title}</h1>
-      <div class="border-l-4 border-secondary pl-4 py-2">
-        <div class="gap-2 flex flex-wrap mt-2">
-          {badge && <div class=" badge badge-secondary rounded-3xl p-3 ">{badge}</div>}
+      <div class="border-l-4 border-primary pl-4 py-2 mb-12">
+        <div class="gap-2 flex flex-wrap items-baseline">
+          {badge && <div class=" badge badge-primary rounded-3xl p-3 my-0">{badge}</div>}
           {
             tags &&
               tags.map((tag) => (
                 <a
                   href={`/blog/tag/${tag}`}
-                  class="badge badge-outline badge-sm text-sm rounded-md p-3 hover:badge-secondary ease-in-out duration-200 hover:bg-inherit no-underline"
+                  class="badge badge-outline badge-sm text-sm rounded-md p-3 hover:badge-primary ease-in-out duration-200 hover:bg-inherit no-underline my-0"
                 >
                   {tag}
                 </a>
