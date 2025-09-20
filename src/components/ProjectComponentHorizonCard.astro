@@ -15,8 +15,8 @@ export type ProjectType = {
 >
   <a href={url} target={target} rel="noopener">
     <div class="hero-content flex-col md:flex-row rounded-lg shadow-sm shadow-primary/50 p-0">
-      <div class="m-3">
-        {badge && <p class="badge badge-primary break-words sm:text-xs px-2 truncate">{badge}</p>}
+      <div class="m-4">
+        {badge && <p class="badge badge-primary break-words sm:text-xs truncate mb-3">{badge}</p>}
 
         {
           img && (
@@ -26,7 +26,7 @@ export type ProjectType = {
               height={422}
               format="webp"
               alt={badge}
-              class="rounded-lg mt-2 w-full"
+              class="rounded-lg  w-full"
             />
           )
         }
