@@ -9,7 +9,7 @@ tags: ["python", "ruby", "figurate numbers",  "live coding", "integer sequences"
 
 ## The Spark
 
-The first thing that caught my attention was a book by Fernando Zalamea Traba: Razón de la frontera y fronteras de la razón (2010), a Colombian mathematician and philosopher, in which he discussed the vision of Pavel Florensky, a Russian Orthodox priest with a unique perspective on mathematics, art, and philosophy. I found a beautiful quote that I’ll copy below:
+The first thing that caught my attention was a  <a href="https://bffrepositorio.unal.edu.co/server/api/core/bitstreams/7fd3750c-b12c-4821-b1c6-c57beef6d0fc/content" target="_blank" rel="noopener noreferrer">book</a> by Fernando Zalamea Traba, a Colombian mathematician and philosopher, in which he discussed the vision of Pavel Florensky, a Russian Orthodox priest with a unique perspective on mathematics, art, and philosophy. I found a beautiful quote that I’ll copy below:
 
 > If it is possible to represent space on a plane, this can only be done by destroying the form of what is represented" (Florensky, 2003, cited in Zalamea, 2010, p. 39).
 
@@ -24,7 +24,7 @@ The first thing that caught my attention was a book by Fernando Zalamea Traba: R
 
 ## The Foundation
 
-My curiosity led me to Greece, where I studied the solids and figurate numbers in Plato. From there, I came across a <a href="https://www.fields.utoronto.ca/programs/scientific/11-12/Mtl-To-numbertheory/slides/Deza.pdf" target="_blank" rel="noopener noreferrer">**Beamer**</a> presentation of the book Figurate Numbers by Michel Deza and Elena Deza (2012).
+My curiosity led me to Greece, where I studied the solids and figurate numbers in Plato. From there, I came across a <a href="https://www.fields.utoronto.ca/programs/scientific/11-12/Mtl-To-numbertheory/slides/Deza.pdf" target="_blank" rel="noopener noreferrer">Beamer</a> presentation of the book Figurate Numbers by Michel Deza and Elena Deza (2012).
 This book is one of the most systematic compendium of this topic  through recursive and iterative definitions and their proofs.
 
 For example, the definition of hypertetrahedron numbers in
@@ -42,7 +42,7 @@ This work became the foundation for creating figurate number generators in both 
 
 ## Implementation in Ruby and Sonic Pi
 
-Inspired by Ziffers, an algorithmic composition and code improvisation system by Miika Alonen, I integrated figurate numbers into Sonic Pi to generate sonic representations of these sequences. I sent him a couple of pull requests with some sequences, like the dodecahedral numbers, which he later merged into Ziffers. In that enthusiasm, I decided to create <a href="https://github.com/edelveart/figurate_numbers" target="_blank" rel="noopener noreferrer">**figurate_numbers**</a>, a complete version of the book in Ruby, which currently has over 4,200 downloads. With it, you can experiment with the sonification of the sequences using different musical algorithms and parameters.
+Inspired by Ziffers, an algorithmic composition and code improvisation system by Miika Alonen, I integrated figurate numbers into Sonic Pi to generate sonic representations of these sequences. I sent him a couple of pull requests with some sequences, like the dodecahedral numbers, which he later merged into Ziffers. In that enthusiasm, I decided to create <a href="https://github.com/edelveart/figurate_numbers" target="_blank" rel="noopener noreferrer">figurate_numbers</a>, a complete version of the book in Ruby, which currently has over 4,200 downloads. With it, you can experiment with the sonification of the sequences using different musical algorithms and parameters.
 
 ```rb
 # Sonic Pi
@@ -58,7 +58,7 @@ end
 
 ## Implementation in Python
 
-It didn’t take long before I created a version in Python, with the idea that it would be useful for scientific calculations and mathematical exploration. To date, over 13,000 people have downloaded <a href="https://github.com/edelveart/figuratenum" target="_blank" rel="noopener noreferrer">**figuratenum**</a>, showing the community’s interest in applying mathematical concepts to various fields.
+It didn’t take long before I created a version in Python, with the idea that it would be useful for scientific calculations and mathematical exploration. To date, over 13,000 people have downloaded <a href="https://github.com/edelveart/figuratenum" target="_blank" rel="noopener noreferrer">figuratenum</a>, showing the community’s interest in applying mathematical concepts to various fields.
 
 Finally, I adapted generators to a more computationally efficient form:
 
