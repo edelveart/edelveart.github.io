@@ -35,7 +35,7 @@
 .prose :not(pre) > code {
   padding: 2px 4px;
   border-radius: 4px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   --tw-text-opacity: 1;
   background-color: oklch(var(--n)/var(--tw-text-opacity));
 }
