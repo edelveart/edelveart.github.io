@@ -5,15 +5,19 @@
 // import "@fontsource-variable/manrope";
 // import "@fontsource-variable/space-grotesk";
 // import "@fontsource-variable/ubuntu-sans";
+// Supports weights 100-800
 import "@fontsource-variable/sora";
+
 import "@fontsource-variable/jetbrains-mono"; // Normal
 import "@fontsource-variable/jetbrains-mono/wght-italic.css"; // Italic
+import "../styles/global.css";
 
+//////
 import BaseHead from "@components/BaseHead.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import SideBar from "@components/SideBar.astro"; // This must be different
-import { ClientRouter } from "astro:transitions";
+import { ViewTransitions } from "astro:transitions";
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
 const {
   image,
@@ -30,7 +34,7 @@ const {
   <head>
     <BaseHead title={title} description={description} image={image} ogType={ogType} />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    {TRANSITION_API && <ClientRouter />}
+    {TRANSITION_API && <ViewTransitions />}
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"

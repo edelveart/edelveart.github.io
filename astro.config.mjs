@@ -1,16 +1,16 @@
 import { defineConfig, passthroughImageService } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
 import remarkMath from "remark-math"; // KaTeX
 import rehypeKatex from "rehype-katex"; // KaTex
+import tailwindcss from "@tailwindcss/vite";
 // https://expressive-code.com/
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://edelveart.github.io",
+
   integrations: [
-    tailwind(),
     mdx(),
     sitemap({
       filter: (page) => {
@@ -21,6 +21,7 @@ export default defineConfig({
       },
     }),
   ],
+
   markdown: {
     remarkPlugins: [remarkMath], // KaTeX
     rehypePlugins: [rehypeKatex], // KaTeX
@@ -29,7 +30,12 @@ export default defineConfig({
       wrap: false, //code wrap
     },
   },
+
   image: {
     service: passthroughImageService(),
+  },
+
+  vite: {
+    plugins: [tailwindcss()],
   },
 });

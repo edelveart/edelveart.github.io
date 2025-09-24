@@ -9,12 +9,14 @@
   border-radius: 20%;
 }
 
-/* html {
-  font-size: 18px;
-} */
 
-@tailwind base;
-@tailwind components;
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: dark --prefersdark, night;
+}
+@plugin '@tailwindcss/typography';
+/* @tailwind base;
+@tailwind components; */
 @tailwind utilities;
 
 @layer base {
@@ -22,6 +24,13 @@
     @apply leading-relaxed;
   }
 
+}
+
+body {
+  font-family: 'Sora Variable', sans-serif;
+}
+code {
+   font-family: 'JetBrains Mono Variable', monospace;
 }
 
 /* Only with Shiki */
