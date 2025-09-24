@@ -14,6 +14,8 @@
 @plugin "daisyui" {
   themes: dark --prefersdark, night;
 }
+
+/* Typography for BLOG/NOTES */
 @plugin '@tailwindcss/typography';
 /* @tailwind base;
 @tailwind components; */
@@ -26,6 +28,7 @@
 
 }
 
+/* FONTSOURCE imports */
 body {
   font-family: 'Sora Variable', sans-serif;
 }
