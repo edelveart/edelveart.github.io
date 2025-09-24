@@ -1,13 +1,16 @@
 ---
 import { Image } from "astro:assets";
 import MyPic from "../assets/prof-webp/edelvephoto-reduced.webp";
+const ring = "ring-primary ring-offset-secondary w-24 rounded-full ring-2 ring-offset-2";
 ---
 
-<Image
-  class="mask mask-squircle"
-  width={100}
-  height={100}
-  loading="eager"
-  src={MyPic}
-  alt="Photo Edgar Delgado Vega"
-/>
+<div class="avatar avatar-online">
+  <Image
+    class=`mask mask-squircle`
+    width={100}
+    height={100}
+    loading="eager"
+    src={MyPic}
+    alt="Photo Edgar Delgado Vega"
+  />
+</div>
