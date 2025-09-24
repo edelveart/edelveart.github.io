@@ -46,7 +46,7 @@ Inspired by Ziffers, an algorithmic composition and code improvisation system by
 
 ```rb
 # Sonic Pi
-require "<PATH>"
+require "<PATH>/figurate_numbers.rb"
 
 amp_seq = SpaceFigurateNumbers.centered_hendecagonal_pyramidal
 100.times do
