@@ -1,7 +1,7 @@
 ---
 const currentLang = Astro.url.pathname.startsWith("/es") ? "es" : "en";
-import { spanishFlag, englishFlag } from "./Languages.astro";
-//  <div class="navbar w-full (((md:px-5 sm:px-3)))"> (header(()))
+export const spanishFlag = "fi fi-es";
+export const englishFlag = "fi fi-gb";
 ---
 
 <div
@@ -64,4 +64,18 @@ import { spanishFlag, englishFlag } from "./Languages.astro";
       }
     </div>
   </div>
+</div>
+
+<!-- PC VIEW -->
+<div
+  class="hidden lg:flex gap-x-4 flex-wrap justify-center bg-base-200 sticky top-0 z-30 bg-opacity-70 backdrop-blur"
+>
+  <a class="text-base btn btn-ghost rounded-lg my-2 py-2" href="/" title="English">
+    <span class={`mr-1  ${englishFlag}`}> </span>
+    English
+  </a>
+  <a class="text-base btn btn-ghost rounded-lg my-2 py-2" href="/es" title="Español">
+    <span class={`mr-1  ${spanishFlag}`}> </span>
+    Español
+  </a>
 </div>

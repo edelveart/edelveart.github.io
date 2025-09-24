@@ -9,7 +9,7 @@ import CheatSheets from "@components/resources-components/CheatSheets.astro";
 ---
 
 <BaseLayout title="Resources" sideBarActiveItemID="RESOURCES_ACTIVE_PAGE">
-  <article class="pb-3 mt-5">
+  <article class="pb-3 my-5">
     <div class="mb-5 mt-5">
       <div class="text-3xl w-full font-bold flex items-center">
         <Writing class="ml-0 mr-4" />
@@ -23,21 +23,22 @@ import CheatSheets from "@components/resources-components/CheatSheets.astro";
       software.
     </p>
 
+    <section class="text-xs border-l-4 border-warning py-2 px-4 rounded mb-8">
+      <h3 class="text-warning">Corrections and Versions</h3>
+      <p>
+        These documents are drafts and may contain errors or omissions. If you find any typos or
+        inconsistencies, I would appreciate it if you let me know via
+        <a class="text-primary" target="_blank" href={SOCIAL_MEDIA.linkedin}>LinkedIn</a>. I will be
+        happy to review and correct them as soon as possible.
+      </p>
+    </section>
+
     <MiscFiles title="Miscellaneous Files" />
     <Errata title="Errata in Books and Theses" />
     <CheatSheets title="Library Cheatsheets Collection" />
   </article>
 
-  <section class="text-xs border-l-4 border-warning p-4 rounded mb-5">
-    <h3 class="text-warning">Corrections and Versions</h3>
-    <p>
-      These documents are drafts and may contain errors or omissions. If you find any typos or
-      inconsistencies, I would appreciate it if you let me know via
-      <a class="text-primary" target="_blank" href={SOCIAL_MEDIA.linkedin}>LinkedIn</a>. I will be
-      happy to review and correct them as soon as possible.
-    </p>
-  </section>
-  <section class="text-xs mb-5 border-l-4 border-error p-4 rounded">
+  <section class="text-xs mb-5 border-l-4 border-error py-2 px-4 rounded">
     <h3 class="text-error">Legal Notice</h3>
     <p>
       All content available on this website, including the documents and related resources, is
