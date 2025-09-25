@@ -42,17 +42,18 @@ code {
 }
 
 /* Inline code in md files */
-/* Primary Color in Daisy UI: oklch(var(--p) / 1); */
-/* Neutral Color in Daisy UI: oklch(var(--n) / 1); */
+/* Primary Color in Daisy UI: var(--color-primary);
+/* Neutral Color in Daisy UI var(--color-neutral); */
+
 .prose :not(pre) > code {
   padding: 2px 4px;
   border-radius: 4px;
   font-size: 0.95rem;
   --tw-text-opacity: 1;
-  background-color: oklch(var(--n)/var(--tw-text-opacity));
+  background-color: var(--color-neutral);
 }
 
 /* Links to previous post and references in md files */
 .prose :not(div) > a {
-  color: oklch(var(--p));
+  color: var(--color-primary)
 }
