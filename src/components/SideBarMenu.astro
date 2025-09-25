@@ -5,6 +5,7 @@ import Curriculum from "@icons/Curriculum.astro";
 import Writing from "@icons/Writing.astro";
 import Skill from "@icons/Skills.astro";
 import LinkIconsGroup from "./LinkIconsGroup.astro";
+import Skills from "@icons/Skills.astro";
 
 type Props = {
   homeMenu: string;
@@ -38,32 +39,27 @@ export const sideMenuCss = {
 };
 
 const activePage = "bg-base-300";
-// const pathname = new URL(Astro.request.url).pathname;
-
-const basePath = Astro.site;
 const { pathname } = Astro.url;
-const isActive = (route) => basePath + pathname.slice(1) === basePath + route.slice(1);
+const normalizedPath = pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
+const cleanPath = normalizedPath.startsWith("/") ? normalizedPath.slice(1) : normalizedPath;
+
+const isActive = (href) => {
+  const hrefClean = href.startsWith("/") ? href.slice(1) : href;
+  return cleanPath === hrefClean;
+};
 ---
 
 <div class="flex flex-col w-full h-full mb-5">
   <strong class="flex justify-center mb-5 text-lg">Edgar Delgado</strong>
   <ul class="menu w-full h-full flex-1 flex flex-col overflow-y-auto">
     <li>
-      <a
-        class={`${sideMenuCss.divCss} ${isActive(hrefHome) ? activePage : ""}`}
-        id="HOME_ACTIVE_PAGE_ES"
-        href={hrefHome}
-      >
+      <a class={`${sideMenuCss.divCss} ${isActive(hrefHome) ? activePage : ""}`} href={hrefHome}>
         <Home />
         <span class={sideMenuCss.spanText}>{homeMenu}</span>
       </a>
     </li>
     <li>
-      <a
-        class={`${sideMenuCss.divCss} ${isActive(hrefCV) ? activePage : ""}`}
-        id="CV_ACTIVE_PAGE_ES"
-        href={hrefCV}
-      >
+      <a class={`${sideMenuCss.divCss} ${isActive(hrefCV) ? activePage : ""}`} href={hrefCV}>
         <Curriculum />
         <span class={sideMenuCss.spanText}>{cvMenu}</span>
       </a>
@@ -71,7 +67,6 @@ const isActive = (route) => basePath + pathname.slice(1) === basePath + route.sl
     <li>
       <a
         class={`${sideMenuCss.divCss} ${isActive(hrefProjects) ? activePage : ""}`}
-        id="PROJECTS_ACTIVE_PAGE_ES"
         href={hrefProjects}
       >
         <Branch />
@@ -81,11 +76,16 @@ const isActive = (route) => basePath + pathname.slice(1) === basePath + route.sl
     <li>
       <a
         class={`${sideMenuCss.divCss} ${isActive(hrefResources) ? activePage : ""}`}
-        id="RESOURCES_ACTIVE_PAGE_ES"
         href={hrefResources}
       >
         <Writing />
         <span class={sideMenuCss.spanText}>{resourcesMenu}</span>
+      </a>
+    </li>
+    <li>
+      <a class={`${sideMenuCss.divCss} ${isActive(hrefNotes) ? activePage : ""}`} href={hrefNotes}>
+        <Skills />
+        <span class={sideMenuCss.spanText}>{notesMenu}</span>
       </a>
     </li>
   </ul>
