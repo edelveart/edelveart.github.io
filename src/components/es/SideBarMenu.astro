@@ -6,7 +6,6 @@ import Writing from "@icons/Writing.astro";
 import LinkIconsGroup from "@components/LinkIconsGroup.astro";
 
 type Props = {
-  sideBarActiveItemID: unknown;
   homeMenu: string;
   hrefHome: string;
   cvMenu: string;
@@ -18,7 +17,6 @@ type Props = {
 };
 
 const {
-  sideBarActiveItemID,
   homeMenu,
   hrefHome,
   cvMenu,
@@ -29,36 +27,44 @@ const {
   hrefResources,
 } = Astro.props;
 
-const activeClass = "bg-base-300";
 export const sideMenuCss = {
   divCss: "py-3 flex items-center justify-start w-full",
   spanText: "text-base ml-2",
 };
+
+const activePage = "bg-base-300";
+const pathname = new URL(Astro.request.url).pathname;
 ---
 
 <div class="flex flex-col w-full h-full mb-5">
   <strong class="flex justify-center mb-5 text-lg">Edgar Delgado</strong>
   <ul class="menu w-full h-full flex-1 flex flex-col overflow-y-auto">
     <li>
-      <a class={sideMenuCss.divCss} id="HOME_ACTIVE_PAGE" href={hrefHome}>
+      <a class={`${sideMenuCss.divCss} ${pathname === hrefHome ? activePage : ""}`} href={hrefHome}>
         <Home />
         <span class={sideMenuCss.spanText}>{homeMenu}</span>
       </a>
     </li>
     <li>
-      <a class={sideMenuCss.divCss} id="CV_ACTIVE_PAGE" href={hrefCV}>
+      <a class={`${sideMenuCss.divCss} ${pathname === hrefCV ? activePage : ""}`} href={hrefCV}>
         <Curriculum />
         <span class={sideMenuCss.spanText}>{cvMenu}</span>
       </a>
     </li>
     <li>
-      <a class={sideMenuCss.divCss} id="PROJECTS_ACTIVE_PAGE" href={hrefProjects}>
+      <a
+        class={`${sideMenuCss.divCss} ${pathname === hrefProjects ? activePage : ""}`}
+        href={hrefProjects}
+      >
         <Branch />
         <span class={sideMenuCss.spanText}>{projectsMenu}</span>
       </a>
     </li>
     <li>
-      <a class={sideMenuCss.divCss} id="RESOURCES_ACTIVE_PAGE" href={hrefResources}>
+      <a
+        class={`${sideMenuCss.divCss} ${pathname === hrefResources ? activePage : ""}`}
+        href={hrefResources}
+      >
         <Writing />
         <span class={sideMenuCss.spanText}>{resourcesMenu}</span>
       </a>
@@ -69,13 +75,3 @@ export const sideMenuCss = {
 <footer class="footer footer-center pt-0 mt-auto justify-center gap-0 mb-5">
   <LinkIconsGroup />
 </footer>
-
-<script
-  define:vars={{
-    sideBarActiveItemID: sideBarActiveItemID,
-    activeClass: activeClass,
-  }}
->
-  const activeItemElem = document.getElementById(sideBarActiveItemID);
-  activeItemElem && activeItemElem.classList.add(activeClass);
-</script>

@@ -2,7 +2,6 @@
 import SideBarMenu from "@components/es/SideBarMenu.astro";
 // import SideBarFooter from "@components/SideBarFooter.astro";
 import PhotoProfile from "@components/PhotoProfile.astro";
-const { sideBarActiveItemID } = Astro.props;
 
 export const menuSpanish = {
   homeMenu: {
@@ -52,7 +51,6 @@ export const menuSpanish = {
       hrefProjects={menuSpanish.projectsMenu.href}
       resourcesMenu={menuSpanish.resourcesMenu.text}
       hrefResources={menuSpanish.resourcesMenu.href}
-      sideBarActiveItemID={sideBarActiveItemID}
     />
     <!-- <SideBarFooter /> -->
   </aside>

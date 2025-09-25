@@ -17,14 +17,13 @@ import BaseHead from "@components/BaseHead.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import SideBar from "@components/SideBar.astro"; // This must be different
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
 const {
   image,
   title = SITE_TITLE,
   description = SITE_DESCRIPTION,
   includeSidebar = true,
-  sideBarActiveItemID,
   ogType,
 } = Astro.props;
 ---
@@ -34,7 +33,7 @@ const {
   <head>
     <BaseHead title={title} description={description} image={image} ogType={ogType} />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    {TRANSITION_API && <ViewTransitions />}
+    {TRANSITION_API && <ClientRouter />}
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"
@@ -52,7 +51,7 @@ const {
         </div>
         <Footer />
       </div>
-      {includeSidebar && <SideBar sideBarActiveItemID={sideBarActiveItemID} />}
+      {includeSidebar && <SideBar />}
     </div>
     <style is:global>
       html {

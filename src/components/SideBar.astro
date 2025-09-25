@@ -2,7 +2,6 @@
 import SideBarMenu from "@components/SideBarMenu.astro";
 import PhotoProfile from "@components/PhotoProfile.astro";
 import { menuSpanish } from "./es/SideBar.astro";
-const { sideBarActiveItemID } = Astro.props;
 
 export const menuEnglish = {
   homeMenu: {
@@ -53,7 +52,6 @@ export const menuEnglish = {
       hrefResources={menuEnglish.resourcesMenu.href}
       notesMenu={menuEnglish.notesMenu.text}
       hrefNotes={menuEnglish.notesMenu.href}
-      sideBarActiveItemID={sideBarActiveItemID}
     />
   </aside>
 </div>
