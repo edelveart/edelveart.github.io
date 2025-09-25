@@ -38,15 +38,15 @@ export const sideMenuCss = {
   spanText: "text-base ml-2",
 };
 
-const activePage = "bg-base-300";
+// REPLACE SIDEBARIDACTIVEITEM
 const { pathname } = Astro.url;
 const normalizedPath = pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
 const cleanPath = normalizedPath.startsWith("/") ? normalizedPath.slice(1) : normalizedPath;
-
 const isActive = (href) => {
   const hrefClean = href.startsWith("/") ? href.slice(1) : href;
   return cleanPath === hrefClean;
 };
+const activePage = "bg-base-300";
 ---
 
 <div class="flex flex-col w-full h-full mb-5">
