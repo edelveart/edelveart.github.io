@@ -45,20 +45,20 @@ const pathname = new URL(Astro.request.url).pathname;
   <strong class="flex justify-center mb-5 text-lg">Edgar Delgado</strong>
   <ul class="menu w-full h-full flex-1 flex flex-col overflow-y-auto">
     <li>
-      <a class={`${sideMenuCss.divCss} ${pathname === hrefHome ? activePage : ""}`} href={hrefHome}>
+      <a class={`${sideMenuCss.divCss} ${pathname === "/" ? activePage : ""}`} href={hrefHome}>
         <Home />
         <span class={sideMenuCss.spanText}>{homeMenu}</span>
       </a>
     </li>
     <li>
-      <a class={`${sideMenuCss.divCss} ${pathname === hrefCV ? activePage : ""}`} href={hrefCV}>
+      <a class={`${sideMenuCss.divCss} ${pathname === "/about" ? activePage : ""}`} href={hrefCV}>
         <Curriculum />
         <span class={sideMenuCss.spanText}>{cvMenu}</span>
       </a>
     </li>
     <li>
       <a
-        class={`${sideMenuCss.divCss} ${pathname === hrefProjects ? activePage : ""}`}
+        class={`${sideMenuCss.divCss} ${pathname === "/projects" ? activePage : ""}`}
         href={hrefProjects}
       >
         <Branch />
@@ -67,7 +67,7 @@ const pathname = new URL(Astro.request.url).pathname;
     </li>
     <li>
       <a
-        class={`${sideMenuCss.divCss} ${pathname === hrefResources ? activePage : ""}`}
+        class={`${sideMenuCss.divCss} ${pathname === "/resources" ? activePage : ""}`}
         href={hrefResources}
       >
         <Writing />
@@ -76,7 +76,7 @@ const pathname = new URL(Astro.request.url).pathname;
     </li>
     <li>
       <a
-        class={`${sideMenuCss.divCss} ${pathname === hrefNotes ? activePage : ""}`}
+        class={`${sideMenuCss.divCss} ${pathname === "/blog" ? activePage : ""}`}
         id="NOTES_ACTIVE_PAGE"
         href={hrefNotes}
       >
