@@ -13,11 +13,6 @@ The story of how I developed `ts-tonnetz`, a **npm** library currently in a pre-
 
 Initially, the goal was to implement the classic Neo-Riemannian transformations ($P$, $R$, and $L$). However, thanks to Miika Alonen’s enthusiasm for mathematics and his brilliant system  <a href="https://topos.live/#ziffers_basics" target="_blank" rel="noopener noreferrer">Ziffers</a> for algorithmic composition, the project evolved into something much broader and deeper.
 
-<div align="center">
-  <img src="/svg-ggb/blog-tstonnetz-1.svg" alt="TypeScript Tonnetz Objects Injected into Ziffers" class="w-[98%]" />
-  <p><em>Sketch of <code>ts-tonnetz</code> Objects Injected into Ziffers</em></p>
-</div>
-
 I ended up combining insights from two PhD dissertations (see references below) both focused on mathematical music theory and one in computation, along with classic articles on graph theory, including those on Hamiltonian cycles and related structures.
 
 This led to the development of over 60 functions involving graphs, cycles, and triad and seventh chord transformations, all integrated into Ziffers and later into the live coding environment <a href="https://topos.live/#ziffers_tonnetz/" target="_blank" rel="noopener noreferrer">Topos</a>, created by Raphaël Forment and Miika Alonen.
@@ -73,6 +68,11 @@ Even the type declarations for each function were done inline.
 There was a lot of redundancy, which made sense at the time, since it was a working prototype that needed to be ready yesterday.
 
 ## Improvements and Refactoring
+
+<div align="center">
+  <img src="/svg-ggb/blog-tstonnetz-1.svg" alt="TypeScript Tonnetz Objects Injected into Ziffers" class="w-[95%]" />
+  <p><em>Sketch of <code>ts-tonnetz</code> Objects Injected into Ziffers</em></p>
+</div>
 
 About eight months ago, I began redesigning the codebase. The result is what you see now (see image above). At the start, I organized the code using `static` methods inside classes to group related functions and leverage TypeScript’s typing and autocompletion.
 
