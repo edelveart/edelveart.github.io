@@ -69,12 +69,13 @@ There was a lot of redundancy, which made sense at the time, since it was a work
 
 ## Improvements and Refactoring
 
+About eight months ago, I began redesigning the codebase. The result is what you see now (see image below).
+At the start, I organized the code using `static` methods inside classes to group related functions and leverage TypeScript’s typing and autocompletion.
+
 <div align="center">
   <img src="/svg-ggb/blog-tstonnetz-1.svg" alt="TypeScript Tonnetz Objects Injected into Ziffers" class="w-[95%]" />
   <p><em>Sketch of <code>ts-tonnetz</code> Objects Injected into Ziffers</em></p>
 </div>
-
-About eight months ago, I began redesigning the codebase. The result is what you see now (see image above). At the start, I organized the code using `static` methods inside classes to group related functions and leverage TypeScript’s typing and autocompletion.
 
 However, I now realize this approach adds unnecessary complexity for the type of functions I’m working with (Miika pointed this out as well). There are fairly straightforward alternatives.
 
