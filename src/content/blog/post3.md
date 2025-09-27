@@ -9,7 +9,7 @@ tags: ["typescript", "music theory", "mathematics", "live coding", "algorithmic 
 
 ## From a Message from Finland to a Live Coding Environment
 
-The story of how I developed `ts-tonnetz`, my **npm** library currently in a pre-alpha but fairly functional state, began rather unexpectedly when I received a single email in September from a faraway country called Finland.
+The story of how I developed `ts-tonnetz`, a **npm** library currently in a pre-alpha but fairly functional state, began rather unexpectedly when I received a single email in September from a faraway country called Finland.
 
 Initially, the goal was to implement the classic Neo-Riemannian transformations ($P$, $R$, and $L$). However, thanks to Miika Alonen’s enthusiasm for mathematics and his brilliant system  <a href="https://topos.live/#ziffers_basics" target="_blank" rel="noopener noreferrer">Ziffers</a> for algorithmic composition, the project evolved into something much broader and deeper.
 
