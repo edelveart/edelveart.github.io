@@ -1,5 +1,5 @@
 ---
-title: "Crafting my TypeScript Tonnetz Library  Part I"
+title: "Forging a Live Coding Tonnetz Library in TypeScript"
 description: "Bringing together topology, group theory, and music into Ziffers and the interactive live coding environment Topos."
 pubDate: "September 26 2025"
 heroImage: "/itemPreview.webp"
@@ -14,7 +14,7 @@ The story of how I developed `ts-tonnetz`, my **npm** library currently in a pre
 Initially, the goal was to implement the classic Neo-Riemannian transformations ($P$, $R$, and $L$). However, thanks to Miika Alonen’s enthusiasm for mathematics and his brilliant system  <a href="https://topos.live/#ziffers_basics" target="_blank" rel="noopener noreferrer">Ziffers</a> for algorithmic composition, the project evolved into something much broader and deeper.
 
 <div align="center">
-  <img src="/svg-ggb/blog-tstonnetz-1.svg" alt="Figurate Number in Polar Coordinates" class="w-[85%]" />
+  <img src="/svg-ggb/blog-tstonnetz-1.svg" alt="TypeScript Tonnetz Objects Injected into Ziffers" class="w-[98%]" />
   <p><em>Sketch of <code>ts-tonnetz</code> Objects Injected into Ziffers</em></p>
 </div>
 
