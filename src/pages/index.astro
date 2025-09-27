@@ -31,12 +31,11 @@ const last_posts = posts.slice(0, 3);
         <!-- <p class="ml-2 animate-bounce">👋</p> -->
       </h1>
       <h2 class="py-3 text-2xl font-bold text-content">Math and Creative Systems Developer</h2>
-
-      <div class="py-2 my-4">
-        <Biography />
-        <IndexLinks contactText="LinkedIn" linkedin="L" github="G" youtube="Y" />
-      </div>
     </article>
+    <div class="py-2 my-4">
+      <Biography />
+      <IndexLinks contactText="LinkedIn" linkedin="L" github="G" youtube="Y" />
+    </div>
 
     <Experience workExperiences={allExperiences} indices={[0, 1]} />
     <ProjectsComponentIndex
@@ -46,8 +45,9 @@ const last_posts = posts.slice(0, 3);
     />
 
     <!-- BLOG-NOTES -->
-    <h2 class="text-3xl w-full font-bold flex items-center mt-14 mb-[-0.5rem]">
-      <Skills class="ml-0 mr-32" />Notes
+    <h2 class="text-3xl w-full font-bold flex items-center mt-20">
+      <!-- <Skills class="ml-0 mr-32" /> -->
+      Notes
     </h2>
     {
       last_posts.map((post) => (
