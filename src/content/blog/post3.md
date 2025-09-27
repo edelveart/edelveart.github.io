@@ -24,9 +24,9 @@ This led to the development of over 60 functions involving graphs, cycles, and t
 
 ## The Beauty of a Line
 
-Behind every line of code lies topology and algebra. Inspired by  <a href=" https://theses.hal.science/tel-01326827" target="_blank" rel="noopener noreferrer">Bigo’s</a> ideas, I embraced simplicial complexes as a natural way to generalize harmonic spaces into alternative configurations.
+Behind every line of code lies topology and algebra. Inspired by  <a href=" https://theses.hal.science/tel-01326827" target="_blank" rel="noopener noreferrer">Louis Bigo’s</a> ideas, I embraced simplicial complexes as a natural way to generalize harmonic spaces into alternative configurations.
 
-To that end, I incorporated concepts such as the semidirect product, a central idea in <a href="https://theses.hal.science/tel-02179522" target="_blank" rel="noopener noreferrer">Sonia Cannas’</a>  dissertation, which establishes several theorems involving isomorphic group structures relevant to musical transformations.
+To that end, I incorporated concepts such as the semidirect product, a central idea in <a href="https://theses.hal.science/tel-02179522" target="_blank" rel="noopener noreferrer">Sonia Cannas’s</a>  dissertation, which establishes several theorems involving isomorphic group structures relevant to musical transformations.
 
 > My vision was to embed all algebraic transformations into a combinatorial topological framework that enables geometric interpretations of harmonic motion.
 

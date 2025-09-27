@@ -4,12 +4,12 @@ const currentLang = Astro.url.pathname.startsWith("/en") ? "en" : "es";
 ---
 
 <BaseLayout title="404: Not Found" includeSidebar={false}>
-  <div class="flex flex-col justify-between min-h-[70vh] text-center px-4 py-0">
+  <div class="flex flex-col justify-center min-h-screen text-center px-4 py-0">
     <div>
       <h1 class="text-9xl font-bold mb-8">🏝</h1>
       <h1 class="text-9xl font-bold mb-4">404</h1>
       <h3 class="text-2xl">The page you're looking for couldn't be found.</h3>
     </div>
-    <a class="btn btn-accent hover:btn-primary pt-0 mt-8" href="/">Home</a>
+    <a class="btn btn-accent hover:btn-primary pt-0 mt-8 mb-4" href="/">Home</a>
   </div>
 </BaseLayout>
