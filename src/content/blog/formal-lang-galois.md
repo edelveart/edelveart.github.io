@@ -9,7 +9,7 @@ tags: ["abstract algebra", "formal logic", "Tarski hierarchy"]
 
 Many times I think of certain objects (mathematical, algorithmic, musical) as if they were towers of field extensions, standing or leaning, but always with a structural foundation that could be formalized.
 
-And so, sometimes I stop and circle the idea in my head, defning them and saying them (you’ll see this note has something of the way I go and come back, trying to re‑explain to myself once more what I’m thinking, like when someone practices scales on their musical instrument).
+Sometimes, I pause and revisit ideas in my head, defining and repeating them, as if I'm re-explaining them to myself, like practicing scales on an instrument.
 
 The idea I propose here is a different, and perhaps fruitful, way to look at the hierarchy of languages in formal logic via algebra theory. First I’ll tell you where this analogy came to me.
 
@@ -20,7 +20,7 @@ I’ve been going over some classic concepts of abstract algebra, like how irred
 Field towers look like this when they are resting:
 
 $$
-\mathbb{Q} \rightarrow \mathbb{Q}(i) \rightarrow \mathbb{Q}(i, \sqrt{5})
+\mathbb{Q} \rightarrowtail \mathbb{Q}(i) \rightarrowtail \mathbb{Q}(i, \sqrt{5})
 $$
 
 Here I was able to see, with somewhat more perspective, that the higher we climb like ants up the tower, we really can think that we have more expressions, more roots, more functions (this was necessary to approach the next patch of ground).
