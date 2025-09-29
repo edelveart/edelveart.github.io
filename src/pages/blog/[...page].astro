@@ -3,7 +3,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import createSlug from "../../lib/createSlug";
 import CardBlog from "@components/CardBlog.astro";
-import Skills from "@icons/Skills.astro";
+// import Skills from "@icons/Skills.astro";
 
 export async function getStaticPaths({ paginate }) {
   const posts = await getCollection("blog");
