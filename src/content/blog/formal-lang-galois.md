@@ -27,12 +27,12 @@ As we ascend, we gain access to new roots, new functions, and new forms of reaso
 
 ## Tarski’s Hierarchy
 
-Days later I had been readin some things about `DSLs`, because of something I’ll tell you later. I like to approach topics from perspectives that are sometimes absurdly wide.
+Days later I had been reading some things about `DSLs`, because of something I’ll tell you later. I like to approach topics from perspectives that are sometimes absurdly wide.
 
 In this winding way I arrived at formal logic, where there is Tarski’s hierarchy, which I can summarize like this: denote $M_0$ as the object language (for example, first‑order logic) and $M_1$ as the metalanguage that defines truth for $M_0$.
 Likewise, $M_2$ would be the metalanguage speaking about $M_1$, and so on.
 
-This started to give me a feeling of closeness, though I couldn’t yet identify exactly what concept it was connected to.
+This evoked a sense of familiarity, though I couldn't yet pinpoint what it was related to.
 
 ## Finding the Link
 
