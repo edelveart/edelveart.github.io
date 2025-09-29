@@ -4,7 +4,7 @@ description: "This post explores an analogy between formal languages and field e
 pubDate: "September 27 2025"
 heroImage: "/itemPreview.webp"
 badge: "Algebraic Metalanguages"
-tags: ["abstract algebra", "formal logic", "Tarski hierarchy"]
+tags: ["field extensions", "formal logic", "Tarski hierarchy", "galois representation", "metalanguages", "mathematics"]
 ---
 
 Many times, I think of certain objects, whether mathematical, algorithmic, or musical, as towers of field extensions standing or leaning, but always grounded on a structural foundation that could be formalized.
@@ -20,7 +20,7 @@ I’ve been going over some classic concepts of abstract algebra, like how irred
 These extensions naturally form towers, which we might picture in their resting position as:
 
 $$
-k \rightarrowtail k(r_1) \rightarrowtail k(r_1, r_2)
+k \rightarrowtail k(r_1) \rightarrowtail k(r_1, r_2).
 $$
 
 As we ascend, we gain access to new roots, new functions, and new forms of reasoning. For example, extending the real numbers to the complex field enables the development of Riemann surfaces, which rely on the algebraic and topological structure of $\mathbb{C}$.
@@ -60,25 +60,28 @@ In this way, the higher entity extracts roots or solves problems that before wer
 
 ## Some Natural Questions
 
-Just for try, to move into mathematical space, I like to symbolize this immersion of a language as:
+To begin exploring this analogy in mathematical terms, I like to symbolize the semantic immersion of a language as:
 
 $$
-M_i \mapsto \mathbb{M}_i
+M_i \mapsto \mathbb{M}_i.
 $$
 
-Questions arise quite naturally by analogy. For example, one may wonder whether it is possible to refine the structure backwards in the hierarchy of metalanguages, exploring concepts analogous to normality (that is, whether the extension is truth-complete) or separability (for instance, whether truth values are uniquely determined) as in algebra.
+From this, several natural questions arise. For instance:
+> Can the structure be refined backwards in the hierarchy of metalanguages?
 
-Also, the question of whic metalanguage is the most economical to define truth arises, in a way similar to how in algebra we care about minimal extensions.
+What would concepts like normality (truth-completeness) or separability (uniqueness of truth values) mean in this context, mirroring their algebraic counterparts?
+
+Also, the question of which metalanguage is the most economical to define truth arises, in a way similar to how in algebra we care about minimal extensions.
 
 Another immediate question is how far we must go to resolve a given concept, which could be understood as a matter of the degree of extension of the language, expressed by
 
 $$
-[\mathbb{M}(\mathcal{L}_1, \mathcal{L}_2) : \mathbb{M}]
+[\mathbb{M}(\mathcal{l}_1, \mathcal{l}_2) : \mathbb{M}].
 $$
 
 This can be thought of as the dimension of a semantic extension space, composed of truth-valued $n$-ary predicates.
 
-In a more poetic sense, and entering the terrain of Galois, one could ask:
+In a more poetic sense, and stepping into Galois-theoretic territory, one might ask:
 
 > Are there automorphisms among the different metalanguages $\mathbb{M_i}$?
 
@@ -91,15 +94,21 @@ Going further, from a topological or algebraic perspective, one might envision a
 This could even be a geometric or arithmetic structure, which is where my fondness for elliptic curves and Galois representations comes in. I present an immediate notation:
 
 $$
-\rho_{\mathcal{L}}: \textrm{Gal}(\overline{\mathbb{M}}) \longrightarrow \textrm{GL}(n, V_{\mathcal{L}})
+\rho_{\mathcal{L}}: \textrm{Gal}(\overline{\mathbb{M}}/\mathbb{M}) \longrightarrow \textrm{GL}(n, V_{\mathcal{L}}).
 $$
 
 Here, $\rho_{\mathcal{L}}$ can be interpreted as a homomorphism that encodes the symmetries (or automorphisms) of an extended semantic structure $\overline{\mathbb{M}}$ into linear transformations of a vector space $V_{\mathcal{L}}$.
 
 These transformations may correspond to semantic operations on models of the language $\mathcal{L}$, such as reinterpretations, definable permutations, or higher-level logical equivalences.
 
+<div align="center">
+  <img src="/svg-ggb/POST-FORMAL-LANG-GALOIS.svg" alt="Analogy Between Field Extensions and Logical Language Hierarchies" class="w-[95%]" />
+  <p>Analogy Between Field Extensions and Logical Language Hierarchies</p>
+</div>
+
 ## What’s Going On?
 
 Of course, all of this still remains to be formalized with precise symbolic definitions.
 
-For now, I’m content to leave it as a metaphorical Leaning Tower of Pisa of Language, still incomplete and perhaps only suggestive of a deeper fruitful (as mentioned above) structure waiting to be made rigorous.
+
+For now, I’m content to leave it as a metaphorical Leaning Tower of Pisa of Language, still incomplete and perhaps only suggestive of a deeper, fruitful structure waiting to be made rigorous.
