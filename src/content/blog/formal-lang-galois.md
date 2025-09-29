@@ -1,7 +1,7 @@
 ---
 title: "Formal Languages as Field Extensions"
 description: "A look at how algebraic structures might inform our approach to truth and interpretation in formal logic."
-pubDate: "September 27 2025"
+pubDate: "September 16 2025"
 heroImage: "/itemPreview.webp"
 badge: "Algebraic Metalanguages"
 tags: ["abstract algebra", "formal logic", "Tarski hierarchy"]
