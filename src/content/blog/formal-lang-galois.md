@@ -102,7 +102,7 @@ Here, $\rho_{\mathcal{L}}$ can be interpreted as a homomorphism that encodes the
 These transformations may correspond to semantic operations on models of the language $\mathcal{L}$, such as reinterpretations, definable permutations, or higher-level logical equivalences.
 
 <div align="center">
-  <img src="/svg-ggb/POST-FORMAL-LANG-GALOIS.svg" alt="Analogy Between Field Extensions and Logical Language Hierarchies" class="w-[95%]" />
+  <img src="/svg-ggb/blog-FORMAL-LANG-GALOIS.svg" alt="Analogy Between Field Extensions and Logical Language Hierarchies" class="w-[95%]" />
   <p>Analogy Between Field Extensions and Logical Language Hierarchies</p>
 </div>
 
