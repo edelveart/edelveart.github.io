@@ -10,17 +10,19 @@
   "compilerOptions": {
     "verbatimModuleSyntax": true,
     "strictNullChecks": true,
-    "baseUrl": ".",
     "paths": {
       "@components/*": [
-        "src/components/*"
+        "./src/components/*"
       ],
       "@layouts/*": [
-        "src/layouts/*"
+        "./src/layouts/*"
       ],
       "@icons/*": [
-        "src/icons/*"
-      ]
+        "./src/icons/*"
+      ],
+      "@ts-config-path/*": [
+        "./src/*"
+      ],
     }
   }
 }
