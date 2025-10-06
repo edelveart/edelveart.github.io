@@ -1,10 +1,8 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import Experience, { allExperiences } from "@components/Experience.astro";
 import ListOfSkills from "@components/ListOfSkills.astro";
 import { techSkillsEnglish } from "@components/ListOfSkills.astro";
 import Education from "@components/Education.astro";
-import Curriculum from "@icons/Curriculum.astro";
 import { menuEnglish } from "@components/SideBar.astro";
 import { linksTo } from "@components/Biography.astro";
 import { Image } from "astro:assets";
@@ -45,6 +43,7 @@ import FigurateNumImages from "@components/FigurateNumImages.astro";
           src={sonicPiImage}
           alt="modular forms library on Sonic Pi"
           class="w-[92%] mx-auto rounded-xl"
+          loading="eager"
         />
         <figcaption class="my-8 text-sm text-gray-400">
           <code>modular_forms</code>
