@@ -3,7 +3,6 @@ import Home from "@icons/Home.astro";
 import Branch from "@icons/Branch.astro";
 import Curriculum from "@icons/Curriculum.astro";
 import Writing from "@icons/Writing.astro";
-import Skill from "@icons/Skills.astro";
 import LinkIconsGroup from "./LinkIconsGroup.astro";
 import Skills from "@icons/Skills.astro";
 
@@ -49,18 +48,18 @@ const isActive = (href) => {
 const activePage = "bg-base-300";
 ---
 
+<!-- <strong class="flex justify-center mb-5 text-sm">Edgar Delgado</strong> -->
 <div class="flex flex-col w-full h-full mb-5">
-  <strong class="flex justify-center mb-5 text-lg">Edgar Delgado</strong>
   <ul class="menu w-full h-full flex-1 flex flex-col overflow-y-auto">
     <li>
       <a class={`${sideMenuCss.divCss} ${isActive(hrefHome) ? activePage : ""}`} href={hrefHome}>
-        <Home />
+        <Home class="mr-3 w-7 h-7" />
         <span class={sideMenuCss.spanText}>{homeMenu}</span>
       </a>
     </li>
     <li>
       <a class={`${sideMenuCss.divCss} ${isActive(hrefCV) ? activePage : ""}`} href={hrefCV}>
-        <Curriculum />
+        <Curriculum class="mr-3 w-6 h-6" />
         <span class={sideMenuCss.spanText}>{cvMenu}</span>
       </a>
     </li>
@@ -69,7 +68,7 @@ const activePage = "bg-base-300";
         class={`${sideMenuCss.divCss} ${isActive(hrefProjects) ? activePage : ""}`}
         href={hrefProjects}
       >
-        <Branch />
+        <Branch class="mr-3 w-6 h-6" />
         <span class={sideMenuCss.spanText}>{projectsMenu}</span>
       </a>
     </li>
@@ -78,13 +77,13 @@ const activePage = "bg-base-300";
         class={`${sideMenuCss.divCss} ${isActive(hrefResources) ? activePage : ""}`}
         href={hrefResources}
       >
-        <Writing />
+        <Writing class="mr-3 w-6 h-6" />
         <span class={sideMenuCss.spanText}>{resourcesMenu}</span>
       </a>
     </li>
     <li>
       <a class={`${sideMenuCss.divCss} ${isActive(hrefNotes) ? activePage : ""}`} href={hrefNotes}>
-        <Skills />
+        <Skills class="mr-3 w-6 h-6" />
         <span class={sideMenuCss.spanText}>{notesMenu}</span>
       </a>
     </li>

@@ -1,5 +1,9 @@
+---
+const { class: className = "" } = Astro.props;
+---
+
 <svg
-  class="mr-4"
+  class={`${className}`}
   width="21"
   height="21"
   viewBox="0 0 24 24"
