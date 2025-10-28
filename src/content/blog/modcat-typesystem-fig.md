@@ -31,7 +31,8 @@ These explorations raised a deeper question: could mathematical operations be co
 
 This is indeed possible through Type-Level Programming, where TypeScript's type system becomes a computational medium in its own right.
 
-However, as I thought more about this, something even more fascinating came to mind:  a bridge between discrete sequences and continuous geometry, between compile-time types and algebraic structures. What follows is a `low-level` narrative of that analogy.
+However, as I thought more about this, something even more fascinating came to mind:  a bridge between discrete sequences and continuous geometry, between compile-time types and algebraic structures.
+What follows is a `low-level` narrative of that analogy.
 
 ## From Triangular Numbers to Polygonal Modules
 
@@ -108,9 +109,13 @@ What have we gained by this "little game"? We've elevated a numerical pattern in
 
 ## When Types Operate as Real Vectors or Modules Over a Ring
 
-Having established the algebraic framework with modules and direct sums, we now translate these ideas into TypeScript's type system. The construction mirrors our mathematical definitions, i.e., a recursive type builds vector spaces whose dimensions encode the numerical sequences we seek.
+Having established the algebraic framework with modules and direct sums, we now translate these ideas into TypeScript's type system.
 
-The foundation consists of two primitives. First, `VectorSpace<dim>` constructs an array type of length `dim`, representing a vector space of that dimension. Second, `DirectSum<V, W>` concatenates two vector spaces, mirroring the module operation $M\oplus N$ where ranks add:
+The construction mirrors our mathematical definitions, i.e., a recursive type builds vector spaces whose dimensions encode the numerical sequences we seek.
+
+The foundation consists of two primitives. First, `VectorSpace<dim>` constructs an array type of length `dim`, representing a vector space of that dimension.
+
+Second, `DirectSum<V, W>` concatenates two vector spaces, mirroring the module operation $M\oplus N$ where ranks add:
 
 ```ts
 type VectorSpace<dim extends number, A extends number[] = []> = A["length"] extends dim
@@ -124,7 +129,8 @@ type V2 = VectorSpace<335>;
 type V3 = DirectSum<V1, V2>;
 ```
 
-With these building blocks, we can now implement triangular numbers. The type `VecTriangular<n>` recursively constructs $V_{n}$ exactly as we defined algebraically. At each step, we extract the array length, this is our `dim` that encodes the $n$-th triangular numbers.
+With these building blocks, we can now implement triangular numbers. The type `VecTriangular<n>` recursively constructs $V_{n}$ exactly as we defined algebraically.
+At each step, we extract the array length, this is our `dim` that encodes the $n$-th triangular numbers.
 
 ```ts
 type VecTriangular<
@@ -162,7 +168,7 @@ We’re essentially hitting a type depth limit (I think of it as a kind of *Type
 
 ## Fibonacci as homogeneous case
 
-Now for the twist: although Fibonacci numbers are not figurate, they too submit to this framework. They exemplify a linear *homogeneous* recurrence of order $k=2$
+Here comes the twist. While Fibonacci numbers aren't figurate, they align with this framework as well. They exemplify a linear *homogeneous* recurrence of order $k=2$
 $$
 a_n = a_{n-1} + a_{n-2} + 0
 $$
@@ -194,7 +200,7 @@ What strikes me most is the asymmetry of initial conditions: one is the trivial 
 
 ### Fibonacci Types
 
-The Fibonacci construction translates naturally into TypeScript's type system.  Here, `VecFib<n>` implements the module recursion $M_n=M_{n−1} \oplus M_{n−2}$ tracking two previous states and building forward through direct sums:
+The Fibonacci construction translates naturally into types.  Here, `VecFib<n>` implements the module recursion $M_n=M_{n−1} \oplus M_{n−2}$ tracking two previous states and building forward through direct sums:
 
 ```ts
 type VecFib<
@@ -257,7 +263,7 @@ We're not jumping to some external geometric space; rather, the sequence *grows*
 
 This recursive functorial mapping bridges discrete and continuous, a sequence of integers becomes a sequence of vector spaces.
 
-nstead of focusing on numbers, we now think in terms of lines, planes, and higher-dimensional Euclidean (or possibly non-Euclidean, if we choose a different bilinear form) spaces, all connected through their underlying topological nature.
+Instead of focusing on numbers, we now think in terms of lines, planes, and higher-dimensional Euclidean (or possibly non-Euclidean, if we choose a different bilinear form) spaces, all connected through their underlying topological nature.
 
 Dimension, that quintessential geometric concept, encodes our arithmetic.
 
