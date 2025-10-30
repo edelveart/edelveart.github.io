@@ -51,7 +51,7 @@ $$
 a_n = \sum_{j=1}^{k} c_j a_{n-j} + f(n),
 $$
 
-The beauty lies in what happens when we reinterpret this from a geometric-arithmetic perspective. Consider triangular numbers:
+The beauty lies in what happens when we reexamine this from a geometric-arithmetic perspective. Consider triangular numbers:
 
 $$
 T_{n+1} = T_n + (n + 1), \quad T_1 = 1.
