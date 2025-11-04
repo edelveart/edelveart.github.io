@@ -12,8 +12,10 @@
 
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: dark --prefersdark, night;
+  /* themes: dark --prefersdark, night; */
+  themes: false;
 }
+@plugin "./catppuccinTheme.mocha.ts";
 
 /* Typography for BLOG/NOTES */
 @plugin '@tailwindcss/typography';
@@ -38,7 +40,8 @@ code {
 
 /* Only with Shiki */
 .astro-code {
-  @apply rounded-lg  overflow-x-auto p-4 text-sm font-normal;
+  @apply rounded-lg  overflow-x-auto p-4 text-sm font-normal shadow-md shadow-secondary;
+
 }
 /* border border-gray-600 */
 

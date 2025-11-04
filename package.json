@@ -33,6 +33,7 @@
     "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
+    "@catppuccin/daisyui": "^2.1.1",
     "@tailwindcss/typography": "^0.5.10"
   }
 }
