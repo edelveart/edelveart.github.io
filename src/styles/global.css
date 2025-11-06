@@ -55,10 +55,10 @@ code {
   padding: 2px 4px;
   border-radius: 0.25rem;
   border-width: 0;
-  border-color: var(--color-gray-600);
+  /* border-color: var(--color-gray-400); */
   font-size: 0.95rem;
   --tw-text-opacity: 1;
-  background-color: var(--color-neutral);
+  background-color: var(--color-gray-700);
 }
 
 /* Links to previous post and references in md files */
