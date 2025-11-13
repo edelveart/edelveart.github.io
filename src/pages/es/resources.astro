@@ -8,19 +8,20 @@ import CheatSheets from "@components/resources-components/CheatSheets.astro";
 ---
 
 <BaseLayout title="Resources">
-  <article class="pb-3 mt-5">
+  <article class="pb-3 my-5">
     <div class="mb-5 mt-5">
       <div class="text-3xl w-full font-bold flex items-center">
-        <Writing class="ml-0 mr-4 max-w-none" />
+        <!-- <Writing class="ml-0 mr-4" /> -->
         Recursos
       </div>
     </div>
-    <p class="mb-5 mt-10">
+    <p class="my-10">
       Todos los recursos están elaborados en <strong>LaTeX</strong> y disponibles en <strong
         >PDF</strong
       >. Aquí recopilo documentos sobre matemáticas, música y sus aplicaciones a través de software.
     </p>
-    <section class="text-xs border-l-4 border-warning p-4 rounded mb-5">
+
+    <section class="text-xs border-l-4 border-warning py-2 px-4 rounded mb-8">
       <h3 class="text-warning">Correcciones y versiones</h3>
       <p>
         Estos documentos son borradores y pueden contener errores u omisiones. Si encuentras alguna
@@ -31,19 +32,14 @@ import CheatSheets from "@components/resources-components/CheatSheets.astro";
         >. Lo revisaré y corregiré con gusto en cuanto me sea posible.
       </p>
     </section>
-    <!-- <p class="mb-5">
-      Si eres estudiante, curioso o disfrutas de las conexiones entre el arte sonoro, aquí
-      encontrarás algo que te motive. Espero que disfrutes explorando este contenido tanto como yo
-      disfruto aprendiendo.
-    </p> -->
+
+    <!-- <LectureNotes title="Notas de Lectura y documentos versionados" /> -->
+    <MiscFiles title="Archivos varios" />
+    <Errata title="Erratas en libros y tesis" />
+    <CheatSheets title="Guías rápidas de librerias y hojas de trucos" />
   </article>
 
-  <!-- <LectureNotes title="Notas de Lectura y documentos versionados" /> -->
-  <MiscFiles title="Archivos varios" />
-  <Errata title="Erratas en libros y tesis" />
-  <CheatSheets title="Guías rápidas de librerias y hojas de trucos" />
-
-  <section class="text-xs mb-5 border-l-4 border-error p-4 rounded">
+  <section class="text-xs mb-5 border-l-4 border-error py-2 px-4 rounded">
     <h3 class="text-error">Aviso Legal</h3>
     <p>
       Todo el contenido disponible en este sitio web, incluyendo los documentos y recursos

@@ -6,21 +6,29 @@ import Experience, { allExperiences } from "@components/es/Experience.astro";
 import { allProjects } from "@components/ProjectsComponent.astro";
 import ModEcImg from "@components/ModEcImg.astro";
 import ProjectsComponentIndex from "@components/ProjectsComponentIndex.astro";
+import CardBlog from "@components/CardBlog.astro";
+import createSlug from "@ts-config-path/lib/createSlug";
+import { getCollection } from "astro:content";
 // import { getCollection } from "astro:content";
 // const posts = (await getCollection("blog")).sort(
 //   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 // );
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const last_posts = posts.slice(0, 5);
 ---
 
 <BaseLayout title="Home">
   <ModEcImg />
-  <section class="pb-3 mt-5">
+  <section class="pb-3 mt-12">
     <h1 class="text-4xl font-bold leading-snug pt-0 flex text-neutral-300">
       Edgar Delgado
       <!-- <p class="ml-2 animate-bounce">👋</p> -->
     </h1>
 
-    <h2 class="py-1 text-2xl font-semibold text-content">
+    <h2 class="py-3 text-2xl font-bold text-content">
       Desarrollador de sistemas matemáticos y creativos
     </h2>
 
@@ -35,26 +43,26 @@ import ProjectsComponentIndex from "@components/ProjectsComponentIndex.astro";
       projects={allProjects}
       indices={[0, 1, 2, 3, 4, 5]}
     />
-    <!-- <ListOfSkills title="Tecnologías" techSkills={techSkillsSpanish} indices={[0, 1]} /> -->
-    <!--
-    <div class="text-2xl w-full font-bold flex items-center my-6 ml-0">
-      <Blog />Blog
-    </div>
+    <!-- BLOG-NOTES -->
+    <h2 class="text-3xl w-full font-bold flex items-center mt-24">
+      <!-- <Skills class="ml-0 mr-32" /> -->
+      Blog
+    </h2>
     {
       last_posts.map((post) => (
         <>
+          {/* badge={post.data.badge} */}
+          {/* tags={post.data.tags} */}
           <CardBlog
+            pubDate={post.data.pubDate}
             title={post.data.title}
             img={post.data.heroImage}
             desc={post.data.description}
             url={"/blog/" + createSlug(post.data.title, post.slug)}
             target="_self"
-            badge={post.data.badge}
-            tags={post.data.tags}
           />
-          <div class="divider my-0" />
         </>
       ))
-    } -->
+    }
   </section>
 </BaseLayout>
