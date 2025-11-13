@@ -5,11 +5,12 @@ import remarkMath from "remark-math"; // KaTeX
 import rehypeKatex from "rehype-katex"; // KaTex
 import tailwindcss from "@tailwindcss/vite";
 // https://expressive-code.com/
+// Reduce SVG:
+// https://vecta.io/nano
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://edelveart.github.io",
-
   integrations: [
     mdx(),
     sitemap({
