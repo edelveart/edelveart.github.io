@@ -44,17 +44,16 @@ const activePage = "bg-base-300";
 ---
 
 <div class="flex flex-col w-full h-full mb-5">
-  <strong class="flex justify-center mb-5 text-lg">Edgar Delgado</strong>
   <ul class="menu w-full h-full flex-1 flex flex-col overflow-y-auto">
     <li>
       <a class={`${sideMenuCss.divCss} ${isActive(hrefHome) ? activePage : ""}`} href={hrefHome}>
-        <Home />
+        <Home class="mr-2 w-7 h-7" />
         <span class={sideMenuCss.spanText}>{homeMenu}</span>
       </a>
     </li>
     <li>
       <a class={`${sideMenuCss.divCss} ${isActive(hrefCV) ? activePage : ""}`} href={hrefCV}>
-        <Curriculum />
+        <Curriculum class="mr-3 w-6 h-6" />
         <span class={sideMenuCss.spanText}>{cvMenu}</span>
       </a>
     </li>
@@ -63,7 +62,7 @@ const activePage = "bg-base-300";
         class={`${sideMenuCss.divCss}  ${isActive(hrefProjects) ? activePage : ""}`}
         href={hrefProjects}
       >
-        <Branch />
+        <Branch class="mr-3 w-6 h-6" />
         <span class={sideMenuCss.spanText}>{projectsMenu}</span>
       </a>
     </li>
@@ -72,7 +71,7 @@ const activePage = "bg-base-300";
         class={`${sideMenuCss.divCss} ${isActive(hrefResources) ? activePage : ""}`}
         href={hrefResources}
       >
-        <Writing />
+        <Writing class="mr-3 w-6 h-6" />
         <span class={sideMenuCss.spanText}>{resourcesMenu}</span>
       </a>
     </li>
