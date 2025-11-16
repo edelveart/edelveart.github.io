@@ -1,0 +1,18 @@
+---
+import { Image } from "astro:assets";
+import sonicPiImage from "../../assets/libraries-webp/sonicpi-background.webp";
+---
+
+<figure class="text-center my-10 text-gray-400">
+  <Image
+    src={sonicPiImage}
+    alt="Picture of modular forms library on Sonic Pi"
+    class="w-[92%] mx-auto rounded-lg"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+  />
+  <figcaption class="mt-3 text-sm text-gray-400">
+    <code>modular_forms (Sonic Pi)</code>
+  </figcaption>
+</figure>

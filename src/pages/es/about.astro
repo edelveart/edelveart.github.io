@@ -3,12 +3,10 @@ import BaseLayout from "@layouts/es/BaseLayout.astro";
 import ListOfSkills from "@components/ListOfSkills.astro";
 import { techSkillsSpanish } from "@components/ListOfSkills.astro";
 import Education from "@components/es/Education.astro";
-import Curriculum from "@icons/Curriculum.astro";
 import { menuSpanish } from "@components/es/SideBar.astro";
 import { linksTo } from "@components/Biography.astro";
-import { Image } from "astro:assets";
-import sonicPiImage from "../../assets/libraries-webp/sonicpi-background.webp";
-import FigurateNumImages from "@components/FigurateNumImages.astro";
+import SonicPiModFormsImage from "@components/img-components/SonicPiModFormsImage.astro";
+import FigurateNumImages from "@components/img-components/FigurateNumImages.astro";
 ---
 
 <!-- https://math.uchicago.edu/~chonoles/miscellany/quotations/ -->
@@ -44,16 +42,7 @@ import FigurateNumImages from "@components/FigurateNumImages.astro";
         abordar problemas complejos.
       </p>
 
-      <figure class="text-center my-10 text-gray-400">
-        <Image
-          src={sonicPiImage}
-          alt="modular forms library on Sonic Pi"
-          class="w-[92%] mx-auto rounded-lg"
-        />
-        <figcaption class="mt-3 text-sm text-gray-400">
-          Música en Sonic Pi con <code>modular_forms</code>.
-        </figcaption>
-      </figure>
+      <SonicPiModFormsImage />
 
       <p>
         Como alguien que cuestiona, prefiero reconstruir algoritmos con rigor matemático para

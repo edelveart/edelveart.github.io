@@ -5,9 +5,8 @@ import { techSkillsEnglish } from "@components/ListOfSkills.astro";
 import Education from "@components/Education.astro";
 import { menuEnglish } from "@components/SideBar.astro";
 import { linksTo } from "@components/Biography.astro";
-import { Image } from "astro:assets";
-import sonicPiImage from "../assets/libraries-webp/sonicpi-background.webp";
-import FigurateNumImages from "@components/FigurateNumImages.astro";
+import SonicPiModFormsImage from "@components/img-components/SonicPiModFormsImage.astro";
+import FigurateNumImages from "@components/img-components/FigurateNumImages.astro";
 ---
 
 <!-- https://math.uchicago.edu/~chonoles/miscellany/quotations/ -->
@@ -37,17 +36,7 @@ import FigurateNumImages from "@components/FigurateNumImages.astro";
         <a class={linksTo} href={menuEnglish.projectsMenu.href}>libraries</a> that simplify complex processes
         and enable creativity across disciplines.
       </p>
-      <figure class="text-center my-10 text-gray-400">
-        <Image
-          src={sonicPiImage}
-          alt="modular forms library on Sonic Pi"
-          class="w-[92%] mx-auto rounded-xl"
-          loading="eager"
-        />
-        <figcaption class="my-8 text-sm text-gray-400">
-          <code>modular_forms (Sonic Pi)</code>
-        </figcaption>
-      </figure>
+      <SonicPiModFormsImage />
 
       <p class="mb-4">
         As someone who questions, I prefer to reconstruct algorithms with mathematical rigor to
