@@ -1,6 +1,6 @@
 ---
 title: "Category of Modules and Type-Level Programming with Figurate Numbers"
-description: "A piece on the intersection of figurate numbers and modules, demonstrating how type-level programming unlocks new ideas for math and live coding music."
+description: "A piece on the intersection of figurate numbers and theory of modules, demonstrating how type-level programming unlocks new ideas for math and live coding music."
 pubDate: "October 25 2025"
 heroImage: "/itemPreview.webp"
 badge: "Type-Level Algorithmic Music"
