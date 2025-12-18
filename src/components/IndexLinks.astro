@@ -3,6 +3,7 @@ import LinkedIn from "@icons/LinkedIn.astro";
 import Youtube from "@icons/Youtube.astro";
 import GitHub from "@icons/GitHub.astro";
 import { SOCIAL_MEDIA } from "../config";
+import QrCodeModal from "@icons/QrCode-Modal.astro";
 
 export interface Props {
   contactText?: string;
@@ -28,7 +29,7 @@ const { contactText, linkedin, github, youtube } = Astro.props;
   <!--  -->
   <a
     id="github-btn"
-    class="btn hover:bg-secondary rounded-lg py-6 px-3"
+    class="btn hover:bg-secondary rounded-lg py-6 px-3 shadow shadow-primary/15"
     href={SOCIAL_MEDIA.github}
     target="_blank"
   >
@@ -37,6 +38,7 @@ const { contactText, linkedin, github, youtube } = Astro.props;
     <kbd class="kbd kbd-lg">G</kbd>
   </a>
 
+  <QrCodeModal />
   <!-- <a
     id="youtube-btn"
     class="btn btm-nav-xs hover:scale-95"

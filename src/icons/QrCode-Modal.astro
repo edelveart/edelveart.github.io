@@ -1,0 +1,25 @@
+<label for="qr-modal" class="btn hover:text-primary rounded-lg py-6 px-3 shadow shadow-primary/15">
+  <img class="w-6 rounded-sm" src="/qr-code.png" />
+  QR Code
+  <kbd class="kbd kbd-lg">Q</kbd>
+</label>
+
+<input type="checkbox" id="qr-modal" class="modal-toggle" />
+<div class="modal">
+  <div class="modal-box relative">
+    <h2 class="text-xl font-semibold">Scan QR Code</h2>
+
+    <img
+      class="mx-auto rounded-lg m-8 shadow shadow-primary/50"
+      src="https://api.qrserver.com/v1/create-qr-code/?color=111111&bgcolor=899fe2&data=https%3A%2F%2Fedelveart.github.io%2F&qzone=1&margin=4&size=250x250&ecc=L"
+      alt="qr code"
+    />
+    <p class="mt-4 text-center">
+      Visit my web: <br />
+      <a href="https://edelveart.github.io/" target="_blank" class="underline text-primary mt-2"
+        >https://edelveart.github.io/</a
+      >
+    </p>
+    <label for="qr-modal" class="btn btn-md btn-ghost absolute right-2 top-2 text-2xl">✕</label>
+  </div>
+</div>
