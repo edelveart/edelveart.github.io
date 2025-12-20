@@ -14,10 +14,10 @@ export interface Props {
 const { contactText, linkedin, github, youtube } = Astro.props;
 ---
 
-<div class="my-10 flex justify-start gap-4 flex-wrap">
+<div class="my-10 flex justify-start gap-6 flex-wrap items-start">
   <a
     id="linkedin-btn"
-    class="btn bg-inherit shadow-sm shadow-primary/30 hover:bg-base-300 rounded-lg py-6 px-3"
+    class="btn bg-inherit shadow-sm shadow-primary/30 hover:bg-base-300 rounded-lg py-6 px-3 flex-grow"
     href={SOCIAL_MEDIA.linkedin}
     target="
     _blank"
@@ -26,10 +26,9 @@ const { contactText, linkedin, github, youtube } = Astro.props;
     {contactText}
     <kbd class="kbd kbd-lg">L</kbd>
   </a>
-  <!--  -->
   <a
     id="github-btn"
-    class="btn hover:bg-secondary rounded-lg py-6 px-3 shadow shadow-primary/15"
+    class="btn hover:bg-secondary rounded-lg py-6 px-3 shadow shadow-primary/15 flex-grow"
     href={SOCIAL_MEDIA.github}
     target="_blank"
   >
@@ -38,16 +37,18 @@ const { contactText, linkedin, github, youtube } = Astro.props;
     <kbd class="kbd kbd-lg">G</kbd>
   </a>
 
-  <QrCodeModal />
-  <!-- <a
+  <a
     id="youtube-btn"
-    class="btn btm-nav-xs hover:scale-95"
+    class="btn hover:bg-secondary rounded-lg py-6 px-3 shadow shadow-primary/15 flex-grow"
     href={SOCIAL_MEDIA.youtube}
     target="_blank"
   >
-    <Youtube class="w-6" /> YouTube
-    <span style="border:1px solid #333; padding:2px 6px; border-radius:3px; ">{youtube}</span>
-  </a> -->
+    <Youtube class="w-6" />
+    YouTube
+    <kbd class="kbd kbd-lg">Y</kbd>
+  </a>
+
+  <QrCodeModal />
 </div>
 
 <script is:inline>
