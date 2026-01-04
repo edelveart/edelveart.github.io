@@ -2,12 +2,12 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 
 import Biography from "@components/Biography.astro";
-import IndexLinks from "@components/IndexLinks.astro";
+import MainLinks from "@components/MainLinks.astro";
 
 import { allProjects } from "../components/ProjectsComponent.astro";
 import Experience, { allExperiences } from "../components/Experience.astro";
 import ModEcImg from "@components/img-components/ModEcImg.astro";
-import ProjectsComponentIndex from "@components/ProjectsComponentIndex.astro";
+import IndexOfProjects from "@components/IndexOfProjects.astro";
 
 // BLOG - NOTES
 import { getCollection } from "astro:content";
@@ -26,22 +26,18 @@ const last_posts = posts.slice(0, 5);
   <section class="pb-3 mt-12">
     <article>
       <h1 class="text-4xl font-bold leading-snug py-0 flex text-center">
-        Edgar Delgado
+        Edgar Delgado Vega
         <!-- <p class="ml-2 animate-bounce">👋</p> -->
       </h1>
       <h2 class="py-3 text-2xl font-bold text-content">Creative Math Systems Developer</h2>
     </article>
     <div class="py-2 my-4">
       <Biography />
-      <IndexLinks contactText="LinkedIn" linkedin="L" github="G" youtube="Y" />
+      <MainLinks contactText="LinkedIn" linkedin="L" github="G" youtube="Y" />
     </div>
 
     <Experience workExperiences={allExperiences} indices={[0, 1]} />
-    <ProjectsComponentIndex
-      headTitle="Software"
-      projects={allProjects}
-      indices={[0, 1, 2, 3, 4, 5]}
-    />
+    <IndexOfProjects headTitle="Software" projects={allProjects} indices={[0, 1, 2, 3, 4, 5]} />
 
     <!-- BLOG-NOTES -->
     <h2 class="text-3xl w-full font-bold flex items-center mt-24">

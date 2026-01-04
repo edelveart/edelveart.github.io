@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "@layouts/es/BaseLayout.astro";
 import Biography from "@components/es/Biography.astro";
-import IndexLinks from "@components/IndexLinks.astro";
+import MainLinks from "@components/MainLinks.astro";
 import Experience, { allExperiences } from "@components/es/Experience.astro";
 import { allProjects } from "@components/ProjectsComponent.astro";
 import ModEcImg from "@components/img-components/ModEcImg.astro";
-import ProjectsComponentIndex from "@components/ProjectsComponentIndex.astro";
+import IndexOfProjects from "@components/IndexOfProjects.astro";
 import CardBlog from "@components/CardBlog.astro";
 import createSlug from "@ts-config-path/lib/createSlug";
 import { getCollection } from "astro:content";
@@ -24,7 +24,7 @@ const last_posts = posts.slice(0, 5);
   <ModEcImg />
   <section class="pb-3 mt-12">
     <h1 class="text-4xl font-bold leading-snug pt-0 flex text-neutral-300">
-      Edgar Delgado
+      Edgar Delgado Vega
       <!-- <p class="ml-2 animate-bounce">👋</p> -->
     </h1>
 
@@ -34,11 +34,11 @@ const last_posts = posts.slice(0, 5);
 
     <div class="py-2 mt-4">
       <Biography />
-      <IndexLinks contactText="LinkedIn" linkedin="L" github="G" youtube="Y" />
+      <MainLinks contactText="LinkedIn" linkedin="L" github="G" youtube="Y" />
     </div>
 
     <Experience workExperiences={allExperiences} indices={[0, 1]} />
-    <ProjectsComponentIndex
+    <IndexOfProjects
       headTitle={"Bibliotecas"}
       projects={allProjects}
       indices={[0, 1, 2, 3, 4, 5]}
