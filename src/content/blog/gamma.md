@@ -7,7 +7,7 @@ badge: "number algorithms"
 tags: ["figurate numbers", "integer sequences", "gamma function", "factorial", "figuratenum", "python"]
 ---
 
-Recently I was reviewing how to extend the greatest common divisor function of two numbers in $\mathbb{Z}$, because I wanted to imagine associating a kind of rays emerging from the points of a geometric object.
+Recently, I was reviewing how to extend the greatest common divisor function for two integers, because I wanted to imagine associating a kind of rays emerging from the points of a geometric object.
 
 In this regard, being a bit verbose, if $ x_\mathbb{Z} = \prod p^{\alpha_p}$ and $y_\mathbb{Z} = \prod p^{\beta_p}$ are prime factorizations of $x, y$, then:
 
@@ -21,7 +21,15 @@ Therefore, I had a searching question:
 
 > Does there already exist a function $f$, with connections to the arithmetic and geometric world, that has extended its domain from $\mathbb{Z}$ to $\mathbb{Q}$, or even beyond?
 
-I remembered, of course, that Euler, a few centuries ago, had already carried out this process in a phenomenal way.
+## Prelude to the Nap of Euler
+
+I found that for certain types of domains, called Unique Factorization Domains (UFDs), there is an analogous notion with some subtleties. For example, the rings of integers $\mathbb{Z}[i]$ and $\mathbb{Z}[\sqrt{d}]$ (for certain values of $d$) are UFDs where $\gcd$ behaves similarly to the classical case.
+
+But, I didn't want to enter the terrain of ideals and abstract techniques of algebraic number theory. I really needed to go step by step. In $\mathbb{Q}$, I found that there exists a trick using $\mathrm{lcm}$ to define something like a $\gcd$, but it didn't convince me, because it's particular to this context. And what about $\mathbb{R}$?
+
+I also realized that the issue in the `reals`, and in every `field`, is that the notion of $\gcd$ becomes trivial from an algebraic standpoint. Since every non-zero element is invertible, every element divides every other, making the concept vacuous.
+
+So, because it's good to revisit techniques and ideas from even earlier times, I remembered, of course, that `Euler`, a few centuries ago, had already carried out this process in a phenomenal way with another arithmetic ubiquitous function.
 
 ## Triangular Numbers are The Prototype
 
@@ -33,7 +41,7 @@ $$
 T(x_\mathbb{Q})= \frac{x(x + 1)}{2}.
 $$
 
-For now, my library <a href="https://pypi.org/project/figuratenum/" target="_blank" rel="noopener noreferrer">figuratenum</a> only allows you to do the following to generate $x_\mathbb{Z}$.
+For now, my library <a href="https://pypi.org/project/figuratenum/" target="_blank" rel="noopener noreferrer">figuratenum</a> only allows you to do the following to generate integers $x_\mathbb{Z}$.
 
 ```py
 from figuratenum import PlaneFigurateNum as fgn
@@ -73,9 +81,11 @@ I'll go straight to posing the analogy here, along with the diagram:
   <p>Towards a New Class of Gamma Functions for Figurate Numbers</p>
 </div>
 
-Let's think of the figure in two components. Let's start with what we already have some grounding for: the left side. First, we observe that several operations occur simultaneously towards more general instances. The first is a transfer of notion by substitution: they are triangular figures, then it's factorial.
+Let's think of the figure in two components. Let's start with what we already have some grounding for: the left side. First, we observe that several operations occur simultaneously towards more general instances. The first is a transfer of notion by `substitution`: they are triangular figures, then it's factorial.
 
-The $x!$ in turn enables defining the multidimensional version of triangular numbers, the $k$-hypertetrahedron. On the other hand, the detour with an arrow towards $\Gamma$ is extremely important, because it is a transfer towards a broader domain by interpolation, and allows restriction to the integer version and to a possible complex version of the hypertetrahedron.
+The $x_\mathbb{Z}!$ allows for the definition of the multidimensional triangular numbers, also called the $k$-hypertetrahedron, denoted as $H_k(n)$. This is defined through a recursive formula and an alternative definition using the rising factorial, as discussed in the book <a href="https://www.worldscientific.com/worldscibooks/10.1142/8188#t=aboutBook" target="_blank" rel="noopener noreferrer">Figurate Numbers (2012)</a> (another alternative involves the binomial coefficient)
+
+On the other hand, the detour with an arrow pointing to $\Gamma$ is extremely important, because it is a transfer towards a broader domain by `interpolation`, and allows restriction to the integer version and to a possible complex version of the hypertetrahedron.
 
 For instance, here's how you generate a `120`-dimensional hypertetrahedron in `figuratenum`:
 
@@ -97,7 +107,7 @@ The $\Delta$ and $\delta$ functions are the analogues of the Gamma function (by 
 
 Well, after so many twists and turns, the naive question I arrive at goes like this:
 
-> Does there exist a function $\Delta_P(x_\mathbb{R})$ analogous to $\Gamma(x_\mathbb{R})$ by substitution and interpolation for each type of figurate number $P$ that can define similar new multidimensional geometric objects over integral domains, complex numbers, or in some number field $K/\mathbb{Q}$?
+> Does there exist a function $\Delta_P(x_\mathbb{R})$ analogous to $\Gamma(x_\mathbb{R})$ by substitution and interpolation for each type of figurate number $P$ that can define similar new multidimensional geometric objects over UFDs, complex numbers, or in  a number field $K/\mathbb{Q}$?
 
 I would expect such a $\Delta_P(x_\mathbb{R})$ to inherit beautiful properties, like convexity, perhaps log-convexity, or functional recurrence relations.
 
@@ -105,6 +115,6 @@ $$
 \Delta_P(x + 1) = P(x) \cdot \Delta_P(x)
 $$
 
-But whether these properties hold in general, or need tailoring to specific $P$, well, that's part of the puzzle. Could be a rewarding exploration for anyone curious enough to dig in.
+But whether these properties hold in general, or need tailoring to specific $P$, well, that's part of the puzzle. Maybe they fit together like pieces of a larger mosaic with other special arithmetic functions already known to us.  Could be a rewarding exploration for anyone curious enough to dig in.
 
 
