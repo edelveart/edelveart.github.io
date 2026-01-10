@@ -15,7 +15,7 @@ $$
 \gcd(x, y) = \prod_{p \mid x,\, p \mid y} p^{\min(\alpha_p, \beta_p)}.
 $$
 
-This definitions are based on iterative multiplication. If $\gcd(x,y) = 1$, then $x$ and $y$ are comprime. However, points on varieties $X$ are also defined over $\mathbb{Q}$, as well as over $\mathbb{R}$, $\mathbb{C}$, including number fields.
+If $\gcd(x,y) = 1$, then $x$ and $y$ are comprime. However, points on varieties $X$ are also defined over $\mathbb{Q}$, as well as over $\mathbb{R}$, $\mathbb{C}$, including number fields.
 
 Therefore, I had a searching question:
 
