@@ -107,7 +107,7 @@ The $\Delta$ and $\delta$ functions are the analogues of the Gamma function (by 
 
 Well, after so many twists and turns, the naive question I arrive at goes like this:
 
-> Does there exist a function $\Delta_P(x_\mathbb{R})$ analogous to $\Gamma(x_\mathbb{R})$ by substitution and interpolation for each type of figurate number $P$ that can define similar new multidimensional geometric objects over UFDs, complex numbers, or in  a number field $K/\mathbb{Q}$?
+> Does there exist a function $\Delta_P(x_\mathbb{R})$ analogous to $\Gamma(x_\mathbb{R})$ by substitution and interpolation for each type of figurate number $P$ that can define similar  multidimensional geometric objects over UFDs, complex numbers, or in  a number field $K/\mathbb{Q}$?
 
 I would expect such a $\Delta_P(x_\mathbb{R})$ to inherit beautiful properties, like convexity, perhaps log-convexity, or functional recurrence relations.
 
