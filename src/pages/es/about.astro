@@ -51,34 +51,29 @@ import FigurateNumImages from "@components/img-components/FigurateNumImages.astr
 
       <FigurateNumImages />
 
-      <h2 class="text-xl my-6 font-semibold">Experiencia</h2>
-      <p>
+      <h2 class="text-2xl my-6 font-semibold">Experiencia</h2>
+      <p class="mb-8">
         Tengo experiencia docente a nivel de pregrado y posgrado, especialmente en programación en
         vivo (<em>live coding</em>) y musicología enfocada a la tecnología. Puedes leer los
-        comentarios de mi práctica docente <a
-          class={linksTo}
-          id="testimonials"
-          href={`/testimonials`}>aquí</a
-        >.
+        comentarios de mi práctica docente
+        <a class={linksTo} id="testimonials" href={`/testimonials`}> aquí</a>.
       </p>
 
-      <h2 class="text-xl my-6 font-semibold">Intereses</h2>
-      <p>
-        <ul class="pl-2">
-          <li class="relative pl-5 text-content text-base">
-            <span class="absolute left-0 top-[0.45rem] w-2 h-2 bg-primary rounded-full"></span>
-            <p>Teoría Matemática de la Música</p>
-          </li>
-          <li class="relative pl-5 text-content text-base">
-            <span class="absolute left-0 top-[0.45rem] w-2 h-2 bg-primary rounded-full"></span>
-            <p>Lenguajes específicos de dominio (DSLs) para la música</p>
-          </li>
-          <li class="relative pl-5 text-content text-base">
-            <span class="absolute left-0 top-[0.45rem] w-2 h-2 bg-primary rounded-full"></span>
-            <p>Composición e improvisación musical asistida por ordenador</p>
-          </li>
-        </ul>
-      </p>
+      <h2 class="text-2xl my-6 font-semibold">Intereses</h2>
+      <ul class="pl-2 mb-10">
+        <li class="relative pl-5 text-content text-base">
+          <span class="absolute left-0 top-[0.45rem] w-2 h-2 bg-primary rounded-full"></span>
+          <p>Teoría Matemática de la Música</p>
+        </li>
+        <li class="relative pl-5 text-content text-base">
+          <span class="absolute left-0 top-[0.45rem] w-2 h-2 bg-primary rounded-full"></span>
+          <p>Lenguajes específicos de dominio (DSLs) para la música</p>
+        </li>
+        <li class="relative pl-5 text-content text-base">
+          <span class="absolute left-0 top-[0.45rem] w-2 h-2 bg-primary rounded-full"></span>
+          <p>Composición e improvisación musical asistida por ordenador</p>
+        </li>
+      </ul>
     </article>
     <ListOfSkills title="Tecnologías" techSkills={techSkillsSpanish} indices={[0, 1, 2, 3]} />
     <img
