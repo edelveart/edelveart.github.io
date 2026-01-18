@@ -194,7 +194,8 @@ In our triangle, each vertex meets exactly $2$ edges, each edge connects exactly
 ## Construing Regular PolyTypes
 
 Now comes the promised exchange, the trade from the algebraic realm to the computational one. But not in the way you might expect.
-I am not interested in simply implementing `group actions` in a programming language or DSLs, that is already done in systems like <a href="https://www.gap-system.org/" target="_blank" rel="noopener noreferrer">Gap</a> (Groups, Algorithms, Programming). I am after is something deeper, clearly more theoretical and tentative (a kind of `ts` pseudocoe).
+I am not interested in simply implementing `group actions` in a programming language or DSLs, that is already done in systems like <a href="https://www.gap-system.org/" target="_blank" rel="noopener noreferrer">GAP</a> (Groups, Algorithms, Programming).
+I am after is something deeper, clearly more theoretical and tentative (a kind of `ts` pseudocoe).
 
 I want to ask:
 > What would a `regular type` or, more analogously to the geometric notion, `regular polytype` be?
