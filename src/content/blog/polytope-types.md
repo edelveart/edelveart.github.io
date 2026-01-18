@@ -54,7 +54,7 @@ This that looks very strange, is simple. If we say it with our verb: if we apply
 
 ## Triangular numbers $T(n)$ are usually, the Best
 
-I usually use <a href="https://www.worldscientific.com/worldscibooks/10.1142/8188#t=aboutBook" target="_blank" rel="noopener noreferrer">triagular figurate numbers</a> as an example, they are as simple and as profound as the $k$-simplexes used in algebraic topology.
+I usually use <a href="https://www.worldscientific.com/worldscibooks/10.1142/8188#t=aboutBook" target="_blank" rel="noopener noreferrer">triagular figurate numbers</a> as an example, they are as simple and as profound as the $k$-simplices used in algebraic topology.
 
 And the square? It is similar, the important thing is to capture the idea.
 Well, the symmetry group that acts on a triangle is the group  $D_3$, also called the `dihedral group`.
@@ -126,7 +126,7 @@ $$
 
 While the reflection over the altitude from  $A_0$, produces the movement
 $$
-s \star f_p = \{A_0, A0 C_0, P\}.
+s \star f_P = \{A_0, A0 C_0, P\}.
 $$
 
 Again, only the vertices and edges permute, the face remains the same.
@@ -148,13 +148,12 @@ There are several questions to position ourselves before what the plain term `re
 Well, these questions go in that direction, but they are not adequate to define what a regular polygon or polyhedron is. We could attempt to give a definition, but this can be much broader than what we think by regular and include non-convex figures (I wil probably talk about this later) or
  <a href="https://en.wikipedia.org/wiki/Johnson_solid" target="_blank" rel="noopener noreferrer">Johnson solids.</a>
 
-
 We need a precise definition. In that sense, everything we have done above has already prepared the path quite well for us. Let's return then to the notion of group action and specialize in a specific type that will help us answer this question of regularity:  `transitivity`.
 
-An action of a group $G$ on the set of complete flags $F$ of a polytope $P$ will be called transitive if any $f_p$ can be transformed into another by some element of $G$. With a dose of formality we say that, for any pair of flags
+An action of a group $G$ on the set of complete flags $F_P$ of a polytope $P$ will be called transitive if any $f_p$ can be transformed into another by some element of $G$. With a dose of formality we say that, for any
 
 $$
-\{f_P^1, f_P^2\},
+f_P^1, f_P^2 \in F_P,
 $$
  $\exist g \in G$, such that
 
@@ -163,7 +162,6 @@ $$
 $$
 
 This definition is indicating to us that the group $G$ acts in a uniform way over the entire structure. In the triangle, the group $D_3$​ permutes all the complete flags.
-
 
 $$
 \begin{array}{c}
@@ -183,7 +181,7 @@ That's it, we are ready to understand what `regular` means in geometry and make 
 
 With everything seen and geometrized and algebraized of the matter, the definition comes to us more natural than ever and says thus:
 
-> Let $d_{ \geq 2}$ be the dimension of a space (let's think Euclidean). We will say that a polytope  $P$  immersed in the space $\mathbb{R}^d$ is regular if its symmetry group $\Delta$ acts transitively on the set of complete flags $F_P$ of $P$.
+> Let $d_{ \geq 2}$ be the dimension of a space (let's think Euclidean). We will say that a polytope  $P$  immersed in the space $\mathbb{R}^d$ is regular if its symmetry group $\Delta$ acts transitively on the set of all complete flags $F_P$ of $P$.
 
 With the triangle, $\mathbb{R}^2$. Let $p_0 \in P_0$,  a vertex and let us denote by $E_{p_0}$ the set of edges that contain $p_0$. Therefore,
 
@@ -236,7 +234,6 @@ A `complete type flag` would be a chain of increasingly complex types, where
 complexity is measured by structural depth, the number of nested type constructor
 applications. Here, to abbreviate, I omit quotation marks, and $V$, $E$ and $F$ stand for `Vertex`, `Edge`, and `Face` respectively:
 
-
 $$
 \begin{array}{rcl}
 \text{string} & \subset & \text{V<A>} \\
@@ -244,6 +241,7 @@ $$
 & \subset & \text{F<[...]>}
 \end{array}
 $$
+
 Here, each type contains the structure of the previous one: a vertex contains a
 string label, an edge contains vertices, and a face contains edges.
 
@@ -278,11 +276,10 @@ type ReflectAB<T> = {
 };
 ```
 
-Notice that this is conceptual pseudocode. To truly preserve type constructors  (transforming `Vertex<"A">` into `Vertex<"B">` rather than just object fields), we would need conditional types with `infer`, which is verbose, but feasible.
+Notice that this is `conceptual pseudocode`. To truly preserve type constructors, we would need conditional types with `infer`, which is verbose, but feasible. This `Rotate`  mimics the rotation $r \in D_3$, acting on type structure.
 
 For sure, is the "group" of mapped types in fact a group? Well, not all $M$ form a group, but if we restrict ourselves those that permute `literal type parameters` like `"A"`, `"B"`, `"C"` while preserving the type constructor, then we obtain something much closer to a genuine group structure.
-
-This Rotate is analogous to the rotation $r \in D_3$. It acts on the type structure, transforming `Vertex<"A">` into `Vertex<"B">`, but preserving the programming type shape (the `Vertex` type constructor itself). Let's continue with this first approach without complete rigor.
+Let's continue with this first approach without complete rigor.
 
 ### Creating Type Transitivity
 
@@ -299,6 +296,7 @@ type TypeFlag = {
   face: Face<readonly Edge<any, any>[]>;
 };
 ```
+
 This represents the structural schema of a type flag; concrete flags would instantiate the labels (e.g., `Vertex<"A">` vs `Vertex<"B">`). A type transitive symmetry would be a mapped type `M` such that for any two type flags `f_1` and `f_2`, there exists some composition of type symmetries that maps `f_T^1` to `f_T^2`:
 
 $$
