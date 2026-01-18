@@ -31,7 +31,7 @@ But as I like to do, not staying still on one side of the equation, I will make 
 
 We recall that a `group` is one of the algebraic structures par excellence that appears everywhere. From particle physics, Mazur's theorem for elliptic curves over $\mathbb{Q}$ (what beauty), and, of course, in the music of Beethoven's 9th Symphony or Xenakis. I will not put references because there are hundreds. I present here, then, for the solution of memory, what a `group action` is.
 
-First, we will say that $P$ is a set that is not empty. Why $P$? Well, very easy,  $P$will be our polygon and polytope or polyhedron for now. Now, I will use  $G$, for group and for being commonly used notation. Well, when moving, were making a group action of $G$ on the hexahedral box $P$:
+First, we will say that $P$ is a set that is not empty. Why $P$? Well, very easy, $P$ will be our polygon and polytope or polyhedron for now. Now, I will use  $G$, for group and for being commonly used notation. Well, when moving, were making a group action of $G$ on the hexahedral box $P$:
 
 $$
 G \times P \longrightarrow P \\
@@ -245,9 +245,6 @@ With what was explained in the previous paragraph, we now have the question more
 
 One sufficiently natural answer, I think, lies on the side of TypeScript's  `mapped types`, which I denote by $M$, because they transform one type into another but somehow maintain the structural form, their type geometry.
 
-The following is **conceptual pseudocode** illustrating the idea, a full
-implementation would require more sophisticated type machinery and I am out of form to do this:
-
 ```ts
 type IdentityTransform<T> = T;
 
@@ -270,8 +267,7 @@ type ReflectAB<T> = {
 };
 ```
 
-Notice that this is conceptual pseudocode. To truly preserve type constructors  (transforming `Vertex<"A">` into `Vertex<"B">` rather than just object fields), we would need conditional types with `infer`, which is verbose, but feasible. The above
-illustrates the idea.
+Notice that this is conceptual pseudocode. To truly preserve type constructors  (transforming `Vertex<"A">` into `Vertex<"B">` rather than just object fields), we would need conditional types with `infer`, which is verbose, but feasible.
 
 For sure, is the "group" of mapped types in fact a group? Well, not all $M$ form a group, but if we restrict ourselves those that permute `literal type parameters` like `"A"`, `"B"`, `"C"` while preserving the type constructor, then we obtain something much closer to a genuine group structure.
 
