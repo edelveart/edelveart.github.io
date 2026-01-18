@@ -166,12 +166,18 @@ This definition is indicating to us that the group $G$ acts in a uniform way ove
 
 
 $$
-\{A_0, A_0 B_0, P\} \xrightarrow{r} \{B_0, B_0 C_0, P\} \xrightarrow{s} \{A_0, A_0 C_0, P\}.
+\begin{array}{c}
+\{A_0, A_0 B_0, P\} \\
+\downarrow {r} \\
+\{B_0, B_0 C_0, P\} \\
+\downarrow {s}\\
+\{A_0, A_0 C_0, P\}
+\end{array}
 $$
 
 As you see, each complete flag can be obtained from any other that exists through a symmetry coming from the action. It is your turn to list the other flags of the triangle.
 
-That's it, we're ready to understand what `regular` means in geometry and make our exchange toward computation.
+That's it, we are ready to understand what `regular` means in geometry and make our exchange toward computation.
 
 ## Polytopes that are called regular
 
@@ -230,10 +236,14 @@ A `complete type flag` would be a chain of increasingly complex types, where
 complexity is measured by structural depth, the number of nested type constructor
 applications. Here, to abbreviate, I omit quotation marks, and $V$, $E$ and $F$ stand for `Vertex`, `Edge`, and `Face` respectively:
 
-$$
-\text{string} \subset \text{V<A>} \subset \text{E<V<A>, V<B>>} \subset \text{F<[...]>}
-$$
 
+$$
+\begin{array}{rcl}
+\text{string} & \subset & \text{V<A>} \\
+& \subset & \text{E<V<A>, V<B>>} \\
+& \subset & \text{F<[...]>}
+\end{array}
+$$
 Here, each type contains the structure of the previous one: a vertex contains a
 string label, an edge contains vertices, and a face contains edges.
 
