@@ -4,7 +4,7 @@ description: "I invite you to explore the intersection of figurate numbers and m
 pubDate: "October 25 2025"
 heroImage: "/itemPreview.webp"
 badge: "Type-Level Algorithmic Music"
-tags: ["algebra", "typescript",  "type-level programming",   "figurate numbers", "module theory"]
+tags: ["algebra", "typescript",  "type-level programming", "type-theory",  "figurate numbers", "module theory"]
 ---
 
 Where do numbers live when a program computes them? Not in memory, exactly, that's just their temporary residence. I mean their abstract home, the mathematical space where sequences unfold according to their rules.
