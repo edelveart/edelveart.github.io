@@ -20,90 +20,90 @@ import FigurateNumImages from "@components/img-components/FigurateNumImages.astr
     </div>
 
     <article class="mb-10 mt-10">
-      blockquote class="mb-4">
-      <p class="font-thin text-right text-sm italic">La geometría determina la aritmética.</p>
-      <footer class="text-right text-xs font-light mt-1">— M. Hyndry y J. Silverman</footer>
+      <blockquote class="mb-4">
+        <p class="font-thin text-right text-sm italic">La geometría determina la aritmética.</p>
+        <footer class="text-right text-xs font-light mt-1">— M. Hyndry y J. Silverman</footer>
+      </blockquote>
+      <blockquote class="mb-4">
+        <p class="font-thin text-right text-sm italic text-balance">
+          El conocimiento preciso del comportamiento de una función analítica cerca de sus puntos
+          singulares es una fuente de teoremas en teoría de números.
+        </p>
+        <footer class="text-right text-xs font-light mt-1">— E. Hecke</footer>
+      </blockquote>
+
+      <p class="mb-4">
+        Soy Edgar Delgado Vega, músico nacido en Lima que desarrolla software en la intersección de
+        las matemáticas, la computación y la música.
+      </p>
+      <p class="mb-4">
+        Mi visión es crear abstracciones mediante analogías estructurales que conduzcan naturalmente
+        al descubrimiento matemático desde lo musical y viceversa. Para esto diseño <a
+          class={linksTo}
+          id="projects"
+          href={menuSpanish.projectsMenu.href}>bibliotecas de código</a
+        > que permiten abordar problemas complejos de manera creativa.
+      </p>
+
+      <SonicPiModFormsImage />
+
+      <p class="mb-4">
+        Como alguien al que le gusta cuestionar las cosas, prefiero reconstruir algoritmos y teoría
+        musical con el rigor matemático suficiente para develar patrones subyacentes, lo cual
+        también involucra pensar en asimetrías y no conmutatividad. Encuentro que este enfoque
+        sistemático es una vía genuina hacia nuevos conceptos.
+      </p>
+
+      <FigurateNumImages />
+
+      <h2 class="text-2xl my-6 font-semibold">Experiencia</h2>
+      <p class="mb-10">
+        Tengo experiencia docente a nivel de pregrado y posgrado, especialmente en programación en
+        vivo (<em>live coding</em>) y musicología enfocada a la tecnología. Puedes leer los
+        comentarios de mi práctica docente
+        <a class={linksTo} id="testimonials" href={`/testimonials`}> aquí</a>.
+      </p>
+
+      <h2 class="text-2xl my-6 font-semibold">Intereses</h2>
+      <ul class="pl-2 mb-10">
+        <li class="relative pl-5 text-content text-base">
+          <span class="absolute left-0 top-[0.45rem] w-2 h-2 bg-primary rounded-full"></span>
+          <p>Teoría Matemática de la Música</p>
+        </li>
+        <li class="relative pl-5 text-content text-base">
+          <span class="absolute left-0 top-[0.45rem] w-2 h-2 bg-primary rounded-full"></span>
+          <p>Lenguajes específicos de dominio (DSLs) para la música</p>
+        </li>
+        <li class="relative pl-5 text-content text-base">
+          <span class="absolute left-0 top-[0.45rem] w-2 h-2 bg-primary rounded-full"></span>
+          <p>Composición e improvisación musical asistida por ordenador</p>
+        </li>
+      </ul>
     </article>
+
     <blockquote class="mb-4">
       <p class="font-thin text-right text-sm italic text-balance">
-        El conocimiento preciso del comportamiento de una función analítica cerca de sus puntos
-        singulares es una fuente de teoremas en teoría de números.
+        He intentado aprender la belleza oculta en varias cosas, pero aún en muchas áreas la fuente
+        de interés es para mí un misterio completo. Mi teoría es que, muy a menudo, las personas
+        proyectan sus debilidades o propiedades humanas sobre su actividad matemática. Hay ejemplos
+        obvios a la vista: por ejemplo, la idea de una clasificación de algunos objetos es una
+        encarnación de los instintos de coleccionista, la búsqueda de valores máximos es otra forma
+        de avaricia, la computabilidad/la decidibilidad proviene del deseo de un control total. La
+        fascinación por las iteraciones es similar al hipnotismo de la música rítmica.
       </p>
-      <footer class="text-right text-xs font-light mt-1">— E. Hecke</footer>
+      <footer class="text-right text-xs font-light mt-1">— Maxim Kontsevich</footer>
     </blockquote>
 
-    <p class="mb-4">
-      Soy Edgar Delgado Vega, músico nacido en Lima que desarrolla software en la intersección de
-      las matemáticas, la computación y la música.
-    </p>
-    <p class="mb-4">
-      Mi visión es crear abstracciones mediante analogías estructurales que conduzcan naturalmente
-      al descubrimiento matemático desde lo musical y viceversa. Para esto diseño <a
-        class={linksTo}
-        id="projects"
-        href={menuSpanish.projectsMenu.href}>bibliotecas de código</a
-      > que permiten abordar problemas complejos de manera creativa.
-    </p>
-
-    <SonicPiModFormsImage />
-
-    <p class="mb-4">
-      Como alguien al que le gusta cuestionar las cosas, prefiero reconstruir algoritmos y teoría
-      musical con el rigor matemático suficiente para develar patrones subyacentes, lo cual también
-      involucra pensar en asimetrías y no conmutatividad. Encuentro que este enfoque sistemático es
-      una vía genuina hacia nuevos conceptos.
-    </p>
-
-    <FigurateNumImages />
-
-    <h2 class="text-2xl my-6 font-semibold">Experiencia</h2>
-    <p class="mb-10">
-      Tengo experiencia docente a nivel de pregrado y posgrado, especialmente en programación en
-      vivo (<em>live coding</em>) y musicología enfocada a la tecnología. Puedes leer los
-      comentarios de mi práctica docente
-      <a class={linksTo} id="testimonials" href={`/testimonials`}> aquí</a>.
-    </p>
-
-    <h2 class="text-2xl my-6 font-semibold">Intereses</h2>
-    <ul class="pl-2 mb-10">
-      <li class="relative pl-5 text-content text-base">
-        <span class="absolute left-0 top-[0.45rem] w-2 h-2 bg-primary rounded-full"></span>
-        <p>Teoría Matemática de la Música</p>
-      </li>
-      <li class="relative pl-5 text-content text-base">
-        <span class="absolute left-0 top-[0.45rem] w-2 h-2 bg-primary rounded-full"></span>
-        <p>Lenguajes específicos de dominio (DSLs) para la música</p>
-      </li>
-      <li class="relative pl-5 text-content text-base">
-        <span class="absolute left-0 top-[0.45rem] w-2 h-2 bg-primary rounded-full"></span>
-        <p>Composición e improvisación musical asistida por ordenador</p>
-      </li>
-    </ul>
+    <ListOfSkills title="Tecnologías" techSkills={techSkillsSpanish} indices={[0, 1, 2, 3]} />
+    <img
+      src="https://githubcard.com/edelveart.svg?d=JDU5hnct"
+      alt="GitHub Stats"
+      class="rounded-lg"
+    />
+    <Education />
   </section>
 
-  <blockquote class="mb-4">
-    <p class="font-thin text-right text-sm italic text-balance">
-      He intentado aprender la belleza oculta en varias cosas, pero aún en muchas áreas la fuente de
-      interés es para mí un misterio completo. Mi teoría es que, muy a menudo, las personas
-      proyectan sus debilidades o propiedades humanas sobre su actividad matemática. Hay ejemplos
-      obvios a la vista: por ejemplo, la idea de una clasificación de algunos objetos es una
-      encarnación de los instintos de coleccionista, la búsqueda de valores máximos es otra forma de
-      avaricia, la computabilidad/la decidibilidad proviene del deseo de un control total. La
-      fascinación por las iteraciones es similar al hipnotismo de la música rítmica.
-    </p>
-    <footer class="text-right text-xs font-light mt-1">— Maxim Kontsevich</footer>
-  </blockquote>
-
-  <ListOfSkills title="Tecnologías" techSkills={techSkillsSpanish} indices={[0, 1, 2, 3]} />
-  <img
-    src="https://githubcard.com/edelveart.svg?d=JDU5hnct"
-    alt="GitHub Stats"
-    class="rounded-lg"
-  />
-  <Education />
-</BaseLayout>
-
-<!-- <h2 class="my-4">El origen de mi interés por las matemáticas</h2>
+  <!-- <h2 class="my-4">El origen de mi interés por las matemáticas</h2>
   <p class="text-xs">
     Aunque mi atención estuvo dirigida hacia la música durante muchos años, mi interés por las
     matemáticas comenzó a una edad temprana, cuando me pregunté: ¿Por qué los números se comportan
@@ -112,7 +112,7 @@ import FigurateNumImages from "@components/img-components/FigurateNumImages.astr
     números, geometría y álgebra.
   </p> -->
 
-<!-- <div class="mb-5 mt-8">
+  <!-- <div class="mb-5 mt-8">
       <article class="text-2xl w-full font-bold flex items-center">
         <Curriculum class="ml-0 mr-4" /> Congresos
       </article>
@@ -170,3 +170,4 @@ import FigurateNumImages from "@components/img-components/FigurateNumImages.astr
         </p>
       </li>
     </ul> -->
+</BaseLayout>
