@@ -2,7 +2,8 @@
 import { allProjects } from "@components/ProjectsComponent.astro";
 
 const divisor = "my-12";
-const URL = allProjects;
+const UrlArray = allProjects;
+const display = "sm:h-60  h-40 md:h-80 ";
 ---
 
 <!-- https://svgomg.net/  --><!-- https://vecta.io/nano -->
@@ -11,13 +12,13 @@ const URL = allProjects;
 <div
   class="relative rounded-lg bg-base-100 hover:shadow-xl transition duration-200 ease-in-out hover:bg-base-300"
 >
-  <a href={URL[1].url} target="_blank" rel="noopener noreferrer">
+  <a href={UrlArray[1].url} target="_blank" rel="noopener noreferrer">
     <div class="hero-content flex-col md:flex-row rounded-lg shadow-sm shadow-primary/50 p-6">
       <div class="absolute top-0 left-0 m-4 badge badge-primary truncate z-10">
         <code>Modular Forms | RubyGems</code>
       </div>
       <div
-        class="w-full h-60 md:h-80 flex items-center justify-center invert hue-rotate-180 hover:hue-rotate-90 mt-6"
+        class=`w-full ${display} flex items-center justify-center invert hue-rotate-180 hover:hue-rotate-90 mt-6`
       >
         <img
           src="/svg-ggb/L-function-music-vecta-io.svg"
@@ -34,13 +35,13 @@ const URL = allProjects;
 <div
   class="relative rounded-lg bg-base-100 hover:shadow-xl transition duration-200 ease-in-out hover:bg-base-300"
 >
-  <a href={URL[2].url} target="_blank" rel="noopener noreferrer">
+  <a href={UrlArray[2].url} target="_blank" rel="noopener noreferrer">
     <div class="hero-content flex-col md:flex-row rounded-lg shadow-sm shadow-primary/50 p-6">
       <div class="absolute top-0 left-0 m-4 badge badge-primary truncate z-10">
         <code>FigurateNum | PyPI</code>
       </div>
       <div
-        class="w-full h-60 md:h-80 flex items-center justify-center hue-rotate-90 hover:hue-rotate-180 mt-6"
+        class=`w-full ${display} flex items-center justify-center hue-rotate-90 hover:hue-rotate-180 mt-6`
       >
         <img
           src="/svg-ggb/complex-figuratenum.svg"
@@ -57,13 +58,13 @@ const URL = allProjects;
 <div
   class="relative rounded-lg bg-base-100 hover:shadow-xl transition duration-200 ease-in-out hover:bg-base-300"
 >
-  <a href={URL[0].url} target="_blank" rel="noopener noreferrer">
+  <a href={UrlArray[0].url} target="_blank" rel="noopener noreferrer">
     <div class="hero-content flex-col md:flex-row rounded-lg shadow-sm shadow-primary/50 p-6">
       <div class="absolute top-0 left-0 m-4 badge badge-primary truncate z-10">
         <code>TS-Tonnetz | npm</code>
       </div>
       <div
-        class="w-full h-60 md:h-80 flex items-center justify-center invert hue-rotate-180 hover:hue-rotate-90 mt-6"
+        class=`w-full ${display} flex items-center justify-center invert hue-rotate-180 hover:hue-rotate-90 mt-6`
       >
         <img
           src="/svg-ggb/ts-tonnetz-2026-library.svg"
