@@ -47,7 +47,10 @@ $$
 The `second` condition is compatibility, that is, regarding associativity:
 
 $$
-(g_1 g_2) \star p = g_1 \star (g_2 \star p), \quad \forall g_1, g_2 \in G, p \in P.
+\begin{align*}
+(g_1 g_2) \star p = g_1 \star (g_2 \star p), \\
+\forall g_1, g_2 \in G, \ p \in P.
+\end{align*}
 $$
 
 This that looks very strange, is simple. If we say it with our verb: if we apply $g_2$ and then apply $g_1$ on $p$, the result will be exactly the same as if we apply the product $g_1 g_2$.
