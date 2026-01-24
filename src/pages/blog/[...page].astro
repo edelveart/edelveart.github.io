@@ -13,13 +13,10 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props as any;
 ---
 
-<BaseLayout title="Edgar Delgado — Blog" sideBarActiveItemID="NOTES_ACTIVE_PAGE">
+<BaseLayout title="Edgar Delgado - Blog" sideBarActiveItemID="NOTES_ACTIVE_PAGE">
   <section class="pb-3 mt-5">
     <div class="mb-5 mt-5" id="Notes">
-      <div class="text-3xl w-full font-bold flex items-center">
-        <!-- <Skills class="ml-0 mr-4" /> -->
-        Blog
-      </div>
+      <div class="text-3xl w-full font-bold flex items-center">Blog</div>
     </div>
     {
       page.data.length === 0 ? (
@@ -48,11 +45,10 @@ const { page } = Astro.props as any;
       )
     }
 
-    <div class="flex justify-between">
+    <div class="flex justify-between gap-0">
       {
         page.url.prev ? (
-          <a href={page.url.prev} class="btn btn-ghost my-10 mx-5 text-base">
-            {" "}
+          <a href={page.url.prev} class="btn btn-ghost my-10 mx-0 text-base">
             <svg
               class="h-6 w-6 fill-current md:h-8 md:w-8 ml-[-10px]"
               xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +57,7 @@ const { page } = Astro.props as any;
               viewBox="0 0 24 24"
             >
               <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
-            </svg>{" "}
+            </svg>
             Recent Posts
           </a>
         ) : (
@@ -70,16 +66,15 @@ const { page } = Astro.props as any;
       }
       {
         page.url.next ? (
-          <a href={page.url.next} class="btn btn-ghost my-10 mx-5 text-base">
-            Older Posts{" "}
+          <a href={page.url.next} class="btn btn-ghost my-10 mx-0 text-base">
+            Older Posts
             <svg
-              class="h-6 w-6 fill-current md:h-8 md:w-8 mr-[-10px]"
+              class="h-6 w-6 fill-current  md:h-8 md:w-8 mr-[-10px]"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
               viewBox="0 0 24 24"
             >
-              {" "}
               <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
             </svg>
           </a>
