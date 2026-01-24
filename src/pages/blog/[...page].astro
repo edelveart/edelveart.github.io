@@ -8,7 +8,7 @@ import CardBlog from "@components/CardBlog.astro";
 export async function getStaticPaths({ paginate }) {
   const posts = await getCollection("blog");
   posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-  return paginate(posts, { pageSize: 10 });
+  return paginate(posts, { pageSize: 5 });
 }
 const { page } = Astro.props as any;
 ---
@@ -51,10 +51,10 @@ const { page } = Astro.props as any;
     <div class="flex justify-between">
       {
         page.url.prev ? (
-          <a href={page.url.prev} class="btn btn-ghost my-10 mx-5">
+          <a href={page.url.prev} class="btn btn-ghost my-10 mx-5 text-base">
             {" "}
             <svg
-              class="h-6 w-6 fill-current md:h-8 md:w-8"
+              class="h-6 w-6 fill-current md:h-8 md:w-8 ml-[-10px]"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -62,7 +62,7 @@ const { page } = Astro.props as any;
             >
               <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
             </svg>{" "}
-            Publicaciones recientes
+            Recent Posts
           </a>
         ) : (
           <div />
@@ -70,10 +70,10 @@ const { page } = Astro.props as any;
       }
       {
         page.url.next ? (
-          <a href={page.url.next} class="btn btn-ghost my-10 mx-5">
-            Publicaciones antiguas{" "}
+          <a href={page.url.next} class="btn btn-ghost my-10 mx-5 text-base">
+            Older Posts{" "}
             <svg
-              class="h-6 w-6 fill-current md:h-8 md:w-8"
+              class="h-6 w-6 fill-current md:h-8 md:w-8 mr-[-10px]"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"

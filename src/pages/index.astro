@@ -13,12 +13,13 @@ import IndexOfProjects from "@components/IndexOfProjects.astro";
 import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug";
 import CardBlog from "@components/CardBlog.astro";
+import PreviousPosts from "@components/PreviousPosts.astro";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
-const last_posts = posts.slice(0, 5);
+const last_posts = posts.slice(0, 3);
 ---
 
 <BaseLayout title="Edgar Delgado Vega - Creative Math Systems Developer">
@@ -51,5 +52,6 @@ const last_posts = posts.slice(0, 5);
         </>
       ))
     }
+    <PreviousPosts />
   </section>
 </BaseLayout>
