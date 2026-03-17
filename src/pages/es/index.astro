@@ -4,7 +4,7 @@ import Biography from "@components/es/Biography.astro";
 import MainLinks from "@components/MainLinks.astro";
 import Experience, { allExperiences } from "@components/es/Experience.astro";
 import { allProjects } from "@components/ProjectsComponent.astro";
-import ModEcImg from "@components/img-components/ModEcImg.astro";
+import HeroTopProjects from "@components/img-components/Hero-Top-Projects.astro";
 import IndexOfProjects from "@components/IndexOfProjects.astro";
 import CardBlog from "@components/CardBlog.astro";
 import createSlug from "@ts-config-path/lib/createSlug";
@@ -27,7 +27,7 @@ const last_posts = posts.slice(0, 3);
     <h2 class="py-3 text-2xl font-bold text-primary">
       Desarrollador de sistemas matemáticos creativos
     </h2>
-    <ModEcImg />
+    <HeroTopProjects />
     <div class="my-20">
       <Biography />
       <MainLinks contactText="LinkedIn" linkedin="L" github="G" youtube="Y" />

@@ -1,19 +1,17 @@
 ---
-const cssImgFigurateNum = "rounded-xl max-w-[225px] flex-grow";
+import { Image } from "astro:assets";
+import discreteAndContinuousPortraits from "../../assets/libraries-webp/discrete-continuous-portraits.webp";
 ---
 
-<div class="flex flex-wrap justify-center mr-5">
-  <figure class="text-center">
-    <div class="mx-auto w-full">
-      <img
-        src="/svg-ggb/five-dimensional-hyperoctahedron.svg"
-        alt="Figurate Number in Polar Coordinates"
-        class={cssImgFigurateNum}
-        loading="lazy"
-      />
-    </div>
-    <figcaption class="mb-8 text-sm text-gray-400">
-      <code>5D Hyperoctahedron</code>
-    </figcaption>
-  </figure>
-</div>
+<figure class="text-center my-10 text-gray-400">
+  <Image
+    src={discreteAndContinuousPortraits}
+    alt="Picture of 5D Hyperoctahedron (Discrete and Continuous)"
+    class="w-[85%] mx-auto rounded-lg"
+    loading="lazy"
+    fetchpriority="high"
+  />
+  <figcaption class="mt-3 text-sm text-gray-400">
+    <code>5D Hyperoctahedron: Discrete mod N (left) vs. Enhanced Phase Portrait (right)</code>
+  </figcaption>
+</figure>
