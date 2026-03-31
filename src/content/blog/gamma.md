@@ -46,8 +46,7 @@ For now, my library <a href="https://pypi.org/project/figuratenum/" target="_bla
 ```py
 from figuratenum import PlaneFigurateNum as fgn
 # Generate triangular numbers
-seq_loop = fgn()
-gen = seq_loop.triangular()
+gen = fgn().triangular()
 triangular_num = [next(gen) for _ in range(100)]
 # [1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78, ...]
 ```
@@ -92,8 +91,7 @@ For instance, here's how you generate a `120`-dimensional hypertetrahedron in `f
 ```py
 from figuratenum import MultidimensionalFigurateNum as fgn
 
-seq_loop = fgn()
-gen = seq_loop.k_dimensional_hypertetrahedron(120)
+gen = fgn().k_dimensional_hypertetrahedron(120)
 k_100_hypertetrahedron_num = [next(gen) for _ in range(100)]
 # [1, 121, 7381, 302621, 9381251, 234531275, 4925156775,
 # 89356415775, 1429702652400, 20492404684400, 266401260897200,

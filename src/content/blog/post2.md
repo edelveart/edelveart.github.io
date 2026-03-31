@@ -41,6 +41,15 @@ $$
 
 All these expressions unite in the object called the `k_hypertetrahedron` $H_k(n)$, following  <a href="https://www.worldscientific.com/worldscibooks/10.1142/8188#t=aboutBook" target="_blank" rel="noopener noreferrer">Figurate Numbers (2012)</a>, where combinatorics, geometry, and analysis converge.
 
+```py
+from figuratenum import MultidimensionalFigurateNum as fgn
+
+gen = fgn().k_dimensional_hypertetrahedron(57)
+k_100_hypertetrahedron_num = [next(gen) for _ in range(10)]
+# [1, 58, 1711, 34220, 521855, 6471002, 67945521, 621216192,
+# 5047381560, 37014131440]
+```
+
 On the purely combinatorial side, $H_k(n)$ is tightly connected to integer partitions. In a geometry view, it counts the integer points $(x_1, \dots, x_k) \in \mathbb{N}^k$ satisfying the equation $\sum_{i=1}^k x_i = n$, forming a discrete $k$-simplex. This often reminds me of a modified Tonnetz, where simplices tile symbolic space.
 
 Finally, seen through the lens of the Gamma function it becomes malleable and extends to fractional or complex values $H_k(z)$, provided the constraints on the real part are respected.
