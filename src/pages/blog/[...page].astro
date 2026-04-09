@@ -3,13 +3,10 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import createSlug from "../../lib/createSlug";
 import CardBlog from "@components/CardBlog.astro";
-// import Skills from "@icons/Skills.astro";
 
 export async function getStaticPaths({ paginate }) {
   const posts = await getCollection("blog");
-  posts.sort(
-    (a: any, b: any) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-  );
+  posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
   return paginate(posts, { pageSize: 5 });
 }
 const { page } = Astro.props as any;
@@ -37,9 +34,9 @@ const { page } = Astro.props as any;
             <>
               <CardBlog
                 title={post.data.title}
+                url={"/blog/" + createSlug(post.data.title, post.id)}
                 img={post.data.heroImage}
                 desc={post.data.description}
-                url={"/blog/" + createSlug(post.data.title, post.slug)}
                 target="_self"
                 badge={post.data.badge}
                 pubDate={post.data.pubDate}

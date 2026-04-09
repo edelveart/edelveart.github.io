@@ -5,23 +5,41 @@ import createSlug from "../../../../lib/createSlug";
 import CardBlog from "@components/CardBlog.astro";
 import Skills from "@icons/Skills.astro";
 
+// export async function getStaticPaths({ paginate }) {
+//   const all_posts = await getCollection("blog");
+//   const all_tags = all_posts.flatMap((post) => {
+//     return post.data.tags || [];
+//   });
+
+//   return all_tags.flatMap((tag) => {
+//     const filtred_posts = all_posts.filter((post) => {
+//       return post.data.tags?.includes(tag);
+//     });
+//     return paginate(filtred_posts, {
+//       params: { tag },
+//       pageSize: 10,
+//     });
+//   });
+// }
+
 export async function getStaticPaths({ paginate }) {
   const all_posts = await getCollection("blog");
-  const all_tags = all_posts.flatMap((post) => {
-    return post.data.tags || [];
-  });
+
+  // Deduplicar tags con Set
+  const all_tags = [
+    ...new Set(all_posts.flatMap((post) => post.data.tags || [])),
+  ];
 
   return all_tags.flatMap((tag) => {
-    const filtred_posts = all_posts.filter((post) => {
-      return post.data.tags?.includes(tag);
-    });
-    return paginate(filtred_posts, {
+    const filtered_posts = all_posts.filter((post) =>
+      post.data.tags?.includes(tag),
+    );
+    return paginate(filtered_posts, {
       params: { tag },
       pageSize: 10,
     });
   });
 }
-
 const { page } = Astro.props;
 const params = Astro.params;
 ---
@@ -51,9 +69,9 @@ const params = Astro.params;
             <>
               <CardBlog
                 title={post.data.title}
+                url={"/blog/" + createSlug(post.data.title, post.id)}
                 img={post.data.heroImage}
                 desc={post.data.description}
-                url={"/blog/" + createSlug(post.data.title, post.slug)}
                 target="_self"
                 pubDate={post.data.pubDate}
                 tags={post.data.tags}

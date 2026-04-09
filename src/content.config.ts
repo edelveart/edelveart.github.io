@@ -34,12 +34,12 @@ export type BlogSchema = z.infer<typeof blogSchema>;
 export type StoreSchema = z.infer<typeof storeSchema>;
 
 const blogCollection = defineCollection({
-  loader: glob({ base: "./src/content/blog", pattern: "**/*.{md,mdx}" }),
+  loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
   schema: blogSchema,
 });
 
 const storeCollection = defineCollection({
-  loader: glob({ base: "./src/content/store", pattern: "**/*.{md,mdx}" }),
+  loader: glob({ pattern: "**/*.md", base: "./src/content/store" }),
   schema: storeSchema,
 });
 

@@ -34,9 +34,13 @@ export const sideMenuCss = {
 
 // REPLACE SIDEBARIDACTIVEITEM
 const { pathname } = Astro.url;
-const normalizedPath = pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
-const cleanPath = normalizedPath.startsWith("/") ? normalizedPath.slice(1) : normalizedPath;
-const isActive = (href) => {
+const normalizedPath = pathname.endsWith("/")
+  ? pathname.slice(0, -1)
+  : pathname;
+const cleanPath = normalizedPath.startsWith("/")
+  ? normalizedPath.slice(1)
+  : normalizedPath;
+const isActive = (href: string) => {
   const hrefClean = href.startsWith("/") ? href.slice(1) : href;
   return cleanPath === hrefClean;
 };
@@ -46,13 +50,19 @@ const activePage = "bg-base-300";
 <div class="flex flex-col w-full h-full mb-5">
   <ul class="menu w-full h-full flex-1 flex flex-col overflow-y-auto">
     <li>
-      <a class={`${sideMenuCss.divCss} ${isActive(hrefHome) ? activePage : ""}`} href={hrefHome}>
+      <a
+        class={`${sideMenuCss.divCss} ${isActive(hrefHome) ? activePage : ""}`}
+        href={hrefHome}
+      >
         <Home class="mr-2 w-7 h-7" />
         <span class={sideMenuCss.spanText}>{homeMenu}</span>
       </a>
     </li>
     <li>
-      <a class={`${sideMenuCss.divCss} ${isActive(hrefCV) ? activePage : ""}`} href={hrefCV}>
+      <a
+        class={`${sideMenuCss.divCss} ${isActive(hrefCV) ? activePage : ""}`}
+        href={hrefCV}
+      >
         <Curriculum class="mr-3 w-6 h-6" />
         <span class={sideMenuCss.spanText}>{cvMenu}</span>
       </a>

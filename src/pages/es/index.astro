@@ -10,10 +10,6 @@ import CardBlog from "@components/CardBlog.astro";
 import createSlug from "@ts-config-path/lib/createSlug";
 import { getCollection } from "astro:content";
 import PreviousPosts from "@components/PreviousPosts.astro";
-// import { getCollection } from "astro:content";
-// const posts = (await getCollection("blog")).sort(
-//   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-// );
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
@@ -39,7 +35,9 @@ const last_posts = posts.slice(0, 3);
       indices={[0, 1, 2, 3, 4, 5]}
     /> -->
     <!-- BLOG-NOTES -->
-    <h2 class="text-3xl w-full font-black flex items-center mt-16">Últimas entradas</h2>
+    <h2 class="text-3xl w-full font-black flex items-center mt-16">
+      Últimas entradas
+    </h2>
     {
       last_posts.map((post) => (
         <>
@@ -50,7 +48,7 @@ const last_posts = posts.slice(0, 3);
             title={post.data.title}
             img={post.data.heroImage}
             desc={post.data.description}
-            url={"/blog/" + createSlug(post.data.title, post.slug)}
+            url={"/blog/" + createSlug(post.data.title, post.id)}
             target="_self"
           />
         </>

@@ -4,23 +4,14 @@ import { type BlogSchema } from "../../content.config";
 import PostLayout from "../../layouts/PostLayout.astro";
 import createSlug from "../../lib/createSlug";
 
-// export async function getStaticPaths() {
-//   const postEntries = await getCollection("blog");
-//   return postEntries.map((entry) => ({
-//     params: { slug: createSlug(entry.data.title, entry.slug) },
-//     props: { entry },
-//   }));
-// }
 export async function getStaticPaths() {
   const postEntries = await getCollection("blog");
-  return postEntries.map((entry) => {
-    const slug = createSlug(entry.data.title, entry.slug);
-    if (!slug) throw new Error(`Missing slug for post: ${entry.data.title}`);
-    return {
-      params: { slug },
-      props: { entry },
-    };
-  });
+  return postEntries.map((entry) => ({
+    params: {
+      slug: createSlug(entry.data.title, entry.id),
+    },
+    props: { entry },
+  }));
 }
 
 interface Props {
