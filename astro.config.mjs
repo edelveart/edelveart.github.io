@@ -17,6 +17,7 @@ export default defineConfig({
     mdx(),
     sitemap({
       filter: (page) => {
+        if (!page) return false;
         return (
           !page.startsWith("https://edelveart.github.io/store/") &&
           !page.startsWith("https://edelveart.github.io/services/")
