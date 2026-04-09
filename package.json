@@ -13,12 +13,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.5",
-    "@astrojs/rss": "^3.0.0",
     "@astrojs/sitemap": "^3.0.1",
     "@fontsource-variable/inter": "^5.1.0",
     "@fontsource-variable/jetbrains-mono": "^5.2.8",
-    "@fontsource-variable/rubik": "^5.2.6",
     "@fontsource-variable/sora": "^5.2.8",
     "@fontsource/fira-sans": "^5.2.7",
     "@tailwindcss/vite": "^4.1.13",
@@ -31,6 +28,8 @@
     "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
+    "@astrojs/mdx": "^5.0.3",
+    "@astrojs/rss": "^4.0.18",
     "@catppuccin/daisyui": "^2.1.1",
     "@tailwindcss/typography": "^0.5.10"
   }
