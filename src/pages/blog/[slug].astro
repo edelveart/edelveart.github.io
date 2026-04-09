@@ -1,6 +1,6 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
-import { type BlogSchema } from "../../content/config";
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import { type BlogSchema } from "../../content/content.config";
 import PostLayout from "../../layouts/PostLayout.astro";
 import createSlug from "../../lib/createSlug";
 
@@ -18,7 +18,7 @@ interface Props {
 
 const { entry } = Astro.props;
 const post: BlogSchema = entry.data;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <PostLayout

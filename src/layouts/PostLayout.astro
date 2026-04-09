@@ -1,11 +1,19 @@
 ---
-import { type BlogSchema } from "../content/config";
+import { type BlogSchema } from "../content/content.config.ts";
 import BaseLayout from "./BaseLayout.astro";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 export interface Props extends BlogSchema {}
 
-const { title, description, pubDate, updatedDate, badge, heroImage, tags = [] } = Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  badge,
+  heroImage,
+  tags = [],
+} = Astro.props;
 dayjs.extend(localizedFormat);
 const displayDate = dayjs(pubDate).format("ll");
 ---
@@ -20,7 +28,9 @@ const displayDate = dayjs(pubDate).format("ll");
   />
 
   <main class="px-0 sm:px-4 md:px-0 my-[-0.25rem] flex justify-center mb-10">
-    <article class="prose prose-img:mx-auto w-full md:max-w-[65vw] lg:max-w-[600px]">
+    <article
+      class="prose prose-img:mx-auto w-full md:max-w-[65vw] lg:max-w-[600px]"
+    >
       <!-- <article class="prose prose-img:mx-auto w-full max-w-[90vw] sm:max-w-[70vw] lg:max-w-[700px]"> -->
       <!-- {
         heroImage && (
@@ -34,13 +44,21 @@ const displayDate = dayjs(pubDate).format("ll");
           />
         )
       } -->
-      <h1 class="title mt-6 text-3xl font-bold break-words mb-2 text-primary">{title}</h1>
+      <h1 class="title mt-6 text-3xl font-bold break-words mb-2 text-primary">
+        {title}
+      </h1>
       <div class="mb-4">
         {pubDate && <time class="text-md">{displayDate}</time>}
       </div>
       <div class="border-l-4 border-primary pl-4 py-2 mb-12">
         <div class="gap-2 flex flex-wrap items-baseline">
-          {badge && <div class=" badge badge-primary rounded-3xl p-3 my-0">{badge}</div>}
+          {
+            badge && (
+              <div class=" badge badge-primary rounded-3xl p-3 my-0">
+                {badge}
+              </div>
+            )
+          }
           {
             tags &&
               tags.map((tag) => (

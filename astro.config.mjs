@@ -7,6 +7,8 @@ import tailwindcss from "@tailwindcss/vite";
 // https://expressive-code.com/
 // Reduce SVG:
 // https://vecta.io/nano
+// Reduce WEBP
+// https://compress-or-die.com/webp
 
 // https://astro.build/config
 export default defineConfig({
