@@ -58,7 +58,7 @@ You can take a pen and repeat it. In fact, things get progressively less natural
 successively **loses** commutativity (at $\mathbb{H}$), associativity (at $\mathbb{O}$), and
 alternativity beyond that (as we will see again below).
 
-In a post from last year, in this <a href="https://edelveart.github.io/blog/category-of-modules-and-type-level-programming-with-figurate-numbers/"
+In a post from last months, in this <a href="https://edelveart.github.io/blog/category-of-modules-and-type-level-programming-with-figurate-numbers/"
 target="_blank" rel="noopener noreferrer">post</a> on modules over a ring, I showed how to define
 figurate numbers in a `type system`. Let me quote exactly what I said there:
 
