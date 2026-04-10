@@ -56,7 +56,7 @@ $$
 
 You can take a pen and repeat it. In fact, things get progressively less natural. The construction
 successively loses commutativity (at $\mathbb{H}$), associativity (at $\mathbb{O}$), and
-alternativity beyond that.
+alternativity beyond that (as we will see again below).
 
 In a post from last year, in this <a href="https://edelveart.github.io/blog/category-of-modules-and-type-level-programming-with-figurate-numbers/"
 target="_blank" rel="noopener noreferrer">post</a> on modules over a ring, I showed how to define
