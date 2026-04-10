@@ -2,13 +2,16 @@
 
 Hi there!
 
-Welcome to my personal website, a fork of <a href="https://astrofy-template.netlify.app/" target="_blank" class="font-bold">Astrofy Template ⚡️</a>.
+Welcome to my personal website, a heavily customized fork of the <a href="https://astrofy-template.netlify.app/" target="_blank" class="font-bold">Astrofy Template ⚡️</a>.
 
-<img src="webpage-image-w.png" width="400" />
+I have  made several enhancements and modifications to improve functionality, design, and content presentation, including:
 
+- Support for writing mathematics using LaTeX directly in blog posts.
+- Enhanced blog features, including support for code snippets and syntax highlighting.
+- Redesigned style components for a cleaner, more modern look.
 
-I've made several customizations, including adding SVG elements and breaking the site into separate components for better maintainability. The site is available in two languages:
+The website is available in two languages:
 
-> <a href="https://edelveart.github.io/" target="_blank" class="font-bold">Spanish - ES</a>
+> <a href="https://edelveart.github.io/" target="_blank" class="font-bold">En - English</a>
 
-> <a href="https://edelveart.github.io/en" target="_blank" class="font-bold">English - EN</a>
+> <a href="https://edelveart.github.io/es" target="_blank" class="font-bold">ES - Español</a>
