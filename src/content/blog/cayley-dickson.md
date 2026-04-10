@@ -47,7 +47,7 @@ $$
 $$
 
 is similar to the complex case, and yes, it coincides exactly when $n = 1$.
-Here $\bar{a}$ denotes conjugation in $A_n$ (analogous to the conjugation of $i$ in the complex
+Here $\bar{a}$ denotes **conjugation** in $A_n$ (analogous to the conjugation of $i$ in the complex
 numbers). Conjugation in $A_{n+1}$ is then defined by
 
 $$
@@ -55,12 +55,12 @@ $$
 $$
 
 You can take a pen and repeat it. In fact, things get progressively less natural. The construction
-successively loses commutativity (at $\mathbb{H}$), associativity (at $\mathbb{O}$), and
+successively **loses** commutativity (at $\mathbb{H}$), associativity (at $\mathbb{O}$), and
 alternativity beyond that (as we will see again below).
 
 In a post from last year, in this <a href="https://edelveart.github.io/blog/category-of-modules-and-type-level-programming-with-figurate-numbers/"
 target="_blank" rel="noopener noreferrer">post</a> on modules over a ring, I showed how to define
-figurate numbers in a type system. Let me quote exactly what I said there:
+figurate numbers in a `type system`. Let me quote exactly what I said there:
 
 Let $R$ be a ring and $M_R$ a free module over $R$, and let $m \ge 3$. Then we can define the
 polygonal figurate numbers (extensible by recursion to many others) in a type system as
@@ -105,13 +105,13 @@ type T_20 = VecTriangular<20>;
 type T_50 = VecTriangular<50>;
 ```
 
-With this we have described numbers as dimensions. Why did I bring all of this back?
+With this we have described **numbers as dimensions**. Why did I bring all of this back?
 It has to do with the next section.
 
 ### Natural inclusions, two by two
 
 Let us enter symbolically into the idea of a **river** from that post mentioned above. Each algebra
-embeds into the next via natural injection morphisms
+embeds into the next via **natural injection** morphisms
 
 $$
 i_n: A_n \hookrightarrow A_{n+1}, \quad a \mapsto (a,0).
@@ -144,7 +144,7 @@ impolite_num = [next(gen) for _ in range(32)]
 # [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, ...]
 ```
 
-The initial question appears when playing with Legos and assembling ad hoc algebras that respect
+The initial question appears when playing with Legos and **assembling ad hoc algebras** that respect
 the monotone growth of figurate numbers. In fact, figurate numbers can naturally capture a
 dimensional particularity of other algebraic spaces. But how many interesting algebras can I
 build this way?
