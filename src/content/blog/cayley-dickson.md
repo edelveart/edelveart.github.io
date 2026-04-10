@@ -11,13 +11,13 @@ tags: ["cayley-dickson algebra", "figurate numbers", "type system",  "python", "
 
 Define something once, observe what follows, then redefine it using what came before.
 In simple terms, that formidable game of redefining based on prior objects. Is there anything
-more to it when we write recursive algorithms?
+more to it when we write `recursive algorithms`?
 
 Figurate numbers, as I mentioned in <a href="https://edelveart.github.io/blog/generators-as-symbolic-exploration/"
 target="_blank" rel="noopener noreferrer">earlier posts</a>, overflow what I would call their
 combinatorial side $\binom{n}{k}$, the one that defines them, and irrigate neighboring or even subterranean places.
-In this very brief post, I want to offer a faint taste of possibility (more fragile than anything
-logically immediate). Many of these inquiries come from questions closer to daydreaming:
+In this very brief post, I want to offer a faint taste of possibility (more **fragile** than anything
+logically immediate). Many of these inquiries come from questions closer to **daydreaming**:
 
 > given an object, this object also comes from somewhere else.
 
@@ -28,7 +28,7 @@ it? Figurate numbers also encode the dimensions of algebras
 (you can read an introduction to the topic here)</a>.
 
 When I said *repeat*, I was referring to the Cayley-Dickson construction, which generates a
-sequence of algebras over $\mathbb{R}$, the numbers we usually use to plot functions, starting
+sequence of algebras over $\mathbb{R}$, the numbers we usually use to **plot functions**, starting
 with the reals and doubling the dimension at each step:
 
 $$
@@ -110,7 +110,7 @@ It has to do with the next section.
 
 ### Natural inclusions, two by two
 
-Let us enter symbolically into the idea of a river from that post mentioned above. Each algebra
+Let us enter symbolically into the idea of a **river** from that post mentioned above. Each algebra
 embeds into the next via natural injection morphisms
 
 $$
@@ -125,7 +125,7 @@ $$
 $$
 
 From this it is immediate that each algebra $A_n$ has dimension $2^n$. And since figurate numbers
-also go to infinity, we are interested in the unbounded growth pattern of the sequence of
+also go to infinity, we are interested in the **unbounded** growth pattern of the sequence of
 dimensions, which satisfies
 
 $$
@@ -153,4 +153,7 @@ A second question, arising from a somewhat more discerning perspective, is:
 > Given a not necessarily injective sequence of algebras, does there exist a figurate number
 > that counts some really interesting properties of it?
 
-It's time to play `Debussy` algebra.
+Like music, each note, or each algebra, is part of a single composition, with each stage **filtering** and chaining the harmony of the whole.
+We can think of ourselves as that function which computes all possible interpretations of subalgebras, units, idempotents, musical phrases, and dynamics.
+
+It is time to play `Debussy` algebra.
