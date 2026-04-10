@@ -4,7 +4,7 @@ description: "A naive question about Cayley-Dickson algebras, enumerated by a fi
 pubDate: "April 09 2026"
 heroImage: "/itemPreview.webp"
 badge: "number algorithms"
-tags: ["cayley-dickson algebra", "figurate numbers", "types",  "python", "typescript",   "integer sequences", "octonion", "sedenion"]
+tags: ["cayley-dickson algebra", "figurate numbers", "type system",  "python", "typescript",   "integer sequences", "octonion", "sedenion"]
 ---
 
 ## Cayley-Dickson Algebras
