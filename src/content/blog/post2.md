@@ -56,7 +56,7 @@ Finally, seen through the lens of the Gamma function it becomes malleable and ex
 
 ## Towards a Symbolic Extension in Each Term
 
-I have thought of building generators as a form of navigation. It is not just about producing sequences, but about following a winding path through ideas, like a symbolic river.
+I have thought of building generators as a form of navigation. For me, it is about following a winding path through ideas, like a symbolic river.
 
 Although implementations may appear rigid for the sake of efficiency, as I mentioned in the
  <a href="https://edelveart.github.io/blog/my-journey-with-figurate-numbers/" target="_blank" rel="noopener noreferrer">previous post</a>, I also included book-style versions. That choice made me reflect on the possibility of creating broader, more elegant functions.
