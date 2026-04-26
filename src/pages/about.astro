@@ -7,6 +7,10 @@ import { menuEnglish } from "@components/SideBar.astro";
 import { linksTo } from "@components/Biography.astro";
 import SonicPiModFormsImage from "@components/img-components/SonicPiModFormsImage.astro";
 import FigurateNumImages from "@components/img-components/FigurateNumImages.astro";
+export const CSSInterests = {
+  li: "relative pl-5 text-content text-base",
+  span: "absolute left-0 top-[0.55rem] w-2 h-2 bg-primary rounded-full",
+};
 ---
 
 <!-- https://math.uchicago.edu/~chonoles/miscellany/quotations/ -->
@@ -17,29 +21,12 @@ import FigurateNumImages from "@components/img-components/FigurateNumImages.astr
     </div>
 
     <article class="mb-10 mt-10">
-      <blockquote class="mb-4">
+      <blockquote class="my-10">
         <p class="font-thin text-right text-sm italic">
           Geometry determines arithmetic.
         </p>
         <footer class="text-right text-xs font-light mt-1">
           — M. Hyndry and J. Silverman
-        </footer>
-      </blockquote>
-      <blockquote class="mb-4">
-        <p class="font-thin text-right text-sm italic text-balance">
-          Precise knowledge of the behavior of an analytic function in the
-          neighborhood of its singular points is a source of number-theoretic
-          theorems.
-        </p>
-        <footer class="text-right text-xs font-light mt-1">— E. Hecke</footer>
-      </blockquote>
-      <blockquote class="mb-4">
-        <p class="font-thin text-right text-sm italic text-balance">
-          Code should be seen as well as heard, underlying algorithms viewed as
-          well as their visual outcome.
-        </p>
-        <footer class="text-right text-xs font-light mt-1">
-          — TOPLAP Manifesto
         </footer>
       </blockquote>
 
@@ -58,6 +45,16 @@ import FigurateNumImages from "@components/img-components/FigurateNumImages.astr
         </a> that enable tackling complex problems in creative ways.
       </p>
 
+      <blockquote class="my-10">
+        <p class="font-thin text-right text-sm italic text-balance">
+          Code should be seen as well as heard, underlying algorithms viewed as
+          well as their visual outcome.
+        </p>
+        <footer class="text-right text-xs font-light mt-1">
+          — TOPLAP Manifesto
+        </footer>
+      </blockquote>
+
       <SonicPiModFormsImage />
 
       <p class="mb-4">
@@ -68,7 +65,28 @@ import FigurateNumImages from "@components/img-components/FigurateNumImages.astr
         approach is a genuine pathway to new concepts.
       </p>
 
+      <blockquote class="my-10">
+        <p class="font-thin text-right text-sm italic text-balance">
+          Precise knowledge of the behavior of an analytic function in the
+          neighborhood of its singular points is a source of number-theoretic
+          theorems.
+        </p>
+        <footer class="text-right text-xs font-light mt-1">— E. Hecke</footer>
+      </blockquote>
+
       <FigurateNumImages />
+
+      <h2 class="text-2xl my-6 font-semibold">Interests</h2>
+      <ul class="pl-2 mb-10">
+        <li class={CSSInterests.li}>
+          <span class={CSSInterests.span}></span>
+          Mathematical Music Theory
+        </li>
+        <li class={CSSInterests.li}>
+          <span class={CSSInterests.span}></span>
+          Computer-assisted music composition (DSLs) and improvisation
+        </li>
+      </ul>
 
       <h2 class="text-2xl my-6 font-semibold">Teaching Experience</h2>
       <p class="mb-10">
@@ -77,31 +95,9 @@ import FigurateNumImages from "@components/img-components/FigurateNumImages.astr
         focus. You can read feedback on my teaching practice
         <a class={linksTo} id="testimonials" href={`/testimonials`}>here</a>.
       </p>
-
-      <h2 class="text-2xl my-6 font-semibold">Interests</h2>
-      <ul class="pl-2 mb-10">
-        <li class="relative pl-5 text-content text-base">
-          <span
-            class="absolute left-0 top-[0.55rem] w-2 h-2 bg-primary rounded-full"
-          ></span>
-          Mathematical Music Theory
-        </li>
-        <li class="relative pl-5 text-content text-base">
-          <span
-            class="absolute left-0 top-[0.55rem] w-2 h-2 bg-primary rounded-full"
-          ></span>
-          Domain-specific languages (DSLs) for music
-        </li>
-        <li class="relative pl-5 text-content text-base">
-          <span
-            class="absolute left-0 top-[0.55rem] w-2 h-2 bg-primary rounded-full"
-          ></span>
-          Computer-assisted music composition and improvisation
-        </li>
-      </ul>
     </article>
 
-    <blockquote class="mb-4">
+    <blockquote class="mb-12">
       <p class="font-thin text-right text-sm italic text-balance">
         I've tried to learn the hidden beauty in various things, but still for
         many areas the source of interest is for me a complete mystery. My

@@ -7,6 +7,7 @@ import { menuSpanish } from "@components/es/SideBar.astro";
 import { linksTo } from "@components/Biography.astro";
 import SonicPiModFormsImage from "@components/img-components/SonicPiModFormsImage.astro";
 import FigurateNumImages from "@components/img-components/FigurateNumImages.astro";
+import { CSSInterests } from "../about.astro";
 ---
 
 <!-- https://math.uchicago.edu/~chonoles/miscellany/quotations/ -->
@@ -19,30 +20,12 @@ import FigurateNumImages from "@components/img-components/FigurateNumImages.astr
     </div>
 
     <article class="mb-10 mt-10">
-      <blockquote class="mb-4">
+      <blockquote class="my-10">
         <p class="font-thin text-right text-sm italic">
           La geometría determina la aritmética.
         </p>
         <footer class="text-right text-xs font-light mt-1">
           — M. Hyndry y J. Silverman
-        </footer>
-      </blockquote>
-      <blockquote class="mb-4">
-        <p class="font-thin text-right text-sm italic text-balance">
-          El conocimiento preciso del comportamiento de una función analítica
-          cerca de sus puntos singulares es una fuente de teoremas en teoría de
-          números.
-        </p>
-        <footer class="text-right text-xs font-light mt-1">— E. Hecke</footer>
-      </blockquote>
-      <blockquote class="mb-4">
-        <p class="font-thin text-right text-sm italic text-balance">
-          El código debe apreciarse tanto visualmente como auditivamente, y los
-          algoritmos subyacentes deben contemplarse tanto como su resultado
-          visual.
-        </p>
-        <footer class="text-right text-xs font-light mt-1">
-          — TOPLAP Manifesto
         </footer>
       </blockquote>
 
@@ -60,6 +43,16 @@ import FigurateNumImages from "@components/img-components/FigurateNumImages.astr
         > que permiten abordar problemas complejos de manera creativa.
       </p>
 
+      <blockquote class="my-10">
+        <p class="font-thin text-right text-sm italic text-balance">
+          El código debe apreciarse tanto visualmente como auditivamente, y los
+          algoritmos subyacentes deben contemplarse tanto como su resultado
+          visual.
+        </p>
+        <footer class="text-right text-xs font-light mt-1">
+          — TOPLAP Manifesto
+        </footer>
+      </blockquote>
       <SonicPiModFormsImage />
 
       <p class="mb-4">
@@ -70,40 +63,42 @@ import FigurateNumImages from "@components/img-components/FigurateNumImages.astr
         es una vía genuina hacia nuevos conceptos.
       </p>
 
+      <blockquote class="my-10">
+        <p class="font-thin text-right text-sm italic text-balance">
+          El conocimiento preciso del comportamiento de una función analítica
+          cerca de sus puntos singulares es una fuente de teoremas en teoría de
+          números.
+        </p>
+        <footer class="text-right text-xs font-light mt-1">— E. Hecke</footer>
+      </blockquote>
       <FigurateNumImages />
-
-      <h2 class="text-2xl my-6 font-bold">Experiencia</h2>
-      <p class="mb-10">
-        Tengo experiencia docente a nivel de pregrado y posgrado, especialmente
-        en programación en vivo (<em>live coding</em>) y musicología enfocada a
-        la tecnología. Puedes leer los comentarios de mi práctica docente
-        <a class={linksTo} id="testimonials" href={`/testimonials`}> aquí</a>.
-      </p>
 
       <h2 class="text-2xl my-6 font-bold">Intereses</h2>
       <ul class="pl-2 mb-10">
-        <li class="relative pl-5 text-content text-base">
-          <span
-            class="absolute left-0 top-[0.45rem] w-2 h-2 bg-primary rounded-full"
-          ></span>
+        <li class={CSSInterests.li}>
+          <span class={CSSInterests.span}></span>
           <p>Teoría Matemática de la Música</p>
         </li>
-        <li class="relative pl-5 text-content text-base">
-          <span
-            class="absolute left-0 top-[0.45rem] w-2 h-2 bg-primary rounded-full"
-          ></span>
+        <li class={CSSInterests.li}>
+          <span class={CSSInterests.span}></span>
           <p>Lenguajes específicos de dominio (DSLs) para la música</p>
         </li>
-        <li class="relative pl-5 text-content text-base">
-          <span
-            class="absolute left-0 top-[0.45rem] w-2 h-2 bg-primary rounded-full"
-          ></span>
+        <li class={CSSInterests.li}>
+          <span class={CSSInterests.span}></span>
           <p>Composición e improvisación musical asistida por ordenador</p>
         </li>
       </ul>
     </article>
 
-    <blockquote class="mb-4">
+    <h2 class="text-2xl my-6 font-bold">Experiencia</h2>
+    <p class="mb-10">
+      Tengo experiencia docente a nivel de pregrado y posgrado, especialmente en
+      programación en vivo (<em>live coding</em>) y musicología enfocada a la
+      tecnología. Puedes leer los comentarios de mi práctica docente
+      <a class={linksTo} id="testimonials" href={`/testimonials`}> aquí</a>.
+    </p>
+
+    <blockquote class="my-10">
       <p class="font-thin text-right text-sm italic text-balance">
         He intentado descubrir la belleza oculta en diversas cosas, pero, aún
         hoy, en muchos campos la fuente de mi interés sigue siendo un misterio
