@@ -20,8 +20,6 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      - name: Approve pnpm build scripts
-        run: pnpm approve-builds --all
       - name: Install, build, and upload your site
         uses: withastro/action@v2
         with:
