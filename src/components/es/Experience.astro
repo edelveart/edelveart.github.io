@@ -1,6 +1,5 @@
 ---
 import TimeLine from "../TimeLine.astro";
-import Work from "@icons/Work.astro";
 
 export const allExperiences = [
   {
@@ -13,22 +12,30 @@ export const allExperiences = [
     💻 TypeScript, Vitest, Git`,
   },
   {
-    title:
-      "Escuela de Posgrado Newman | Docente de las Maestrías en Musicología y Pedagogía Musical",
+    title: `Escuela de Posgrado Newman |
+
+    Docente de las Maestrías en Musicología, Pedagogía Musical y Docencia Universitaria`,
     subtitle: "may.2024 - actualidad | Tacna, Perú | En remoto",
-    description: `Asignaturas que imparto en la Maestría en Musicología:
+    description: `Imparto asignaturas en los siguientes programas de maestría:
+
+    Maestría en Musicología
     • Técnicas de búsqueda, documentación y difusión en investigación musicológica
     • Industrias musicales
     • Investigación performativa: perspectivas históricas y analíticas de la interpretación
     • La escucha musical: una aproximación histórica y cultural
-    💻 Sonic Visualiser
-    Asignaturas que imparto en la Maestría en Pedagogía Musical:
-    • Comunicación, conocimiento y aprendizaje digital aplicadas a la enseñanza de la música
 
+    Maestría en Pedagogía Musical
+    • Comunicación, conocimiento y aprendizaje digital aplicadas a la enseñanza de la música
+    • Enseñanza de la Música y Atención a la Diversidad
+    • La Música en el Contexto Educativo y Social
+
+    Maestría en Docencia Universitaria
+    • Estrategias Educativas Básicas para la Docencia Universitaria
    `,
   },
   {
-    title: "Toulouse Lautrec, EEST | Docente de producción musical y producción electrónica",
+    title:
+      "Toulouse Lautrec, EEST | Docente de producción musical y producción electrónica",
     subtitle: "jun.2022 - actualidad | Lima, Perú | En remoto",
 
     description: `Módulos que imparto en los programas:
@@ -38,7 +45,8 @@ export const allExperiences = [
     💻 MuseScore 4, Reaper 7`,
   },
   {
-    title: "Universidad Nacional Daniel Alomía Robles | Docente a tiempo completo",
+    title:
+      "Universidad Nacional Daniel Alomía Robles | Docente a tiempo completo",
     subtitle: "may.2019 - dic.2019 | Huánuco, Perú | Presencial",
     description: `Asignaturas que impartí en la licenciatura:
     • Didáctica general de la educación
@@ -60,7 +68,9 @@ const filteredExperiences = indices
   : workExperiences;
 ---
 
-<div class="text-3xl w-full font-black flex items-center my-10" id="EXPERIENCE">Experiencia</div>
+<div class="text-3xl w-full font-black flex items-center my-10" id="EXPERIENCE">
+  Experiencia
+</div>
 
 <div class="time-line-container mb-8 grid gap-3">
   {
