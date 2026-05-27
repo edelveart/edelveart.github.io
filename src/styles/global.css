@@ -12,10 +12,11 @@
 
 @import "tailwindcss";
 @plugin "daisyui" {
-  /* themes: dark --prefersdark, night; */
-  themes: false;
+  themes: dark --prefersdark, night;
+  /* themes: false; */
 }
-@plugin "./catppuccinTheme.mocha.ts";
+
+/* @plugin "./catppuccinTheme.mocha.ts"; */
 
 /* Typography for BLOG/NOTES */
 @plugin '@tailwindcss/typography';
@@ -31,8 +32,14 @@
 }
 
 /* FONTSOURCE imports */
+/*
 body {
   font-family: 'Fira Sans', sans-serif;
+}
+ */
+
+body {
+  font-family: 'Inter Variable', sans-serif;
 }
 code {
    font-family: 'JetBrains Mono Variable', monospace;
@@ -55,10 +62,10 @@ code {
   padding: 2px 4px;
   border-radius: 0.25rem;
   border-width: 0;
-  /* border-color: var(--color-gray-400); */
-  font-size: 0.95rem;
+  /* border-color: var(--color-white); */
+  font-size: 0.93rem;
   /* --tw-text-opacity: 1; */
-  background-color: var(--color-gray-700);
+  background-color: var(--color-slate-800);
 }
 
 /* Links to previous post and references in md files */
