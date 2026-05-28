@@ -1,6 +1,6 @@
 ---
 title: "Perfectoid Rings Breakdance in Sonic Pi?"
-description: "I discuss a nayve survey on p-adic rings as a possible future feature for Sonic Pi"
+description: "I discuss a nayve survey on p-adic rings as a possible future feature for Sonic Pi."
 pubDate: "January 27 2026"
 heroImage: "/itemPreview.webp"
 badge: "number algorithms"
@@ -53,7 +53,7 @@ The values of each $a_i$ are simply the set $\{0, 1, 2\}$. For instance: $2 + 3 
 But, as in many things in life, we need to plant the tree by its roots, not with the crown in the dirt. We need many of these `roots`, an infinite myriad of them
 
 $$
-3^{\frac{1}{3}},\quad 3^{\frac{1}{9}},\quad 3^{\frac{1}{27}},\quad \ldots.
+3^{\frac{1}{3}},\quad 3^{\frac{1}{9}},\quad 3^{\frac{1}{27}},\quad \ldots,
 $$
 
 and so on. With this you can now denote the slightly more general form of the ring $A$, keep it in memory like this
