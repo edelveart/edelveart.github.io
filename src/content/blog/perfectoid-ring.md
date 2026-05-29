@@ -1,6 +1,6 @@
 ---
 title: "Perfectoid Rings Breakdance in Sonic Pi?"
-description: "I discuss a nayve survey on p-adic rings as a possible future feature for Sonic Pi."
+description: "I wonder about a few ideas from perfectoid rings, and whether some of them could someday become playful features for Sonic Pi."
 pubDate: "January 27 2026"
 heroImage: "/itemPreview.webp"
 badge: "number algorithms"
