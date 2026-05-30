@@ -32,15 +32,14 @@
 }
 
 /* FONTSOURCE imports */
-/*
+
 body {
   font-family: 'Fira Sans', sans-serif;
 }
- */
 
-body {
+/* body {
   font-family: 'Inter Variable', sans-serif;
-}
+} */
 code {
    font-family: 'JetBrains Mono Variable', monospace;
 }
