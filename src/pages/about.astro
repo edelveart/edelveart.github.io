@@ -11,6 +11,7 @@ export const CSSInterests = {
   li: "relative pl-5 text-content text-base",
   span: "absolute left-0 top-[0.55rem] w-2 h-2 bg-primary rounded-full",
 };
+import { Code } from "astro:components";
 ---
 
 <!-- https://math.uchicago.edu/~chonoles/miscellany/quotations/ -->
@@ -45,6 +46,7 @@ export const CSSInterests = {
         </a> that enable tackling complex problems in creative ways.
       </p>
 
+      <h2 class="text-2xl my-6 font-semibold">A Look at My Libraries</h2>
       <blockquote class="my-10">
         <p class="font-thin text-right text-sm italic text-balance">
           Code should be seen as well as heard, underlying algorithms viewed as
@@ -55,6 +57,7 @@ export const CSSInterests = {
         </footer>
       </blockquote>
 
+      <Code code={`gem install modular_forms`} lang="shell" theme="night-owl" />
       <SonicPiModFormsImage />
 
       <p class="mb-4">
@@ -74,6 +77,7 @@ export const CSSInterests = {
         <footer class="text-right text-xs font-light mt-1">— E. Hecke</footer>
       </blockquote>
 
+      <Code code={`pip install figuratenum`} lang="shell" theme="night-owl" />
       <FigurateNumImages />
 
       <h2 class="text-2xl my-6 font-semibold">Interests</h2>

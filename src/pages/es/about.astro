@@ -8,6 +8,7 @@ import { linksTo } from "@components/Biography.astro";
 import SonicPiModFormsImage from "@components/img-components/SonicPiModFormsImage.astro";
 import FigurateNumImages from "@components/img-components/FigurateNumImages.astro";
 import { CSSInterests } from "../about.astro";
+import { Code } from "astro:components";
 ---
 
 <!-- https://math.uchicago.edu/~chonoles/miscellany/quotations/ -->
@@ -43,6 +44,7 @@ import { CSSInterests } from "../about.astro";
         > que permiten abordar problemas complejos de manera creativa.
       </p>
 
+      <h2 class="text-2xl my-6 font-semibold">Un atisbo a mis librerías</h2>
       <blockquote class="my-10">
         <p class="font-thin text-right text-sm italic text-balance">
           El código debe apreciarse tanto visualmente como auditivamente, y los
@@ -53,6 +55,7 @@ import { CSSInterests } from "../about.astro";
           — TOPLAP Manifesto
         </footer>
       </blockquote>
+      <Code code={`gem install modular_forms`} lang="shell" theme="night-owl" />
       <SonicPiModFormsImage />
 
       <p class="mb-4">
@@ -71,6 +74,7 @@ import { CSSInterests } from "../about.astro";
         </p>
         <footer class="text-right text-xs font-light mt-1">— E. Hecke</footer>
       </blockquote>
+      <Code code={`pip install figuratenum`} lang="shell" theme="night-owl" />
       <FigurateNumImages />
 
       <h2 class="text-2xl my-6 font-bold">Intereses</h2>
