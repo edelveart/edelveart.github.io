@@ -34,9 +34,9 @@ amp_seq = SpaceFigurateNumbers.centered_hendecagonal_pyramidal
 end
 ```
 
-Afterwards I became interested in the **p-adic versions** of many other mathematical objects. Once you pick up a new lens, it's natural to want to test how the mathematics deforms under the new structure to find the analogues. But since I saw no further comments on the <a href="https://in-thread.sonic-pi.net/t/figurate-numbers-for-sonic-pi-new-ruby-gem-for-infinite-number-sequences-and-patterns/8962/21" target="_blank" rel="noopener noreferrer">Sonic Pi forum</a>.
+Afterwards I became interested in the **p-adic versions** of many other mathematical objects. Once you pick up a new lens, it's natural to want to test how the mathematics deforms under the new structure to find the analogues.
 
-I decided to leave things in suspense, and not only for that reason. I'm also watching the evolution of the new software Sam Aaron is building with `SuperSonic` and the version 5 of `Sonic Pi`, still in beta. What he's crafting looks formidable.
+But since I saw no further comments on the <a href="https://in-thread.sonic-pi.net/t/figurate-numbers-for-sonic-pi-new-ruby-gem-for-infinite-number-sequences-and-patterns/8962/21" target="_blank" rel="noopener noreferrer">Sonic Pi forum</a>. I decided to leave things in suspense, and not only for that reason. I'm also watching the evolution of the new software Sam Aaron is building with `SuperSonic` and the version 5 of `Sonic Pi`, still in beta. What he's crafting looks formidable.
 
 ## Perfectoid rings
 
@@ -90,6 +90,8 @@ or as an infinite series
 $$
 x = 2 + 3^{1/3} + 3^{2/3} + 3^{8/9} + \cdots.
 $$
+
+Well, what we note here is that, unlike ordinary $\mathbb{Z}_3$ expansions, these expressions allow **fractional exponents** with ever-growing denominators. As a result, the digits are placed at increasingly refined scales; each new root adds a finer layer of $π$-adic resolution.
 
 And we can already perform reductions that were not available before. The element $\pi$ allows reductions to ignore every multiple of itself, so
 
