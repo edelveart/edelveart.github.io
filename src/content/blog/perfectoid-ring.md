@@ -1,6 +1,6 @@
 ---
 title: "Perfectoid Rings Breakdance in Sonic Pi?"
-description: "I wonder about a few ideas from perfectoid rings, and whether some of them could someday become playful features for Sonic Pi."
+description: "I wander through perfectoid rings, p-adic towers, and the Frobenius map, wondering if any of it could ever end up in Sonic Pi’s sandbox."
 pubDate: "May 25 2026"
 heroImage: "/itemPreview.webp"
 badge: "number algorithms"
@@ -186,7 +186,7 @@ $$
 Yes, evidently as a game under the sun, this could be the case $p=2$:
 
 $$
-\mathbb{Q}_2 (2^{\frac{1}{2^\infty}})
+\mathbb{Q}_2 (2^{\frac{1}{2^\infty}}).
 $$
 
 But how to map that faithfully, or even playfully, into sequences, amplitudes, or rhythmic patterns is still an open question for me. I'll leave it here, as an unresolved $n$-chord, with $n \ge 3^{3^3}$.
