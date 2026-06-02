@@ -4,7 +4,7 @@ description: "I wonder about a few ideas from perfectoid rings, and whether some
 pubDate: "January 14 2026"
 heroImage: "/itemPreview.webp"
 badge: "number algorithms"
-tags: ["figurate_numbers", "integer sequences", "Sonic Pi", "perfectoid", "p-adics", "live coding" ]
+tags: ["figurate_numbers", "Sonic Pi", "perfectoid rings",  "arithmetic geometry", "infinite sequences", "p-adics", "live coding" ]
 ---
 
 One of the ideas that comes to mind when I think about prime numbers is their staticness, that naive definition we've known forever. I wanted primes $p$ to spin, or do something different; to become scores, in the musical sense of the word.
@@ -22,7 +22,9 @@ To the topological eye, we have discrete groups that, through a system of modula
 I also added a couple of important definitions: the **p-adic valuation** and the **p-adic norm** (both of which I had already read about in 2018 in the opening pages of **Koblitz's book**). What you can do in  `figurate_numbers` is summarized in these commands:
 
 ```rb
-# ArithTransform.ring_padic_expansion(seq, p, precision = 11, reverse: false)
+# Simply copy the entry point path from the lib/figurate_numbers.rb file where the gem is installed.
+require "<PATH>"
+
 # ArithTransform.ring_padic_val(seq, p)
 # ArithTransform.ring_padic_norm(seq, p)
 
@@ -36,7 +38,10 @@ end
 
 Afterwards I became interested in the **p-adic versions** of many other mathematical objects. Once you pick up a new lens, it's natural to want to test how the mathematics deforms under the new structure to find the analogues.
 
-But since I saw no further comments on the <a href="https://in-thread.sonic-pi.net/t/figurate-numbers-for-sonic-pi-new-ruby-gem-for-infinite-number-sequences-and-patterns/8962/21" target="_blank" rel="noopener noreferrer">Sonic Pi forum</a>. I decided to leave things in suspense, and not only for that reason. I'm also watching the evolution of the new software Sam Aaron is building with `SuperSonic` and the version 5 of `Sonic Pi`, still in beta. What he's crafting looks formidable.
+But since I saw no further comments on the <a href="https://in-thread.sonic-pi.net/t/figurate-numbers-for-sonic-pi-new-ruby-gem-for-infinite-number-sequences-and-patterns/8962/21" target="_blank" rel="noopener noreferrer">Sonic Pi forum</a>. I decided to leave things in suspense, and not only for that reason.
+
+I'm also watching the evolution of the new software Sam Aaron is building with `SuperSonic` and the version 5 of `Sonic Pi`, still in beta. And I need to see the terrain made of rocks so I can think of something interesting to build on top of it first.
+
 
 ## Perfectoid rings
 
@@ -50,6 +55,16 @@ $$
 
 The values of each $a_i$ are simply the set $\{0, 1, 2\}$. For instance: $2 + 3 + 9 = 14$. Yes, one example is enough.
 
+Let’s see this in a number of vertices of the absurd `four-dimensional dodecagonal pyramidal` infinite sequence:
+
+```rb
+dode_pyr_4D = FigurateNumbers.four_dimensional_dodecagonal_pyramidal.take(10)
+# [1, 14, 60, 170, 385, 756, 1344, 2220, 3465, 5170]
+
+ArithTransform.padic_expansion(dode_pyr_4D[1], 3, precision = 11, reverse: false)
+# [2, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+# reads as 2 + 1·3 + 1·9 = 14 (exactly as shown above)
+```
 But, as in many things in life, we need to plant the tree by its roots, not with the crown in the dirt. We need many of these `roots`, an infinite myriad of them
 
 $$
@@ -65,6 +80,8 @@ $$
 You can see that raising to powers gives $(3^{1/3})^3 = 3$ and $(3^{1/9})^3 = 3^{1/3}$, and so on down the chain.
 
 > As I mentioned at the start of this post, this obsession with iteration shows up again and again.
+
+
 
 Now, as in many theories in algebra, we need a special element. Here that element is called the `pseudo-uniformizer`,
 
@@ -85,7 +102,7 @@ $$
 x = 1 + 3^{1/3} + 2 \cdot 3^{1/9}
 $$
 
-or as an infinite series
+or as an infinite series (which reminds me of figurate numbers interacting with other figurate numbers, almost like a two-voice counterpoint)
 
 $$
 x = 2 + 3^{1/3} + 3^{2/3} + 3^{8/9} + \cdots.
@@ -99,7 +116,6 @@ $$
 1 + 3^{1/3} \equiv 1 \pmod{\pi}.
 $$
 
-
 ## Frobenius
 
 Finally, the last thing to file away for quick access is the **Frobenius**. Here is what we do with the ring
@@ -110,7 +126,7 @@ $$
 
 given by $x \mapsto x^3$.
 
-The second sufficient example: set $x = 1 + \pi$. We expand as a cubic polynomial in the pseudo-uniformizer by raising to the third power:
+The second sufficient example: set $x = 1 + \pi$. We expand as a cubic polynomial (borrow the silhouette of $y^2 = x^3+ Ax + B$) in the pseudo-uniformizer by raising to the third power:
 
 $$
 x^3 = (1 + \pi)^3 = 1 + 3\pi + 3\pi^2 + \pi^3.
@@ -139,7 +155,7 @@ we can see it lies in $\pi^3 A$.
 
 ## The Capsule Corp
 
-Everything above is captured in the following more formal definition. If $A$ is a topological ring, we will call it an **integral perfectoid ring** if there exists an element $\pi$ such that
+After all these divagations, everything above is captured in the following more formal definition. If $A$ is a topological ring, we will call it an **integral perfectoid ring** if there exists an element $\pi$ (non zero divisor) such that
 
 $$
 A \cong \varprojlim_{N} A / \pi^N A,
@@ -153,11 +169,24 @@ $$
 
 is an isomorphism.
 
+But, note the isomorphism earns its place. The ring $A$ is a musical echo of characteristic $p$. This echo is the **tilt** of $A$, which is beautifully denoted with a flat musical symbol: $A^{\flat}$. And an interval, a semitone transition between mixed characteristic, can be tilted to characteristic $p$, solved there, and returned (*Da Capo al Fine*).
 
 ## Towards Sonic Pi
 
-At this point I'm genuinely unsure what direction the translation of all this into Sonic Pi's musical terrain might take. I'll definitely post something in the community at some point to see if anyone's interested.
+At this point I'm genuinely unsure what direction the translation of all this into Sonic Pi's musical sand might take. I'll definitely post something in the community at some point to see if anyone's interested.
 
-The perfectoid structure carries infinite root towers, profinite completions, Frobenius symmetry (all of which feel rich enough to generate interesting **live coding** material).
+The **perfectoid structure** carries infinite root towers, profinite completions, Frobenius symmetry (all of which feel rich enough to generate interesting **live coding** material).
+
+Stepping out for a moment before the ice melts and **Watanabe's** ice cream vendor fails: I also found an innocent resemblance in my interest for objects that repeat in different places, something I wrote some time ago for carpentry (**sawtooth** in electronic music) with Fourier, like the repeated figures of an album.
+For instance, rewriting the classical real trigonometric functions as solutions to the harmonic oscillator
+$$
+\frac{d^2 f}{dt^2} +  \left(2 \left(\int_{-\infty}^{\infty}e^{-\tau^2} d\tau\right)^2 f_0\right)^2 f(t) = 0.
+$$
+
+Yes, evidently as a game under the sun, this could be the case $p=2$:
+
+$$
+\mathbb{Q}_2 (2^{\frac{1}{2^\infty}})
+$$
 
 But how to map that faithfully, or even playfully, into sequences, amplitudes, or rhythmic patterns is still an open question for me. I'll leave it here, as an unresolved $n$-chord, with $n \ge 3^{3^3}$.
