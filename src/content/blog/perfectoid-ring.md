@@ -4,14 +4,23 @@ description: "I move through perfectoid rings, p-adic towers, and the Frobenius 
 pubDate: "May 25 2026"
 heroImage: "/itemPreview.webp"
 badge: "number algorithms"
-tags: ["figurate_numbers", "Sonic Pi", "perfectoid rings",  "arithmetic geometry", "infinite sequences", "p-adics", "live coding" ]
+tags: [ "perfectoid rings", "figurate_numbers", "live coding", "Sonic Pi",  "p-adics",  "infinite sequences" ]
 ---
 
 One of the ideas that comes to mind when I think about prime numbers is their staticness, that naive definition we've known forever. I wanted primes $p$ to spin, or do something different; to become scores, in the musical sense of the word.
 
 But that's exactly what happens when we run a loop to check their divisors (I won't cite that here because it's a classic), when we put them through a computer. We iterate, we move something. In that sense, I discovered long ago that this obsession with iteration exists in number theory as a beautiful notion called **p-adic numbers**.
 
-In my library <a href="https://rubygems.org/gems/figurate_numbers" target="_blank" rel="noopener noreferrer">figurate_numbers</a> for Sonic Pi, I introduced some time ago a transformation of sequences into their $p$-adic versions. Since I loved the taste of algebra (and of course **Serre's book**), I implemented it as an inverse limit, that is, iterating over powers of primes. I phrase it like this:
+## P-adics in Sonic Pi
+
+In my library <a href="https://rubygems.org/gems/figurate_numbers" target="_blank" rel="noopener noreferrer">figurate_numbers</a> for Sonic Pi, I introduced some time ago a transformation of sequences into their $p$-adic versions.
+
+You can istall it with the next command:
+```shell
+gem install figurate_numbers
+```
+
+ Since I loved the taste of algebra (and of course **Serre's book**), I implemented it as an inverse limit, that is, iterating over powers of primes. I phrase it like this:
 
 $$
 \mathbb{Z}_p = \varprojlim_{N} \mathbb{Z}/p^N\mathbb{Z}
@@ -22,11 +31,10 @@ To the topological eye, we have discrete groups that, through a system of modula
 I also added a couple of important definitions: the **p-adic valuation** and the **p-adic norm** (both of which I had already read about in 2018 in the opening pages of **Koblitz's book**). What you can do in  `figurate_numbers` is summarized in these commands:
 
 ```rb
-# Simply copy the entry point path from the lib/figurate_numbers.rb file where the gem is installed.
+# Simply copy the entry point path
+# from the lib/figurate_numbers.rb file
+# where the gem is installed.
 require "<PATH>"
-
-# ArithTransform.ring_padic_val(seq, p)
-# ArithTransform.ring_padic_norm(seq, p)
 
 amp_seq = SpaceFigurateNumbers.centered_hendecagonal_pyramidal
 100.times do
@@ -42,6 +50,15 @@ But since I saw no further comments on the <a href="https://in-thread.sonic-pi.n
 
 I'm also watching the evolution of the new software Sam Aaron is building with `SuperSonic` and the version 5 of `Sonic Pi`, still in beta. And I need to see the terrain made of rocks so I can think of something interesting to build on top of it first.
 
+Up to now, these are the commands available for a single note (`n`) or an array (`seq`) in Sonic Pi or Ruby:
+
+```rb
+ArithTransform.padic_val(n, p)
+ArithTransform.ring_padic_val(seq, p)
+ArithTransform.ring_padic_norm(seq, p)
+```
+
+Below, I will present the function that is perhaps the most natural way to start thinking about the main ideas of this post.
 
 ## Perfectoid rings
 
@@ -80,7 +97,6 @@ $$
 You can see that raising to powers gives $(3^{1/3})^3 = 3$ and $(3^{1/9})^3 = 3^{1/3}$, and so on down the chain.
 
 > As I mentioned at the start of this post, this obsession with iteration shows up again and again.
-
 
 
 Now, as in many theories in algebra, we need a special element. Here that element is called the `pseudo-uniformizer`,
@@ -133,7 +149,6 @@ x^3 = (1 + \pi)^3 = 1 + 3\pi + 3\pi^2 + \pi^3.
 $$
 
 Now here is why we spent years grinding through mechanical substitutions. Since $3 = \pi^3$, we get
-
 $$
 1 + \pi^4 + \pi^5 + \pi^3,
 $$
