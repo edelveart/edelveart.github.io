@@ -1,5 +1,14 @@
 ---
-const { title, img, desc, url, badge, pubDate, tags, target = "_blank" } = Astro.props;
+const {
+  title,
+  img,
+  desc,
+  url,
+  badge,
+  pubDate,
+  tags,
+  target = "_blank",
+} = Astro.props;
 // import { Image } from "astro:assets";
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
 
@@ -17,7 +26,7 @@ const displayDate = dayjs(pubDate).format("ll");
         {title}
       </h1>
       {pubDate && <time class="text-sm">{displayDate}</time>}
-      <p class="py-4 text-md mb-3">{desc}</p>
+      <p class="py-4 text-md mb-1">{desc}</p>
       <!-- <div class="card-actions justify-start mt-3 gap-3 items-baseline">
         {
           tags &&
@@ -34,7 +43,7 @@ const displayDate = dayjs(pubDate).format("ll");
       <a
         href={url}
         target={target}
-        class="btn btn-outline p-4 mx-0 mb-2 text-base rounded-md hover:btn-primary hover:text-primary hover:bg-inherit ease-in-out duration-100 mt-0"
+        class="btn p-4 mx-0 mb-0 rounded-md hover:btn-primary hover:text-primary hover:bg-inherit ease-in-out duration-100 mt-0 shadow shadow-primary/15"
       >
         Read
         <svg
@@ -45,7 +54,8 @@ const displayDate = dayjs(pubDate).format("ll");
           viewBox="0 0 24 24"
         >
           {" "}
-          <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path>
+          <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"
+          ></path>
         </svg>
       </a>
     </div>

@@ -247,7 +247,7 @@ This construction admits two complementary interpretations, two paths that arriv
 
 ### Internal path
 
-Notice how arithmetic and algebra mirror each other: adding numbers corresponds to taking direct sums of modules. This isn't coincidental, it's functorial.
+Notice how arithmetic and algebra mirror each other: adding numbers corresponds to taking direct sums of modules (a functorial viewpoint).
 
 Let $k \geq 1$. Using categorical machinery, we can formalize this as:
 
