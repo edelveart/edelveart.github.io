@@ -179,8 +179,14 @@ The **perfectoid structure** carries infinite root towers, profinite completions
 
 Stepping out for a moment before the ice melts and **Watanabe's** ice cream vendor fails: I also found an innocent resemblance in my interest for objects that repeat in different places, something I wrote some time ago for carpentry (**sawtooth** in electronic music) with Fourier, like the repeated figures of an album.
 For instance, rewriting the classical real trigonometric functions as solutions to the harmonic oscillator
+
 $$
-\frac{d^2 f}{dt^2} +  \left(2 \left(\int_{-\infty}^{\infty}e^{-\tau^2} d\tau\right)^2 f_0\right)^2 f(t) = 0.
+\begin{align*}
+\frac{d^2 f}{dt^2}
++ \left(2 \left(\int_{-\infty}^{\infty} e^{-\tau^2}\, d\tau\right)^2 f_0\right)^2 f(t)
+\\
+&= 0.
+\end{align*}
 $$
 
 Yes, evidently as a game under the sun, this could be the case $p=2$:
