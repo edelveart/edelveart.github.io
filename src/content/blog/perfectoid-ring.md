@@ -1,7 +1,7 @@
 ---
 title: "Perfectoid Rings Breakdance in Sonic Pi?"
 description: "I wonder about a few ideas from perfectoid rings, and whether some of them could someday become playful features for Sonic Pi."
-pubDate: "January 14 2026"
+pubDate: "May 25 2026"
 heroImage: "/itemPreview.webp"
 badge: "number algorithms"
 tags: ["figurate_numbers", "Sonic Pi", "perfectoid rings",  "arithmetic geometry", "infinite sequences", "p-adics", "live coding" ]
