@@ -178,19 +178,12 @@ At this point I'm genuinely unsure what direction the translation of all this in
 The **perfectoid structure** carries infinite root towers, profinite completions, Frobenius symmetry (all of which feel rich enough to generate interesting **live coding** material).
 
 Stepping out for a moment before the ice melts and **Watanabe's** ice cream vendor fails: I also found an innocent resemblance in my interest for objects that repeat in different places, something I wrote some time ago for carpentry (**sawtooth** in electronic music) with Fourier, like the repeated figures of an album.
-For instance, rewriting the classical real trigonometric functions as solutions to the harmonic oscillator
 
+For instance, rewriting the classical real trigonometric functions as solutions to the harmonic oscillator,
 $$
-\begin{align*}
-\frac{d^2 f}{dt^2}
-+ \left(2 \left(\int_{-\infty}^{\infty} e^{-\tau^2}\, d\tau\right)^2 f_0\right)^2 f(t)
-\\
-&= 0.
-\end{align*}
+\frac{d^2 f}{dt^2} + \left(2 \left(\int_{-\infty}^{\infty} e^{-\tau^2}\, d\tau\right)^2 f_0\right)^2 f(t),
 $$
-
-Yes, evidently as a game under the sun, this could be the case $p=2$:
-
+which is required to vanish. Yes, evidently as a game under the sun, this could be the case $p=2$:
 $$
 \mathbb{Q}_2 (2^{\frac{1}{2^\infty}}).
 $$
