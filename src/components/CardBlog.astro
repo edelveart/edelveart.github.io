@@ -22,11 +22,11 @@ const displayDate = dayjs(pubDate).format("ll");
 <div class="rounded-lg bg-base-100 px-0 my-10">
   <div class="flex-col md:flex-row">
     <div class="grow w-full">
-      <h1 class="text-2xl font-bold flex flex-row pb-1 mt-4 text-primary">
+      <h1 class="text-2xl font-bold flex flex-row pb-3 mt-4 text-primary">
         {title}
       </h1>
       {pubDate && <time class="text-sm">{displayDate}</time>}
-      <p class="py-4 text-md mb-1">{desc}</p>
+      <p class="py-4 text-md mb-3">{desc}</p>
       <!-- <div class="card-actions justify-start mt-3 gap-3 items-baseline">
         {
           tags &&
@@ -43,11 +43,11 @@ const displayDate = dayjs(pubDate).format("ll");
       <a
         href={url}
         target={target}
-        class="btn bg-inherit p-4 mx-0 mb-0 rounded-md hover:bg-base-200 ease-in-out duration-100 mt-0 shadow-sm shadow-primary/20"
+        class="btn bg-inherit py-6 text-base rounded-md hover:bg-base-200 ease-in-out duration-100 mt-0 shadow-sm shadow-primary/20 w-32 justify-center"
       >
         Read
         <svg
-          class="h-6 w-6 fill-current md:h-8 md:w-8 mr-[-.5rem] ml-[-.5rem]"
+          class="h-7 w-7 fill-current md:h-8 md:w-8 mr-[-.5rem] ml-[-.5rem]"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
