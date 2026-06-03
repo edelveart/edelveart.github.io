@@ -3,7 +3,6 @@ import LinkedIn from "@icons/LinkedIn.astro";
 import Youtube from "@icons/Youtube.astro";
 import GitHub from "@icons/GitHub.astro";
 import { SOCIAL_MEDIA } from "../config";
-import QrCodeModal from "@icons/QrCode-Modal.astro";
 
 export interface Props {
   contactText?: string;
@@ -17,7 +16,7 @@ const { contactText, linkedin, github, youtube } = Astro.props;
 <div class="my-12 flex justify-start gap-6 flex-wrap items-center">
   <a
     id="linkedin-btn"
-    class="btn bg-inherit shadow-sm shadow-primary/20 hover:bg-base-200 rounded-lg py-6 px-0 w-32 flex items-center justify-center gap-x-1 flex-grow"
+    class="btn bg-inherit shadow-sm shadow-primary/20 hover:bg-base-200 rounded-lg py-6 px-0 w-32 flex items-center justify-center gap-x-1.5 flex-grow"
     href={SOCIAL_MEDIA.linkedin}
     target="
     _blank"
@@ -28,7 +27,7 @@ const { contactText, linkedin, github, youtube } = Astro.props;
   </a>
   <a
     id="github-btn"
-    class="btn bg-inherit shadow-sm shadow-primary/20 hover:bg-base-200 rounded-lg py-6 px-0 w-32 flex items-center justify-center gap-x-1 flex-grow"
+    class="btn bg-inherit shadow-sm shadow-primary/20 hover:bg-base-200 rounded-lg py-6 px-0 w-32 flex items-center justify-center gap-x-1.5 flex-grow"
     href={SOCIAL_MEDIA.github}
     target="_blank"
   >
@@ -39,7 +38,7 @@ const { contactText, linkedin, github, youtube } = Astro.props;
 
   <a
     id="youtube-btn"
-    class="btn bg-inherit shadow-sm shadow-primary/20 hover:bg-base-200 rounded-lg py-6 px-0 w-32 flex items-center justify-center gap-x-1 flex-grow"
+    class="btn bg-inherit shadow-sm shadow-primary/20 hover:bg-base-200 rounded-lg py-6 px-0 w-32 flex items-center justify-center gap-x-1.5 flex-grow"
     href={SOCIAL_MEDIA.youtube}
     target="_blank"
   >
@@ -48,7 +47,41 @@ const { contactText, linkedin, github, youtube } = Astro.props;
     <kbd class="kbd kbd-lg">Y</kbd>
   </a>
 
-  <QrCodeModal />
+  <!-- START-QR  -->
+  <label
+    for="qr-modal"
+    class="btn bg-inherit shadow-sm shadow-primary/20 hover:bg-base-200 rounded-lg py-6 px-1 w-32 flex items-center justify-center gap-x-1.5 flex-grow"
+  >
+    <img class="w-6 rounded-sm" src="/qr-code.png" />
+    See QR
+    <kbd class="kbd kbd-lg">Q</kbd>
+  </label>
+
+  <input type="checkbox" id="qr-modal" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box relative">
+      <h2 class="text-xl font-semibold">QR Code</h2>
+
+      <img
+        class="mx-auto rounded-lg m-8 shadow shadow-primary/20"
+        src="https://api.qrserver.com/v1/create-qr-code/?color=111111&bgcolor=899fe2&data=https%3A%2F%2Fedelveart.github.io%2F&qzone=1&margin=4&size=250x250&ecc=L"
+        alt="qr code"
+      />
+      <p class="mt-4 text-center">
+        Visit my web: <br />
+        <a
+          href="https://edelveart.github.io/"
+          target="_blank"
+          class="underline text-primary mt-2">https://edelveart.github.io/</a
+        >
+      </p>
+      <label
+        for="qr-modal"
+        class="btn btn-md btn-ghost absolute right-2 top-2 text-2xl">✕</label
+      >
+    </div>
+  </div>
+  <!-- END-QR  -->
 </div>
 
 <script is:inline>
