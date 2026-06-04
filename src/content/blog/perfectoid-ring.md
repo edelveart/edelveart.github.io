@@ -167,6 +167,49 @@ $$
 
 we can see it lies in $\pi^3 A$.
 
+Before serving the main course, what follows is a rough draft, kind of an attempt to give the expansion a voice in musical lines.
+
+```rb
+use_bpm 30
+a_i = (ring 1.0, 1.0/3, 1.0/9, 1.0/27)
+
+# a_0, large-scale structure ::
+with_fx :reverb, room: 0.9, mix:  0.7 do
+  live_loop :a_0 do
+    synth :organ_tonewheel, note: :a1, amp: a_i[0],
+      release: a_i[0] + rand(0.3), cutoff: 60
+    sleep a_i[0]
+  end
+end
+
+# a_1·3^(1/3) ::
+with_fx :reverb, room: 0.7, mix:  0.7 do
+  live_loop :a_1 do
+    synth :prophet, note: (chord :a3, :m).choose,
+      amp: 0.4, release: 0.25, cutoff: 80
+    sleep a_i[1]
+  end
+end
+
+# a_2·3^(1/9) ::
+with_fx :reverb, room: 0.5, mix:  0.7 do
+  live_loop :a_2 do
+    synth :rhodey, note: (chord :a2, :m).choose,
+      amp: 0.1, release: 0.1, cutoff: 100
+    sleep a_i[2]
+  end
+end
+
+# a_3·3^(1/27), almost imperceptible 1 + 3^{1/3} \equiv 1 \pmod{\pi}
+# muting this changes nothing fundamental ::
+with_fx :reverb, room: 0.3, mix:  0.7 do
+  live_loop :a_3 do
+    synth :fm, note: (chord :a4, :m).choose,
+      amp: 0.08, release: 0.05, cutoff: 120
+    sleep [a_i[3], 0.05].max
+  end
+end
+```
 
 ## The Capsule Corp
 
@@ -184,15 +227,15 @@ $$
 
 is an isomorphism.
 
-But, note the isomorphism earns its place. The ring $A$ is a musical echo of characteristic $p$. This echo is the **tilt** of $A$, which is beautifully denoted with a flat musical symbol: $A^{\flat}$. And an interval, a semitone transition between mixed characteristic, can be tilted to characteristic $p$, solved there, and returned (*Da Capo al Fine*).
+But, note the isomorphism earns its place. The ring $A$ is a musical echo of characteristic $p$. This echo is the **tilt** of $A$, which is beautifully denoted with a flat musical symbol: $A^{\flat}$.
+And an interval, a semitone transition between mixed characteristic, can be tilted to characteristic $p$, solved there, and returned (*Da Capo al Fine*).
 
-## Towards Sonic Pi
+## Towards Sonic Pi Again
 
 At this point I'm genuinely unsure what direction the translation of all this into Sonic Pi's musical sand might take. I'll definitely post something in the community at some point to see if anyone's interested.
+The **perfectoid structure** carries infinite root towers, profinite completions, Frobenius symmetry, all of which feel rich enough to generate interesting **live coding** material.
 
-The **perfectoid structure** carries infinite root towers, profinite completions, Frobenius symmetry (all of which feel rich enough to generate interesting **live coding** material).
-
-Stepping out for a moment before the ice melts and **Watanabe's** ice cream vendor fails: I also found an innocent resemblance in my interest for objects that repeat in different places, something I wrote some time ago for carpentry (**sawtooth** in electronic music) with Fourier, like the repeated figures of an album.
+Stepping out for a moment before the ice melts and **Watanabe's** ice cream vendor fails: I also found a distant resemblance in my interest for objects that repeat in different places, something I wrote some time ago for carpentry (**sawtooth** in electronic music) with Fourier, like the repeated figures of an album.
 
 For instance, rewriting the classical real trigonometric functions as solutions to the harmonic oscillator,
 $$
