@@ -167,7 +167,7 @@ $$
 
 we can see it lies in $\pi^3 A$.
 
-Before serving the main course, what follows is a rough draft, kind of an attempt to give the expansion a voice in musical lines.
+So far, we haven’t tried anything new. Before serving the main course, what follows is a rough draft, kind of an attempt to give the expansion a voice in musical lines.
 
 ```rb
 use_bpm 30
