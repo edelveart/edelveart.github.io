@@ -30,7 +30,7 @@ export default defineConfig({
     remarkPlugins: [remarkMath], // KaTeX
     rehypePlugins: [rehypeKatex], // KaTeX
     shikiConfig: {
-      theme: "night-owl",
+      theme: "horizon",
       wrap: false, //code wrap
     },
   },
