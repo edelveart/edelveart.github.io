@@ -4,16 +4,14 @@ import { allProjects } from "@components/ProjectsComponent.astro";
 const divisor = "my-8";
 const UrlArray = allProjects;
 const display = "sm:h-60 h-32 md:h-80";
-const hoverDiv = `relative rounded-lg bg-base-100 hover:shadow-primary/25 hover:shadow-md transition duration-200 ease-in-out`;
+const hoverDiv = `relative rounded-lg bg-base-100 hover:shadow-primary/40  shadow-sm shadow-primary/15 p-6 transition duration-200 ease-in-out`;
 ---
 
 <!-- https://svgomg.net/  --><!-- https://vecta.io/nano -->
 <div class={divisor}></div>
 <div class={hoverDiv}>
   <a href={UrlArray[2].url} target="_blank" rel="noopener noreferrer">
-    <div
-      class="hero-content flex-col md:flex-row rounded-lg shadow-sm shadow-primary/25 p-6"
-    >
+    <div class="hero-content flex-col md:flex-row rounded-lg">
       <div class="absolute top-0 left-0 m-4 badge badge-primary truncate z-10">
         <span>FigurateNum | PyPI</span>
       </div>
@@ -34,9 +32,7 @@ const hoverDiv = `relative rounded-lg bg-base-100 hover:shadow-primary/25 hover:
 
 <div class={hoverDiv}>
   <a href={UrlArray[1].url} target="_blank" rel="noopener noreferrer">
-    <div
-      class="hero-content flex-col md:flex-row rounded-lg shadow-sm shadow-primary/50 p-6"
-    >
+    <div class="hero-content flex-col md:flex-row rounded-lg p-6">
       <div class="absolute top-0 left-0 m-4 badge badge-primary truncate z-10">
         <span>Modular Forms | RubyGems</span>
       </div>
@@ -57,9 +53,7 @@ const hoverDiv = `relative rounded-lg bg-base-100 hover:shadow-primary/25 hover:
 
 <div class={hoverDiv}>
   <a href={UrlArray[0].url} target="_blank" rel="noopener noreferrer">
-    <div
-      class="hero-content flex-col md:flex-row rounded-lg shadow-sm shadow-primary/50 p-6"
-    >
+    <div class="hero-content flex-col md:flex-row rounded-lg p-6">
       <div class="absolute top-0 left-0 m-4 badge badge-primary truncate z-10">
         <span>TS-Tonnetz | npm</span>
       </div>
