@@ -17,6 +17,8 @@ type Props = {
   hrefResources: string;
   notesMenu: string;
   hrefNotes: string;
+  figurateMenu: string;
+  hrefFigurate: string;
 };
 
 const {
@@ -30,12 +32,9 @@ const {
   hrefResources,
   notesMenu,
   hrefNotes,
+  figurateMenu,
+  hrefFigurate,
 } = Astro.props;
-
-export const sideMenuCss = {
-  divCss: "py-3 flex items-center justify-start w-full",
-  spanText: "text-base ml-2",
-};
 
 // REPLACE SIDEBARIDACTIVEITEM
 const { pathname } = Astro.url;
@@ -50,17 +49,25 @@ const isActive = (href: string) => {
   return cleanPath === hrefClean;
 };
 const activePage = "bg-base-300";
+export const sideMenuCss = {
+  divCss:
+    "min-h-12 px-3 flex items-center gap-4 w-full rounded-md hover:bg-base-200 transition",
+  spanText: "text-base leading-none",
+  iconBox: "w-8 h-8 flex items-center justify-center shrink-0",
+};
 ---
 
 <!-- <strong class="flex justify-center mb-5 text-sm">Edgar Delgado</strong> -->
 <div class="flex flex-col w-full h-full mb-5">
-  <ul class="menu w-full h-full flex-1 flex flex-col overflow-y-auto">
+  <ul class="menu w-full flex-1 flex flex-col overflow-y-auto">
     <li>
       <a
         class={`${sideMenuCss.divCss} ${isActive(hrefHome) ? activePage : ""}`}
         href={hrefHome}
       >
-        <Home class="mr-2 w-7 h-7" />
+        <span class={sideMenuCss.iconBox}>
+          <Home class="w-8 h-8" />
+        </span>
         <span class={sideMenuCss.spanText}>{homeMenu}</span>
       </a>
     </li>
@@ -69,7 +76,9 @@ const activePage = "bg-base-300";
         class={`${sideMenuCss.divCss} ${isActive(hrefCV) ? activePage : ""}`}
         href={hrefCV}
       >
-        <Curriculum class="mr-3 w-6 h-6" />
+        <span class={sideMenuCss.iconBox}>
+          <Curriculum class="w-[23px] h-[23px]" />
+        </span>
         <span class={sideMenuCss.spanText}>{cvMenu}</span>
       </a>
     </li>
@@ -78,7 +87,9 @@ const activePage = "bg-base-300";
         class={`${sideMenuCss.divCss} ${isActive(hrefProjects) ? activePage : ""}`}
         href={hrefProjects}
       >
-        <Branch class="mr-3 w-6 h-6" />
+        <span class={sideMenuCss.iconBox}>
+          <Branch class="w-7 h-7" />
+        </span>
         <span class={sideMenuCss.spanText}>{projectsMenu}</span>
       </a>
     </li>
@@ -87,7 +98,9 @@ const activePage = "bg-base-300";
         class={`${sideMenuCss.divCss} ${isActive(hrefResources) ? activePage : ""}`}
         href={hrefResources}
       >
-        <Writing class="mr-3 w-6 h-6" />
+        <span class={sideMenuCss.iconBox}>
+          <Writing class="w-[24px] h-[24px]" />
+        </span>
         <span class={sideMenuCss.spanText}>{resourcesMenu}</span>
       </a>
     </li>
@@ -96,8 +109,25 @@ const activePage = "bg-base-300";
         class={`${sideMenuCss.divCss} ${isActive(hrefNotes) ? activePage : ""}`}
         href={hrefNotes}
       >
-        <Skills class="mr-3 w-6 h-6" />
+        <span class={sideMenuCss.iconBox}>
+          <Skills class="w-[23px] h-[23px]" />
+        </span>
         <span class={sideMenuCss.spanText}>{notesMenu}</span>
+      </a>
+    </li>
+    <li>
+      <a
+        class={`${sideMenuCss.divCss} ${isActive(hrefFigurate) ? activePage : ""}`}
+        href={hrefFigurate}
+      >
+        <span class={sideMenuCss.iconBox}>
+          <img
+            src="/svg-ggb/ico-figuratenum.png"
+            alt="FigurateNumber - ICO"
+            class="w-7 h-7"
+          />
+        </span>
+        <span class={sideMenuCss.spanText}>{figurateMenu}</span>
       </a>
     </li>
   </ul>
