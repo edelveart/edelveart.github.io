@@ -1,0 +1,84 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+const { title, description } = Astro.props;
+
+const pages = [
+  { title: "Index", href: "/figuratenum/" },
+  { title: "First", href: "/figuratenum/seq" },
+  { title: "Second", href: "/figuratenum/seq2" },
+];
+
+const currentPath = Astro.url.pathname;
+const currentIndex = pages.findIndex((p) => p.href === currentPath);
+
+const prev = pages[currentIndex - 1];
+const next = pages[currentIndex + 1];
+---
+
+<BaseLayout title={title} description={description} ogType="article">
+  <!-- KaTeX -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
+    crossorigin="anonymous"
+  />
+
+  <div class="flex flex-col">
+    <main class="mx-auto max-w-[75ch] p-6">
+      <article
+        class="prose prose-headings:text-primary w-full md:max-w-[70ch] lg:max-w-[75ch] min-w-[700px]"
+      >
+        <slot />
+      </article>
+    </main>
+    <div
+      class="mt-10 border-t border-base-300 pt-6 flex justify-between text-sm"
+    >
+      {
+        prev ? (
+          <a
+            href={prev.href}
+            class="btn btn-ghost hover:text-primary transition my-10 mx-5"
+          >
+            {" "}
+            <svg
+              class="h-6 w-6 fill-current md:h-8 md:w-8"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+            </svg>{" "}
+            {prev.title}
+          </a>
+        ) : (
+          <span />
+        )
+      }
+
+      {
+        next ? (
+          <a
+            href={next.href}
+            class="btn btn-ghost hover:text-primary transition my-10 mx-5"
+          >
+            {next.title}
+            <svg
+              class="h-6 w-6 fill-current md:h-8 md:w-8"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+            </svg>
+          </a>
+        ) : (
+          <span />
+        )
+      }
+    </div>
+  </div>
+</BaseLayout>
