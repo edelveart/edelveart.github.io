@@ -20,7 +20,6 @@ const displayDate = dayjs(pubDate).format("ll");
 
 <BaseLayout title={title} description={description} ogType="article">
   <article class="prose prose-img:mx-auto">
-    <!-- <article class="prose prose-img:mx-auto w-full max-w-[90vw] sm:max-w-[70vw] lg:max-w-[700px]"> -->
     <!-- {
         heroImage && (
           <Image
@@ -67,8 +66,6 @@ const displayDate = dayjs(pubDate).format("ll");
         }
       </div>
     </div>
-
     <slot />
   </article>
-  <div class="divider mt-10"></div>
 </BaseLayout>

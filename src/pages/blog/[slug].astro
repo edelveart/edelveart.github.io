@@ -2,23 +2,53 @@
 import { type CollectionEntry, getCollection, render } from "astro:content";
 import { type BlogSchema } from "../../content.config";
 import PostLayout from "../../layouts/PostLayout.astro";
-import createSlug from "../../lib/createSlug";
+import createSlug from "@ts-config-path/lib/createSlug";
+import Arrows from "@icons/Arrows.astro";
 
 export async function getStaticPaths() {
   const postEntries = await getCollection("blog");
-  return postEntries.map((entry) => ({
-    params: {
-      slug: createSlug(entry.data.title, entry.id),
-    },
-    props: { entry },
-  }));
-}
 
+  const sorted = postEntries.sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  );
+
+  return sorted.map((entry, index) => {
+    const slug = createSlug(entry.data.title, entry.id);
+
+    const prev = sorted[index - 1] ?? null;
+    const next = sorted[index + 1] ?? null;
+
+    return {
+      params: { slug },
+      props: {
+        entry,
+        prevPost: prev
+          ? {
+              title: prev.data.title,
+              slug: createSlug(prev.data.title, prev.id),
+            }
+          : null,
+        nextPost: next
+          ? {
+              title: next.data.title,
+              slug: createSlug(next.data.title, next.id),
+            }
+          : null,
+      },
+    };
+  });
+}
+type NavBar = {
+  title?: string | null;
+  slug?: string | null;
+};
 interface Props {
   entry: CollectionEntry<"blog">;
+  prevPost: NavBar;
+  nextPost: NavBar;
 }
 
-const { entry } = Astro.props;
+const { entry, prevPost, nextPost } = Astro.props;
 const post: BlogSchema = entry.data;
 const { Content } = await render(entry);
 ---
@@ -32,4 +62,49 @@ const { Content } = await render(entry);
   tags={post.tags}
 >
   <Content />
+
+  <div class="divider -mt-10"></div>
+  <div class="grid grid-cols-2 gap-4 mt-5">
+    {
+      prevPost ? (
+        <a
+          class="btn btn-ghost w-full min-h-24 justify-start text-left hover:text-primary"
+          href={"/blog/" + prevPost.slug}
+        >
+          <Arrows direction="left" />
+          <div>
+            <div class="text-base-content/50">NEWER POST</div>
+            <div class="text-base line-clamp-2">{prevPost.title} </div>
+          </div>
+        </a>
+      ) : (
+        <a
+          class="btn btn-ghost w-full min-h-24 justify-start text-left hover:text-primary"
+          href="/blog"
+        >
+          <Arrows direction="left" />
+          <div>
+            <div class="text-base-content/50" />
+            <div class="text-base">Blog</div>
+          </div>
+        </a>
+      )
+    }
+    {
+      nextPost ? (
+        <a
+          class="btn btn-ghost w-full min-h-24 justify-end text-right hover:text-primary"
+          href={"/blog/" + nextPost.slug}
+        >
+          <div>
+            <div class="text-base-content/50">OLDER POST</div>
+            <div class="text-base line-clamp-2">{nextPost.title} </div>
+          </div>
+          <Arrows direction="right" />
+        </a>
+      ) : (
+        <div />
+      )
+    }
+  </div>
 </PostLayout>
