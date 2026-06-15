@@ -31,6 +31,36 @@
 
 }
 
+@layer components {
+  /* BASE for each post */
+  .prose h2::after,
+  .prose h3::after {
+    content: " #";
+    opacity: 0;
+    margin-left: 0.5rem;
+    color: currentColor;
+    transition: opacity 0.2s;
+  }
+
+  .prose h2:hover::after,
+  .prose h3:hover::after {
+    opacity: 0.4;
+  }
+
+ /* FigurateNum-DOCS-Links
+  .post-title::after {
+    content: " #";
+    opacity: 0;
+    margin-left: 0.5rem;
+    color: currentColor;
+    transition: opacity 0.2s;
+  }
+
+  .post-title:hover::after {
+    opacity: 1;
+  } */
+}
+
 /* FONTSOURCE imports */
 
 body {
@@ -46,28 +76,27 @@ code {
 
 /* Only with Shiki */
 .astro-code {
-  @apply rounded-lg  overflow-x-auto p-4 text-sm font-normal shadow-md  border-1 border-slate-800;
-
+  @apply rounded-lg  overflow-x-auto p-4  text-sm font-normal shadow-md  border-1 border-base-content/10;
 }
 /* border border-gray-600 */
-
-
 
 /* Inline code in md files */
 /* Primary Color in Daisy UI: var(--color-primary);
 /* Neutral Color in Daisy UI var(--color-neutral); */
 
 .prose :not(pre) > code {
-  padding: 2px 4px;
+  font-size: 0.90rem;
+  padding: 0.1rem 0.3rem;
+  border-width: 0.0px;
   border-radius: 0.25rem;
-  border-width: 0;
-  /* border-color: var(--color-white); */
-  font-size: 0.93rem;
-  /* --tw-text-opacity: 1; */
-  background-color: var(--color-slate-800);
+  /* border-color: rgb(from var(--color-base-content) r g b / 0.25); */
+  background-color: rgb(from var(--color-base-content) r g b / 0.08);
+  /* background-color: #1C1E26; */
+  /* background-color: var(--color-slate-800); */
 }
 
 /* Links to previous post and references in md files */
 .prose :not(div) > a {
   color: var(--color-primary)
 }
+
