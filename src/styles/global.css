@@ -31,6 +31,7 @@
 
 }
 
+
 @layer components {
   /* BASE for each post */
   .prose h2::after,
@@ -47,19 +48,9 @@
     opacity: 0.4;
   }
 
- /* FigurateNum-DOCS-Links
-  .post-title::after {
-    content: " #";
-    opacity: 0;
-    margin-left: 0.5rem;
-    color: currentColor;
-    transition: opacity 0.2s;
-  }
 
-  .post-title:hover::after {
-    opacity: 1;
-  } */
 }
+
 
 /* FONTSOURCE imports */
 
@@ -83,6 +74,10 @@ code {
 /* Inline code in md files */
 /* Primary Color in Daisy UI: var(--color-primary);
 /* Neutral Color in Daisy UI var(--color-neutral); */
+
+.prose {
+    max-width: none;
+}
 
 .prose :not(pre) > code {
   font-size: 0.90rem;

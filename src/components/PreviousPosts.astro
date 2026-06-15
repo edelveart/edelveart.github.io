@@ -1,21 +1,15 @@
-<!-- target="_blank" -->
-<div class="flex justify-end my-12">
-  <div class="btn btn-ghost">
-    <a
-      href="https://edelveart.github.io/blog/"
-      rel="noopener noreferrer"
-      class="flex items-center space-x-2 whitespace-nowrap text-base"
-      >{"       "}
-      Previous Posts
-      <svg
-        class="h-6 w-6 fill-current md:h-8 md:w-8 mr-[-10px]"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-      >
-        <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path>
-      </svg>
-    </a>
-  </div>
+---
+import Arrows from "@icons/Arrows.astro";
+---
+
+<div class="grid grid-cols-2 gap-4 mt-5">
+  <div class="w-full h-24 justify-start text-left"></div>
+  <a
+    class="btn btn-ghost w-full min-h-24 justify-end text-right"
+    href={"/blog/"}
+  >
+    <div class="text-base-content">Older posts</div>
+
+    <Arrows direction="right" />
+  </a>
 </div>
