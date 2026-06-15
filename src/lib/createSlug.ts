@@ -5,9 +5,10 @@ export default function createSlug(title: string, staticSlug?: string): string {
 
   // Fallback
   return title
-    .trim()
     .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(/[^\w-]/g, "")
+    .trim()
+    .replace(/[_\s]+/g, "-")
+    .replace(/[^a-z0-9-]/g, "")
+    .replace(/-+/g, "-")
     .replace(/^-+|-+$/g, "");
 }
