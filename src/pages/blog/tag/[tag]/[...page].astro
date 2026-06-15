@@ -18,7 +18,7 @@ export async function getStaticPaths({ paginate }) {
     );
     return paginate(filtered_posts, {
       params: { tag },
-      pageSize: 10,
+      pageSize: 5,
     });
   });
 }
@@ -58,7 +58,6 @@ const params = Astro.params;
                 pubDate={post.data.pubDate}
                 tags={post.data.tags}
               />
-              {/* <div class="divider my-2" /> */}
             </>
           ))}
         </ul>

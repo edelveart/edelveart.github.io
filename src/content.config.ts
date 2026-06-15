@@ -1,6 +1,7 @@
 import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
+import createSlug from "./lib/createSlug";
 
 const blogSchema = z.object({
   title: z.string(),
@@ -10,7 +11,7 @@ const blogSchema = z.object({
   heroImage: z.string().optional(),
   badge: z.string().optional(),
   tags: z
-    .array(z.string())
+    .array(z.string().transform((val) => createSlug(val)))
     .refine((items) => new Set(items).size === items.length, {
       message: "tags must be unique",
     })
@@ -30,8 +31,30 @@ const storeSchema = z.object({
   heroImage: z.string().optional(),
 });
 
+const FigurateSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  order: z.number(),
+  //   pubDate: z.coerce.date(),
+  //   updatedDate: z.string().optional(),
+  //   heroImage: z.string().optional(),
+  //   badge: z.string().optional(),
+  //   tags: z
+  //     .array(z.string())
+  //     .refine((items) => new Set(items).size === items.length, {
+  //       message: "tags must be unique",
+  //     })
+  //     .optional(),
+});
+
+export type FigurateSchema = z.infer<typeof FigurateSchema>;
 export type BlogSchema = z.infer<typeof blogSchema>;
 export type StoreSchema = z.infer<typeof storeSchema>;
+
+const figurateCollection = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/figuratenum" }),
+  schema: FigurateSchema,
+});
 
 const blogCollection = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
@@ -46,4 +69,5 @@ const storeCollection = defineCollection({
 export const collections = {
   blog: blogCollection,
   store: storeCollection,
+  figurate: figurateCollection,
 };
