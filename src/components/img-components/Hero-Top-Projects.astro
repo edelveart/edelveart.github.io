@@ -3,71 +3,74 @@ import { allProjects } from "@components/ProjectsComponent.astro";
 
 const divisor = "my-8";
 const UrlArray = allProjects;
-const display = "sm:h-60 h-32 md:h-80";
-const hoverDiv = `relative rounded-lg bg-base-100 hover:shadow-primary/50  shadow-sm shadow-primary/30 p-6 transition duration-200 ease-in-out`;
+
+const cardDisplay = "aspect-[16/8]";
+const imagePadding = "p-0";
+const cardBase = `
+  block relative w-full ${cardDisplay}
+  overflow-hidden rounded-lg
+  bg-base-100 ${imagePadding}
+  shadow-sm shadow-primary/30
+  transition duration-200 ease-in-out
+  hover:shadow-primary/50
+`;
+
+const badge = "absolute top-0 left-0 m-4 badge badge-primary truncate z-10";
+const hueColorImage = "invert hue-rotate-90 hover:hue-rotate-90";
 ---
 
 <!-- https://svgomg.net/  --><!-- https://vecta.io/nano -->
 <div class={divisor}></div>
-<div class={hoverDiv}>
-  <a href={UrlArray[2].url} target="_blank" rel="noopener noreferrer">
-    <div class="hero-content flex-col md:flex-row rounded-lg">
-      <div class="absolute top-0 left-0 m-4 badge badge-primary truncate z-10">
-        <span>FigurateNum | PyPI</span>
-      </div>
-      <div
-        class=`w-full ${display} flex items-center justify-center -hue-rotate-90 hover:-hue-rotate-90 mt-6`
-      >
-        <img
-          src="/svg-ggb/complex-figuratenum.webp"
-          alt="FigurateNumber - Phase Portrait"
-          class="w-full h-full object-contain"
-        />
-      </div>
-    </div>
-  </a>
-</div>
+<a
+  href={UrlArray[2].url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class={cardBase}
+>
+  <div class={badge}>
+    <span>FigurateNum | PyPI</span>
+  </div>
+
+  <img
+    src="/svg-ggb/complex-figuratenum.webp"
+    class="w-full h-full object-cover"
+    alt="FigurateNumber - Phase Portrait"
+  />
+</a>
 
 <div class={divisor}></div>
 
-<div class={hoverDiv}>
-  <a href={UrlArray[1].url} target="_blank" rel="noopener noreferrer">
-    <div class="hero-content flex-col md:flex-row rounded-lg p-6">
-      <div class="absolute top-0 left-0 m-4 badge badge-primary truncate z-10">
-        <span>Modular Forms | RubyGems</span>
-      </div>
-      <div
-        class=`w-full ${display} flex items-center justify-center invert hue-rotate-90 hover:hue-rotate-90 mt-6`
-      >
-        <img
-          src="/svg-ggb/L-function-music-vecta-io.svg"
-          alt="Math-Modular-Elliptic-Image"
-          class="w-full h-full object-contain"
-        />
-      </div>
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+  <!-- // 1 -->
+  <a
+    href={UrlArray[1].url}
+    target="_blank"
+    rel="noopener noreferrer"
+    class={cardBase}
+  >
+    <div class={badge}>
+      <span>Modular Forms | RubyGems</span>
     </div>
+    <img
+      src="/svg-ggb/L-function-music-vecta-io.svg"
+      alt="Math-Modular-Elliptic-Image"
+      class={`w-full h-full object-cover ${hueColorImage}`}
+    />
   </a>
-</div>
-
-<div class={divisor}></div>
-
-<div class={hoverDiv}>
-  <a href={UrlArray[0].url} target="_blank" rel="noopener noreferrer">
-    <div class="hero-content flex-col md:flex-row rounded-lg p-6">
-      <div class="absolute top-0 left-0 m-4 badge badge-primary truncate z-10">
-        <span>TS-Tonnetz | npm</span>
-      </div>
-      <div
-        class=`w-full ${display} flex items-center justify-center invert hue-rotate-90 hover:hue-rotate-90 mt-6`
-      >
-        <img
-          src="/svg-ggb/ts-tonnetz-2026-library.svg"
-          alt="ts-tonnetz simplices portrait"
-          class="w-full h-full object-contain rounded-3xl"
-        />
-      </div>
+  <!-- // 2 -->
+  <a
+    href={UrlArray[0].url}
+    target="_blank"
+    rel="noopener noreferrer"
+    class={cardBase}
+  >
+    <div class={badge}>
+      <span>TS-Tonnetz | npm</span>
     </div>
+    <img
+      src="/svg-ggb/ts-tonnetz-2026-library.svg"
+      alt="ts-tonnetz simplices portrait"
+      class={`w-full h-full object-cover ${hueColorImage}`}
+    />
   </a>
-</div>
-
-<div class={divisor}></div>
+</section>
