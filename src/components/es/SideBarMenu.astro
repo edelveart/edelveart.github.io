@@ -27,11 +27,6 @@ const {
   hrefResources,
 } = Astro.props;
 
-export const sideMenuCss = {
-  divCss: "py-3 flex items-center justify-start w-full",
-  spanText: "text-base ml-2",
-};
-
 // REPLACE SIDEBARIDACTIVEITEM
 const { pathname } = Astro.url;
 const normalizedPath = pathname.endsWith("/")
@@ -44,7 +39,8 @@ const isActive = (href: string) => {
   const hrefClean = href.startsWith("/") ? href.slice(1) : href;
   return cleanPath === hrefClean;
 };
-const activePage = "bg-base-300";
+
+import { activePage, sideMenuCss } from "@components/SideBarMenu.astro";
 ---
 
 <div class="flex flex-col w-full h-full mb-5">
@@ -54,7 +50,9 @@ const activePage = "bg-base-300";
         class={`${sideMenuCss.divCss} ${isActive(hrefHome) ? activePage : ""}`}
         href={hrefHome}
       >
-        <Home class="mr-2 w-7 h-7" />
+        <span class={sideMenuCss.iconBox}>
+          <Home class="w-8 h-8" />
+        </span>
         <span class={sideMenuCss.spanText}>{homeMenu}</span>
       </a>
     </li>
@@ -63,7 +61,9 @@ const activePage = "bg-base-300";
         class={`${sideMenuCss.divCss} ${isActive(hrefCV) ? activePage : ""}`}
         href={hrefCV}
       >
-        <Curriculum class="mr-3 w-6 h-6" />
+        <span class={sideMenuCss.iconBox}>
+          <Curriculum class="w-[23px] h-[23px]" />
+        </span>
         <span class={sideMenuCss.spanText}>{cvMenu}</span>
       </a>
     </li>
@@ -72,7 +72,9 @@ const activePage = "bg-base-300";
         class={`${sideMenuCss.divCss}  ${isActive(hrefProjects) ? activePage : ""}`}
         href={hrefProjects}
       >
-        <Branch class="mr-3 w-6 h-6" />
+        <span class={sideMenuCss.iconBox}>
+          <Branch class="w-7 h-7" />
+        </span>
         <span class={sideMenuCss.spanText}>{projectsMenu}</span>
       </a>
     </li>
@@ -81,7 +83,9 @@ const activePage = "bg-base-300";
         class={`${sideMenuCss.divCss} ${isActive(hrefResources) ? activePage : ""}`}
         href={hrefResources}
       >
-        <Writing class="mr-3 w-6 h-6" />
+        <span class={sideMenuCss.iconBox}>
+          <Writing class="w-[24px] h-[24px]" />
+        </span>
         <span class={sideMenuCss.spanText}>{resourcesMenu}</span>
       </a>
     </li>
