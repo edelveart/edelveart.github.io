@@ -1,4 +1,26 @@
 ---
+const { pathname } = Astro.url;
+import { getCollection } from "astro:content";
+import createSlug from "@ts-config-path/lib/createSlug";
+// REPLACE SIDEBARIDACTIVEITEM
+const figuratePosts = await getCollection("figurate");
+
+const sortedFigurate = figuratePosts.sort(
+  (a, b) => a.data.order - b.data.order,
+);
+
+const figurateLinks = sortedFigurate
+  //   .filter((post) => post.data.order !== 0)
+  .map((post) => {
+    const href = "/figuratenum/" + createSlug(post.data.title, post.id);
+
+    return {
+      title: post.data.title,
+      href,
+      active: pathname === href,
+    };
+  });
+
 import Home from "@icons/Home.astro";
 import Branch from "@icons/Branch.astro";
 import Curriculum from "@icons/Curriculum.astro";
@@ -36,8 +58,6 @@ const {
   hrefFigurate,
 } = Astro.props;
 
-// REPLACE SIDEBARIDACTIVEITEM
-const { pathname } = Astro.url;
 const normalizedPath = pathname.endsWith("/")
   ? pathname.slice(0, -1)
   : pathname;
@@ -48,10 +68,10 @@ const isActive = (href: string) => {
   const hrefClean = href.startsWith("/") ? href.slice(1) : href;
   return cleanPath === hrefClean;
 };
-const activePage = "bg-base-300";
+export const activePage = "bg-base-300";
 export const sideMenuCss = {
   divCss:
-    "min-h-12 px-3 flex items-center gap-4 w-full rounded-md hover:bg-base-200 transition",
+    "min-h-12 px-3 flex items-center gap-4 w-full rounded-md hover:bg-base-300 transition",
   spanText: "text-base leading-none",
   iconBox: "w-8 h-8 flex items-center justify-center shrink-0",
 };
@@ -130,6 +150,27 @@ export const sideMenuCss = {
         <span class={sideMenuCss.spanText}>{figurateMenu}</span>
       </a>
     </li>
+
+    <!-- CONDITIONAL SUBMENU OF DOCS -->
+    {
+      pathname.startsWith("/figuratenum") && (
+        <ul class="ml-12 mt-2 space-y-1">
+          {figurateLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class={`flex text-sm items-center min-h-11 max-h-11 rounded-md hover:bg-base-300
+                    ${link.active ? "text-primary font-bold" : "opacity-80"}`}
+              >
+                <span class="min-w-0 flex-1 truncate whitespace-nowrap text-sm">
+                  {link.title}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
   </ul>
 </div>
 
