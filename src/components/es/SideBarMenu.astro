@@ -14,6 +14,8 @@ type Props = {
   hrefProjects: string;
   resourcesMenu: string;
   hrefResources: string;
+  figurateMenu: string;
+  hrefFigurate: string;
 };
 
 const {
@@ -25,6 +27,8 @@ const {
   hrefProjects,
   resourcesMenu,
   hrefResources,
+  figurateMenu,
+  hrefFigurate,
 } = Astro.props;
 
 // REPLACE SIDEBARIDACTIVEITEM
@@ -87,6 +91,21 @@ import { sideMenuCss, activePage } from "@components/SideBarMenu.astro";
           <Writing class="w-[24px] h-[24px]" />
         </span>
         <span class={sideMenuCss.spanText}>{resourcesMenu}</span>
+      </a>
+    </li>
+    <li>
+      <a
+        class={`${sideMenuCss.divCss} ${isActive(hrefFigurate) ? activePage : ""}`}
+        href={hrefFigurate}
+      >
+        <span class={sideMenuCss.iconBox}>
+          <img
+            src="/svg-ggb/ico-figuratenum.png"
+            alt="FigurateNumber - ICO"
+            class="w-7 h-7"
+          />
+        </span>
+        <span class={sideMenuCss.spanText}>{figurateMenu}</span>
       </a>
     </li>
   </ul>
