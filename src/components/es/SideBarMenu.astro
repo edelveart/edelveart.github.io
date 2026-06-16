@@ -40,7 +40,13 @@ const isActive = (href: string) => {
   return cleanPath === hrefClean;
 };
 
-import { activePage, sideMenuCss } from "@components/SideBarMenu.astro";
+export const activePage = "bg-base-300";
+export const sideMenuCss = {
+  divCss:
+    "min-h-12 px-3 flex items-center gap-4 w-full rounded-md hover:bg-base-300 transition",
+  spanText: "text-base leading-none",
+  iconBox: "w-8 h-8 flex items-center justify-center shrink-0",
+};
 ---
 
 <div class="flex flex-col w-full h-full mb-5">
