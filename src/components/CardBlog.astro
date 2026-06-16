@@ -9,9 +9,9 @@ const {
   tags,
   target = "_blank",
 } = Astro.props;
-// import { Image } from "astro:assets";
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
 
+import Arrows from "@icons/Arrows.astro";
 // PubDATE from md files
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
@@ -46,17 +46,7 @@ const displayDate = dayjs(pubDate).format("ll");
         class="btn bg-inherit py-6 text-base rounded-md hover:shadow-primary/40 ease-in-out duration-150 mt-0 shadow-sm shadow-primary/20 w-32 justify-center gap-x-1.5 transition"
       >
         Read
-        <svg
-          class="h-7 w-7 fill-current md:h-8 md:w-8 mr-[-.5rem] ml-[-.5rem]"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-        >
-          {" "}
-          <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"
-          ></path>
-        </svg>
+        <Arrows direction="right" />
       </a>
     </div>
   </div>
