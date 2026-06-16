@@ -1,5 +1,6 @@
 ---
 import { allProjects } from "@components/ProjectsComponent.astro";
+import { Image } from "astro:assets";
 
 const divisor = "my-8";
 const UrlArray = allProjects;
@@ -31,9 +32,13 @@ const hueColorImage = "invert hue-rotate-90 hover:hue-rotate-90";
     <span>FigurateNum | PyPI</span>
   </div>
 
-  <img
-    src="/svg-ggb/complex-figuratenum.webp"
+  <Image
     class="w-full h-full object-cover"
+    width={700}
+    height={500}
+    fetchpriority="high"
+    loading="eager"
+    src={"/svg-ggb/complex-figuratenum.webp"}
     alt="FigurateNumber - Phase Portrait"
   />
 </a>
@@ -51,10 +56,14 @@ const hueColorImage = "invert hue-rotate-90 hover:hue-rotate-90";
     <div class={badge}>
       <span>Modular Forms | RubyGems</span>
     </div>
-    <img
+    <Image
+      class={`w-full h-full object-cover ${hueColorImage}`}
+      width={700}
+      height={500}
+      fetchpriority="high"
+      loading="eager"
       src="/svg-ggb/L-function-music-vecta-io.svg"
       alt="Math-Modular-Elliptic-Image"
-      class={`w-full h-full object-cover ${hueColorImage}`}
     />
   </a>
   <!-- // 2 -->
@@ -67,10 +76,15 @@ const hueColorImage = "invert hue-rotate-90 hover:hue-rotate-90";
     <div class={badge}>
       <span>TS-Tonnetz | npm</span>
     </div>
-    <img
+    <Image
       src="/svg-ggb/ts-tonnetz-2026-library.svg"
       alt="ts-tonnetz simplices portrait"
       class={`w-full h-full object-cover ${hueColorImage}`}
+      width={700}
+      height={500}
+      fetchpriority="high"
+      loading="eager"
     />
+    <img />
   </a>
 </section>
