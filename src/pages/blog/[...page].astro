@@ -56,15 +56,18 @@ const { page } = Astro.props as any;
         page.url.prev ? (
           <a
             href={page.url.prev}
-            class="btn btn-ghost  min-h-24 justify-start text-left"
+            class="btn btn-ghost  min-h-24 justify-start text-left hover:text-primary"
           >
             <Arrows direction="left" />
-            Newer posts
+            NEWER POSTS
           </a>
         ) : (
-          <a href={"/"} class="btn btn-ghost  min-h-24 justify-start text-left">
+          <a
+            href={"/"}
+            class="btn btn-ghost  min-h-24 justify-start text-left hover:text-primary"
+          >
             <Arrows direction="left" />
-            Home
+            HOME
           </a>
         )
       }
@@ -72,9 +75,9 @@ const { page } = Astro.props as any;
         page.url.next ? (
           <a
             href={page.url.next}
-            class="btn btn-ghost min-h-24 justify-end text-right"
+            class="btn btn-ghost min-h-24 justify-end text-right hover:text-primary"
           >
-            Older posts
+            OLDER POSTS
             <Arrows direction="right" />
           </a>
         ) : (
