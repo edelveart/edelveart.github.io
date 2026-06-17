@@ -48,6 +48,11 @@
     opacity: 0.4;
   }
 
+  .prose table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+   }
 
 }
 
