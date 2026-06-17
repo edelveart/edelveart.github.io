@@ -1,0 +1,86 @@
+---
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import { type FigurateSchema } from "../../content.config";
+import createSlug from "@ts-config-path/lib/createSlug";
+import DocsLayout from "@layouts/DocsLayout.astro";
+import Arrows from "@icons/Arrows.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("figurate");
+
+  const sorted = posts.sort((a, b) => a.data.order - b.data.order);
+
+  return sorted.map((entry, index) => ({
+    params: {
+      slug: createSlug(entry.data.title, entry.id),
+    },
+    props: {
+      entry,
+      index,
+      sorted,
+    },
+  }));
+}
+interface Props {
+  entry: CollectionEntry<"figurate">;
+  sorted: CollectionEntry<"figurate">[];
+  index: number;
+}
+
+const { entry, index, sorted } = Astro.props;
+const post: FigurateSchema = entry.data;
+const { Content } = await render(entry);
+
+const prevDoc = sorted[index - 1] ?? null;
+const nextDoc = sorted[index + 1] ?? null;
+---
+
+<DocsLayout title={post.title} description={post.description}>
+  <Content />
+
+  <div class="divider mt-10"></div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-5">
+    {
+      prevDoc ? (
+        <a
+          class="btn btn-ghost w-full min-h-24 justify-start text-left hover:text-primary"
+          href={"/figuratenum/" + createSlug(prevDoc.data.title, prevDoc.id)}
+        >
+          <Arrows direction="left" />
+          <div>
+            <div class="text-base-content/50">PREVIOUS</div>
+            <div class="text-base line-clamp-2">{prevDoc.data.title} </div>
+          </div>
+        </a>
+      ) : (
+        <a
+          class="btn btn-ghost w-full min-h-24 justify-start text-left hover:text-primary"
+          href="/figuratenum"
+        >
+          <Arrows direction="left" />
+          <div>
+            <div class="text-base-content/50">PREVIOUS</div>
+            <div class="text-base">FigurateNum</div>
+          </div>
+        </a>
+      )
+    }
+    {
+      nextDoc ? (
+        <a
+          class="btn btn-ghost w-full min-h-24 justify-end text-right hover:text-primary"
+          href={"/figuratenum/" + createSlug(nextDoc.data.title, nextDoc.id)}
+        >
+          <div>
+            <div class="text-base-content/50">NEXT</div>
+            <div class="text-base line-clamp-2">{nextDoc.data.title} </div>
+          </div>
+          <Arrows direction="right" />
+        </a>
+      ) : (
+        <div />
+      )
+    }
+  </div>
+</DocsLayout>
