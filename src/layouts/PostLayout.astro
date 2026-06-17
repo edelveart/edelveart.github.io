@@ -42,7 +42,7 @@ const displayDate = dayjs(pubDate).format("ll");
       <div class="gap-2 flex flex-wrap items-baseline">
         {
           badge && (
-            <div class=" badge badge-primary rounded-3xl p-3 my-0">{badge}</div>
+            <div class="badge badge-primary rounded-3xl p-3 my-0">{badge}</div>
           )
         }
         {
@@ -50,7 +50,7 @@ const displayDate = dayjs(pubDate).format("ll");
             tags.map((tag) => (
               <a
                 href={`/blog/tag/${tag}`}
-                class="badge badge-outline badge-sm text-sm rounded-md p-3 hover:badge-primary ease-in-out duration-200 hover:bg-inherit no-underline my-0"
+                class="badge badge-outline hover:text-primary ease-in-out duration-200 no-underline"
               >
                 {tag}
               </a>
