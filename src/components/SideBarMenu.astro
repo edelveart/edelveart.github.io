@@ -1,44 +1,4 @@
 ---
-const { pathname } = Astro.url;
-import { getCollection } from "astro:content";
-import createSlug from "@ts-config-path/lib/createSlug";
-// REPLACE SIDEBARIDACTIVEITEM
-const figuratePosts = await getCollection("figurate");
-
-const normalize = (path: string) => path.replace(/\/+$/, "") || "/";
-
-// const normalizedPath = pathname.endsWith("/")
-//   ? pathname.slice(0, -1)
-//   : pathname;
-// const cleanPath = normalizedPath.startsWith("/")
-//   ? normalizedPath.slice(1)
-//   : normalizedPath;
-// const isActive = (href: string) => {
-//   const hrefClean = href.startsWith("/") ? href.slice(1) : href;
-//   return cleanPath === hrefClean;
-// };
-
-const current = normalize(pathname);
-const isSectionActive = (href: string) => {
-  const target = normalize(href);
-
-  return current === target || current.startsWith(target + "/");
-};
-
-const sortedFigurate = figuratePosts.sort(
-  (a, b) => a.data.order - b.data.order,
-);
-
-const figurateLinks = sortedFigurate.map((post) => {
-  const href = "/figuratenum/" + createSlug(post.data.title, post.id);
-
-  return {
-    title: post.data.title,
-    href,
-    active: normalize(pathname) === normalize(href),
-  };
-});
-
 import Home from "@icons/Home.astro";
 import Branch from "@icons/Branch.astro";
 import Curriculum from "@icons/Curriculum.astro";
@@ -76,6 +36,31 @@ const {
   hrefFigurate,
 } = Astro.props;
 
+// REPLACE SIDEBARIDACTIVEITEM
+import { getCollection } from "astro:content";
+import createSlug from "@ts-config-path/lib/createSlug";
+import {
+  normalizePath,
+  isSamePath,
+  isSectionActive,
+} from "@ts-config-path/lib/routes";
+
+const current = Astro.url.pathname;
+
+const figuratePosts = await getCollection("figurate");
+const sortedFigurate = figuratePosts.sort(
+  (a, b) => a.data.order - b.data.order,
+);
+
+const figurateLinks = sortedFigurate.map((post) => {
+  const href = "/figuratenum/" + createSlug(post.data.title, post.id);
+  return {
+    title: post.data.title,
+    href,
+    active: isSamePath(current, href),
+  };
+});
+
 export const activePage = "bg-base-300";
 export const sideMenuCss = {
   divCss:
@@ -90,7 +75,7 @@ export const sideMenuCss = {
   <ul class="menu w-full flex-1 flex flex-col overflow-y-auto">
     <li>
       <a
-        class={`${sideMenuCss.divCss} ${isSectionActive(hrefHome) ? activePage : ""}`}
+        class={`${sideMenuCss.divCss} ${isSectionActive(current, hrefHome) ? activePage : ""}`}
         href={hrefHome}
       >
         <span class={sideMenuCss.iconBox}>
@@ -101,7 +86,7 @@ export const sideMenuCss = {
     </li>
     <li>
       <a
-        class={`${sideMenuCss.divCss} ${isSectionActive(hrefCV) ? activePage : ""}`}
+        class={`${sideMenuCss.divCss} ${isSectionActive(current, hrefCV) ? activePage : ""}`}
         href={hrefCV}
       >
         <span class={sideMenuCss.iconBox}>
@@ -112,7 +97,7 @@ export const sideMenuCss = {
     </li>
     <li>
       <a
-        class={`${sideMenuCss.divCss} ${isSectionActive(hrefProjects) ? activePage : ""}`}
+        class={`${sideMenuCss.divCss} ${isSectionActive(current, hrefProjects) ? activePage : ""}`}
         href={hrefProjects}
       >
         <span class={sideMenuCss.iconBox}>
@@ -123,7 +108,7 @@ export const sideMenuCss = {
     </li>
     <li>
       <a
-        class={`${sideMenuCss.divCss} ${isSectionActive(hrefResources) ? activePage : ""}`}
+        class={`${sideMenuCss.divCss} ${isSectionActive(current, hrefResources) ? activePage : ""}`}
         href={hrefResources}
       >
         <span class={sideMenuCss.iconBox}>
@@ -134,7 +119,7 @@ export const sideMenuCss = {
     </li>
     <li>
       <a
-        class={`${sideMenuCss.divCss} ${isSectionActive(hrefNotes) ? activePage : ""}`}
+        class={`${sideMenuCss.divCss} ${isSectionActive(current, hrefNotes) ? activePage : ""}`}
         href={hrefNotes}
       >
         <span class={sideMenuCss.iconBox}>
@@ -145,7 +130,7 @@ export const sideMenuCss = {
     </li>
     <li>
       <a
-        class={`${sideMenuCss.divCss} ${isSectionActive(hrefFigurate) ? activePage : ""}`}
+        class={`${sideMenuCss.divCss} ${isSectionActive(current, hrefFigurate) ? activePage : ""}`}
         href={hrefFigurate}
       >
         <span class={sideMenuCss.iconBox}>
@@ -161,7 +146,7 @@ export const sideMenuCss = {
 
     <!-- CONDITIONAL SUBMENU OF DOCS -->
     {
-      current.startsWith("/figuratenum") && (
+      isSectionActive(current, "/figuratenum") && (
         <ul class="ml-4 mt-2 space-y-1">
           {figurateLinks.map((link) => (
             <li>
