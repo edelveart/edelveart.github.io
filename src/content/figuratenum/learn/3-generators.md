@@ -57,4 +57,5 @@ print(next(b))
 1
 ```
 
-`a` has already moved two steps ahead, but `b` starts exactly where `a` once did. As many independent generators as needed can run side by side from the same sequence, each tracing its own path through the same infinite family.
+`a` has already moved two steps ahead, but `b` starts exactly where `a` once did.
+As many independent generators as needed can run side by side from the same sequence, each tracing its own path through the same infinite family.
