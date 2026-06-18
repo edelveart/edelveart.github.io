@@ -34,14 +34,13 @@ The idea is old enough that it has had time to prove itself useful. Diophantus s
 
 FigurateNum organizes the 235+ sequences from [Deza & Deza (2012)](https://doi.org/10.1142/8188) into four families.
 
-**Plane figurate numbers** (2D): polygonal numbers, centered polygonal numbers, pronic numbers, and their relatives. Centered polygonal numbers build outward from a single point, surrounded by successive polygonal shells; the centered triangular numbers begin $1, 4, 10, 19, 31, \ldots$
+- **Plane figurate numbers** (2D): polygonal numbers, centered polygonal numbers, pronic numbers, and their relatives. Centered polygonal numbers build outward from a single point, surrounded by successive polygonal shells.
 
-**Space figurate numbers** (3D): pyramidal numbers (polygonal numbers stacked as layers) and polyhedral numbers, whose terms count vertices of the Platonic solids: tetrahedral, cubic, octahedral, dodecahedral, icosahedral.
+- **Space figurate numbers** (3D): pyramidal numbers (polygonal numbers stacked as layers) and polyhedral numbers, whose terms count vertices of the Platonic solids: tetrahedral, cubic, octahedral, dodecahedral, icosahedral.
 
-***k*-dimensional figurate numbers**: hypertetrahedra, hypercubes, hyperoctahedra, and their centered variants, generalizing the 2D/3D constructions to arbitrary dimension $k$.
+- ***Multidimensional figurate numbers**: hypertetrahedra, hypercubes, hyperoctahedra, and their centered variants, generalizing the 2D/3D constructions to arbitrary dimension $k$.
 
-**Generalized figurate numbers**: parametric extensions of any of the above, with the defining parameter (sides, dimension, or both) left free.
-
+- **Generalized figurate numbers**: some sequences in different dimensions admit natural extensions to integer indices $n \in \mathbb{Z}$. For example, the generalized pentagonal numbers play a role in Euler’s partition theory.
 ## Generating functions
 
 Every sequence in FigurateNum has a rational generating function. For $(a_n)_{n \geq 0}$,
@@ -64,4 +63,6 @@ $$
 
 Place $N$ points evenly on a circle, indexed $0$ through $N-1$. Each term $a_n$ maps to position $r_n$, and consecutive terms are joined by an edge $r_n \to r_{n+1}$. The resulting orbit (the modular pattern) is what **DiscreteViz** draws, inspired by [Pérez Buendía (2025)](https://yoyontzin.substack.com/p/espirografos-orbitas-y-relojes).
 
-Because $(a_n)$ is typically polynomial in $n$, $(r_n)$ is eventually periodic for any fixed $N$, so the orbit closes into a fixed pattern. Quadratic sequences such as the polygonal numbers produce symmetric, spirograph-like figures in $\mathbb{Z}_N$; higher-dimensional sequences produce more intricate orbits. The same sequence, viewed through $G(z)$ and through $(r_n)$, shows two distinct facets of the same object: one analytic, one arithmetic.
+Because $(a_n)$ is typically polynomial in $n$, the residue sequence $(r_n)$ becomes eventually periodic for any fixed $N$, and the orbit closes into a finite cycle in $\mathbb{Z}/N\mathbb{Z}$.
+
+Within this setting, quadratic sequences such as polygonal numbers may exhibit symmetric or asymmetric visual patterns depending on the modulus $N$: the same sequence can appear symmetric for one value of $N$ and asymmetric for another, while different sequences may produce similar visual symmetries under the same modulus.

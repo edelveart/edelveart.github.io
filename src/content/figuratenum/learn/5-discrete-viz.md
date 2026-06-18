@@ -42,7 +42,7 @@ d.visualize_multidim(
 
 ## Interpretation
 
-Symmetry in the orbit depends on the modulus $n$, not on the dimension of the family: a 2D sequence can produce an irregular pattern under one $n$ and a kind of spirograph under another, and the same holds for k-dimensional sequences.
+Symmetry in the orbit depends on the modulus $n$, not on the dimension of the family: a 2D sequence can produce an irregular pattern under one $n$ and a spirograph-like pattern under another, and the same holds for $k$-dimensional sequences.
 
 There's no shortcut here; trying different values of `n_terms` and `h_modulo` on the same sequence is the way to find where the structure shows up.
 
