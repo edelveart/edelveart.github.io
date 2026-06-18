@@ -5,21 +5,39 @@ import createSlug from "@ts-config-path/lib/createSlug";
 // REPLACE SIDEBARIDACTIVEITEM
 const figuratePosts = await getCollection("figurate");
 
+const normalize = (path: string) => path.replace(/\/+$/, "") || "/";
+
+// const normalizedPath = pathname.endsWith("/")
+//   ? pathname.slice(0, -1)
+//   : pathname;
+// const cleanPath = normalizedPath.startsWith("/")
+//   ? normalizedPath.slice(1)
+//   : normalizedPath;
+// const isActive = (href: string) => {
+//   const hrefClean = href.startsWith("/") ? href.slice(1) : href;
+//   return cleanPath === hrefClean;
+// };
+
+const current = normalize(pathname);
+const isSectionActive = (href: string) => {
+  const target = normalize(href);
+
+  return current === target || current.startsWith(target + "/");
+};
+
 const sortedFigurate = figuratePosts.sort(
   (a, b) => a.data.order - b.data.order,
 );
 
-const figurateLinks = sortedFigurate
-  //   .filter((post) => post.data.order !== 0)
-  .map((post) => {
-    const href = "/figuratenum/" + createSlug(post.data.title, post.id);
+const figurateLinks = sortedFigurate.map((post) => {
+  const href = "/figuratenum/" + createSlug(post.data.title, post.id);
 
-    return {
-      title: post.data.title,
-      href,
-      active: pathname === href,
-    };
-  });
+  return {
+    title: post.data.title,
+    href,
+    active: normalize(pathname) === normalize(href),
+  };
+});
 
 import Home from "@icons/Home.astro";
 import Branch from "@icons/Branch.astro";
@@ -58,16 +76,6 @@ const {
   hrefFigurate,
 } = Astro.props;
 
-const normalizedPath = pathname.endsWith("/")
-  ? pathname.slice(0, -1)
-  : pathname;
-const cleanPath = normalizedPath.startsWith("/")
-  ? normalizedPath.slice(1)
-  : normalizedPath;
-const isActive = (href: string) => {
-  const hrefClean = href.startsWith("/") ? href.slice(1) : href;
-  return cleanPath === hrefClean;
-};
 export const activePage = "bg-base-300";
 export const sideMenuCss = {
   divCss:
@@ -82,7 +90,7 @@ export const sideMenuCss = {
   <ul class="menu w-full flex-1 flex flex-col overflow-y-auto">
     <li>
       <a
-        class={`${sideMenuCss.divCss} ${isActive(hrefHome) ? activePage : ""}`}
+        class={`${sideMenuCss.divCss} ${isSectionActive(hrefHome) ? activePage : ""}`}
         href={hrefHome}
       >
         <span class={sideMenuCss.iconBox}>
@@ -93,7 +101,7 @@ export const sideMenuCss = {
     </li>
     <li>
       <a
-        class={`${sideMenuCss.divCss} ${isActive(hrefCV) ? activePage : ""}`}
+        class={`${sideMenuCss.divCss} ${isSectionActive(hrefCV) ? activePage : ""}`}
         href={hrefCV}
       >
         <span class={sideMenuCss.iconBox}>
@@ -104,7 +112,7 @@ export const sideMenuCss = {
     </li>
     <li>
       <a
-        class={`${sideMenuCss.divCss} ${isActive(hrefProjects) ? activePage : ""}`}
+        class={`${sideMenuCss.divCss} ${isSectionActive(hrefProjects) ? activePage : ""}`}
         href={hrefProjects}
       >
         <span class={sideMenuCss.iconBox}>
@@ -115,7 +123,7 @@ export const sideMenuCss = {
     </li>
     <li>
       <a
-        class={`${sideMenuCss.divCss} ${isActive(hrefResources) ? activePage : ""}`}
+        class={`${sideMenuCss.divCss} ${isSectionActive(hrefResources) ? activePage : ""}`}
         href={hrefResources}
       >
         <span class={sideMenuCss.iconBox}>
@@ -126,7 +134,7 @@ export const sideMenuCss = {
     </li>
     <li>
       <a
-        class={`${sideMenuCss.divCss} ${isActive(hrefNotes) ? activePage : ""}`}
+        class={`${sideMenuCss.divCss} ${isSectionActive(hrefNotes) ? activePage : ""}`}
         href={hrefNotes}
       >
         <span class={sideMenuCss.iconBox}>
@@ -137,7 +145,7 @@ export const sideMenuCss = {
     </li>
     <li>
       <a
-        class={`${sideMenuCss.divCss} ${isActive(hrefFigurate) ? activePage : ""}`}
+        class={`${sideMenuCss.divCss} ${isSectionActive(hrefFigurate) ? activePage : ""}`}
         href={hrefFigurate}
       >
         <span class={sideMenuCss.iconBox}>
@@ -153,7 +161,7 @@ export const sideMenuCss = {
 
     <!-- CONDITIONAL SUBMENU OF DOCS -->
     {
-      pathname.startsWith("/figuratenum") && (
+      current.startsWith("/figuratenum") && (
         <ul class="ml-4 mt-2 space-y-1">
           {figurateLinks.map((link) => (
             <li>
