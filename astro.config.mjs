@@ -1,4 +1,5 @@
 import { defineConfig, passthroughImageService } from "astro/config";
+import { unified } from "@astrojs/markdown-remark";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import remarkMath from "remark-math"; // KaTeX
@@ -27,8 +28,10 @@ export default defineConfig({
   ],
 
   markdown: {
-    remarkPlugins: [remarkMath], // KaTeX
-    rehypePlugins: [rehypeKatex], // KaTeX
+    processor: unified({
+      remarkPlugins: [remarkMath],
+      rehypePlugins: [rehypeKatex], // KaTeX
+    }),
     shikiConfig: {
       theme: "horizon",
       wrap: false, //code wrap
