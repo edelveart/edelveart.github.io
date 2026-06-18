@@ -1,8 +1,6 @@
 ---
-title: "Theory"
-description: "What figurate numbers are, where they come from historically, the four
-        families the library organizes them into, and the mathematical structure
-        behind the two visualizations."
+title: "Fundamentals"
+description: "Introduction to figurate numbers, their geometric origins, and the main families and visualizations used in the library."
 order: 11
 ---
 
@@ -30,6 +28,8 @@ Setting $m = 3$ recovers the triangular numbers; $m = 4$ gives the squares.
 
 The idea is old enough that it has had time to prove itself useful. Diophantus studied figurate numbers in the 3rd century, and over a thousand years later Fermat conjectured that every positive integer is a sum of at most three triangular numbers, four squares, five pentagonal numbers, and so on: the **Polygonal Number Theorem**. Gauss proved the triangular case in 1796, writing in his diary: *ΕΥΡΗΚΑ! num = Δ + Δ + Δ*. The general theorem took until 1813, when Cauchy finally closed it.
 
+That result places polygonal numbers among the **classical bases** of additive number theory: a set $A$ of nonneg­ative integers is a basis of order $h$ if every nonneg­ative integer can be written as a sum of exactly $h$ elements of $A$. The squares (Lagrange), the polygonal numbers (Cauchy), and the primes (Goldbach, Waring) are the central objects of that theory. Figurate numbers, in other words, sit at the origin of some of the oldest open problems in mathematics.
+
 ## Three families
 
 FigurateNum organizes the 235+ sequences from [Deza & Deza (2012)](https://doi.org/10.1142/8188) into four families.
@@ -38,9 +38,10 @@ FigurateNum organizes the 235+ sequences from [Deza & Deza (2012)](https://doi.o
 
 - **Space figurate numbers** (3D): pyramidal numbers (polygonal numbers stacked as layers) and polyhedral numbers, whose terms count vertices of the Platonic solids: tetrahedral, cubic, octahedral, dodecahedral, icosahedral.
 
-- ***Multidimensional figurate numbers**: hypertetrahedra, hypercubes, hyperoctahedra, and their centered variants, generalizing the 2D/3D constructions to arbitrary dimension $k$.
+- **Multidimensional figurate numbers**: hypertetrahedra, hypercubes, hyperoctahedra, and their centered variants, generalizing the 2D/3D constructions to arbitrary dimension $k$.
 
-- **Generalized figurate numbers**: some sequences in different dimensions admit natural extensions to integer indices $n \in \mathbb{Z}$. For example, the generalized pentagonal numbers play a role in Euler’s partition theory.
+- **Generalized figurate numbers**: some sequences in different dimensions admit natural extensions to integer indices $n \in \mathbb{Z}$. For example, the generalized pentagonal numbers play a role in Euler's partition theory.
+
 ## Generating functions
 
 Every sequence in FigurateNum has a rational generating function. For $(a_n)_{n \geq 0}$,
@@ -51,7 +52,7 @@ $$
 
 For the triangular numbers, $G(z) = \dfrac{z}{(1-z)^3}$. For $m$-gonal numbers in general, the denominator is always $(1-z)^3$ and the numerator encodes $m$; the denominator degree grows with dimension: pyramidal numbers have $(1-z)^4$, and $k$-dimensional sequences have $(1-z)^{k+1}$.
 
-This is what **ComplexViz** visualizes: the phase portrait of $G(z)$ in $\mathbb{C}$, via domain coloring after [Wegert (2012)](https://doi.org/10.1007/978-3-0348-0180-5). The poles of $G(z)$, generally at $z = 1$ for these families, appear as the bright singularities; their order corresponds to the dimension of the sequence.
+This is what **ComplexViz** visualizes: the phase portrait of $G(z)$ in $\mathbb{C}$, via domain coloring after [Wegert (2012)](https://doi.org/10.1007/978-3-0348-0180-5). The portrait makes the analytic structure of $G(z)$ directly readable: poles (typically at $z = 1$ for these families), where $|G(z)|$ diverges, and zeros, where it vanishes, both leave characteristic signatures in the coloring. The order of the pole at $z = 1$ encodes the dimensionality of the sequence.
 
 ## Modular structure
 

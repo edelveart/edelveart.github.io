@@ -9,7 +9,7 @@ const docs = await getCollection("figurate");
 
 const docsMap = Object.fromEntries(docs.map((d) => [d.data.title, d]));
 const OVERVIEW = docsMap["Getting Started"];
-const THEORY = docsMap["Theory"];
+const THEORY = docsMap["Fundamentals"];
 const API = docsMap["API: PlaneFigurateNum"];
 const CONTRIBUTING = docsMap["Contributing"];
 
