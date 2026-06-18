@@ -10,7 +10,7 @@ const docs = await getCollection("figurate");
 const docsMap = Object.fromEntries(docs.map((d) => [d.data.title, d]));
 const OVERVIEW = docsMap["Getting Started"];
 const THEORY = docsMap["Theory"];
-const API = docsMap["API"];
+const API = docsMap["API: PlaneFigurateNum"];
 const CONTRIBUTING = docsMap["Contributing"];
 
 const cardButtons = {
@@ -28,7 +28,7 @@ const cardButtons = {
     <div class="mb-5 mt-5" id="FIGURATENUM-HOME">
       <h1 class="text-3xl w-full font-black flex flex-col">
         FigurateNum
-        <span class="block text-sm uppercase tracking-wider opacity-50"
+        <span class="block text-sm uppercase tracking-widest opacity-50 mt-1"
           >Documentation</span
         >
       </h1>
@@ -59,25 +59,22 @@ const cardButtons = {
     </div>
 
     <p class="mb-4 mt-10">
-      <strong> FigurateNum </strong> is a Python library for working with figurate
-      number sequences, from simple shapes like triangles and pyramids to higher-dimensional
-      geometries, based on classical definitions studied by
+      <strong>FigurateNum</strong> lets you generate, analyze, and visualize figurate
+      number sequences, from polygonal numbers to Platonic solids and higher-dimensional
+      analogues, in a single Python interface.
+    </p>
+
+    <p class="mt-3 mb-4">
+      Built on definitions from
       <a
         class="underline text-primary"
         href="https://doi.org/10.1142/8188"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Elena Deza &amp; Michel Deza (2012)
-      </a>.
-    </p>
-
-    <p class="mt-3 mb-4">
-      FigurateNum provides a unified computational framework that resolves
-      inconsistent definitions and scattered sources across articles and other
-      parts of the literature. It allows users to <strong>generate</strong>,
-      <strong>analyze</strong>, and <strong>visualize</strong> more than 235 families
-      of figurate numbers through a consistent Python interface.
+        Deza &amp; Deza (2012)
+      </a>, it provides 235+ sequences with deterministic generators and
+      optional visualization in the complex plane and modular arithmetic spaces.
     </p>
 
     <!-- - Sequence generation (lazy iterators) in $\mathbb{Z}$
@@ -107,7 +104,7 @@ const cardButtons = {
       </div>
 
       <div class={cardButtons.container}>
-        <h2 class="text-lg font-bold">&#128679 Mathematical Theory</h2>
+        <h2 class="text-lg font-bold">Mathematical Theory</h2>
         <p class={cardButtons.paragraps}>
           Explore the basic definitions, notation, and core ideas behind
           figurate numbers and their geometric interpretations.
@@ -125,7 +122,7 @@ const cardButtons = {
       </div>
 
       <div class={cardButtons.container}>
-        <h2 class="text-lg font-bold">&#128679 API Reference</h2>
+        <h2 class="text-lg font-bold">API Reference</h2>
         <p class={cardButtons.paragraps}>
           Browse the available classes, functions, and utilities for generating,
           analyzing, and visualizing figurate number sequences.
@@ -142,7 +139,7 @@ const cardButtons = {
         }
       </div>
 
-      <div class={cardButtons.container}>
+      <!-- <div class={cardButtons.container}>
         <h2 class="text-lg font-bold">&#128679 Contributing</h2>
         <p class={cardButtons.paragraps}>
           Learn how to run tests, add new figurate number families, and
@@ -160,10 +157,30 @@ const cardButtons = {
               CONTRIBUTE <Arrows direction="right" />
             </a>
           )
-        }
-      </div>
+        } -->
     </div>
-    <!-- <section class="mt-10">
+  </article>
+  <div class="divider mt-10"></div>
+  <div class="grid grid-cols-1 gap-2 mt-5">
+    {
+      OVERVIEW && (
+        <a
+          class="btn btn-ghost w-full min-h-24 justify-end text-right hover:text-primary"
+          href={"/figuratenum/" + createSlug(OVERVIEW.data.title, OVERVIEW.id)}
+        >
+          <div>
+            <div class="text-base-content/50"> START HERE</div>
+            <div class="text-base line-clamp-2 opacity-85">
+              {OVERVIEW.data.title}
+            </div>
+          </div>
+          <Arrows direction="right" />
+        </a>
+      )
+    }
+  </div>
+</BaseLayout>
+<!-- <section class="mt-10">
       <h2 class="text-2xl font-bold">Documentation</h2>
       <ul class="flex gap-6 flex-col">
         {
@@ -180,38 +197,6 @@ const cardButtons = {
         }
       </ul>
     </section> -->
-
-    <section class="mt-10">
-      <blockquote class="text-sm">
-        <em>
-          FigurateNum is a living project. New sequences, visualizations, and
-          mathematical territories are on the way.
-        </em>
-      </blockquote>
-    </section>
-    <div class="divider mt-10"></div>
-    <div class="grid grid-cols-1 gap-2 mt-5">
-      {
-        OVERVIEW && (
-          <a
-            class="btn btn-ghost w-full min-h-24 justify-end text-right hover:text-primary"
-            href={
-              "/figuratenum/" + createSlug(OVERVIEW.data.title, OVERVIEW.id)
-            }
-          >
-            <div>
-              <div class="text-base-content/50"> START HERE</div>
-              <div class="text-base line-clamp-2 opacity-85">
-                {OVERVIEW.data.title}
-              </div>
-            </div>
-            <Arrows direction="right" />
-          </a>
-        )
-      }
-    </div>
-  </article>
-</BaseLayout>
 
 <style>
   .post-title {
