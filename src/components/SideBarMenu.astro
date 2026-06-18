@@ -39,11 +39,7 @@ const {
 // REPLACE SIDEBARIDACTIVEITEM
 import { getCollection } from "astro:content";
 import createSlug from "@ts-config-path/lib/createSlug";
-import {
-  normalizePath,
-  isSamePath,
-  isSectionActive,
-} from "@ts-config-path/lib/routes";
+import { isSamePath, isSectionActive } from "@ts-config-path/lib/routes";
 
 const current = Astro.url.pathname;
 

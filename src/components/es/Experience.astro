@@ -1,6 +1,6 @@
 ---
 import TimeLine from "../TimeLine.astro";
-
+import { type Experience } from "@components/Experience.astro";
 export const allExperiences = [
   {
     title: "ZifferJS | TypeScript Developer",
@@ -75,7 +75,7 @@ const filteredExperiences = indices
 
 <div class="time-line-container mb-8 grid gap-3">
   {
-    filteredExperiences.map((experience, index: number) => (
+    filteredExperiences.map((experience: Experience, index: number) => (
       <>
         <TimeLine
           key={index}

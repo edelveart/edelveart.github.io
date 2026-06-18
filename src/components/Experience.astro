@@ -1,6 +1,10 @@
 ---
 import TimeLineElement from "./TimeLine.astro";
-
+export type Experience = {
+  title: string;
+  subtitle: string;
+  description: string | undefined;
+};
 export const allExperiences = [
   {
     title: "ZifferJS | TypeScript Developer",
@@ -62,7 +66,9 @@ export const allExperiences = [
 
 const { workExperiences, indices } = Astro.props;
 const filteredExperiences = indices
-  ? indices.map((index) => workExperiences[index]).filter(Boolean)
+  ? indices
+      .map((index: string | number) => workExperiences[index])
+      .filter(Boolean)
   : workExperiences;
 ---
 
@@ -73,7 +79,7 @@ const filteredExperiences = indices
 
 <div class="time-line-container mb-8 grid gap-3">
   {
-    filteredExperiences.map((experience, index) => (
+    filteredExperiences.map((experience: Experience, index: number) => (
       <>
         <TimeLineElement
           key={index}
