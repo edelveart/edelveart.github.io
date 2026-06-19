@@ -42,7 +42,6 @@ import createSlug from "@ts-config-path/lib/createSlug";
 import { isSamePath, isSectionActive } from "@ts-config-path/lib/routes";
 
 const current = Astro.url.pathname;
-
 const figuratePosts = await getCollection("figurate");
 const sortedFigurate = figuratePosts.sort(
   (a, b) => a.data.order - b.data.order,
@@ -68,7 +67,7 @@ export const sideMenuCss = {
 
 <!-- <strong class="flex justify-center mb-5 text-sm">Edgar Delgado</strong> -->
 <div class="flex flex-col w-full h-full mb-5">
-  <ul class="menu w-full flex-1 flex flex-col overflow-y-auto">
+  <ul class="menu w-full h-full flex-1 flex flex-col">
     <li>
       <a
         class={`${sideMenuCss.divCss} ${isSectionActive(current, hrefHome) ? activePage : ""}`}
@@ -168,3 +167,23 @@ export const sideMenuCss = {
 >
   <LinkIconsGroup />
 </footer>
+
+<script is:inline>
+  const KEY = "sidebar-scroll";
+
+  function getDrawer() {
+    return document.querySelector(".drawer-side");
+  }
+
+  document.addEventListener("astro:page-load", () => {
+    const el = getDrawer();
+    if (!el) return;
+
+    const saved = sessionStorage.getItem(KEY);
+    if (saved) el.scrollTop = Number(saved);
+
+    el.addEventListener("scroll", () => {
+      sessionStorage.setItem(KEY, el.scrollTop);
+    });
+  });
+</script>
