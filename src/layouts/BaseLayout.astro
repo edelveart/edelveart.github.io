@@ -69,5 +69,21 @@ const {
       </div>
       {includeSidebar && <SideBar />}
     </div>
-  </body>
+  </body><script is:inline>
+    const STORAGE_KEY = "sidebar-scroll-position";
+
+    function initScroll() {
+      const el = document.getElementById("sidebar-scroll-container");
+      if (!el) return;
+
+      const saved = sessionStorage.getItem(STORAGE_KEY);
+      if (saved) el.scrollTop = Number(saved);
+
+      el.onscroll = () => {
+        sessionStorage.setItem(STORAGE_KEY, el.scrollTop);
+      };
+    }
+
+    document.addEventListener("astro:page-load", initScroll);
+  </script>
 </html>

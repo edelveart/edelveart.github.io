@@ -167,23 +167,3 @@ export const sideMenuCss = {
 >
   <LinkIconsGroup />
 </footer>
-
-<script is:inline>
-  const KEY = "sidebar-scroll";
-
-  function getDrawer() {
-    return document.querySelector(".drawer-side");
-  }
-
-  document.addEventListener("astro:page-load", () => {
-    const el = getDrawer();
-    if (!el) return;
-
-    const saved = sessionStorage.getItem(KEY);
-    if (saved) el.scrollTop = Number(saved);
-
-    el.addEventListener("scroll", () => {
-      sessionStorage.setItem(KEY, el.scrollTop);
-    });
-  });
-</script>
