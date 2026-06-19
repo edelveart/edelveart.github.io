@@ -11,28 +11,32 @@ Arrange pebbles on a table and some quantities form perfect triangles, others pe
 The simplest case is the triangular numbers,
 
 $$
-T_n = \frac{n(n+1)}{2},
+S_3 = \frac{n(n+1)}{2},
 $$
 
-so $T_1 = 1$, $T_2 = 3$, $T_3 = 6$, $T_4 = 10$, and so on. Stack them as rows of pebbles and the result is an equilateral triangle. Square numbers $n^2$ do the same for grids, and the pattern extends to any regular polygon: pentagonal, hexagonal, heptagonal, and beyond.
+so $S_3(1) = 1$, $S_3(2) = 3$, $S_3(3) = 6$, $S_3(4) = 10$, and so on. Stack them as rows of pebbles and the result is an equilateral triangle. Square numbers $n^2$ do the same for grids, and the pattern extends to any regular polygon: pentagonal, hexagonal, heptagonal, and beyond.
 
 What changes between them is the **number of sides** $m$ of the polygon. The general formula for the $n$-th $m$-gonal number is
 
 $$
-P(m, n) = \frac{n\bigl((m-2)n - (m-4)\bigr)}{2}.
+S_m(n) = \frac{n\bigl((m-2)n - (m-4)\bigr)}{2}.
 $$
 
 Setting $m = 3$ recovers the triangular numbers; $m = 4$ gives the squares.
 
-## A brief history
+## From geometry to number theory
 
-The idea is old enough that it has had time to prove itself useful. Diophantus studied figurate numbers in the 3rd century, and over a thousand years later Fermat conjectured that every positive integer is a sum of at most three triangular numbers, four squares, five pentagonal numbers, and so on: the **Polygonal Number Theorem**. Gauss proved the triangular case in 1796, writing in his diary: *ΕΥΡΗΚΑ! num = Δ + Δ + Δ*. The general theorem took until 1813, when Cauchy finally closed it.
+The idea is old enough that it has had time to prove itself useful. Diophantus studied figurate numbers in the 3rd century, and over a thousand years later Fermat conjectured that every positive integer is a sum of at most three triangular numbers, four squares, five pentagonal numbers, and so on: the **Polygonal Number Theorem**.
+Gauss proved the triangular case in 1796, writing in his diary: *ΕΥΡΗΚΑ! num = Δ + Δ + Δ*. The general theorem took until 1813, when Cauchy finally closed it.
 
-That result places polygonal numbers among the **classical bases** of additive number theory: a set $A$ of nonneg­ative integers is a basis of order $h$ if every nonneg­ative integer can be written as a sum of exactly $h$ elements of $A$. The squares (Lagrange), the polygonal numbers (Cauchy), and the primes (Goldbach, Waring) are the central objects of that theory. Figurate numbers, in other words, sit at the origin of some of the oldest open problems in mathematics.
+These results place polygonal numbers in the context of additive number theory. A set $A$  is called an additive basis of order $h$ if every nonnegative integer can be expressed as the sum of at most $h$ elements of $A$, with repetitions allowed.
+
+Classical examples include the squares (Lagrange), polygonal numbers (Fermat–Cauchy), and $k$-th powers (Waring), while the primes appear in Goldbach-type problems.
+
 
 ## Three families
 
-FigurateNum organizes the 235+ sequences from [Deza & Deza (2012)](https://doi.org/10.1142/8188) into four families.
+FigurateNum organizes the 235+ sequences following [Deza & Deza (2012)](https://doi.org/10.1142/8188) into four families.
 
 - **Plane figurate numbers** (2D): polygonal numbers, centered polygonal numbers, pronic numbers, and their relatives. Centered polygonal numbers build outward from a single point, surrounded by successive polygonal shells.
 
@@ -52,7 +56,7 @@ $$
 
 For the triangular numbers, $G(z) = \dfrac{z}{(1-z)^3}$. For $m$-gonal numbers in general, the denominator is always $(1-z)^3$ and the numerator encodes $m$; the denominator degree grows with dimension: pyramidal numbers have $(1-z)^4$, and $k$-dimensional sequences have $(1-z)^{k+1}$.
 
-This is what **ComplexViz** visualizes: the phase portrait of $G(z)$ in $\mathbb{C}$, via domain coloring after [Wegert (2012)](https://doi.org/10.1007/978-3-0348-0180-5). The portrait makes the analytic structure of $G(z)$ directly readable: poles (typically at $z = 1$ for these families), where $|G(z)|$ diverges, and zeros, where it vanishes, both leave characteristic signatures in the coloring. The order of the pole at $z = 1$ encodes the dimensionality of the sequence.
+This is what **ComplexViz** visualizes: the phase portrait of $G(z)$ in $\mathbb{C}$, via domain coloring after [Wegert (2012)](https://doi.org/10.1007/978-3-0348-0180-5). The portrait makes the analytic structure of $G(z)$ directly readable: poles (typically at $z = 1$ for these families), where $|G(z)|$ diverges, and zeros, where it vanishes, both leave characteristic signatures in the coloring.ou
 
 ## Modular structure
 
