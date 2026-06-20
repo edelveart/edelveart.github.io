@@ -59,13 +59,15 @@
 
 /* FONTSOURCE imports */
 
+html{
+    scrollbar-gutter: stable;
+}
+
 body {
   font-family: 'Fira Sans', sans-serif;
 }
 
-/* body {
-  font-family: 'Inter Variable', sans-serif;
-} */
+
 code {
    font-family: 'JetBrains Mono Variable', monospace;
 }
