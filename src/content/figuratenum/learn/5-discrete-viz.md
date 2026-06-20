@@ -17,7 +17,7 @@ d.visualize_plane("polygonal", m=17, n_terms=330, circ_color="g", bg_color="k")
 
 `visualize_plane` handles 2D sequences, `visualize_space` handles 3D, and `visualize_multidim` handles $k$-dimensional and generalized families.
 
-<figure class="not-prose mb-8 text-center">
+<figure class="mb-8 text-center">
   <img
     src="/svg-ggb/five-dim-hyperoctahedron.webp"
     alt="Five dimensional hyperoctahedron"
