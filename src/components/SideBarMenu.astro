@@ -43,9 +43,7 @@ import { isSamePath, isSectionActive } from "@ts-config-path/lib/routes";
 
 const current = Astro.url.pathname;
 const figuratePosts = await getCollection("figurate");
-const sortedFigurate = figuratePosts.sort(
-  (a, b) => a.data.order - b.data.order,
-);
+const sortedFigurate = figuratePosts.sort((a, b) => a.data.order - b.data.order);
 
 const figurateLinks = sortedFigurate.map((post) => {
   const href = "/figuratenum/" + createSlug(post.data.title, post.id);
@@ -58,8 +56,7 @@ const figurateLinks = sortedFigurate.map((post) => {
 
 export const activePage = "bg-base-300";
 export const sideMenuCss = {
-  divCss:
-    "min-h-12 px-3 flex items-center gap-4 w-full rounded-md hover:bg-base-300 transition",
+  divCss: "min-h-12 px-3 flex items-center gap-4 w-full rounded-md hover:bg-base-300 transition",
   spanText: "text-base leading-none",
   iconBox: "w-8 h-8 flex items-center justify-center shrink-0",
 };
@@ -67,7 +64,7 @@ export const sideMenuCss = {
 
 <!-- <strong class="flex justify-center mb-5 text-sm">Edgar Delgado</strong> -->
 <div class="flex flex-col w-full h-full mb-5">
-  <ul class="menu w-full h-full flex-1 flex flex-col">
+  <ul class="menu w-full h-full flex-1 flex flex-col overflow-y-auto">
     <li>
       <a
         class={`${sideMenuCss.divCss} ${isSectionActive(current, hrefHome) ? activePage : ""}`}
@@ -129,11 +126,7 @@ export const sideMenuCss = {
         href={hrefFigurate}
       >
         <span class={sideMenuCss.iconBox}>
-          <img
-            src="/svg-ggb/ico-figuratenum.png"
-            alt="FigurateNumber - ICO"
-            class="w-7 h-7"
-          />
+          <img src="/svg-ggb/ico-figuratenum.png" alt="FigurateNumber - ICO" class="w-7 h-7" />
         </span>
         <span class={sideMenuCss.spanText}>{figurateMenu}</span>
       </a>
@@ -150,9 +143,7 @@ export const sideMenuCss = {
                 class={`flex text-sm items-center min-h-11 max-h-11 rounded-md hover:bg-base-300
                     ${link.active ? "text-primary font-bold" : "opacity-80"}`}
               >
-                <span class="min-w-0 flex-1 truncate whitespace-nowrap text-sm">
-                  {link.title}
-                </span>
+                <span class="min-w-0 flex-1 truncate whitespace-nowrap text-sm">{link.title}</span>
               </a>
             </li>
           ))}
@@ -162,8 +153,6 @@ export const sideMenuCss = {
   </ul>
 </div>
 
-<footer
-  class="footer footer-center flex justify-center items-center pt-0 mt-auto mb-6"
->
+<footer class="footer footer-center flex justify-center items-center pt-0 mt-auto mb-6">
   <LinkIconsGroup />
 </footer>
