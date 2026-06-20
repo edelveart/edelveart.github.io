@@ -223,4 +223,3 @@ matplotlib.figure.Figure
     Returned even if `show=True`.
 ```
 
----
