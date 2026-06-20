@@ -59,17 +59,8 @@
 
 /* FONTSOURCE imports */
 
-html{
-    scrollbar-gutter: stable both-edges;
-    height: 100%;
-    overflow: hidden;
-    overflow-y: scroll;
-
-}
 
 body {
-  margin: 0;
-  overflow-x: hidden;
   font-family: 'Fira Sans', sans-serif;
 }
 
