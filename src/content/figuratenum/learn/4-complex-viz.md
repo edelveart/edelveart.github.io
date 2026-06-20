@@ -22,7 +22,7 @@ c.visualize_plane("triangular", cmap_color="viridis", disk_radius=2.0)
   <img
     src="/svg-ggb/four-dim-centered-hypertetrahedron.webp"
     alt="4D dimensional centered hypertetrahedron"
-    class="w-72 h-auto mx-auto"
+    class="w-72 aspect-square object-contain mx-auto"
   />
   <figcaption class="mt-2 text-center">
     <em>A 4D centered hypertetrahedron (reproduce it using the code below)</em>

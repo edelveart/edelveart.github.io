@@ -21,7 +21,7 @@ d.visualize_plane("polygonal", m=17, n_terms=330, circ_color="g", bg_color="k")
   <img
     src="/svg-ggb/five-dim-hyperoctahedron.webp"
     alt="Five dimensional hyperoctahedron"
-    class="w-72 h-auto mx-auto"
+    class="w-72 aspect-square object-contain mx-auto"
   />
   <figcaption class="mt-2 text-center">
     <em>A 5D hyperoctahedron (reproduce it using the code below)</em>
