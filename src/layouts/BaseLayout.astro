@@ -51,9 +51,9 @@ const {
     />
   </head>
   <body>
-    <div class="bg-base-100 drawer lg:drawer-open">
+    <div class="bg-base-100 drawer lg:drawer-open h-screen overflow-hidden">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content bg-base-100 flex flex-col">
+      <div class="drawer-content flex flex-col h-screen overflow-y-auto">
         <Header title={SITE_TITLE} />
         <div class="md:flex md:justify-center flex justify-center">
           <main class="p-5 sm:p-6 md:p-8 mt-4 lg:max-w-[700px] w-full">

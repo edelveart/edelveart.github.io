@@ -59,10 +59,15 @@
 
 /* FONTSOURCE imports */
 
-
+html{
+    scrollbar-gutter: stable;
+    height: 100%;
+    overflow: hidden;
+}
 
 body {
   font-family: 'Fira Sans', sans-serif;
+  width:  100%;
 }
 
 code {
