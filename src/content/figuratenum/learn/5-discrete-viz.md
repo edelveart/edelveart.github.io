@@ -1,5 +1,5 @@
 ---
-title: "DiscreteViz: Modular Patterns"
+title: "Modular Patterns"
 description: "Visualize figurate number sequences in modular arithmetic."
 order: 5
 ---

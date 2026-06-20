@@ -1,5 +1,5 @@
 ---
-title: "ComplexViz: Phase Portraits"
+title: "Phase Portraits"
 description: "Visualize figurate number sequences in the complex plane."
 order: 4
 ---
