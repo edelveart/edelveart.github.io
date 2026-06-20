@@ -59,14 +59,14 @@
 
 /* FONTSOURCE imports */
 
-html{
-    scrollbar-gutter: stable;
+html {
+  scrollbar-gutter: stable;
 }
 
 body {
   font-family: 'Fira Sans', sans-serif;
+    overflow-y: scroll;
 }
-
 
 code {
    font-family: 'JetBrains Mono Variable', monospace;
