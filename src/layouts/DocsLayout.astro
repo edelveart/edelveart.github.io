@@ -5,7 +5,7 @@ const { title, description } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description} ogType="article">
-  <article class="prose prose-img:mx-auto">
+  <article class="prose prose-img:mx-auto max-w-none md:max-w-prose mx-auto">
     <h1 class="title mt-5 text-3xl font-bold break-words text-primary">
       {title}
     </h1>
