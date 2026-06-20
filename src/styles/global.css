@@ -59,11 +59,18 @@
 
 /* FONTSOURCE imports */
 
-
+html {
+  scrollbar-gutter: stable;
+}
+html {
+  overflow-y: scroll;
+}
 body {
   font-family: 'Fira Sans', sans-serif;
 }
-
+.drawer {
+  overflow-anchor: none;
+}
 code {
    font-family: 'JetBrains Mono Variable', monospace;
 }
