@@ -35,18 +35,12 @@ const {
 <!doctype html>
 <html lang="en" data-theme="sunset">
   <head>
-    <BaseHead
-      title={title}
-      description={description}
-      image={image}
-      ogType={ogType}
-    />
+    <BaseHead title={title} description={description} image={image} ogType={ogType} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"
     />
-    {TRANSITION_API && <ClientRouter />}
     <!-- KaTeX VIA:  remarkPlugins: [remarkMath],   rehypePlugins: [rehypeKatex] -->
     <link
       rel="stylesheet"
@@ -61,7 +55,7 @@ const {
       <div class="drawer-content bg-base-100 flex flex-col">
         <Header title={SITE_TITLE} />
         <div class="md:flex md:justify-center flex justify-center">
-          <main class="p-5 sm:p-6 md:p-8 mt-4 lg:max-w-[700px] max-w-[100vw]">
+          <main class="p-5 sm:p-6 md:p-8 mt-4 lg:max-w-[700px] max-w-full">
             <slot />
           </main>
         </div>
