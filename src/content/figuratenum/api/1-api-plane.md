@@ -14,7 +14,6 @@ from figuratenum import PlaneFigurateNum
 
 > Note: Some sequences share names across geometric, combinatorial, or historical contexts. While outputs may coincide, their interpretations differ.
 
-## PlaneFigurateNum
 
 | #   | Canonical                                              | Aliases                             |
 | --- | ------------------------------------------------------ | ----------------------------------- |

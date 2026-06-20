@@ -14,7 +14,6 @@ from figuratenum import SpaceFigurateNum
 
 > Note: Some sequences share names across geometric, combinatorial, or historical contexts. While outputs may coincide, their interpretations differ.
 
-## SpaceFigurateNum
 
 | #   | Canonical                                                           | Aliases                    |
 | --- | ------------------------------------------------------------------- | -------------------------- |
@@ -104,3 +103,5 @@ from figuratenum import SpaceFigurateNum
 | 84  | `centered_dodecagonal_pyramidal()`                                  | —                          |
 | 85  | `generalized_pentagonal_pyramidal()`                                | —                          |
 | 86  | `generalized_hexagonal_pyramidal()`                                 | —                          |
+
+**Sequences in SpaceFigurateNum: 86**

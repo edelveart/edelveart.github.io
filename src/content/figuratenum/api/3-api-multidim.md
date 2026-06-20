@@ -14,7 +14,6 @@ from figuratenum import MultidimensionalFigurateNum
 
 > Note: Some sequences share names across geometric, combinatorial, or historical contexts. While outputs may coincide, their interpretations differ.
 
-## MultidimensionalFigurateNum
 
 | #   | Canonical                                                                        | Aliases                                                                                                                      |
 | --- | -------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
