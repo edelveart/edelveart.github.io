@@ -59,13 +59,10 @@
 
 /* FONTSOURCE imports */
 
-html {
-  scrollbar-gutter: stable;
-}
+
 
 body {
   font-family: 'Fira Sans', sans-serif;
-    overflow-y: scroll;
 }
 
 code {
