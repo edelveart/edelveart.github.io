@@ -4,8 +4,7 @@ description: "Visualize figurate number sequences in modular arithmetic."
 order: 5
 ---
 
-`DiscreteViz` reduces a sequence modulo $n$ and traces the result as an orbit on a circle, exposing periodicity and structure that is arithmetic rather than analytic.
-Each term $a_k \bmod n$ lands on one of $n$ positions, and consecutive terms are joined by an edge $a_k \to a_{k+1}$. This was inspired by [Rogelio Pérez Buendía (2025)](https://yoyontzin.substack.com/p/espirografos-orbitas-y-relojes).
+`DiscreteViz` reduces a sequence modulo $n$ and traces the result as an orbit on a circle. Each term $a_k \bmod n$ lands on one of $n$ positions, and consecutive terms are joined by an edge $a_k \to a_{k+1}$. This was inspired by [Rogelio Pérez Buendía (2025)](https://yoyontzin.substack.com/p/espirografos-orbitas-y-relojes).
 
 ```python
 from figuratenum.figurate_viz import DiscreteViz
@@ -44,7 +43,7 @@ d.visualize_multidim(
 
 Symmetry in the orbit depends on the modulus $n$, not on the dimension of the family: a 2D sequence can produce an irregular pattern under one $n$ and a spirograph-like pattern under another, and the same holds for $k$-dimensional sequences.
 
-There's no shortcut here; trying different values of `n_terms` and `h_modulo` on the same sequence is the way to find where the structure shows up.
+Trying different values of `n_terms` and `h_modulo` on the same sequence is the way to find where the structure shows up.
 
 ## Parameters
 

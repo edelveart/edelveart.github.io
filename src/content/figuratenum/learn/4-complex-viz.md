@@ -47,10 +47,10 @@ c.visualize_multidim(
 
 ## Interpretation
 
-The portrait encodes phase and magnitude through color, following [Wegert (2012)](https://doi.org/10.1007/978-3-0348-0180-5). A few points stand out at a glance: that's where $G(z)$ changes dramatically.
-For figurate generating functions this tends to happen near $z = 1$; the full explanation lives in [Theory](/figuratenum/theory#generating-functions).
+The portrait encodes phase and magnitude through color, following [Wegert (2012)](https://doi.org/10.1007/978-3-0348-0180-5). Certain regions stand out immediately, where $f(z)$ changes rapidly.
+For generating functions of figurate numbers, this behavior is typically observed near $z = 1$. See [Theory](/figuratenum/theory#generating-functions) for a more detailed explanation.
 
-## What's worth tuning
+## Main controls
 
 `name_seq` selects the sequence; `m` and `k` select which member of a parametric or k-dimensional family, depending on the method.
 

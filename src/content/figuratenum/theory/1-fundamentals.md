@@ -33,7 +33,6 @@ These results place polygonal numbers in the context of additive number theory. 
 
 Classical examples include the squares (Lagrange), polygonal numbers (Fermat–Cauchy), and $k$-th powers (Waring), while the primes appear in Goldbach-type problems.
 
-
 ## Three families
 
 FigurateNum organizes the 235+ sequences following [Deza & Deza (2012)](https://doi.org/10.1142/8188) into four families.
@@ -44,30 +43,38 @@ FigurateNum organizes the 235+ sequences following [Deza & Deza (2012)](https://
 
 - **Multidimensional figurate numbers**: hypertetrahedra, hypercubes, hyperoctahedra, and their centered variants, generalizing the 2D/3D constructions to arbitrary dimension $k$.
 
-- **Generalized figurate numbers**: some sequences in different dimensions admit natural extensions to integer indices $n \in \mathbb{Z}$. For example, the generalized pentagonal numbers play a role in Euler's partition theory.
+- **Generalized figurate numbers**: some sequences in different dimensions admit natural extensions to integer indices $n \in \mathbb{Z}$. For example, the generalized pentagonal numbers play a role in partition theory.
 
-## Generating functions
+## Generating functions and analysis
 
-Every sequence in FigurateNum has a rational generating function. For $(a_n)_{n \geq 0}$,
+Figurate numbers admit a rational generating function. In general, for $(a_n)_{n \geq 0}$, we have
 
 $$
-G(z) = \sum_{n=0}^{\infty} a_n z^n.
+f(z) = \sum_{n=1}^{\infty} a_n z^n.
 $$
 
-For the triangular numbers, $G(z) = \dfrac{z}{(1-z)^3}$. For $m$-gonal numbers in general, the denominator is always $(1-z)^3$ and the numerator encodes $m$; the denominator degree grows with dimension: pyramidal numbers have $(1-z)^4$, and $k$-dimensional sequences have $(1-z)^{k+1}$.
+For the triangular numbers, $f(z) = \frac{z}{(1-z)^3}$, and for the squares, $f(z) = \frac{z(z+1)}{(1-z)^3}$. Both share the denominator $(1-z)^3$ and both vanish at $z=0$.
 
-This is what **ComplexViz** visualizes: the phase portrait of $G(z)$ in $\mathbb{C}$, via domain coloring after [Wegert (2012)](https://doi.org/10.1007/978-3-0348-0180-5). The portrait makes the analytic structure of $G(z)$ directly readable: poles (typically at $z = 1$ for these families), where $|G(z)|$ diverges, and zeros, where it vanishes, both leave characteristic signatures in the coloring.ou
+For $m$-gonal numbers in general, the denominator is always $(1-z)^3$, with $m$ encoded in the numerator. The degree of the denominator tracks dimension. Pyramidal numbers have $(1-z)^4$, and $k$-dimensional analogues have $(1-z)^{k+1}$.
+
+**ComplexViz** renders the phase portrait of $f(z)$ in $\mathbb{C}$, via domain coloring after [Wegert (2012)](https://doi.org/10.1007/978-3-0348-0180-5). The enhanced phase portrait makes the analytic structure of $f(z)$ directly readable:
+
+- poles, typically at $z = 1$ for these families, where $|f(z)| \to \infty$
+- zeros, where $f(z) = 0$
+
+Both leave characteristic signatures in the coloring.
 
 ## Modular structure
 
-A different lens: instead of the values $a_n$ themselves, consider their residues modulo a fixed integer $N$,
+Instead of the values $a_k$ themselves, consider their residues modulo a fixed integer $n$,
 
 $$
-r_n \equiv a_n \bmod N, \qquad r_n \in \{0, 1, \ldots, N-1\}.
+r_k \equiv a_k \bmod n,
 $$
+with $r_k \in \{0, 1, \ldots, n-1\}.$  Place $n$ points evenly on a circle, indexed $0$ through $n-1$. Each term $a_k$ maps to position $r_k$, and consecutive terms are joined by an edge $r_k \to r_{k+1}$.
+The resulting orbit (the modular pattern) is what **DiscreteViz** draws, inspired by [Pérez Buendía (2025)](https://yoyontzin.substack.com/p/espirografos-orbitas-y-relojes).
 
-Place $N$ points evenly on a circle, indexed $0$ through $N-1$. Each term $a_n$ maps to position $r_n$, and consecutive terms are joined by an edge $r_n \to r_{n+1}$. The resulting orbit (the modular pattern) is what **DiscreteViz** draws, inspired by [Pérez Buendía (2025)](https://yoyontzin.substack.com/p/espirografos-orbitas-y-relojes).
+Since $(a_k)$ is typically polynomial in $k$, the residue sequence $(r_k)$ becomes eventually periodic for any fixed $n$, and the orbit closes into a finite cycle in $\mathbb{Z}/n\mathbb{Z}$.
 
-Because $(a_n)$ is typically polynomial in $n$, the residue sequence $(r_n)$ becomes eventually periodic for any fixed $N$, and the orbit closes into a finite cycle in $\mathbb{Z}/N\mathbb{Z}$.
-
-Within this setting, quadratic sequences such as polygonal numbers may exhibit symmetric or asymmetric visual patterns depending on the modulus $N$: the same sequence can appear symmetric for one value of $N$ and asymmetric for another, while different sequences may produce similar visual symmetries under the same modulus.
+Symmetry in the resulting pattern depends on the pair $(a_k, n)$ rather than on the sequence alone.
+A sequence may be symmetric for one modulus and asymmetric for another, while different sequences may exhibit similar patterns under a shared modulus.

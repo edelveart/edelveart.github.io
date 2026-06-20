@@ -8,7 +8,8 @@ FigurateNum ships in two installation modes: a stable core for sequence generati
 
 ## Stable version
 
-Sequence generation and core functionality, with no dependencies beyond the standard library. Requires Python `≥ 3.12`.
+This includes sequence generation and core functionality, with no dependencies beyond the Python standard library.
+Requires Python `≥ 3.12`.
 
 ```bash
 pip install figuratenum
@@ -27,4 +28,6 @@ These tools depend on NumPy, SymPy, and Matplotlib.
 
 ```bash
 pip install figuratenum[figurate-viz]
+```
+
 

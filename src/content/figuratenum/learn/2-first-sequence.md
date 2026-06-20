@@ -20,8 +20,8 @@ print([next(seq) for _ in range(8)])
 
 ## Families of figurate sequences
 
-Triangular, square, pentagonal, hexagonal: these are variations on one construction, the number of sides changing while the underlying rule stays fixed.
-FigurateNum captures that with a single parameter, $m \ge 3$, rather than a method per polygon.
+Triangular, square, pentagonal, and hexagonal numbers belong to the same family. The only difference is the number of sides.
+FigurateNum captures that with a single parameter, $m \ge 3$.
 
 ```python
 seq = FigurateNum().polygonal(m=3)
@@ -36,7 +36,7 @@ At $m=3$ this is the triangular numbers; raise it to $m=4$ and the squares from 
 
 ## Into three dimensions
 
-The same logic that builds a triangle out of rows of points builds a tetrahedron out of layers of triangles. The tetrahedral numbers are what results, one of the five Platonic solids, traced out one term at a time.
+The same logic that builds a triangle out of rows of points builds a tetrahedron out of layers of triangles. The tetrahedral numbers count the points in three-dimensional stacks of triangles, forming one of the five Platonic solids.
 
 ```python
 seq = FigurateNum().tetrahedral()
@@ -60,4 +60,4 @@ print([next(seq) for _ in range(8)])
 [1, 5, 15, 35, 70, 126, 210, 330]
 ```
 
-Here $k \ge 4$ and must be an integer. Changing it doesn't tweak the sequence above, it selects a different one entirely, the same role $m$ played for polygonal numbers earlier.
+Here $k \ge 4$ and must be an integer. Changing it selects a different sequence entirely, the same role $m$ played for polygonal numbers earlier.

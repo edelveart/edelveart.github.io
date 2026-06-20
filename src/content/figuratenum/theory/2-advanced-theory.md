@@ -21,18 +21,17 @@ S_5(-n) = \frac{n(3n + 1)}{2}.
 $$
 
 This yields the interleaved sequence
-
 $$
-\ldots, 40, 26, 15, 7, 2, 0, 1, 5, 12, 22, 35, \ldots
+\ldots,  26, 15, 7, 2, 0, 1, 5, 12, 22,  \ldots .
 $$
 
 Reordering by $n = 0, \pm1, \pm2, \pm3, \ldots$ gives
 
 $$
-0, 1, 2, 5, 7, 12, 15, 22, 26, \ldots
+0, 1, 2, 5, 7, 12, 15, 22, 26, \ldots,
 $$
 
-corresponding to **OEIS A001318** and Euler’s pentagonal number theorem:
+corresponding to **OEIS A001318** and appearing in the pentagonal number theorem proved by Euler.
 
 $$
 \prod_{j=1}^{\infty} (1 - z^j)
