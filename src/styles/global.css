@@ -91,12 +91,7 @@ code {
     max-width: none;
 }
 
-.prose figure {
-  all: unset;
-  display: block;
-  margin: 1.5em auto;
-  max-width: 100%;
-}
+
 .prose :not(pre) > code {
   font-size: 0.90rem;
   padding: 0.1rem 0.3rem;
