@@ -18,13 +18,13 @@ c.visualize_plane("triangular", cmap_color="viridis", disk_radius=2.0)
 
 `visualize_plane` handles 2D sequences, `visualize_space` handles 3D, and `visualize_multidim` handles k-dimensional and generalized families.
 
-<figure class="mb-8 text-center">
+<figure class="mb-8 text-center block min-w-full w-full">
   <img
     src="/svg-ggb/four-dim-centered-hypertetrahedron.webp"
     alt="4D dimensional centered hypertetrahedron"
     width="288"
     height="288"
-    class="w-72 h-auto mx-auto"
+    class="w-72 h-auto mx-auto block"
   />
   <figcaption class="mt-2 text-center">
     <em>A 4D centered hypertetrahedron (reproduce it using the code below)</em>
