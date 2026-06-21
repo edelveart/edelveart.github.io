@@ -1,6 +1,6 @@
 ---
 import { menuEnglish } from "./SideBar.astro";
-export const linksTo = "text-primary underline  hover:decoration-2";
+export const linksTo = "text-primary underline  hover:decoration-2 inline-block";
 ---
 
 <section class="leading-relaxed mb-8">
@@ -30,7 +30,7 @@ export const linksTo = "text-primary underline  hover:decoration-2";
     <a
       href="https://link.springer.com/chapter/10.1007/978-3-031-07015-0_30"
       target="_blank"
-      class={linksTo}
+      class={`${linksTo}`}
       rel="noopener"
     >
       Scopus-indexed article

@@ -42,6 +42,8 @@ const displayDate = dayjs(pubDate).format("ll");
         }
       </div>
     </div>
-    <slot />
+    <div class="prose prose-table:table-xs prose-table:table-zebra">
+      <slot />
+    </div>
   </article>
 </BaseLayout>
