@@ -56,7 +56,7 @@
 
 aside {
   scrollbar-gutter: stable;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 body {
