@@ -5,11 +5,11 @@ const { title, description } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description} ogType="article">
-  <article class="prose max-w-none">
+  <article class="prose">
     <h1 class="title mt-5 text-3xl font-bold break-words text-primary">
       {title}
     </h1>
-    <div class="prose-table:table-xs min-w-[900px]">
+    <div class="prose-table:table-xs">
       <slot />
     </div>
   </article>
