@@ -4,8 +4,6 @@ description: "Generalized figurate numbers, recursive structures, equivalent pol
 order: 12
 ---
 
-## Generalized Figurate Numbers
-
 Based on [Deza & Deza (2012)](https://doi.org/10.1142/8188), many figurate numbers admit extensions beyond their standard index range or dimensional setting. In particular, some classical families can be generalized to negative or shifted indices while preserving their polynomial form.
 
 A key example is the **generalized pentagonal numbers**, defined by evaluating the same polynomial over the integers:
