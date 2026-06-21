@@ -120,7 +120,7 @@ export const sideMenuCss = {
         <span class={sideMenuCss.spanText}>{notesMenu}</span>
       </a>
     </li>
-    <li>
+    <!-- <li>
       <a
         class={`${sideMenuCss.divCss} ${isSectionActive(current, hrefFigurate) ? activePage : ""}`}
         href={hrefFigurate}
@@ -130,10 +130,10 @@ export const sideMenuCss = {
         </span>
         <span class={sideMenuCss.spanText}>{figurateMenu}</span>
       </a>
-    </li>
+    </li> -->
 
     <!-- CONDITIONAL SUBMENU OF DOCS -->
-    {
+    <!-- {
       isSectionActive(current, "/figuratenum") && (
         <ul class="ml-2 mx-auto mt-2 space-y-1 ">
           {figurateLinks.map((link) => (
@@ -149,7 +149,7 @@ export const sideMenuCss = {
           ))}
         </ul>
       )
-    }
+    } -->
   </ul>
 </div>
 

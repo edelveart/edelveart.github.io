@@ -35,12 +35,7 @@ const {
 <!doctype html>
 <html lang="es" data-theme="sunset">
   <head>
-    <BaseHead
-      title={title}
-      description={description}
-      image={image}
-      ogType={ogType}
-    />
+    <BaseHead title={title} description={description} image={image} ogType={ogType} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link
       rel="stylesheet"
@@ -50,12 +45,12 @@ const {
     <!-- {TRANSITION_API && <ClientRouter />} -->
   </head>
   <body>
-    <div class="bg-base-100 drawer lg:drawer-open">
+    <div class="bg-base-100 drawer lg:drawer-open min-h-screen">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content bg-base-100 flex flex-col">
+      <div class="drawer-content overflow-y-auto">
         <Header title={SITE_TITLE} />
-        <div class="md:flex md:justify-center flex justify-center">
-          <main class="p-5 sm:p-6 md:p-8 mt-4 lg:max-w-[700px] max-w-[100vw]">
+        <div class="md:flex md:justify-center">
+          <main class="p-6 pt-10 lg:max-w-[800px] max-w-[100vw]">
             <slot />
           </main>
         </div>
@@ -63,10 +58,5 @@ const {
       </div>
       {includeSidebar && <SideBar />}
     </div>
-    <style is:global>
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
   </body>
 </html>
