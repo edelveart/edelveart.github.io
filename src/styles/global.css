@@ -4,11 +4,9 @@
 
 .mask-top {
   /* mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 1%, rgb(21, 21, 160) 8%); */
-
   /* -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 1) 98%); */
   border-radius: 20%;
 }
-
 
 @import "tailwindcss";
 @plugin "daisyui" {
@@ -30,7 +28,6 @@
   }
 
 }
-
 
 @layer components {
   /* BASE for each post */
@@ -57,9 +54,7 @@
 }
 
 
-/* FONTSOURCE imports */
-
-html {
+aside {
   scrollbar-gutter: stable;
 }
 html {
@@ -68,16 +63,14 @@ html {
 body {
   font-family: 'Fira Sans', sans-serif;
 }
-.drawer {
-  overflow-anchor: none;
-}
+
 code {
    font-family: 'JetBrains Mono Variable', monospace;
 }
 
 /* Only with Shiki */
 .astro-code {
-  @apply rounded-lg  overflow-x-auto p-4  text-sm font-normal shadow-md  border-1 border-base-content/10;
+  @apply rounded-lg p-4  text-sm font-normal shadow-md  border-1 border-base-content/10;
 }
 /* border border-gray-600 */
 
@@ -88,7 +81,6 @@ code {
 .prose {
     max-width: none;
 }
-
 
 .prose :not(pre) > code {
   font-size: 0.90rem;
