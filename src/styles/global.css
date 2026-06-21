@@ -57,9 +57,7 @@
 aside {
   scrollbar-gutter: stable;
 }
-html {
-  overflow-y: scroll;
-}
+
 body {
   font-family: 'Fira Sans', sans-serif;
 }
