@@ -1,6 +1,7 @@
 ---
 import SideBarMenu from "@components/SideBarMenu.astro";
 import PhotoProfile from "@components/img-components/PhotoProfile.astro";
+import LinkIconsGroup from "@components/LinkIconsGroup.astro";
 
 export const menuEnglish = {
   homeMenu: {
@@ -58,5 +59,8 @@ export const menuEnglish = {
       figurateMenu={menuEnglish.figurateMenu.text}
       hrefFigurate={menuEnglish.figurateMenu.href}
     />
+    <footer class="footer footer-center flex justify-center items-center pt-0 mt-auto mb-6">
+      <LinkIconsGroup />
+    </footer>
   </aside>
 </div>
