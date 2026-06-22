@@ -17,23 +17,17 @@ const cardBase = `
 `;
 
 const badge = "absolute top-0 left-0 m-4 badge badge-primary  truncate z-10";
-const hueColorImage = "invert hue-rotate-90 hover:hue-rotate-90";
 ---
 
 <!-- https://svgomg.net/  --><!-- https://vecta.io/nano -->
 <div class={divisor}></div>
-<a
-  href={UrlArray[2].url}
-  target="_blank"
-  rel="noopener noreferrer"
-  class={cardBase}
->
+<a href={UrlArray[2].url} target="_blank" rel="noopener noreferrer" class={cardBase}>
   <div class={badge}>
     <span>FigurateNum | PyPI</span>
   </div>
 
   <Image
-    class="w-full h-full object-cover -hue-rotate-90"
+    class="w-full h-full object-cover"
     width={700}
     height={500}
     fetchpriority="high"
@@ -47,17 +41,12 @@ const hueColorImage = "invert hue-rotate-90 hover:hue-rotate-90";
 
 <section class="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-8">
   <!-- // 1 -->
-  <a
-    href={UrlArray[1].url}
-    target="_blank"
-    rel="noopener noreferrer"
-    class={cardBase}
-  >
+  <a href={UrlArray[1].url} target="_blank" rel="noopener noreferrer" class={cardBase}>
     <div class={badge}>
       <span>Modular Forms | RubyGems</span>
     </div>
     <Image
-      class={`w-full h-full object-cover ${hueColorImage}`}
+      class={`w-full h-full object-cover invert -hue-rotate-90`}
       width={700}
       height={500}
       fetchpriority="high"
@@ -67,19 +56,14 @@ const hueColorImage = "invert hue-rotate-90 hover:hue-rotate-90";
     />
   </a>
   <!-- // 2 -->
-  <a
-    href={UrlArray[0].url}
-    target="_blank"
-    rel="noopener noreferrer"
-    class={cardBase}
-  >
+  <a href={UrlArray[0].url} target="_blank" rel="noopener noreferrer" class={cardBase}>
     <div class={badge}>
       <span>TS-Tonnetz | npm</span>
     </div>
     <Image
       src="/svg-ggb/ts-tonnetz-2026-library.svg"
       alt="ts-tonnetz simplices portrait"
-      class={`w-full h-full object-cover ${hueColorImage}`}
+      class={`w-full h-full object-cover invert`}
       width={700}
       height={500}
       fetchpriority="high"

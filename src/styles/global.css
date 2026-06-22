@@ -10,11 +10,11 @@
 
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: sunset --default;
-  /* themes: false; */
+  /* themes: sunset --default; */
+  themes: false;
 }
 
-/* @plugin "./catppuccinTheme.mocha.ts"; */
+@plugin "./catppuccinTheme.mocha.ts";
 
 /* Typography for BLOG/NOTES */
 @plugin '@tailwindcss/typography';
@@ -85,7 +85,7 @@ code {
   border-width: 0.0px;
   border-radius: 0.25rem;
   /* border-color: rgb(from var(--color-base-content) r g b / 0.25); */
-  background-color: rgb(from var(--color-base-content) r g b / 0.1);
+  background-color: rgb(from var(--color-base-content) r g b / 0.08);
   /* background-color: #1C1E26; */
   /* background-color: var(--color-slate-800); */
 }

@@ -37,7 +37,7 @@ export default defineConfig({
       rehypePlugins: [rehypeKatex], // KaTeX
     }),
     shikiConfig: {
-      theme: "horizon",
+      theme: "catppuccin-mocha",
       wrap: false, //code wrap
     },
   },
