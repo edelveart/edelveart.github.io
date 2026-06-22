@@ -11,11 +11,12 @@ Arrange pebbles on a table and some quantities form perfect triangles, others pe
 The simplest case is the triangular numbers,
 
 $$
-S_3 = \frac{n(n+1)}{2},
+S_3(n) = \frac{n(n+1)}{2},
 $$
 
-so $S_3(1) = 1$, $S_3(2) = 3$, $S_3(3) = 6$, $S_3(4) = 10$, and so on. Stack them as rows of pebbles and the result is an equilateral triangle. Square numbers $n^2$ do the same for grids, and the pattern extends to any regular polygon: pentagonal, hexagonal, heptagonal, and beyond.
+so $S_3(1) = 1$, $S_3(2) = 3$, $S_3(3) = 6$, $S_3(4) = 10$, and so on. Stack them as rows of pebbles and the result is an equilateral triangle.
 
+Square numbers $n^2$ do the same for grids, and the pattern extends to any regular polygon: pentagonal, hexagonal, heptagonal, and beyond.
 What changes between them is the **number of sides** $m$ of the polygon. The general formula for the $n$-th $m$-gonal number is
 
 $$
@@ -27,23 +28,22 @@ Setting $m = 3$ recovers the triangular numbers; $m = 4$ gives the squares.
 ## From geometry to number theory
 
 The idea is old enough that it has had time to prove itself useful. Diophantus studied figurate numbers in the 3rd century, and over a thousand years later Fermat conjectured that every positive integer is a sum of at most three triangular numbers, four squares, five pentagonal numbers, and so on: the **Polygonal Number Theorem**.
-Gauss proved the triangular case in 1796, writing in his diary: *ΕΥΡΗΚΑ! num = Δ + Δ + Δ*. The general theorem took until 1813, when Cauchy finally closed it.
 
-These results place polygonal numbers in the context of additive number theory. A set $A$  is called an additive basis of order $h$ if every nonnegative integer can be expressed as the sum of at most $h$ elements of $A$, with repetitions allowed.
+Gauss proved the triangular case in 1796, writing in his diary: *ΕΥΡΗΚΑ! num = Δ + Δ + Δ*. The general theorem took until 1813, when Cauchy finally closed it. These results place polygonal numbers in the context of additive number theory.
+
+> A set $A$  is called an additive basis of order $h$ if every nonnegative integer can be expressed as the sum of at most $h$ elements of $A$, with repetitions allowed.
 
 Classical examples include the squares (Lagrange), polygonal numbers (Fermat–Cauchy), and $k$-th powers (Waring), while the primes appear in Goldbach-type problems.
 
-## Three families
+## Sequences and generating functions by dimension
 
-FigurateNum organizes the 235+ sequences following [Deza & Deza (2012)](https://doi.org/10.1142/8188) into four families.
+FigurateNum organizes the 235+ sequences and families following [Deza & Deza (2012)](https://doi.org/10.1142/8188) into three groups by dimension.
 
-- **Plane figurate numbers** (2D): polygonal numbers, centered polygonal numbers, pronic numbers, and their relatives. Centered polygonal numbers build outward from a single point, surrounded by successive polygonal shells.
+- **Plane figurate numbers (2D)**: polygonal numbers, centered polygonal numbers, pronic numbers, and their relatives. Centered polygonal numbers build outward from a single point, surrounded by successive polygonal shells.
+- **Space figurate numbers (3D)**: pyramidal numbers (polygonal numbers stacked as layers) and polyhedral numbers, whose terms count vertices of the Platonic solids: tetrahedral, cubic, octahedral, dodecahedral, icosahedral.
+- **Multidimensional figurate numbers (4D and beyond)**: hypertetrahedra, hypercubes, hyperoctahedra, and their centered variants, generalizing the 2D/3D constructions to arbitrary dimension $k$.
 
-- **Space figurate numbers** (3D): pyramidal numbers (polygonal numbers stacked as layers) and polyhedral numbers, whose terms count vertices of the Platonic solids: tetrahedral, cubic, octahedral, dodecahedral, icosahedral.
-
-- **Multidimensional figurate numbers**: hypertetrahedra, hypercubes, hyperoctahedra, and their centered variants, generalizing the 2D/3D constructions to arbitrary dimension $k$.
-
-- **Generalized figurate numbers**: some sequences in different dimensions admit natural extensions to integer indices $n \in \mathbb{Z}$. For example, the generalized pentagonal numbers play a role in partition theory.
+> Within each family and dimension, some sequences admit natural extensions to integer indices $n \in \mathbb{Z}$, giving rise to their generalized variants.
 
 ## Generating functions and analysis
 

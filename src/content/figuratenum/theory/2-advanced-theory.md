@@ -29,7 +29,7 @@ $$
 0, 1, 2, 5, 7, 12, 15, 22, 26, \ldots,
 $$
 
-corresponding to **OEIS A001318** and appearing in the pentagonal number theorem proved by Euler.
+corresponding to **OEIS A001318** and appearing in the pentagonal number theorem proved by Euler:
 
 $$
 \prod_{j=1}^{\infty} (1 - z^j)
@@ -42,7 +42,7 @@ Alternative enumerations (e.g. symmetric indexing $0, \pm1, \pm2, \ldots$) are n
 
 ## Computational Representation
 
-In [Deza & Deza (2012)](https://doi.org/10.1142/8188), figurate numbers are given both recursively and through closed-form polynomial formulas.
+In [Deza & Deza (2012)](https://doi.org/10.1142/8188), figurate numbers are given both **recursively** and through **closed-form polynomial** formulas.
 The hypertetrahedral numbers illustrate this well: they can be expressed through recursive definitions, factorial expressions, binomial coefficients, or Gamma-function identities, all describing the same mathematical object.
 
 For example, since
@@ -66,7 +66,6 @@ $$
 ## Implementation
 
 By default, FigurateNum uses optimized, mathematically equivalent implementations that are significantly faster, especially for multidimensional figurate numbers.
-
 Incremental computation and precomputed values allow terms to be generated efficiently without repeatedly evaluating factorials or traversing recursive definitions.
 
 The default implementation uses an incremental binomial update:
