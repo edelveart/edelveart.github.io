@@ -18,6 +18,7 @@ const cardButtons = {
   paragraps: "mt-2 text-sm opacity-80 mb-6",
   btns: "btn rounded-md ease-in-out duration-150 hover:text-primary justify-center font-bold text-base-content h-12 mt-auto",
 };
+const tex = "$ \\mathbb{C} $";
 ---
 
 <BaseLayout
@@ -60,8 +61,9 @@ const cardButtons = {
     </div>
 
     <p class="mb-4 mt-10">
-      <strong>FigurateNum</strong> lets you generate, analyze, and visualize figurate number sequences,
-      from polygonal numbers to Platonic solids and higher-dimensional analogues, in a single Python interface.
+      <strong>FigurateNum</strong> generates and visualizes 235+ plane, space, and multidimensional figurate
+      number sequences and families, from polygonal numbers to Platonic solids and higher-dimensional
+      analogues.
     </p>
 
     <p class="mt-3 mb-4">
@@ -73,9 +75,10 @@ const cardButtons = {
         rel="noopener noreferrer"
       >
         Deza & Deza (2012)
-      </a>, this library provides 235+ sequences with deterministic generators and optional
-      visualization in the complex plane and modular arithmetic spaces.
+      </a>, every sequence is deterministic and reproducible. Optional visualization tools cover
+      phase portraits and modular patterns.
     </p>
+
     <!-- - Sequence generation (lazy iterators) in $\mathbb{Z}$
 - Parametric families of sequences
 - Visualization in $\mathbb{C}$ using `ComplexViz`
@@ -85,8 +88,8 @@ const cardButtons = {
       <div class={cardButtons.container}>
         <h2 class="text-lg font-bold">Learn from Scratch</h2>
         <p class={cardButtons.paragraps}>
-          New to figurate numbers? Start with the fundamentals and learn how to generate basic
-          sequences and visualizations.
+          Start with sequence generation and work through parametric families, higher dimensions,
+          and visualization tools.
         </p>
         {
           OVERVIEW && (
@@ -121,8 +124,8 @@ const cardButtons = {
       <div class={cardButtons.container}>
         <h2 class="text-lg font-bold">API Reference</h2>
         <p class={cardButtons.paragraps}>
-          Browse the available classes, functions, and utilities for generating, analyzing, and
-          visualizing figurate number sequences.
+          Auto-generated reference for all sequence generators, ComplexViz, and DiscreteViz,
+          organized by dimension.
         </p>
         {
           API && (
@@ -136,8 +139,7 @@ const cardButtons = {
       <div class={cardButtons.container}>
         <h2 class="text-lg font-bold">Contributing</h2>
         <p class={cardButtons.paragraps}>
-          Learn how to run tests, add new figurate number families, and contribute improvements to
-          the project.
+          Run tests, add new sequences, correct mathematical errata, and submit pull requests.
         </p>
         {
           CONTRIBUTING && (

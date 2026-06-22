@@ -4,7 +4,7 @@ description: "Visualize figurate number sequences in the complex plane."
 order: 4
 ---
 
-Instead of the sequence itself, `ComplexViz` looks at its generating function $G(z)$ over the complex plane $\mathbb{C}$, exposing global structure that individual terms don't reveal on their own.
+Instead of the sequence itself, `ComplexViz` looks at its generating function $f(z)$ over the complex plane $\mathbb{C}$, exposing global structure that individual terms don't reveal on their own.
 The technique is domain coloring, producing a phase portrait following Wegert (2012).
 
 ```python

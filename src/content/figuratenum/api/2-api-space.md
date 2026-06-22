@@ -4,7 +4,7 @@ description: "Auto-generated reference for all sequence generators, ComplexViz, 
 order: 21
 ---
 
-This reference is auto-generated from the source code on [GitHub](https://github.com/edelveart/figuratenum). For explanations and mathematical context, see [Theory](/figuratenum/theory) and [Learn](/figuratenum/learn).
+This reference is auto-generated from the source code on [GitHub](https://github.com/edelveart/figuratenum). For explanations and mathematical context, see [Fundamentals](/figuratenum/fundamentals) and [Learn](/figuratenum/sequences-and-families).
 
 All sequences are available through the `FigurateNum` class or directly via the `SpaceFigurateNum` class, with identical behavior.
 

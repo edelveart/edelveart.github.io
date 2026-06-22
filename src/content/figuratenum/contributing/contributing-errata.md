@@ -1,11 +1,10 @@
 ---
 title: "Contributing"
-description: "How to contribute code, tests, documentation, and mathematical corrections to FigurateNum."
+description: "How to run tests, add sequences, and contribute to FigurateNum."
 order: 31
 ---
-Thank you for your interest in **FigurateNum**.
 
-FigurateNum has been downloaded nearly 20,000 times over the last two years. Contributions of any size are welcome, particularly from first-time contributors.
+FigurateNum is maintained by a single developer and has been downloaded nearly 20,000 times over the last two years. Contributions of any size are welcome.
 
 ## Development setup
 
@@ -13,31 +12,22 @@ FigurateNum has been downloaded nearly 20,000 times over the last two years. Con
 git clone https://github.com/edelveart/figuratenum.git
 cd figuratenum
 pip install -e ".[figurate-viz]"
-```
-
-## Running tests
-
-Tests are executed automatically through GitHub Actions on every push and pull request.
-
-```bash
 pytest
 ```
 
-Please ensure all tests pass before submitting a pull request.
-
 ## Ways to contribute
 
-* Add new figurate sequences.
-* Add tests for existing sequences.
-* Improve documentation and examples.
-* Report bugs or API issues.
-* Correct mathematical references and errata.
-
-If you add a new sequence, please include a reliable mathematical reference whenever possible (OEIS, books, papers, or other scholarly sources).
+| Type          | Details                                                                |
+| ------------- | ---------------------------------------------------------------------- |
+| New sequences | Include a mathematical reference (OEIS, paper, or book)                |
+| Tests         | Cover the first known terms of the sequence                            |
+| Documentation | Corrections, examples, or improvements                                 |
+| Bug reports   | Open a [GitHub Issue](https://github.com/edelveart/figuratenum/issues) |
+| Errata        | Corrections to *Figurate Numbers* (Deza & Deza, 2012)                  |
 
 ## Adding a new sequence
 
-Each sequence is implemented as a generator function and exposed through a facade class.
+Each sequence is a generator function exposed through a facade class. Aliases for alternative names live on the class only.
 
 ```python
 def centered_square() -> Generator[int]:
@@ -46,27 +36,15 @@ def centered_square() -> Generator[int]:
         yield 2 * delta**2 - 2 * delta + 1
         delta += 1
 
-
 class PlaneFigurateNum:
     def centered_square(self) -> Generator[int]:
         return centered_square()
-
     diamond = centered_square
 ```
 
-To add a new sequence:
-
-1. Implement the generator function in the appropriate module.
-2. Expose it through the corresponding facade class.
-3. Add tests covering the first known terms.
-4. Include a mathematical reference.
-
-Following an existing sequence is usually the easiest way to get started.
-We value **careful, well-understood contributions** over speed.
+Add the generator function in the appropriate module, expose it through the corresponding facade class, and add a test under `tests/` covering its first several terms. Following an existing sequence in the same family is the fastest way to match the expected shape.
 
 ## Commit conventions
-
-When possible, use conventional commit prefixes:
 
 | Prefix     | Description           |
 | ---------- | --------------------- |
@@ -76,30 +54,6 @@ When possible, use conventional commit prefixes:
 | `docs`     | documentation updates |
 | `test`     | test changes          |
 
-## Reporting issues
-
-Please use GitHub Issues for bug reports, installation problems, incorrect outputs, or API inconsistencies.
-
-When reporting a bug, include:
-
-* FigurateNum version
-* Python version
-* Minimal reproducible example
-* Expected and actual results
-
 ## Contributing to the errata
 
-FigurateNum is based primarily on *Figurate Numbers* (Deza & Deza, 2012).
-
-Corrections to formulas, definitions, references, or indexing errors in the book are maintained in:
-
-```text
-docs/errata/errata-figuratenum.tex
-```
-
-Errata contributions are scientific contributions and are always welcome.
-
-## Questions
-
-If you are unsure where to start, open an issue and we can discuss the best approach before implementation.
-
+Mathematical errors in *Figurate Numbers* (Deza & Deza, 2012), in formulas, definitions, or indexing, are tracked in [`docs/errata/errata-figuratenum.tex`](https://github.com/edelveart/figuratenum/blob/main/docs/errata/errata-figuratenum.tex). Identifying and documenting these is a genuine scientific contribution. Open a PR against the `.tex` source with the error, its location, and the fix, or open an issue if you spotted a discrepancy but are unsure of the correction.

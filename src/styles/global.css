@@ -72,7 +72,7 @@ code {
 
 /* Only with Shiki */
 .astro-code {
-  @apply rounded-lg p-4  text-sm font-normal shadow-md  border-1 border-base-content/10;
+  @apply rounded-lg p-4  text-sm font-normal shadow-md  border-1 border-base-content/5;
 }
 
 .prose {
