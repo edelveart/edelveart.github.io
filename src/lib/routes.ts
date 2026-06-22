@@ -1,7 +1,7 @@
-export const normalizePath = (path: string) => path.replace(/\/+$/, "") || "/";
+export const normalizePath = (path: string) => path.split("?")[0].replace(/\/+$/, "") || "/";
 
-export const isSamePath = (a: string, b: string) =>
-  normalizePath(a) === normalizePath(b);
+export const isExactActive = (current: string, base: string) =>
+  normalizePath(current) === normalizePath(base);
 
 export const isSectionActive = (current: string, base: string) => {
   const c = normalizePath(current);

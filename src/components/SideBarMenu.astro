@@ -38,7 +38,7 @@ const {
 // REPLACE SIDEBARIDACTIVEITEM
 import { getCollection } from "astro:content";
 import createSlug from "@ts-config-path/lib/createSlug";
-import { isSamePath, isSectionActive } from "@ts-config-path/lib/routes";
+import { isExactActive, isSectionActive } from "@ts-config-path/lib/routes";
 
 const current = Astro.url.pathname;
 const figuratePosts = await getCollection("figurate");
@@ -49,7 +49,7 @@ const figurateLinks = sortedFigurate.map((post) => {
   return {
     title: post.data.title,
     href,
-    active: isSamePath(current, href),
+    active: isExactActive(current, href),
   };
 });
 
@@ -66,7 +66,7 @@ export const sideMenuCss = {
   <ul class="menu w-full h-full flex-1 flex flex-col">
     <li>
       <a
-        class={`${sideMenuCss.divCss} ${isSectionActive(current, hrefHome) ? activePage : ""}`}
+        class={`${sideMenuCss.divCss} ${isExactActive(current, hrefHome) ? activePage : ""}`}
         href={hrefHome}
       >
         <span class={sideMenuCss.iconBox}>
@@ -77,7 +77,7 @@ export const sideMenuCss = {
     </li>
     <li>
       <a
-        class={`${sideMenuCss.divCss} ${isSectionActive(current, hrefCV) ? activePage : ""}`}
+        class={`${sideMenuCss.divCss} ${isExactActive(current, hrefCV) ? activePage : ""}`}
         href={hrefCV}
       >
         <span class={sideMenuCss.iconBox}>
@@ -88,7 +88,7 @@ export const sideMenuCss = {
     </li>
     <li>
       <a
-        class={`${sideMenuCss.divCss} ${isSectionActive(current, hrefProjects) ? activePage : ""}`}
+        class={`${sideMenuCss.divCss} ${isExactActive(current, hrefProjects) ? activePage : ""}`}
         href={hrefProjects}
       >
         <span class={sideMenuCss.iconBox}>
@@ -99,7 +99,7 @@ export const sideMenuCss = {
     </li>
     <li>
       <a
-        class={`${sideMenuCss.divCss} ${isSectionActive(current, hrefResources) ? activePage : ""}`}
+        class={`${sideMenuCss.divCss} ${isExactActive(current, hrefResources) ? activePage : ""}`}
         href={hrefResources}
       >
         <span class={sideMenuCss.iconBox}>
