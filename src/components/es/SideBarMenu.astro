@@ -31,14 +31,17 @@ const {
   hrefFigurate,
 } = Astro.props;
 
-import { isSectionActive } from "@ts-config-path/lib/routes";
+import { isExactActive, isSectionActive } from "@ts-config-path/lib/routes";
 const current = Astro.url.pathname;
 ---
 
 <div class="flex flex-col w-full h-full mb-5">
-  <ul class="menu w-full h-full flex-1 flex flex-col overflow-y-auto">
+  <ul class="menu w-full h-full flex-1 flex flex-col">
     <li>
-      <a class={`${sideMenuCss.divCss} ${hrefHome ? activePage : ""}`} href={hrefHome}>
+      <a
+        class={`${sideMenuCss.divCss} ${isExactActive(current, hrefHome) ? activePage : ""}`}
+        href={hrefHome}
+      >
         <span class={sideMenuCss.iconBox}>
           <Home class="w-8 h-8" />
         </span>

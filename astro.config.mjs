@@ -27,6 +27,10 @@ export default defineConfig({
     }),
   ],
 
+  vite: {
+    plugins: [tailwindcss()],
+  },
+
   markdown: {
     processor: unified({
       remarkPlugins: [remarkMath],
@@ -40,9 +44,5 @@ export default defineConfig({
 
   image: {
     service: passthroughImageService(),
-  },
-
-  vite: {
-    plugins: [tailwindcss()],
   },
 });

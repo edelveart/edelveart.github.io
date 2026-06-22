@@ -18,9 +18,7 @@
 
 /* Typography for BLOG/NOTES */
 @plugin '@tailwindcss/typography';
-/* @tailwind base;
-@tailwind components; */
-@tailwind utilities;
+
 
 @layer base {
   p {
@@ -76,11 +74,6 @@ code {
 .astro-code {
   @apply rounded-lg p-4  text-sm font-normal shadow-md  border-1 border-base-content/10;
 }
-/* border border-gray-600 */
-
-/* Inline code in md files */
-/* Primary Color in Daisy UI: var(--color-primary);
-/* Neutral Color in Daisy UI var(--color-neutral); */
 
 .prose {
     max-width: none;
