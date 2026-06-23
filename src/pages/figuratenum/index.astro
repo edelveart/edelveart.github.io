@@ -14,11 +14,10 @@ const API = docsMap["API: PlaneFigurateNum"];
 const CONTRIBUTING = docsMap["Contributing"];
 
 const cardButtons = {
-  container: "p-4 border rounded-lg flex flex-col h-full border-base-content/40",
+  container: "p-4 border rounded-lg flex flex-col h-full border-base-content/10",
   paragraps: "mt-2 text-sm opacity-80 mb-6",
-  btns: "btn ease-in-out duration-150 hover:text-primary justify-center font-bold text-base-content h-12 mt-auto",
+  btns: "btn btn-ghost rounded-md xl ease-in-out duration-150 mt-auto shadow-sm shadow-primary/20 justify-center transition h-12 mt-auto",
 };
-const tex = "$ \\mathbb{C} $";
 ---
 
 <BaseLayout
@@ -99,7 +98,7 @@ const tex = "$ \\mathbb{C} $";
               class={cardButtons.btns}
               href={"/figuratenum/" + createSlug(OVERVIEW.data.title, OVERVIEW.id)}
             >
-              START HERE <Arrows direction="right" />
+              Start here <Arrows direction="right" />
             </a>
           )
         }
@@ -117,7 +116,7 @@ const tex = "$ \\mathbb{C} $";
               class={cardButtons.btns}
               href={"/figuratenum/" + createSlug(THEORY.data.title, THEORY.id)}
             >
-              EXPLORE THEORY <Arrows direction="right" />
+              Explore theory <Arrows direction="right" />
             </a>
           )
         }
@@ -132,7 +131,7 @@ const tex = "$ \\mathbb{C} $";
         {
           API && (
             <a class={cardButtons.btns} href={"/figuratenum/" + createSlug(API.data.title, API.id)}>
-              VIEW API <Arrows direction="right" />
+              View API <Arrows direction="right" />
             </a>
           )
         }
@@ -149,7 +148,7 @@ const tex = "$ \\mathbb{C} $";
               class={cardButtons.btns}
               href={"/figuratenum/" + createSlug(CONTRIBUTING.data.title, CONTRIBUTING.id)}
             >
-              CONTRIBUTE <Arrows direction="right" />
+              Contribute <Arrows direction="right" />
             </a>
           )
         }
