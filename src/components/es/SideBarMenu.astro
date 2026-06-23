@@ -3,7 +3,6 @@ import Home from "@icons/Home.astro";
 import Branch from "@icons/Branch.astro";
 import Curriculum from "@icons/Curriculum.astro";
 import Writing from "@icons/Writing.astro";
-import LinkIconsGroup from "@components/LinkIconsGroup.astro";
 import { sideMenuCss, activePage } from "@components/SideBarMenu.astro"; // only CSS
 type Props = {
   homeMenu: string;
@@ -94,7 +93,3 @@ const current = Astro.url.pathname;
     </li> -->
   </ul>
 </div>
-
-<footer class="footer footer-center pt-0 mt-auto justify-center gap-0 mb-5">
-  <LinkIconsGroup />
-</footer>

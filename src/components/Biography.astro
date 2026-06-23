@@ -1,29 +1,28 @@
 ---
 import { menuEnglish } from "./SideBar.astro";
-export const linksTo = "text-primary underline  hover:decoration-2 inline-block";
+export const linksTo = "text-primary underline hover:decoration-2";
 ---
 
-<section class="leading-relaxed mb-8">
-  <p class="mb-4 break-words hyphens-auto">
+<section class="mb-8 break-words hyphens-auto">
+  <p class="mb-4">
     I develop creative systems that merge mathematics, computation, and music through structural
     analogies.
   </p>
   <p class="mb-4">
     All for real-time algorithmic composition, my current projects include
+    <a href="https://rubygems.org/gems/modular_forms" target="_blank" rel="noopener" class={linksTo}
+      >modular forms</a
+    > (SageMath/LMFDB-inspired) and
+    <a id="projects" href={menuEnglish.projectsMenu.href} rel="noopener" class={`${linksTo} `}>
+      multidimensional figurate number generators</a
+    >
+    with over <strong>26,000 downloads</strong>, as well as
     <a
-      href="https://rubygems.org/gems/modular_forms"
+      href="https://topos.live/#ziffers_tonnetz"
       target="_blank"
       rel="noopener"
-      class={linksTo}
-    >
-      modular forms
-    </a> (SageMath/LMFDB-inspired) and
-    <a id="projects" href={menuEnglish.projectsMenu.href} rel="noopener" class={linksTo}>
-      multidimensional figurate number generators
-    </a> with over <strong>26,000 downloads</strong>, as well as
-    <a href="https://topos.live/#ziffers_tonnetz" target="_blank" rel="noopener" class={linksTo}>
-      ts-tonnetz
-    </a>.
+      class={`${linksTo}`}>ts-tonnetz</a
+    >.
   </p>
   <p>
     I have published a
@@ -33,8 +32,8 @@ export const linksTo = "text-primary underline  hover:decoration-2 inline-block"
       class={`${linksTo}`}
       rel="noopener"
     >
-      Scopus-indexed article
-    </a>
+      Scopus-indexed article</a
+    >
     in Mathematical Music Theory, serve as a peer reviewer for The European Physical Journal, contribute
     to international open-source projects, and teach postgraduate courses.
   </p>
