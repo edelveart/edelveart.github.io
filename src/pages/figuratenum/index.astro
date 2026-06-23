@@ -14,9 +14,9 @@ const API = docsMap["API: PlaneFigurateNum"];
 const CONTRIBUTING = docsMap["Contributing"];
 
 const cardButtons = {
-  container: "p-4 border rounded-lg flex flex-col h-full border-current/25",
+  container: "p-4 border rounded-lg flex flex-col h-full border-base-content/40",
   paragraps: "mt-2 text-sm opacity-80 mb-6",
-  btns: "btn rounded-md ease-in-out duration-150 hover:text-primary justify-center font-bold text-base-content h-12 mt-auto",
+  btns: "btn ease-in-out duration-150 hover:text-primary justify-center font-bold text-base-content h-12 mt-auto",
 };
 const tex = "$ \\mathbb{C} $";
 ---
@@ -29,11 +29,13 @@ const tex = "$ \\mathbb{C} $";
     <div class="mb-5 mt-5" id="FIGURATENUM-HOME">
       <h1 class="text-3xl w-full font-black flex flex-col">
         FigurateNum
-        <span class="block text-sm uppercase tracking-widest opacity-50 mt-1">Documentation</span>
+        <span class="block text-sm uppercase tracking-widest mt-1 text-primary/80"
+          >Documentation</span
+        >
       </h1>
     </div>
 
-    <div class="flex flex-wrap gap-2 text-sm mt-4 opacity-80">
+    <div class="flex flex-wrap gap-2 mt-4 opacity-80">
       <a
         class="badge badge-outline hover:text-primary ease-in-out duration-200"
         href="https://pypi.org/project/figuratenum/"

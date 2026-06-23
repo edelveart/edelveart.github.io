@@ -48,7 +48,6 @@
     overflow-x: auto;
     white-space: nowrap;
    }
-
 }
 
 html {
@@ -72,7 +71,7 @@ code {
 
 /* Only with Shiki */
 .astro-code {
-  @apply rounded-lg p-4  text-sm font-normal shadow-md  border-1 border-base-content/5;
+  @apply rounded-lg p-4  text-sm font-normal shadow-md  border-1 border-primary/7;
 }
 
 .prose {
@@ -85,7 +84,7 @@ code {
   border-width: 0.0px;
   border-radius: 0.25rem;
   /* border-color: rgb(from var(--color-base-content) r g b / 0.25); */
-  background-color: rgb(from var(--color-base-content) r g b / 0.08);
+  background-color: rgb(from var(--color-base-content) r g b / 0.07);
   /* background-color: #1C1E26; */
   /* background-color: var(--color-slate-800); */
 }
@@ -94,3 +93,4 @@ code {
 .prose :not(div) > a {
   color: var(--color-primary)
 }
+

@@ -4,11 +4,11 @@ description: "Introduction to figurate numbers, their geometric origins, and the
 order: 11
 ---
 
-FigurateNum follows the definitions and organization of the book [*Figurate Numbers*](https://doi.org/10.1142/8188)
+FigurateNum follows the definitions and organization of the book [Figurate Numbers](https://doi.org/10.1142/8188)
 by Elena Deza and Michel Deza (2012), and can serve as a computational companion to it.
 
 > Sequences, families, and generating functions documented here correspond directly to those
-in that work, with corrections tracked in the [errata](https://github.com/edelveart/figuratenum/blob/main/docs/errata/errata-figuratenum.tex).
+in that work, with corrections tracked in the [**errata**](https://github.com/edelveart/figuratenum/blob/main/docs/errata/errata-figuratenum.tex).
 
 ## The basic idea
 
