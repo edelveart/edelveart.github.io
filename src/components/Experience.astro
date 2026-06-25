@@ -38,8 +38,7 @@ export const allExperiences = [
     `,
   },
   {
-    title:
-      "Toulouse Lautrec, EEST | Instructor of Music Production and Electronic Production",
+    title: "Toulouse Lautrec, EEST | Instructor of Music Production and Electronic Production",
     subtitle: "jun.2022 - present | Lima, Perú | Remote",
     description: `Subjects I teach in the programs include:
     • Applied synthesis: Physical modeling, additive synthesis, subtractive synthesis, frequency modulation (FM) synthesis, and sampling
@@ -66,9 +65,7 @@ export const allExperiences = [
 
 const { workExperiences, indices } = Astro.props;
 const filteredExperiences = indices
-  ? indices
-      .map((index: string | number) => workExperiences[index])
-      .filter(Boolean)
+  ? indices.map((index: string | number) => workExperiences[index]).filter(Boolean)
   : workExperiences;
 ---
 

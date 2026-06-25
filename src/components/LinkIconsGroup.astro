@@ -4,7 +4,15 @@ import GitHub from "@icons/GitHub.astro";
 import LinkedIn from "@icons/LinkedIn.astro";
 import Youtube from "@icons/Youtube.astro";
 import { SOCIAL_MEDIA } from "@ts-config-path/config";
-const cssIconsClass = "mx-3 hover:scale-105 transition ease-in-out delay-50";
+// const cssIconsClass = "mx-3 hover:scale-105 transition ease-in-out delay-50";
+const cssIconsClass = `
+  mx-3
+  text-base-content/70
+  transition-all duration-200 ease-in-out
+  hover:text-primary
+  hover:scale-110
+  focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/30
+`;
 ---
 
 <a

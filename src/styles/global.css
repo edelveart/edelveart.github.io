@@ -12,6 +12,7 @@
 @plugin "daisyui" {
   /* themes: sunset --default; */
   themes: false;
+
 }
 
 @plugin "./catppuccinTheme.mocha.ts";
@@ -71,7 +72,7 @@ code {
 
 /* Only with Shiki */
 .astro-code {
-  @apply rounded-lg p-4  text-sm font-normal shadow-md  border-1 border-primary/7;
+  @apply rounded-lg p-4  text-sm font-normal shadow-md  border-1 border-base-content/10;
 }
 
 .prose {
@@ -91,6 +92,6 @@ code {
 
 /* Links to previous post and references in md files */
 .prose :not(div) > a {
-  color: var(--color-primary)
+  color: rgb(from var(--color-primary) r g b / 0.8);
 }
 

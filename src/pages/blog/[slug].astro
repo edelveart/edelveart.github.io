@@ -8,9 +8,7 @@ import Arrows from "@icons/Arrows.astro";
 export async function getStaticPaths() {
   const postEntries = await getCollection("blog");
 
-  const sorted = postEntries.sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-  );
+  const sorted = postEntries.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
   return sorted.map((entry, index) => {
     const slug = createSlug(entry.data.title, entry.id);
@@ -68,7 +66,7 @@ const { Content } = await render(entry);
     {
       prevPost ? (
         <a
-          class="btn btn-ghost w-full min-h-24 justify-start text-left hover:text-primary"
+          class="btn btn-ghost hover:bg-base-200/25 w-full min-h-24 justify-start text-left hover:text-primary"
           href={"/blog/" + prevPost.slug}
         >
           <Arrows direction="left" />
@@ -79,7 +77,7 @@ const { Content } = await render(entry);
         </a>
       ) : (
         <a
-          class="btn btn-ghost w-full min-h-24 justify-start text-left hover:text-primary"
+          class="btn btn-ghost hover:bg-base-200/25 w-full min-h-24 justify-start text-left hover:text-primary"
           href="/blog"
         >
           <Arrows direction="left" />
@@ -93,7 +91,7 @@ const { Content } = await render(entry);
     {
       nextPost ? (
         <a
-          class="btn btn-ghost w-full min-h-24 justify-end text-right hover:text-primary"
+          class="btn btn-ghost hover:bg-base-200/25 w-full min-h-24 justify-end text-right hover:text-primary"
           href={"/blog/" + nextPost.slug}
         >
           <div>

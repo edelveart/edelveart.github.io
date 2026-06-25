@@ -13,10 +13,7 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props as any;
 ---
 
-<BaseLayout
-  title="Edgar Delgado - Blog"
-  sideBarActiveItemID="NOTES_ACTIVE_PAGE"
->
+<BaseLayout title="Edgar Delgado - Blog" sideBarActiveItemID="NOTES_ACTIVE_PAGE">
   <section class="pb-3 mt-5">
     <div class="mb-5 mt-5" id="Notes">
       <div class="text-3xl w-full font-black flex items-center">Blog</div>
@@ -25,9 +22,7 @@ const { page } = Astro.props as any;
       page.data.length === 0 ? (
         <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
           <p class="font-bold">Sorry!</p>
-          <p>
-            There are no blog posts to show at the moment. Check back later!
-          </p>
+          <p>There are no blog posts to show at the moment. Check back later!</p>
         </div>
       ) : (
         <ul>
@@ -56,13 +51,13 @@ const { page } = Astro.props as any;
         page.url.prev ? (
           <a
             href={page.url.prev}
-            class="btn btn-ghost  min-h-24 justify-start text-left"
+            class="btn btn-ghost  hover:bg-base-200/25 min-h-24 justify-start text-left"
           >
             <Arrows direction="left" />
             NEWER POSTS
           </a>
         ) : (
-          <a href={"/"} class="btn btn-ghost  min-h-24 justify-start text-left">
+          <a href={"/"} class="btn btn-ghost hover:bg-base-200/25 min-h-24 justify-start text-left">
             <Arrows direction="left" />
             HOME
           </a>
@@ -72,7 +67,7 @@ const { page } = Astro.props as any;
         page.url.next ? (
           <a
             href={page.url.next}
-            class="btn btn-ghost min-h-24 justify-end text-right"
+            class="btn btn-ghost hover:bg-base-200/25 min-h-24 justify-end text-right"
           >
             OLDER POSTS
             <Arrows direction="right" />

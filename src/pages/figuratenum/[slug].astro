@@ -44,7 +44,7 @@ const nextDoc = sorted[index + 1] ?? null;
     {
       prevDoc ? (
         <a
-          class="btn btn-ghost w-full min-h-24 justify-start text-left hover:text-primary"
+          class="btn btn-ghost hover:bg-base-200/25 w-full min-h-24 justify-start text-left  hover:text-primary"
           href={"/figuratenum/" + createSlug(prevDoc.data.title, prevDoc.id)}
         >
           <Arrows direction="left" />
@@ -55,7 +55,7 @@ const nextDoc = sorted[index + 1] ?? null;
         </a>
       ) : (
         <a
-          class="btn btn-ghost w-full min-h-24 justify-start text-left hover:text-primary"
+          class="btn btn-ghost hover:bg-base-200/25 w-full min-h-24 justify-start text-left  hover:text-primary"
           href="/figuratenum"
         >
           <Arrows direction="left" />
@@ -69,12 +69,12 @@ const nextDoc = sorted[index + 1] ?? null;
     {
       nextDoc ? (
         <a
-          class="btn btn-ghost w-full min-h-24 justify-end text-right hover:text-primary"
+          class="btn btn-ghost hover:bg-base-200/25 w-full min-h-24 justify-end text-right hover:text-primary"
           href={"/figuratenum/" + createSlug(nextDoc.data.title, nextDoc.id)}
         >
           <div>
             <div class="text-base-content/50">NEXT</div>
-            <div class="text-base line-clamp-2">{nextDoc.data.title} </div>
+            <div class="text-base line-clamp-2">{nextDoc.data.title}</div>
           </div>
           <Arrows direction="right" />
         </a>

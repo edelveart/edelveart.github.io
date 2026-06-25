@@ -14,10 +14,14 @@ const API = docsMap["API: PlaneFigurateNum"];
 const CONTRIBUTING = docsMap["Contributing"];
 
 const CARD_BUTTONS = {
-  container: "p-4  rounded-lg flex flex-col h-full shadow-sm shadow-primary/20 min-h-52",
-  title: "text-xl font-bold text-primary/80",
+  container:
+    "p-4 rounded-lg flex flex-col h-full min-h-52 border border-base-content/10 rounded-md ",
+
+  title: "text-xl font-bold text-primary",
+
   paragraps: "mt-2 text-sm opacity-80 mb-4",
-  btns: "btn bg-base-100 hover:bg-base-200 rounded-md mt-auto  justify-center transition h-12 mt-auto font-bold",
+
+  btns: "btn btn-ghost border border-base-content/10 rounded-md h-12 mt-auto justify-center font-bold transition-colors duration-200 hover:bg-base-200 hover:border-primary/20",
 };
 ---
 
@@ -27,12 +31,25 @@ const CARD_BUTTONS = {
 >
   <article class="pb-3 mt-5">
     <div class="mb-5 mt-5" id="FIGURATENUM-HOME">
-      <h1 class="text-3xl w-full font-black flex flex-col">
-        FigurateNum
-        <span class="block text-sm uppercase tracking-widest mt-1 text-primary/80"
-          >Documentation</span
+      <div class="flex items-center gap-6">
+        <!-- Texto -->
+        <h1 class="text-3xl w-full font-black flex flex-col">
+          FigurateNum
+          <span class="block text-sm uppercase tracking-widest mt-1 text-primary/100">
+            Documentation
+          </span>
+        </h1>
+        <!-- <video
+          autoplay
+          loop
+          muted
+          playsinline
+          id="figurate-video"
+          class="w-20 h-20 object-contain p-0 m-0"
         >
-      </h1>
+          <source src="/svg-ggb/figuratenum/evolution.webm" type="video/webm" />
+        </video>Video -->
+      </div>
     </div>
 
     <div class="flex flex-wrap gap-2 mt-4 opacity-80">
@@ -62,7 +79,7 @@ const CARD_BUTTONS = {
       </a>
     </div>
 
-    <p class="mb-4 mt-10">
+    <p class="mb-4 mt-10 text-balance">
       <strong>FigurateNum</strong> generates and visualizes 235+ plane, space, and multidimensional figurate
       number sequences and families, from polygonal numbers to Platonic solids and higher-dimensional
       analogues.
@@ -71,14 +88,14 @@ const CARD_BUTTONS = {
     <p class="mt-3 mb-4">
       Built on definitions from
       <a
-        class="text-primary underline inline-block font-bold"
+        class="text-primary underline text-balance"
         href="https://doi.org/10.1142/8188"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Deza & Deza (2012)
-      </a>, every sequence is deterministic and reproducible. Optional visualization tools cover
-      phase portraits and modular patterns.
+        Deza & Deza (2012)</a
+      >, every sequence is deterministic and reproducible. Optional visualization tools cover phase
+      portraits and modular patterns.
     </p>
 
     <!-- - Sequence generation (lazy iterators) in $\mathbb{Z}$
@@ -164,12 +181,12 @@ const CARD_BUTTONS = {
     {
       OVERVIEW && (
         <a
-          class="btn btn-ghost w-full min-h-24 justify-end text-right hover:text-primary"
+          class="btn btn-ghost hover:bg-base-200/50 w-full min-h-24 justify-end text-right hover:text-primary"
           href={"/figuratenum/" + createSlug(OVERVIEW.data.title, OVERVIEW.id)}
         >
           <div>
             <div class="text-base-content/50"> START HERE</div>
-            <div class="text-base line-clamp-2 opacity-85">{OVERVIEW.data.title}</div>
+            <div class="text-base line-clamp-2 opacity-80">{OVERVIEW.data.title}</div>
           </div>
           <Arrows direction="right" />
         </a>
@@ -221,3 +238,12 @@ const CARD_BUTTONS = {
         }
       </ul>
     </section> -->
+<!-- <script>
+  document.addEventListener("astro:page-load", () => {
+    const video = document.getElementById("figurate-video");
+    if (video instanceof HTMLVideoElement) {
+      video.load();
+      video.play();
+    }
+  });
+</script> -->

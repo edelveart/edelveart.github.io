@@ -8,14 +8,10 @@ import Arrows from "@icons/Arrows.astro";
 export async function getStaticPaths({ paginate }) {
   const all_posts = await getCollection("blog");
 
-  const all_tags = [
-    ...new Set(all_posts.flatMap((post) => post.data.tags || [])),
-  ];
+  const all_tags = [...new Set(all_posts.flatMap((post) => post.data.tags || []))];
 
   return all_tags.flatMap((tag) => {
-    const filtered_posts = all_posts.filter((post) =>
-      post.data.tags?.includes(tag),
-    );
+    const filtered_posts = all_posts.filter((post) => post.data.tags?.includes(tag));
     return paginate(filtered_posts, {
       params: { tag },
       pageSize: 5,
@@ -26,15 +22,11 @@ const { page } = Astro.props;
 const params = Astro.params;
 ---
 
-<BaseLayout
-  title={"Blog " + params.tag}
-  sideBarActiveItemID="NOTES_ACTIVE_PAGE"
->
+<BaseLayout title={"Blog " + params.tag} sideBarActiveItemID="NOTES_ACTIVE_PAGE">
   <section class="pb-3 mt-5">
     <div class="mb-5 mt-5" id="BLOG-TAGS">
       <div class="text-3xl w-full font-black flex justify-between">
-        <div>Blog</div>
-        <div class="font-semibold"># {params.tag}</div>
+        <div>Blog / tag / {params.tag}</div>
       </div>
     </div>
 
@@ -42,9 +34,7 @@ const params = Astro.params;
       page.data.length === 0 ? (
         <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
           <p class="font-bold">Sorry!</p>
-          <p>
-            There are no blog posts to show at the moment. Check back later!
-          </p>
+          <p>There are no blog posts to show at the moment. Check back later!</p>
         </div>
       ) : (
         <ul>
@@ -70,7 +60,7 @@ const params = Astro.params;
         page.url.prev ? (
           <a
             href={page.url.prev}
-            class="btn btn-ghost  min-h-24 justify-start text-left"
+            class="btn btn-ghost hover:bg-base-200/25  min-h-24 justify-start text-left"
           >
             <Arrows direction="left" />
             NEWER POSTS
@@ -83,7 +73,7 @@ const params = Astro.params;
         page.url.next ? (
           <a
             href={page.url.next}
-            class="btn btn-ghost min-h-24 justify-end text-right"
+            class="btn btn-ghost hover:bg-base-200/25 min-h-24 justify-end text-right"
           >
             OLDER POSTS
             <Arrows direction="right" />

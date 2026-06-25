@@ -2,7 +2,6 @@
 const { title, img, desc, url, badge, pubDate, tags, target = "_blank" } = Astro.props;
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
 
-import Arrows from "@icons/Arrows.astro";
 // PubDATE from md files
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
@@ -13,23 +12,21 @@ const displayDate = dayjs(pubDate).format("ll");
 <a
   href={url}
   target={target}
-  class="block p-4 my-10 rounded-md mx-auto transition duration-200 shadow-sm shadow-primary/15 ease-in-out hover:shadow-primary/25"
+  class="flex border border-base-content/10 p-4 my-10 rounded-md mx-auto min-h-40 flex-col transition duration-200 ease-in-out hover:border-primary/20"
 >
-  <div class="rounded-lg bg-base-100 h-36 flex flex-col">
-    <h1 class="text-xl font-bold text-primary line-clamp-1">
-      {title}
-    </h1>
+  <h1 class="text-xl font-bold text-primary line-clamp-1">
+    {title}
+  </h1>
 
-    <time class="text-sm mt-1">
-      {displayDate}
-    </time>
+  <time class="text-sm mt-1">
+    {displayDate}
+  </time>
 
-    <p class="text-md line-clamp-2 mt-2">
-      {desc}
-    </p>
-
-    <span class="mt-auto text-sm text-primary inline-flex items-center gap-1">
-      Read <Arrows direction="right" size="sm" />
-    </span>
-  </div>
+  <p class="text-md line-clamp-2 mt-3">
+    {desc}
+  </p>
 </a>
+
+<!-- <span class="mt-auto text-sm text-primary inline-flex items-center">
+  Read <Arrows direction="right" size="sm" />
+</span> -->
