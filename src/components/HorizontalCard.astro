@@ -14,16 +14,12 @@ export type ProjectType = {
 ---
 
 <div
-  class="rounded-lg bg-base-100 transition duration-200 shadow-sm shadow-primary/20 ease-in-out hover:shadow-primary/40"
+  class="rounded-lg bg-base-100 transition duration-200 shadow-sm shadow-primary/15 ease-in-out hover:shadow-primary/25"
 >
   <a href={url} target={target} rel="noopener">
-    <div class="hero-content flex-col md:flex-row rounded-lg p-6">
+    <div class="hero-content flex-col md:flex-row rounded-lg p-4">
       <div class="grow w-full">
-        {
-          badge && (
-            <span class="badge badge-primary mb-2 truncate">{badge}</span>
-          )
-        }
+        {badge && <span class="badge badge-primary mb-2 truncate">{badge}</span>}
         <h1 class="text-lg font-semibold">
           {title}
         </h1>

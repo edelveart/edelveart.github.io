@@ -20,7 +20,6 @@
     "@fontsource/fira-sans": "^5.2.7",
     "@tailwindcss/vite": "^4.1.13",
     "astro": "^6.4.8",
-    "daisyui": "^5.1.14",
     "dayjs": "^1.11.9",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
@@ -32,6 +31,7 @@
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
     "@catppuccin/daisyui": "^2.1.1",
-    "@tailwindcss/typography": "^0.5.10"
+    "@tailwindcss/typography": "^0.5.10",
+    "daisyui": "^5.5.23"
   }
 }

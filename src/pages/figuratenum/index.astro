@@ -13,10 +13,11 @@ const THEORY = docsMap["Fundamentals"];
 const API = docsMap["API: PlaneFigurateNum"];
 const CONTRIBUTING = docsMap["Contributing"];
 
-const cardButtons = {
-  container: "p-4 border rounded-lg flex flex-col h-full border-base-content/10",
-  paragraps: "mt-2 text-sm opacity-80 mb-6",
-  btns: "btn btn-ghost rounded-md xl ease-in-out duration-150 mt-auto shadow-sm shadow-primary/20 justify-center transition h-12 mt-auto",
+const CARD_BUTTONS = {
+  container: "p-4  rounded-lg flex flex-col h-full shadow-sm shadow-primary/20 min-h-52",
+  title: "text-xl font-bold text-primary/80",
+  paragraps: "mt-2 text-sm opacity-80 mb-4",
+  btns: "btn bg-base-100 hover:bg-base-200 rounded-md mt-auto  justify-center transition h-12 mt-auto font-bold",
 };
 ---
 
@@ -85,17 +86,17 @@ const cardButtons = {
 - Visualization in $\mathbb{C}$ using `ComplexViz`
 - Modular visualization in $\mathbb{Z}/n\mathbb{Z}$ using `DiscreteViz` -->
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-      <div class={cardButtons.container}>
-        <h2 class="text-lg font-bold">Learn from Scratch</h2>
-        <p class={cardButtons.paragraps}>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mt-10">
+      <div class={CARD_BUTTONS.container}>
+        <h2 class={CARD_BUTTONS.title}>Learn from Scratch</h2>
+        <p class={CARD_BUTTONS.paragraps}>
           Start with sequence generation and work through parametric families, higher dimensions,
           and visualization tools.
         </p>
         {
           OVERVIEW && (
             <a
-              class={cardButtons.btns}
+              class={CARD_BUTTONS.btns}
               href={"/figuratenum/" + createSlug(OVERVIEW.data.title, OVERVIEW.id)}
             >
               Start here <Arrows direction="right" />
@@ -104,16 +105,16 @@ const cardButtons = {
         }
       </div>
 
-      <div class={cardButtons.container}>
-        <h2 class="text-lg font-bold">Mathematical Theory</h2>
-        <p class={cardButtons.paragraps}>
+      <div class={CARD_BUTTONS.container}>
+        <h2 class={CARD_BUTTONS.title}>Mathematical Theory</h2>
+        <p class={CARD_BUTTONS.paragraps}>
           Explore the basic definitions, notation, and core ideas behind figurate numbers and their
           geometric interpretations.
         </p>
         {
           THEORY && (
             <a
-              class={cardButtons.btns}
+              class={CARD_BUTTONS.btns}
               href={"/figuratenum/" + createSlug(THEORY.data.title, THEORY.id)}
             >
               Explore theory <Arrows direction="right" />
@@ -122,30 +123,33 @@ const cardButtons = {
         }
       </div>
 
-      <div class={cardButtons.container}>
-        <h2 class="text-lg font-bold">API Reference</h2>
-        <p class={cardButtons.paragraps}>
+      <div class={CARD_BUTTONS.container}>
+        <h2 class={CARD_BUTTONS.title}>API Reference</h2>
+        <p class={CARD_BUTTONS.paragraps}>
           Auto-generated reference for all sequence generators, ComplexViz, and DiscreteViz,
           organized by dimension.
         </p>
         {
           API && (
-            <a class={cardButtons.btns} href={"/figuratenum/" + createSlug(API.data.title, API.id)}>
+            <a
+              class={CARD_BUTTONS.btns}
+              href={"/figuratenum/" + createSlug(API.data.title, API.id)}
+            >
               View API <Arrows direction="right" />
             </a>
           )
         }
       </div>
 
-      <div class={cardButtons.container}>
-        <h2 class="text-lg font-bold">Contributing</h2>
-        <p class={cardButtons.paragraps}>
+      <div class={CARD_BUTTONS.container}>
+        <h2 class={CARD_BUTTONS.title}>Contributing</h2>
+        <p class={CARD_BUTTONS.paragraps}>
           Run tests, add new sequences, correct mathematical errata, and submit pull requests.
         </p>
         {
           CONTRIBUTING && (
             <a
-              class={cardButtons.btns}
+              class={CARD_BUTTONS.btns}
               href={"/figuratenum/" + createSlug(CONTRIBUTING.data.title, CONTRIBUTING.id)}
             >
               Contribute <Arrows direction="right" />
