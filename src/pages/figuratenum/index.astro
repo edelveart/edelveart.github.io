@@ -30,6 +30,7 @@ const CARD_BUTTONS = {
      hover:border-primary/20 hover:text-primary
     no-underline`,
 };
+const tagsOutline = "badge badge-outline text-info/60 hover:text-info/80 ease-in-out duration-150";
 ---
 
 <BaseLayout
@@ -61,7 +62,7 @@ const CARD_BUTTONS = {
 
     <div class="flex flex-wrap gap-2 mt-4">
       <a
-        class="badge badge-outline text-accent/60 hover:text-accent/80 ease-in-out duration-150"
+        class={tagsOutline}
         href="https://pypi.org/project/figuratenum/"
         target="_blank"
         rel="noopener noreferrer"
@@ -69,7 +70,7 @@ const CARD_BUTTONS = {
         PyPI
       </a>
       <a
-        class="badge badge-outline text-accent/60 hover:text-accent/80 ease-in-out duration-150"
+        class={tagsOutline}
         href="https://github.com/edelveart/figuratenum"
         target="_blank"
         rel="noopener noreferrer"
@@ -77,7 +78,7 @@ const CARD_BUTTONS = {
         Source Repository
       </a>
       <a
-        class="badge badge-outline text-accent/60 hover:text-accent/80 ease-in-out duration-150"
+        class={tagsOutline}
         href="https://doi.org/10.5281/zenodo.18250313"
         target="_blank"
         rel="noopener noreferrer"
@@ -86,7 +87,7 @@ const CARD_BUTTONS = {
       </a>
     </div>
 
-    <p class="mb-4 mt-10 text-balance">
+    <p class="mb-4 mt-10">
       <strong>FigurateNum</strong> generates and visualizes 235+ plane, space, and multidimensional figurate
       number sequences and families, from polygonal numbers to Platonic solids and higher-dimensional
       analogues.
@@ -95,7 +96,7 @@ const CARD_BUTTONS = {
     <p class="mt-3 mb-4">
       Built on definitions from
       <a
-        class="text-primary underline text-balance"
+        class="text-primary underline underline-offset-1"
         href="https://doi.org/10.1142/8188"
         target="_blank"
         rel="noopener noreferrer"

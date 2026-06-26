@@ -2,65 +2,58 @@
 import { transitionMenu } from "./SideBarMenu.astro";
 
 const currentLang = Astro.url.pathname.startsWith("/es") ? "es" : "en";
-export const spanishFlag = "fi fi-es";
-export const englishFlag = "fi fi-gb";
+export const spanishFlag = "fi fi-es fis";
+export const englishFlag = "fi fi-gb fis";
+
 const btnsNavBar = `
-    flex items-center gap-1
-    text-sm opacity-80
-    hover:opacity-100 hover:text-primary
-    no-underline
-    ${transitionMenu}
+  flex items-center gap-2
+  text-base opacity-80
+  hover:opacity-100 hover:text-primary
+  no-underline
+  ${transitionMenu}
 `;
 ---
 
-<div
-  class="sticky lg:hidden top-0 z-30 flex w-full justify-center transition-all duration-100
-  bg-base-100/70 backdrop-blur mt-0 shadow-sm flex-wrap"
->
-  <div class="navbar w-full md:px-5 sm:px-3">
-    <div class="navbar-start">
+<div class="sticky lg:hidden top-0 z-30 w-full bg-base-100/70 backdrop-blur shadow-sm">
+  <div class="navbar w-full flex items-center justify-between md:px-5 sm:px-3 px-6">
+    <!-- LEFT -->
+    <div class="navbar-start flex items-center">
       <label
         for="my-drawer"
-        class=`flex items-center gap-2 px-2 py-1 text-sm opacity-80 hover:opacity-100 hover:text-primary cursor-pointer no-underline ${transitionMenu}`
+        class={`flex items-center  gap-2 text-base opacity-80 hover:opacity-100 hover:text-primary cursor-pointer no-underline ${transitionMenu}`}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
-          viewBox="0 0 24 24"
-          class="inline-block w-6 h-6 stroke-current"
-          ><path
-            stroke-linecap="round"
+          width="16"
+          height="20"
+          viewBox="0 0 16 20"
+          class="stroke-current"
+        >
+          <path
+            stroke-linecap="square"
             stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"></path>
+            stroke-width="2.2"
+            d="M0 4h15M0 10h15M0 16h15"></path>
         </svg>
-        {currentLang == "es" ? "Menú" : "Menu"}
+
+        <span>
+          {currentLang == "es" ? "Menú" : "Menu"}
+        </span>
       </label>
     </div>
-    <div class="navbar-center">
-      <!-- {
-        currentLang === "es" ? (
-          <a class="btn btn-ghost normal-case text-base font-bold" href="/es">
-            Edgar Delgado
-          </a>
-        ) : (
-          <a class="btn btn-ghost normal-case text-base font-bold" href="/">
-            Edgar Delgado
-          </a>
-        )
-      } -->
-    </div>
 
-    <div class="navbar-end">
+    <!-- RIGHT -->
+    <div class="navbar-end flex items-center">
       {
         currentLang === "es" ? (
           <a class={btnsNavBar} href="/" title="Switch to English" aria-label="Switch to English">
-            <span class={`${englishFlag} w-6 h-6 mr-1`} />
+            <span class={`${englishFlag} w-5 h-5 flex-shrink-0`} />
             ENG
           </a>
         ) : (
           <a class={btnsNavBar} href="/es" title="Cambiar a Español" aria-label="Cambiar a Español">
-            <span class={`${spanishFlag} w-6 h-6 mr-1`} />
+            <span class={`${spanishFlag} w-5 h-5 flex-shrink-0`} />
             ESP
           </a>
         )
@@ -68,18 +61,17 @@ const btnsNavBar = `
     </div>
   </div>
 </div>
-
 <!-- PC VIEW -->
 <div
-  class="hidden lg:flex gap-x-4 flex-wrap justify-center sticky top-0 z-30
+  class="hidden lg:flex gap-x-8 flex-wrap justify-center sticky top-0 z-30
   bg-base-100/70 backdrop-blur"
 >
   <a class=`${btnsNavBar} my-2 py-2` href="/" title="English">
-    <span class={`mr-1  ${englishFlag}`}> </span>
+    <span class={`${englishFlag}`}> </span>
     English
   </a>
   <a class=`${btnsNavBar} my-2 py-2` href="/es" title="Español">
-    <span class={`mr-1  ${spanishFlag}`}> </span>
+    <span class={`${spanishFlag}`}> </span>
     Español
   </a>
 </div>

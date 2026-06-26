@@ -18,34 +18,34 @@ const aLinkBorder = `
     border border-base-content/10
     text-sm font-normal
     transition-colors duration-150
-    min-w-40
+    w-36
     hover:border-primary/20 hover:text-primary
     no-underline
 `;
 ---
 
-<div class="my-12 flex justify-start gap-6 flex-wrap items-center">
+<div class="my-12 flex justify-start gap-x-6 gap-y-4 flex-wrap items-center">
   <a id="linkedin-btn" class={aLinkBorder} href={SOCIAL_MEDIA.linkedin} target="
     _blank">
-    <LinkedIn class="w-6" />
+    <LinkedIn class="w-5" />
     {contactText}
     <kbd class="kbd kbd-lg bg-base-100">L</kbd>
   </a>
   <a id="github-btn" class={aLinkBorder} href={SOCIAL_MEDIA.github} target="_blank">
-    <GitHub class="w-6" />
+    <GitHub class="w-5" />
     GitHub
     <kbd class="kbd kbd-lg bg-base-100">G</kbd>
   </a>
 
   <a id="youtube-btn" class={aLinkBorder} href={SOCIAL_MEDIA.youtube} target="_blank">
-    <Youtube class="w-6" />
+    <Youtube class="w-5" />
     YouTube
     <kbd class="kbd kbd-lg bg-base-100">Y</kbd>
   </a>
 
   <!-- START-QR  -->
   <label for="qr-modal" class={aLinkBorder}>
-    <img class="w-6 rounded-sm" src="/qr-code.png" />
+    <img class="w-5 rounded-sm" src="/qr-code.png" />
     See QR
     <kbd class="kbd kbd-lg bg-base-100">Q</kbd>
   </label>

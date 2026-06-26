@@ -12,23 +12,19 @@ const displayDate = dayjs(pubDate).format("ll");
 <a
   href={url}
   target={target}
-  class="group flex border border-base-content/10 p-4 my-10 rounded-md mx-auto min-h-44 flex-col transition-colors duration-150 ease-in-out hover:border-primary/20"
+  class="group flex border border-base-content/10 p-4 my-10 rounded-md mx-auto md:min-h-40 flex-col transition-colors duration-150 ease-in-out hover:border-primary/20"
 >
-  <div class="flex items-start justify-between">
-    <h2 class="text-lg font-semibold group-hover:text-primary line-clamp-1">
-      {title}
-    </h2>
-
-    <span class="text-xs text-primary/60 shrink-0">
-      {badge}
-    </span>
+  <div class="flex items-center gap-2">
+    <span class="text-primary/60 text-sm">{badge}</span>
+    <span class="opacity-60">•</span>
+    <span class="opacity-60 text-sm">{displayDate}</span>
   </div>
 
-  <time class="text-sm mt-1 text-base-content/60">
-    {displayDate}
-  </time>
+  <h2 class="mt-1 text-lg font-semibold group-hover:text-primary line-clamp-2 md:line-clamp-none">
+    {title}
+  </h2>
 
-  <p class="text-sm mt-3 text-base-content/80 line-clamp-3">
+  <p class="text-sm mt-2 text-base-content/80 md:line-clamp-none line-clamp-2">
     {desc}
   </p>
 </a>
