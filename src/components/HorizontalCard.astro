@@ -14,16 +14,17 @@ export type ProjectType = {
 ---
 
 <div
-  class="rounded-lg transition duration-200 border border-base-content/10 ease-in-out hover:border-primary/20"
+  class="group rounded-md transition duration-200 border border-base-content/10 ease-in-out hover:border-primary/20"
 >
   <a href={url} target={target} rel="noopener">
-    <div class="hero-content flex-col md:flex-row rounded-lg p-4">
+    <div class="hero-content flex-col md:flex-row p-4">
       <div class="grow w-full">
-        {badge && <span class="badge badge-primary mb-2 truncate">{badge}</span>}
-        <h1 class="text-lg font-semibold">
+        <span class="truncate text-xs opacity-60">{badge}</span>
+        <h1 class="text-lg font-semibold mt-1 group-hover:text-primary">
           {title}
         </h1>
-        <p class="text-pretty py-1 text-1xl">{desc}</p>
+
+        <p class="text-sm text-balance py-1 opacity-80">{desc}</p>
       </div>
       {
         img && (

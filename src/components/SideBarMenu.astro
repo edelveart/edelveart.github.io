@@ -53,9 +53,9 @@ const figurateLinks = sortedFigurate.map((post) => {
   };
 });
 
-export const activePage = "bg-base-200 opacity-100";
+export const activePage = "text-primary font-medium opacity-100";
 export const sideMenuCss = {
-  divCss: `flex items-center gap-2 w-full rounded-md px-3 py-2  opacity-80 active:text-base-content/100  hover:bg-base-200 transition-colors duration-200 hover:opacity-100`,
+  divCss: `flex items-center gap-2 w-full rounded-md px-3 py-2 opacity-70 active:text-base-content/100  hover:text-primary hover:opacity-100 transition-colors duration-150`,
   spanText: "text-base leading-none ",
   iconBox: "w-8 h-8 flex items-center justify-center shrink-0",
 };
@@ -139,10 +139,11 @@ export const sideMenuCss = {
             <li>
               <a
                 href={link.href}
-                class={`flex pl-4 text-sm items-center min-h-11 max-h-11 rounded-md
-                    hover:bg-base-200 hover:opacity-100
-                    active:text-base-content/100
-                    ${link.active ? "text-primary font-medium" : "opacity-80"}`}
+                class={`
+                    flex pl-4 text-sm items-center min-h-11 max-h-11 rounded-md
+                    transition-colors duration-150 no-underline
+                    hover:text-primary hover:opacity-100
+                    ${link.active ? "text-primary font-medium opacity-100" : "opacity-70"}`}
               >
                 <span class="min-w-0 flex-1 truncate whitespace-nowrap text-sm">{link.title}</span>
               </a>

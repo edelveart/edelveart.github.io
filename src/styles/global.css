@@ -3,8 +3,6 @@
 }
 
 .mask-top {
-  /* mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 1%, rgb(21, 21, 160) 8%); */
-  /* -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 1) 98%); */
   border-radius: 20%;
 }
 
@@ -63,7 +61,6 @@ aside {
 
 body {
   font-family: 'Fira Sans', sans-serif;
-
 }
 
 code {
@@ -72,7 +69,7 @@ code {
 
 /* Only with Shiki */
 .astro-code {
-  @apply rounded-lg p-4  text-sm font-normal shadow-md  border-1 border-base-content/10;
+  @apply rounded-md p-4 text-sm font-normal shadow-md border border-base-content/10;
 }
 
 .prose {
@@ -84,14 +81,17 @@ code {
   padding: 0.1rem 0.3rem;
   border-width: 0.0px;
   border-radius: 0.25rem;
-  /* border-color: rgb(from var(--color-base-content) r g b / 0.25); */
   background-color: rgb(from var(--color-base-content) r g b / 0.07);
-  /* background-color: #1C1E26; */
-  /* background-color: var(--color-slate-800); */
 }
 
 /* Links to previous post and references in md files */
+
+
 .prose :not(div) > a {
-  color: rgb(from var(--color-primary) r g b / 0.8);
+  color: rgb(from var(--color-base-content) r g b / 0.8);
+
 }
 
+.prose :not(div) > a:hover {
+  color: rgb(from var(--color-primary) r g b / 1);
+}

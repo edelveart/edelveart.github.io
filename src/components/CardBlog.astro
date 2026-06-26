@@ -12,21 +12,22 @@ const displayDate = dayjs(pubDate).format("ll");
 <a
   href={url}
   target={target}
-  class="flex border border-base-content/10 p-4 my-10 rounded-md mx-auto min-h-40 flex-col transition duration-200 ease-in-out hover:border-primary/20"
+  class="group flex border border-base-content/10 p-4 my-10 rounded-md mx-auto min-h-44 flex-col transition-colors duration-150 ease-in-out hover:border-primary/20"
 >
-  <h1 class="text-xl font-bold text-primary line-clamp-1">
-    {title}
-  </h1>
+  <div class="flex items-start justify-between">
+    <h2 class="text-lg font-semibold group-hover:text-primary line-clamp-1">
+      {title}
+    </h2>
 
-  <time class="text-sm mt-1">
+    <span class="text-xs opacity-60 rounded-md shrink-0">
+      {badge}
+    </span>
+  </div>
+  <time class="text-sm mt-1 opacity-80">
     {displayDate}
   </time>
 
-  <p class="text-md line-clamp-2 mt-3">
+  <p class="text-base line-clamp-3 mt-3 opacity-80">
     {desc}
   </p>
 </a>
-
-<!-- <span class="mt-auto text-sm text-primary inline-flex items-center">
-  Read <Arrows direction="right" size="sm" />
-</span> -->

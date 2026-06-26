@@ -2,14 +2,16 @@
 import { allProjects } from "@components/ProjectsComponent.astro";
 import { Image } from "astro:assets";
 
-const divisor = "my-8";
+const divisor = "my-6";
 const UrlArray = allProjects;
 
 const cardDisplay = "aspect-[16/8]";
 const imagePadding = "p-0";
 const cardBase = `
   block relative w-full ${cardDisplay}
+  max-h-72
   overflow-hidden rounded-lg
+  rounded-md
   bg-base-100 ${imagePadding}
   border border-base-content/10
   shadow-sm shadow-black/5
@@ -18,23 +20,24 @@ const cardBase = `
   hover:shadow-primary/20
 `;
 
-const badge = "absolute top-0 left-0 m-4 badge badge-primary truncate z-10";
+const badge =
+  "absolute top-0 left-0 m-4 text-xs px-2 py-1 rounded-md z-20 backdrop-blur bg-base-200/20 text-base-content/70";
 ---
 
 <!-- https://svgomg.net/  --><!-- https://vecta.io/nano -->
 <div class={divisor}></div>
 <a href={UrlArray[2].url} target="_blank" rel="noopener noreferrer" class={cardBase}>
   <div class={badge}>
-    <span>FigurateNum | PyPI</span>
+    <span>FigurateNum • PyPI</span>
   </div>
 
   <Image
+    src="/svg-ggb/complex-figuratenum.webp"
     class="w-full h-full object-cover"
-    width={700}
-    height={500}
+    width={400}
+    height={260}
     fetchpriority="high"
     loading="eager"
-    src={"/svg-ggb/complex-figuratenum.webp"}
     alt="FigurateNumber - Phase Portrait"
   />
 </a>
@@ -42,35 +45,36 @@ const badge = "absolute top-0 left-0 m-4 badge badge-primary truncate z-10";
 <div class={divisor}></div>
 
 <section class="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-8">
+  <!-- <section class="grid grid-cols-1 lg:grid-cols-2 gap-3"> -->
+  <!-- <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"> -->
   <!-- // 1 -->
   <a href={UrlArray[1].url} target="_blank" rel="noopener noreferrer" class={cardBase}>
     <div class={badge}>
-      <span>Modular Forms | RubyGems</span>
+      <span>Modular Forms • RubyGems</span>
     </div>
     <Image
-      class={`w-full h-full object-cover invert -hue-rotate-90`}
-      width={700}
-      height={500}
-      fetchpriority="high"
-      loading="eager"
       src="/svg-ggb/L-function-music-vecta-io.svg"
+      class={`w-full h-full object-cover invert -hue-rotate-90`}
+      width={400}
+      height={280}
+      loading="lazy"
+      fetchpriority="low"
       alt="Math-Modular-Elliptic-Image"
     />
   </a>
   <!-- // 2 -->
   <a href={UrlArray[0].url} target="_blank" rel="noopener noreferrer" class={cardBase}>
     <div class={badge}>
-      <span>TS-Tonnetz | npm</span>
+      <span>TS-Tonnetz • npm</span>
     </div>
     <Image
       src="/svg-ggb/ts-tonnetz-2026-library.svg"
       alt="ts-tonnetz simplices portrait"
-      class={`w-full h-full object-cover invert`}
-      width={700}
-      height={500}
-      fetchpriority="high"
-      loading="eager"
+      class={`w-full h-full object-cover invert hue-rotate-60`}
+      width={400}
+      height={280}
+      loading="lazy"
+      fetchpriority="low"
     />
-    <img />
   </a>
 </section>

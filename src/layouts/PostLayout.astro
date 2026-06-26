@@ -20,14 +20,14 @@ const displayDate = dayjs(pubDate).format("ll");
         {pubDate && <time class="text-md">{displayDate}</time>}
       </div>
       <div class="border-l-4 border-primary pl-4 py-2 mb-12">
-        <div class="gap-2 flex flex-wrap items-baseline">
-          {badge && <div class="badge badge-primary rounded-3xl p-3 my-0">{badge}</div>}
+        <div class="pl-0 gap-2 flex flex-wrap items-baseline">
+          {badge && <div class="text-xs opacity-60 rounded-md shrink-0 px-2 py-1 ">{badge}</div>}
           {
             tags &&
               tags.map((tag) => (
                 <a
                   href={`/blog/tag/${tag}`}
-                  class="badge badge-outline hover:text-primary ease-in-out duration-200 no-underline font-normal"
+                  class="text-xs opacity-70 hover:opacity-100 hover:text-primary hover:underline  transition-colors duration-150"
                 >
                   {tag}
                 </a>
@@ -36,8 +36,7 @@ const displayDate = dayjs(pubDate).format("ll");
           {
             updatedDate && (
               <div class="">
-                {" "}
-                Last updated on <time>{updatedDate}</time>{" "}
+                Last updated on <time>{updatedDate}</time>
               </div>
             )
           }
