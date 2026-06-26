@@ -4,10 +4,22 @@ import Arrows from "@icons/Arrows.astro";
 
 <div class="grid grid-cols-1 gap-4 mt-5">
   <a
-    class="btn btn-ghost hover:bg-base-200/25 w-full min-h-24 justify-end text-right"
+    class="group flex w-full min-h-24 items-center justify-end gap-3 rounded-md px-3 py-2 transition-colors duration-150 no-underline"
     href={"/blog/"}
   >
-    <div>OLDER POSTS</div>
-    <Arrows direction="right" />
+    <div class="text-right">
+      <div class="text-xs opacity-50 font-normal">OLDER POST</div>
+
+      <div
+        class="text-base line-clamp-2 transition-colors duration-150
+             group-hover:text-primary group-hover:underline underline-offset-2 font-normal"
+      >
+        Older Posts
+      </div>
+    </div>
+
+    <span class="transition-colors duration-150 group-hover:text-primary">
+      <Arrows direction="right" />
+    </span>
   </a>
 </div>

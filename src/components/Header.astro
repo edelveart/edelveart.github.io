@@ -2,6 +2,13 @@
 const currentLang = Astro.url.pathname.startsWith("/es") ? "es" : "en";
 export const spanishFlag = "fi fi-es";
 export const englishFlag = "fi fi-gb";
+const btnsNavBar = `
+    flex items-center gap-1
+    text-sm opacity-70
+    hover:opacity-100 hover:text-primary
+    transition-colors duration-150
+    no-underline
+`;
 ---
 
 <div
@@ -10,7 +17,10 @@ export const englishFlag = "fi fi-gb";
 >
   <div class="navbar w-full md:px-5 sm:px-3">
     <div class="navbar-start">
-      <label for="my-drawer" class="btn btn-square btn-ghost w-24 rounded-lg">
+      <label
+        for="my-drawer"
+        class="flex items-center gap-2 px-2 py-1 text-sm opacity-70 hover:opacity-100 hover:text-primary transition-colors duration-150 rounded-md cursor-pointer no-underline"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -42,22 +52,12 @@ export const englishFlag = "fi fi-gb";
     <div class="navbar-end">
       {
         currentLang === "es" ? (
-          <a
-            class="btn btn-ghost rounded-lg"
-            href="/"
-            title="Switch to English"
-            aria-label="Switch to English"
-          >
+          <a class={btnsNavBar} href="/" title="Switch to English" aria-label="Switch to English">
             <span class={`${englishFlag} w-6 h-6 mr-1`} />
             ENG
           </a>
         ) : (
-          <a
-            class="btn btn-ghost rounded-lg"
-            href="/es"
-            title="Cambiar a Español"
-            aria-label="Cambiar a Español"
-          >
+          <a class={btnsNavBar} href="/es" title="Cambiar a Español" aria-label="Cambiar a Español">
             <span class={`${spanishFlag} w-6 h-6 mr-1`} />
             ESP
           </a>
@@ -72,11 +72,11 @@ export const englishFlag = "fi fi-gb";
   class="hidden lg:flex gap-x-4 flex-wrap justify-center sticky top-0 z-30
   bg-base-100/70 backdrop-blur"
 >
-  <a class="text-base btn btn-ghost rounded-lg my-2 py-2" href="/" title="English">
+  <a class=`${btnsNavBar} my-2 py-2` href="/" title="English">
     <span class={`mr-1  ${englishFlag}`}> </span>
     English
   </a>
-  <a class="text-base btn btn-ghost rounded-lg my-2 py-2" href="/es" title="Español">
+  <a class=`${btnsNavBar} my-2 py-2` href="/es" title="Español">
     <span class={`mr-1  ${spanishFlag}`}> </span>
     Español
   </a>

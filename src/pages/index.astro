@@ -4,10 +4,8 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import Biography from "@components/Biography.astro";
 import MainLinks from "@components/MainLinks.astro";
 
-import { allProjects } from "../components/ProjectsComponent.astro";
 import Experience, { allExperiences } from "../components/Experience.astro";
 import HeroTopProjects from "@components/img-components/Hero-Top-Projects.astro";
-import IndexOfProjects from "@components/IndexOfProjects.astro";
 
 // BLOG - NOTES
 import { getCollection } from "astro:content";
@@ -25,9 +23,7 @@ const last_posts = posts.slice(0, 3);
 <BaseLayout title="Edgar Delgado Vega - Creative Math Systems Developer">
   <section class="mt-4">
     <h1 class="text-4xl font-black leading-snug flex">Edgar Delgado</h1>
-    <h2 class="py-3 text-2xl font-black text-primary">
-      Creative Math Systems Developer
-    </h2>
+    <h2 class="py-3 text-2xl font-bold text-primary"> Creative Math Systems Developer </h2>
     <HeroTopProjects />
     <div class="mt-16 mb-20">
       <Biography />
@@ -36,17 +32,15 @@ const last_posts = posts.slice(0, 3);
     <Experience workExperiences={allExperiences} indices={[0, 1]} />
 
     <!-- BLOG-NOTES -->
-    <h2 class="text-3xl w-full font-black flex items-center mt-16">
-      Latest Posts
-    </h2>
+    <h2 class="text-3xl w-full font-black flex items-center mt-16"> Latest Posts </h2>
     {
       last_posts.map((post) => (
         <>
-          {/* badge={post.data.badge} */}
           {/* tags={post.data.tags} */}
           <CardBlog
             pubDate={post.data.pubDate}
             title={post.data.title}
+            badge={post.data.badge}
             img={post.data.heroImage}
             desc={post.data.description}
             url={"/blog/" + createSlug(post.data.title, post.id)}

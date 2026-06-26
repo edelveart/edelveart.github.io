@@ -12,26 +12,36 @@ const { title, subtitle, description, moreInfo = "Ver más" }: Props = Astro.pro
 ---
 
 <div class="group flex">
-  <div class="education__time">
-    <span class="w-4 h-4 bg-primary block rounded-full mt-1"></span>
-    <span class="education__line bg-primary block h-full w-[2.5px] translate-x-[6px]"></span>
+  <div class="education__time flex flex-col items-center">
+    <span class="w-3.5 h-3.5 border border-primary rounded-sm"></span>
+    <span class="flex-1 border-l-[1.5px] border-base-content/20"></span>
   </div>
-  <div class="experience__data bd-grid px-5 pb-4">
-    <h3 class="font-semibold mb-1 text-lg group-hover:text-primary">{title}</h3>
-    <details class="group mt-1">
-      <summary class="flex items-center gap-2 text-sm cursor-pointer list-none">
-        <span class="opacity-80">{subtitle}</span>
 
-        {
-          description && (
-            <span class="transition-transform duration-200 group-open:-rotate-180">
-              <Arrows direction="down" size="sm" />
-            </span>
-          )
-        }
+  <div class="experience__data px-5 pb-4 w-full">
+    <details class="group">
+      <summary class="cursor-pointer list-none">
+        <h3
+          class="font-semibold mb-1 text-lg transition-colors duration-150 group-hover:text-primary"
+        >
+          {title}
+        </h3>
+
+        <div class="flex items-center gap-2 text-sm">
+          <span class="opacity-80">{subtitle}</span>
+
+          {
+            description && (
+              <span class="transition-transform duration-200 group-open:-rotate-180">
+                <Arrows direction="down" size="sm" />
+              </span>
+            )
+          }
+        </div>
       </summary>
 
-      <p class="mt-4 text-balance whitespace-pre-line max-w-[700px]">{description}</p>
+      <p class="mt-4 text-balance whitespace-pre-line max-w-[700px]">
+        {description}
+      </p>
     </details>
   </div>
 </div>

@@ -12,16 +12,15 @@ export interface Props {
 }
 const { contactText, linkedin, github, youtube } = Astro.props;
 const aLinkBorder = `
-  btn btn-ghost
-  border border-base-content/10
-  rounded-md
-  py-6 px-3
-  w-32
-  flex items-center justify-center gap-x-2
-  flex-grow
-  transition-colors duration-200 ease-in-out
-  hover:bg-base-200
-  hover:border-primary/20
+    flex items-center justify-center gap-x-2
+    h-12 px-3
+    rounded-md
+    border border-base-content/10
+    text-sm font-normal
+    transition-colors duration-150
+    min-w-40
+    hover:border-primary/20 hover:text-primary
+    no-underline
 `;
 ---
 
@@ -30,25 +29,25 @@ const aLinkBorder = `
     _blank">
     <LinkedIn class="w-6" />
     {contactText}
-    <kbd class="kbd kbd-lg">L</kbd>
+    <kbd class="kbd kbd-lg bg-base-100">L</kbd>
   </a>
   <a id="github-btn" class={aLinkBorder} href={SOCIAL_MEDIA.github} target="_blank">
     <GitHub class="w-6" />
     GitHub
-    <kbd class="kbd kbd-lg">G</kbd>
+    <kbd class="kbd kbd-lg bg-base-100">G</kbd>
   </a>
 
   <a id="youtube-btn" class={aLinkBorder} href={SOCIAL_MEDIA.youtube} target="_blank">
     <Youtube class="w-6" />
     YouTube
-    <kbd class="kbd kbd-lg">Y</kbd>
+    <kbd class="kbd kbd-lg bg-base-100">Y</kbd>
   </a>
 
   <!-- START-QR  -->
   <label for="qr-modal" class={aLinkBorder}>
     <img class="w-6 rounded-sm" src="/qr-code.png" />
     See QR
-    <kbd class="kbd kbd-lg">Q</kbd>
+    <kbd class="kbd kbd-lg bg-base-100">Q</kbd>
   </label>
 
   <input type="checkbox" id="qr-modal" class="modal-toggle" />
@@ -57,7 +56,7 @@ const aLinkBorder = `
       <h2 class="text-xl font-semibold">QR Code</h2>
 
       <img
-        class="mx-auto rounded-lg m-8 shadow shadow-primary/20"
+        class="mx-auto rounded-lg m-8 shadow shadow-primary/20 bg-base-100"
         src="https://api.qrserver.com/v1/create-qr-code/?color=111111&bgcolor=899fe2&data=https%3A%2F%2Fedelveart.github.io%2F&qzone=1&margin=4&size=250x250&ecc=L"
         alt="qr code"
       />

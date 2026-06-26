@@ -15,13 +15,20 @@ const CONTRIBUTING = docsMap["Contributing"];
 
 const CARD_BUTTONS = {
   container:
-    "p-4 rounded-lg flex flex-col h-full min-h-52 border border-base-content/10 rounded-md ",
+    "p-4 rounded-md flex flex-col h-full min-h-52 border border-base-content/10 rounded-lg",
 
-  title: "text-xl font-bold text-primary",
+  title: "text-lg font-bold",
 
   paragraps: "mt-2 text-sm opacity-80 mb-4",
 
-  btns: "btn btn-ghost border border-base-content/10 rounded-md h-12 mt-auto justify-center font-bold transition-colors duration-200 hover:bg-base-200 hover:border-primary/20",
+  //   btns: "btn btn-ghost border border-base-content/10 rounded-md h-12 mt-auto justify-center font-bold transition-colors duration-200 hover:bg-base-200 hover:border-primary/20",
+
+  btns: `flex items-center justify-center h-12 mt-auto
+    rounded-md border border-base-content/10
+    text-sm font-normal
+    transition-colors duration-150
+     hover:border-primary/20 hover:text-primary
+    no-underline`,
 };
 ---
 
@@ -52,7 +59,7 @@ const CARD_BUTTONS = {
       </div>
     </div>
 
-    <div class="flex flex-wrap gap-2 mt-4 opacity-80">
+    <div class="flex flex-wrap gap-2 mt-4">
       <a
         class="badge badge-outline hover:text-primary ease-in-out duration-200"
         href="https://pypi.org/project/figuratenum/"
@@ -181,14 +188,23 @@ const CARD_BUTTONS = {
     {
       OVERVIEW && (
         <a
-          class="btn btn-ghost hover:bg-base-200/50 w-full min-h-24 justify-end text-right hover:text-primary"
+          class="group flex w-full min-h-24 items-center justify-end gap-3 rounded-md px-3 py-2 transition-colors duration-150 no-underline"
           href={"/figuratenum/" + createSlug(OVERVIEW.data.title, OVERVIEW.id)}
         >
-          <div>
-            <div class="text-base-content/50"> START HERE</div>
-            <div class="text-base line-clamp-2 opacity-80">{OVERVIEW.data.title}</div>
+          <div class="text-right">
+            <div class="text-xs opacity-50 font-normal">NEXT</div>
+
+            <div
+              class="text-base line-clamp-2 transition-colors duration-150
+             group-hover:text-primary group-hover:underline underline-offset-2 font-normal"
+            >
+              {OVERVIEW.data.title}
+            </div>
           </div>
-          <Arrows direction="right" />
+
+          <span class="transition-colors duration-150 group-hover:text-primary">
+            <Arrows direction="right" />
+          </span>
         </a>
       )
     }

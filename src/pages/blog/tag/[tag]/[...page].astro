@@ -59,11 +59,22 @@ const params = Astro.params;
       {
         page.url.prev ? (
           <a
+            class="group flex w-full min-h-24 items-center gap-3 rounded-md px-3 py-2 transition-colors duration-150 no-underline"
             href={page.url.prev}
-            class="btn btn-ghost hover:bg-base-200/25  min-h-24 justify-start text-left"
           >
-            <Arrows direction="left" />
-            NEWER POSTS
+            <span class="transition-colors duration-150 group-hover:text-primary">
+              <Arrows direction="left" />
+            </span>
+
+            <div>
+              <div class="text-xs opacity-50">NEWER POST</div>
+              <div
+                class="text-base line-clamp-2 transition-colors duration-150
+            group-hover:text-primary group-hover:underline underline-offset-2"
+              >
+                Newer posts
+              </div>
+            </div>
           </a>
         ) : (
           <div />
@@ -72,11 +83,23 @@ const params = Astro.params;
       {
         page.url.next ? (
           <a
+            class="group flex w-full min-h-24 items-center justify-end gap-3 rounded-md px-3 py-2 transition-colors duration-150 no-underline"
             href={page.url.next}
-            class="btn btn-ghost hover:bg-base-200/25 min-h-24 justify-end text-right"
           >
-            OLDER POSTS
-            <Arrows direction="right" />
+            <div class="text-right">
+              <div class="text-xs opacity-50">OLDER POST</div>
+
+              <div
+                class="text-base line-clamp-2 transition-colors duration-150
+             group-hover:text-primary group-hover:underline underline-offset-2"
+              >
+                Older posts
+              </div>
+            </div>
+
+            <span class="transition-colors duration-150 group-hover:text-primary">
+              <Arrows direction="right" />
+            </span>
           </a>
         ) : (
           <div />

@@ -66,24 +66,40 @@ const { Content } = await render(entry);
     {
       prevPost ? (
         <a
-          class="btn btn-ghost hover:bg-base-200/25 w-full min-h-24 justify-start text-left hover:text-primary"
+          class="group flex w-full min-h-24 items-center gap-3 rounded-md px-3 py-2 transition-colors duration-150 no-underline"
           href={"/blog/" + prevPost.slug}
         >
-          <Arrows direction="left" />
+          <span class="transition-colors duration-150 group-hover:text-primary">
+            <Arrows direction="left" />
+          </span>
+
           <div>
-            <div class="text-base-content/50">NEWER POST</div>
-            <div class="text-base line-clamp-2">{prevPost.title} </div>
+            <div class="text-xs opacity-50 font-normal">NEWER POST</div>
+            <div
+              class="text-base line-clamp-2 transition-colors duration-150
+            group-hover:text-primary group-hover:underline underline-offset-2 font-normal"
+            >
+              {prevPost.title}
+            </div>
           </div>
         </a>
       ) : (
         <a
-          class="btn btn-ghost hover:bg-base-200/25 w-full min-h-24 justify-start text-left hover:text-primary"
-          href="/blog"
+          class="group flex w-full min-h-24 items-center gap-3 rounded-md px-3 py-2 transition-colors duration-150 no-underline"
+          href={"/blog/"}
         >
-          <Arrows direction="left" />
+          <span class="transition-colors duration-150 group-hover:text-primary">
+            <Arrows direction="left" />
+          </span>
+
           <div>
-            <div class="text-base-content/50" />
-            <div class="text-base">Blog</div>
+            <div class="text-xs opacity-50 font-normal">BLOG HOME</div>
+            <div
+              class="text-base line-clamp-2 transition-colors duration-150
+            group-hover:text-primary group-hover:underline underline-offset-2 font-normal"
+            >
+              Blog
+            </div>
           </div>
         </a>
       )
@@ -91,14 +107,23 @@ const { Content } = await render(entry);
     {
       nextPost ? (
         <a
-          class="btn btn-ghost hover:bg-base-200/25 w-full min-h-24 justify-end text-right hover:text-primary"
+          class="group flex w-full min-h-24 items-center justify-end gap-3 rounded-md px-3 py-2 transition-colors duration-150 no-underline"
           href={"/blog/" + nextPost.slug}
         >
-          <div>
-            <div class="text-base-content/50">OLDER POST</div>
-            <div class="text-base line-clamp-2">{nextPost.title} </div>
+          <div class="text-right">
+            <div class="text-xs opacity-50 font-normal">OLDER POST</div>
+
+            <div
+              class="text-base line-clamp-2 transition-colors duration-150
+             group-hover:text-primary group-hover:underline underline-offset-2 font-normal"
+            >
+              {nextPost.title}
+            </div>
           </div>
-          <Arrows direction="right" />
+
+          <span class="transition-colors duration-150 group-hover:text-primary">
+            <Arrows direction="right" />
+          </span>
         </a>
       ) : (
         <div />
