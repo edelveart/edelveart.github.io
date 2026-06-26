@@ -53,24 +53,26 @@ const figurateLinks = sortedFigurate.map((post) => {
   };
 });
 
-export const activePage = "text-primary font-medium opacity-100";
+export const transitionMenu = "transition-colors transition-opacity duration-150 ease-in-out";
+export const activePage = "text-primary opacity-100 font-medium";
 export const sideMenuCss = {
-  divCss: `flex items-center gap-2 w-full rounded-md px-3 py-2 opacity-70 active:text-base-content/100  hover:text-primary hover:opacity-100 transition-colors duration-150`,
-  spanText: "text-base leading-none ",
-  iconBox: "w-8 h-8 flex items-center justify-center shrink-0",
+  divCss: `flex items-center gap-3 w-full rounded-md px-4 opacity-80
+    hover:text-primary h-11 hover:opacity-100 ${transitionMenu}`,
+  spanText: "text-base ",
+  iconBox: "w-5 h-5 flex items-center justify-center shrink-0 ",
 };
 ---
 
 <!-- <strong class="flex justify-center mb-5 text-sm">Edgar Delgado</strong> -->
 <div class="flex flex-col w-full mb-5">
-  <ul class="menu w-full h-full flex-1 flex flex-col">
+  <ul class="w-full h-full flex-1 flex flex-col p-2">
     <li>
       <a
         class={`${sideMenuCss.divCss} ${isExactActive(current, hrefHome) ? activePage : ""}`}
         href={hrefHome}
       >
         <span class={sideMenuCss.iconBox}>
-          <Home class="w-8 h-8" />
+          <Home />
         </span>
         <span class={sideMenuCss.spanText}>{homeMenu}</span>
       </a>
@@ -81,7 +83,7 @@ export const sideMenuCss = {
         href={hrefCV}
       >
         <span class={sideMenuCss.iconBox}>
-          <Curriculum class="w-[23px] h-[23px]" />
+          <Curriculum />
         </span>
         <span class={sideMenuCss.spanText}>{cvMenu}</span>
       </a>
@@ -92,7 +94,7 @@ export const sideMenuCss = {
         href={hrefProjects}
       >
         <span class={sideMenuCss.iconBox}>
-          <Branch class="w-7 h-7" />
+          <Branch />
         </span>
         <span class={sideMenuCss.spanText}>{projectsMenu}</span>
       </a>
@@ -103,7 +105,7 @@ export const sideMenuCss = {
         href={hrefResources}
       >
         <span class={sideMenuCss.iconBox}>
-          <Writing class="w-[24px] h-[24px]" />
+          <Writing />
         </span>
         <span class={sideMenuCss.spanText}>{resourcesMenu}</span>
       </a>
@@ -114,7 +116,7 @@ export const sideMenuCss = {
         href={hrefNotes}
       >
         <span class={sideMenuCss.iconBox}>
-          <Skills class="w-[23px] h-[23px]" />
+          <Skills />
         </span>
         <span class={sideMenuCss.spanText}>{notesMenu}</span>
       </a>
@@ -125,7 +127,11 @@ export const sideMenuCss = {
         href={hrefFigurate}
       >
         <span class={sideMenuCss.iconBox}>
-          <img src="/svg-ggb/ico-figuratenum.png" alt="FigurateNumber - ICO" class="w-7 h-7" />
+          <img
+            src="/svg-ggb/ico-figuratenum.png"
+            alt="FigurateNumber - ICO"
+            class="w-5 h-5 border border-white rounded-full"
+          />
         </span>
         <span class={sideMenuCss.spanText}>{figurateMenu}</span>
       </a>
@@ -134,16 +140,15 @@ export const sideMenuCss = {
     <!-- CONDITIONAL SUBMENU OF DOCS -->
     {
       isSectionActive(current, "/figuratenum") && (
-        <ul class="ml-2 mt-2 space-y-1">
+        <ul class="ml-2">
           {figurateLinks.map((link) => (
             <li>
               <a
                 href={link.href}
                 class={`
-                    flex pl-4 text-sm items-center min-h-11 max-h-11 rounded-md
-                    transition-colors duration-150 no-underline
-                    hover:text-primary hover:opacity-100
-                    ${link.active ? "text-primary font-medium opacity-100" : "opacity-70"}`}
+                    flex pl-4 text-sm items-center h-10 rounded-md
+                    no-underline hover:text-primary hover:opacity-100 ${transitionMenu}
+                    ${link.active ? "text-primary font-medium opacity-100" : "opacity-80"}`}
               >
                 <span class="min-w-0 flex-1 truncate whitespace-nowrap text-sm">{link.title}</span>
               </a>

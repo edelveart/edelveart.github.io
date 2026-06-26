@@ -21,14 +21,14 @@ const displayDate = dayjs(pubDate).format("ll");
       </div>
       <div class="border-l-4 border-primary pl-4 py-2 mb-12">
         <div class="pl-0 gap-2 flex flex-wrap items-baseline">
-          {badge && <div class="text-xs opacity-60  shrink-0">{badge}</div>}
+          {badge && <div class="text-xs text-primary/60 shrink-0">{badge}</div>}
           {
             tags &&
               tags.map((tag) => (
                 <a
                   href={`/blog/tag/${tag}`}
-                  class="text-xs opacity-70 hover:opacity-100 hover:text-primary hover:underline
-                  transition-colors duration-150 font-normal"
+                  class="text-xs text-accent/60 hover:opacity-100 hover:text-accent/80
+                  transition-colors duration-150 font-normal underline-offset-2"
                 >
                   {tag}
                 </a>
