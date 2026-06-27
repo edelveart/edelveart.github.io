@@ -1,20 +1,16 @@
 ---
 // import "@fontsource-variable/inter/wght.css";
 
-import "@fontsource/fira-sans/300-italic.css";
 import "@fontsource/fira-sans/400-italic.css";
-import "@fontsource/fira-sans/300.css";
 import "@fontsource/fira-sans/400.css";
-import "@fontsource/fira-sans/500.css";
+// import "@fontsource/fira-sans/500.css";
 import "@fontsource/fira-sans/600.css";
-import "@fontsource/fira-sans/700.css";
+// import "@fontsource/fira-sans/700.css";
 import "@fontsource/fira-sans/800.css";
 // import "@fontsource/fira-sans/900.css";
 
-// import "@fontsource-variable/sora";
-import "@fontsource-variable/jetbrains-mono";
+import "@fontsource-variable/jetbrains-mono"; // Normal
 import "@fontsource-variable/jetbrains-mono/wght-italic.css";
-
 //////
 import BaseHead from "@components/BaseHead.astro";
 import Header from "@components/Header.astro";
@@ -22,7 +18,6 @@ import Footer from "@components/Footer.astro";
 import SideBar from "@components/SideBar.astro"; // This must be different
 import { ClientRouter } from "astro:transitions";
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
-
 const {
   image,
   title = SITE_TITLE,

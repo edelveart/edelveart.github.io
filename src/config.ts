@@ -7,7 +7,7 @@ export const SITE_DESCRIPTION =
 
 export const SITE_URL = "https://edelveart.github.io/";
 export const GENERATE_SLUG_FROM_TITLE = true;
-export const TRANSITION_API = false;
+export const TRANSITION_API = true;
 
 export const SOCIAL_MEDIA = {
   linkedin: "https://www.linkedin.com/in/edgararmandodelgadovega/?locale=en_US",

@@ -37,12 +37,12 @@ const last_posts = posts.slice(0, 3);
     {
       last_posts.map((post) => (
         <>
-          {/* badge={post.data.badge} */}
           {/* tags={post.data.tags} */}
+          {/* img={post.data.heroImage} */}
           <CardBlog
             pubDate={post.data.pubDate}
             title={post.data.title}
-            img={post.data.heroImage}
+            badge={post.data.badge}
             desc={post.data.description}
             url={"/blog/" + createSlug(post.data.title, post.id)}
             target="_self"

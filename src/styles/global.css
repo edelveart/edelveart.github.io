@@ -115,9 +115,3 @@ code {
 #sidebar-scroll-container {
   transform: translateZ(0);
 }
-
-
-/* MPA  */
-@view-transition {
-  navigation: auto;
-}
