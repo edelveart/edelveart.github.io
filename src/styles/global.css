@@ -41,14 +41,14 @@
   .prose h3:hover::after {
     opacity: 0.4;
   }
+}
 
+/*
   .prose table {
     display: block;
     overflow-x: auto;
     white-space: nowrap;
-   }
-}
-
+   } */
 html {
   scrollbar-gutter: stable ;
   overflow-y: auto
@@ -95,3 +95,25 @@ code {
 .prose :not(div) > a:hover {
   color: rgb(from var(--color-primary) r g b / 1);
 }
+
+
+/* SOLVE GLITCHS PROBLEMS WITH SVG IMAGES */
+
+/* svg, img[src$=".svg"] {
+  display: none;
+} */
+.drawer-side {
+  will-change: transform;
+}
+
+.drawer-side svg {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  contain: layout paint;
+}
+
+#sidebar-scroll-container {
+  transform: translateZ(0);
+}
+
+

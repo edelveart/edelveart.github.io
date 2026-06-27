@@ -9,8 +9,7 @@ const cardDisplay = "aspect-[16/8]";
 const imagePadding = "p-0";
 const cardBase = `
   block relative w-full ${cardDisplay}
-  max-h-72
-  overflow-hidden rounded-lg
+  max-h-72 rounded-lg
   rounded-md
   bg-base-100 ${imagePadding}
   border border-base-content/10
@@ -32,7 +31,7 @@ const badge =
   </div>
 
   <Image
-    src="/svg-ggb/complex-figuratenum.webp"
+    src="/svg-ggb/main-figuratenum.webp"
     class="w-full h-full object-cover"
     width={400}
     height={260}
@@ -45,16 +44,14 @@ const badge =
 <div class={divisor}></div>
 
 <section class="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-8">
-  <!-- <section class="grid grid-cols-1 lg:grid-cols-2 gap-3"> -->
-  <!-- <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3"> -->
   <!-- // 1 -->
   <a href={UrlArray[1].url} target="_blank" rel="noopener noreferrer" class={cardBase}>
     <div class={badge}>
       <span>Modular Forms • RubyGems</span>
     </div>
     <Image
-      src="/svg-ggb/L-function-music-vecta-io.svg"
-      class={`w-full h-full object-cover invert -hue-rotate-90`}
+      src="/svg-ggb/main-modular.webp"
+      class={`w-full h-full object-cover invert -hue-rotate-90 `}
       width={400}
       height={280}
       loading="lazy"
@@ -68,9 +65,9 @@ const badge =
       <span>TS-Tonnetz • npm</span>
     </div>
     <Image
-      src="/svg-ggb/ts-tonnetz-2026-library.svg"
+      src="/svg-ggb/main-tonnetz.webp"
       alt="ts-tonnetz simplices portrait"
-      class={`w-full h-full object-cover invert hue-rotate-60`}
+      class={`w-full h-full object-cover invert hue-rotate-60 `}
       width={400}
       height={280}
       loading="lazy"
