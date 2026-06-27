@@ -11,7 +11,7 @@ const cardBase = `
   block relative w-full ${cardDisplay}
   max-h-72 rounded-lg
   rounded-md
-  bg-base-100 ${imagePadding}
+  ${imagePadding}
   border border-base-content/10
   shadow-sm shadow-black/5
   transition-colors duration-150 ease-in-out
@@ -20,7 +20,7 @@ const cardBase = `
 `;
 
 const badge =
-  "absolute top-0 left-0 m-4 text-xs p-1 rounded-sm z-2 backdrop-blur bg-base-100/50 text-primary/60";
+  "absolute top-0 left-0 m-4 text-xs p-1 rounded-sm z-2  bg-base-100/80 text-primary/60";
 ---
 
 <!-- https://svgomg.net/  --><!-- https://vecta.io/nano -->
@@ -51,7 +51,7 @@ const badge =
     </div>
     <Image
       src="/svg-ggb/main-modular.webp"
-      class={`w-full h-full object-cover invert -hue-rotate-90 `}
+      class={`w-full h-full object-cover invert hue-rotate-270`}
       width={400}
       height={280}
       loading="lazy"
@@ -67,7 +67,7 @@ const badge =
     <Image
       src="/svg-ggb/main-tonnetz.webp"
       alt="ts-tonnetz simplices portrait"
-      class={`w-full h-full object-cover invert hue-rotate-60 `}
+      class={`w-full h-full object-cover invert  hue-rotate-180`}
       width={400}
       height={280}
       loading="lazy"

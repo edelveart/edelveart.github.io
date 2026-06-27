@@ -18,7 +18,7 @@ const displayDate = dayjs(pubDate).format("ll");
       </h1>
 
       <div class="flex items-center gap-2">
-        {pubDate && <time class="text-md">{displayDate}</time>}
+        {pubDate && <time>{displayDate}</time>}
         <span>•</span>
         <span class="text-primary/60 text-sm">{badge}</span>
       </div>
@@ -30,7 +30,7 @@ const displayDate = dayjs(pubDate).format("ll");
               tags.map((tag) => (
                 <a
                   href={`/blog/tag/${tag}`}
-                  class="text-sm text-info/60 hover:opacity-100 hover:text-info/80
+                  class="text-sm text-info/60 hover:text-info/80
                   transition-colors duration-150 font-normal underline-offset-2"
                 >
                   {tag}
@@ -40,9 +40,9 @@ const displayDate = dayjs(pubDate).format("ll");
           {updatedDate && <span class="text-neutral text-sm">Updated {updatedDate}</span>}
         </div>
       </div>
-      <div class="prose prose-table:table-xs prose-table:table-zebra">
-        <slot />
-      </div>
+      <!-- <div class="prose prose-table:table-xs prose-table:table-zebra"> -->
+      <slot />
+      <!-- </div> -->
     </article>
   </main>
 </BaseLayout>
