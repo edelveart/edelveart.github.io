@@ -117,3 +117,7 @@ code {
 }
 
 
+/* MPA  */
+@view-transition {
+  navigation: auto;
+}
