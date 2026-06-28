@@ -7,9 +7,9 @@ import { menuEnglish } from "@components/SideBar.astro";
 import { linksTo } from "@components/Biography.astro";
 import SonicPiModFormsImage from "@components/img-components/SonicPiModFormsImage.astro";
 import FigurateNumImages from "@components/img-components/FigurateNumImages.astro";
-export const CSSInterests = {
-  li: "relative pl-5 text-content text-base",
-  span: "absolute left-0 top-[0.55rem] w-2 h-2 bg-primary rounded-full",
+export const BULLET_SQUARE_LIST = {
+  li: "flex items-start gap-2",
+  span: "mt-[9px] w-1.5 h-1.5 border border-primary   bg-primary opacity-60 rounded-xs shrink-0",
 };
 import { Code } from "astro:components";
 ---
@@ -51,7 +51,7 @@ import { Code } from "astro:components";
         <footer class="text-right text-xs mt-1">— TOPLAP Manifesto</footer>
       </blockquote>
 
-      <Code code={`gem install modular_forms`} lang="shell" theme="catppuccin-mocha" />
+      <!-- <Code code={`gem install modular_forms`} lang="shell" theme="catppuccin-mocha" /> -->
       <SonicPiModFormsImage />
 
       <p class="mb-4">
@@ -69,19 +69,19 @@ import { Code } from "astro:components";
         <footer class="text-right text-xs mt-1">— E. Hecke</footer>
       </blockquote>
 
-      <Code code={`pip install figuratenum`} lang="shell" theme="catppuccin-mocha" />
+      <!-- <Code code={`pip install figuratenum`} lang="shell" theme="catppuccin-mocha" /> -->
       <FigurateNumImages />
 
       <h2 class="text-2xl my-6 font-semibold">Interests</h2>
       <p class="mb-2">My main interest is in discrete structures of geometric origin.</p>
 
-      <ul class="pl-2 mb-10">
-        <li class={CSSInterests.li}>
-          <span class={CSSInterests.span}></span>
+      <ul class="mb-10 flex flex-col gap-y-2">
+        <li class={BULLET_SQUARE_LIST.li}>
+          <span class={BULLET_SQUARE_LIST.span}></span>
           Mathematical Music Theory
         </li>
-        <li class={CSSInterests.li}>
-          <span class={CSSInterests.span}></span>
+        <li class={BULLET_SQUARE_LIST.li}>
+          <span class={BULLET_SQUARE_LIST.span}></span>
           Computer-assisted music composition (DSLs) and improvisation
         </li>
       </ul>

@@ -2,14 +2,15 @@
 interface Props {
   title: string;
 }
-
+import { BULLET_SQUARE_LIST } from "@ts-config-path/pages/about.astro";
 const { title } = Astro.props;
 ---
 
 <section class="mb-10">
   <h2 class="text-2xl font-bold my-5">{title}</h2>
-  <ul class="flex flex-col list-disc ml-4 gap-y-2">
-    <li>
+  <ul class="flex flex-col gap-y-2">
+    <li class={BULLET_SQUARE_LIST.li}>
+      <span class={BULLET_SQUARE_LIST.span}></span>
       <a
         class="text-primary hover:underline"
         href="/resources-files/errata-phd-thesis-cannas.pdf"
@@ -21,7 +22,8 @@ const { title } = Astro.props;
         > (2018) - PDF</a
       >
     </li>
-    <li>
+    <li class={BULLET_SQUARE_LIST.li}>
+      <span class={BULLET_SQUARE_LIST.span}></span>
       <a
         class="text-primary hover:underline"
         href="/resources-files/errata-figuratenum.pdf"

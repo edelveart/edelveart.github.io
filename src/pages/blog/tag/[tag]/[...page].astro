@@ -37,7 +37,7 @@ const params = Astro.params;
           <p>There are no blog posts to show at the moment. Check back later!</p>
         </div>
       ) : (
-        <ul>
+        <div class="mt-10">
           {page.data.map((post) => (
             <>
               <CardBlog
@@ -48,10 +48,11 @@ const params = Astro.params;
                 target="_self"
                 pubDate={post.data.pubDate}
                 tags={post.data.tags}
+                badge={post.data.badge}
               />
             </>
           ))}
-        </ul>
+        </div>
       )
     }
     <div class="divider mt-10"></div>

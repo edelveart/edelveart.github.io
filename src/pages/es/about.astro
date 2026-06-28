@@ -7,7 +7,7 @@ import { menuSpanish } from "@components/es/SideBar.astro";
 import { linksTo } from "@components/Biography.astro";
 import SonicPiModFormsImage from "@components/img-components/SonicPiModFormsImage.astro";
 import FigurateNumImages from "@components/img-components/FigurateNumImages.astro";
-import { CSSInterests } from "../about.astro";
+import { BULLET_SQUARE_LIST } from "../about.astro";
 import { Code } from "astro:components";
 ---
 
@@ -47,7 +47,7 @@ import { Code } from "astro:components";
         </p>
         <footer class="text-right text-xs mt-1">— TOPLAP Manifesto</footer>
       </blockquote>
-      <Code code={`gem install modular_forms`} lang="shell" theme="catppuccin-mocha" />
+      <!-- <Code code={`gem install modular_forms`} lang="shell" theme="catppuccin-mocha" /> -->
       <SonicPiModFormsImage />
 
       <p class="mb-4">
@@ -64,7 +64,7 @@ import { Code } from "astro:components";
         </p>
         <footer class="text-right text-xs mt-1">— E. Hecke</footer>
       </blockquote>
-      <Code code={`pip install figuratenum`} lang="shell" theme="catppuccin-mocha" />
+      <!-- <Code code={`pip install figuratenum`} lang="shell" theme="catppuccin-mocha" /> -->
       <FigurateNumImages />
 
       <h2 class="text-2xl my-6 font-bold">Intereses</h2>
@@ -72,13 +72,13 @@ import { Code } from "astro:components";
         Me interesan fundamentalmente las estructuras discretas de origen geométrico.
       </p>
 
-      <ul class="pl-2 mb-10">
-        <li class={CSSInterests.li}>
-          <span class={CSSInterests.span}></span>
+      <ul class="flex flex-col gap-y-2 mb-10">
+        <li class={BULLET_SQUARE_LIST.li}>
+          <span class={BULLET_SQUARE_LIST.span}></span>
           <p>Teoría Matemática de la Música</p>
         </li>
-        <li class={CSSInterests.li}>
-          <span class={CSSInterests.span}></span>
+        <li class={BULLET_SQUARE_LIST.li}>
+          <span class={BULLET_SQUARE_LIST.span}></span>
           <p>Composición e improvisación musical asistida por ordenador y DSLs</p>
         </li>
       </ul>
