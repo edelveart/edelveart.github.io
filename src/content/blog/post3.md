@@ -3,7 +3,7 @@ title: "Forging a Live Coding Tonnetz Library in TypeScript"
 description: "Bringing together topology, group theory, and music into Ziffers and the interactive live coding environment Topos."
 pubDate: "September 26 2025"
 heroImage: "/itemPreview.webp"
-badge: "Algorithmic Music"
+badge: "Field Notes"
 tags: ["typescript", "music theory", "mathematics", "live coding", "algorithmic composition", "tonnetz"]
 ---
 

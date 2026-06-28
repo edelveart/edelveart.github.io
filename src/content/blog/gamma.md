@@ -3,7 +3,7 @@ title: "Towards Gamma Functions for Figurate Numbers"
 description: "I plant a question motivated by generalizing the GCD to varieties and inspired by Euler's interpolation: Does there exist a function attached to each figurate number that extends it to continuous domains, analogous to how the Gamma function extends the factorial?"
 pubDate: "January 10 2026"
 heroImage: "/itemPreview.webp"
-badge: "number algorithms"
+badge: "Lab Notes"
 tags: ["figurate numbers", "integer sequences", "gamma function", "factorial", "figuratenum", "python"]
 ---
 
@@ -32,6 +32,8 @@ I also realized that the issue in the `reals`, and in every `field`, is that the
 So, because it's good to revisit techniques and ideas from even earlier times, I remembered, of course, that `Euler`, a few centuries ago, had already carried out this process in a phenomenal way with another arithmetic ubiquitous function.
 
 ## Triangular Numbers are The Prototype
+
+> Triangular numbers are denoted as $S_3(n)$ in Deza & Deza (2012), but I'll use $T(n)$ in this post.
 
 For me, a practical, though not complete, way of seeing figurate numbers is that they are a mixture of arithmetic and geometry. That is, it is a representation of numbers as points in the plane, space, or $k-$space creating a figure.
 

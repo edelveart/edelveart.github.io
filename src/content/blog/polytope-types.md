@@ -3,7 +3,7 @@ title: "Do Group Actions Define Regular Polytopes and Polytypes in Type Systems?
 description: "I introduce an analogy between transitive group actions on flags of polytopes and type systems. This speculative concept aims to offer a naive way of understanding and classifying types through symmetry."
 pubDate: "January 17 2026"
 heroImage: "/itemPreview.webp"
-badge: "Type-Level Geometry"
+badge: "Lab Notes"
 tags: [ "type theory", "group theory", "polytopes", "abstract algebra","figurate numbers",  "typescript"]
 ---
 
