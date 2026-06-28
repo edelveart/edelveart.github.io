@@ -32,9 +32,10 @@
   .prose h3::after {
     content: " #";
     opacity: 0;
-    margin-left: 0.5rem;
-    color: currentColor;
+    margin-left: 0.2rem;
+    color: rgb(from var(--color-primary) r g b / 0.8);
     transition: opacity 0.2s;
+    translate: 0 -7px;
   }
 
   .prose h2:hover::after,
@@ -88,8 +89,7 @@ code {
 
 
 .prose :not(div) > a {
-  color: rgb(from var(--color-base-content) r g b / 0.8);
-
+  color: rgb(from var(--color-base-primary) r g b / 0.8);
 }
 
 .prose :not(div) > a:hover {
