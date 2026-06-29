@@ -23,6 +23,9 @@
             "@ts-config-path/*": [
                 "./src/*"
             ],
+            "@assets/*": [
+                "./src/assets/libraries-webp/*"
+            ],
         }
     }
 }
