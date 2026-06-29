@@ -25,7 +25,9 @@ const displayDate = dayjs(pubDate).format("ll");
           updatedDate && (
             <>
               <span class="text-base-content/60">•</span>
-              <span class="text-base-content/50 text-sm">Updated {updatedDate}</span>
+              <span class="text-base-content/50 text-sm">
+                Updated {dayjs(updatedDate).format("ll")}
+              </span>
             </>
           )
         }

@@ -66,15 +66,7 @@ I also found additional errors in the context of the generating functions $f(x)$
 
 Along with version 3, I decided to launch the [official documentation](https://edelveart.github.io/figuratenum/), which I will continue expanding over time. You can access it by clicking the FigurateNum v3 banner also (guess which sequence is showed).
 
-<a href="https://edelveart.github.io/figuratenum/"
-target="_blank" rel="noopener noreferrer"
-class="flex flex-row">
-    <img
-    src="/svg-ggb/figuratenum-v3.webp"
-    alt="Figurate Number DOCS"
-    class="w-100 rounded-md hover:shadow-xs hover:shadow-primary/20 border border-base-content/10 "
-    />
-</a>
+[![Official documentation](@assets/figuratenum-v3.webp)](https://edelveart.github.io/figuratenum/)
 
 Although still in its early stages, it already contains what I consider sufficient material to approach the topic from scratch (this was requested by some musician and musicologist friends), as well as a slightly more detailed explanation of the theoretical ideas behind figurate numbers for readers with some mathematical background.
 
