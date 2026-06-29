@@ -5,7 +5,6 @@ pubDate: "May 25 2026"
 heroImage: "/itemPreview.webp"
 badge: "Lab Notes"
 tags: [ "perfectoid rings", "figurate_numbers", "live coding", "Sonic Pi",  "p-adics",  "infinite sequences" ]
-updatedDate: "Jun 30 2026"
 ---
 
 One of the ideas that comes to mind when I think about prime numbers is their staticness, that naive definition we've known forever. I wanted primes $p$ to spin, or do something different; to become scores, in the musical sense of the word.
