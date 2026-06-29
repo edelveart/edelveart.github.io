@@ -15,7 +15,7 @@ singular points is a source of number-theoretic theorems.
 <footer class="text-xs mt-1">— E. Hecke</footer>
 </blockquote>
 
-This note reflects on recent developments, implementation details, and ideas behind FigurateNum v3
+This note reflects on recent developments, implementation details, and ideas behind FigurateNum v3.
 
 ## What this version 3 brings
 
@@ -68,7 +68,7 @@ Along with version 3, I decided to launch the [official documentation](https://e
 
 <a href="https://edelveart.github.io/figuratenum/"
 target="_blank" rel="noopener noreferrer"
-class="flex flex-row mb-[-2rem] mt-[-1rem]">
+class="flex flex-row">
     <img
     src="/svg-ggb/figuratenum-v3.webp"
     alt="Figurate Number DOCS"
