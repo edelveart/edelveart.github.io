@@ -140,21 +140,26 @@ export const sideMenuCss = {
     <!-- CONDITIONAL SUBMENU OF DOCS -->
     {
       isSectionActive(current, "/figuratenum") && (
-        <ul class="ml-2">
-          {figurateLinks.map((link) => (
-            <li>
-              <a
-                href={link.href}
-                class={`
-                    flex pl-4 text-sm items-center h-10 rounded-md
-                    no-underline hover:text-primary hover:opacity-100 ${transitionMenu}
-                    ${link.active ? "text-primary font-medium opacity-100" : "opacity-80"}`}
-              >
-                <span class="min-w-0 flex-1 truncate whitespace-nowrap text-sm">{link.title}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
+        <li>
+          <ul class="ml-2">
+            {figurateLinks.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class={`
+                flex pl-4 text-sm items-center h-10 rounded-md
+                no-underline hover:text-primary hover:opacity-100 ${transitionMenu}
+                ${link.active ? "text-primary font-medium opacity-100" : "opacity-80"}
+              `}
+                >
+                  <span class="min-w-0 flex-1 truncate whitespace-nowrap text-sm">
+                    {link.title}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </li>
       )
     }
   </ul>

@@ -10,6 +10,6 @@ export const NAV_LINKS_PAGES = {
 };
 
 export const META_BADGE_TAGS = {
-  badge: "text-sm  text-info/70 uppercase tracking-wide",
-  tags: "text-sm text-info/70 hover:text-info/90 transition-colors underline-offset-2",
+  badge: "text-sm text-info/70 uppercase tracking-wide",
+  tags: "text-sm text-info/70 hover:text-info/100 transition-colors underline-offset-2",
 };
