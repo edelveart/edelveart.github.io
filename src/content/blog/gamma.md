@@ -1,10 +1,11 @@
 ---
-title: "Towards Gamma Functions for Figurate Numbers"
+title: "Gamma Functions for Figurate Numbers"
 description: "I plant a question motivated by generalizing the GCD to varieties and inspired by Euler's interpolation: Does there exist a function attached to each figurate number that extends it to continuous domains, analogous to how the Gamma function extends the factorial?"
 pubDate: "January 10 2026"
 heroImage: "/itemPreview.webp"
 badge: "Lab Notes"
 tags: ["figurate numbers", "integer sequences", "gamma function", "factorial", "figuratenum", "python"]
+updatedDate: "28 June 2026"
 ---
 
 Recently, I was reviewing how to extend the greatest common divisor function for two integers, because I wanted to imagine associating a kind of rays emerging from the points of a geometric object.
