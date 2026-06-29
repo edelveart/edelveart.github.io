@@ -26,6 +26,9 @@
             "@assets/*": [
                 "./src/assets/libraries-webp/*"
             ],
+            "@styles/*": [
+                "./src/styles/*"
+            ],
         }
     }
 }

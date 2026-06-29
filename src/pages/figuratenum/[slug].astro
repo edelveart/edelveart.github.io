@@ -5,6 +5,8 @@ import createSlug from "@ts-config-path/lib/createSlug";
 import DocsLayout from "@layouts/DocsLayout.astro";
 import Arrows from "@icons/Arrows.astro";
 
+import { NAV_LINKS_PAGES } from "@styles/utilsCSS";
+
 export async function getStaticPaths() {
   const posts = await getCollection("figurate");
 
@@ -21,6 +23,7 @@ export async function getStaticPaths() {
     },
   }));
 }
+
 interface Props {
   entry: CollectionEntry<"figurate">;
   sorted: CollectionEntry<"figurate">[];
@@ -44,62 +47,44 @@ const nextDoc = sorted[index + 1] ?? null;
     {
       prevDoc ? (
         <a
-          class="group flex w-full min-h-24 items-center gap-3 rounded-md px-3 py-2 transition-colors duration-150 no-underline"
+          class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`}
           href={"/figuratenum/" + createSlug(prevDoc.data.title, prevDoc.id)}
         >
-          <span class="transition-colors duration-150 group-hover:text-primary">
+          <span class={NAV_LINKS_PAGES.arrowSpan}>
             <Arrows direction="left" />
           </span>
 
           <div>
-            <div class="text-xs opacity-50 font-normal">PREVIOUS</div>
-            <div
-              class="text-base line-clamp-2 transition-colors duration-150
-            group-hover:text-primary group-hover:underline underline-offset-2 font-normal"
-            >
-              {prevDoc.data.title}
-            </div>
+            <div class={NAV_LINKS_PAGES.prevNext}>PREVIOUS</div>
+            <div class={NAV_LINKS_PAGES.pageTitle}>{prevDoc.data.title}</div>
           </div>
         </a>
       ) : (
-        <a
-          class="group flex w-full min-h-24 items-center gap-3 rounded-md px-3 py-2 transition-colors duration-150 no-underline"
-          href="/figuratenum"
-        >
-          <span class="transition-colors duration-150 group-hover:text-primary">
+        <a class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`} href="/figuratenum">
+          <span class={NAV_LINKS_PAGES.arrowSpan}>
             <Arrows direction="left" />
           </span>
 
           <div>
-            <div class="text-xs opacity-50 font-normal">PREVIOUS</div>
-            <div
-              class="text-base line-clamp-2 transition-colors duration-150
-            group-hover:text-primary group-hover:underline underline-offset-2 font-normal"
-            >
-              FigurateNum
-            </div>
+            <div class={NAV_LINKS_PAGES.prevNext}>PREVIOUS</div>
+            <div class={NAV_LINKS_PAGES.pageTitle}>FigurateNum</div>
           </div>
         </a>
       )
     }
+
     {
       nextDoc ? (
         <a
-          class="group flex w-full min-h-24 items-center justify-end gap-3 rounded-md px-3 py-2 transition-colors duration-150 no-underline"
+          class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`}
           href={"/figuratenum/" + createSlug(nextDoc.data.title, nextDoc.id)}
         >
           <div class="text-right">
-            <div class="text-xs opacity-50 font-normal">NEXT</div>
-
-            <div
-              class="text-base line-clamp-2 transition-colors duration-150
-             group-hover:text-primary group-hover:underline underline-offset-2 font-normal"
-            >
-              {nextDoc.data.title}
-            </div>
+            <div class={NAV_LINKS_PAGES.prevNext}>NEXT</div>
+            <div class={NAV_LINKS_PAGES.pageTitle}>{nextDoc.data.title}</div>
           </div>
 
-          <span class="transition-colors duration-150 group-hover:text-primary">
+          <span class={NAV_LINKS_PAGES.arrowSpan}>
             <Arrows direction="right" />
           </span>
         </a>

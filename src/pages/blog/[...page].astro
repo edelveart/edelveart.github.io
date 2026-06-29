@@ -5,11 +5,14 @@ import createSlug from "@ts-config-path/lib/createSlug";
 import CardBlog from "@components/CardBlog.astro";
 import Arrows from "@icons/Arrows.astro";
 
+import { NAV_LINKS_PAGES } from "@styles/utilsCSS";
+
 export async function getStaticPaths({ paginate }) {
   const posts = await getCollection("blog");
   posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
   return paginate(posts, { pageSize: 5 });
 }
+
 const { page } = Astro.props as any;
 ---
 
@@ -18,6 +21,7 @@ const { page } = Astro.props as any;
     <div class="mb-5 mt-5" id="Notes">
       <div class="text-3xl w-full font-black flex items-center">Blog</div>
     </div>
+
     {
       page.data.length === 0 ? (
         <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
@@ -38,7 +42,6 @@ const { page } = Astro.props as any;
                 pubDate={post.data.pubDate}
                 tags={post.data.tags}
               />
-              {/* <div class="divider my-0" /> */}
             </>
           ))}
         </div>
@@ -46,66 +49,43 @@ const { page } = Astro.props as any;
     }
 
     <div class="divider mt-10"></div>
+
     <div class="grid grid-cols-2 gap-2 mt-5">
       {
         page.url.prev ? (
-          <a
-            class="group flex w-full min-h-24 items-center gap-3 rounded-md px-3 py-2 transition-colors duration-150 no-underline"
-            href={page.url.prev}
-          >
-            <span class="transition-colors duration-150 group-hover:text-primary">
+          <a class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`} href={page.url.prev}>
+            <span class={NAV_LINKS_PAGES.arrowSpan}>
               <Arrows direction="left" />
             </span>
 
             <div>
-              <div class="text-xs opacity-50">NEWER POSTS</div>
-              <div
-                class="text-base line-clamp-2 transition-colors duration-150
-            group-hover:text-primary group-hover:underline underline-offset-2"
-              >
-                Recent articles
-              </div>
+              <div class={NAV_LINKS_PAGES.prevNext}>NEWER POSTS</div>
+              <div class={NAV_LINKS_PAGES.pageTitle}>Recent articles</div>
             </div>
           </a>
         ) : (
-          <a
-            class="group flex w-full min-h-24 items-center gap-3 rounded-md px-3 py-2 transition-colors duration-150 no-underline"
-            href={"/"}
-          >
-            <span class="transition-colors duration-150 group-hover:text-primary">
+          <a class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`} href={"/"}>
+            <span class={NAV_LINKS_PAGES.arrowSpan}>
               <Arrows direction="left" />
             </span>
 
             <div>
-              <div class="text-xs opacity-50">HOME</div>
-              <div
-                class="text-base line-clamp-2 transition-colors duration-150
-            group-hover:text-primary group-hover:underline underline-offset-2"
-              >
-                Back to homepage
-              </div>
+              <div class={NAV_LINKS_PAGES.prevNext}>HOME</div>
+              <div class={NAV_LINKS_PAGES.pageTitle}>Back to homepage</div>
             </div>
           </a>
         )
       }
+
       {
         page.url.next ? (
-          <a
-            class="group flex w-full min-h-24 items-center justify-end gap-3 rounded-md px-3 py-2 transition-colors duration-150 no-underline"
-            href={page.url.next}
-          >
+          <a class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`} href={page.url.next}>
             <div class="text-right">
-              <div class="text-xs opacity-50">OLDER POSTS</div>
-
-              <div
-                class="text-base line-clamp-2 transition-colors duration-150
-             group-hover:text-primary group-hover:underline underline-offset-2"
-              >
-                Earlier articles
-              </div>
+              <div class={NAV_LINKS_PAGES.prevNext}>OLDER POSTS</div>
+              <div class={NAV_LINKS_PAGES.pageTitle}>Earlier articles</div>
             </div>
 
-            <span class="transition-colors duration-150 group-hover:text-primary">
+            <span class={NAV_LINKS_PAGES.arrowSpan}>
               <Arrows direction="right" />
             </span>
           </a>

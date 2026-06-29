@@ -7,6 +7,7 @@ import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 dayjs.extend(localizedFormat);
 const displayDate = dayjs(pubDate).format("ll");
+import { META_BADGE_TAGS } from "@styles/utilsCSS";
 ---
 
 <a
@@ -16,8 +17,12 @@ const displayDate = dayjs(pubDate).format("ll");
 >
   <div class="flex items-center gap-2">
     <span class="text-base-content/80 text-sm">{displayDate}</span>
-    <span class="text-base-content/60 text-sm"> • </span>
-    <span class="text-primary/60 text-sm">{badge}</span>
+    <span class="text-base-content/70 text-sm"> • </span>
+
+    <!-- <span class="text-base-content/60 text-sm font-medium">{badge}</span> -->
+    <span class={META_BADGE_TAGS.badge}>
+      {badge}
+    </span>
   </div>
 
   <h2 class="mt-1 text-lg font-semibold group-hover:text-primary line-clamp-2 md:line-clamp-none">

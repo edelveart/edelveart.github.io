@@ -1,4 +1,5 @@
 ---
+import { META_BADGE_TAGS } from "@styles/utilsCSS";
 import { type BlogSchema } from "../content.config";
 import BaseLayout from "./BaseLayout.astro";
 import dayjs from "dayjs";
@@ -20,12 +21,12 @@ const displayDate = dayjs(pubDate).format("ll");
       <div class="flex items-center gap-2">
         {pubDate && <time>{displayDate}</time>}
         <span class="text-base-content/60">•</span>
-        <span class="text-primary/60 text-sm">{badge}</span>
+        <span class={META_BADGE_TAGS.badge}>{badge}</span>
         {
           updatedDate && (
             <>
               <span class="text-base-content/60">•</span>
-              <span class="text-base-content/50 text-sm">
+              <span class="text-base-content/70 text-sm">
                 Updated {dayjs(updatedDate).format("ll")}
               </span>
             </>
@@ -33,14 +34,11 @@ const displayDate = dayjs(pubDate).format("ll");
         }
       </div>
 
-      <div class="border-l-4 border-info/60 pl-4 mt-4 mb-10">
+      <div class="border-l-4 border-info/70 pl-4 mt-4 mb-10">
         <div class="flex flex-wrap gap-x-2 gap-y-1">
           {
             tags?.map((tag) => (
-              <a
-                href={`/blog/tag/${tag}`}
-                class="text-sm text-info/60 hover:text-info/80 transition-colors underline-offset-2"
-              >
+              <a href={`/blog/tag/${tag}`} class={META_BADGE_TAGS.tags}>
                 {tag}
               </a>
             ))

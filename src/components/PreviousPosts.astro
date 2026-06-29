@@ -1,24 +1,17 @@
 ---
 import Arrows from "@icons/Arrows.astro";
+import { NAV_LINKS_PAGES } from "@styles/utilsCSS";
 ---
 
 <div class="grid grid-cols-1 gap-4 mt-5">
-  <a
-    class="group flex w-full min-h-24 items-center justify-end gap-3 rounded-md px-3 py-2 transition-colors duration-150 no-underline"
-    href={"/blog/"}
-  >
+  <a class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`} href={"/blog/"}>
     <div class="text-right">
-      <div class="text-xs opacity-60 font-normal">OLDER POSTS</div>
+      <div class={NAV_LINKS_PAGES.prevNext}>OLDER POSTS</div>
 
-      <div
-        class="text-base line-clamp-2 transition-colors duration-150
-             group-hover:text-primary group-hover:underline underline-offset-2 font-normal"
-      >
-        Explore the blog
-      </div>
+      <div class={NAV_LINKS_PAGES.pageTitle}> Explore the blog </div>
     </div>
 
-    <span class="transition-colors duration-150 group-hover:text-primary">
+    <span class={NAV_LINKS_PAGES.arrowSpan}>
       <Arrows direction="right" />
     </span>
   </a>
