@@ -16,18 +16,3 @@ export async function GET(context) {
     })),
   });
 }
-
-export async function GET(context) {
-  const figuratenumDocs = await getCollection("figurate");
-  return rss({
-    title: SITE_TITLE,
-    description: SITE_DESCRIPTION,
-    site: import.meta.env.SITE,
-    items: figuratenumDocs.map((post) => ({
-      title: post.data.title,
-      pubDate: post.data.pubDate,
-      description: post.data.description,
-      link: `/iguratenum/${post.slug}/`,
-    })),
-  });
-}
