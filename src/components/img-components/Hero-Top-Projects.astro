@@ -21,6 +21,10 @@ const cardBase = `
 
 const badge =
   "absolute top-0 left-0 m-4 text-xs p-1 rounded-sm z-2  bg-base-100/80 text-primary/60";
+
+import MainFigurateNumImage from "@assets/main-figuratenum.webp";
+import MainTonnetzImage from "@assets/main-tonnetz.webp";
+import MainModularImage from "@assets/main-modular.webp";
 ---
 
 <!-- https://svgomg.net/  --><!-- https://vecta.io/nano -->
@@ -31,7 +35,7 @@ const badge =
   </div>
 
   <Image
-    src="/svg-ggb/main-figuratenum.webp"
+    src={MainFigurateNumImage}
     class="w-full h-full object-cover"
     width={400}
     height={260}
@@ -51,7 +55,7 @@ const badge =
       <span>Modular Forms • RubyGems</span>
     </div>
     <Image
-      src="/svg-ggb/main-modular.webp"
+      src={MainModularImage}
       class={`w-full h-full object-cover invert hue-rotate-270`}
       width={400}
       height={280}
@@ -67,7 +71,7 @@ const badge =
       <span>TS-Tonnetz • npm</span>
     </div>
     <Image
-      src="/svg-ggb/main-tonnetz.webp"
+      src={MainTonnetzImage}
       alt="ts-tonnetz simplices portrait"
       class={`w-full h-full object-cover invert  hue-rotate-180`}
       format="webp"
