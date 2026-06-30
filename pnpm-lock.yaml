@@ -32,6 +32,9 @@ importers:
       dayjs:
         specifier: ^1.11.9
         version: 1.11.9
+      katex:
+        specifier: ^0.17.0
+        version: 0.17.0
       rehype-katex:
         specifier: ^7.0.1
         version: 7.0.1
@@ -1333,6 +1336,10 @@ packages:
 
   katex@0.16.22:
     resolution: {integrity: sha512-XCHRdUw4lf3SKBaJe4EvgqIuWwkPSo9XoeO8GjQW94Bp7TWv9hNhzZjZ+OH9yf1UmLygb7DIT5GSFQiyt16zYg==}
+    hasBin: true
+
+  katex@0.17.0:
+    resolution: {integrity: sha512-Vdw0ATsQ9V+LuegM/BTwQqV/6cTl5lbGcIrU+BCgLxyf6bo38ybOr372tuSIxir3CN720flu1meYR6XzNMwQnw==}
     hasBin: true
 
   lightningcss-darwin-arm64@1.30.1:
@@ -3538,6 +3545,10 @@ snapshots:
   jsonc-parser@3.3.1: {}
 
   katex@0.16.22:
+    dependencies:
+      commander: 8.3.0
+
+  katex@0.17.0:
     dependencies:
       commander: 8.3.0
 
