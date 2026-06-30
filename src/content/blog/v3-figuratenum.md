@@ -76,7 +76,7 @@ The docs have four sections: **Learn**, **Mathematical Theory**, **API**, and **
 
 I reach the final *term* of this short figurate note. What comes next?
 
-At the beginning of March (9–13), I returned to IMCA, attended several talks in the School of Geometry as an observer, and spent time in informal conversations with professors.
+At the beginning of March (9–13), I returned to [IMCA](https://imca.edu.pe/en/), attended several talks in the School of Geometry as an observer, and spent time in informal conversations with professors.
 A few ideas came out of those exchanges. They were small at first, but they have stayed with me ever since.
 
 I plan to explore some of those sketches in future releases of **FigurateNum**. As with many things in this library, they will probably grow slowly, one question at a time.
