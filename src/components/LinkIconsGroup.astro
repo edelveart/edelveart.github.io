@@ -2,6 +2,7 @@
 import GitHub from "@icons/GitHub.astro";
 // import Instagram from "@icons/Instagram.astro"
 import LinkedIn from "@icons/LinkedIn.astro";
+import QR from "@icons/QR.astro";
 import Youtube from "@icons/Youtube.astro";
 import { SOCIAL_MEDIA } from "@ts-config-path/config";
 // const cssIconsClass = "mx-3 hover:scale-105 transition ease-in-out delay-50";
@@ -45,11 +46,32 @@ const cssIconsClass = `
   <Youtube />
 </a>
 
-<!-- <a
-  href={SOCIAL_MEDIA.instagram}
-  target="_blank"
-  title="Instagram"
-  class={cssIconsClass}
-  aria-label="Instagram"
->
-  <Instagram /> -->
+<div class={cssIconsClass}>
+  <label for="qr-modal">
+    <QR class="w-6 bg-white rounded-xs" alt="qr code" />
+  </label>
+
+  <input type="checkbox" id="qr-modal" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box relative">
+      <h2 class="text-xl font-semibold">QR Code</h2>
+
+      <img
+        class="mx-auto rounded-md m-8 border border-base-content/20"
+        src="https://api.qrserver.com/v1/create-qr-code/?format=svg&size=200x200&color=000000&bgcolor=ffffff&data=https%3A%2F%2Fedelveart.github.io%2F&qzone=1&margin=4&ecc=L"
+        alt="qr code"
+      />
+      <p class="mt-4 text-center">
+        Visit my web: <br />
+        <a href="https://edelveart.github.io/" target="_blank" class="underline text-primary mt-2"
+          >https://edelveart.github.io/</a
+        >
+      </p>
+      <label
+        for="qr-modal"
+        class="border border-base-content/20 px-3 py-1 absolute right-2 top-2 text-2xl rounded-md hover:shadow-sm hover:shadow-primary/20"
+        >✕</label
+      >
+    </div>
+  </div>
+</div>

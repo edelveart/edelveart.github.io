@@ -1,0 +1,27 @@
+---
+import katex from "katex";
+
+interface Props {
+  tex: string;
+  display?: boolean;
+}
+const { tex, display = false } = Astro.props;
+
+const html = katex.renderToString(tex, {
+  throwOnError: false,
+  displayMode: display,
+  output: "htmlAndMathml",
+});
+---
+
+<span class={`math ${display ? "math--block" : "math--inline"}`} set:html={html} />
+
+<style>
+  .math {
+    line-height: 1.2;
+  }
+  .math--block {
+    display: block;
+    margin: 1rem 0;
+  }
+</style>

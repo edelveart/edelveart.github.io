@@ -2,8 +2,8 @@
 import LinkedIn from "@icons/LinkedIn.astro";
 import Youtube from "@icons/Youtube.astro";
 import GitHub from "@icons/GitHub.astro";
-import { SOCIAL_MEDIA } from "../config";
 import QR from "@icons/QR.astro";
+import { SOCIAL_MEDIA } from "../config";
 
 export interface Props {
   contactText?: string;
@@ -44,36 +44,34 @@ const aLinkBorder = `
     <kbd class="kbd kbd-lg bg-base-100">Y</kbd>
   </a>
 
-  <div>
-    <!-- START-QR  -->
-    <label for="qr-modal" class={aLinkBorder}>
-      <QR class="w-[26px] fill-white" alt="qr code" />
-      See QR
-      <kbd class="kbd kbd-lg bg-base-100">Q</kbd>
-    </label>
+  <!-- START-QR  -->
+  <label for="qr-modal" class={aLinkBorder}>
+    <QR class="w-6 bg-white rounded-xs" alt="qr code" />
+    See QR
+    <kbd class="kbd kbd-lg bg-base-100">Q</kbd>
+  </label>
 
-    <input type="checkbox" id="qr-modal" class="modal-toggle" />
-    <div class="modal">
-      <div class="modal-box relative">
-        <h2 class="text-xl font-semibold">QR Code</h2>
+  <input type="checkbox" id="qr-modal" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box relative">
+      <h2 class="text-xl font-semibold">QR Code</h2>
 
-        <img
-          class="mx-auto rounded-md m-8 border border-base-content/20"
-          src="https://api.qrserver.com/v1/create-qr-code/?format=svg&size=200x200&color=000000&bgcolor=ffffff&data=https%3A%2F%2Fedelveart.github.io%2F&qzone=1&margin=4&ecc=L"
-          alt="qr code"
-        />
-        <p class="mt-4 text-center">
-          Visit my web: <br />
-          <a href="https://edelveart.github.io/" target="_blank" class="underline text-primary mt-2"
-            >https://edelveart.github.io/</a
-          >
-        </p>
-        <label
-          for="qr-modal"
-          class="border border-base-content/20 px-3 py-1 absolute right-2 top-2 text-2xl rounded-md hover:shadow-sm hover:shadow-primary/20"
-          >✕</label
+      <img
+        class="mx-auto rounded-md m-8 border border-base-content/20"
+        src="https://api.qrserver.com/v1/create-qr-code/?format=svg&size=200x200&color=000000&bgcolor=ffffff&data=https%3A%2F%2Fedelveart.github.io%2F&qzone=1&margin=4&ecc=L"
+        alt="qr code"
+      />
+      <p class="mt-4 text-center">
+        Visit my web: <br />
+        <a href="https://edelveart.github.io/" target="_blank" class="underline text-primary mt-2"
+          >https://edelveart.github.io/</a
         >
-      </div>
+      </p>
+      <label
+        for="qr-modal"
+        class="border border-base-content/20 px-3 py-1 absolute right-2 top-2 text-2xl rounded-md hover:shadow-sm hover:shadow-primary/20"
+        >✕</label
+      >
     </div>
   </div>
   <!-- END-QR  -->

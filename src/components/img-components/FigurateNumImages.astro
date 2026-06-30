@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import discreteAndContinuousPortraits from "../../assets/libraries-webp/discrete-continuous-portraits.webp";
+import Math from "@components/Math.astro";
 ---
 
 <figure class="text-center my-10 text-gray-400 --noise">
@@ -12,9 +13,11 @@ import discreteAndContinuousPortraits from "../../assets/libraries-webp/discrete
     fetchpriority="high"
   />
   <figcaption class="mt-6 text-sm text-gray-400">
-    <span
-      >Figurate Number 5D Hyperoctahedron: Discrete mod N (left) vs. Continuous Meromorphic
-      Portraits (center and right)
+    <span>
+      5D Figurate Number Hyperoctahedron: discrete pattern in{" "}
+      <Math tex={String.raw`\mathbb{Z}/n\mathbb{Z}`} /> (left) versus continuous meromorphic representations
+      in{" "}
+      <Math tex={String.raw`\mathbb{C}`} /> (center and right)
     </span>
   </figcaption>
 </figure>
