@@ -12,13 +12,19 @@ export const BULLET_SQUARE_LIST = {
   span: "mt-[9px] w-1.5 h-1.5 border border-primary   bg-primary opacity-60 rounded-xs shrink-0",
 };
 import { Code } from "astro:components";
+import Curriculum from "@icons/Curriculum.astro";
 ---
 
 <!-- https://math.uchicago.edu/~chonoles/miscellany/quotations/ -->
 <BaseLayout title="Edgar Delgado Vega - About me">
   <section class="pb-3 mt-5">
     <div class="mb-5 mt-5" id="CURRICULUM">
-      <div class="text-3xl w-full font-black flex items-center">Who am I?</div>
+      <div class="text-3xl w-full font-black flex items-center">
+        <span class="w-7 mr-4">
+          <Curriculum />
+        </span>
+        Who am I?
+      </div>
     </div>
 
     <article class="mb-10 mt-10">

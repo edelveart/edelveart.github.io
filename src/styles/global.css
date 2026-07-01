@@ -26,23 +26,6 @@
 
 }
 
-@layer components {
-  /* BASE for each post */
-  .prose h2::after,
-  .prose h3::after {
-    content: " #";
-    opacity: 0;
-    margin-left: 0.2rem;
-    color: rgb(from var(--color-primary) r g b / 0.8);
-    transition: opacity 0.2s;
-    translate: 0 -7px;
-  }
-
-  .prose h2:hover::after,
-  .prose h3:hover::after {
-    opacity: 0.4;
-  }
-}
 
 /*
   .prose table {
@@ -52,7 +35,8 @@
    } */
 html {
   scrollbar-gutter: stable ;
-  overflow-y: auto
+  overflow-y: auto;
+  font-size: 17px;
 }
 
 aside {
@@ -61,7 +45,7 @@ aside {
 }
 
 body {
-  font-family: 'Fira Sans', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 code {

@@ -6,6 +6,7 @@ import CardBlog from "@components/CardBlog.astro";
 import Arrows from "@icons/Arrows.astro";
 
 import { NAV_LINKS_PAGES } from "@styles/utilsCSS";
+import Blog from "@icons/Blog.astro";
 
 export async function getStaticPaths({ paginate }) {
   const posts = await getCollection("blog");
@@ -19,7 +20,12 @@ const { page } = Astro.props as any;
 <BaseLayout title="Edgar Delgado - Blog" sideBarActiveItemID="NOTES_ACTIVE_PAGE">
   <section class="pb-3 mt-5">
     <div class="mb-5 mt-5" id="Notes">
-      <div class="text-3xl w-full font-black flex items-center">Blog</div>
+      <div class="text-3xl w-full font-black flex items-center">
+        <span class="w-7 mr-4">
+          <Blog />
+        </span>
+        Blog</div
+      >
     </div>
 
     {
@@ -50,7 +56,7 @@ const { page } = Astro.props as any;
 
     <div class="divider mt-10"></div>
 
-    <div class="grid grid-cols-2 gap-2 mt-5">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-5">
       {
         page.url.prev ? (
           <a class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`} href={page.url.prev}>

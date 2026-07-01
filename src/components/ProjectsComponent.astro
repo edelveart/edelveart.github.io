@@ -9,6 +9,7 @@ import FigurateNumbersRuby from "@assets/figurate_numbers.webp";
 import FigurateNumbersLua from "@assets/figurate-numbers-lua.webp";
 import FigNumbersTS from "@assets/fignumbers-ts.webp";
 import FiguratenumPython from "@assets/figuratenum-v3.webp";
+import Branch from "@icons/Branch.astro";
 
 export const allProjects = [
   {
@@ -76,7 +77,9 @@ const filteredProjects = indices
 ---
 
 <div class="text-3xl w-full font-black flex items-center my-5" id="PROJECTS">
-  <!-- <Branch class="ml-0 mr-4" /> -->
+  <span class="w-7 mr-4">
+    <Branch />
+  </span>
   {headTitle}
 </div>
 

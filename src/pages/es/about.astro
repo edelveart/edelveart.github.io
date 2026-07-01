@@ -9,13 +9,19 @@ import SonicPiModFormsImage from "@components/img-components/SonicPiModFormsImag
 import FigurateNumImages from "@components/img-components/FigurateNumImages.astro";
 import { BULLET_SQUARE_LIST } from "../about.astro";
 import { Code } from "astro:components";
+import Curriculum from "@icons/Curriculum.astro";
 ---
 
 <!-- https://math.uchicago.edu/~chonoles/miscellany/quotations/ -->
 <BaseLayout title="Edgar Delgado Vega - About me">
   <section class="pb-3 mt-5">
     <div class="mb-5 mt-5" id="CURRICULUM">
-      <div class="text-3xl w-full font-black flex items-center">¿Quién soy?</div>
+      <div class="text-3xl w-full font-black flex items-center">
+        <span class="w-7 mr-4">
+          <Curriculum />
+        </span>
+        ¿Quién soy?
+      </div>
     </div>
 
     <article class="mb-10 mt-10">
