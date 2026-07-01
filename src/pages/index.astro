@@ -16,14 +16,13 @@ import PreviousPosts from "@components/PreviousPosts.astro";
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
-
 const last_posts = posts.slice(0, 3);
 ---
 
 <BaseLayout title="Edgar Delgado Vega - Creative Math Systems Developer">
   <section class="mt-4">
     <h1 class="text-4xl font-black leading-snug flex">Edgar Delgado</h1>
-    <h2 class="py-3 text-2xl font-bold text-primary"> Creative Math Systems Developer </h2>
+    <h2 class="py-3 text-xl font-bold text-primary"> Creative Math Systems Developer </h2>
     <HeroTopProjects />
     <div class="mt-16 mb-20">
       <Biography />
@@ -33,7 +32,6 @@ const last_posts = posts.slice(0, 3);
 
     <!-- BLOG-NOTES -->
     <h2 class="text-3xl w-full font-black flex items-center mt-16 mb-10"> Latest Posts </h2>
-
     {
       last_posts.map((post) => (
         <>
