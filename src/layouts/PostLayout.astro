@@ -18,24 +18,32 @@ const displayDate = dayjs(pubDate).format("ll");
         {title}
       </h1>
 
-      <div class="flex items-center gap-2">
-        {pubDate && <time>{displayDate}</time>}
-        <span class="text-base-content/60">•</span>
-        <span class={META_BADGE_TAGS.badge}>{badge}</span>
+      <div class="flex flex-col md:flex-row md:items-start md:gap-2">
+        <div class="flex items-center gap-2">
+          {pubDate && <time class="whitespace-nowrap">{displayDate}</time>}
+
+          <span class="text-base-content/60 hidden md:inline">•</span>
+
+          <span class={META_BADGE_TAGS.badge}>
+            {badge}
+          </span>
+        </div>
+
         {
           updatedDate && (
-            <>
-              <span class="text-base-content/60">•</span>
-              <span class="text-base-content/70 text-sm">
+            <div class="flex items-center gap-2">
+              <span class="text-base-content/60 ">⟳</span>
+
+              <span class="text-base-content/70 text-sm whitespace-nowrap">
                 Updated {dayjs(updatedDate).format("ll")}
               </span>
-            </>
+            </div>
           )
         }
       </div>
 
       <div class="border-l-4 border-info/70 pl-4 mt-4 mb-10">
-        <div class="flex flex-wrap gap-x-2 gap-y-1">
+        <div class="flex flex-wrap gap-2">
           {
             tags?.map((tag) => (
               <a href={`/blog/tag/${tag}`} class={META_BADGE_TAGS.tags}>
