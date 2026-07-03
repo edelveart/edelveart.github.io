@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import createSlug from "@ts-config-path/lib/createSlug";
 import Arrows from "@icons/Arrows.astro";
 import { NAV_LINKS_PAGES } from "@styles/utilsCSS";
+import FigLogo from "@icons/FigLogo.astro";
 
 const docs = await getCollection("figurate");
 // const sortedDocs = docs.sort((a, b) => a.data.order - b.data.order);
@@ -40,27 +41,19 @@ const tagsOutline = "badge badge-outline text-info/70 hover:text-info/100 ease-i
 >
   <article class="pb-3 mt-5">
     <div class="mb-5 mt-5" id="FIGURATENUM-HOME">
-      <div class="flex items-center gap-6">
-        <!-- Texto -->
-        <h1 class="text-3xl w-full font-black flex flex-col">
-          FigurateNum
-          <span class="block text-sm uppercase tracking-widest mt-1 text-primary/80">
-            Documentation
+      <h1 class="flex flex-col md:flex-row md:items-center text-3xl font-black">
+        <div class="flex items-center">
+          <span class="w-7 mr-4">
+            <FigLogo />
           </span>
-        </h1>
-        <!-- <video
-          autoplay
-          loop
-          muted
-          playsinline
-          id="figurate-video"
-          class="w-20 h-20 object-contain p-0 m-0"
-        >
-          <source src="/svg-ggb/figuratenum/evolution.webm" type="video/webm" />
-        </video>Video -->
-      </div>
+          FigurateNum
+        </div>
+        <div class="text-base uppercase tracking-widest text-info/80 md:ml-2 mt-1 md:mt-0">
+          <span class="text-base-content/60">::</span>
+          <span class="font-medium"> Documentation </span>
+        </div>
+      </h1>
     </div>
-
     <div class="flex flex-wrap gap-2 mt-4">
       <a
         class={tagsOutline}

@@ -5,17 +5,19 @@ type Props = {
 };
 
 const { direction = "right", size = "md" }: Props = Astro.props;
-
 const sizeClass =
-  size === "sm" ? "h-6 w-6" : size === "lg" ? "h-8 w-8 md:h-10 md:w-10" : "h-6 w-6 md:h-8 md:w-8";
+  size === "sm" ? "h-4 w-4" : size === "lg" ? "h-4 w-4 md:h-5 w-5" : "h-4 w-4 md:h-4 w-4";
 
 const rotationClass = direction === "left" ? "rotate-180" : direction === "down" ? "rotate-90" : "";
 ---
 
 <svg
-  class={`shrink-0 fill-current ${sizeClass} ${rotationClass}`}
+  class={`shrink-0 ${sizeClass} ${rotationClass}`}
   xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 24 24"
+  viewBox="0 0 16 16"
+  fill="currentColor"
 >
-  <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path>
+  <path
+    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+  ></path>
 </svg>
