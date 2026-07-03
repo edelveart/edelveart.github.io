@@ -4,21 +4,20 @@ import discreteAndContinuousPortraits from "../../assets/libraries-webp/discrete
 import Math from "@components/Math.astro";
 ---
 
-<figure class="text-center my-10 text-gray-400 --noise">
+<figure class="text-center my-10 text-gray-400">
   <Image
     src={discreteAndContinuousPortraits}
     alt="Picture of 5D Hyperoctahedron (Discrete and Continuous)"
     width={700}
     height={500}
     loading="lazy"
-    fetchpriority="high"
+    format="webp"
   />
   <figcaption class="mt-6 text-sm text-gray-400">
     <span>
-      5D Figurate Number Hyperoctahedron: discrete pattern in{" "}
+      5D Figurate Number Hyperoctahedron: discrete pattern in
       <Math tex={String.raw`\mathbb{Z}/n\mathbb{Z}`} /> (left) versus continuous meromorphic representations
-      in{" "}
-      <Math tex={String.raw`\mathbb{C}`} /> (center and right)
+      in <Math tex={String.raw`\mathbb{C}`} /> (center and right)
     </span>
   </figcaption>
 </figure>
