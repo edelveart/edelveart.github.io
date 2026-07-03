@@ -5,7 +5,7 @@ export const NAV_LINKS_PAGES = {
   nextRight: "justify-end",
   prevNext: "text-sm uppercase traking-wide text-base-content/60 font-normal",
   pageTitle:
-    "text-base line-clamp-2 transition-colors duration-150 group-hover:text-primary group-hover:underline underline-offset-2",
+    "text-base line-clamp-2 transition-colors duration-150 group-hover:text-primary group-hover:underline underline-offset-2 font-normal",
   arrowSpan: "transition-colors duration-150 group-hover:text-primary",
 };
 
