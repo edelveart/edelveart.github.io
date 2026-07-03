@@ -9,7 +9,8 @@ const cardDisplay = "aspect-[16/8]";
 const imagePadding = "p-0";
 const cardBase = `
   block relative w-full ${cardDisplay}
-  max-h-72 rounded-md
+  max-h-72 rounded-lg
+  rounded-md
   ${imagePadding}
   border border-base-content/10
   shadow-sm shadow-black/5
@@ -19,13 +20,14 @@ const cardBase = `
 `;
 
 import { META_BADGE_TAGS } from "@styles/utilsCSS";
-const badge = `absolute bottom-0 right-0 m-4 p-1 bg-base-100/50 rounded-md text-xs ${META_BADGE_TAGS.badge} z-10`;
+const badge = `absolute bottom-0 right-0 m-4 p-1 bg-base-100/50 rounded-md text-xs ${META_BADGE_TAGS.badge} z-5`;
 
 import MainFigurateNumImage from "@assets/main-figuratenum.webp";
 import MainTonnetzImage from "@assets/main-tonnetz.webp";
 import MainModularImage from "@assets/main-modular.webp";
 ---
 
+<!-- https://svgomg.net/  --><!-- https://vecta.io/nano -->
 <div class={divisor}></div>
 <a href={UrlArray[2].url} target="_blank" rel="noopener noreferrer" class={cardBase}>
   <div class={badge}>
@@ -34,11 +36,12 @@ import MainModularImage from "@assets/main-modular.webp";
 
   <Image
     src={MainFigurateNumImage}
-    class="w-full h-full object-cover rounded-md"
+    class="w-full h-full object-cover"
     width={400}
-    height={200}
+    height={260}
     format="webp"
-    priority
+    fetchpriority="high"
+    loading="eager"
     alt="FigurateNumber - Phase Portrait"
   />
 </a>
@@ -46,21 +49,23 @@ import MainModularImage from "@assets/main-modular.webp";
 <div class={divisor}></div>
 
 <section class="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-8">
+  <!-- // 1 -->
   <a href={UrlArray[1].url} target="_blank" rel="noopener noreferrer" class={cardBase}>
     <div class={badge}>
       <span>Modular Forms • RubyGems</span>
     </div>
     <Image
       src={MainModularImage}
-      class="w-full h-full object-cover invert hue-rotate-270 rounded-md will-change-[filter]"
+      class={`w-full h-full object-cover invert hue-rotate-270`}
       width={400}
-      height={200}
+      height={280}
       format="webp"
       loading="lazy"
       fetchpriority="low"
       alt="Math-Modular-Elliptic-Image"
     />
   </a>
+  <!-- // 2 -->
   <a href={UrlArray[0].url} target="_blank" rel="noopener noreferrer" class={cardBase}>
     <div class={badge}>
       <span>TS-Tonnetz • npm</span>
@@ -68,10 +73,10 @@ import MainModularImage from "@assets/main-modular.webp";
     <Image
       src={MainTonnetzImage}
       alt="ts-tonnetz simplices portrait"
-      class="w-full h-full object-cover invert hue-rotate-180 rounded-md will-change-[filter]"
-      width={400}
-      height={200}
+      class={`w-full h-full object-cover invert  hue-rotate-180`}
       format="webp"
+      width={400}
+      height={280}
       loading="lazy"
       fetchpriority="low"
     />
