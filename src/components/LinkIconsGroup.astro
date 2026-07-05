@@ -5,7 +5,6 @@ import LinkedIn from "@icons/LinkedIn.astro";
 import QR from "@icons/QR.astro";
 import Youtube from "@icons/Youtube.astro";
 import { SOCIAL_MEDIA } from "@ts-config-path/config";
-// const cssIconsClass = "mx-3 hover:scale-105 transition ease-in-out delay-50";
 const cssIconsClass = `
   mx-3
   text-base-content/70
@@ -47,8 +46,8 @@ const cssIconsClass = `
 </a>
 
 <div class={cssIconsClass}>
-  <label for="qr-modal">
-    <QR class="w-6 bg-white rounded-xs" alt="qr code" />
+  <label for="qr-modal" class="cursor-pointer">
+    <QR class="w-5 bg-white rounded-xs" alt="qr code" />
   </label>
 
   <input type="checkbox" id="qr-modal" class="modal-toggle" />

@@ -25,7 +25,7 @@
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
     "sharp": "^0.32.6",
-    "tailwindcss": "^4.1.13"
+    "tailwindcss": "^4.3.0"
   },
   "devDependencies": {
     "@astrojs/mdx": "^5.0.4",
@@ -34,6 +34,6 @@
     "@catppuccin/daisyui": "^2.1.1",
     "@tailwindcss/typography": "^0.5.10",
     "@types/katex": "^0.16.8",
-    "daisyui": "^5.5.23"
+    "daisyui": "^5.6.0"
   }
 }
