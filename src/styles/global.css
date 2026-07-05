@@ -26,13 +26,6 @@
 
 }
 
-
-/*
-  .prose table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-   } */
 html {
   scrollbar-gutter: stable ;
   overflow-y: auto;
@@ -57,10 +50,6 @@ code {
   @apply rounded-md p-4 text-sm font-normal shadow-md border border-base-content/10;
 }
 
-.prose {
-    max-width: none;
-}
-
 .prose :not(pre) > code {
   font-size: 0.90rem;
   padding: 0.1rem 0.3rem;
@@ -71,17 +60,16 @@ code {
 
 /* Links to previous post and references in md files */
 
-
 .prose :not(div) > a {
   color: rgb(from var(--color-primary) r g b / 0.8);
   text-underline-offset: 2px;
+  font-weight: 400;
 }
 
 .prose :not(div) > a:hover {
-  color: rgb(from var(--color-primary) r g b / 1);
+  color: rgb(from var(--color-primary) r g b / 1.0);
   text-decoration-thickness: 2px;
 }
-
 
 /* SOLVE GLITCHS PROBLEMS WITH SVG IMAGES */
 
