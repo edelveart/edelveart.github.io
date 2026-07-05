@@ -26,7 +26,7 @@ import { Image } from "astro:assets";
 
 <BaseLayout title={title} description={description} image={heroImage}>
   <main class="md:flex md:justify-center">
-    <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
+    <article class="prose prose-lg max-w-180 prose-img:mx-auto">
       {
         heroImage && (
           <Image
@@ -52,19 +52,13 @@ import { Image } from "astro:assets";
           <div>
             {
               custom_link && (
-                <a
-                  class="btn btn-outline grow md:grow-0 ml-4"
-                  href={custom_link}
-                  target="_blank"
-                >
+                <a class="btn btn-outline grow md:grow-0 ml-4" href={custom_link} target="_blank">
                   {custom_link_label}
                 </a>
               )
             }
-            <a
-              class="btn btn-primary grow md:grow-0 ml-4"
-              href={checkoutUrl}
-              target="_blank">Buy Now</a
+            <a class="btn btn-primary grow md:grow-0 ml-4" href={checkoutUrl} target="_blank"
+              >Buy Now</a
             >
           </div>
         </div>
