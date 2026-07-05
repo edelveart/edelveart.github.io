@@ -34,8 +34,10 @@ We recall that a `group` is one of the algebraic structures par excellence that 
 First, we will say that $P$ is a set that is not empty. Why $P$? Well, very easy, $P$ will be our polygon and polytope or polyhedron for now. Now, I will use  $G$, for group and for being commonly used notation. Well, when moving, were making a group action of $G$ on the hexahedral box $P$:
 
 $$
-G \times P \longrightarrow P \\
-(g, p) \longmapsto g \star p.
+\begin{align*}
+G \times P &\longrightarrow P \\
+(g, p) &\longmapsto g \star p.
+\end{align*}
 $$
 
 It is s necessary to remember that the thing needs `two conditions`. We will put them in Bourbakist tonality. The `first` of them is that the neutral element $e$ of $G$ acts as the identity on the set of elements $p$ of our polytope $P$.
