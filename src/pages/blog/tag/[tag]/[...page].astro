@@ -6,7 +6,6 @@ import CardBlog from "@components/CardBlog.astro";
 import Arrows from "@icons/Arrows.astro";
 
 import { NAV_LINKS_PAGES } from "@styles/utilsCSS";
-import Blog from "@icons/Blog.astro";
 
 export async function getStaticPaths({ paginate }) {
   const all_posts = await getCollection("blog");
@@ -31,9 +30,6 @@ const params = Astro.params;
   <section class="pb-3 mt-5">
     <div class="mb-5 mt-5" id="BLOG-TAGS">
       <div class="text-3xl w-full font-black flex justify-start">
-        <span class="w-7 mr-4">
-          <Blog />
-        </span>
         <div>Blog / tag / {params.tag}</div>
       </div>
     </div>

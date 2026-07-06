@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "@layouts/es/BaseLayout.astro";
-import Writing from "@icons/Writing.astro";
 import Errata from "@components/resources-components/Errata.astro";
 import MiscFiles from "@components/resources-components/MiscFiles.astro";
 import { SOCIAL_MEDIA } from "@ts-config-path/config";
@@ -10,12 +9,7 @@ import CheatSheets from "@components/resources-components/CheatSheets.astro";
 <BaseLayout title="Edgar Delgado Vega - Resources">
   <article class="pb-3 my-5">
     <div class="mb-5 mt-5">
-      <div class="text-3xl w-full font-black flex items-center">
-        <span class="w-7 mr-4">
-          <Writing />
-        </span>
-        Recursos
-      </div>
+      <div class="text-3xl w-full font-black flex items-center"> Recursos </div>
     </div>
     <p class="my-10">
       Todos los recursos están elaborados en <strong>LaTeX</strong> y disponibles en <strong
@@ -23,7 +17,7 @@ import CheatSheets from "@components/resources-components/CheatSheets.astro";
       >. Aquí recopilo documentos sobre matemáticas, música y sus aplicaciones a través de software.
     </p>
 
-    <section class="text-sm border-l-4 border-warning py-2 px-4 rounded mb-8">
+    <section class="text-sm border-l-4 border-warning px-4 mb-8">
       <h3 class="text-warning">Correcciones y versiones</h3>
       <p>
         Estos documentos son borradores y pueden contener errores u omisiones. Si encuentras alguna
@@ -41,7 +35,7 @@ import CheatSheets from "@components/resources-components/CheatSheets.astro";
     <CheatSheets title="Guías rápidas de librerias y hojas de trucos" />
   </article>
 
-  <section class="text-xs mb-5 border-l-4 border-error py-2 px-4 rounded">
+  <section class="text-xs mb-5 border-l-4 border-error px-4">
     <h3 class="text-error">Aviso Legal</h3>
     <p>
       Todo el contenido disponible en este sitio web, incluyendo los documentos y recursos

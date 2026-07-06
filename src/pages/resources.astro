@@ -1,22 +1,15 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import Writing from "@icons/Writing.astro";
 import Errata from "@components/resources-components/Errata.astro";
 import MiscFiles from "@components/resources-components/MiscFiles.astro";
 import { SOCIAL_MEDIA } from "@ts-config-path/config";
-import LectureNotes from "@components/resources-components/LectureNotes.astro";
 import CheatSheets from "@components/resources-components/CheatSheets.astro";
 ---
 
 <BaseLayout title="Edgar Delgado Vega - Resources">
   <article class="pb-3 my-5">
     <div class="mb-5 mt-5">
-      <div class="text-3xl w-full font-black flex items-center">
-        <span class="w-7 mr-4">
-          <Writing />
-        </span>
-        Resources
-      </div>
+      <div class="text-3xl w-full font-black flex items-center"> Resources </div>
     </div>
     <p class="my-10 text-balance">
       All resources are created using <strong>LaTeX</strong> and are available in
@@ -24,7 +17,7 @@ import CheatSheets from "@components/resources-components/CheatSheets.astro";
       through software.
     </p>
 
-    <section class="text-sm border-l-4 border-warning py-2 px-4 rounded mb-8">
+    <section class="text-sm border-l-4 border-warning px-4 mb-8">
       <h3 class="text-warning">Corrections and Versions</h3>
       <p>
         These documents are drafts and may contain errors or omissions. If you find any typos or
@@ -39,7 +32,7 @@ import CheatSheets from "@components/resources-components/CheatSheets.astro";
     <CheatSheets title="Library Cheatsheets Collection" />
   </article>
 
-  <section class="text-xs mb-5 border-l-4 border-error py-2 px-4 rounded">
+  <section class="text-xs mb-5 border-l-4 border-error px-4">
     <h3 class="text-error">Legal Notice</h3>
     <p>
       All content available on this website, including the documents and related resources, is
