@@ -17,6 +17,8 @@ singular points is a source of number-theoretic theorems.
 
 This note reflects on recent developments, implementation details, and ideas behind FigurateNum v3.
 
+![FigurateNum](v3-figuratenum.svg)
+
 ## What this version 3 brings
 
 From a broader perspective, I have carried out a moderate restructuring of the visualization API. I split it into two special classes that allow **visualization**, which I see, in a recursive sense, as the geometric realization of structures that themselves originate from geometry.
