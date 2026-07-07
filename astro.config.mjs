@@ -3,15 +3,10 @@ import { unified } from "@astrojs/markdown-remark";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import remarkMath from "remark-math"; // KaTeX
-import rehypeKatex from "rehype-katex"; // KaTex
+import rehypeKatex from "rehype-katex"; // KaTeX
 import tailwindcss from "@tailwindcss/vite";
-// https://expressive-code.com/
-// Reduce SVG:
-// https://vecta.io/nano
-// Reduce WEBP
-// https://compress-or-die.com/webp
+import { addCopyButton } from "shiki-transformer-copy-button";
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://edelveart.github.io",
   integrations: [
@@ -34,11 +29,21 @@ export default defineConfig({
   markdown: {
     processor: unified({
       remarkPlugins: [remarkMath],
-      rehypePlugins: [rehypeKatex], // KaTeX
+      rehypePlugins: [rehypeKatex],
     }),
+
     shikiConfig: {
       theme: "catppuccin-mocha",
-      wrap: false, //code wrap
+      wrap: false,
+      transformers: [
+        addCopyButton({
+          toggle: 2000,
+          button: {
+            class: "my-copy-button",
+            title: "copy",
+          },
+        }),
+      ],
     },
   },
 
