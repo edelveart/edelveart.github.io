@@ -2,15 +2,10 @@
   display: none;
 }
 
-.mask-top {
-  border-radius: 20%;
-}
-
 @import "tailwindcss";
 @plugin "daisyui" {
-  /* themes: sunset --default; */
-  themes: false;
-
+    /* themes: night --default; */
+    themes: false;
 }
 
 @plugin "./catppuccinTheme.mocha.ts";
@@ -64,10 +59,67 @@ code {
 
 /* Only with Shiki */
 .astro-code {
-  @apply rounded-md p-4 text-sm font-normal shadow-md border border-base-content/10;
+  @apply rounded-md p-3 text-sm font-normal shadow-md border border-base-content/10;
+  position: relative;
+  padding-right: 2.75rem;
 }
+
+.astro-code code {
+  display: block;
+  overflow-x: auto;
+}
+
+pre button.my-copy-button {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  height: 32px;
+  width: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+pre button.my-copy-button span {
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+}
+
+pre button.my-copy-button .ready {
+  background-color: rgb(from var(--color-base-content) r g b / 0.6) ;
+  -webkit-mask: url("/src/icons/CopyCode.svg") center / contain no-repeat; ;
+  mask: url("/src/icons/CopyCode.svg") center / contain no-repeat; ;
+}
+
+pre button.my-copy-button .success {
+  display: none;
+  background-color: var(--color-primary);
+  -webkit-mask: url("/src/icons/CheckCopy.svg") center / contain no-repeat; ;
+  mask: url("/src/icons/CheckCopy.svg") center / contain no-repeat;;
+
+}
+
+pre button.my-copy-button:not(.copied):hover .ready {
+  background-color: rgb(from var(--color-primary) r g b / 1);
+}
+
+pre button.my-copy-button.copied .success {
+  display: block;
+}
+
+pre button.my-copy-button.copied .ready {
+  display: none;
+}
+
+
+
+/* LINKS to previous post and references in md files */
+
 .prose {
-    max-width: none;
+  max-width: none;
 }
 
 .prose :not(pre) > code {
@@ -78,7 +130,6 @@ code {
   background-color: rgb(from var(--color-base-content) r g b / 0.07);
 }
 
-/* Links to previous post and references in md files */
 .prose :not(div) > a {
   color: rgb(from var(--color-primary) r g b / 0.8);
   text-underline-offset: 2px;
@@ -88,7 +139,6 @@ code {
   color: rgb(from var(--color-primary) r g b / 1);
   text-decoration-thickness: 2px;
 }
-
 
 /* SOLVE GLITCHS PROBLEMS WITH SVG IMAGES */
 /* svg, img[src$=".svg"] {
