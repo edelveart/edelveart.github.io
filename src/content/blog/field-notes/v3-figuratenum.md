@@ -42,6 +42,12 @@ With `ComplexViz`, I begin to address the lack of basic analytic tools for under
 This opens access to more than `150` figurate functions in $\mathbb{C}$, together with zeros and poles as the most significant points of the functions, and artistic possibilities such as Matplotlib-based coloring.
 Some of these are not yet included in the generators, which in fact include many more (`235+`), and may invite you to start experimenting with just a few lines of code.
 
+Copy the snippet below to install it.
+
+```bash
+pip install figuratenum[figurate-viz]
+```
+
 ## What happened under the hood?
 
 What I did in the design of the library was to rethink its internal construction and build a new structure with slightly less pure Python generators and, as already used in version 2, Matplotlib. In this version 3, it also incorporates **SymPy**.
