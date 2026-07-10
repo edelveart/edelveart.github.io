@@ -4,7 +4,7 @@ import ListOfSkills from "@components/ListOfSkills.astro";
 import { techSkillsEnglish } from "@components/ListOfSkills.astro";
 import Education from "@components/Education.astro";
 import { menuEnglish } from "@components/SideBar.astro";
-import { linksTo } from "@components/Biography.astro";
+import { LINKS_TO } from "@styles/utilsCSS";
 import SonicPiModFormsImage from "@components/img-components/SonicPiModFormsImage.astro";
 import FigurateNumImages from "@components/img-components/FigurateNumImages.astro";
 export const BULLET_SQUARE_LIST = {
@@ -33,7 +33,7 @@ export const BULLET_SQUARE_LIST = {
       <p class="mb-4">
         My vision is to create abstractions through structural analogies that naturally lead to
         mathematical discovery from the musical perspective and vice versa. To this end, I design <a
-          class={linksTo}
+          class={LINKS_TO}
           id="projects"
           href={menuEnglish.projectsMenu.href}
         >
@@ -96,7 +96,7 @@ export const BULLET_SQUARE_LIST = {
       <p class="mb-10">
         I have teaching experience at both undergraduate and postgraduate levels, particularly in
         live coding and musicology with a technological focus. See my teaching
-        <a class={linksTo} id="testimonials" href={`/testimonials`}>feedback</a>.
+        <a class={LINKS_TO} id="testimonials" href={`/testimonials`}>feedback</a>.
       </p>
     </article>
   </section>
@@ -199,7 +199,7 @@ export const BULLET_SQUARE_LIST = {
 
       <p class="mb-4">
         This interconnectedness drives me to develop <a
-          class={linksTo}
+          class={LINKS_TO}
           id="projects"
           href={menuEnglish.projectsMenu.href}>libraries</a
         > that automate complex processes while also making it easier to inject ideas between different
@@ -240,7 +240,7 @@ export const BULLET_SQUARE_LIST = {
       </p>
       <p class="mb-4">
         This perspective drives me to build <a
-          class={linksTo}
+          class={LINKS_TO}
           id="projects"
           href={menuEnglish.projectsMenu.href}>libraries</a
         > that automate complex processes and facilitate the flow of ideas between domains.

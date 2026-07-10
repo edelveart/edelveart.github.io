@@ -14,4 +14,4 @@ export const META_BADGE_TAGS = {
   tags: "text-sm text-info/70 hover:text-info/100 transition-colors underline-offset-2 traking-wide font-[450]",
 };
 
-export const LINKS_TO = "text-primary underline hover:decoration-2 underline-offset-2";
+export const LINKS_TO = "text-primary underline  underline-offset-2 hover:decoration-2";
