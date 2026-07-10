@@ -49,25 +49,25 @@ html {
 }
 
 aside {
-  scrollbar-gutter: stable;
-  overflow-y: auto;
+    scrollbar-gutter: stable;
+    overflow-y: auto;
 }
 
 body {
-     font-family: 'Source Sans 3 Variable', sans-serif;
-     font-weight: 450;
+    font-family: 'Source Sans 3 Variable', sans-serif;
+    font-weight: 450;
 }
 
 code {
-     font-family: 'Source Code Pro Variable', monospace;
-   font-weight: 450;
-   font-synthesis: none;
-   font-size: 0.88rem;
+    font-family: 'Source Code Pro Variable', monospace;
+    font-weight: 450;
+    font-synthesis: none;
+    font-size: 0.85rem;
 }
 
 /* Only with Shiki */
 .astro-code {
-  @apply rounded-md text-sm shadow-md border border-base-content/10;
+  @apply text-sm rounded-md shadow-md border border-base-content/10;
 
   position: relative;
   padding: 0.75rem;
@@ -129,7 +129,7 @@ pre button.my-copy-button {
     max-width: none;
 }
 .prose :not(pre) > code {
-  padding: 0.1rem 0.3rem;
+  padding: 0.1rem 0.25rem;
   border-width: 0.0px;
   border-radius: 0.25rem;
   background-color: rgb(from var(--color-base-content) r g b / 0.07);
