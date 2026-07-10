@@ -40,7 +40,12 @@
 
 html {
   scrollbar-gutter: stable ;
-  overflow-y: auto
+  overflow-y: auto;
+  font-size: 17px;
+}
+
+.prose .katex {
+  font-size: 1.05em;
 }
 
 aside {
@@ -49,14 +54,15 @@ aside {
 }
 
 body {
-  font-family: 'Fira Sans', sans-serif;
+     font-family: 'Source Sans 3 Variable', sans-serif;
+     font-weight: 450;
 }
 
 code {
-   font-family: 'Fira Code Variable', monospace;
+     font-family: 'Source Code Pro Variable', monospace;
    font-weight: 450;
    font-synthesis: none;
-   font-size: 0.90rem;
+   font-size: 0.88rem;
 }
 
 /* Only with Shiki */
