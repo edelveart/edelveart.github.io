@@ -33,6 +33,7 @@ const CARD_BUTTONS = {
     no-underline`,
 };
 const tagsOutline = "badge badge-outline text-info/70 hover:text-info/100 ease-in-out duration-150";
+import { LINKS_TO } from "@styles/utilsCSS";
 ---
 
 <BaseLayout
@@ -88,7 +89,7 @@ const tagsOutline = "badge badge-outline text-info/70 hover:text-info/100 ease-i
     <p class="mt-3 mb-4">
       Built on definitions from
       <a
-        class="text-primary underline underline-offset-2 hover:decoration-2"
+        class={LINKS_TO}
         href="https://doi.org/10.1142/8188"
         target="_blank"
         rel="noopener noreferrer"

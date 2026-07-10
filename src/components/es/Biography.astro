@@ -1,22 +1,25 @@
 ---
 import { menuSpanish } from "./SideBar.astro";
-import { linksTo } from "@components/Biography.astro";
+import { LINKS_TO } from "@styles/utilsCSS";
 ---
 
-<section class="mb-8 wrap-break-word hyphens-auto">
+<section class="mb-8 break-normal hyphens-auto">
   <p class="mb-4">
     Desarrollo sistemas creativos que fusionan matemáticas, computación y música a través de
     analogías estructurales.
   </p>
   <p class="mb-4">
     Todos orientados a la composición algorítmica en tiempo real, mis proyectos actuales incluyen
-    <a href="https://rubygems.org/gems/modular_forms" target="_blank" rel="noopener" class={linksTo}
-      >modular forms</a
+    <a
+      href="https://rubygems.org/gems/modular_forms"
+      target="_blank"
+      rel="noopener"
+      class={LINKS_TO}>modular forms</a
     > (inspirados en SageMath/LMFDB) y
-    <a id="projects" href={menuSpanish.projectsMenu.href} rel="noopener" class={linksTo}>
+    <a id="projects" href={menuSpanish.projectsMenu.href} rel="noopener" class={LINKS_TO}>
       generadores de números figurados multidimensionales</a
     > con más de <strong>26 000 descargas</strong>, así como
-    <a href="https://topos.live/#ziffers_tonnetz" target="_blank" rel="noopener" class={linksTo}>
+    <a href="https://topos.live/#ziffers_tonnetz" target="_blank" rel="noopener" class={LINKS_TO}>
       ts-tonnetz</a
     >.
   </p>
@@ -26,13 +29,13 @@ import { linksTo } from "@components/Biography.astro";
       href="https://link.springer.com/chapter/10.1007/978-3-031-07015-0_30"
       target="_blank"
       rel="noopener"
-      class={linksTo}
+      class={LINKS_TO}
     >
       artículo indexado en Scopus</a
     >
     sobre Teoría Matemática de la Música, he ejercido como <a
       id="cy-effective-orcid-url"
-      class={linksTo}
+      class={LINKS_TO}
       href="https://orcid.org/0000-0002-9672-9087"
       target="orcid.widget"
       rel="me noopener noreferrer"

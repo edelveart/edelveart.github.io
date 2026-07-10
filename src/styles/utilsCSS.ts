@@ -13,3 +13,5 @@ export const META_BADGE_TAGS = {
   badge: "text-sm text-info/70 tracking-wider uppercase font-[450]",
   tags: "text-sm text-info/70 hover:text-info/100 transition-colors underline-offset-2 traking-wide font-[450]",
 };
+
+export const LINKS_TO = "text-primary underline hover:decoration-2 underline-offset-2";

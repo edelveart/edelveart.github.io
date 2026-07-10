@@ -4,6 +4,7 @@ import Errata from "@components/resources-components/Errata.astro";
 import MiscFiles from "@components/resources-components/MiscFiles.astro";
 import { SOCIAL_MEDIA } from "@ts-config-path/config";
 import CheatSheets from "@components/resources-components/CheatSheets.astro";
+import { LINKS_TO } from "@styles/utilsCSS";
 ---
 
 <BaseLayout title="Edgar Delgado Vega - Resources">
@@ -22,11 +23,8 @@ import CheatSheets from "@components/resources-components/CheatSheets.astro";
       <p>
         These documents are drafts and may contain errors or omissions. If you find any typos or
         inconsistencies, I would appreciate it if you let me know via
-        <a
-          class="text-primary underline underline-offset-2 hover:decoration-2"
-          target="_blank"
-          href={SOCIAL_MEDIA.linkedin}>LinkedIn</a
-        >. I will be happy to review and correct them as soon as possible.
+        <a class={LINKS_TO} target="_blank" href={SOCIAL_MEDIA.linkedin}>LinkedIn</a>. I will be
+        happy to review and correct them as soon as possible.
       </p>
     </section>
 
@@ -41,7 +39,7 @@ import CheatSheets from "@components/resources-components/CheatSheets.astro";
       All content available on this website, including the documents and related resources, is
       protected by copyright and distributed under the Creative Commons
       <a
-        class="text-primary"
+        class={LINKS_TO}
         target="_blank"
         href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
         blank-
