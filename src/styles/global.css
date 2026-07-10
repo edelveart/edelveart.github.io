@@ -41,11 +41,11 @@
 html {
   scrollbar-gutter: stable ;
   overflow-y: auto;
-  font-size: 17px;
+  font-size: 17.5px
 }
 
-.prose .katex {
-  font-size: 1.05em;
+section .katex, .prose .katex {
+  font-size: 1.1em;
 }
 
 aside {
@@ -55,12 +55,12 @@ aside {
 
 body {
     font-family: 'Source Sans 3 Variable', sans-serif;
-    font-weight: 450;
+    font-weight: 425;
 }
 
 code {
     font-family: 'Source Code Pro Variable', monospace;
-    font-weight: 450;
+    font-weight: 425;
     font-synthesis: none;
     font-size: 0.86rem;
 }
