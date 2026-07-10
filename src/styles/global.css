@@ -53,12 +53,15 @@ body {
 }
 
 code {
-   font-family: 'JetBrains Mono Variable', monospace;
+   font-family: 'Fira Code Variable', monospace;
+   font-weight: 450;
+   font-synthesis: none;
+   font-size: 0.90rem;
 }
 
 /* Only with Shiki */
 .astro-code {
-  @apply rounded-md text-sm font-normal shadow-md border border-base-content/10;
+  @apply rounded-md text-sm shadow-md border border-base-content/10;
 
   position: relative;
   padding: 0.75rem;
@@ -120,11 +123,11 @@ pre button.my-copy-button {
     max-width: none;
 }
 .prose :not(pre) > code {
-  font-size: 0.90rem;
   padding: 0.1rem 0.3rem;
   border-width: 0.0px;
   border-radius: 0.25rem;
   background-color: rgb(from var(--color-base-content) r g b / 0.07);
+
 }
 .prose :not(div) > a {
   color: rgb(from var(--color-primary) r g b / 0.8);
