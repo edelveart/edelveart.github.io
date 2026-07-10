@@ -55,14 +55,14 @@ aside {
 
 body {
     font-family: 'Source Sans 3 Variable', sans-serif;
-    font-weight: 450;
+    font-weight: 425;
 }
 
 code {
     font-family: 'Source Code Pro Variable', monospace;
-    font-weight: 450;
+    font-weight: 425;
     font-synthesis: none;
-    font-size: 0.85rem;
+    font-size: 0.86rem;
 }
 
 /* Only with Shiki */
