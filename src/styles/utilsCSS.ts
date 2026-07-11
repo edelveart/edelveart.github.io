@@ -16,3 +16,5 @@ export const META_BADGE_TAGS = {
 
 export const LINKS_TO =
   "text-primary underline transition-colors underline-offset-2 hover:decoration-2";
+
+export const BORDER_INFO = "border-l-4 pl-4 border-info/40";

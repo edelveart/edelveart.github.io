@@ -1,5 +1,5 @@
 ---
-import { META_BADGE_TAGS } from "@styles/utilsCSS";
+import { BORDER_INFO, META_BADGE_TAGS } from "@styles/utilsCSS";
 import { type BlogSchema } from "../content.config";
 import BaseLayout from "./BaseLayout.astro";
 import dayjs from "dayjs";
@@ -42,7 +42,7 @@ const displayDate = dayjs(pubDate).format("ll");
         }
       </div>
 
-      <div class="border-l-4 border-info/70 pl-4 mt-4 mb-10">
+      <div class=`${BORDER_INFO} mt-4 mb-10`>
         <div class="flex flex-wrap gap-2">
           {
             tags?.map((tag) => (

@@ -5,14 +5,14 @@ import createSlug from "@ts-config-path/lib/createSlug";
 import CardBlog from "@components/CardBlog.astro";
 import Arrows from "@icons/Arrows.astro";
 
-import { NAV_LINKS_PAGES } from "@styles/utilsCSS";
+import { NAV_LINKS_PAGES, BORDER_INFO } from "@styles/utilsCSS";
 
 export async function getStaticPaths({ paginate }) {
   const posts = await getCollection("blog");
   posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
   return paginate(posts, { pageSize: 5 });
 }
-
+import { META_BADGE_TAGS } from "@styles/utilsCSS";
 const { page } = Astro.props as any;
 ---
 
@@ -21,7 +21,39 @@ const { page } = Astro.props as any;
     <div class="mb-5 mt-5" id="Notes">
       <div class="text-3xl w-full font-black flex items-center"> Notes </div>
     </div>
+    <section class="notes-intro">
+      <p> A collection of ideas across mathematics, computation, visualization, and sound. </p>
 
+      <div class=`mt-6 grid gap-4 sm:grid-cols-2 ${BORDER_INFO}`>
+        <div>
+          <h3 class={META_BADGE_TAGS.badge}>Field Notes</h3>
+          <p class="text-sm"
+            >Completed experiments, implementations, and reflections around ongoing projects.</p
+          >
+        </div>
+
+        <div>
+          <h3 class={META_BADGE_TAGS.badge}>Sketch Notes</h3>
+          <p class="text-sm"
+            >Early ideas, unfinished paths, and mathematical-music questions I am still following.
+          </p>
+        </div>
+
+        <div>
+          <h3 class={META_BADGE_TAGS.badge}>Lab Notes</h3>
+          <p class="text-sm"
+            >Long-form explorations of mathematical and musical concepts, structures, and ideas.
+          </p>
+        </div>
+
+        <!-- <div>
+          <h3 class={META_BADGE_TAGS.badge}>Visual Notes</h3>
+          <p class="text-sm"
+            >Experiments where mathematical objects become images, patterns, or geometry.</p
+          >
+        </div> -->
+      </div>
+    </section>
     {
       page.data.length === 0 ? (
         <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">

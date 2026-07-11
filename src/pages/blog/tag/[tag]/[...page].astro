@@ -30,7 +30,10 @@ const params = Astro.params;
   <section class="pb-3 mt-5">
     <div class="mb-5 mt-5" id="BLOG-TAGS">
       <div class="text-3xl w-full font-black flex justify-start">
-        <div>Notes / tag / {params.tag}</div>
+        <div
+          >Notes <span class="hidden md:inline text-base-content/60">·</span>
+          <span class="text-info/75">{params.tag} </span></div
+        >
       </div>
     </div>
 

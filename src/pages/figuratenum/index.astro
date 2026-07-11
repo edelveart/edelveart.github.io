@@ -3,7 +3,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import createSlug from "@ts-config-path/lib/createSlug";
 import Arrows from "@icons/Arrows.astro";
-import { NAV_LINKS_PAGES } from "@styles/utilsCSS";
+import { BORDER_INFO, NAV_LINKS_PAGES } from "@styles/utilsCSS";
 import FigLogo from "@icons/FigLogo.astro";
 
 const docs = await getCollection("figurate");
@@ -47,13 +47,13 @@ import { LINKS_TO } from "@styles/utilsCSS";
           <div>FigurateNum</div>
 
           <div class="md:ml-2 translate-y-px text-base uppercase tracking-widest text-info/80">
-            <span class="hidden md:inline text-base-content/60">·</span>
-            <span class="font-medium">Documentation</span>
+            <span class="hidden md:inline text-info/60"> · </span>
+            <span class="font-semibold">Documentation</span>
           </div>
         </div>
       </h1>
     </div>
-    <div class="flex flex-wrap gap-2 mt-4">
+    <div class=`flex flex-wrap gap-2 mt-4 ${BORDER_INFO}`>
       <a
         class={tagsOutline}
         href="https://pypi.org/project/figuratenum/"
