@@ -32,7 +32,9 @@ const CARD_BUTTONS = {
      hover:border-primary/20 hover:text-primary
     no-underline`,
 };
-const tagsOutline = "badge badge-outline text-info/70 hover:text-info/100 ease-in-out duration-150";
+const tagsOutline =
+  "text-info/75 hover:text-info/100 underline underline-offset-2 hover:decoration-2 transition-colors font-normal text-sm";
+// const tagsOutline = "badge badge-outline text-info/70 hover:text-info/100 ease-in-out duration-150";
 import { LINKS_TO } from "@styles/utilsCSS";
 ---
 
@@ -41,19 +43,19 @@ import { LINKS_TO } from "@styles/utilsCSS";
   sideBarActiveItemID="FIGURATENUM_ACTIVE_PAGE"
 >
   <article class="pb-3 mt-5">
-    <div class="mb-5 mt-5" id="FIGURATENUM-HOME">
+    <div class="mb-4 mt-5" id="FIGURATENUM-HOME">
       <h1 class="flex flex-col md:flex-row md:items-center text-3xl font-black">
         <div class="flex flex-col md:flex-row md:items-center">
           <div>FigurateNum</div>
 
-          <div class="md:ml-2 translate-y-px text-base uppercase tracking-widest text-info/80">
+          <div class="md:ml-2 translate-y-px text-base uppercase tracking-widest text-info/75">
             <span class="hidden md:inline text-info/60"> · </span>
-            <span class="font-semibold">Documentation</span>
+            <span class="font-black">Documentation</span>
           </div>
         </div>
       </h1>
     </div>
-    <div class=`flex flex-wrap gap-2 mt-4 ${BORDER_INFO}`>
+    <div class=`flex flex-wrap gap-x-3 gap-y-2 ${BORDER_INFO}`>
       <a
         class={tagsOutline}
         href="https://pypi.org/project/figuratenum/"

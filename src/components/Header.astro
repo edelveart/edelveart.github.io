@@ -12,9 +12,10 @@ const btnsNavBar = `
   no-underline
   ${transitionMenu}
 `;
+const glassEffect = "bg-base-100/50 backdrop-blur";
 ---
 
-<div class="sticky xl:hidden top-0 z-30 w-full bg-base-100/25 shadow-sm backdrop-blur">
+<div class=`sticky xl:hidden top-0 z-30 w-full ${glassEffect}`>
   <div class="navbar w-full flex items-center justify-between md:px-5 sm:px-3 px-6">
     <!-- LEFT -->
     <div class="navbar-start flex items-center">
@@ -62,10 +63,7 @@ const btnsNavBar = `
   </div>
 </div>
 <!-- PC VIEW -->
-<div
-  class="hidden xl:flex gap-x-8 flex-wrap justify-center sticky top-0 z-30
-  bg-base-100/25 backdrop-blur"
->
+<div class=`hidden xl:flex gap-x-8 flex-wrap justify-center sticky top-0 z-30 ${glassEffect}`>
   <a class=`${btnsNavBar} my-2 py-2` href="/" title="English">
     <span class={`${englishFlag}`}> </span>
     English
