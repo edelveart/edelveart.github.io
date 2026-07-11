@@ -16,10 +16,10 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props as any;
 ---
 
-<BaseLayout title="Edgar Delgado - Blog" sideBarActiveItemID="NOTES_ACTIVE_PAGE">
+<BaseLayout title="Edgar Delgado - Notes" sideBarActiveItemID="NOTES_ACTIVE_PAGE">
   <section class="pb-3 mt-5">
     <div class="mb-5 mt-5" id="Notes">
-      <div class="text-3xl w-full font-black flex items-center"> Blog</div>
+      <div class="text-3xl w-full font-black flex items-center"> Notes </div>
     </div>
 
     {
@@ -59,8 +59,8 @@ const { page } = Astro.props as any;
             </span>
 
             <div>
-              <div class={NAV_LINKS_PAGES.prevNext}>NEWER POSTS</div>
-              <div class={NAV_LINKS_PAGES.pageTitle}>Recent articles</div>
+              <div class={NAV_LINKS_PAGES.prevNext}>NEWER</div>
+              <div class={NAV_LINKS_PAGES.pageTitle}>Recent notes</div>
             </div>
           </a>
         ) : (
@@ -81,8 +81,8 @@ const { page } = Astro.props as any;
         page.url.next ? (
           <a class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`} href={page.url.next}>
             <div class="text-right">
-              <div class={NAV_LINKS_PAGES.prevNext}>OLDER POSTS</div>
-              <div class={NAV_LINKS_PAGES.pageTitle}>Earlier articles</div>
+              <div class={NAV_LINKS_PAGES.prevNext}>OLDER</div>
+              <div class={NAV_LINKS_PAGES.pageTitle}>Earlier notes</div>
             </div>
 
             <span class={NAV_LINKS_PAGES.arrowSpan}>

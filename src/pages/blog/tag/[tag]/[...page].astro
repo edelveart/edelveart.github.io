@@ -26,11 +26,11 @@ const { page } = Astro.props;
 const params = Astro.params;
 ---
 
-<BaseLayout title={"Blog " + params.tag} sideBarActiveItemID="NOTES_ACTIVE_PAGE">
+<BaseLayout title={"Notes / tag / " + params.tag} sideBarActiveItemID="NOTES_ACTIVE_PAGE">
   <section class="pb-3 mt-5">
     <div class="mb-5 mt-5" id="BLOG-TAGS">
       <div class="text-3xl w-full font-black flex justify-start">
-        <div>Blog / tag / {params.tag}</div>
+        <div>Notes / tag / {params.tag}</div>
       </div>
     </div>
 
@@ -71,8 +71,8 @@ const params = Astro.params;
             </span>
 
             <div>
-              <div class={NAV_LINKS_PAGES.prevNext}>NEWER POSTS</div>
-              <div class={NAV_LINKS_PAGES.pageTitle}>Recent articles</div>
+              <div class={NAV_LINKS_PAGES.prevNext}>NEWER</div>
+              <div class={NAV_LINKS_PAGES.pageTitle}>Recent notes</div>
             </div>
           </a>
         ) : (
@@ -84,8 +84,8 @@ const params = Astro.params;
         page.url.next ? (
           <a class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`} href={page.url.next}>
             <div class="text-right">
-              <div class={NAV_LINKS_PAGES.prevNext}>OLDER POSTS</div>
-              <div class={NAV_LINKS_PAGES.pageTitle}>Earlier articles</div>
+              <div class={NAV_LINKS_PAGES.prevNext}>OLDER</div>
+              <div class={NAV_LINKS_PAGES.pageTitle}>Earlier notes</div>
             </div>
 
             <span class={NAV_LINKS_PAGES.arrowSpan}>
