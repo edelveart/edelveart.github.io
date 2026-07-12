@@ -65,11 +65,15 @@ code {
     font-synthesis: none;
 }
 
+:root {
+    --font-size-code: 0.83rem;
+}
+
 /* Only with Shiki */
 .astro-code {
   @apply  rounded-md shadow-md border border-base-content/10;
-  font-size: 0.85em;
-  line-height: 1.4;
+  font-size: var(--font-size-code);
+  line-height: 1.5;
   position: relative;
   padding: 0.75rem;
   padding-bottom: 0;
@@ -83,6 +87,7 @@ code {
 }
 
 .prose :not(pre) > code {
+  font-size: var(--font-size-code);
   padding: 0.1rem 0.25rem;
   border-width: 0.0px;
   border-radius: 0.25rem;
