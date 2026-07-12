@@ -63,13 +63,13 @@ code {
     font-family: 'Source Code Pro Variable', monospace;
     font-weight: 400;
     font-synthesis: none;
-    font-size: 0.86rem;
 }
 
 /* Only with Shiki */
 .astro-code {
-  @apply text-sm rounded-md shadow-md border border-base-content/10;
-
+  @apply  rounded-md shadow-md border border-base-content/10;
+  font-size: 0.85em;
+  line-height: 1.4;
   position: relative;
   padding: 0.75rem;
   padding-bottom: 0;
@@ -81,6 +81,14 @@ code {
     padding-bottom: 0.75rem;
   }
 }
+
+.prose :not(pre) > code {
+  padding: 0.1rem 0.25rem;
+  border-width: 0.0px;
+  border-radius: 0.25rem;
+  background-color: rgb(from var(--color-base-content) r g b / 0.07);
+}
+
 
 pre button.my-copy-button {
   position: absolute;
@@ -150,12 +158,6 @@ pre button.my-copy-button {
   text-decoration-thickness: 2px;
 }
 
-.prose :not(pre) > code {
-  padding: 0.1rem 0.25rem;
-  border-width: 0.0px;
-  border-radius: 0.25rem;
-  background-color: rgb(from var(--color-base-content) r g b / 0.07);
-}
 
 
 /* SOLVE GLITCHS PROBLEMS WITH SVG IMAGES */
