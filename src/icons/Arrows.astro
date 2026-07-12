@@ -1,6 +1,6 @@
 ---
 type Props = {
-  direction?: "left" | "right" | "down";
+  direction?: "left" | "right" | "down" | "up";
   size?: "sm" | "md" | "lg";
 };
 
@@ -8,7 +8,12 @@ const { direction = "right", size = "md" }: Props = Astro.props;
 const sizeClass =
   size === "sm" ? "h-4 w-4" : size === "lg" ? "h-4 w-4 md:h-5 w-5" : "h-4 w-4 md:h-4 w-4";
 
-const rotationClass = direction === "left" ? "rotate-180" : direction === "down" ? "rotate-90" : "";
+const rotationClass = {
+  right: "",
+  down: "rotate-90",
+  left: "rotate-180",
+  up: "-rotate-90",
+}[direction];
 ---
 
 <svg

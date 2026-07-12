@@ -5,7 +5,7 @@ import createSlug from "@ts-config-path/lib/createSlug";
 import CardBlog from "@components/CardBlog.astro";
 import Arrows from "@icons/Arrows.astro";
 
-import { NAV_LINKS_PAGES } from "@styles/utilsCSS";
+import { BORDER_INFO, NAV_LINKS_PAGES } from "@styles/utilsCSS";
 
 export async function getStaticPaths({ paginate }) {
   const all_posts = await getCollection("blog");
@@ -30,75 +30,78 @@ const params = Astro.params;
   <section class="pb-3 mt-5">
     <div class="mb-5 mt-5" id="BLOG-TAGS">
       <div class="text-3xl w-full font-black flex justify-start">
-        <div
-          >Notes <span class="hidden md:inline text-base-content/60">·</span>
-          <span class="text-info/75">{params.tag} </span></div
-        >
+        <div class="flex flex-col md:flex-row md:items-center">
+          Notes
+          <div class="md:ml-2 translate-y-px text-lg uppercase tracking-wider text-info/75">
+            <span class="hidden md:inline text-info/60"> · </span>
+            <span class="font-bold">{params.tag}</span>
+          </div>
+        </div>
       </div>
-    </div>
 
-    {
-      page.data.length === 0 ? (
-        <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
-          <p class="font-bold">Sorry!</p>
-          <p>There are no blog posts to show at the moment. Check back later!</p>
-        </div>
-      ) : (
-        <div class="mt-10">
-          {page.data.map((post) => (
-            <>
-              <CardBlog
-                title={post.data.title}
-                url={"/blog/" + createSlug(post.data.title, post.id)}
-                img={post.data.heroImage}
-                desc={post.data.description}
-                target="_self"
-                pubDate={post.data.pubDate}
-                tags={post.data.tags}
-                badge={post.data.badge}
-              />
-            </>
-          ))}
-        </div>
-      )
-    }
-
-    <div class="divider mt-10"></div>
-
-    <div class="grid grid-cols-2 gap-2 mt-5">
       {
-        page.url.prev ? (
-          <a class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`} href={page.url.prev}>
-            <span class={NAV_LINKS_PAGES.arrowSpan}>
-              <Arrows direction="left" />
-            </span>
-
-            <div>
-              <div class={NAV_LINKS_PAGES.prevNext}>NEWER</div>
-              <div class={NAV_LINKS_PAGES.pageTitle}>Recent notes</div>
-            </div>
-          </a>
+        page.data.length === 0 ? (
+          <div class={`bg-base-200 ${BORDER_INFO} w-full p-4 min-w-full`}>
+            <p class="font-bold">Sorry!</p>
+            <p>There are no blog posts to show at the moment. Check back later!</p>
+          </div>
         ) : (
-          <div />
+          <div class="mt-10">
+            {page.data.map((post) => (
+              <>
+                <CardBlog
+                  title={post.data.title}
+                  url={"/blog/" + createSlug(post.data.title, post.id)}
+                  img={post.data.heroImage}
+                  desc={post.data.description}
+                  target="_self"
+                  pubDate={post.data.pubDate}
+                  tags={post.data.tags}
+                  badge={post.data.badge}
+                />
+              </>
+            ))}
+          </div>
         )
       }
 
-      {
-        page.url.next ? (
-          <a class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`} href={page.url.next}>
-            <div class="text-right">
-              <div class={NAV_LINKS_PAGES.prevNext}>OLDER</div>
-              <div class={NAV_LINKS_PAGES.pageTitle}>Earlier notes</div>
-            </div>
+      <div class="divider mt-10"></div>
 
-            <span class={NAV_LINKS_PAGES.arrowSpan}>
-              <Arrows direction="right" />
-            </span>
-          </a>
-        ) : (
-          <div />
-        )
-      }
+      <div class="grid grid-cols-2 gap-2 mt-5">
+        {
+          page.url.prev ? (
+            <a class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`} href={page.url.prev}>
+              <span class={NAV_LINKS_PAGES.arrowSpan}>
+                <Arrows direction="left" />
+              </span>
+
+              <div>
+                <div class={NAV_LINKS_PAGES.prevNext}>NEWER</div>
+                <div class={NAV_LINKS_PAGES.pageTitle}>Recent notes</div>
+              </div>
+            </a>
+          ) : (
+            <div />
+          )
+        }
+
+        {
+          page.url.next ? (
+            <a class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`} href={page.url.next}>
+              <div class="text-right">
+                <div class={NAV_LINKS_PAGES.prevNext}>OLDER</div>
+                <div class={NAV_LINKS_PAGES.pageTitle}>Earlier notes</div>
+              </div>
+
+              <span class={NAV_LINKS_PAGES.arrowSpan}>
+                <Arrows direction="right" />
+              </span>
+            </a>
+          ) : (
+            <div />
+          )
+        }
+      </div>
     </div>
   </section>
 </BaseLayout>
