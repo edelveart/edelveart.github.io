@@ -18,24 +18,14 @@ const { page } = Astro.props as any;
 ---
 
 <BaseLayout title="Edgar Delgado - Notes" sideBarActiveItemID="NOTES_ACTIVE_PAGE">
-  <section class="pb-3 mt-5">
+  <article class="pb-0 mt-5">
     <div class="mb-5 mt-5" id="Notes">
       <div class="text-3xl w-full font-black flex items-center"> Notes </div>
     </div>
 
-    <details class=`group mt-10 transition-colors group-open:border-info  ${BORDER_INFO}`>
-      <summary
-        class=`list-none cursor-pointer inline-flex items-center gap-2 hover:text-info transition-colors`
-      >
-        Notes Guide
-
-        <span class="transition-transform duration-200 group-open:-rotate-180">
-          <Arrows direction="down" size="sm" />
-        </span>
-      </summary>
-
-      <section class="mt-4">
-        <div class={`grid gap-4 sm:grid-cols-2 `}>
+    {
+      page.currentPage === 1 && (
+        <section class={`grid gap-4 sm:grid-cols-2 ${BORDER_INFO} mt-10 mb-2`}>
           <div>
             <h3 class={META_BADGE_TAGS.badge}>Field Notes</h3>
             <p class="text-sm">
@@ -56,21 +46,19 @@ const { page } = Astro.props as any;
               Long-form explorations of mathematical and musical concepts, structures, and ideas.
             </p>
           </div>
-        </div>
-      </section>
-    </details>
-  </section>
+        </section>
+      )
+    }
 
-  {
-    page.data.length === 0 ? (
-      <div class={`bg-base-200 ${BORDER_INFO} w-full p-4 min-w-full`}>
-        <p class="font-bold">Sorry!</p>
-        <p>There are no blog posts to show at the moment. Check back later!</p>
-      </div>
-    ) : (
-      <div class="mt-10">
-        {page.data.map((post) => (
-          <>
+    {
+      page.data.length === 0 ? (
+        <div class={`bg-base-200 ${BORDER_INFO} w-full p-4 min-w-full`}>
+          <p class="font-bold">Sorry!</p>
+          <p>There are no blog posts to show at the moment. Check back later!</p>
+        </div>
+      ) : (
+        <div class="mt-10">
+          {page.data.map((post) => (
             <CardBlog
               title={post.data.title}
               url={"/blog/" + createSlug(post.data.title, post.id)}
@@ -81,11 +69,11 @@ const { page } = Astro.props as any;
               pubDate={post.data.pubDate}
               tags={post.data.tags}
             />
-          </>
-        ))}
-      </div>
-    )
-  }
+          ))}
+        </div>
+      )
+    }
+  </article>
 
   <div class="divider mt-10"></div>
 
