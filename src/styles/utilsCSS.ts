@@ -10,12 +10,12 @@ export const NAV_LINKS_PAGES = {
 };
 
 export const META_BADGE_TAGS = {
-  badge: "text-sm text-info/75 tracking-wide uppercase font-light",
+  badge: "text-sm text-info/65 tracking-wide uppercase font-light",
   tags: "text-sm text-primary/75 hover:text-primary/100 underline transition-colors underline-offset-2 font-normal hover:decoration-2",
 };
 
 export const LINKS_TO =
-  "text-primary underline transition-colors underline-offset-2 hover:decoration-2";
+  "text-primary underline underline-offset-2 decoration-1 transition-[text-underline-offset,text-decoration-thickness] duration-150 hover:decoration-2";
 
 export const BORDER_INFO =
   "relative border-l-[2px] pl-4 border-base-content/20 before:absolute before:left-[-5px] before:top-1/2 before:-translate-y-1/2 before:h-2 before:w-2 before:rounded-xs before:border before:border-info/50 before:bg-base-100";

@@ -1,5 +1,5 @@
 ---
-import { BORDER_INFO, META_BADGE_TAGS } from "@styles/utilsCSS";
+import { BORDER_INFO, META_BADGE_TAGS, CARD_OP } from "@styles/utilsCSS";
 import { type BlogSchema } from "../content.config";
 import BaseLayout from "./BaseLayout.astro";
 import dayjs from "dayjs";
@@ -20,7 +20,7 @@ const displayDate = dayjs(pubDate).format("ll");
 
       <div class="flex flex-col md:flex-row md:items-start md:gap-2">
         <div class="flex items-center gap-2">
-          {pubDate && <time class="whitespace-nowrap">{displayDate}</time>}
+          {pubDate && <time class="whitespace-nowrap text-neutral-content">{displayDate}</time>}
 
           <span class="text-base-content/60 hidden md:inline">·</span>
 
@@ -34,7 +34,7 @@ const displayDate = dayjs(pubDate).format("ll");
             <div class="flex items-center gap-2">
               <span class="text-base-content/60 ">⟳</span>
 
-              <span class="text-base-content/70 text-sm whitespace-nowrap">
+              <span class={`${CARD_OP.muteData} whitespace-nowrap`}>
                 Updated {dayjs(updatedDate).format("ll")}
               </span>
             </div>
