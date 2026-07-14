@@ -3,7 +3,7 @@
 
 export const SITE_TITLE = "Edgar Delgado Vega | Creative Math Systems Developer";
 export const SITE_DESCRIPTION =
-  " I develop creative systems that merge mathematics, computation, and music. My work seeks correspondences through structural analogies. My current projects include modular forms (SageMath/LMFDB-inspired) and ts-tonnetz, both for real-time algorithmic composition, as well as multidimensional figurate number generators with over 23,000 downloads. I have published an article indexed in Scopus on Mathematical Music Theory, contribute to international open-source projects, and teach postgraduate courses. ";
+  "I develop creative systems that merge mathematics, computation, and music through structural analogies. All for real-time algorithmic composition, my current projects include modular forms (SageMath/LMFDB-inspired) and multidimensional figurate number libraries with over 26,000 downloads, as well as ts-tonnetz. I have published a Scopus-indexed article in Mathematical Music Theory, serve as a peer reviewer for The European Physical Journal Special Topics, contribute to international open-source projects, and teach postgraduate courses.";
 
 export const SITE_URL = "https://edelveart.github.io/";
 export const GENERATE_SLUG_FROM_TITLE = true;
