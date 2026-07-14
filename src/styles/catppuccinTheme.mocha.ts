@@ -3,8 +3,8 @@ import { createCatppuccinPlugin } from "@catppuccin/daisyui";
 export default createCatppuccinPlugin(
   "mocha",
   {
-    primary: "lavender",
-    info: "teal",
+    primary: "mauve",
+    info: "flamingo",
   },
   {
     default: true,
