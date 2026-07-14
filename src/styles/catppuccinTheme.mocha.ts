@@ -4,7 +4,7 @@ export default createCatppuccinPlugin(
   "mocha",
   {
     primary: "lavender",
-    info: "flamingo",
+    info: "teal",
   },
   {
     default: true,
