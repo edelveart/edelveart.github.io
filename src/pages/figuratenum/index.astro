@@ -3,8 +3,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import createSlug from "@ts-config-path/lib/createSlug";
 import Arrows from "@icons/Arrows.astro";
-import { BORDER_INFO, NAV_LINKS_PAGES } from "@styles/utilsCSS";
-import FigLogo from "@icons/FigLogo.astro";
+import { BORDER_INFO, NAV_LINKS_PAGES, META_BADGE_TAGS } from "@styles/utilsCSS";
 
 const docs = await getCollection("figurate");
 // const sortedDocs = docs.sort((a, b) => a.data.order - b.data.order);
@@ -19,7 +18,7 @@ const CARD_BUTTONS = {
   container:
     "p-4 rounded-md flex flex-col h-full min-h-52 border border-base-content/10 rounded-lg",
 
-  title: "text-lg font-bold",
+  title: "text-lg font-semibold",
 
   paragraps: "mt-2 text-sm opacity-80 mb-4",
 
@@ -32,8 +31,7 @@ const CARD_BUTTONS = {
      hover:border-primary/20 hover:text-primary
     no-underline`,
 };
-const tagsOutline =
-  "text-info/75 hover:text-info/100 underline underline-offset-2 hover:decoration-2 transition-colors font-normal text-sm";
+
 // const tagsOutline = "badge badge-outline text-info/70 hover:text-info/100 ease-in-out duration-150";
 import { LINKS_TO } from "@styles/utilsCSS";
 ---
@@ -48,16 +46,16 @@ import { LINKS_TO } from "@styles/utilsCSS";
         <div class="flex flex-col md:flex-row md:items-center">
           <div>FigurateNum</div>
 
-          <div class="md:ml-2 translate-y-px text-lg uppercase tracking-wider text-info/75">
-            <span class="hidden md:inline text-info/60"> · </span>
-            <span class="font-bold">Documentation</span>
+          <div class="md:ml-2 translate-y-px text-lg uppercase tracking-wide text-info/65">
+            <span class="hidden md:inline text-base-content/60"> · </span>
+            <span class="font-light">Documentation</span>
           </div>
         </div>
       </h1>
     </div>
-    <div class=`flex flex-wrap gap-x-3 gap-y-2 ${BORDER_INFO}`>
+    <div class=`flex flex-wrap gap-x-4 gap-y-2 ${BORDER_INFO}`>
       <a
-        class={tagsOutline}
+        class={META_BADGE_TAGS.tags}
         href="https://pypi.org/project/figuratenum/"
         target="_blank"
         rel="noopener noreferrer"
@@ -65,7 +63,7 @@ import { LINKS_TO } from "@styles/utilsCSS";
         PyPI
       </a>
       <a
-        class={tagsOutline}
+        class={META_BADGE_TAGS.tags}
         href="https://github.com/edelveart/figuratenum"
         target="_blank"
         rel="noopener noreferrer"
@@ -73,7 +71,7 @@ import { LINKS_TO } from "@styles/utilsCSS";
         Source Repository
       </a>
       <a
-        class={tagsOutline}
+        class={META_BADGE_TAGS.tags}
         href="https://doi.org/10.5281/zenodo.18250313"
         target="_blank"
         rel="noopener noreferrer"

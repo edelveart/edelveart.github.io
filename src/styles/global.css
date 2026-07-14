@@ -151,6 +151,9 @@ pre button.my-copy-button {
         font-style: normal;
         font-weight: 400;
   }
+    & h1, h2, h3 {
+        color:  var(--color-base-content);
+  }
 }
 
 .prose :not(div) > a {
