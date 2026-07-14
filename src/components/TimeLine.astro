@@ -1,5 +1,6 @@
 ---
 import Arrows from "@icons/Arrows.astro";
+import { CARD_OP } from "@ts-config-path/styles/utilsCSS";
 
 interface Props {
   key?: number;
@@ -20,14 +21,12 @@ const { title, subtitle, description }: Props = Astro.props;
   <div class="experience__data pl-4 pb-4 w-full">
     <details class="group">
       <summary class="cursor-pointer list-none">
-        <h3
-          class="font-semibold mb-1 text-lg transition-colors duration-150 group-hover:text-primary"
-        >
+        <h3 class=`${CARD_OP.title}  mb-1  transition-colors duration-150 group-hover:text-primary`>
           {title}
         </h3>
 
-        <div class="flex items-center gap-2 text-sm">
-          <span class="text-base-content/70">{subtitle}</span>
+        <div class=`${CARD_OP.muteData} flex items-center gap-2 `>
+          <span class="">{subtitle}</span>
 
           {
             description && (
@@ -39,7 +38,11 @@ const { title, subtitle, description }: Props = Astro.props;
         </div>
       </summary>
 
-      {description && <p class="mt-4 whitespace-pre-line max-w-180">{description}</p>}
+      {
+        description && (
+          <p class={`mt-4 whitespace-pre-line max-w-180 ${CARD_OP.parr}`}>{description}</p>
+        )
+      }
     </details>
   </div>
 </div>

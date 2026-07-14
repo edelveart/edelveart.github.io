@@ -12,6 +12,7 @@ export type ProjectType = {
   url: string;
   badge: string;
 };
+import { CARD_OP } from "@styles/utilsCSS";
 ---
 
 <div
@@ -21,11 +22,11 @@ export type ProjectType = {
     <div class="hero-content flex-col md:flex-row p-4">
       <div class="grow w-full">
         <span class={META_BADGE_TAGS.badge}>{badge}</span>
-        <h1 class="text-lg font-semibold mt-0.5 group-hover:text-primary">
+        <h1 class=`${CARD_OP.title} mt-0.5 group-hover:text-primary`>
           {title}
         </h1>
 
-        <p class="text-sm text-balance pt-2 text-base-content/70">{desc}</p>
+        <p class=`text-balance pt-2 ${CARD_OP.parr}`>{desc}</p>
       </div>
       {
         img && (

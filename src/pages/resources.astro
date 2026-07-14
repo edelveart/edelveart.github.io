@@ -4,7 +4,7 @@ import Errata from "@components/resources-components/Errata.astro";
 import MiscFiles from "@components/resources-components/MiscFiles.astro";
 import { SOCIAL_MEDIA } from "@ts-config-path/config";
 import CheatSheets from "@components/resources-components/CheatSheets.astro";
-import { BORDER_INFO, LINKS_TO, META_BADGE_TAGS } from "@styles/utilsCSS";
+import { BORDER_INFO, LINKS_TO, META_BADGE_TAGS, CARD_OP } from "@styles/utilsCSS";
 ---
 
 <BaseLayout title="Edgar Delgado Vega - Resources">
@@ -20,7 +20,7 @@ import { BORDER_INFO, LINKS_TO, META_BADGE_TAGS } from "@styles/utilsCSS";
 
     <section class=`text-sm ${BORDER_INFO} mb-8`>
       <h3 class={META_BADGE_TAGS.badge}>Corrections and Versions</h3>
-      <p class="text-base-content/80">
+      <p class=`${CARD_OP.muteData}`>
         These documents are drafts and may contain errors or omissions. If you find any typos or
         inconsistencies, I would appreciate it if you let me know via
         <a class={LINKS_TO} target="_blank" href={SOCIAL_MEDIA.linkedin}>LinkedIn</a>. I will be
@@ -35,7 +35,7 @@ import { BORDER_INFO, LINKS_TO, META_BADGE_TAGS } from "@styles/utilsCSS";
 
   <section class=`text-sm mb-8 ${BORDER_INFO}`>
     <h3 class={META_BADGE_TAGS.badge}>Legal Notice</h3>
-    <p class="text-base-content/75">
+    <p class=`${CARD_OP.muteData}`>
       All content available on this website, including the documents and related resources, is
       protected by copyright and distributed under the Creative Commons
       <a
@@ -48,7 +48,7 @@ import { BORDER_INFO, LINKS_TO, META_BADGE_TAGS } from "@styles/utilsCSS";
       </a>
       (Attribution-NonCommercial-NoDerivatives) license.
     </p>
-    <p class="text-base-content/70">
+    <p class=`${CARD_OP.muteData}`>
       This means you are free to copy and redistribute the material in any medium or format, as long
       as appropriate credit is given, it is not used for commercial purposes, and no modifications
       or derivative works are made. Commercial use and modification of the material are not

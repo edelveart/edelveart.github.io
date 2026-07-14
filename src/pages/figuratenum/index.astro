@@ -14,13 +14,14 @@ const THEORY = docsMap["Fundamentals"];
 const API = docsMap["API: PlaneFigurateNum"];
 const CONTRIBUTING = docsMap["Contributing"];
 
+import { LINKS_TO, CARD_OP } from "@styles/utilsCSS";
 const CARD_BUTTONS = {
   container:
     "p-4 rounded-md flex flex-col h-full min-h-52 border border-base-content/10 rounded-lg",
 
-  title: "text-lg font-semibold",
+  title: `${CARD_OP.title}`,
 
-  paragraps: "mt-2 text-sm text-base-content/70 mb-4",
+  paragraps: `mt-2 mb-4 ${CARD_OP.parr}`,
 
   //   btns: "btn btn-ghost border border-base-content/10 rounded-md h-12 mt-auto justify-center font-bold transition-colors duration-200 hover:bg-base-200 hover:border-primary/20",
 
@@ -33,7 +34,6 @@ const CARD_BUTTONS = {
 };
 
 // const tagsOutline = "badge badge-outline text-info/70 hover:text-info/100 ease-in-out duration-150";
-import { LINKS_TO } from "@styles/utilsCSS";
 ---
 
 <BaseLayout
