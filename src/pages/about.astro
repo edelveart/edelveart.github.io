@@ -11,6 +11,7 @@ export const BULLET_SQUARE_LIST = {
   li: "flex items-start gap-2",
   span: "mt-[9px] w-1.5 h-1.5 border border-primary   bg-primary opacity-60 rounded-xs shrink-0",
 };
+import { BLOCK_QUOTE } from "@styles/utilsCSS";
 ---
 
 <!-- https://math.uchicago.edu/~chonoles/miscellany/quotations/ -->
@@ -21,9 +22,9 @@ export const BULLET_SQUARE_LIST = {
     </div>
 
     <article class="mb-10 mt-10">
-      <blockquote class="my-10">
-        <p class="font-light opacity-80 text-right text-sm">Geometry determines arithmetic.</p>
-        <footer class="text-right text-xs font-light mt-1">— M. Hindry and J. Silverman</footer>
+      <blockquote class=`my-10 ${BLOCK_QUOTE}`>
+        <p class="">Geometry determines arithmetic.</p>
+        <footer>— M. Hindry and J. Silverman</footer>
       </blockquote>
 
       <p class="mb-4">
@@ -41,12 +42,12 @@ export const BULLET_SQUARE_LIST = {
         </a> that enable tackling complex problems in creative ways.
       </p>
 
-      <blockquote class="my-10">
-        <p class="opacity-80 text-right text-sm text-balance">
+      <blockquote class=`my-10 ${BLOCK_QUOTE}`>
+        <p class="text-balance">
           Code should be seen as well as heard, underlying algorithms viewed as well as their visual
           outcome.
         </p>
-        <footer class="text-right text-xs mt-1">— TOPLAP Manifesto</footer>
+        <footer>— TOPLAP Manifesto</footer>
       </blockquote>
 
       <!-- <Code code={`gem install modular_forms`} lang="shell" theme="catppuccin-mocha" /> -->
@@ -59,12 +60,12 @@ export const BULLET_SQUARE_LIST = {
         systematic approach is a genuine pathway to new concepts.
       </p>
 
-      <blockquote class="my-10">
-        <p class="opacity-80 text-right text-sm text-balance">
+      <blockquote class=`my-10 ${BLOCK_QUOTE}`>
+        <p class="text-balance">
           Precise knowledge of the behavior of an analytic function in the neighborhood of its
           singular points is a source of number-theoretic theorems.
         </p>
-        <footer class="text-right text-xs mt-1">— E. Hecke</footer>
+        <footer>— E. Hecke</footer>
       </blockquote>
 
       <!-- <Code code={`pip install figuratenum`} lang="shell" theme="catppuccin-mocha" /> -->
@@ -101,8 +102,8 @@ export const BULLET_SQUARE_LIST = {
     </article>
   </section>
 
-  <blockquote class="mb-12">
-    <p class="opacity-80 text-right text-sm text-balance">
+  <blockquote class=`mb-12 ${BLOCK_QUOTE}`>
+    <p class="text-balance">
       I've tried to learn the hidden beauty in various things, but still for many areas the source
       of interest is for me a complete mystery. My theory is that too often people project their
       human weaknesses/properties onto their mathematical activity. There are obvious examples on
@@ -111,7 +112,7 @@ export const BULLET_SQUARE_LIST = {
       computability/decidability comes from the desire of a total control. <br /> Fascination with iterations
       is similar to the hypnotism of rhythmic music.
     </p>
-    <footer class="text-right text-xs mt-1">— Maxim Kontsevich</footer>
+    <footer>— Maxim Kontsevich</footer>
   </blockquote>
 
   <ListOfSkills title="Technologies" techSkills={techSkillsEnglish} indices={[0, 1, 2, 3]} />
