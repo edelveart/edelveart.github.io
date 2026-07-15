@@ -23,6 +23,7 @@ const aLinkBorder = `
     hover:border-primary/20 hover:text-primary
     no-underline
 `;
+const KBD = "kbd bg-base-100 rounded-sm";
 ---
 
 <div class="my-12 flex justify-start gap-x-4 gap-y-4 flex-wrap items-center">
@@ -30,25 +31,25 @@ const aLinkBorder = `
     _blank">
     <LinkedIn class="w-5" alt="LinkedIn" />
     {contactText}
-    <kbd class="kbd bg-base-100">L</kbd>
+    <kbd class={KBD}>L</kbd>
   </a>
   <a id="github-btn" class={aLinkBorder} href={SOCIAL_MEDIA.github} target="_blank">
     <GitHub class="w-5" alt="github" />
     GitHub
-    <kbd class="kbd bg-base-100">G</kbd>
+    <kbd class={KBD}>G</kbd>
   </a>
 
   <a id="youtube-btn" class={aLinkBorder} href={SOCIAL_MEDIA.youtube} target="_blank">
     <Youtube class="w-5" alt="youtube" />
     YouTube
-    <kbd class="kbd bg-base-100">Y</kbd>
+    <kbd class={KBD}>Y</kbd>
   </a>
 
   <!-- START-QR  -->
   <label for="qr-modal" class={`${aLinkBorder} cursor-pointer`}>
     <QR class="w-5" alt="qr code" />
     See QR
-    <kbd class="kbd bg-base-100">Q</kbd>
+    <kbd class={KBD}>Q</kbd>
   </label>
 
   <input type="checkbox" id="qr-modal" class="modal-toggle" />

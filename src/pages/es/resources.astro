@@ -4,7 +4,7 @@ import Errata from "@components/resources-components/Errata.astro";
 import MiscFiles from "@components/resources-components/MiscFiles.astro";
 import { SOCIAL_MEDIA } from "@ts-config-path/config";
 import CheatSheets from "@components/resources-components/CheatSheets.astro";
-import { BORDER_INFO, LINKS_TO } from "@styles/utilsCSS";
+import { BORDER_INFO, LINKS_TO, GET_COLORS_METADATA } from "@styles/utilsCSS";
 ---
 
 <BaseLayout title="Edgar Delgado Vega - Resources">
@@ -19,7 +19,7 @@ import { BORDER_INFO, LINKS_TO } from "@styles/utilsCSS";
     </p>
 
     <section class=`text-sm  mb-8 ${BORDER_INFO}`>
-      <h3 class="text-info">Correcciones y versiones</h3>
+      <h3 class={GET_COLORS_METADATA("warning")}>Correcciones y versiones</h3>
       <p>
         Estos documentos son borradores y pueden contener errores u omisiones. Si encuentras alguna
         errata o inconsistencia, te agradecería que me lo informaras a través de <a
@@ -37,7 +37,7 @@ import { BORDER_INFO, LINKS_TO } from "@styles/utilsCSS";
   </article>
 
   <section class=`text-sm  mb-8 ${BORDER_INFO}`>
-    <h3 class="text-info">Aviso Legal</h3>
+    <h3 class={GET_COLORS_METADATA("warning")}>Aviso Legal</h3>
     <p>
       Todo el contenido disponible en este sitio web, incluyendo los documentos y recursos
       relacionados, está protegido por derechos de autor y se distribuye bajo la licencia Creative

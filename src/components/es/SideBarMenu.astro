@@ -13,8 +13,8 @@ type Props = {
   hrefProjects: string;
   resourcesMenu: string;
   hrefResources: string;
-  figurateMenu: string;
-  hrefFigurate: string;
+  notesMenu: string;
+  hrefNotes: string;
 };
 
 const {
@@ -26,11 +26,12 @@ const {
   hrefProjects,
   resourcesMenu,
   hrefResources,
-  figurateMenu,
-  hrefFigurate,
+  notesMenu,
+  hrefNotes,
 } = Astro.props;
 
 import { isExactActive, isSectionActive } from "@ts-config-path/lib/routes";
+import Blog from "@icons/Blog.astro";
 const current = Astro.url.pathname;
 ---
 
@@ -80,16 +81,16 @@ const current = Astro.url.pathname;
         <span class={sideMenuCss.spanText}>{resourcesMenu}</span>
       </a>
     </li>
-    <!-- <li>
+    <li>
       <a
-        class={`${sideMenuCss.divCss} ${isSectionActive(current, hrefFigurate) ? activePage : ""}`}
-        href={hrefFigurate}
+        class={`${sideMenuCss.divCss} ${isSectionActive(current, hrefNotes) ? activePage : ""}`}
+        href={hrefNotes}
       >
         <span class={sideMenuCss.iconBox}>
-          <img src="/svg-ggb/ico-figuratenum.png" alt="FigurateNumber - ICO" class="w-7 h-7" />
+          <Blog />
         </span>
-        <span class={sideMenuCss.spanText}>{figurateMenu}</span>
+        <span class={sideMenuCss.spanText}>{notesMenu}</span>
       </a>
-    </li> -->
+    </li>
   </ul>
 </div>

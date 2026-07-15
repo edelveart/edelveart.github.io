@@ -2,6 +2,7 @@ import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 import createSlug from "./lib/createSlug";
+import { BADGE_COLORS, type BadgeName } from "@styles/utilsCSS";
 
 const blogSchema = z.object({
   title: z.string(),
@@ -9,7 +10,7 @@ const blogSchema = z.object({
   pubDate: z.coerce.date(),
   updatedDate: z.string().optional(),
   heroImage: z.string().optional(),
-  badge: z.string().optional(),
+  badge: z.enum(Object.keys(BADGE_COLORS) as [BadgeName, ...BadgeName[]]).optional(),
   tags: z
     .array(z.string().transform((val) => createSlug(val)))
     .refine((items) => new Set(items).size === items.length, {

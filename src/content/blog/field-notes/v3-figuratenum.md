@@ -3,7 +3,7 @@ title: "Two years leading to FigurateNum v3 visualizations in the complex plane"
 description: "A short personal note on the visualization layer of FigurateNum v3, where figurate numbers enter the complex plane through domain coloring."
 pubDate: "June 28 2026"
 heroImage: "/itemPreview.webp"
-badge: "Field Notes"
+badge: "field notes"
 tags: ["figurate numbers", "visualization", "complex analysis",  "phase portraits", "generating functions", "domain coloring", "complex plane", "python"]
 ---
 
@@ -12,7 +12,7 @@ After almost two years and nearly reaching 20 thousand downloads, between readin
 <blockquote class="my-10">
 Precise knowledge of the behavior of an analytic function in the neighborhood of its
 singular points is a source of number-theoretic theorems.
-<footer class="text-xs mt-1">— E. Hecke</footer>
+<footer class="mt-1">— E. Hecke</footer>
 </blockquote>
 
 This note reflects on recent developments, implementation details, and ideas behind FigurateNum v3.

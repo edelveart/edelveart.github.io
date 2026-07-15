@@ -12,8 +12,7 @@ export async function getStaticPaths({ paginate }) {
   posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
   return paginate(posts, { pageSize: 5 });
 }
-import { META_BADGE_TAGS } from "@styles/utilsCSS";
-import TimeLine from "@components/TimeLine.astro";
+import { GET_COLORS_METADATA } from "@styles/utilsCSS";
 const { page } = Astro.props as any;
 ---
 
@@ -27,21 +26,21 @@ const { page } = Astro.props as any;
       page.currentPage === 1 && (
         <section class={`grid gap-4 sm:grid-cols-2 ${BORDER_INFO} mt-10 mb-2`}>
           <div>
-            <h3 class={META_BADGE_TAGS.badge}>Field Notes</h3>
+            <h3 class={GET_COLORS_METADATA("field notes")}>Field Notes</h3>
             <p class="text-sm">
               Completed experiments, implementations, and reflections around ongoing projects.
             </p>
           </div>
 
           <div>
-            <h3 class={META_BADGE_TAGS.badge}>Sketch Notes</h3>
+            <h3 class={GET_COLORS_METADATA("sketch notes")}>Sketch Notes</h3>
             <p class="text-sm">
               Early ideas, unfinished paths, and mathematical-music questions I am still following.
             </p>
           </div>
 
           <div>
-            <h3 class={META_BADGE_TAGS.badge}>Lab Notes</h3>
+            <h3 class={GET_COLORS_METADATA("lab notes")}>Lab Notes</h3>
             <p class="text-sm">
               Long-form explorations of mathematical and musical concepts, structures, and ideas.
             </p>

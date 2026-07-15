@@ -3,7 +3,7 @@ title: "Category of Modules and Type-Level Programming with Figurate Numbers"
 description: "I invite you to explore the intersection of figurate numbers and module theory, where type-level programming unlocks new possibilities for math and live coding music."
 pubDate: "October 25 2025"
 heroImage: "/itemPreview.webp"
-badge: "Lab Notes"
+badge: "lab notes"
 tags: ["algebra", "typescript",  "type-level programming", "type-theory",  "figurate numbers", "module theory"]
 ---
 

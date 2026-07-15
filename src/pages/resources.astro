@@ -4,7 +4,7 @@ import Errata from "@components/resources-components/Errata.astro";
 import MiscFiles from "@components/resources-components/MiscFiles.astro";
 import { SOCIAL_MEDIA } from "@ts-config-path/config";
 import CheatSheets from "@components/resources-components/CheatSheets.astro";
-import { BORDER_INFO, LINKS_TO, META_BADGE_TAGS, CARD_OP } from "@styles/utilsCSS";
+import { BORDER_INFO, LINKS_TO, GET_COLORS_METADATA, CARD_OP } from "@styles/utilsCSS";
 ---
 
 <BaseLayout title="Edgar Delgado Vega - Resources">
@@ -19,7 +19,7 @@ import { BORDER_INFO, LINKS_TO, META_BADGE_TAGS, CARD_OP } from "@styles/utilsCS
     </p>
 
     <section class=`text-sm ${BORDER_INFO} mb-8`>
-      <h3 class={META_BADGE_TAGS.badge}>Corrections and Versions</h3>
+      <h3 class={GET_COLORS_METADATA("warning")}>Corrections and Versions</h3>
       <p class=`${CARD_OP.muteData}`>
         These documents are drafts and may contain errors or omissions. If you find any typos or
         inconsistencies, I would appreciate it if you let me know via
@@ -34,7 +34,7 @@ import { BORDER_INFO, LINKS_TO, META_BADGE_TAGS, CARD_OP } from "@styles/utilsCS
   </article>
 
   <section class=`text-sm mb-8 ${BORDER_INFO}`>
-    <h3 class={META_BADGE_TAGS.badge}>Legal Notice</h3>
+    <h3 class={GET_COLORS_METADATA("warning")}>Legal Notice</h3>
     <p class=`${CARD_OP.muteData}`>
       All content available on this website, including the documents and related resources, is
       protected by copyright and distributed under the Creative Commons

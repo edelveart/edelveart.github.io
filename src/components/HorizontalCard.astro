@@ -1,6 +1,5 @@
 ---
 const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
-import { META_BADGE_TAGS } from "@styles/utilsCSS";
 import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
@@ -12,7 +11,7 @@ export type ProjectType = {
   url: string;
   badge: string;
 };
-import { CARD_OP } from "@styles/utilsCSS";
+import { CARD_OP, GET_COLORS_METADATA } from "@styles/utilsCSS";
 ---
 
 <div
@@ -21,7 +20,7 @@ import { CARD_OP } from "@styles/utilsCSS";
   <a href={url} target={target} rel="noopener">
     <div class="hero-content flex-col md:flex-row p-4">
       <div class="grow w-full">
-        <span class={META_BADGE_TAGS.badge}>{badge}</span>
+        <span class={GET_COLORS_METADATA("field notes")}>{badge}</span>
         <h1 class=`${CARD_OP.title} mt-0.5 group-hover:text-primary`>
           {title}
         </h1>

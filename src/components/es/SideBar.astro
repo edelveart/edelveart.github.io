@@ -21,18 +21,16 @@ export const menuSpanish = {
     text: "Recursos",
     href: "/es/resources",
   },
-  figurateMenu: {
-    text: "FigurateNum",
-    href: "/figuratenum",
+  notesMenu: {
+    text: "Notas",
+    href: "/blog",
   },
 };
 ---
 
 <div class="drawer-side z-40" id="sidebar-scroll-container">
   <label for="my-drawer" class="drawer-overlay"></label>
-  <aside
-    class="px-2 pt-2 h-full min-h-full w-72 max-w-72 bg-base-100 text-base-content flex flex-col"
-  >
+  <aside class="px-2 pt-2 h-full min-h-full w-72 max-w-72 bg-base-100 flex flex-col">
     <div class="w-fit mx-auto mt-12 mb-6">
       <a href="/">
         <div class="avatar transition ease-in-out hover:scale-[102%] block m-auto">
@@ -52,9 +50,11 @@ export const menuSpanish = {
       hrefProjects={menuSpanish.projectsMenu.href}
       resourcesMenu={menuSpanish.resourcesMenu.text}
       hrefResources={menuSpanish.resourcesMenu.href}
-      figurateMenu={menuSpanish.figurateMenu.text}
-      hrefFigurate={menuSpanish.figurateMenu.href}
+      notesMenu={menuSpanish.notesMenu.text}
+      hrefNotes={menuSpanish.notesMenu.href}
     />
+    <!-- figurateMenu={menuSpanish.figurateMenu.text}
+      hrefFigurate={menuSpanish.figurateMenu.href} -->
     <footer
       class="footer footer-center flex justify-center-safe gap-x-1 items-center pt-0 mt-auto mb-6"
     >

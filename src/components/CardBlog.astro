@@ -7,8 +7,7 @@ import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 dayjs.extend(localizedFormat);
 const displayDate = dayjs(pubDate).format("ll");
-import { META_BADGE_TAGS } from "@styles/utilsCSS";
-import { CARD_OP } from "@styles/utilsCSS";
+import { CARD_OP, GET_COLORS_METADATA } from "@styles/utilsCSS";
 ---
 
 <a
@@ -21,7 +20,7 @@ import { CARD_OP } from "@styles/utilsCSS";
     <span class={CARD_OP.muteData}> · </span>
 
     <!-- <span class="text-base-content/60 text-sm font-medium">{badge}</span> -->
-    <span class={META_BADGE_TAGS.badge}>
+    <span class={GET_COLORS_METADATA(badge)}>
       {badge}
     </span>
   </div>

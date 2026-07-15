@@ -3,7 +3,7 @@ title: "A Field Extension Perspective on Formal Languages"
 description: "This post explores an analogy between formal languages and field extensions, using ideas from Galois theory to reframe truth, interpretation, and metalanguage hierarchies in logic."
 pubDate: "September 27 2025"
 heroImage: "/itemPreview.webp"
-badge: "Sketch Notes"
+badge: "sketch notes"
 tags: ["field extensions", "formal logic", "Tarski hierarchy", "galois representation", "metalanguages", "mathematics"]
 ---
 

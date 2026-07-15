@@ -3,7 +3,7 @@ title: "Perfectoid Rings Breakdance in Sonic Pi?"
 description: "I move through perfectoid rings, p-adic towers, and the Frobenius map, wondering if any of it could ever end up in Sonic Pi’s sandbox."
 pubDate: "May 25 2026"
 heroImage: "/itemPreview.webp"
-badge: "Sketch Notes"
+badge: "sketch notes"
 tags: [ "perfectoid rings", "figurate_numbers", "live coding", "Sonic Pi",  "p-adics",  "infinite sequences" ]
 ---
 
