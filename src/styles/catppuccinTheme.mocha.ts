@@ -7,6 +7,7 @@ export default createCatppuccinPlugin(
     secondary: "teal",
     info: "rosewater", //  info: default = sky, optional good is teal
     accent: "peach",
+    // "accent-content": "sapphire",
     "base-content": "text",
     "secondary-content": "subtext1",
     "neutral-content": "subtext0",
