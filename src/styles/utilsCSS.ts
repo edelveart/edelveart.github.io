@@ -27,17 +27,17 @@ export const BLOCK_QUOTE = `text-right ${CARD_OP.muteData}`;
 const metaBase = "text-sm tracking-wide uppercase font-light";
 
 export const BADGE_COLORS = {
-  "no-listed": `${metaBase} text-base-content/75`,
+  "field notes": `${metaBase} text-accent/75`,
+  "lab notes": `${metaBase} text-secondary/75`,
+  "sketch notes": `${metaBase} text-info/75`,
   tags: "text-sm text-primary/75 hover:text-primary/100 underline transition-colors underline-offset-2 font-normal hover:decoration-2",
-  "field notes": `${metaBase} text-info/75`,
-  "sketch notes": `${metaBase} text-warning/75`,
-  "lab notes": `${metaBase} text-success/75`,
   warning: `${metaBase} text-warning/85`,
+  NO_LISTED: `${metaBase} text-base-content/75`,
 } as const;
 
 export type BadgeName = keyof typeof BADGE_COLORS;
 export type BadgeClass = (typeof BADGE_COLORS)[BadgeName];
 
 export function GET_COLORS_METADATA(badge?: BadgeName): BadgeClass {
-  return BADGE_COLORS[badge ?? "no-listed"];
+  return BADGE_COLORS[badge ?? "NO_LISTED"];
 }
