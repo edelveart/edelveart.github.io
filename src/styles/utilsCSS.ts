@@ -32,6 +32,7 @@ export const BADGE_COLORS = {
   "sketch notes": `${metaBase} text-info/75`,
   tags: "text-sm text-primary/75 hover:text-primary/100 underline transition-colors underline-offset-2 font-normal hover:decoration-2",
   warning: `${metaBase} text-warning/85`,
+  cardsImg: `${metaBase} text-info/90`,
   NO_LISTED: `${metaBase} text-base-content/75`,
 } as const;
 
