@@ -4,7 +4,7 @@ import Errata from "@components/resources-components/Errata.astro";
 import MiscFiles from "@components/resources-components/MiscFiles.astro";
 import { SOCIAL_MEDIA } from "@ts-config-path/config";
 import CheatSheets from "@components/resources-components/CheatSheets.astro";
-import { BORDER_INFO, LINKS_TO, GET_COLORS_METADATA } from "@styles/utilsCSS";
+import { BORDER_INFO, LINKS_TO, GET_COLORS_METADATA, CARD_OP } from "@styles/utilsCSS";
 ---
 
 <BaseLayout title="Edgar Delgado Vega - Resources">
@@ -52,6 +52,12 @@ import { BORDER_INFO, LINKS_TO, GET_COLORS_METADATA } from "@styles/utilsCSS";
       siempre que se dé el crédito adecuado, no se use con fines comerciales y no se realicen
       modificaciones ni se creen obras derivadas. No se permite el uso comercial ni la alteración
       del material sin autorización explícita.
+    </p>
+  </section>
+  <section class=`text-sm mb-8 ${BORDER_INFO}` }>
+    <h3 class={GET_COLORS_METADATA("warning")}>AI Assistance</h3>
+    <p class=`${CARD_OP.muteData}` }>
+      AI tools assist with grammatical review and translation. Final review remains with the author.
     </p>
   </section>
 </BaseLayout>

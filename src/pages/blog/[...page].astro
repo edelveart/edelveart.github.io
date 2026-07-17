@@ -5,7 +5,7 @@ import createSlug from "@ts-config-path/lib/createSlug";
 import CardBlog from "@components/CardBlog.astro";
 import Arrows from "@icons/Arrows.astro";
 
-import { NAV_LINKS_PAGES, BORDER_INFO } from "@styles/utilsCSS";
+import { NAV_LINKS_PAGES, BORDER_INFO, CARD_OP } from "@styles/utilsCSS";
 
 export async function getStaticPaths({ paginate }) {
   const posts = await getCollection("blog");
@@ -73,7 +73,12 @@ const { page } = Astro.props as any;
       )
     }
   </article>
-
+  <section class=`text-sm mb-8 ${BORDER_INFO}` }>
+    <h3 class={GET_COLORS_METADATA("warning")}>AI Assistance</h3>
+    <p class=`${CARD_OP.muteData}` }>
+      AI tools assist with grammatical review and translation. Final review remains with the author.
+    </p>
+  </section>
   <div class="divider mt-10"></div>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-5">
