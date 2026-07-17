@@ -73,13 +73,18 @@ const { page } = Astro.props as any;
       )
     }
   </article>
-  <section class=`text-sm mb-8 ${BORDER_INFO}` }>
-    <h3 class={GET_COLORS_METADATA("warning")}>AI Assistance</h3>
-    <p class={CARD_OP.parr}>
-      AI tools are used to assist with grammar, translation, and occasional discussion of ideas.
-      Final review remains with the author.
-    </p>
-  </section>
+  {
+    page.currentPage === 1 && (
+      <section class={`text-sm mb-8 mt-12 ${BORDER_INFO}`}>
+        <h3 class={GET_COLORS_METADATA("warning")}>AI Assistance</h3>
+        <p class={CARD_OP.parr}>
+          AI tools are used to assist with grammar and occasional discussion of ideas. Final review
+          remains with the author.
+        </p>
+      </section>
+    )
+  }
+
   <div class="divider mt-10"></div>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-5">
