@@ -1,5 +1,5 @@
 ---
-title: "Two years leading to FigurateNum v3 visualizations in the complex plane"
+title: "Two Years Leading to FigurateNum v3 Visualizations in the Complex Plane"
 description: "A short personal note on the visualization layer of FigurateNum v3, where figurate numbers enter the complex plane through domain coloring."
 pubDate: "June 28 2026"
 heroImage: "/itemPreview.webp"

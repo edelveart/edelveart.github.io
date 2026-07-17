@@ -20,7 +20,7 @@ import { BORDER_INFO, LINKS_TO, GET_COLORS_METADATA, CARD_OP } from "@styles/uti
 
     <section class=`text-sm  mb-8 ${BORDER_INFO}`>
       <h3 class={GET_COLORS_METADATA("warning")}>Correcciones y versiones</h3>
-      <p>
+      <p class={CARD_OP.parr}>
         Estos documentos son borradores y pueden contener errores u omisiones. Si encuentras alguna
         errata o inconsistencia, te agradecería que me lo informaras a través de <a
           class={LINKS_TO}
@@ -38,7 +38,7 @@ import { BORDER_INFO, LINKS_TO, GET_COLORS_METADATA, CARD_OP } from "@styles/uti
 
   <section class=`text-sm  mb-8 ${BORDER_INFO}`>
     <h3 class={GET_COLORS_METADATA("warning")}>Aviso Legal</h3>
-    <p>
+    <p class={CARD_OP.parr}>
       Todo el contenido disponible en este sitio web, incluyendo los documentos y recursos
       relacionados, está protegido por derechos de autor y se distribuye bajo la licencia Creative
       Commons <a
@@ -55,9 +55,10 @@ import { BORDER_INFO, LINKS_TO, GET_COLORS_METADATA, CARD_OP } from "@styles/uti
     </p>
   </section>
   <section class=`text-sm mb-8 ${BORDER_INFO}` }>
-    <h3 class={GET_COLORS_METADATA("warning")}>AI Assistance</h3>
-    <p class=`${CARD_OP.muteData}` }>
-      AI tools assist with grammatical review and translation. Final review remains with the author.
+    <h3 class={GET_COLORS_METADATA("warning")}>Asistencia de IA</h3>
+    <p class={CARD_OP.parr}>
+      La IA sirve de apoyo para la corrección gramatical, la traducción y la discusión ocasional de
+      ideas. La revisión final corresponde al autor.
     </p>
   </section>
 </BaseLayout>
