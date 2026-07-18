@@ -72,7 +72,7 @@ import { NAV_LINKS_PAGES } from "@styles/utilsCSS";
       prevPost ? (
         <a
           class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`}
-          href={"/blog/" + prevPost.slug}
+          href={"/blog/" + prevPost.slug + "/"}
         >
           <span class={NAV_LINKS_PAGES.arrowSpan}>
             <Arrows direction="left" />
@@ -84,7 +84,7 @@ import { NAV_LINKS_PAGES } from "@styles/utilsCSS";
           </div>
         </a>
       ) : (
-        <a class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`} href={"/blog/"}>
+        <a class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`} href="/blog/">
           <span class={NAV_LINKS_PAGES.arrowSpan}>
             <Arrows direction="left" />
           </span>
@@ -101,7 +101,7 @@ import { NAV_LINKS_PAGES } from "@styles/utilsCSS";
       nextPost ? (
         <a
           class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`}
-          href={"/blog/" + nextPost.slug}
+          href={"/blog/" + nextPost.slug + "/"}
         >
           <div class="text-right">
             <div class={NAV_LINKS_PAGES.prevNext}>OLDER</div>

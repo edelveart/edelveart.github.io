@@ -60,7 +60,7 @@ const { page } = Astro.props as any;
           {page.data.map((post) => (
             <CardBlog
               title={post.data.title}
-              url={"/blog/" + createSlug(post.data.title, post.id)}
+              url={"/blog/" + createSlug(post.data.title, post.id) + "/"}
               img={post.data.heroImage}
               desc={post.data.description}
               target="_self"

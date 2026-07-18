@@ -51,7 +51,7 @@ const params = Astro.params;
               <>
                 <CardBlog
                   title={post.data.title}
-                  url={"/blog/" + createSlug(post.data.title, post.id)}
+                  url={"/blog/" + createSlug(post.data.title, post.id) + "/"}
                   img={post.data.heroImage}
                   desc={post.data.description}
                   target="_self"

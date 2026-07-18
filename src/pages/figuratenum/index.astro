@@ -87,16 +87,14 @@ const CARD_BUTTONS = {
     </p>
 
     <p class="mt-3 mb-4">
-      Built on definitions from
-      <a
+      Built on definitions from <a
         class={LINKS_TO}
         href="https://doi.org/10.1142/8188"
         target="_blank"
         rel="noopener noreferrer"
-      >
-        Deza & Deza (2012)</a
-      >, every sequence is deterministic and reproducible. Optional visualization tools cover phase
-      portraits and modular patterns.
+        >Deza & Deza (2012)
+      </a>, every sequence is deterministic and reproducible. Optional visualization tools cover
+      phase portraits and modular patterns.
     </p>
 
     <!-- - Sequence generation (lazy iterators) in $\mathbb{Z}$
@@ -115,7 +113,7 @@ const CARD_BUTTONS = {
           OVERVIEW && (
             <a
               class={CARD_BUTTONS.btns}
-              href={"/figuratenum/" + createSlug(OVERVIEW.data.title, OVERVIEW.id)}
+              href={"/figuratenum/" + createSlug(OVERVIEW.data.title, OVERVIEW.id) + "/"}
             >
               Start here
               <span class="ml-2">
@@ -136,7 +134,7 @@ const CARD_BUTTONS = {
           THEORY && (
             <a
               class={CARD_BUTTONS.btns}
-              href={"/figuratenum/" + createSlug(THEORY.data.title, THEORY.id)}
+              href={"/figuratenum/" + createSlug(THEORY.data.title, THEORY.id) + "/"}
             >
               Explore theory
               <span class="ml-2">
@@ -157,7 +155,7 @@ const CARD_BUTTONS = {
           API && (
             <a
               class={CARD_BUTTONS.btns}
-              href={"/figuratenum/" + createSlug(API.data.title, API.id)}
+              href={"/figuratenum/" + createSlug(API.data.title, API.id) + "/"}
             >
               View API
               <span class="ml-2">
@@ -177,7 +175,7 @@ const CARD_BUTTONS = {
           CONTRIBUTING && (
             <a
               class={CARD_BUTTONS.btns}
-              href={"/figuratenum/" + createSlug(CONTRIBUTING.data.title, CONTRIBUTING.id)}
+              href={"/figuratenum/" + createSlug(CONTRIBUTING.data.title, CONTRIBUTING.id) + "/"}
             >
               Contribute
               <span class="ml-2">
@@ -195,7 +193,7 @@ const CARD_BUTTONS = {
       OVERVIEW && (
         <a
           class={`${NAV_LINKS_PAGES.aLink} justify-end`}
-          href={"/figuratenum/" + createSlug(OVERVIEW.data.title, OVERVIEW.id)}
+          href={"/figuratenum/" + createSlug(OVERVIEW.data.title, OVERVIEW.id) + "/"}
         >
           <div class="text-right">
             <div class={NAV_LINKS_PAGES.prevNext}>NEXT</div>

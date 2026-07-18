@@ -9,6 +9,7 @@ import { addCopyButton } from "shiki-transformer-copy-button";
 
 export default defineConfig({
   site: "https://edelveart.github.io",
+  trailingSlash: "always",
   integrations: [
     // mdx(),
     sitemap({

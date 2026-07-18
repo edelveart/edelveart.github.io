@@ -48,7 +48,7 @@ const nextDoc = sorted[index + 1] ?? null;
       prevDoc ? (
         <a
           class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`}
-          href={"/figuratenum/" + createSlug(prevDoc.data.title, prevDoc.id)}
+          href={"/figuratenum/" + createSlug(prevDoc.data.title, prevDoc.id) + "/"}
         >
           <span class={NAV_LINKS_PAGES.arrowSpan}>
             <Arrows direction="left" />
@@ -60,7 +60,7 @@ const nextDoc = sorted[index + 1] ?? null;
           </div>
         </a>
       ) : (
-        <a class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`} href="/figuratenum">
+        <a class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`} href="/figuratenum/">
           <span class={NAV_LINKS_PAGES.arrowSpan}>
             <Arrows direction="left" />
           </span>
@@ -77,7 +77,7 @@ const nextDoc = sorted[index + 1] ?? null;
       nextDoc ? (
         <a
           class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`}
-          href={"/figuratenum/" + createSlug(nextDoc.data.title, nextDoc.id)}
+          href={"/figuratenum/" + createSlug(nextDoc.data.title, nextDoc.id) + "/"}
         >
           <div class="text-right">
             <div class={NAV_LINKS_PAGES.prevNext}>NEXT</div>

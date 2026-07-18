@@ -46,7 +46,7 @@ const figuratePosts = await getCollection("figurate");
 const sortedFigurate = figuratePosts.sort((a, b) => a.data.order - b.data.order);
 
 const figurateLinks = sortedFigurate.map((post) => {
-  const href = "/figuratenum/" + createSlug(post.data.title, post.id);
+  const href = "/figuratenum/" + createSlug(post.data.title, post.id) + "/";
   return {
     title: post.data.title,
     href,
@@ -136,7 +136,7 @@ export const sideMenuCss = {
 
     <!-- CONDITIONAL SUBMENU OF DOCS -->
     {
-      isSectionActive(current, "/figuratenum") && (
+      isSectionActive(current, "/figuratenum/") && (
         <li>
           <ul class="ml-2">
             {figurateLinks.map((link) => (
