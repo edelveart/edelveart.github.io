@@ -1,6 +1,6 @@
 import { defineConfig, passthroughImageService } from "astro/config";
 import { unified } from "@astrojs/markdown-remark";
-import mdx from "@astrojs/mdx";
+// import mdx from "@astrojs/mdx"; // NOT INSTALLED (only .md content)
 import sitemap from "@astrojs/sitemap";
 import remarkMath from "remark-math"; // KaTeX
 import rehypeKatex from "rehype-katex"; // KaTeX
@@ -10,7 +10,7 @@ import { addCopyButton } from "shiki-transformer-copy-button";
 export default defineConfig({
   site: "https://edelveart.github.io",
   integrations: [
-    mdx(),
+    // mdx(),
     sitemap({
       filter: (page) => {
         if (!page) return false;
