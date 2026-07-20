@@ -71,7 +71,7 @@ code {
 
 /* Only with Shiki */
 .astro-code {
-  @apply  rounded-md shadow-md border border-base-content/10;
+  @apply  rounded-md shadow-md border border-primary/12 ;
   font-size: var(--font-size-code);
   line-height: 1.5;
   position: relative;
