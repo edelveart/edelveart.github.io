@@ -2,7 +2,7 @@
 title: "Two Years Leading to FigurateNum v3 Visualizations in the Complex Plane"
 description: "A short personal note on the visualization layer of FigurateNum v3, where figurate numbers enter the complex plane through domain coloring."
 pubDate: "June 28 2026"
-heroImage: "/itemPreview.webp"
+heroImage: "/LinkedInProfile.webp"
 badge: "field notes"
 tags: ["figurate numbers", "visualization", "complex analysis",  "phase portraits", "generating functions", "domain coloring", "complex plane", "python"]
 ---

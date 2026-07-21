@@ -2,9 +2,9 @@
 title: "Category of Modules and Type-Level Programming with Figurate Numbers"
 description: "I invite you to explore the intersection of figurate numbers and module theory, where type-level programming unlocks new possibilities for math and live coding music."
 pubDate: "October 25 2025"
-heroImage: "/itemPreview.webp"
+heroImage: "/LinkedInProfile.webp"
 badge: "lab notes"
-tags: ["algebra", "typescript",  "type-level programming", "type-theory",  "figurate numbers", "module theory"]
+tags: ["algebra", "typescript",  "type-level programming", "type-theory",  "figurate numbers", "module theory", "sonic pi"]
 ---
 
 Where do numbers live when a program computes them? Not in memory, exactly, that's just their temporary residence. I mean their abstract home, the mathematical space where sequences unfold according to their rules.

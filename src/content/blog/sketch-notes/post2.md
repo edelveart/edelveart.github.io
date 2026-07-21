@@ -2,7 +2,7 @@
 title: "Generators as Symbolic Exploration"
 description: "A reflection on the extension and unification of figurate numbers within broader mathematical contexts."
 pubDate: "September 18 2025"
-heroImage: "/itemPreview.webp"
+heroImage: "/LinkedInProfile.webp"
 badge: "sketch notes"
 tags: ["python", "ruby", "figurate numbers", "live coding", "integer sequences", "gamma function"]
 ---

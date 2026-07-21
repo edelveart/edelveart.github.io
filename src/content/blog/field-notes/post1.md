@@ -2,9 +2,9 @@
 title: "My Journey with Figurate Numbers"
 description: "How I developed two of my most downloaded libraries that fuse mathematics, art, and music."
 pubDate: "September 13 2025"
-heroImage: "/itemPreview.webp"
+heroImage: "/LinkedInProfile.webp"
 badge: "field notes"
-tags: ["python", "ruby", "figurate numbers",  "live coding", "integer sequences"]
+tags: ["python", "ruby", "figurate numbers", "sonic pi", "live coding", "integer sequences"]
 ---
 
 ## The Spark
