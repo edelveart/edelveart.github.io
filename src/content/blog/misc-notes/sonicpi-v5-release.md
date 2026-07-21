@@ -104,9 +104,8 @@ Likewise, with `puts chord_names`, I found these new chord options:
 
 ## Audio
 
-For me, one of the most impressive things in Sonic Pi 5 is the new **SuperSonic** audio backend. I haven’t explored the full codebase yet, but the ideas behind it are fascinating.
-
-The new audio architecture gives us a much more engineering-oriented view of what is happening behind the scenes. The panel now shows the live audio node tree:
+For me, one of the most impressive things is the new **SuperSonic** audio backend. I haven’t explored the full codebase yet, but the ideas behind it are fascinating.
+The new audio architecture gives us a much more engineering-oriented view of what is happening internally. The panel now shows the live audio node tree:
 
 - ENGINE
 - OSC
