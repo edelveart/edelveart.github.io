@@ -2,7 +2,7 @@
 title: "Sonic Pi 5 RC First Impressions with What Is Love"
 description: "First impressions of Sonic Pi 5 RC through live coding, interface improvements, new musical features, and my What Is Love (Haddaway) adaptation."
 pubDate: "July 20 2026"
-heroImage: "/itemPreview.webp"
+heroImage: "/sonicpi-v5-node-tree.webp"
 badge: "misc notes"
 tags: ["sonic pi", "live coding", "ruby", "creative coding", "sonic pi tutorial", "music technology", "computer music", "algorithmic composition", "mathematics"]
 ---
