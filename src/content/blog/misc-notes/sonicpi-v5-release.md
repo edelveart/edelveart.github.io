@@ -104,7 +104,9 @@ Likewise, with `puts chord_names`, I found these new chord options:
 
 ## Audio
 
-Finally, one of the major changes is the new audio architecture powered by **SuperSonic**. The panel now provides a more engineering-oriented view of the audio node tree:
+For me, one of the most impressive things in Sonic Pi 5 is the new **SuperSonic** audio backend. I haven’t explored the full codebase yet, but the ideas behind it are fascinating.
+
+The new audio architecture gives us a much more engineering-oriented view of what is happening behind the scenes. The panel now shows the live audio node tree:
 
 - ENGINE
 - OSC
@@ -119,7 +121,7 @@ Finally, one of the major changes is the new audio architecture powered by **Sup
 
 We can also observe **`Groups`**, **`Synths`**, **`FX`**, and **`Samples`** operating in real time inside this tree.
 
-This is a really valuable visualization for anyone interested in touch what happens behind the scenes during a performance. And what you are seeing here is exactly **What Is Love**. Below comes the promised gift.
+This is a really valuable visualization for anyone curious about what is happening behind the scenes during a performance. And what you are seeing here is exactly **What Is Love**. Below comes the promised gift.
 
 ## Code and performance
 
