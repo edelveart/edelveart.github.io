@@ -43,7 +43,7 @@ Likewise, the visual representation of the `cutoff` parameter through bars (visi
 
 ### Editor
 
-I noticed the new dynamic event visualization features added to the editor. Now, each triggered sound event can generate visual feedback through three customizable options, each with adjustable brightness:
+I noticed the new dynamic event visualization features added to the editor. Now, every triggered sound event can generate visual feedback through three customizable options, each with adjustable brightness:
 
 - Flash code on sound trigger
 - Flash gutter on sound trigger
