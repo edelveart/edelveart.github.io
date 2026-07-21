@@ -1,16 +1,16 @@
 ---
 title: "Sonic Pi 5 RC First Impressions with What Is Love"
-description: "First impressions of Sonic Pi 5 RC through live coding, interface improvements, new musical features, and my What Is Love (Haddaway) adaptation."
+description: "My first impressions of Sonic Pi 5 RC, from the perspective of a live coder, including interface improvements, new musical features, and my adaptation of What Is Love by Haddaway."
 pubDate: "July 20 2026"
 heroImage: "/svg-ggb/sonicpi-v5-node-tree.webp"
 badge: "misc notes"
+updatedDate: "July 21 2026"
 tags: ["sonic pi", "live coding", "ruby", "creative coding", "sonic pi tutorial", "music technology", "computer music", "algorithmic composition", "mathematics"]
 ---
 
-I am going to share my first impressions of the new **Sonic Pi 5** release candidate from the perspective of someone who loves live coding, including the new interface, documentation workflow, editor visualizations, audio features, and some of the new musical material.
-At the end of this post, I’ll also share a small gift that some people have asked me for so they can experiment with it.
+These are my first impressions of the new Sonic Pi 5 release candidate from the perspective of someone who loves live coding. I'll cover the new interface, documentation workflow, editor visualizations, audio features, and some of the new musical material. At the end, I'll also share a small gift that some people have asked me for so they can experiment with it.
 
-> I also checked my `Ruby` gems, and they still work correctly: [figurate_numbers](https://rubygems.org/gems/figurate_numbers) and [modular_forms](https://rubygems.org/gems/modular_forms/versions/0.0.5)
+> I also tested my two **Ruby** gems, [figurate_numbers](https://rubygems.org/gems/figurate_numbers) and [modular_forms](https://rubygems.org/gems/modular_forms/versions/0.0.5), and they continue to work correctly in Sonic Pi 5.
 
 ## First look at the new interface
 
@@ -49,7 +49,7 @@ I noticed the new dynamic event visualization features added to the editor. Now,
 - Flash gutter on sound trigger
 - Show live loop scopes
 
-## Documentation as a learning tool
+## The documentation is a live learning tool
 
 The documentation available through the help panel using the **`F1` key** is impressive. It creates a natural bridge for people coming from music production environments, **DAWs**, and hardware synthesizers.
 
@@ -110,7 +110,7 @@ The new audio architecture gives us a much more engineering-oriented view of wha
 - OSC
 - CLOCK
 - DSP
-- Link Audio
+- LINK AUDIO
 - SCSYNTH
 - BUFFERS
 - ERRORS
@@ -236,4 +236,3 @@ end
 ## Closing thoughts
 
 My thanks to [**Sam Aaron**](https://www.patreon.com/samaaron/posts/sonic-pi-v5-1-164093369) and the entire [**Sonic Pi**](https://in-thread.sonic-pi.net/) community for continuing to evolve this amazing creative environment.
-
