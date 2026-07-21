@@ -118,9 +118,9 @@ The new audio architecture gives us a much more engineering-oriented view of wha
 
 <img class="rounded-md shadow-sm shadow-primary/50" src="/svg-ggb/sonicpi-v5-node-tree.webp" alt="Sonic Pi v5 Node Tree">
 
-We can also observe **`Groups`**, **`Synths`**, **`FX`**, and **`Samples`** operating in real time inside this tree.
+We can also observe **`Groups`**, **`Synths`**, **`FX`**, and **`Samples`** interacting in real time within this graph structure. This makes it much easier to trace the flow of audio and see how the different components are connected during a performance.
 
-This is a really valuable visualization for anyone curious about what is happening behind the scenes during a performance. And what you are seeing here is exactly **What Is Love**. Below comes the promised gift.
+And what you are seeing in the image above is exactly **What Is Love**. At the beginning of the track, the **sample counter** is still at zero. Now, as promised, here comes the gift.
 
 ## Code and performance
 
