@@ -3,7 +3,11 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import createSlug from "@ts-config-path/lib/createSlug";
 import Arrows from "@icons/Arrows.astro";
-import { BORDER_INFO, NAV_LINKS_PAGES, GET_COLORS_METADATA } from "@styles/utilsCSS";
+import {
+  BORDER_INFO,
+  NAV_LINKS_PAGES,
+  GET_COLORS_METADATA,
+} from "@styles/utilsCSS";
 
 const docs = await getCollection("figurate");
 // const sortedDocs = docs.sort((a, b) => a.data.order - b.data.order);
@@ -46,8 +50,10 @@ const CARD_BUTTONS = {
         <div class="flex flex-col md:flex-row md:items-center">
           <div>FigurateNum</div>
 
-          <div class="md:ml-2 translate-y-px text-lg uppercase tracking-wider text-info/75">
-            <span class="hidden md:inline text-base-content/60"> · </span>
+          <div
+            class="md:ml-2 translate-y-px text-lg uppercase tracking-wider text-primary/75"
+          >
+            <span class="hidden md:inline text-base-content/60">·</span>
             <span class="font-light">Documentation</span>
           </div>
         </div>
@@ -81,9 +87,9 @@ const CARD_BUTTONS = {
     </div>
 
     <p class="mb-4 mt-10">
-      <strong>FigurateNum</strong> generates and visualizes 235+ plane, space, and multidimensional figurate
-      number sequences and families, from polygonal numbers to Platonic solids and higher-dimensional
-      analogues.
+      <strong>FigurateNum</strong> generates and visualizes 235+ plane, space, and
+      multidimensional figurate number sequences and families, from polygonal numbers
+      to Platonic solids and higher-dimensional analogues.
     </p>
 
     <p class="mt-3 mb-4">
@@ -92,9 +98,10 @@ const CARD_BUTTONS = {
         href="https://doi.org/10.1142/8188"
         target="_blank"
         rel="noopener noreferrer"
-        >Deza & Deza (2012)
-      </a>, every sequence is deterministic and reproducible. Optional visualization tools cover
-      phase portraits and modular patterns.
+      >
+        Deza & Deza (2012)
+      </a>, every sequence is deterministic and reproducible. Optional
+      visualization tools cover phase portraits and modular patterns.
     </p>
 
     <!-- - Sequence generation (lazy iterators) in $\mathbb{Z}$
@@ -106,14 +113,18 @@ const CARD_BUTTONS = {
       <div class={CARD_BUTTONS.container}>
         <h2 class={CARD_BUTTONS.title}>Learn from Scratch</h2>
         <p class={CARD_BUTTONS.paragraps}>
-          Start with sequence generation and work through parametric families, higher dimensions,
-          and visualization tools.
+          Start with sequence generation and work through parametric families,
+          higher dimensions, and visualization tools.
         </p>
         {
           OVERVIEW && (
             <a
               class={CARD_BUTTONS.btns}
-              href={"/figuratenum/" + createSlug(OVERVIEW.data.title, OVERVIEW.id) + "/"}
+              href={
+                "/figuratenum/" +
+                createSlug(OVERVIEW.data.title, OVERVIEW.id) +
+                "/"
+              }
             >
               Start here
               <span class="ml-2">
@@ -127,14 +138,16 @@ const CARD_BUTTONS = {
       <div class={CARD_BUTTONS.container}>
         <h2 class={CARD_BUTTONS.title}>Mathematical Theory</h2>
         <p class={CARD_BUTTONS.paragraps}>
-          Explore the basic definitions, notation, and core ideas behind figurate numbers and their
-          geometric interpretations.
+          Explore the basic definitions, notation, and core ideas behind
+          figurate numbers and their geometric interpretations.
         </p>
         {
           THEORY && (
             <a
               class={CARD_BUTTONS.btns}
-              href={"/figuratenum/" + createSlug(THEORY.data.title, THEORY.id) + "/"}
+              href={
+                "/figuratenum/" + createSlug(THEORY.data.title, THEORY.id) + "/"
+              }
             >
               Explore theory
               <span class="ml-2">
@@ -148,8 +161,8 @@ const CARD_BUTTONS = {
       <div class={CARD_BUTTONS.container}>
         <h2 class={CARD_BUTTONS.title}>API Reference</h2>
         <p class={CARD_BUTTONS.paragraps}>
-          Auto-generated reference for all sequence generators, ComplexViz, and DiscreteViz,
-          organized by dimension.
+          Auto-generated reference for all sequence generators, ComplexViz, and
+          DiscreteViz, organized by dimension.
         </p>
         {
           API && (
@@ -169,13 +182,18 @@ const CARD_BUTTONS = {
       <div class={CARD_BUTTONS.container}>
         <h2 class={CARD_BUTTONS.title}>Contributing</h2>
         <p class={CARD_BUTTONS.paragraps}>
-          Run tests, add new sequences, correct mathematical errata, and submit pull requests.
+          Run tests, add new sequences, correct mathematical errata, and submit
+          pull requests.
         </p>
         {
           CONTRIBUTING && (
             <a
               class={CARD_BUTTONS.btns}
-              href={"/figuratenum/" + createSlug(CONTRIBUTING.data.title, CONTRIBUTING.id) + "/"}
+              href={
+                "/figuratenum/" +
+                createSlug(CONTRIBUTING.data.title, CONTRIBUTING.id) +
+                "/"
+              }
             >
               Contribute
               <span class="ml-2">
@@ -193,7 +211,9 @@ const CARD_BUTTONS = {
       OVERVIEW && (
         <a
           class={`${NAV_LINKS_PAGES.aLink} justify-end`}
-          href={"/figuratenum/" + createSlug(OVERVIEW.data.title, OVERVIEW.id) + "/"}
+          href={
+            "/figuratenum/" + createSlug(OVERVIEW.data.title, OVERVIEW.id) + "/"
+          }
         >
           <div class="text-right">
             <div class={NAV_LINKS_PAGES.prevNext}>NEXT</div>
