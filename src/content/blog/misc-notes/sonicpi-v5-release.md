@@ -148,7 +148,7 @@ The format I will use for my own `figurate-numbers.txt` card deck is based on po
 $$
 \begin{array}{ccc}
 S_3(n) & S_4(n) & S_5(n)\\[2mm]
-\text{triangulares} & \text{cuadrados} & \text{pentagonales}
+\text{triangular} & \text{square} & \text{pentagonal}
 \end{array}
 $$
 
