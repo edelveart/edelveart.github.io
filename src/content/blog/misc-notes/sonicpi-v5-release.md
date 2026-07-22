@@ -4,7 +4,7 @@ description: "My first impressions of Sonic Pi 5 RC, including interface and aud
 pubDate: "July 20 2026"
 heroImage: "/svg-ggb/sonicpi-v5-node-tree.webp"
 badge: "misc notes"
-updatedDate: "July 21 2026"
+updatedDate: "July 22 2026"
 tags: ["sonic pi", "live coding", "ruby", "creative coding", "sonic pi tutorial", "music technology", "computer music", "algorithmic composition", "mathematics"]
 ---
 
@@ -197,7 +197,7 @@ The new audio architecture gives us a much more **engineering-oriented** view of
 | CLOCK      | Tempo, Beat, Phase, Playing, Peers        |
 | DSP        | Load, Peak, Overruns                      |
 | LINK AUDIO | In, Underruns, Buffered, Drift, Publish   |
-| SCSYNTH    | Msgs, Queue, Max                          | Last, Late, Age, Debug |
+| SCSYNTH    | Msgs, Queue, Max-Last, Late Age, Debug    |
 | BUFFERS    | SynthDefs, Buffers, Buf Bytes             |
 | ERRORS     | Dropped, Q Drop, Seq Gaps, Lates, Corrupt |
 
