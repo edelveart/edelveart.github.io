@@ -51,9 +51,9 @@ Continuing with the interface improvements, what I found especially interesting 
 
 <img class="rounded-md shadow-sm shadow-primary/50" src="/svg-ggb/sonicpi-v5.webp" alt="Sonic Pi v5">
 
-Beyond explaining **ADSR envelopes**, these controls make the possible range of each `parameter` much clearer. Instead of guessing valid values or discovering them through trial and error, the visual interface immediately shows the available possibilities and encourages exploration.
+Beyond explaining the meaning of each envelope and parameter, these controls make valid ranges immediately visible, reducing trial and error and the need to consult the documentation.
 
-For example, a parameter such as `phase` becomes more intuitive when its range is visually represented:
+For example, the visualization of `phase` in the **Echo FX** clearly defines its operating range:
 
 $$
 \textrm{phase} \in \mathbb{R}, \quad 0 \le \textrm{phase} \le 1.
@@ -61,7 +61,7 @@ $$
 
 This kind of feedback creates a natural connection between programming and mathematical concepts such as intervals and functions.
 
-Likewise, the visual representation of the `cutoff` parameter through bars (visible in the image above) provides an immediate view of how **filtering changes** the frequency range, particularly the attenuation of higher frequencies, without relying only on numerical values.
+Likewise, the visual representation of the `cutoff` through bars (visible in the image above) provides an immediate view of how **filtering changes** the frequency range, particularly the attenuation of higher frequencies, without relying only on numerical values.
 
 ### Visuals
 
