@@ -164,6 +164,9 @@ end
 ```
 ````
 
+Simply keep the same structure and change the deck names, card titles, descriptions, and Sonic Pi snippets.
+
+> A single `.txt` file can contain multiple `# Deck` sections with multiple `## Card` examples inside each one.
 
 ## SuperSonic, node tree and live metrics
 
