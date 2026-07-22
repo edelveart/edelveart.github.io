@@ -1,6 +1,6 @@
 ---
 title: "Sonic Pi 5 RC First Impressions with What Is Love"
-description: "My first impressions of Sonic Pi 5 RC, from the perspective of a live coder, including interface improvements, new musical features, and my adaptation of What Is Love by Haddaway."
+description: "My first impressions of Sonic Pi 5 RC, including interface and audio improvements, documentation workflow, new musical features, a tutorial for creating custom card decks, and my adaptation of What Is Love by Haddaway."
 pubDate: "July 20 2026"
 heroImage: "/svg-ggb/sonicpi-v5-node-tree.webp"
 badge: "misc notes"
@@ -12,18 +12,24 @@ These are my first impressions of the new Sonic Pi 5 release candidate from the 
 
 > I also tested my two **Ruby** gems, [figurate_numbers](https://rubygems.org/gems/figurate_numbers) and [modular_forms](https://rubygems.org/gems/modular_forms/versions/0.0.5), and they continue to work correctly in Sonic Pi 5.
 
-## First look at the new interface
+
+## Preferences: First look at the new interface
 
 The interface redesign also made a great impression on me. It feels more modern, cleaner, and more enjoyable to work with.
 
 We finally have theme customization, including **hue** changes, **transparency**, **monochrome**, and **color inversion**, providing a more personalized experience. The available themes are:
 
-- Light
-- Dark
-- High Contrast
-- Mild Dark (really nice on my eyes)
-- Phosphor (I selected this one for the images below and guessed the percentage of hue adjustment I used)
-- Signal
+| Theme             | Hover description                                  |
+| ----------------- | -------------------------------------------------- |
+| **Light**         | Light colour scheme                                |
+| **Dark**          | Dark colour scheme                                 |
+| **High Contrast** | High-contrast colour scheme for maximum legibility |
+| **Mild Dark**     | A softer, low contrast color scheme                |
+| **Phosphor**      | A green-on-black CRT colour scheme                 |
+| **Signal**        | High-contrast blue-and-gold colour scheme          |
+
+
+I selected **Phosphor** for the images below. Can you guess the hue adjustment value I used? However, I think I’ll be working with **Mild Dark** on a daily basis, as it feels really comfortable and easy on the eyes.
 
 Continuing with the interface improvements, what I found especially interesting is how the new control sliders support understanding and experimentation.
 
@@ -41,13 +47,19 @@ This kind of feedback creates a natural connection between programming and mathe
 
 Likewise, the visual representation of the `cutoff` parameter through bars (visible in the image above) provides an immediate view of how **filtering changes** the frequency range, particularly the attenuation of higher frequencies, without relying only on numerical values.
 
-### Editor
+### Visuals
 
-I noticed the new dynamic event visualization features added to the editor. Now, every triggered sound event can generate visual feedback through three customizable options, each with adjustable brightness:
+I noticed the new **dynamic event visualization** features added to the editor. Now, every triggered sound event can generate visual feedback through three customizable options, each with adjustable brightness:
 
-- Flash code on sound trigger
+- Flash code on sound trigger:
 - Flash gutter on sound trigger
 - Show live loop scopes
+
+Most interesting is the small oscilloscope and spectrum display (bar-style visualization) attached directly to the code line.
+
+### Audio
+
+What is immediately noticeable is the possibility to **record audio + video**. This is superb, as it removes the need for external software to capture our sessions. There are also the audio options, such as selecting the audio device/driver, sample rate, and buffer size.
 
 ## The documentation is a live learning tool
 
@@ -73,7 +85,7 @@ Additionally, it would be great if the lists inside **`Tutorial`**, **`Examples`
 This is only a design observation from my experience using the interface, but I think these small details could make Sonic Pi even more comfortable for a wider range of users.
 
 
-## Music material: new scales and samples
+## Music materials: new scales and samples
 
 Using `puts scale_names`, I found some new scales available in this version:
 
@@ -101,19 +113,74 @@ Likewise, with `puts chord_names`, I found these new chord options:
 )
 ```
 
-## Audio
+## Card Decks: A Tutorial
+
+In the **Menu → Examples**, there is a `QuickStart Cards` option that opens a panel with code snippet cards. These cards allow you to **copy** the snippet, **drag** it into the code editor, and listen to it with a play button, among other features. In fact, this is a wonderful educational tool. Here I'll show you how to create your own.
+
+<img class="rounded-md shadow-sm shadow-primary/50" src="/svg-ggb/sonicpi-v5-cards.webp" alt="Sonic Pi v5 CARDS">
+
+To create a personalized card deck, go to **Examples → Load Card Set...** and create a `my-example-deck.txt` file. If you try to open an empty file or one with an invalid format, you will see this message:
+
+```txt
+my-example-deck.txt is not a valid card set.
+No card decks were found.
+A card set needs at least one "Deck: name" line followed by "## Card title" cards
+```
+
+The format I will use for my own `figurate-numbers.txt` card deck is based on polygonal numbers ($S_3(n)$, $S_4(n)$, $S_5(n)$):
+
+````md
+# Deck: Figurate Numbers
+Numbers that grow into shapes. Turn mathematical patterns into musical melodies.
+
+## Triangular Numbers
+Numbers arranged like triangles. Each step adds a new layer to the pattern.
+```
+live_loop :triangular do
+  notes = [1, 3, 6, 10, 15]
+  play notes.tick + 60
+  sleep 0.5
+end
+```
+
+## Square Numbers
+Numbers built from equal rows and columns. A balanced pattern with a steady rhythm.
+```
+live_loop :square do
+  notes = [1, 4, 9, 16, 25]
+  play notes.tick + 48
+  sleep 0.5
+end
+```
+
+## Pentagonal Numbers
+Numbers that grow into five-sided shapes. A more complex pattern creating a unique melody.
+```
+live_loop :pentagonal do
+  notes = [1, 5, 12, 22, 35]
+  play notes.tick + 52
+  sleep 0.5
+end
+```
+````
+
+
+## SuperSonic, node tree and live metrics
 
 For me, one of the most impressive things is the new **SuperSonic** audio backend. I haven’t explored the full codebase yet, but the ideas behind it are fascinating.
-The new audio architecture gives us a much more engineering-oriented view of what is happening internally. The panel now shows the live audio node tree:
+The new audio architecture gives us a much more **engineering-oriented** view of what is happening internally. The panel now shows the live audio node tree.
 
-- ENGINE
-- OSC
-- CLOCK
-- DSP
-- LINK AUDIO
-- SCSYNTH
-- BUFFERS
-- ERRORS
+
+| Panel      | Metrics                                   |
+| ---------- | ----------------------------------------- |
+| ENGINE     | Version, Rate, Block, Channels, Ticks     |
+| OSC        | Sent, Recv In, RT Out, NRT Out            |
+| CLOCK      | Tempo, Beat, Phase, Playing, Peers        |
+| DSP        | Load, Peak, Overruns                      |
+| LINK AUDIO | In, Underruns, Buffered, Drift, Publish   |
+| SCSYNTH    | Msgs, Queue, Max                          | Last, Late, Age, Debug |
+| BUFFERS    | SynthDefs, Buffers, Buf Bytes             |
+| ERRORS     | Dropped, Q Drop, Seq Gaps, Lates, Corrupt |
 
 <img class="rounded-md shadow-sm shadow-primary/50" src="/svg-ggb/sonicpi-v5-node-tree.webp" alt="Sonic Pi v5 Node Tree">
 
@@ -123,7 +190,7 @@ And what you are seeing in the image above is exactly **What Is Love**. At the b
 
 ## Code and performance
 
-For this version, I revisited my adaptation of **"What Is Love" (Haddaway)**, originally created several years ago (2021).
+For this version, I revisited my adaptation of **["What Is Love" (Haddaway)](https://www.youtube.com/watch?v=DLPzGmeS4Xg)**, originally created several years ago (2021).
 
 Use the copy button to quickly try the code in your own Sonic Pi session.
 
