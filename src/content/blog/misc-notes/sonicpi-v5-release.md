@@ -143,37 +143,44 @@ No card decks were found.
 A card set needs at least one "Deck: name" line followed by "## Card title" cards
 ```
 
-The format I will use for my own `figurate-numbers.txt` card deck is based on polygonal numbers ($S_3(n)$, $S_4(n)$, $S_5(n)$):
+The format I will use for my own `figurate-numbers.txt` card deck is based on polygonal numbers
+
+$$
+\begin{array}{ccc}
+S_3(n) & S_4(n) & S_5(n)\\[2mm]
+\text{triangulares} & \text{cuadrados} & \text{pentagonales}
+\end{array}
+$$
 
 ````md
 # Deck: Figurate Numbers
 Numbers that grow into shapes. Turn mathematical patterns into musical melodies.
 
 ## Triangular Numbers
-Numbers arranged like triangles. Each step adds a new layer to the pattern.
+Numbers that form triangle patterns, with each step adding a new layer.
 ```
 live_loop :triangular do
-  notes = [1, 3, 6, 10, 15]
+  notes = (ring 1, 3, 6, 10, 15)
   play notes.tick + 60
   sleep 0.5
 end
 ```
 
 ## Square Numbers
-Numbers built from equal rows and columns. A balanced pattern with a steady rhythm.
+Numbers formed by equal rows and columns, creating square patterns.
 ```
 live_loop :square do
-  notes = [1, 4, 9, 16, 25]
+  notes = (ring 1, 4, 9, 16, 25)
   play notes.tick + 48
   sleep 0.5
 end
 ```
 
 ## Pentagonal Numbers
-Numbers that grow into five-sided shapes. A more complex pattern creating a unique melody.
+Numbers that follow five-sided shapes, growing with each step
 ```
 live_loop :pentagonal do
-  notes = [1, 5, 12, 22, 35]
+  notes = (ring 1, 5, 12, 22, 35)
   play notes.tick + 52
   sleep 0.5
 end
