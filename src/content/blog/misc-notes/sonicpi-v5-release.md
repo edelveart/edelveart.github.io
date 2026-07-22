@@ -13,6 +13,22 @@ These are my first impressions of the new Sonic Pi 5 release candidate from the 
 > I also tested my two **Ruby** gems, [figurate_numbers](https://rubygems.org/gems/figurate_numbers) and [modular_forms](https://rubygems.org/gems/modular_forms/versions/0.0.5), and they continue to work correctly in Sonic Pi 5.
 
 
+<details>
+<summary>Contents</summary>
+
+- [Preferences: First look at the new interface](#preferences-first-look-at-the-new-interface)
+  - [Visuals](#visuals)
+  - [Audio](#audio)
+- [The documentation is a live learning tool](#the-documentation-is-a-live-learning-tool)
+  - [Interface observations](#interface-observations)
+- [Music materials: new scales and samples](#music-materials-new-scales-and-samples)
+- [Card Decks: A Tutorial](#card-decks-a-tutorial)
+- [SuperSonic, node tree and live metrics](#supersonic-node-tree-and-live-metrics)
+- [Code and performance](#code-and-performance)
+- [Closing thoughts](#closing-thoughts)
+
+</details>
+
 ## Preferences: First look at the new interface
 
 The interface redesign also made a great impression on me. It feels more modern, cleaner, and more enjoyable to work with.
