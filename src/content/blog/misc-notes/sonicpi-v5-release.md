@@ -8,7 +8,7 @@ updatedDate: "July 22 2026"
 tags: ["sonic pi", "live coding", "ruby", "creative coding", "sonic pi tutorial", "music technology", "computer music", "algorithmic composition", "mathematics"]
 ---
 
-These are my first impressions of the new Sonic Pi 5 release candidate from the perspective of someone who loves live coding. I'll cover the new interface, documentation workflow, editor visualizations, audio features, and some of the new musical material. At the end, I'll also share a small gift that some people have asked me for so they can experiment with it.
+These are my first impressions of the new Sonic Pi 5 release candidate from the perspective of someone who loves live coding. I'll cover the new interface, documentation workflow, editor and audio features, some of the new musical material, and how to create your own card decks.. At the end, I'll also share a small gift that some people have asked me for so they can experiment with it.
 
 > I also tested my two **Ruby** gems, [figurate_numbers](https://rubygems.org/gems/figurate_numbers) and [modular_forms](https://rubygems.org/gems/modular_forms/versions/0.0.5), and they continue to work correctly in this version.
 
