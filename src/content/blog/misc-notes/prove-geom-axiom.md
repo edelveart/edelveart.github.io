@@ -1,5 +1,5 @@
 ---
-title: "Proving the Type of a Geometrized Axiomatic"
+title: "Can Axiomatic Systems Have a Geometry and a Type?"
 description: "A Saturday reflexion on turning axiomatic systems into a geometry, and theories into a type that knows what it can and can't prove about itself."
 pubDate: "July 18 2026"
 badge: "misc notes"
