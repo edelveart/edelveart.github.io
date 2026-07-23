@@ -68,8 +68,8 @@ export async function GET({ props }) {
           background: "#1e1e2e",
           color: "#cdd6f4",
           fontFamily: "Source Sans 3",
-          border: "2px solid #313244",
-          borderRadius: "20px",
+          //   border: "2px solid #313244",
+          //   borderRadius: "20px",
           overflow: "hidden",
         },
 
