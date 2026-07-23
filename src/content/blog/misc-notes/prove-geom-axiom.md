@@ -1,6 +1,6 @@
 ---
 title: "Can Axiomatic Systems Have a Geometry and a Type?"
-description: "A Saturday reflection on imagining a geometry of axiomatic systems, and wondering whether theories could become types that carry information about what can and can't be proven about them."
+description: "A Saturday reflection on imagining a geometry of axiomatic systems and wondering whether theories could become types that carry information about what can and can't be proven about them, inspired by proof assistants like Lean."
 pubDate: "July 18 2026"
 badge: "misc notes"
 tags: ["logic", "axiomatic method", "type theory", "philosophy of mathematics", "lean"]
