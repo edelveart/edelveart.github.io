@@ -2,7 +2,6 @@
 title: "Counting a Figurate Property in Cayley–Dickson Algebras"
 description: "A naive question about Cayley-Dickson algebras, enumerated by a figurate number via type systems, and how that question naturally incorporates itself into other algebraic structures and particularities."
 pubDate: "December 27 2025"
-heroImage: "/LinkedInProfile.webp"
 badge: "sketch notes"
 tags: ["cayley-dickson algebra", "figurate numbers", "type system",  "python", "typescript",   "integer sequences", "octonion", "sedenion"]
 ---

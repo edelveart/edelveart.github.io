@@ -8,7 +8,9 @@ import Arrows from "@icons/Arrows.astro";
 export async function getStaticPaths() {
   const postEntries = await getCollection("blog");
 
-  const sorted = postEntries.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  const sorted = postEntries.sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  );
 
   return sorted.map((entry, index) => {
     const slug = createSlug(entry.data.title, entry.id);
@@ -56,6 +58,7 @@ import { NAV_LINKS_PAGES } from "@styles/utilsCSS";
 ---
 
 <PostLayout
+  id={entry.id}
   title={post.title}
   description={post.description}
   pubDate={post.pubDate}
@@ -85,7 +88,10 @@ import { NAV_LINKS_PAGES } from "@styles/utilsCSS";
           </div>
         </a>
       ) : (
-        <a class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`} href="/blog/">
+        <a
+          class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`}
+          href="/blog/"
+        >
           <span class={NAV_LINKS_PAGES.arrowSpan}>
             <Arrows direction="left" />
           </span>

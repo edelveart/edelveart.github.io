@@ -4,14 +4,31 @@ import { type BlogSchema } from "../content.config";
 import BaseLayout from "./BaseLayout.astro";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
-export interface Props extends BlogSchema {}
+export interface Props extends BlogSchema {
+  id: string;
+}
 
-const { title, description, pubDate, updatedDate, badge, heroImage, tags = [] } = Astro.props;
+const {
+  id,
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  badge,
+  heroImage,
+  tags = [],
+} = Astro.props;
 dayjs.extend(localizedFormat);
 const displayDate = dayjs(pubDate).format("ll");
+const ogImage = heroImage ?? `/og/${id}.png`;
 ---
 
-<BaseLayout title={title} description={description} image={heroImage} ogType="article">
+<BaseLayout
+  title={title}
+  description={description}
+  image={ogImage ?? "/LinkedInProfile.webp"}
+  ogType="article"
+>
   <main>
     <article class="prose prose-img:mx-auto">
       <h1 class="title mt-5 text-3xl font-bold break-normal mb-2 text-primary">
@@ -20,7 +37,13 @@ const displayDate = dayjs(pubDate).format("ll");
 
       <div class="flex flex-col md:flex-row md:items-start md:gap-2">
         <div class="flex items-center gap-2">
-          {pubDate && <time class="whitespace-nowrap text-neutral-content">{displayDate}</time>}
+          {
+            pubDate && (
+              <time class="whitespace-nowrap text-neutral-content">
+                {displayDate}
+              </time>
+            )
+          }
 
           <span class="text-base-content/60 hidden md:inline">·</span>
 
