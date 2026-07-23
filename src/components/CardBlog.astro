@@ -1,5 +1,14 @@
 ---
-const { title, img, desc, url, badge, pubDate, tags, target = "_blank" } = Astro.props;
+const {
+  title,
+  img,
+  desc,
+  url,
+  badge,
+  pubDate,
+  tags,
+  target = "_blank",
+} = Astro.props;
 // const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
 
 // PubDATE from md files
@@ -17,7 +26,7 @@ import { CARD_OP, GET_COLORS_METADATA } from "@styles/utilsCSS";
 >
   <div class="flex items-center gap-2">
     <span class={CARD_OP.muteData}>{displayDate}</span>
-    <span class={CARD_OP.muteData}> · </span>
+    <span class={CARD_OP.muteData}>·</span>
 
     <!-- <span class="text-base-content/60 text-sm font-medium">{badge}</span> -->
     <span class={GET_COLORS_METADATA(badge)}>
@@ -25,7 +34,9 @@ import { CARD_OP, GET_COLORS_METADATA } from "@styles/utilsCSS";
     </span>
   </div>
 
-  <h2 class=`mt-1 ${CARD_OP.title} group-hover:text-primary line-clamp-2 md:line-clamp-none `>
+  <h2
+    class=`mt-1 ${CARD_OP.title} group-hover:text-primary line-clamp-2 md:line-clamp-none `
+  >
     {title}
   </h2>
 

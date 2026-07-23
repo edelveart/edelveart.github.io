@@ -43,7 +43,9 @@ import { isExactActive, isSectionActive } from "@ts-config-path/lib/routes";
 
 const current = Astro.url.pathname;
 const figuratePosts = await getCollection("figurate");
-const sortedFigurate = figuratePosts.sort((a, b) => a.data.order - b.data.order);
+const sortedFigurate = figuratePosts.sort(
+  (a, b) => a.data.order - b.data.order,
+);
 
 const figurateLinks = sortedFigurate.map((post) => {
   const href = "/figuratenum/" + createSlug(post.data.title, post.id) + "/";
@@ -54,24 +56,29 @@ const figurateLinks = sortedFigurate.map((post) => {
   };
 });
 
-export const transitionMenu = "transition-[color,opacity] duration-150 ease-in-out";
-export const activePage = "text-primary font-medium";
+export const transitionMenu =
+  "transition-[color,opacity] duration-150 ease-in-out";
+
 export const sideMenuCss = {
-  divCss: `flex items-center gap-3 w-full rounded-md px-4 h-11
-   text-neutral-content hover:text-primary ${transitionMenu}`,
+  base: `
+    flex items-center gap-3 w-full rounded-md px-4 h-11
+    ${transitionMenu}
+  `,
+  inactive: "text-neutral-content hover:text-primary",
+  active: "text-primary font-medium",
   spanText: "text-base",
-  iconBox: "w-5 h-5 flex items-center justify-center shrink-0 ",
+  iconBox: "w-5 h-5 flex items-center justify-center shrink-0",
 };
+
+export const menuClass = (active: boolean) =>
+  `${sideMenuCss.base} ${active ? sideMenuCss.active : sideMenuCss.inactive}`;
 ---
 
 <!-- <strong class="flex justify-center mb-5 text-sm">Edgar Delgado</strong> -->
 <div class="flex flex-col w-full mb-5">
   <ul class="w-full h-full flex-1 flex flex-col p-2">
     <li>
-      <a
-        class={`${sideMenuCss.divCss} ${isExactActive(current, hrefHome) ? activePage : ""}`}
-        href={hrefHome}
-      >
+      <a class={menuClass(isExactActive(current, hrefHome))} href={hrefHome}>
         <span class={sideMenuCss.iconBox}>
           <Home />
         </span>
@@ -79,10 +86,7 @@ export const sideMenuCss = {
       </a>
     </li>
     <li>
-      <a
-        class={`${sideMenuCss.divCss} ${isExactActive(current, hrefCV) ? activePage : ""}`}
-        href={hrefCV}
-      >
+      <a class={menuClass(isExactActive(current, hrefCV))} href={hrefCV}>
         <span class={sideMenuCss.iconBox}>
           <Curriculum />
         </span>
@@ -91,7 +95,7 @@ export const sideMenuCss = {
     </li>
     <li>
       <a
-        class={`${sideMenuCss.divCss} ${isExactActive(current, hrefProjects) ? activePage : ""}`}
+        class={menuClass(isExactActive(current, hrefProjects))}
         href={hrefProjects}
       >
         <span class={sideMenuCss.iconBox}>
@@ -102,7 +106,7 @@ export const sideMenuCss = {
     </li>
     <li>
       <a
-        class={`${sideMenuCss.divCss} ${isExactActive(current, hrefResources) ? activePage : ""}`}
+        class={menuClass(isExactActive(current, hrefResources))}
         href={hrefResources}
       >
         <span class={sideMenuCss.iconBox}>
@@ -113,7 +117,7 @@ export const sideMenuCss = {
     </li>
     <li>
       <a
-        class={`${sideMenuCss.divCss} ${isSectionActive(current, hrefNotes) ? activePage : ""}`}
+        class={menuClass(isSectionActive(current, hrefNotes))}
         href={hrefNotes}
       >
         <span class={sideMenuCss.iconBox}>
@@ -124,7 +128,7 @@ export const sideMenuCss = {
     </li>
     <li>
       <a
-        class={`${sideMenuCss.divCss} ${isSectionActive(current, hrefFigurate) ? activePage : ""}`}
+        class={menuClass(isSectionActive(current, hrefFigurate))}
         href={hrefFigurate}
       >
         <span class={sideMenuCss.iconBox}>
