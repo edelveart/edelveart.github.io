@@ -35,14 +35,14 @@ The interface redesign also made a great impression on me. It feels more modern,
 
 We finally have theme customization, including **hue** changes, **transparency**, **monochrome**, and **color inversion**, providing a more personalized experience. The available themes are:
 
-| Theme             | Hover description                                  |
-| ----------------- | -------------------------------------------------- |
-| **Light**         | Light colour scheme                                |
-| **Dark**          | Dark colour scheme                                 |
-| **High Contrast** | High-contrast colour scheme for maximum legibility |
-| **Mild Dark**     | A softer, low contrast color scheme                |
-| **Phosphor**      | A green-on-black CRT colour scheme                 |
-| **Signal**        | High-contrast blue-and-gold colour scheme          |
+| Theme         | Hover description                                  |
+| ------------- | -------------------------------------------------- |
+| Light         | Light colour scheme                                |
+| Dark          | Dark colour scheme                                 |
+| High Contrast | High-contrast colour scheme for maximum legibility |
+| Mild Dark     | A softer, low contrast color scheme                |
+| Phosphor      | A green-on-black CRT colour scheme                 |
+| Signal        | High-contrast blue-and-gold colour scheme          |
 
 
 I selected **Phosphor** for the images below. Can you guess the hue adjustment value I used? However, I think I’ll be working with **Mild Dark** on a daily basis, as it feels really comfortable and easy on the eyes.
