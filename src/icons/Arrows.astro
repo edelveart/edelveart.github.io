@@ -5,8 +5,11 @@ type Props = {
 };
 
 const { direction = "right", size = "md" }: Props = Astro.props;
-const sizeClass =
-  size === "sm" ? "h-4 w-4" : size === "lg" ? "h-4 w-4 md:h-5 w-5" : "h-4 w-4 md:h-4 w-4";
+const sizeClass = {
+  sm: "h-4 w-4",
+  md: "h-4 w-4",
+  lg: "h-4 w-4 md:h-5 md:w-5",
+}[size];
 
 const rotationClass = {
   right: "",
@@ -24,5 +27,6 @@ const rotationClass = {
 >
   <path
     d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
-  ></path>
+  >
+  </path>
 </svg>

@@ -14,7 +14,7 @@ export const LINKS_TO =
   "text-primary underline underline-offset-2 decoration-1 transition-[text-underline-offset,text-decoration-thickness] duration-150 hover:decoration-2";
 
 export const BORDER_INFO =
-  "relative border-l-[2px] pl-4 border-base-content/20 before:absolute before:left-[-5px] before:top-1/2 before:-translate-y-1/2 before:h-2 before:w-2 before:rounded-xs before:border before:border-primary/40 before:bg-base-100";
+  "relative border-l-2 pl-4 border-base-content/20 before:absolute before:left-[-5px] before:top-1/2 before:-translate-y-1/2 before:h-2 before:w-2 before:rounded-xs before:border before:border-primary/40 before:bg-base-100";
 
 export const CARD_OP = {
   title: "text-lg font-semibold text-base-content",
@@ -31,7 +31,7 @@ export const BADGE_COLORS = {
   "lab notes": `${metaBase} text-secondary/75`,
   "sketch notes": `${metaBase} text-info/75`,
   "misc notes": `${metaBase} text-error/75`,
-  tags: "text-sm text-primary/75 hover:text-primary/100 underline transition-colors underline-offset-2 font-normal hover:decoration-2",
+  tags: "text-sm text-primary/75 hover:text-primary underline transition-colors underline-offset-2 font-normal hover:decoration-2",
   warning: `${metaBase} text-warning/85`,
   cardsImg: `${metaBase} text-primary/85`,
   NO_LISTED: `${metaBase} text-base-content/75`,
