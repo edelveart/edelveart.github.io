@@ -18,10 +18,13 @@
     "@fontsource-variable/source-sans-3": "^5.2.9",
     "@tailwindcss/vite": "^4.1.13",
     "astro": "^7.1.1",
+    "astro-og-canvas": "^0.13.0",
+    "canvaskit-wasm": "^0.41.1",
     "dayjs": "^1.11.9",
     "katex": "^0.17.0",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
+    "satori": "^0.28.2",
     "sharp": "^0.35.3",
     "tailwindcss": "^4.1.13",
     "typescript": "^6.0.3"
