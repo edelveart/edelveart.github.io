@@ -8,8 +8,6 @@ tags: ["logic", "axiomatic method", "type theory", "philosophy of mathematics", 
 
 Every once in a while, after long stretches of time, and again this Saturday, I have wondered about the future of the axiomatic method ever since I read Robert Blanché's [*La axiomática*](https://books.google.com.pe/books/about/La_Axiom%C3%A1tica.html?id=Rf--PQAACAAJ&redir_esc=y).
 
-> What will the next step on the platform of theories look like?
-
 I've also been circling an idea about how to build new intuitions about formal objects out of things from the past.
 Along those lines, questions like these come to me.
 
@@ -34,7 +32,7 @@ Much of this idea comes to me from functional analysis. First I thought about un
 Axioms could recover a more intuitive representation. Complete theories would be points in a space. I'm not sure axioms should be understood literally as coordinates (equivalent axiomatizations complicate that picture), but maybe as a set of generators for a theory's position.
 
 Neighborhoods could represent theories that differ in a few axioms. Connected components, theories that are. Arrows would be interpretations or translations between theories.
-Invariants would preserve metamathematical properties like consistency, completeness, or decidability, even under certain deformations.
+Invariants would preserve metamathematical properties like consistency, completeness, or decidability, even under certain transformations and deformations.
 
 Naturally, almost every geometric notion would need reconstructing distance, deformation, continuity, curvature, and so on.
 Precedents exist (which I only know superficially) in [topos theory](https://ncatlab.org/nlab/show/classifying+topos), categorical logic, and other areas I still find hard to approach formally.
@@ -88,13 +86,16 @@ A theory's description would grow to include these properties as they get proved
 They'd simply be provable and attached to it as part of its description.
 Perhaps it would then be enough to restrict those types to know which models a theory admits, which transformations preserve its properties, and which stop making sense.
 
-It's still a very preliminary idea, but I like to imagine proof assistants as tools for exploring the space of theories itself.
+It’s still a very naive idea, but I like to imagine proof assistants as tools for exploring the space of theories itself.
 I should say this with complete honesty. I didn't look for precedents before writing this, simply for lack of time, on a Saturday you think fast and write even faster. If any of this already exists elsewhere under another name, I didn't know it when I imagined it.
 
-Finally, I'll close this note with a question that keeps circling back to me:
+Finally, it is natural to ask whether we will ever be able to study the space of possible mathematics as a mathematical object.
+Across mathematics and physics, the move toward formalization became one of the great milestones of thought, shaping how we build and organize theories.
 
-> Will we ever be able to study the space of possible mathematics as a mathematical object?
+I'll close this note with a question that keeps circling back to me:
 
-<p class="text-xs italic mt-12">
-    I didn't have anyone around to talk this through with, so I talked it through with an AI, mainly the logical part. The two ideas themselves, and the choice not to search for precedents, came before that conversation.
+> What could come after the axiomatic method?
+
+<p class="text-xs italic mt-10">
+    I didn’t have anyone around to discuss it with, so I ended up using an AI to work through the logical side. The two ideas themselves, and the choice not to look for precedents, came before that.
 </p>
