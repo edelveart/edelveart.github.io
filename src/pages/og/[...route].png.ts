@@ -198,11 +198,11 @@ export async function GET({ props }) {
                   type: "div",
                   props: {
                     style: {
-                      fontSize: 24,
+                      fontSize: 26,
                       fontWeight: 400,
                       color: COLORS.badge,
                       letterSpacing: 2,
-                      marginTop: 70,
+                      marginTop: 60,
                     },
                     children: post.data.badge?.toUpperCase(),
                   },
@@ -229,7 +229,7 @@ export async function GET({ props }) {
                   type: "div",
                   props: {
                     style: {
-                      fontSize: 28,
+                      fontSize: 30,
                       fontWeight: 400,
                       marginTop: 40,
                       color: COLORS.desc,
@@ -249,7 +249,7 @@ export async function GET({ props }) {
             props: {
               style: {
                 alignSelf: "flex-end",
-                fontSize: 24,
+                fontSize: 26,
                 fontWeight: 400,
                 color: COLORS.myname,
               },
