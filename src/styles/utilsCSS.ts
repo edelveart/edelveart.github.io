@@ -25,12 +25,15 @@ export const CARD_OP = {
 export const BLOCK_QUOTE = `text-right ${CARD_OP.muteData}`;
 
 const metaBase = "text-sm tracking-wide uppercase font-light";
-
+//   "field notes": `${metaBase} text-accent/75`,
+//   "lab notes": `${metaBase} text-secondary/75`,
+//   "sketch notes": `${metaBase} text-info/75`,
+//   "misc notes": `${metaBase} text-error/75`,
 export const BADGE_COLORS = {
-  "field notes": `${metaBase} text-accent/75`,
-  "lab notes": `${metaBase} text-secondary/75`,
-  "sketch notes": `${metaBase} text-info/75`,
-  "misc notes": `${metaBase} text-error/75`,
+  "field notes": `${metaBase} text-error/75`,
+  "lab notes": `${metaBase} text-accent/75`,
+  "sketch notes": `${metaBase} text-secondary/75`,
+  "misc notes": `${metaBase} text-info/75`,
   tags: "text-sm text-primary/75 hover:text-primary underline transition-colors underline-offset-2 font-normal hover:decoration-2",
   warning: `${metaBase} text-warning/85`,
   cardsImg: `${metaBase} text-primary/85`,
