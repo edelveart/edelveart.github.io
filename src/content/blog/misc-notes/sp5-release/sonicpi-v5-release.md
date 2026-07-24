@@ -260,10 +260,10 @@ The value goes from $0$ to $1$, representing a fraction of a complete cycle (as 
 Since one cycle corresponds to $360^\circ$, we can express the phase angle as:
 
 $$
-\theta = \text{phase\_offset}\times360^\circ
+\theta = \text{phase\_offset}\times360^\circ .
 $$
 
-Well, let's make an $8$-step conversion table:
+Well, let's make an $8$-step conversion table.
 
 | `phase_offset` | Fraction of cycle | Degrees $\theta$ | Radians          |
 | -------------- | ----------------- | ---------------- | ---------------- |
