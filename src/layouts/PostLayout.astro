@@ -55,7 +55,7 @@ const ogImage = heroImage ?? `/og/${id}.png`;
         {
           updatedDate && (
             <div class="flex items-center gap-2">
-              <span class="text-base-content/60 ">⟳</span>
+              <span class="text-base-content/60 hidden md:inline">·</span>
 
               <span class={`${CARD_OP.muteData} whitespace-nowrap`}>
                 Updated {dayjs(updatedDate).format("ll")}
