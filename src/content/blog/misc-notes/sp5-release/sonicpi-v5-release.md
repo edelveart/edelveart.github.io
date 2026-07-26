@@ -212,7 +212,7 @@ end
 ```
 
 ## Pentagonal Numbers
-Numbers that follow five-sided shapes, growing with each step
+Numbers that follow five-sided shapes, growing with each step.
 ```
 live_loop :pentagonal do
   notes = (ring 1, 5, 12, 22, 35)
