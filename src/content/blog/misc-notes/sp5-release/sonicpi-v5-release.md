@@ -5,13 +5,14 @@ pubDate: "July 20 2026"
 heroImage: "/svg-ggb/blog-sonicpi-v5-node-tree.webp"
 badge: "misc notes"
 updatedDate: "July 23 2026"
-tags: ["sonic pi", "live coding", "ruby", "creative coding", "sonic pi tutorial", "music technology", "computer music", "algorithmic composition", "mathematics"]
+tags: ["sonic pi",     "live coding",     "ruby", "creative coding",  "sonic pi tutorial", "music technology",  "computer music", "algorithmic composition", "mathematics"]
 ---
 
-These are my first impressions of the new Sonic Pi 5 release candidate from the perspective of someone who loves live coding. I'll cover the new interface, documentation workflow, editor and audio features, some of the new musical material, and how to create your own card decks. At the end, I'll also share a small gift that some people have asked me for so they can experiment with it.
+These are my first impressions of the new Sonic Pi 5 release candidate from the perspective of someone who loves live coding.
+I'll cover the new interface, documentation workflow, editor and audio features, some of the new musical material, and how to create your own card decks.
+At the end, I'll also share a small gift that some people have asked me for so they can experiment with it.
 
 > I also tested my two **Ruby** gems, [figurate_numbers](https://rubygems.org/gems/figurate_numbers) and [modular_forms](https://rubygems.org/gems/modular_forms/versions/0.0.5), and they continue to work correctly in this version.
-
 
 <details class="[&_li]:my-0 [&_ul]:my-0.5">
 <summary>Contents</summary>
@@ -20,7 +21,6 @@ These are my first impressions of the new Sonic Pi 5 release candidate from the 
   - [Editor Visuals](#editor-visuals)
   - [Audio and Recording](#audio-and-recording)
 - [The documentation is a live learning tool](#the-documentation-is-a-live-learning-tool)
-  - [Interface observations](#interface-observations)
 - [Music materials: new scales, samples and methods](#music-materials-new-scales-samples-and-methods)
 - [Card Decks: A Tutorial](#card-decks-a-tutorial)
 - [Phase and the oscilloscope](#phase-and-the-oscilloscope)
@@ -46,7 +46,6 @@ We finally have theme customization, including **hue** changes, **transparency**
 | Mild Dark     | A softer, low contrast color scheme                |
 | Phosphor      | A green-on-black CRT colour scheme                 |
 | Signal        | High-contrast blue-and-gold colour scheme          |
-
 
 I selected **Phosphor** for the images below. Can you guess the hue adjustment value I used? However, I think I’ll be working with **Mild Dark** on a daily basis, as it feels really comfortable and easy on the eyes.
 
@@ -100,8 +99,7 @@ The combination of **code**, **parameter controls**, **knobs**, and visual contr
 
 For example, a `mod_saw` (**modulated saw wave**) synth allows you to explore parameters such as `mod_range` directly with the knob, preview the sound using the virtual keyboard, and then transfer the result into your live coding session. This workflow creates a natural path from experimentation to code.
 
-
-### Interface observations
+<!-- ### Interface observations (Solved in RC-2)
 
 While exploring this **release candidate**, I noticed what might be a small interface detail related to zoom scaling. When the documentation zoom level is increased, some interface elements do not seem to adapt completely to the larger size. Some labels appear partially hidden or overlap, and the full names of certain controls are not always visible.
 
@@ -111,8 +109,7 @@ It is a minor detail, but perhaps it could be improved with better spacing, resp
 
 Additionally, it would be great if the lists inside **`Tutorial`**, **`Examples`**, **`Synths`**, **`Fx`**, **`Samples`**, and **`Lang`** could also support text scaling for users who need better visual accessibility.
 
-This is only a design observation from my experience using the interface, but I think these small details could make Sonic Pi even more comfortable for a wider range of users.
-
+This is only a design observation from my experience using the interface, but I think these small details could make Sonic Pi even more comfortable for a wider range of users. -->
 
 ## Music materials: new scales, samples and methods
 
@@ -162,9 +159,8 @@ $$
 \phi(x) = p - d(x, p).
 $$
 
-Geometrically, this is the reflection of the note $x$ across the pivot note $p$, which acts as the axis of symmetry.
+Geometrically speaking, this is the reflection of the note $x$ across the pivot note $p$, which acts as the axis of symmetry.
 Try another note and verify the result yourself.
-
 
 ## Card Decks: A Tutorial
 
@@ -283,7 +279,6 @@ Note that mathematically `phase_offset: 1` is equivalent to `phase_offset: 0`.
 
 For me, one of the most impressive things is the new **SuperSonic** audio backend. I haven’t explored the full codebase yet, but the ideas behind it are fascinating.
 The new audio architecture gives us a much more **engineering-oriented** view of what is happening internally. The panel now shows the live audio node tree.
-
 
 | Panel      | Metrics                                   |
 | ---------- | ----------------------------------------- |
@@ -417,4 +412,3 @@ end
 ## Closing thoughts
 
 Many thanks to [**Sam Aaron**](https://www.patreon.com/samaaron/posts/sonic-pi-v5-1-164093369) and the entire [**Sonic Pi**](https://in-thread.sonic-pi.net/) community for continuing to shape and evolve this amazing creative instrument.
-
