@@ -100,6 +100,16 @@ The combination of **code**, **parameter controls**, **knobs**, and visual contr
 
 For example, a `mod_saw` (**modulated saw wave**) synth allows you to explore parameters such as `mod_range` directly with the knob, preview the sound using the virtual keyboard, and then transfer the result into your live coding session. This workflow creates a natural path from experimentation to code.
 
+In RC-3, autocomplete now lets you preview samples and see their **duration** directly in the editor.
+Previously, you had to query it manually:
+
+```rb
+puts sample_duration(:arovane_beat_a)
+# 14.767278911564626
+```
+
+Now, autocomplete shows the same duration as the rounded value `14.8s`, which is enough for practice and improvisation.
+
 ### Problem with Gabberkick (RC-3)
 
 I was testing the Gabberkick synthesizer from the documentation, and when changing the `slope_intermediate` parameter I ran into the following error:
@@ -242,6 +252,42 @@ $$
 
 Geometrically speaking, this is the reflection of the note $x$ across the pivot note $p$, which acts as the axis of symmetry.
 Try another note and verify the result yourself.
+
+<!--
+In this version, our sample database currently contains **206 built-in samples**. Using `sample_groups`, `sample_names`, and `length`, we can generate easily the following table: -->
+
+<!-- ```rb
+sp5_samples = 0
+sample_groups.each do |g|
+  sp5_samples += sample_names(g).length
+end
+puts sp5_samples
+``` -->
+
+<!--
+
+| Group       |    # | Sample Names                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ----------- | ---: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `:ambi`     |   11 | `:ambi_choir`, `:ambi_dark_woosh`, `:ambi_drone`, `:ambi_glass_hum`, `:ambi_glass_rub`, `:ambi_haunted_hum`, `:ambi_lunar_land`, `:ambi_piano`, `:ambi_sauna`, `:ambi_soft_buzz`, `:ambi_swoosh`                                                                                                                                                                                                                      |
+| `:arovane`  |    5 | `:arovane_beat_a`, `:arovane_beat_b`, `:arovane_beat_c`, `:arovane_beat_d`, `:arovane_beat_e`                                                                                                                                                                                                                                                                                                                         |
+| `:bass`     |    9 | `:bass_dnb_f`, `:bass_drop_c`, `:bass_hard_c`, `:bass_hit_c`, `:bass_thick_c`, `:bass_trance_c`, `:bass_voxy_c`, `:bass_voxy_hit_c`, `:bass_woodsy_c`                                                                                                                                                                                                                                                                 |
+| `:bd`       |   15 | `:bd_808`, `:bd_ada`, `:bd_boom`, `:bd_chip`, `:bd_fat`, `:bd_gas`, `:bd_haus`, `:bd_jazz`, `:bd_klub`, `:bd_mehackit`, `:bd_pure`, `:bd_sone`, `:bd_tek`, `:bd_zome`, `:bd_zum`                                                                                                                                                                                                                                      |
+| `:drum`     |   20 | `:drum_bass_hard`, `:drum_bass_soft`, `:drum_cowbell`, `:drum_cymbal_closed`, `:drum_cymbal_hard`, `:drum_cymbal_open`, `:drum_cymbal_pedal`, `:drum_cymbal_soft`, `:drum_heavy_kick`, `:drum_roll`, `:drum_snare_hard`, `:drum_snare_soft`, `:drum_splash_hard`, `:drum_splash_soft`, `:drum_tom_hi_hard`, `:drum_tom_hi_soft`, `:drum_tom_lo_hard`, `:drum_tom_lo_soft`, `:drum_tom_mid_hard`, `:drum_tom_mid_soft` |
+| `:elec`     |   25 | `:elec_beep`, `:elec_bell`, `:elec_blip`, `:elec_blip2`, `:elec_blup`, `:elec_bong`, `:elec_chime`, `:elec_cymbal`, `:elec_filt_snare`, `:elec_flip`, `:elec_fuzz_tom`, `:elec_hi_snare`, `:elec_hollow_kick`, `:elec_lo_snare`, `:elec_mid_snare`, `:elec_ping`, `:elec_plip`, `:elec_pop`, `:elec_snare`, `:elec_soft_kick`, `:elec_tick`, `:elec_triangle`, `:elec_twang`, `:elec_twip`, `:elec_wood`              |
+| `:glitch`   |    8 | `:glitch_bass_g`, `:glitch_perc1`, `:glitch_perc2`, `:glitch_perc3`, `:glitch_perc4`, `:glitch_perc5`, `:glitch_robot1`, `:glitch_robot2`                                                                                                                                                                                                                                                                             |
+| `:guit`     |    4 | `:guit_e_fifths`, `:guit_e_slide`, `:guit_em9`, `:guit_harmonics`                                                                                                                                                                                                                                                                                                                                                     |
+| `:hat`      |   21 | `:hat_bdu`, `:hat_cab`, `:hat_cats`, `:hat_gem`, `:hat_gnu`, `:hat_gump`, `:hat_hier`, `:hat_len`, `:hat_mess`, `:hat_metal`, `:hat_noiz`, `:hat_psych`, `:hat_raw`, `:hat_sci`, `:hat_snap`, `:hat_star`, `:hat_tap`, `:hat_yosh`, `:hat_zan`, `:hat_zap`, `:hat_zild`                                                                                                                                               |
+| `:loop`     |   17 | `:loop_3d_printer`, `:loop_amen`, `:loop_amen_full`, `:loop_breakbeat`, `:loop_compus`, `:loop_drone_g_97`, `:loop_electric`, `:loop_garzul`, `:loop_industrial`, `:loop_mehackit1`, `:loop_mehackit2`, `:loop_mika`, `:loop_perc1`, `:loop_perc2`, `:loop_safari`, `:loop_tabla`, `:loop_weirdo`                                                                                                                     |
+| `:mehackit` |   11 | `:mehackit_phone1`, `:mehackit_phone2`, `:mehackit_phone3`, `:mehackit_phone4`, `:mehackit_robot1`, `:mehackit_robot2`, `:mehackit_robot3`, `:mehackit_robot4`, `:mehackit_robot5`, `:mehackit_robot6`, `:mehackit_robot7`                                                                                                                                                                                            |
+| `:misc`     |    3 | `:misc_burp`, `:misc_cineboom`, `:misc_crow`                                                                                                                                                                                                                                                                                                                                                                          |
+| `:perc`     |   10 | `:perc_bell`, `:perc_bell2`, `:perc_door`, `:perc_impact1`, `:perc_impact2`, `:perc_snap`, `:perc_snap2`, `:perc_swash`, `:perc_swoosh`, `:perc_till`                                                                                                                                                                                                                                                                 |
+| `:ride`     |    2 | `:ride_tri`, `:ride_via`                                                                                                                                                                                                                                                                                                                                                                                              |
+| `:sn`       |    4 | `:sn_dolf`, `:sn_dub`, `:sn_generic`, `:sn_zome`                                                                                                                                                                                                                                                                                                                                                                      |
+| `:tabla`    |   26 | `:tabla_dhec`, `:tabla_ghe1`, `:tabla_ghe2`, `:tabla_ghe3`, `:tabla_ghe4`, `:tabla_ghe5`, `:tabla_ghe6`, `:tabla_ghe7`, `:tabla_ghe8`, `:tabla_ke1`, `:tabla_ke2`, `:tabla_ke3`, `:tabla_na`, `:tabla_na_o`, `:tabla_na_s`, `:tabla_re`, `:tabla_tas1`, `:tabla_tas2`, `:tabla_tas3`, `:tabla_te1`, `:tabla_te2`, `:tabla_te_m`, `:tabla_te_ne`, `:tabla_tun1`, `:tabla_tun2`, `:tabla_tun3`                          |
+| `:tbd`      |   11 | `:tbd_fxbed_loop`, `:tbd_highkey_c4`, `:tbd_pad_1`, `:tbd_pad_2`, `:tbd_pad_3`, `:tbd_pad_4`, `:tbd_perc_blip`, `:tbd_perc_hat`, `:tbd_perc_tap_1`, `:tbd_perc_tap_2`, `:tbd_voctone`                                                                                                                                                                                                                                 |
+| `:vinyl`    |    4 | `:vinyl_backspin`, `:vinyl_hiss`, `:vinyl_rewind`, `:vinyl_scratch`                                                                                                                                                                                                                                                                                                                                                   |
+ -->
+
 
 ## Card Decks: A Tutorial
 
