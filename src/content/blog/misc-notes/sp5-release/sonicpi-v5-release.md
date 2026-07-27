@@ -4,7 +4,7 @@ description: "My first impressions of Sonic Pi 5 RC, including interface and aud
 pubDate: "July 20 2026"
 heroImage: "/svg-ggb/blog-sonicpi-v5-node-tree.webp"
 badge: "misc notes"
-updatedDate: "July 26 2026"
+updatedDate: "July 27 2026"
 tags: ["sonic pi",     "live coding",     "ruby", "creative coding",  "sonic pi tutorial", "music technology",  "computer music", "algorithmic composition", "mathematics"]
 ---
 
