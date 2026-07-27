@@ -170,7 +170,7 @@ To find the cause, I checked the Sonic Pi source code. The synth definitions the
 .../app/server/ruby/lib/sonicpi/synths/synthinfo.rb
 ```
 
-I found a validation error in the definition of this synthesizer around line `4975`:
+I found a validation error in the Gabberkick synthesizer argument metadata around line `4975`:
 
 ```rb
 :slope_intermediate =>
@@ -196,7 +196,7 @@ After making this small change locally, the problem was fixed and `slope_interme
 
 The issue was fixed in this commit:
 
-- [GitHub commit](https://github.com/sonic-pi-net/sonic-pi/commit/7740efcfdff2c5cbfe2d472efb8b6051239d3552)
+- [GitHub commit `7740efc`](https://github.com/sonic-pi-net/sonic-pi/commit/7740efcfdff2c5cbfe2d472efb8b6051239d3552)
 
 <!-- ### Interface observations (Solved in RC-2)
 
