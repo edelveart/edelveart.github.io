@@ -26,7 +26,7 @@ I'll cover the new interface, documentation workflow, some of the mathematical i
 - [Card Decks: A Tutorial](#card-decks-a-tutorial)
 - [Phase and the oscilloscope](#phase-and-the-oscilloscope)
 - [SuperSonic, node tree and live metrics](#supersonic-node-tree-and-live-metrics)
-- [Code and performance](#code-and-performance)
+- [Performance and code](#performance-and-code)
 - [Closing thoughts](#closing-thoughts)
 
 </details>
@@ -434,11 +434,12 @@ We can also observe **`Groups`**, **`Synths`**, **`FX`**, and **`Samples`** inte
 
 And what you are seeing in the image above is exactly **What Is Love**. At the beginning of the track, the **sample counter** is still at zero. Now, as promised, here comes the gift.
 
-## Code and performance
+## Performance and code
 
-For this version, I revisited my adaptation of **["What Is Love" (Haddaway)](https://www.youtube.com/watch?v=DLPzGmeS4Xg)**, originally created several years ago (2021).
+After exploring the internals, it's time to turn those ideas into music.
+I revisited my adaptation of **["What Is Love" (Haddaway)](https://www.youtube.com/watch?v=DLPzGmeS4Xg)**, originally created several years ago (2021), as a final example of what can be built with Sonic Pi.
 
-Use the copy button to quickly try the code in your own Sonic Pi session.
+Use the copy button to quickly try the code in your own live coding session.
 
 ```ruby
 ##| What Is Love (HADDAWAY) for Sonic Pi
