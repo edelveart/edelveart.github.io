@@ -100,7 +100,7 @@ The combination of **code**, **parameter controls**, **knobs**, and visual contr
 
 For example, a `mod_saw` (**modulated saw wave**) synth allows you to explore parameters such as `mod_range` directly with the knob, preview the sound using the virtual keyboard, and then transfer the result into your live coding session. This workflow creates a natural path from experimentation to code.
 
-In RC-3, autocomplete now lets you preview samples and see their **duration** directly in the editor.
+In RC-3, autocomplete previews samples with their **duration** in the editor.
 Previously, you had to query it manually:
 
 ```rb
@@ -108,7 +108,7 @@ puts sample_duration(:arovane_beat_a)
 # 14.767278911564626
 ```
 
-Now, autocomplete shows the same duration as the rounded value `14.8s`, which is enough for practice and improvisation.
+Now, you see the rounded value **14.8s**, which is all you need for practice and improvisation.
 
 ### Problem with Gabberkick (RC-3)
 
