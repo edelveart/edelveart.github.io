@@ -19,7 +19,7 @@ const { page } = Astro.props as any;
 <BaseLayout title="Edgar Delgado - Notes" sideBarActiveItemID="NOTES_ACTIVE_PAGE">
   <article class="pb-0 mt-5">
     <div class="mb-5 mt-5" id="Notes">
-      <div class="text-3xl w-full font-bold flex items-center"> Notes </div>
+      <div class="text-3xl w-full font-bold flex items-center">Notes</div>
     </div>
 
     {
@@ -33,19 +33,18 @@ const { page } = Astro.props as any;
           </div>
 
           <div>
-            <h3 class={GET_COLORS_METADATA("sketch notes")}>Sketch Notes</h3>
-            <p class="text-sm">
-              Early ideas, unfinished paths, and mathematical-music questions I am still following.
-            </p>
-          </div>
-
-          <div>
             <h3 class={GET_COLORS_METADATA("lab notes")}>Lab Notes</h3>
             <p class="text-sm">
               Long-form explorations of mathematical and musical concepts, structures, and ideas.
             </p>
           </div>
 
+          <div>
+            <h3 class={GET_COLORS_METADATA("sketch notes")}>Sketch Notes</h3>
+            <p class="text-sm">
+              Early ideas, unfinished paths, and mathematical-music questions I am still following.
+            </p>
+          </div>
           <div>
             <h3 class={GET_COLORS_METADATA("misc notes")}>Misc Notes</h3>
             <p class="text-sm">
