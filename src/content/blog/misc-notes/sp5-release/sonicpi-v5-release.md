@@ -115,8 +115,9 @@ Now, you see the rounded value **14.8s**, which is all you need for practice and
 
 ## Fixing the Gabberkick issue in RC-3
 
+> This was my first direct contribution to the Sonic Pi codebase: I identified an edge case in the synth validation system and fixed the problem.
 
-I was testing the Gabberkick synthesizer from the documentation, and when changing the `slope_intermediate` parameter I ran into the following error:
+While testing the Gabberkick synthesizer from the documentation, I ran into an issue when changing the `slope_intermediate` parameter:
 
 ![Gabberkick bug](sp5-gabberkick.png)
 
@@ -194,9 +195,10 @@ The validation was referencing the wrong parameter. It should validate `slope_in
 
 After making this small change locally, the problem was fixed and `slope_intermediate` works correctly (editor and docs) without requiring `slope_start` to be explicitly provided.
 
-The issue was fixed in this commit:
+The issue was fixed in the GitHub commit:
 
-- [GitHub commit `7740efc`](https://github.com/sonic-pi-net/sonic-pi/commit/7740efcfdff2c5cbfe2d472efb8b6051239d3552)
+- [`7740efc`](https://github.com/sonic-pi-net/sonic-pi/commit/7740efcfdff2c5cbfe2d472efb8b6051239d3552)
+
 
 <!-- ### Interface observations (Solved in RC-2)
 
