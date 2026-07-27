@@ -8,7 +8,7 @@ updatedDate: "July 27 2026"
 tags: ["sonic pi", "live coding", "ruby", "creative coding",  "sonic pi tutorial", "music technology",  "computer music", "algorithmic composition", "mathematics"]
 ---
 
-These are my first impressions of the Sonic Pi 5 release candidates from the perspective of someone who loves live coding and contributed a fix to the Sonic Pi codebase while testing it.
+These are my first impressions of the Sonic Pi 5 release candidates from the perspective of a live coder who contributed a fix to the codebase while testing it.
 
 I'll cover the new interface, documentation workflow, some of the mathematical ideas behind the new features, and how to create your own card decks. I'll also share my contribution process and, at the end, a gift that some people have asked me to make available so they can experiment with it.
 
