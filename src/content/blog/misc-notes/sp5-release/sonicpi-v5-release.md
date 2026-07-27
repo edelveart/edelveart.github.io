@@ -14,6 +14,8 @@ At the end, I'll also share a small gift that some people have asked me for so t
 
 > I also tested my two **Ruby** gems, [figurate_numbers](https://rubygems.org/gems/figurate_numbers) and [modular_forms](https://rubygems.org/gems/modular_forms/versions/0.0.5), and they continue to work correctly in this version.
 
+
+
 <details class="[&_li]:my-0 [&_ul]:my-0.5">
 <summary>Contents</summary>
 
@@ -21,7 +23,7 @@ At the end, I'll also share a small gift that some people have asked me for so t
   - [Editor Visuals](#editor-visuals)
   - [Audio and Recording](#audio-and-recording)
 - [The documentation is a live learning tool](#the-documentation-is-a-live-learning-tool)
-  - [Problem with Gabberkick (RC-3)](#problem-with-gabberkick-rc-3)
+- [Fixing the Gabberkick issue in RC-3](#fixing-the-gabberkick-issue-in-rc-3)
 - [Music materials: new scales, samples and methods](#music-materials-new-scales-samples-and-methods)
 - [Card Decks: A Tutorial](#card-decks-a-tutorial)
 - [Phase and the oscilloscope](#phase-and-the-oscilloscope)
@@ -30,6 +32,7 @@ At the end, I'll also share a small gift that some people have asked me for so t
 - [Closing thoughts](#closing-thoughts)
 
 </details>
+
 
 ## Preferences: First look at the new interface
 
@@ -110,7 +113,8 @@ puts sample_duration(:arovane_beat_a)
 
 Now, you see the rounded value **14.8s**, which is all you need for practice and improvisation.
 
-### Problem with Gabberkick (RC-3)
+## Fixing the Gabberkick issue in RC-3
+
 
 I was testing the Gabberkick synthesizer from the documentation, and when changing the `slope_intermediate` parameter I ran into the following error:
 
@@ -189,6 +193,10 @@ The validation was referencing the wrong parameter. It should validate `slope_in
 ```
 
 After making this small change locally, the problem was fixed and `slope_intermediate` works correctly (editor and docs) without requiring `slope_start` to be explicitly provided.
+
+The issue was fixed in this commit:
+
+- [GitHub commit](https://github.com/sonic-pi-net/sonic-pi/commit/7740efcfdff2c5cbfe2d472efb8b6051239d3552)
 
 <!-- ### Interface observations (Solved in RC-2)
 
@@ -539,3 +547,5 @@ end
 ## Closing thoughts
 
 Many thanks to [**Sam Aaron**](https://www.patreon.com/samaaron/posts/sonic-pi-v5-1-164093369) and the entire [**Sonic Pi**](https://in-thread.sonic-pi.net/) community for continuing to shape and evolve this amazing creative instrument.
+
+You can also join the [community discussion](https://in-thread.sonic-pi.net/t/sonic-pi-v5-rc1-is-now-available-to-download/10023).
