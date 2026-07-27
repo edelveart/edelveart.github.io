@@ -21,6 +21,7 @@ At the end, I'll also share a small gift that some people have asked me for so t
   - [Editor Visuals](#editor-visuals)
   - [Audio and Recording](#audio-and-recording)
 - [The documentation is a live learning tool](#the-documentation-is-a-live-learning-tool)
+  - [Problem with Gabberkick (RC-3)](#problem-with-gabberkick-rc-3)
 - [Music materials: new scales, samples and methods](#music-materials-new-scales-samples-and-methods)
 - [Card Decks: A Tutorial](#card-decks-a-tutorial)
 - [Phase and the oscilloscope](#phase-and-the-oscilloscope)
@@ -98,6 +99,86 @@ The documentation available through the help panel using the **`F1` key** is imp
 The combination of **code**, **parameter controls**, **knobs**, and visual controllers connects familiar musical workflows with live coding, making experimentation between **sound design** and programming much more fluid.
 
 For example, a `mod_saw` (**modulated saw wave**) synth allows you to explore parameters such as `mod_range` directly with the knob, preview the sound using the virtual keyboard, and then transfer the result into your live coding session. This workflow creates a natural path from experimentation to code.
+
+### Problem with Gabberkick (RC-3)
+
+I was testing the Gabberkick synthesizer from the documentation, and when changing the `slope_intermediate` parameter I ran into the following error:
+
+![Gabberkick bug](sp5-gabberkick.png)
+
+```shell
+Runtime Error Sonic Pi doesn't know a function called >=
+Example: play :e3, release: 0.5
+Docs: play
+buffer sonic-pi-tutorial-keys, line 4
+NoMethodError: undefined method '&gt;=' for nil
+line 4: play 34, slope_intermediate: 88
+Backtrace:
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/synths/synthinfo.rb:335:in 'block in SonicPi::Synths::BaseInfo#v_positive'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/synths/synthinfo.rb:163:in 'block (2 levels) in SonicPi::Synths::BaseInfo#validate!'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/synths/synthinfo.rb:162:in 'Array#each'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/synths/synthinfo.rb:162:in 'block in SonicPi::Synths::BaseInfo#validate!'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/synths/synthinfo.rb:158:in 'Hash#each'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/synths/synthinfo.rb:158:in 'SonicPi::Synths::BaseInfo#validate!'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/lang/sound.rb:4379:in 'SonicPi::Lang::Sound#validate_if_necessary!'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/lang/sound.rb:3963:in 'SonicPi::Lang::Sound#trigger_synth'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/lang/sound.rb:3887:in 'SonicPi::Lang::Sound#trigger_inst'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/lang/sound.rb:1293:in 'SonicPi::Lang::Sound#synth'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/lang/sound.rb:1390:in 'SonicPi::Lang::Sound#play'
+sonic-pi-tutorial-keys:4:in 'block (2 levels) in SonicPi::RuntimeMethods#__spider_eval'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/runtime.rb:1391:in 'Kernel#eval'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/runtime.rb:1391:in 'block (2 levels) in SonicPi::RuntimeMethods#__spider_eval'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/runtime.rb:1636:in 'block (2 levels) in SonicPi::RuntimeMethods#__in_thread'
+```
+
+According to the documentation, `slope_start` has a default value of `84`, so I expected this to work:
+
+```rb
+use_synth :gabberkick
+
+play 34,
+  slope_intermediate: 88
+```
+
+However, it produced the error above. Interestingly, if I changed the `slope_start` value from the documentation or added it manually in the editor:
+
+```rb
+use_synth :gabberkick
+play 34,
+  slope_start: 84,
+  slope_intermediate: 88
+```
+
+everything worked correctly. This meant that `slope_intermediate` only failed when `slope_start` was not explicitly provided.
+To find the cause, I checked the Sonic Pi source code. The synth definitions themselves were correct, but in:
+
+```text
+.../app/server/ruby/lib/sonicpi/synths/synthinfo.rb
+```
+
+I found a validation error in the definition of this synthesizer around line `4975`:
+
+```rb
+:slope_intermediate =>
+{
+  :doc => "The note where the frequency passes through after `:slope_length1`, typically much nearer to the final note.",
+  :validations => [v_positive(:slope_start)],
+  :modulatable => false
+},
+```
+
+The validation was referencing the wrong parameter. It should validate `slope_intermediate` instead of `slope_start`:
+
+```rb
+:slope_intermediate =>
+{
+  :doc => "The note where the frequency passes through after `:slope_length1`, typically much nearer to the final note.",
+  :validations => [v_positive(:slope_intermediate)],
+  :modulatable => false
+},
+```
+
+After making this small change locally, the problem was fixed and `slope_intermediate` works correctly (editor and docs) without requiring `slope_start` to be explicitly provided.
 
 <!-- ### Interface observations (Solved in RC-2)
 
