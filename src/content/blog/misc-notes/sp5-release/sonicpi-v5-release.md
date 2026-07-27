@@ -8,13 +8,11 @@ updatedDate: "July 27 2026"
 tags: ["sonic pi",     "live coding",     "ruby", "creative coding",  "sonic pi tutorial", "music technology",  "computer music", "algorithmic composition", "mathematics"]
 ---
 
-These are my first impressions of the new Sonic Pi 5 release candidate from the perspective of someone who loves live coding.
-I'll cover the new interface, documentation workflow, editor and audio features, some of the new musical material, and how to create your own card decks.
-At the end, I'll also share a small gift that some people have asked me for so they can experiment with it.
+These are my first impressions of the new Sonic Pi 5 release candidate from the perspective of someone who loves live coding and contributed a fix to the Sonic Pi codebase while testing it.
+
+I'll cover the new interface, documentation workflow, editor and audio features, some of the new musical material, and how to create your own card decks. I'll also explain the issue I found and the fix behind it, and at the end, share a gift that some people have asked me to make available so they can experiment with it.
 
 > I also tested my two **Ruby** gems, [figurate_numbers](https://rubygems.org/gems/figurate_numbers) and [modular_forms](https://rubygems.org/gems/modular_forms/versions/0.0.5), and they continue to work correctly in this version.
-
-
 
 <details class="[&_li]:my-0 [&_ul]:my-0.5">
 <summary>Contents</summary>
@@ -23,7 +21,7 @@ At the end, I'll also share a small gift that some people have asked me for so t
   - [Editor Visuals](#editor-visuals)
   - [Audio and Recording](#audio-and-recording)
 - [The documentation is a live learning tool](#the-documentation-is-a-live-learning-tool)
-- [Fixing the Gabberkick issue in RC-3](#fixing-the-gabberkick-issue-in-rc-3)
+- [Fixing a Gabberkick validation issue in RC-3](#fixing-a-gabberkick-validation-issue-in-rc-3)
 - [Music materials: new scales, samples and methods](#music-materials-new-scales-samples-and-methods)
 - [Card Decks: A Tutorial](#card-decks-a-tutorial)
 - [Phase and the oscilloscope](#phase-and-the-oscilloscope)
@@ -113,7 +111,7 @@ puts sample_duration(:arovane_beat_a)
 
 Now, you see the rounded value **14.8s**, which is all you need for practice and improvisation.
 
-## Fixing the Gabberkick issue in RC-3
+## Fixing a Gabberkick validation issue in RC-3
 
 > This was my first direct contribution to the Sonic Pi codebase: I identified an edge case in the synth validation system and fixed the problem.
 
