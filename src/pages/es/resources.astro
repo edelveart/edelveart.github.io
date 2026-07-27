@@ -4,7 +4,12 @@ import Errata from "@components/resources-components/Errata.astro";
 import MiscFiles from "@components/resources-components/MiscFiles.astro";
 import { SOCIAL_MEDIA } from "@ts-config-path/config";
 import CheatSheets from "@components/resources-components/CheatSheets.astro";
-import { BORDER_INFO, LINKS_TO, GET_COLORS_METADATA, CARD_OP } from "@styles/utilsCSS";
+import {
+  BORDER_INFO,
+  LINKS_TO,
+  GET_COLORS_METADATA,
+  CARD_OP,
+} from "@styles/utilsCSS";
 ---
 
 <BaseLayout title="Edgar Delgado Vega - Resources">
@@ -13,19 +18,19 @@ import { BORDER_INFO, LINKS_TO, GET_COLORS_METADATA, CARD_OP } from "@styles/uti
       <div class="text-3xl w-full font-bold flex items-center"> Recursos </div>
     </div>
     <p class="my-8">
-      Todos los recursos están elaborados en <strong>LaTeX</strong> y disponibles en <strong
-        >PDF</strong
-      >. Aquí recopilo documentos sobre matemáticas, música y sus aplicaciones a través de software.
+      Todos los recursos están elaborados en <strong>LaTeX</strong> y disponibles
+      en <strong>PDF</strong>. Aquí recopilo documentos sobre matemáticas,
+      música y sus aplicaciones a través de software.
     </p>
 
     <section class=`text-sm  mb-8 ${BORDER_INFO}`>
       <h3 class={GET_COLORS_METADATA("warning")}>Correcciones y versiones</h3>
       <p class={CARD_OP.parr}>
-        Estos documentos son borradores y pueden contener errores u omisiones. Si encuentras alguna
-        errata o inconsistencia, te agradecería que me lo informaras a través de <a
-          class={LINKS_TO}
-          target="_blank"
-          href={SOCIAL_MEDIA.linkedin}>LinkedIn</a
+        Estos documentos son borradores y pueden contener errores u omisiones.
+        Si encuentras alguna errata o inconsistencia, te agradecería que me lo
+        informaras a través de {" "}
+        <a class={LINKS_TO} target="_blank" href={SOCIAL_MEDIA.linkedin}
+          >LinkedIn</a
         >. Lo revisaré y corregiré con gusto en cuanto me sea posible.
       </p>
     </section>
@@ -39,26 +44,30 @@ import { BORDER_INFO, LINKS_TO, GET_COLORS_METADATA, CARD_OP } from "@styles/uti
   <section class=`text-sm  mb-8 ${BORDER_INFO}`>
     <h3 class={GET_COLORS_METADATA("warning")}>Aviso Legal</h3>
     <p class={CARD_OP.parr}>
-      Todo el contenido disponible en este sitio web, incluyendo los documentos y recursos
-      relacionados, está protegido por derechos de autor y se distribuye bajo la licencia Creative
-      Commons <a
+      Todo el contenido disponible en este sitio web, incluyendo los documentos
+      y recursos relacionados, está protegido por derechos de autor y se
+      distribuye bajo la licencia Creative Commons {" "}
+      <a
         class={LINKS_TO}
         target="_blank"
-        href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a
-      > (Atribución-No Comercial-SinDerivados).
+        href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+        >CC BY-NC-ND 4.0
+      </a>
+      {" "} (Atribución-No Comercial-SinDerivados).
     </p>
     <p>
-      Esto significa que puedes copiar y redistribuir el material en cualquier medio o formato,
-      siempre que se dé el crédito adecuado, no se use con fines comerciales y no se realicen
-      modificaciones ni se creen obras derivadas. No se permite el uso comercial ni la alteración
-      del material sin autorización explícita.
+      Esto significa que puedes copiar y redistribuir el material en cualquier
+      medio o formato, siempre que se dé el crédito adecuado, no se use con
+      fines comerciales y no se realicen modificaciones ni se creen obras
+      derivadas. No se permite el uso comercial ni la alteración del material
+      sin autorización explícita.
     </p>
   </section>
   <section class=`text-sm mb-8 ${BORDER_INFO}` }>
     <h3 class={GET_COLORS_METADATA("warning")}>Asistencia de IA</h3>
     <p class={CARD_OP.parr}>
-      La IA sirve de apoyo para la corrección gramatical y la discusión ocasional de ideas. La
-      revisión final corresponde al autor.
+      La IA sirve de apoyo para la corrección gramatical y la discusión
+      ocasional de ideas. La revisión final corresponde al autor.
     </p>
   </section>
 </BaseLayout>
