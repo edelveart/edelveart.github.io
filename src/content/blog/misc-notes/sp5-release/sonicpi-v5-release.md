@@ -338,7 +338,7 @@ opt_summaries.each do |ak, info|
 ```
 
 This is the complete approach I tested locally.
-Since this touches `scintilla_api.h`, `scintilla_api.cpp`, and `qt-doc.rb`, I wanted to share the idea first and get Sam Aaron's thoughts before preparing a PR or nothing else. :D
+Since this touches `scintilla_api.h`, `scintilla_api.cpp`, and `qt-doc.rb`, I wanted to share the idea first and get Sam Aaron's thoughts through the community.
 
 ## Fixing a Gabberkick validation issue in RC-3
 
