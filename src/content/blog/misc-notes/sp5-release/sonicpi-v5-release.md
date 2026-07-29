@@ -162,13 +162,13 @@ I added owner-specific storage and methods.
 
 ```cpp
 // around line 86
-  void setDocFor(const QString& owner, const QString& name, const QString& doc);
-  void setSummaryFor(const QString& owner, const QString& name, const QString& summary);
+void setDocFor(const QString& owner, const QString& name, const QString& doc);
+void setSummaryFor(const QString& owner, const QString& name, const QString& summary);
 
 // around line 126
 QString ownerForContext(const QStringList& context) const;
-  QHash<QString, QString> ownerDocs;
-  QHash<QString, QString> ownerSummaries;
+QHash<QString, QString> ownerDocs;
+QHash<QString, QString> ownerSummaries;
 QHash<QString, OptRange> optRanges;
 QHash<QString, OptRange> ownerOptRanges;
 ```
@@ -183,17 +183,17 @@ void ScintillaAPI::setDoc(const QString& name, const QString& doc) {
   docs.insert(name, doc);
 }
 
-  void ScintillaAPI::setDocFor(const QString& owner,
-                              const QString& name,
-                              const QString& doc) {
-    ownerDocs.insert(owner + " " + name, doc);
-  }
+void ScintillaAPI::setDocFor(const QString& owner,
+                            const QString& name,
+                            const QString& doc) {
+  ownerDocs.insert(owner + " " + name, doc);
+}
 
-  void ScintillaAPI::setSummaryFor(const QString& owner,
-                                  const QString& name,
-                                  const QString& summary) {
-    ownerSummaries.insert(owner + " " + name, summary);
-  }
+void ScintillaAPI::setSummaryFor(const QString& owner,
+                                const QString& name,
+                                const QString& summary) {
+  ownerSummaries.insert(owner + " " + name, summary);
+}
 
 void ScintillaAPI::setUsage(const QString& name, const QString& usage) {
   usages.insert(name, usage);
@@ -206,29 +206,29 @@ Then, when retrieving option documentation, I first check the current owner and 
 // around line 356 :: if (optOptions.contains(optBefore))
 // I substitute optDoc:
 
-  const QString owner = ownerForContext(context);
-  const QString ownerKey = owner + " " + optBefore;
+const QString owner = ownerForContext(context);
+const QString ownerKey = owner + " " + optBefore;
 
-  const QString optDoc = ownerDocs.contains(ownerKey)
-                            ? ownerDocs.value(ownerKey)
-                            : docs.value(optBefore);
+const QString optDoc = ownerDocs.contains(ownerKey)
+                          ? ownerDocs.value(ownerKey)
+                          : docs.value(optBefore);
 
 
 // aroune line 417 :: for (const QString& n : names)
 //  I replace summary and doc:
 
-  QString owner = ownerForContext(context);
-  QString ownerKey = owner + " " + n;
+QString owner = ownerForContext(context);
+QString ownerKey = owner + " " + n;
 
-  item.summary = ownerSummaries.contains(ownerKey)
-                  ? ownerSummaries.value(ownerKey)
-                  : summaries.value(n);
+item.summary = ownerSummaries.contains(ownerKey)
+                ? ownerSummaries.value(ownerKey)
+                : summaries.value(n);
 
-  item.usage = usages.value(n);
+item.usage = usages.value(n);
 
-  item.doc = ownerDocs.contains(ownerKey)
-              ? ownerDocs.value(ownerKey)
-              : docs.value(n);
+item.doc = ownerDocs.contains(ownerKey)
+            ? ownerDocs.value(ownerKey)
+            : docs.value(n);
 ```
 
 ### qt-doc.rb
