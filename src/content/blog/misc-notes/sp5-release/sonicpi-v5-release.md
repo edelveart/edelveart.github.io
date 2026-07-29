@@ -162,16 +162,15 @@ I added owner-specific storage and methods.
 
 ```cpp
 // around line 86
-
-  void setDocFor(const QString& owner, const QString& name, const QString& doc); // new
-  void setSummaryFor(const QString& owner, const QString& name, const QString& summary); //new
+  void setDocFor(const QString& owner, const QString& name, const QString& doc);
+  void setSummaryFor(const QString& owner, const QString& name, const QString& summary);
 
 // around line 126
-  QString ownerForContext(const QStringList& context) const;
-  QHash<QString, QString> ownerDocs; // new
-  QHash<QString, QString> ownerSummaries; // new
-  QHash<QString, OptRange> optRanges;
-  QHash<QString, OptRange> ownerOptRanges;
+QString ownerForContext(const QStringList& context) const;
+  QHash<QString, QString> ownerDocs;
+  QHash<QString, QString> ownerSummaries;
+QHash<QString, OptRange> optRanges;
+QHash<QString, OptRange> ownerOptRanges;
 ```
 
 ### scintilla_api.cpp
@@ -184,17 +183,17 @@ void ScintillaAPI::setDoc(const QString& name, const QString& doc) {
   docs.insert(name, doc);
 }
 
-void ScintillaAPI::setDocFor(const QString& owner,
-                             const QString& name,
-                             const QString& doc) {
-  ownerDocs.insert(owner + " " + name, doc);
-}
+  void ScintillaAPI::setDocFor(const QString& owner,
+                              const QString& name,
+                              const QString& doc) {
+    ownerDocs.insert(owner + " " + name, doc);
+  }
 
-void ScintillaAPI::setSummaryFor(const QString& owner,
-                                 const QString& name,
-                                 const QString& summary) {
-  ownerSummaries.insert(owner + " " + name, summary);
-}
+  void ScintillaAPI::setSummaryFor(const QString& owner,
+                                  const QString& name,
+                                  const QString& summary) {
+    ownerSummaries.insert(owner + " " + name, summary);
+  }
 
 void ScintillaAPI::setUsage(const QString& name, const QString& usage) {
   usages.insert(name, usage);
@@ -207,30 +206,29 @@ Then, when retrieving option documentation, I first check the current owner and 
 // around line 356 :: if (optOptions.contains(optBefore))
 // I substitute optDoc:
 
-const QString owner = ownerForContext(context);
-const QString ownerKey = owner + " " + optBefore;
+  const QString owner = ownerForContext(context);
+  const QString ownerKey = owner + " " + optBefore;
 
-const QString optDoc = ownerDocs.contains(ownerKey)
-                          ? ownerDocs.value(ownerKey)
-                          : docs.value(optBefore);
+  const QString optDoc = ownerDocs.contains(ownerKey)
+                            ? ownerDocs.value(ownerKey)
+                            : docs.value(optBefore);
 
 
 // aroune line 417 :: for (const QString& n : names)
 //  I replace summary and doc:
 
-QString owner = ownerForContext(context);
-QString ownerKey = owner + " " + n;
+  QString owner = ownerForContext(context);
+  QString ownerKey = owner + " " + n;
 
-item.summary = ownerSummaries.contains(ownerKey)
-                ? ownerSummaries.value(ownerKey)
-                : summaries.value(n);
+  item.summary = ownerSummaries.contains(ownerKey)
+                  ? ownerSummaries.value(ownerKey)
+                  : summaries.value(n);
 
-item.usage = usages.value(n);
+  item.usage = usages.value(n);
 
-item.doc = ownerDocs.contains(ownerKey)
-            ? ownerDocs.value(ownerKey)
-            : docs.value(n);
-
+  item.doc = ownerDocs.contains(ownerKey)
+              ? ownerDocs.value(ownerKey)
+              : docs.value(n);
 ```
 
 ### qt-doc.rb
@@ -244,35 +242,34 @@ The change separates:
 - `opt_validations`: owners with validations, used for range/slider checks
 
 ```rb
-  # line 342
+# around line 342
   opt_owners = {}
 
-  #
-  SonicPi::Synths::SynthInfo.get_all.each do |k, v|
-    next unless v.is_a? SonicPi::Synths::FXInfo
-    next if (k.to_s.include? 'replace_')
-    safe_k = k.to_s[3..-1]
-    docs << "  // fx :#{safe_k}\n"
-    docs << "  fxtmp.clear(); fxtmp "
-    v.arg_info.each do |ak, av|
-      docs << "<< \"#{ak}:\" ";
-      opt_summaries[ak] ||= av if av[:doc]
+#
+SonicPi::Synths::SynthInfo.get_all.each do |k, v|
+  next unless v.is_a? SonicPi::Synths::FXInfo
+  next if (k.to_s.include? 'replace_')
+  safe_k = k.to_s[3..-1]
+  docs << "  // fx :#{safe_k}\n"
+  docs << "  fxtmp.clear(); fxtmp "
+  v.arg_info.each do |ak, av|
+    docs << "<< \"#{ak}:\" ";
+    opt_summaries[ak] ||= av if av[:doc]
 
-      # All owners, even without validations (for owner-scoped docs)
-      (opt_owners[ak] ||= []) << [":#{safe_k}", av]
+    # All owners, even without validations (for owner-scoped docs)
+    (opt_owners[ak] ||= []) << [":#{safe_k}", av]
 
-      # Only owners with validations (for slider safety)
-      if (vals = (v.info[ak] || {})[:validations])
-        (opt_validations[ak] ||= []) << [":#{safe_k}", av, vals]
-      end
+    # Only owners with validations (for slider safety)
+    if (vals = (v.info[ak] || {})[:validations])
+      (opt_validations[ak] ||= []) << [":#{safe_k}", av, vals]
     end
-    docs << ";\n"
-    docs << "  autocomplete->addFXArgs(\":#{safe_k}\", fxtmp);\n"
-    docs << "  autocomplete->setSummary(\":#{safe_k}\", QString::fromUtf8(\"#{summary_clean.call(v.name)}\"));\n"
-    fx_doc = Kramdown::Document.new(v.doc.to_s.strip).to_html + opts_html.call(v.arg_info)
-    docs << "  autocomplete->setDoc(\":#{safe_k}\", #{qutf8_doc.call(fx_doc)});\n\n"
   end
-
+  docs << ";\n"
+  docs << "  autocomplete->addFXArgs(\":#{safe_k}\", fxtmp);\n"
+  docs << "  autocomplete->setSummary(\":#{safe_k}\", QString::fromUtf8(\"#{summary_clean.call(v.name)}\"));\n"
+  fx_doc = Kramdown::Document.new(v.doc.to_s.strip).to_html + opts_html.call(v.arg_info)
+  docs << "  autocomplete->setDoc(\":#{safe_k}\", #{qutf8_doc.call(fx_doc)});\n\n"
+end
 
 SonicPi::Synths::SynthInfo.get_all.each do |k, v|
   next unless v.is_a? SonicPi::Synths::SynthInfo
@@ -297,7 +294,7 @@ SonicPi::Synths::SynthInfo.get_all.each do |k, v|
   docs << "  autocomplete->setDoc(\":#{k}\", #{qutf8_doc.call(synth_doc)});\n\n"
 end
 
-// In opt_summaries:
+## opt_summaries ::
 
 opt_summaries.each do |ak, info|
   # HTML, like the synth/fx docs, for consistent block spacing.
@@ -340,7 +337,8 @@ opt_summaries.each do |ak, info|
   end
 ```
 
-This is the complete approach I tested locally. Since this touches `scintilla_api.h`, `scintilla_api.cpp`, and `qt-doc.rb`, I wanted to share the idea first and see what you think about this direction before preparing a PR.
+This is the complete approach I tested locally.
+Since this touches `scintilla_api.h`, `scintilla_api.cpp`, and `qt-doc.rb`, I wanted to share the idea first and get Sam Aaron's thoughts before preparing a PR or nothing else. :D
 
 ## Fixing a Gabberkick validation issue in RC-3
 
