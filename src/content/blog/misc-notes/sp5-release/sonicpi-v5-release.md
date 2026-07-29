@@ -4,8 +4,19 @@ description: "My first impressions of the Sonic Pi 5 release candidates, coverin
 pubDate: "July 20 2026"
 heroImage: "/svg-ggb/blog-sonicpi-v5-node-tree.webp"
 badge: "misc notes"
-updatedDate: "July 27 2026"
-tags: ["sonic pi", "live coding", "ruby", "creative coding",  "sonic pi tutorial", "music technology",  "computer music", "algorithmic composition", "mathematics"]
+updatedDate: "July 29 2026"
+tags:
+  [
+    "sonic pi",
+    "live coding",
+    "ruby",
+    "creative coding",
+    "sonic pi tutorial",
+    "music technology",
+    "computer music",
+    "algorithmic composition",
+    "mathematics",
+  ]
 ---
 
 These are my first impressions of the Sonic Pi 5 release candidates from the perspective of a live coder who contributed a fix to the codebase while testing it.
@@ -30,7 +41,6 @@ I'll cover the new interface, documentation workflow, some of the mathematical i
 - [Closing thoughts](#closing-thoughts)
 
 </details>
-
 
 ## Preferences: First look at the new interface
 
@@ -110,6 +120,225 @@ puts sample_duration(:arovane_beat_a)
 ```
 
 Now, you see the rounded value **14.8s**, which is all you need for practice and improvisation.
+
+## Autocomplete ownership issue in RC-4
+
+While testing the new autocomplete system in RC-4, I noticed a small issue with `option` ownership.
+For example:
+
+```rb
+synth :fm, depth: 2
+
+with_fx :tremolo, depth: 0.6 do
+  play 50
+  sleep 1
+end
+```
+
+![Flanger opts](sp5-fm-problem.png)
+
+The autocomplete popup for depth was showing the documentation from the wrong owner.
+In this case, the depth option from `:fm`was displaying the `depth` documentation from `:flanger`. The same happened with `:tremolo`, which also received the `:flanger` documentation.
+
+The issue seems to be that docs are currently stored globally by option name. Since multiple synths/FX share option names (`depth`, `room`, etc.), the last registered owner can overwrite the displayed docs.
+
+### Possible solution
+
+A possible solution is to keep the current global docs as a fallback, but add owner-specific docs (`setDocFor` and `setSummaryFor`) when an option belongs to a particular synth or FX. I **compiled Sonic Pi** locally and tested the change.
+The autocomplete now resolves the documentation using the current `synth/FX` context (see images below):
+
+![Resolved FM](sp5-fm-solved.png)
+![Resolved Tremolo](sp5-tremolo-solved.png)
+
+Well, let's look at the files that need to change.
+
+> This was obviously more complicated than the previous `Gabberkick` fix. The main challenge was finding where the ownership of shared options was being lost.
+
+### scintilla_api.h
+
+I added owner-specific storage and methods.
+
+```cpp
+// around line 86
+
+  void setDocFor(const QString& owner, const QString& name, const QString& doc); // new
+  void setSummaryFor(const QString& owner, const QString& name, const QString& summary); //new
+
+// around line 126
+  QString ownerForContext(const QStringList& context) const;
+  QHash<QString, QString> ownerDocs; // new
+  QHash<QString, QString> ownerSummaries; // new
+  QHash<QString, OptRange> optRanges;
+  QHash<QString, OptRange> ownerOptRanges;
+```
+
+### scintilla_api.cpp
+
+I added owner-specific docs.
+
+```cpp
+// around line 195
+void ScintillaAPI::setDoc(const QString& name, const QString& doc) {
+  docs.insert(name, doc);
+}
+
+void ScintillaAPI::setDocFor(const QString& owner,
+                             const QString& name,
+                             const QString& doc) {
+  ownerDocs.insert(owner + " " + name, doc);
+}
+
+void ScintillaAPI::setSummaryFor(const QString& owner,
+                                 const QString& name,
+                                 const QString& summary) {
+  ownerSummaries.insert(owner + " " + name, summary);
+}
+
+void ScintillaAPI::setUsage(const QString& name, const QString& usage) {
+  usages.insert(name, usage);
+}
+```
+
+Then, when retrieving option documentation, I first check the current owner and fallback to the global documentation if no owner-specific entry exists.
+
+```cpp
+// around line 356 :: if (optOptions.contains(optBefore))
+// I substitute optDoc:
+
+const QString owner = ownerForContext(context);
+const QString ownerKey = owner + " " + optBefore;
+
+const QString optDoc = ownerDocs.contains(ownerKey)
+                          ? ownerDocs.value(ownerKey)
+                          : docs.value(optBefore);
+
+
+// aroune line 417 :: for (const QString& n : names)
+//  I replace summary and doc:
+
+QString owner = ownerForContext(context);
+QString ownerKey = owner + " " + n;
+
+item.summary = ownerSummaries.contains(ownerKey)
+                ? ownerSummaries.value(ownerKey)
+                : summaries.value(n);
+
+item.usage = usages.value(n);
+
+item.doc = ownerDocs.contains(ownerKey)
+            ? ownerDocs.value(ownerKey)
+            : docs.value(n);
+
+```
+
+### qt-doc.rb
+
+The docs generator now tracks all owners of an option, not only those with validations.
+Previously, shared options like `depth` were stored globally by name, so the last registered owner could **overwrite** the documentation.
+
+The change separates:
+
+- `opt_owners`: all owners, used for owner-specific docs
+- `opt_validations`: owners with validations, used for range/slider checks
+
+```rb
+  # line 342
+  opt_owners = {}
+
+  #
+  SonicPi::Synths::SynthInfo.get_all.each do |k, v|
+    next unless v.is_a? SonicPi::Synths::FXInfo
+    next if (k.to_s.include? 'replace_')
+    safe_k = k.to_s[3..-1]
+    docs << "  // fx :#{safe_k}\n"
+    docs << "  fxtmp.clear(); fxtmp "
+    v.arg_info.each do |ak, av|
+      docs << "<< \"#{ak}:\" ";
+      opt_summaries[ak] ||= av if av[:doc]
+
+      # All owners, even without validations (for owner-scoped docs)
+      (opt_owners[ak] ||= []) << [":#{safe_k}", av]
+
+      # Only owners with validations (for slider safety)
+      if (vals = (v.info[ak] || {})[:validations])
+        (opt_validations[ak] ||= []) << [":#{safe_k}", av, vals]
+      end
+    end
+    docs << ";\n"
+    docs << "  autocomplete->addFXArgs(\":#{safe_k}\", fxtmp);\n"
+    docs << "  autocomplete->setSummary(\":#{safe_k}\", QString::fromUtf8(\"#{summary_clean.call(v.name)}\"));\n"
+    fx_doc = Kramdown::Document.new(v.doc.to_s.strip).to_html + opts_html.call(v.arg_info)
+    docs << "  autocomplete->setDoc(\":#{safe_k}\", #{qutf8_doc.call(fx_doc)});\n\n"
+  end
+
+
+SonicPi::Synths::SynthInfo.get_all.each do |k, v|
+  next unless v.is_a? SonicPi::Synths::SynthInfo
+  docs << "  // synth :#{k}\n"
+  docs << "  fxtmp.clear(); fxtmp "
+  v.arg_info.each do |ak, av|
+    docs << "<< \"#{ak}:\" ";
+    opt_summaries[ak] ||= av if av[:doc]
+
+    # All owners, even without validations (for owner-scoped docs)
+    (opt_owners[ak] ||= []) << [":#{k}", av]
+
+    # Only owners with validations (for slider safety)
+    if (vals = (v.info[ak] || {})[:validations])
+      (opt_validations[ak] ||= []) << [":#{k}", av, vals]
+    end
+  end
+  docs << ";\n"
+  docs << "  autocomplete->addSynthArgs(\":#{k}\", fxtmp);\n"
+  docs << "  autocomplete->setSummary(\":#{k}\", QString::fromUtf8(\"#{summary_clean.call(v.name)}\"));\n"
+  synth_doc = Kramdown::Document.new(v.doc.to_s.strip).to_html + opts_html.call(v.arg_info)
+  docs << "  autocomplete->setDoc(\":#{k}\", #{qutf8_doc.call(synth_doc)});\n\n"
+end
+
+// In opt_summaries:
+
+opt_summaries.each do |ak, info|
+  # HTML, like the synth/fx docs, for consistent block spacing.
+  meta = []
+  ds = fmt_default.call(info[:default])
+  meta << "Default: <code>#{ds}</code>" if ds
+  meta << "<i>slidable</i>" if info[:slidable]
+  body = ""
+  body += "<p>#{meta.join(' · ')}</p>" unless meta.empty?
+  d = info[:doc].to_s.strip
+  body += "<p>#{opt_doc_html.call(d)}</p>" unless d.empty?
+  # Describe the opt's constraints (straight from the engine's validations) so the
+  # value is self-documenting — e.g. "must be zero or greater; must be less than 1".
+  cons = info[:constraints] || []
+  body += "<p><i>#{opt_doc_html.call(cons.join('; '))}</i></p>" unless cons.empty?
+    # Generic fallback (used when there is no owner-specific match).
+  docs << "  autocomplete->setSummary(\"#{ak}:\", QString::fromUtf8(\"#{ak}:\"));\n"
+  docs << "  autocomplete->setDoc(\"#{ak}:\", #{qutf8_doc.call(body)});\n"
+
+  # Owner-scoped docs: the same opt name can have different meanings depending
+  # on the synth/FX that owns it (e.g. room: on :reverb vs :gverb).
+  (opt_validations[ak] || []).each do |owner, oinfo, _vals|
+    owner_body = ""
+    owner_meta = []
+
+    owner_default = fmt_default.call(oinfo[:default])
+    owner_meta << "Default: <code>#{owner_default}</code>" if owner_default
+    owner_meta << "<i>slidable</i>" if oinfo[:slidable]
+
+    owner_body += "<p>#{owner_meta.join(' · ')}</p>" unless owner_meta.empty?
+
+    owner_doc = oinfo[:doc].to_s.strip
+    owner_body += "<p>#{opt_doc_html.call(owner_doc)}</p>" unless owner_doc.empty?
+
+    owner_cons = oinfo[:constraints] || []
+    owner_body += "<p><i>#{opt_doc_html.call(owner_cons.join('; '))}</i></p>" unless owner_cons.empty?
+
+    docs << "  autocomplete->setSummaryFor(\"#{owner}\", \"#{ak}:\", QString::fromUtf8(\"#{ak}:\"));\n"
+    docs << "  autocomplete->setDocFor(\"#{owner}\", \"#{ak}:\", #{qutf8_doc.call(owner_body)});\n"
+  end
+```
+
+This is the complete approach I tested locally. Since this touches `scintilla_api.h`, `scintilla_api.cpp`, and `qt-doc.rb`, I wanted to share the idea first and see what you think about this direction before preparing a PR.
 
 ## Fixing a Gabberkick validation issue in RC-3
 
@@ -198,7 +427,6 @@ After making this small change locally, the problem was fixed and `slope_interme
 The issue was fixed in the GitHub commit:
 
 - [`7740efc`](https://github.com/sonic-pi-net/sonic-pi/commit/7740efcfdff2c5cbfe2d472efb8b6051239d3552)
-
 
 <!-- ### Interface observations (Solved in RC-2)
 
@@ -298,7 +526,6 @@ puts sp5_samples
 | `:vinyl`    |    4 | `:vinyl_backspin`, `:vinyl_hiss`, `:vinyl_rewind`, `:vinyl_scratch`                                                                                                                                                                                                                                                                                                                                                   |
  -->
 
-
 ## Card Decks: A Tutorial
 
 In the **Menu → Examples**, there is a `QuickStart Cards` option that opens a panel with code snippet cards. These cards allow you to **copy** the snippet, **drag** it into the code editor, and listen to it with a play button, among other features. In fact, this is a wonderful educational tool. Here I'll show you how to create your own.
@@ -326,10 +553,13 @@ $$
 
 ````md
 # Deck: Figurate Numbers
+
 Numbers that grow into shapes. Turn mathematical patterns into musical melodies.
 
 ## Triangular Numbers
+
 Numbers that form triangle patterns, with each step adding a new layer.
+
 ```
 live_loop :triangular do
   notes = (ring 1, 3, 6, 10, 15)
@@ -339,7 +569,9 @@ end
 ```
 
 ## Square Numbers
+
 Numbers formed by equal rows and columns, creating square patterns.
+
 ```
 live_loop :square do
   notes = (ring 1, 4, 9, 16, 25)
@@ -349,7 +581,9 @@ end
 ```
 
 ## Pentagonal Numbers
+
 Numbers that follow five-sided shapes, growing with each step.
+
 ```
 live_loop :pentagonal do
   notes = (ring 1, 5, 12, 22, 35)
