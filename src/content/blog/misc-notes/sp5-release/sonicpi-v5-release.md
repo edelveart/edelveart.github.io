@@ -32,6 +32,8 @@ I'll cover the new interface, documentation workflow, some of the mathematical i
   - [Editor Visuals](#editor-visuals)
   - [Audio and Recording](#audio-and-recording)
 - [The documentation is a live learning tool](#the-documentation-is-a-live-learning-tool)
+- [Autocomplete ownership issue in RC-4](#autocomplete-ownership-issue-in-rc-4)
+  - [Possible solution](#possible-solution)
 - [Fixing a Gabberkick validation issue in RC-3](#fixing-a-gabberkick-validation-issue-in-rc-3)
 - [Music materials: new scales, samples and methods](#music-materials-new-scales-samples-and-methods)
 - [Card Decks: A Tutorial](#card-decks-a-tutorial)
@@ -174,7 +176,7 @@ I added owner-specific storage and methods.
 
 ### scintilla_api.cpp
 
-I added owner-specific docs.
+I added owner-specific documentation lookup with a global fallback.
 
 ```cpp
 // around line 195
@@ -233,12 +235,12 @@ item.doc = ownerDocs.contains(ownerKey)
 
 ### qt-doc.rb
 
-The docs generator now tracks all owners of an option, not only those with validations.
-Previously, shared options like `depth` were stored globally by name, so the last registered owner could **overwrite** the documentation.
+The docs generator now keeps track of all owners for an option, not only those with validations.
+Previously, shared options like `depth` were generated only by option name, so the owner information was lost before reaching the autocomplete layer. This could cause an option to show documentation from the wrong synth/FX.
 
 The change separates:
 
-- `opt_owners`: all owners, used for owner-specific docs
+- `opt_owners`: all owners, used to generate owner-specific docs
 - `opt_validations`: owners with validations, used for range/slider checks
 
 ```rb
