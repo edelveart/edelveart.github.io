@@ -61,7 +61,9 @@ We finally have theme customization, including **hue** changes, **transparency**
 | Phosphor      | A green-on-black CRT colour scheme                 |
 | Signal        | High-contrast blue-and-gold colour scheme          |
 
-I selected **Phosphor** for the images below. Can you guess the hue adjustment value I used? However, I think I’ll be working with **Mild Dark** on a daily basis, as it feels really comfortable and easy on the eyes.
+I selected **Phosphor** for the images below. However, I think I’ll be working with **Mild Dark** on a daily basis, as it feels really comfortable and easy on the eyes.
+
+In RC-4, it also displays the color percentage values and introduces a **new Spread Hue** option. Why $59$? Well, if you double-click the value, you can enter an exact number using your keyboard.
 
 For those who enjoy the conveniences of modern code editors, it now includes a toolbar with **Cut**, **Copy**, **Paste**, and, most importantly, **Search**.
 
@@ -87,12 +89,17 @@ Likewise, the visual representation of the `cutoff` through bars (visible in the
 
 I noticed the new **dynamic event visualization** features added to the editor. Now, every triggered sound event can generate visual feedback through three customizable options, each with adjustable brightness:
 
-- Flash code on sound trigger:
+- Flash code on sound trigger
 - Flash gutter on sound trigger
 - Show live loop scopes
 - Scrolling live loop scopes
 
 Most interesting is the small oscilloscope and spectrum display (bar-style visualization) attached directly to the code line.
+I’ll probably leave the last option disabled and use the flash brightness set to **20%**, as shown in the screenshot above.
+
+### Skope Kinds
+
+RC-4 brings together all the classic visualization modes: `Mono`, `Spectrum`, `Stereo`, `Mirror Stereo`, and `Lissajous` (see below), while introducing the new `Levels` mode.
 
 ### Audio and Recording
 
