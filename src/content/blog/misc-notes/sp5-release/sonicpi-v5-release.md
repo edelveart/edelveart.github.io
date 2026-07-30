@@ -101,6 +101,21 @@ I’ll probably leave the last option disabled and use the flash brightness set 
 
 RC-4 brings together all the classic visualization modes: `Mono`, `Spectrum`, `Stereo`, `Mirror Stereo`, and `Lissajous` (see below), while introducing the new `Levels` mode.
 
+### Large editor lines
+
+Do you want more lines for your buffer $2$ or $6$? It will now support up to $2.5$k lines of code.
+
+### Shortcuts
+
+Many times you are already accustomed to a specific editor, so you need to learn new shortcuts. In this new release, we now have 4 shortcut modes:
+
+- Mac
+- Windows | Linux
+- Emacs Live
+- Custom
+
+The last one can be modified from any of the three **base presets**, or you can use `Import...` and `Export...` to share your configuration.
+
 ### Audio and Recording
 
 What is immediately noticeable is the possibility to **record audio + video**. This is superb, as it removes the need for external software to capture our sessions.
