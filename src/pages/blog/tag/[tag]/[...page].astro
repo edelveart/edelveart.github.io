@@ -4,16 +4,26 @@ import { getCollection } from "astro:content";
 import createSlug from "@ts-config-path/lib/createSlug";
 import CardBlog from "@components/CardBlog.astro";
 import Arrows from "@icons/Arrows.astro";
+import DividerNav from "@components/DividerNav.astro";
 
-import { BORDER_INFO, CARD_OP, GET_COLORS_METADATA, NAV_LINKS_PAGES } from "@styles/utilsCSS";
+import {
+  BORDER_INFO,
+  CARD_OP,
+  GET_COLORS_METADATA,
+  NAV_LINKS_PAGES,
+} from "@styles/utilsCSS";
 
 export async function getStaticPaths({ paginate }) {
   const all_posts = await getCollection("blog");
 
-  const all_tags = [...new Set(all_posts.flatMap((post) => post.data.tags || []))];
+  const all_tags = [
+    ...new Set(all_posts.flatMap((post) => post.data.tags || [])),
+  ];
 
   return all_tags.flatMap((tag) => {
-    const filtered_posts = all_posts.filter((post) => post.data.tags?.includes(tag));
+    const filtered_posts = all_posts.filter((post) =>
+      post.data.tags?.includes(tag),
+    );
 
     return paginate(filtered_posts, {
       params: { tag },
@@ -26,14 +36,19 @@ const { page } = Astro.props;
 const params = Astro.params;
 ---
 
-<BaseLayout title={"Notes / tag / " + params.tag} sideBarActiveItemID="NOTES_ACTIVE_PAGE">
+<BaseLayout
+  title={"Notes / tag / " + params.tag}
+  sideBarActiveItemID="NOTES_ACTIVE_PAGE"
+>
   <section class="pb-3 mt-5">
     <div class="mb-5 mt-5" id="BLOG-TAGS">
       <div class="text-3xl w-full font-bold flex justify-start">
         <div class="flex flex-col md:flex-row md:items-center">
           Notes
-          <div class="md:ml-2 translate-y-px text-lg uppercase tracking-wider text-primary/75">
-            <span class="hidden md:inline text-info/60"> · </span>
+          <div
+            class="md:ml-2 translate-y-px text-lg uppercase tracking-wider text-primary/75"
+          >
+            <span class="hidden md:inline text-info/60">·</span>
             <span class="font-light">{params.tag}</span>
           </div>
         </div>
@@ -43,7 +58,9 @@ const params = Astro.params;
         page.data.length === 0 ? (
           <div class={`bg-base-200 ${BORDER_INFO} w-full p-4 min-w-full`}>
             <p class="font-bold">Sorry!</p>
-            <p>There are no blog posts to show at the moment. Check back later!</p>
+            <p>
+              There are no blog posts to show at the moment. Check back later!
+            </p>
           </div>
         ) : (
           <div class="mt-10">
@@ -69,18 +86,21 @@ const params = Astro.params;
           <section class={`text-sm mb-8 mt-12 ${BORDER_INFO}`}>
             <h3 class={GET_COLORS_METADATA("warning")}>AI Assistance</h3>
             <p class={CARD_OP.parr}>
-              AI tools are used to assist with grammar and occasional discussion of ideas. Final
-              review remains with the author.
+              AI tools are used to assist with grammar and occasional discussion
+              of ideas. Final review remains with the author.
             </p>
           </section>
         )
       }
-      <div class="divider mt-10"></div>
+      <DividerNav />
 
-      <div class="grid grid-cols-2 gap-2 mt-5">
+      <div class="grid grid-cols-2 gap-2">
         {
           page.url.prev ? (
-            <a class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`} href={page.url.prev}>
+            <a
+              class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`}
+              href={page.url.prev}
+            >
               <span class={NAV_LINKS_PAGES.arrowSpan}>
                 <Arrows direction="left" />
               </span>
@@ -97,7 +117,10 @@ const params = Astro.params;
 
         {
           page.url.next ? (
-            <a class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`} href={page.url.next}>
+            <a
+              class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`}
+              href={page.url.next}
+            >
               <div class="text-right">
                 <div class={NAV_LINKS_PAGES.prevNext}>OLDER</div>
                 <div class={NAV_LINKS_PAGES.pageTitle}>Earlier notes</div>

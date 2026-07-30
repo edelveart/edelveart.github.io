@@ -1,10 +1,11 @@
 ---
 import { Image } from "astro:assets";
 import MyPic from "../../assets/prof-webp/edelve-pic.webp";
+const { class: className = "" } = Astro.props;
 ---
 
 <Image
-  class="mask mask-squircle"
+  class={`mask mask-squircle ${className}`}
   width={50}
   height={50}
   priority
