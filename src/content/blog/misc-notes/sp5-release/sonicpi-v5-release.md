@@ -31,6 +31,9 @@ I'll cover the new interface, documentation workflow, some of the mathematical i
 - [Preferences: First look at the new interface](#preferences-first-look-at-the-new-interface)
   - [Editor Visuals](#editor-visuals)
   - [Audio and Recording](#audio-and-recording)
+  - [Skope Kinds](#skope-kinds)
+  - [Larger Editor Buffer](#larger-editor-buffer)
+  - [Shortcuts](#shorcuts)
 - [The documentation is a live learning tool](#the-documentation-is-a-live-learning-tool)
 - [Autocomplete ownership issue in RC-4](#autocomplete-ownership-issue-in-rc-4)
   - [Possible solution](#possible-solution)
@@ -101,20 +104,20 @@ I’ll probably leave the last option disabled and use the flash brightness set 
 
 RC-4 brings together all the classic visualization modes: `Mono`, `Spectrum`, `Stereo`, `Mirror Stereo`, and `Lissajous` (see below), while introducing the new `Levels` mode.
 
-### Large editor lines
+### Larger Editor Buffer
 
 Do you want more lines for your buffer $2$ or $6$? It will now support up to $2.5$k lines of code.
 
 ### Shortcuts
 
-Many times you are already accustomed to a specific editor, so you need to learn new shortcuts. In this new release, we now have 4 shortcut modes:
+Many times you are already familiar with a specific editor, so you need to learn new shortcuts to play with SP. In this new release, we now have 4 shortcut modes:
 
 - Mac
 - Windows | Linux
 - Emacs Live
 - Custom
 
-The last one can be modified from any of the three **base presets**, or you can use `Import...` and `Export...` to share your configuration.
+The last one can be customized from any of the three **base presets**, or you can use `Import...` and `Export...` to share your configuration.
 
 ### Audio and Recording
 
