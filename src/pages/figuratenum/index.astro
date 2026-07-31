@@ -19,6 +19,7 @@ const API = docsMap["API: PlaneFigurateNum"];
 const CONTRIBUTING = docsMap["Contributing"];
 
 import { LINKS_TO, CARD_OP } from "@styles/utilsCSS";
+import DividerNav from "@components/DividerNav.astro";
 const CARD_BUTTONS = {
   container:
     "p-4 rounded-md flex flex-col h-full min-h-52 border border-base-content/10 rounded-lg",
@@ -53,7 +54,9 @@ const CARD_BUTTONS = {
           <div
             class="md:ml-2 translate-y-px text-lg uppercase tracking-wider text-primary/75"
           >
-            <span class="hidden md:inline text-base-content/60"> · </span>
+            <span class="hidden md:inline text-base-content/60">
+              {" "}·{" "}
+            </span>
             <span class="font-light">Documentation</span>
           </div>
         </div>
@@ -205,8 +208,8 @@ const CARD_BUTTONS = {
       </div>
     </div>
   </article>
-  <div class="divider mt-10"></div>
-  <div class="grid grid-cols-1 gap-2 mt-5">
+  <DividerNav />
+  <div class="grid grid-cols-1 gap-2">
     {
       OVERVIEW && (
         <a

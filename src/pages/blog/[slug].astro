@@ -71,19 +71,15 @@ import { NAV_LINKS_PAGES } from "@styles/utilsCSS";
 >
   <Content />
 
-  <div
-    class="not-prose flex w-full max-w-3xl flex-col items-start justify-start gap-2 text-left sm:flex-row mt-10 mb-0"
-  >
-    <div class="not-prose items-center mb-2">
-      <PhotoProfile class="size-16" />
-    </div>
+  <div class="not-prose flex items-center gap-4 mt-10 mb-2">
+    <PhotoProfile class="not-prose size-16 shrink-0" />
 
-    <div class="shrink-0">
+    <div class="flex-1 min-w-0">
       <div class="text-xs text-base-content/75 my-0 uppercase font-light">
         About the Author
       </div>
 
-      <div class="my-0 text-lg font-semibold p-0">Edgar Delgado Vega</div>
+      <div class="my-0 text-lg font-semibold">Edgar Delgado Vega</div>
 
       <div class="my-0 text-sm text-base-content/70">
         Live coder, math enthusiast developer, geek.
@@ -93,7 +89,7 @@ import { NAV_LINKS_PAGES } from "@styles/utilsCSS";
 
   <DividerNav />
 
-  <div class="not-prose grid grid-cols-1 sm:grid-cols-2 gap-2">
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
     {
       prevPost ? (
         <a
