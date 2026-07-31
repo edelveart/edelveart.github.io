@@ -30,16 +30,20 @@ I'll cover the new interface, documentation workflow, some of the mathematical i
 
 - [Preferences: First look at the new interface](#preferences-first-look-at-the-new-interface)
   - [Editor Visuals](#editor-visuals)
-  - [Audio and Recording](#audio-and-recording)
   - [Skope Kinds](#skope-kinds)
   - [Larger Editor Buffer](#larger-editor-buffer)
-  - [Shortcuts](#shorcuts)
+  - [Shortcuts](#shortcuts)
+  - [Audio and Recording](#audio-and-recording)
 - [The documentation is a live learning tool](#the-documentation-is-a-live-learning-tool)
 - [Autocomplete ownership issue in RC-4](#autocomplete-ownership-issue-in-rc-4)
   - [Possible solution](#possible-solution)
+  - [scintilla\_api.h](#scintillaapih)
+  - [scintilla\_api.cpp](#scintillaapicpp)
+  - [qt-doc.rb](#qt-docrb)
 - [Fixing a Gabberkick validation issue in RC-3](#fixing-a-gabberkick-validation-issue-in-rc-3)
 - [Music materials: new scales, samples and methods](#music-materials-new-scales-samples-and-methods)
 - [Card Decks: A Tutorial](#card-decks-a-tutorial)
+  - [Removed steps for v5](#removed-steps-for-v5)
 - [Phase and the oscilloscope](#phase-and-the-oscilloscope)
 - [SuperSonic, node tree and live metrics](#supersonic-node-tree-and-live-metrics)
 - [Performance and code](#performance-and-code)
@@ -365,6 +369,15 @@ opt_summaries.each do |ak, info|
 This is the complete approach I tested locally.
 Since this touches `scintilla_api.h`, `scintilla_api.cpp`, and `qt-doc.rb`, I wanted to share the idea first and get Sam Aaron's thoughts through the community.
 
+This autocomplete issue was fixed by the following commit:
+
+- [`373f450`](https://github.com/sonic-pi-net/sonic-pi/commit/373f4506ef32699249a97daef6ccf894217f6722)
+
+```text
+GUI - autocomplete: resolve opt docs, enum values and ranges per owner
+Thanks to Edgar Delgado Vega for reporting this.
+```
+
 ## Fixing a Gabberkick validation issue in RC-3
 
 > This was my first direct contribution to the Sonic Pi codebase: I identified an edge case in the synth validation system and fixed the problem.
@@ -453,6 +466,10 @@ The issue was fixed in the GitHub commit:
 
 - [`7740efc`](https://github.com/sonic-pi-net/sonic-pi/commit/7740efcfdff2c5cbfe2d472efb8b6051239d3552)
 
+```text
+Lang - fix gabberkick opt validations
+thanks to Edgar Delgado Vega for the fix
+```
 <!-- ### Interface observations (Solved in RC-2)
 
 While exploring this **release candidate**, I noticed what might be a small interface detail related to zoom scaling. When the documentation zoom level is increased, some interface elements do not seem to adapt completely to the larger size. Some labels appear partially hidden or overlap, and the full names of certain controls are not always visible.
@@ -552,6 +569,14 @@ puts sp5_samples
  -->
 
 ## Card Decks: A Tutorial
+
+The functionality to create your own decks was removed in the latest RCs. Sam Aaron explained why in [this comment on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7486835441673908224/):
+
+> Also, the quickstart card loading functionality was dev-only - I've not put enough thought into the file format and features yet to open that up fully - so it won't feature in v5.
+
+### Removed steps for v5
+
+The following steps show how this dev-only functionality worked before it was removed.
 
 In the **Menu → Examples**, there is a `QuickStart Cards` option that opens a panel with code snippet cards. These cards allow you to **copy** the snippet, **drag** it into the code editor, and listen to it with a play button, among other features. In fact, this is a wonderful educational tool. Here I'll show you how to create your own.
 
