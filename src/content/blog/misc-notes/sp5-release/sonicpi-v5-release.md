@@ -35,12 +35,12 @@ I'll cover the new interface, documentation workflow, some of the mathematical i
   - [Shortcuts](#shortcuts)
   - [Audio and Recording](#audio-and-recording)
 - [The documentation is a live learning tool](#the-documentation-is-a-live-learning-tool)
+- [Fixing a Gabberkick validation issue in RC-3](#fixing-a-gabberkick-validation-issue-in-rc-3)
 - [Autocomplete ownership issue in RC-4](#autocomplete-ownership-issue-in-rc-4)
   - [Possible solution](#possible-solution)
   - [scintilla\_api.h](#scintillaapih)
   - [scintilla\_api.cpp](#scintillaapicpp)
   - [qt-doc.rb](#qt-docrb)
-- [Fixing a Gabberkick validation issue in RC-3](#fixing-a-gabberkick-validation-issue-in-rc-3)
 - [Music materials: new scales, samples and methods](#music-materials-new-scales-samples-and-methods)
 - [Card Decks: A Tutorial](#card-decks-a-tutorial)
   - [Removed steps for v5](#removed-steps-for-v5)
@@ -151,6 +151,99 @@ puts sample_duration(:arovane_beat_a)
 ```
 
 Now, you see the rounded value **14.8s**, which is all you need for practice and improvisation.
+## Fixing a Gabberkick validation issue in RC-3
+
+> This was my first direct contribution to the Sonic Pi codebase: I identified an edge case in the synth validation system and fixed the problem.
+
+While testing the Gabberkick synthesizer from the documentation, I ran into an issue when changing the `slope_intermediate` parameter:
+
+![Gabberkick bug](sp5-gabberkick.png)
+
+```shell
+Runtime Error Sonic Pi doesn't know a function called >=
+Example: play :e3, release: 0.5
+Docs: play
+buffer sonic-pi-tutorial-keys, line 4
+NoMethodError: undefined method '&gt;=' for nil
+line 4: play 34, slope_intermediate: 88
+Backtrace:
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/synths/synthinfo.rb:335:in 'block in SonicPi::Synths::BaseInfo#v_positive'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/synths/synthinfo.rb:163:in 'block (2 levels) in SonicPi::Synths::BaseInfo#validate!'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/synths/synthinfo.rb:162:in 'Array#each'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/synths/synthinfo.rb:162:in 'block in SonicPi::Synths::BaseInfo#validate!'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/synths/synthinfo.rb:158:in 'Hash#each'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/synths/synthinfo.rb:158:in 'SonicPi::Synths::BaseInfo#validate!'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/lang/sound.rb:4379:in 'SonicPi::Lang::Sound#validate_if_necessary!'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/lang/sound.rb:3963:in 'SonicPi::Lang::Sound#trigger_synth'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/lang/sound.rb:3887:in 'SonicPi::Lang::Sound#trigger_inst'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/lang/sound.rb:1293:in 'SonicPi::Lang::Sound#synth'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/lang/sound.rb:1390:in 'SonicPi::Lang::Sound#play'
+sonic-pi-tutorial-keys:4:in 'block (2 levels) in SonicPi::RuntimeMethods#__spider_eval'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/runtime.rb:1391:in 'Kernel#eval'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/runtime.rb:1391:in 'block (2 levels) in SonicPi::RuntimeMethods#__spider_eval'
+C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/runtime.rb:1636:in 'block (2 levels) in SonicPi::RuntimeMethods#__in_thread'
+```
+
+According to the documentation, `slope_start` has a default value of `84`, so I expected this to work:
+
+```rb
+use_synth :gabberkick
+
+play 34,
+  slope_intermediate: 88
+```
+
+However, it produced the error above. Interestingly, if I changed the `slope_start` value from the documentation or added it manually in the editor:
+
+```rb
+use_synth :gabberkick
+play 34,
+  slope_start: 84,
+  slope_intermediate: 88
+```
+
+everything worked correctly. This meant that `slope_intermediate` only failed when `slope_start` was not explicitly provided.
+To find the cause, I checked the Sonic Pi source code. The synth definitions themselves were correct, but in:
+
+```text
+.../app/server/ruby/lib/sonicpi/synths/synthinfo.rb
+```
+
+I found a validation error in the Gabberkick synthesizer argument metadata around line `4975`:
+
+```rb
+:slope_intermediate =>
+{
+  :doc => "The note where the frequency passes through after `:slope_length1`, typically much nearer to the final note.",
+  :validations => [v_positive(:slope_start)],
+  :modulatable => false
+},
+```
+
+The validation was referencing the wrong parameter. It should validate `slope_intermediate` instead of `slope_start`:
+
+```rb
+:slope_intermediate =>
+{
+  :doc => "The note where the frequency passes through after `:slope_length1`, typically much nearer to the final note.",
+  :validations => [v_positive(:slope_intermediate)],
+  :modulatable => false
+},
+```
+
+After making this small change locally, the problem was fixed and `slope_intermediate` works correctly (editor and docs) without requiring `slope_start` to be explicitly provided.
+
+> Sam Aaron pointed out that this was an interesting edge case because these validations were originally written as documentation metadata, but they are now also used programmatically. As a result, small inconsistencies in them can surface during execution.
+
+The issue was fixed in the GitHub commit:
+
+- [`7740efc`](https://github.com/sonic-pi-net/sonic-pi/commit/7740efcfdff2c5cbfe2d472efb8b6051239d3552)
+
+```text
+Lang - fix gabberkick opt validations
+thanks to Edgar Delgado Vega for the fix
+```
+
 
 ## Autocomplete ownership issue in RC-4
 
@@ -378,98 +471,6 @@ GUI - autocomplete: resolve opt docs, enum values and ranges per owner
 Thanks to Edgar Delgado Vega for reporting this.
 ```
 
-## Fixing a Gabberkick validation issue in RC-3
-
-> This was my first direct contribution to the Sonic Pi codebase: I identified an edge case in the synth validation system and fixed the problem.
-
-While testing the Gabberkick synthesizer from the documentation, I ran into an issue when changing the `slope_intermediate` parameter:
-
-![Gabberkick bug](sp5-gabberkick.png)
-
-```shell
-Runtime Error Sonic Pi doesn't know a function called >=
-Example: play :e3, release: 0.5
-Docs: play
-buffer sonic-pi-tutorial-keys, line 4
-NoMethodError: undefined method '&gt;=' for nil
-line 4: play 34, slope_intermediate: 88
-Backtrace:
-C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/synths/synthinfo.rb:335:in 'block in SonicPi::Synths::BaseInfo#v_positive'
-C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/synths/synthinfo.rb:163:in 'block (2 levels) in SonicPi::Synths::BaseInfo#validate!'
-C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/synths/synthinfo.rb:162:in 'Array#each'
-C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/synths/synthinfo.rb:162:in 'block in SonicPi::Synths::BaseInfo#validate!'
-C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/synths/synthinfo.rb:158:in 'Hash#each'
-C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/synths/synthinfo.rb:158:in 'SonicPi::Synths::BaseInfo#validate!'
-C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/lang/sound.rb:4379:in 'SonicPi::Lang::Sound#validate_if_necessary!'
-C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/lang/sound.rb:3963:in 'SonicPi::Lang::Sound#trigger_synth'
-C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/lang/sound.rb:3887:in 'SonicPi::Lang::Sound#trigger_inst'
-C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/lang/sound.rb:1293:in 'SonicPi::Lang::Sound#synth'
-C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/lang/sound.rb:1390:in 'SonicPi::Lang::Sound#play'
-sonic-pi-tutorial-keys:4:in 'block (2 levels) in SonicPi::RuntimeMethods#__spider_eval'
-C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/runtime.rb:1391:in 'Kernel#eval'
-C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/runtime.rb:1391:in 'block (2 levels) in SonicPi::RuntimeMethods#__spider_eval'
-C:/Program Files/Sonic Pi BETA/app/server/ruby/lib/sonicpi/runtime.rb:1636:in 'block (2 levels) in SonicPi::RuntimeMethods#__in_thread'
-```
-
-According to the documentation, `slope_start` has a default value of `84`, so I expected this to work:
-
-```rb
-use_synth :gabberkick
-
-play 34,
-  slope_intermediate: 88
-```
-
-However, it produced the error above. Interestingly, if I changed the `slope_start` value from the documentation or added it manually in the editor:
-
-```rb
-use_synth :gabberkick
-play 34,
-  slope_start: 84,
-  slope_intermediate: 88
-```
-
-everything worked correctly. This meant that `slope_intermediate` only failed when `slope_start` was not explicitly provided.
-To find the cause, I checked the Sonic Pi source code. The synth definitions themselves were correct, but in:
-
-```text
-.../app/server/ruby/lib/sonicpi/synths/synthinfo.rb
-```
-
-I found a validation error in the Gabberkick synthesizer argument metadata around line `4975`:
-
-```rb
-:slope_intermediate =>
-{
-  :doc => "The note where the frequency passes through after `:slope_length1`, typically much nearer to the final note.",
-  :validations => [v_positive(:slope_start)],
-  :modulatable => false
-},
-```
-
-The validation was referencing the wrong parameter. It should validate `slope_intermediate` instead of `slope_start`:
-
-```rb
-:slope_intermediate =>
-{
-  :doc => "The note where the frequency passes through after `:slope_length1`, typically much nearer to the final note.",
-  :validations => [v_positive(:slope_intermediate)],
-  :modulatable => false
-},
-```
-
-After making this small change locally, the problem was fixed and `slope_intermediate` works correctly (editor and docs) without requiring `slope_start` to be explicitly provided.
-
-> Sam Aaron pointed out that this was an interesting edge case because these validations were originally written as documentation metadata, but they are now also used programmatically. As a result, small inconsistencies in them can surface during execution.
-
-The issue was fixed in the GitHub commit:
-
-- [`7740efc`](https://github.com/sonic-pi-net/sonic-pi/commit/7740efcfdff2c5cbfe2d472efb8b6051239d3552)
-
-```text
-Lang - fix gabberkick opt validations
-thanks to Edgar Delgado Vega for the fix
-```
 <!-- ### Interface observations (Solved in RC-2)
 
 While exploring this **release candidate**, I noticed what might be a small interface detail related to zoom scaling. When the documentation zoom level is increased, some interface elements do not seem to adapt completely to the larger size. Some labels appear partially hidden or overlap, and the full names of certain controls are not always visible.
