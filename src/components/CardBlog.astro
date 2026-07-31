@@ -19,10 +19,11 @@ const displayDate = dayjs(pubDate).format("ll");
 import { CARD_OP, GET_COLORS_METADATA } from "@styles/utilsCSS";
 ---
 
+<!-- min-h-32  -->
 <a
   href={url}
   target={target}
-  class="group flex border border-base-content/10 p-4 my-6 rounded-md mx-auto md:min-h-40 flex-col transition-colors duration-150 ease-in-out hover:border-primary/20"
+  class="group flex border border-base-content/10 p-4 my-6 rounded-md mx-auto flex-col transition-colors duration-150 ease-in-out hover:border-primary/20"
 >
   <div class="flex items-center gap-2">
     <span class={CARD_OP.muteData}>{displayDate}</span>

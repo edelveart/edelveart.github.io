@@ -10,6 +10,7 @@ import CardBlog from "@components/CardBlog.astro";
 import createSlug from "@ts-config-path/lib/createSlug";
 import { getCollection } from "astro:content";
 import PreviousPosts from "@components/PreviousPosts.astro";
+import DividerNav from "@components/DividerNav.astro";
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
@@ -30,7 +31,9 @@ const last_posts = posts.slice(0, 3);
     </div>
     <Experience workExperiences={allExperiences} indices={[0, 1]} />
     <!-- BLOG-NOTES -->
-    <h2 class="text-3xl w-full font-bold flex items-center mt-16 mb-10"> Notas recientes </h2>
+    <h2 class="text-3xl w-full font-bold flex items-center mt-16 mb-10">
+      Notas recientes
+    </h2>
     {
       last_posts.map((post) => (
         <>
@@ -47,6 +50,7 @@ const last_posts = posts.slice(0, 3);
         </>
       ))
     }
+    <DividerNav />
     <PreviousPosts />
   </section>
 </BaseLayout>

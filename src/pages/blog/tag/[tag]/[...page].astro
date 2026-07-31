@@ -48,7 +48,7 @@ const params = Astro.params;
           <div
             class="md:ml-2 translate-y-px text-lg uppercase tracking-wider text-primary/75"
           >
-            <span class="hidden md:inline text-info/60">·</span>
+            <span class="hidden md:inline text-info/60">{" "}·{" "}</span>
             <span class="font-light">{params.tag}</span>
           </div>
         </div>
@@ -97,6 +97,7 @@ const params = Astro.params;
       <DividerNav />
 
       <div class="grid grid-cols-2 gap-2">
+        <!-- <div class="grid grid-cols-1 sm:grid-cols-2 gap-2"> -->
         {
           page.url.prev ? (
             <a

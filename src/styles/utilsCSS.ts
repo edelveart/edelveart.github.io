@@ -1,6 +1,6 @@
 export const NAV_LINKS_PAGES = {
   aLink:
-    "group flex w-full min-h-20 items-center gap-3 rounded-md px-3 py-2 transition-colors duration-150 no-underline",
+    "group flex w-full min-h-14 items-center gap-3 rounded-md px-3 py-2 transition-colors duration-150 no-underline",
   prevLeft: "justify-start",
   nextRight: "justify-end",
   prevNext: "text-sm uppercase tracking-wide text-base-content/65 font-light",

@@ -10,6 +10,7 @@ import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug";
 import CardBlog from "@components/CardBlog.astro";
 import PreviousPosts from "@components/PreviousPosts.astro";
+import DividerNav from "@components/DividerNav.astro";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -20,7 +21,9 @@ const last_posts = posts.slice(0, 3);
 <BaseLayout title="Edgar Delgado Vega - Creative Math Systems Developer">
   <section class="mt-4">
     <h1 class="text-4xl font-bold leading-snug flex">Edgar Delgado</h1>
-    <h2 class="py-3 text-xl font-bold text-primary"> Creative Math Systems Developer </h2>
+    <h2 class="py-3 text-xl font-bold text-primary">
+      Creative Math Systems Developer
+    </h2>
     <HeroTopProjects />
     <div class="mt-16 mb-20">
       <Biography />
@@ -29,7 +32,9 @@ const last_posts = posts.slice(0, 3);
     <Experience workExperiences={allExperiences} indices={[0, 1]} />
 
     <!-- BLOG-NOTES -->
-    <h2 class="text-3xl w-full font-bold flex items-center mt-16 mb-10"> Recent Notes </h2>
+    <h2 class="text-3xl w-full font-bold flex items-center mt-16 mb-10">
+      Recent Notes
+    </h2>
     {
       last_posts.map((post) => (
         <>
@@ -46,6 +51,7 @@ const last_posts = posts.slice(0, 3);
         </>
       ))
     }
+    <DividerNav />
     <PreviousPosts />
   </section>
 </BaseLayout>
