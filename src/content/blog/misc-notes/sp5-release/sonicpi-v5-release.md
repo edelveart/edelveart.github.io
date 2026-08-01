@@ -840,7 +840,7 @@ end
 
 ## Closing thoughts
 
-Many thanks to [**Sam Aaron**](https://www.patreon.com/samaaron/posts/sonic-pi-v5-1-164093369) and the entire [community discussion](https://in-thread.sonic-pi.net/t/sonic-pi-v5-rc1-is-now-available-to-download/10023) for continuing to shape and evolve this amazing creative instrument.
+Many thanks to [**Sam Aaron**](https://www.patreon.com/samaaron/posts/sonic-pi-v5-1-164093369) and the entire community, especially everyone taking part in the [community discussion](https://in-thread.sonic-pi.net/t/sonic-pi-v5-rc1-is-now-available-to-download/), for continuing to shape and evolve this amazing creative instrument.
 It has been fantastic to follow these Sonic Pi v5 RCs so closely, almost `commit` by `commit`.
 
 Greetings from far, far away!
