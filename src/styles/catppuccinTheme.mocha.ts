@@ -4,7 +4,7 @@ export default createCatppuccinPlugin(
   "mocha",
   {
     primary: "lavender", // primary: default = mauve
-    secondary: "teal",
+    secondary: "green",
     info: "rosewater", //  info: default = sky, optional good is teal
     accent: "peach",
     // "accent-content": "sapphire",

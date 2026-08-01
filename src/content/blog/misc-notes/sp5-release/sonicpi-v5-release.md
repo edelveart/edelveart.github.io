@@ -4,7 +4,7 @@ description: "My first impressions of the Sonic Pi 5 release candidates, explori
 pubDate: "July 20 2026"
 heroImage: "/svg-ggb/blog-sonicpi-v5-node-tree.webp"
 badge: "misc notes"
-updatedDate: "July 30 2026"
+updatedDate: "July 31 2026"
 tags:
   [
     "sonic pi",
@@ -72,6 +72,8 @@ I selected **Phosphor** for the images below. However, I think I’ll be working
 
 In RC-4, it also displays the color percentage values and introduces a **new Spread Hue** option. Why $59$? Well, if you double-click the value, you can enter an exact number using your keyboard.
 
+> Mini-icons were introduced in RC-5.
+
 For those who enjoy the conveniences of modern code editors, it now includes a toolbar with **Cut**, **Copy**, **Paste**, and, most importantly, **Search**.
 
 ![Show editor toolbar](sp5-editor-toolbar.png)
@@ -106,6 +108,8 @@ I’ll probably leave the last option disabled and use the flash brightness set 
 
 ### Skope Kinds
 
+![Skope Kinds](sp5-skope-kinds.png)
+
 RC-4 brings together all the classic visualization modes: `Mono`, `Spectrum`, `Stereo`, `Mirror Stereo`, and `Lissajous` (see below), while introducing the new `Levels` mode.
 
 ### Larger Editor Buffer
@@ -114,6 +118,7 @@ Do you want more lines for your buffer $2$ or $6$? It will now support up to $2.
 
 ### Shortcuts
 
+![Sonic Pi 5 - Shorcuts](sp5-shortcuts.png)
 Many times you are already familiar with a specific editor, so you need to learn new shortcuts to play with SP. In this new release, we now have 4 shortcut modes:
 
 - Mac
@@ -834,6 +839,7 @@ end
 
 ## Closing thoughts
 
-Many thanks to [**Sam Aaron**](https://www.patreon.com/samaaron/posts/sonic-pi-v5-1-164093369) and the entire [**Sonic Pi**](https://in-thread.sonic-pi.net/) community for continuing to shape and evolve this amazing creative instrument.
+Many thanks to [**Sam Aaron**](https://www.patreon.com/samaaron/posts/sonic-pi-v5-1-164093369) and the entire [community discussion](https://in-thread.sonic-pi.net/t/sonic-pi-v5-rc1-is-now-available-to-download/10023) for continuing to shape and evolve this amazing creative instrument.
+It has been fantastic to follow these Sonic Pi v5 RCs so closely, almost `commit` by `commit`.
 
-You can also join the [community discussion](https://in-thread.sonic-pi.net/t/sonic-pi-v5-rc1-is-now-available-to-download/10023).
+Greetings from far, far away!
