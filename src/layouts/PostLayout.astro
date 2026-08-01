@@ -79,6 +79,12 @@ const ogImage = heroImage ?? `/og/${id}.png`;
 
       <div
         class="prose-table:overflow-x-auto prose-table:block break-normal
+            [&_th]:px-2
+            [&_td]:px-2
+            [&_th]:py-2
+            [&_td]:py-2
+                    [&_th]:whitespace-nowrap
+                    [&_td]:whitespace-nowrap
         prose-img:rounded-md prose-img:shadow-sm prose-img:shadow-base-300/80"
       >
         <slot />
