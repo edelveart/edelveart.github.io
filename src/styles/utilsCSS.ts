@@ -30,14 +30,14 @@ const metaBase = "text-sm tracking-wider uppercase font-light";
 //   "sketch notes": `${metaBase} text-info/75`,
 //   "misc notes": `${metaBase} text-error/75`,
 export const BADGE_COLORS = {
-  "field notes": `${metaBase} text-error/85`,
-  "lab notes": `${metaBase} text-accent/85`,
-  "sketch notes": `${metaBase} text-secondary/85`,
-  "misc notes": `${metaBase} text-info/85`,
+  "field notes": `${metaBase} text-error/80`,
+  "lab notes": `${metaBase} text-accent/80`,
+  "sketch notes": `${metaBase} text-secondary/80`,
+  "misc notes": `${metaBase} text-info/80`,
   tags: "text-sm text-primary/75 hover:text-primary underline transition-colors underline-offset-2 font-normal hover:decoration-2",
-  warning: `${metaBase} text-warning/85`,
-  cardsImg: `${metaBase} text-primary/85`,
-  NO_LISTED: `${metaBase} text-base-content/85`,
+  warning: `${metaBase} text-warning/80`,
+  cardsImg: `${metaBase} text-primary/80`,
+  NO_LISTED: `${metaBase} text-base-content/80`,
 } as const;
 
 export type BadgeName = keyof typeof BADGE_COLORS;
