@@ -1,6 +1,7 @@
 ---
 import { allProjects } from "@components/ProjectsComponent.astro";
 import { Image } from "astro:assets";
+import { BORDER_OPACITY, GET_COLORS_METADATA } from "@styles/utilsCSS";
 
 const divisor = "my-6";
 const UrlArray = allProjects;
@@ -12,14 +13,11 @@ const cardBase = `
   max-h-72 rounded-lg
   rounded-md
   ${imagePadding}
-  border border-base-content/10
+  ${BORDER_OPACITY}
   shadow-sm shadow-black/5
-  transition-colors duration-150 ease-in-out
-  hover:border-primary/20
   hover:shadow-primary/20
 `;
 
-import { GET_COLORS_METADATA } from "@styles/utilsCSS";
 const badge = `absolute bottom-0 right-0 m-4 p-1 bg-base-100/90 rounded-sm   ${GET_COLORS_METADATA("cardsImg")} z-5`;
 
 import MainFigurateNumImage from "@assets/main-figuratenum.webp";
@@ -29,7 +27,12 @@ import MainModularImage from "@assets/main-modular.webp";
 
 <!-- https://svgomg.net/  --><!-- https://vecta.io/nano -->
 <div class={divisor}></div>
-<a href={UrlArray[2].url} target="_blank" rel="noopener noreferrer" class={cardBase}>
+<a
+  href={UrlArray[2].url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class={cardBase}
+>
   <div class={badge}>
     <span>FigurateNum • PyPI</span>
   </div>
@@ -50,7 +53,12 @@ import MainModularImage from "@assets/main-modular.webp";
 
 <section class="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-8">
   <!-- // 1 -->
-  <a href={UrlArray[1].url} target="_blank" rel="noopener noreferrer" class={cardBase}>
+  <a
+    href={UrlArray[1].url}
+    target="_blank"
+    rel="noopener noreferrer"
+    class={cardBase}
+  >
     <div class={badge}>
       <span>Modular Forms • RubyGems</span>
     </div>
@@ -66,7 +74,12 @@ import MainModularImage from "@assets/main-modular.webp";
     />
   </a>
   <!-- // 2 -->
-  <a href={UrlArray[0].url} target="_blank" rel="noopener noreferrer" class={cardBase}>
+  <a
+    href={UrlArray[0].url}
+    target="_blank"
+    rel="noopener noreferrer"
+    class={cardBase}
+  >
     <div class={badge}>
       <span>TS-Tonnetz • npm</span>
     </div>

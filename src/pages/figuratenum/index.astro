@@ -18,23 +18,17 @@ const THEORY = docsMap["Fundamentals"];
 const API = docsMap["API: PlaneFigurateNum"];
 const CONTRIBUTING = docsMap["Contributing"];
 
-import { LINKS_TO, CARD_OP } from "@styles/utilsCSS";
+import { LINKS_TO, CARD_OP, BORDER_OPACITY } from "@styles/utilsCSS";
 import DividerNav from "@components/DividerNav.astro";
 const CARD_BUTTONS = {
-  container:
-    "p-4 rounded-md flex flex-col h-full min-h-52 border border-base-content/10 rounded-lg",
-
+  container: `p-4 rounded-md flex flex-col h-full min-h-52 border border-base-content/12 rounded-lg`,
   title: `${CARD_OP.title}`,
-
   paragraps: `mt-2 mb-4 ${CARD_OP.parr}`,
-
-  //   btns: "btn btn-ghost border border-base-content/10 rounded-md h-12 mt-auto justify-center font-bold transition-colors duration-200 hover:bg-base-200 hover:border-primary/20",
-
   btns: `flex items-center justify-center h-12 mt-auto
-    rounded-md border border-base-content/10
+    rounded-md border
     text-sm font-normal
-    transition-colors duration-150
-     hover:border-primary/20 hover:text-primary
+    ${BORDER_OPACITY}
+    hover:text-primary
     no-underline`,
 };
 

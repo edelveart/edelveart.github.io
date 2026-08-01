@@ -10,6 +10,9 @@ export const NAV_LINKS_PAGES = {
   arrowSpan: "transition-colors duration-150 group-hover:text-primary",
 };
 
+export const BORDER_OPACITY =
+  "border border-base-content/12 hover:border-primary/20 transition-colors duration-150 ease-in-out";
+
 export const LINKS_TO =
   "text-primary underline underline-offset-2 decoration-1 transition-[text-underline-offset,text-decoration-thickness] duration-150 hover:decoration-2";
 

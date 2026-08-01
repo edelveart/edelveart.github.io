@@ -16,14 +16,14 @@ import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 dayjs.extend(localizedFormat);
 const displayDate = dayjs(pubDate).format("ll");
-import { CARD_OP, GET_COLORS_METADATA } from "@styles/utilsCSS";
+import { BORDER_OPACITY, CARD_OP, GET_COLORS_METADATA } from "@styles/utilsCSS";
 ---
 
 <!-- min-h-32  -->
 <a
   href={url}
   target={target}
-  class="group flex border border-base-content/10 p-4 my-6 rounded-md mx-auto flex-col transition-colors duration-150 ease-in-out hover:border-primary/20"
+  class=`group flex ${BORDER_OPACITY} p-4 my-6 rounded-md mx-auto flex-col`
 >
   <div class="flex items-center gap-2">
     <span class={CARD_OP.muteData}>{displayDate}</span>
