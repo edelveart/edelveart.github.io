@@ -3,7 +3,7 @@ export const NAV_LINKS_PAGES = {
     "group flex w-full min-h-14 items-center gap-3 rounded-md px-3 py-2 transition-colors duration-150 no-underline",
   prevLeft: "justify-start",
   nextRight: "justify-end",
-  prevNext: "text-sm uppercase tracking-wide text-base-content/65 font-light",
+  prevNext: "text-sm uppercase tracking-wider text-base-content/75 font-light",
   pageTitle:
     "text-base line-clamp-2 transition-colors duration-150 group-hover:text-primary group-hover:underline underline-offset-2 group-hover:decoration-2 font-normal",
 
@@ -24,20 +24,20 @@ export const CARD_OP = {
 
 export const BLOCK_QUOTE = `text-right ${CARD_OP.muteData}`;
 
-const metaBase = "text-sm tracking-wide uppercase font-light";
+const metaBase = "text-sm tracking-wider uppercase font-light";
 //   "field notes": `${metaBase} text-accent/75`,
 //   "lab notes": `${metaBase} text-secondary/75`,
 //   "sketch notes": `${metaBase} text-info/75`,
 //   "misc notes": `${metaBase} text-error/75`,
 export const BADGE_COLORS = {
-  "field notes": `${metaBase} text-error/75`,
-  "lab notes": `${metaBase} text-accent/75`,
-  "sketch notes": `${metaBase} text-secondary/75`,
-  "misc notes": `${metaBase} text-info/75`,
+  "field notes": `${metaBase} text-error/85`,
+  "lab notes": `${metaBase} text-accent/85`,
+  "sketch notes": `${metaBase} text-secondary/85`,
+  "misc notes": `${metaBase} text-info/85`,
   tags: "text-sm text-primary/75 hover:text-primary underline transition-colors underline-offset-2 font-normal hover:decoration-2",
   warning: `${metaBase} text-warning/85`,
   cardsImg: `${metaBase} text-primary/85`,
-  NO_LISTED: `${metaBase} text-base-content/75`,
+  NO_LISTED: `${metaBase} text-base-content/85`,
 } as const;
 
 export type BadgeName = keyof typeof BADGE_COLORS;
