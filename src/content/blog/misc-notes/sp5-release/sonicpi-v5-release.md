@@ -54,8 +54,7 @@ I'll cover the new interface, documentation workflow, some of the mathematical i
 ## Preferences: First look at the new interface
 
 The interface redesign also made a great impression on me. It feels more modern, cleaner, and more enjoyable to work with.
-
-![Preferences](sp5-preferences.png)
+![alt text](sp5-preferences.png)
 
 We finally have theme customization, including **hue** changes, **transparency**, **monochrome**, and **color inversion**, providing a more personalized experience. The available themes are:
 
@@ -119,6 +118,7 @@ Do you want more lines for your buffer $2$ or $6$? It will now support up to $2.
 ### Shortcuts
 
 ![Sonic Pi 5 - Shorcuts](sp5-shortcuts.png)
+
 Many times you are already familiar with a specific editor, so you need to learn new shortcuts to play with SP. In this new release, we now have 4 shortcut modes:
 
 - Mac
@@ -139,7 +139,7 @@ There are also the audio options, such as selecting the audio device/driver, sam
 
 The documentation available through the help panel using the **`F1` key** is impressive. It creates a natural bridge for people coming from music production environments, **DAWs**, and hardware synthesizers.
 
-![Sonic Pi v5 DOCS Panel](sp5-docs.webp)
+![Sonic Pi v5 DOCS Panel](sp5-docs.png)
 
 > Now the docs and `f1` panes are independent windows. The help pane can be moved to another monitor, allowing you to keep your live session uninterrupted while adjusting its size and zoom as needed.
 
@@ -733,6 +733,7 @@ Use the copy button to quickly try the code in your own live coding session.
 
 ```ruby
 ##| What Is Love (HADDAWAY) for Sonic Pi
+##| Coded by Edgar Delgado Vega
 
 use_bpm 126
 
