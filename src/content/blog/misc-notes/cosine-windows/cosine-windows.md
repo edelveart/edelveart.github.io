@@ -3,7 +3,7 @@ title: "Sonic Visualiser conoce a Toretto y su familia de cosenos"
 description: "Muchas ventanas como Hann, Blackman, Nuttall son un combinado de chifa de cosenos antes de la carrera. Aquí las vemos con algo de generalidad."
 pubDate: "August 1 2026"
 badge: "misc notes"
-# updatedDate: "July 31 2026"
+updatedDate: "August 2 2026"
 tags: ["Sonic Visualiser", "FFT", "window functions", "DSP", "spectral analysis", "Fourier analysis"]
 ---
 
@@ -17,10 +17,10 @@ Ve al menú  `File` y luego hazle click en `Preferences` y selecciona la pestañ
 
 ![Sonic Visualiser - Preferences](cosine-window-a.png)
 
-Para analizar audio digital, los algoritmos de **DSP** no toman toda la señal de golpe, sino que la dividen en pequeños bloques de queso llamados **frames**.
+Para analizar audio digital, los algoritmos de **DSP** no toman toda la señal de golpe, sino que la dividen en pequeños bloques de queso llamados ***frames***.
 
 El problema es que al cortar esos bloques álficos aparecen discontinuidades y abruptos en los extremos.
-Como la **DFT** interpreta cada frame como un período de la señal periódica (qué repetitivos sonamos), esos saltos generan un problemilla fregado llamado **fuga espectral**, que consiste, de modo periódico, en la energía que se derrama hacia frecuencias del vecindario.
+Como la **DFT** interpreta cada ***frame*** como un período de la señal periódica (qué repetitivos sonamos), esos saltos generan un problemilla fregado llamado **fuga espectral**, que consiste, de modo periódico, en la energía que se derrama hacia frecuencias del vecindario.
 
 ### Preludio
 
@@ -29,7 +29,7 @@ Por otra parte, hay un primer duelo en la Panamericana: la resolución temporal,
 En otras carrocerías, lo que pasa es que un **frame** largo mira más carretera y permite separar mejor las frecuencias, pero reacciona más lento ante los cambios.
 Un **frame** corto toma curvas más rápido, aunque pierde detalle para distinguir vecinos cercanos.
 
-> Además, los frames suelen solaparse (*overlap*). Por ejemplificar, una FFT de 2048 muestras  puede avanzar 512 o 1024 muestras antes de tomar la siguiente curva. Así evitamos dejar huecos en la pista. Pero esa carrera la dejamos para otra vuelta.
+> Además, los frames suelen solaparse (*overlap*). Por ejemplificar, una FFT de $2048$ muestras  puede avanzar $512$ o $1024$ muestras antes de tomar la siguiente curva. Así evitamos dejar huecos en la pista. Pero esa carrera la dejamos para otra vuelta.
 
 Para resolver el problema es que se idearon las ventanas y si te pones a leer (hay muchas, pero yo voy a tocar solo algunas que penden de SV) y parten de una idea muy antigua en trigonometría: el coseno. Y sí, estamos en **Familia** como en rápidos y furiosos.
 
@@ -70,10 +70,9 @@ Muy probablemente ves que sigue un patrón de alternancia. ¿No se te hace curio
 Bueno,  sucintamente lo podemos amalgamar en una sola pieza como
 
 $$
-\begin{equation}
 \Omega(n) = a_0 + \sum_{t=1}^w  (-1)^{t}a_t \cos \left(\frac{2 t \pi n}{N-1}\right).
-\end{equation}
 $$
+
 Tranquilo, ese $w$, es la cantidad de términos de nuestra ventana, no exageremos con $w \ge 100$. Esta es la **evolución general**, el ancestro de toda la familia, nuestro motor $V-100$ del Dodge de los 70s.
 
 > Un filósofo dijo que los autos tienen el mismo chasis, pero cambia cómo repartimos los *HP* entre distintos armónicos.
@@ -130,19 +129,18 @@ Faltó comunicar con algo más de fortuna el por qué tanto afán con las ventan
 
 El **lóbulo principal** (el centro de Lima, o más específico, el Cerro San Cristóbal, es decir, alrededor de la frecuencia original) si es ancho, las frecuencias cercanas en **Hertz** no son tan distinguibles, si por el contrario es más fino, hay mejor resolución para ver las frecuencias que están bastante pegadas.
 
-Después, tenemos los **lóbulos laterales**, las ondulaciones es cuando se desparrama el Huaycoloro que dijimos arriba. Estás en el camino oscuro de la fuerza, la fuga de Bach en fantasmas. En esta familia, la síntesis ventanal-proteica viene así:
+Después, tenemos los **lóbulos laterales**, las ondulaciones es cuando se desparrama el Huaycoloro que dijimos arriba. Estás en el camino oscuro de la fuerza, la fuga de Bach en fantasmas. En esta familia, la síntesis proteica con la resolución y fuga viene así:
 
-|     Ventana     | Lóbulo principal |  Lóbulos laterales   |            Resolución frecuencial             |               Fuga espectral                |
-| :-------------: | :--------------: | :------------------: | :-------------------------------------------: | :-----------------------------------------: |
-|   Rectangular   |   Muy estrecho   |        Altos         |      Excelente resolución en frecuencia.      |            Mucha fuga espectral.            |
-|      Hann       |    Más ancho     |        Bajos         | Buen equilibrio entre resolución y suavizado. | Reduce considerablemente la fuga espectral. |
-|     Hamming     |  Similar a Hann  |      Más bajos       |          Resolución similar a Hann.           |       Menor fuga espectral que Hann.        |
-|    Blackman     |    Más ancho     |   Mucho más bajos    |        Menor resolución en frecuencia.        |         Espectro mucho más limpio.          |
-| Blackman-Harris |    Muy ancho     | Extremadamente bajos |        Baja resolución en frecuencia.         |           Fuga espectral mínima.            |
-|     Nuttall     |    Muy ancho     | Extremadamente bajos |        Baja resolución en frecuencia.         |  Excelente supresión de la fuga espectral.  |
+|    Ventanita    | Lóbulo principal | Lóbulos laterales |            Resolución frecuencial            | Fuga espectral |
+| :-------------: | :--------------: | :---------------: | :------------------------------------------: | :------------: |
+|   Rectangular   |   Muy estrecho   |       Altos       |             Excelente resolución             |      Alta      |
+|      Hann       |    Más ancho     |       Bajos       | Buen equilibrio entre resolución y suavizado |      Baja      |
+|     Hamming     |  Similar a Hann  |   Más atenuados   |          Resolución similar a Hann           | Menor que Hann |
+|    Blackman     |    Más ancho     |     Muy bajos     |               Menor resolución               |    Muy baja    |
+| Blackman-Harris |    Muy ancho     |      Mínimos      |               Baja resolución                |     Mínima     |
+|     Nuttall     |    Muy ancho     |      Mínimos      |               Baja resolución                |     Mínima     |
 
-
-(Esas anchuras se parecen un poco a las clases de **Tailwind** para `uppercase`, solo quería decirlo).
+Esas anchuras se parecen un poco a las clases de **Tailwind** para `uppercase`, solo quería decirlo.
 
 ## Tiempo versus Frecuencia del Dogde Charger
 
@@ -153,8 +151,8 @@ Si comparamos Hann de arriba con la ventana Nuttall de aquí:
 ![Sonic Visualiser - Nuttall window](cosine-window-b.png)
 Vemos que el pico principal es más ancho en frecuencia. Los lóbulos laterales son muchísimo más bajos. Cosa que ocurre al revés en Hann, donde el pico principal es más estrecho en frecuencia y los lóbulos laterales son más altos.
 
-- lóbulos laterales más bajos implica menos fuga espectral.
-- lóbulo principal más ancho implica menor resolución frecuencial.
+- Lóbulos laterales más bajos implica menos fuga espectral.
+- Lóbulo principal más ancho implica menor resolución frecuencial.
 
 Dependiendo si quieres ganar la carrera contra Brian O'Conner o Dominic Toretto, el auto termina destruido por el tren. Algunas afinan el motor para separar frecuencias cercanas; otras prefieren una pista limpia reduciendo los fantasmas espectrales.
 

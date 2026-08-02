@@ -4,14 +4,16 @@ import MyPic from "../../assets/prof-webp/edelve-pic.webp";
 const { class: className = "" } = Astro.props;
 ---
 
-<div class="drop-shadow-sm drop-shadow-base-300/50">
-  <Image
-    class={`mask mask-squircle ${className}`}
-    width={50}
-    height={50}
-    priority
-    format="webp"
-    src={MyPic}
-    alt="Profile Photo of Edgar Delgado Vega"
-  />
+<div class="drop-shadow-sm drop-shadow-base-300/15">
+  <div class="mask mask-squircle bg-base-content/9 p-px">
+    <Image
+      class={`mask mask-squircle ${className}`}
+      width={50}
+      height={50}
+      priority
+      format="webp"
+      src={MyPic}
+      alt="Profile Photo of Edgar Delgado Vega"
+    />
+  </div>
 </div>
