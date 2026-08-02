@@ -16,7 +16,9 @@ const glassEffect = "bg-base-100/50 backdrop-blur";
 ---
 
 <div class=`sticky xl:hidden top-0 z-30 w-full ${glassEffect}`>
-  <div class="navbar w-full flex items-center justify-between md:px-5 sm:px-3 px-6">
+  <div
+    class="navbar w-full flex items-center justify-between md:px-5 sm:px-3 px-6"
+  >
     <!-- LEFT -->
     <div class="navbar-start flex items-center">
       <label
@@ -35,7 +37,9 @@ const glassEffect = "bg-base-100/50 backdrop-blur";
             stroke-linecap="square"
             stroke-linejoin="round"
             stroke-width="2.2"
-            d="M0 4h15M0 10h15M0 16h15"></path>
+            d="M0 4h15M0 10h15M0 16h15"
+          >
+          </path>
         </svg>
 
         <span>
@@ -48,7 +52,12 @@ const glassEffect = "bg-base-100/50 backdrop-blur";
     <div class="navbar-end flex items-center">
       {
         currentLang === "es" ? (
-          <a class={btnsNavBar} href="/" title="Switch to English" aria-label="Switch to English">
+          <a
+            class={btnsNavBar}
+            href="/"
+            title="Switch to English"
+            aria-label="Switch to English"
+          >
             <span class={`${englishFlag} w-5 h-5 shrink-0`} />
             ENG
           </a>
@@ -68,13 +77,15 @@ const glassEffect = "bg-base-100/50 backdrop-blur";
   </div>
 </div>
 <!-- PC VIEW -->
-<div class=`hidden xl:flex gap-x-8 flex-wrap justify-center sticky top-0 z-30 ${glassEffect}`>
+<div
+  class=`hidden xl:flex gap-x-8 flex-wrap justify-center sticky top-0 z-30 ${glassEffect}`
+>
   <a class=`${btnsNavBar} my-2 py-2` href="/" title="English">
-    <span class={`${englishFlag}`}> </span>
+    <span class={`${englishFlag}`}></span>
     English
   </a>
   <a class=`${btnsNavBar} my-2 py-2` href="/es/" title="Español">
-    <span class={`${spanishFlag}`}> </span>
+    <span class={`${spanishFlag}`}></span>
     Español
   </a>
 </div>
