@@ -1,13 +1,14 @@
 ---
 import { Image } from "astro:assets";
 import sonicPiImage from "../../assets/libraries-webp/sonicpi-background.webp";
+import { BASE_BORDER_IMG } from "@styles/utilsCSS";
 ---
 
 <figure class="text-center my-10 text-base-content/80">
   <Image
     src={sonicPiImage}
     alt="Picture of modular forms library on Sonic Pi"
-    class="rounded-md"
+    class=`${BASE_BORDER_IMG}`
     width={700}
     height={500}
     loading="lazy"

@@ -7,6 +7,7 @@ import {
   BORDER_INFO,
   NAV_LINKS_PAGES,
   GET_COLORS_METADATA,
+  BASE_BORDER,
 } from "@styles/utilsCSS";
 import DividerNav from "@components/DividerNav.astro";
 
@@ -85,11 +86,10 @@ const figurateNumPosts = figurateNumTitles
 import { LINKS_TO, CARD_OP, BORDER_OPACITY } from "@styles/utilsCSS";
 import { BULLET_SQUARE_LIST } from "../about.astro";
 const CARD_BUTTONS = {
-  container: `p-4 rounded-md flex flex-col h-full min-h-52 border border-base-content/12 rounded-lg`,
+  container: `p-4 flex flex-col h-full min-h-52 ${BASE_BORDER}`,
   title: `${CARD_OP.title}`,
   paragraps: `mt-2 mb-4 ${CARD_OP.parr}`,
   btns: `flex items-center justify-center h-12 mt-auto
-    rounded-md border
     text-sm font-normal
     ${BORDER_OPACITY}
     hover:text-primary
@@ -151,7 +151,7 @@ const CARD_BUTTONS = {
       visualization tools cover phase portraits and modular patterns.
     </p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mt-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4 mt-10">
       {
         docsCards.map(
           (card) =>
@@ -175,7 +175,7 @@ const CARD_BUTTONS = {
     </div>
 
     <h2
-      class="mt-10 text-2xl font-semibold flex flex-col md:flex-row md:items-center"
+      class="mt-12 text-2xl font-semibold flex flex-col md:flex-row md:items-center"
     >
       <div>FigurateNum</div>
       <div

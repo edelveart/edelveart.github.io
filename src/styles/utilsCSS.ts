@@ -10,8 +10,12 @@ export const NAV_LINKS_PAGES = {
   arrowSpan: "transition-colors duration-150 group-hover:text-primary",
 };
 
-export const BORDER_OPACITY =
-  "border border-base-content/12 hover:border-primary/20 transition-colors duration-150 ease-in-out";
+export const BASE_BORDER = `border border-base-content/15 rounded-md`;
+
+export const BASE_BORDER_IMG = `border border-base-content/12 rounded-md shadow-sm shadow-base-300/20`;
+export const BORDER_OPACITY = `${BASE_BORDER} hover:border-primary/25 transition-colors duration-150 ease-in-out`;
+export const PROSE_IMG_BORDER =
+  "prose-img:border prose-img:border-base-content/12 prose-img:rounded-md";
 
 export const LINKS_TO =
   "text-primary/90 underline underline-offset-2 hover:decoration-2 hover:text-primary transition-[color,text-underline-offset,text-decoration-thickness] duration-150 ease-in-out";
@@ -28,10 +32,6 @@ export const CARD_OP = {
 export const BLOCK_QUOTE = `text-right ${CARD_OP.muteData}`;
 
 const metaBase = "text-sm tracking-wider uppercase font-light";
-//   "field notes": `${metaBase} text-accent/75`,
-//   "lab notes": `${metaBase} text-secondary/75`,
-//   "sketch notes": `${metaBase} text-info/75`,
-//   "misc notes": `${metaBase} text-error/75`,
 export const BADGE_COLORS = {
   "field notes": `${metaBase} text-error/80`,
   "lab notes": `${metaBase} text-accent/80`,

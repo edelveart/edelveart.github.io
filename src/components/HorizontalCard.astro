@@ -11,17 +11,17 @@ export type ProjectType = {
   url: string;
   badge: string;
 };
-import { CARD_OP, GET_COLORS_METADATA } from "@styles/utilsCSS";
+import { CARD_OP, GET_COLORS_METADATA, BORDER_OPACITY } from "@styles/utilsCSS";
 ---
 
-<div
-  class="group rounded-md transition-colors ease-in-out duration-150 border border-base-content/10 hover:border-primary/20"
->
+<div class=`group ${BORDER_OPACITY}`>
   <a href={url} target={target} rel="noopener">
     <div class="hero-content flex-col md:flex-row p-4">
       <div class="grow w-full">
         <span class={GET_COLORS_METADATA("cardsImg")}>{badge}</span>
-        <h1 class=`${CARD_OP.title} mt-0.5 group-hover:text-primary`>
+        <h1
+          class=`${CARD_OP.title} mt-0.5 group-hover:text-primary transition-colors`
+        >
           {title}
         </h1>
 

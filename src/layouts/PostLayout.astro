@@ -1,5 +1,10 @@
 ---
-import { BORDER_INFO, CARD_OP, GET_COLORS_METADATA } from "@styles/utilsCSS";
+import {
+  BORDER_INFO,
+  CARD_OP,
+  GET_COLORS_METADATA,
+  PROSE_IMG_BORDER,
+} from "@styles/utilsCSS";
 import { type BlogSchema } from "../content.config";
 import BaseLayout from "./BaseLayout.astro";
 import dayjs from "dayjs";
@@ -78,10 +83,9 @@ const ogImage = heroImage ?? `/og/${id}.png`;
       </div>
 
       <div
-        class="prose-table:overflow-x-auto prose-table:block break-normal
-        [&_th]:whitespace-nowrap
-        prose-img:rounded-md prose-img:border prose-img:border-base-content/9
-        prose-img:shadow-sm prose-img:shadow-base-300/15"
+        class=`prose-table:overflow-x-auto prose-table:block break-normal
+        [&_th]:whitespace-nowrap ${PROSE_IMG_BORDER}
+       `
       >
         <slot />
       </div>

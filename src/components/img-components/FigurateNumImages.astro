@@ -2,10 +2,12 @@
 import { Image } from "astro:assets";
 import discreteAndContinuousPortraits from "../../assets/libraries-webp/discrete-continuous-portraits.webp";
 import Math from "@components/Math.astro";
+import { BASE_BORDER_IMG } from "@styles/utilsCSS";
 ---
 
 <figure class="text-center my-10 text-base-content/80">
   <Image
+    class=`p-3 ${BASE_BORDER_IMG}`
     src={discreteAndContinuousPortraits}
     alt="Picture of 5D Hyperoctahedron (Discrete and Continuous)"
     width={700}
