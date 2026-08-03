@@ -3,7 +3,8 @@ title: "Two Years Leading to FigurateNum v3 Visualizations in the Complex Plane"
 description: "A short personal note on the visualization layer of FigurateNum v3, where figurate numbers enter the complex plane through domain coloring."
 pubDate: "June 28 2026"
 badge: "field notes"
-tags: ["figurate numbers", "visualization", "complex analysis",  "phase portraits", "generating functions", "domain coloring", "complex plane", "python"]
+tags:
+  ["figurate numbers", "visualization", "complex analysis", "phase portraits", "generating functions", "domain coloring", "complex plane", "python"]
 ---
 
 After almost two years and nearly reaching 20 thousand downloads, between readings, late nights, music, and new questions, I begin with this mathematical and poetic quote that inspired me to develop version 3 of [FigurateNum](https://pypi.org/project/figuratenum/), now on `PyPI`:
@@ -28,7 +29,7 @@ The first is `DiscreteViz`, which emulates the kind of luminous reflections on c
 
 ### ComplexViz
 
-The second is a new addition in version 3, and almost a natural necessity: `ComplexViz`. The new `ComplexViz` brings complex analysis to the Sunday morning table. The main reference has been *Visual Complex Functions* by [Elias Wegert (2012)](https://link.springer.com/book/10.1007/978-3-0348-0180-5), particularly the idea of phase portraits.
+The second is a new addition in version 3, and almost a natural necessity: `ComplexViz`. The new `ComplexViz` brings complex analysis to the Sunday morning table. The main reference has been _Visual Complex Functions_ by [Elias Wegert (2012)](https://link.springer.com/book/10.1007/978-3-0348-0180-5), particularly the idea of phase portraits.
 
 Phase portraits offer a way of globally visualizing numbers through domain coloring techniques. FigurateNum approaches this through generating functions $f(z)$ defined mathematically in [Deza & Deza (2012)](https://www.worldscientific.com/worldscibooks/10.1142/8188), along with some necessary extensions from the literature.
 
@@ -38,8 +39,7 @@ What do they look like? You can see them below in the complex plane $\mathbb{C}$
 
 With `ComplexViz`, I begin to address the lack of basic analytic tools for understanding figurate numbers beyond their combinatorial and discrete existence.
 
-This opens access to more than `150` figurate functions in $\mathbb{C}$, together with zeros and poles as the most significant points of the functions, and artistic possibilities such as Matplotlib-based coloring.
-Some of these are not yet included in the generators, which in fact include many more (`235+`), and may invite you to start experimenting with just a few lines of code.
+This opens access to more than `150` figurate functions in $\mathbb{C}$, together with zeros and poles as the most significant points of the functions, and artistic possibilities such as Matplotlib-based coloring. Some of these are not yet included in the generators, which in fact include many more (`235+`), and may invite you to start experimenting with just a few lines of code.
 
 Copy the snippet below to install it.
 
@@ -67,7 +67,7 @@ For now, the implementation has **performance degradation** since each large $n$
 
 I should mention that the most **time-consuming** part has been **designing** the **general system** of figurate numbers in a way that can be extended cleanly in the future. The next major bottleneck has been verifying **errata**, checking for mistakes and avoiding **false positives**.
 
-I also found additional errors in the context of the generating functions $f(x)$, which are documented in a $\LaTeX$ file in the repository at  [docs/errata/errata-figuratenumber.tex](https://github.com/edelveart/figuratenum/blob/main/docs/errata/errata-figuratenum.tex). This is an area where collaboration is especially welcome.
+I also found additional errors in the context of the generating functions $f(x)$, which are documented in a $\LaTeX$ file in the repository at [docs/errata/errata-figuratenumber.tex](https://github.com/edelveart/figuratenum/blob/main/docs/errata/errata-figuratenum.tex). This is an area where collaboration is especially welcome.
 
 ## New official docs
 
@@ -81,9 +81,8 @@ The docs have four sections: **Learn**, **Mathematical Theory**, **API**, and **
 
 ## What happened along the way, and what comes next?
 
-I reach the final *term* of this short figurate note. What comes next?
+I reach the final _term_ of this short figurate note. What comes next?
 
-At the beginning of March (9–13), I returned to [IMCA](https://imca.edu.pe/en/), attended several talks in the School of Geometry as an observer, and spent time in informal conversations with professors.
-A few ideas came out of those exchanges. They were small at first, but they have stayed with me ever since.
+At the beginning of March (9–13), I returned to [IMCA](https://imca.edu.pe/en/), attended several talks in the School of Geometry as an observer, and spent time in informal conversations with professors. A few ideas came out of those exchanges. They were small at first, but they have stayed with me ever since.
 
 I plan to explore some of those sketches in future releases of **FigurateNum**. As with many things in this library, they will probably grow slowly, one question at a time.
