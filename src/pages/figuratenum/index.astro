@@ -174,7 +174,20 @@ const CARD_BUTTONS = {
       }
     </div>
 
-    <h2 class="mt-10 text-2xl font-semibold">Blog FigurateNum</h2>
+    <h2
+      class="mt-10 text-2xl font-semibold flex flex-col md:flex-row md:items-center"
+    >
+      <div>FigurateNum</div>
+      <div
+        class="md:ml-2 translate-y-px text-lg uppercase tracking-wider text-primary/80"
+      >
+        <span class="hidden md:inline text-base-content/60">
+          {" "}·{" "}
+        </span>
+        <span class="font-light">Notes</span>
+      </div>
+    </h2>
+
     <ul class="mt-6">
       {
         figurateNumPosts.map((post) => (
