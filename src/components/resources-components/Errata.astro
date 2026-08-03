@@ -3,6 +3,7 @@ interface Props {
   title: string;
 }
 import { BULLET_SQUARE_LIST } from "@ts-config-path/pages/about.astro";
+import { LINKS_TO } from "@styles/utilsCSS";
 const { title } = Astro.props;
 ---
 
@@ -12,25 +13,26 @@ const { title } = Astro.props;
     <li class={BULLET_SQUARE_LIST.li}>
       <span class={BULLET_SQUARE_LIST.span}></span>
       <a
-        class="text-primary hover:underline"
+        class={LINKS_TO}
         href="/resources-files/errata-phd-thesis-cannas.pdf"
-        title="Errata of PhD thesis by Sonia Cannas (2018) in PDF format"
         target="_blank"
         rel="noopener"
-        >Errata de la tesis doctoral (PhD) <em
-          >Geometric Representation and Algebraic Formalization of Musical Structures</em
-        > (2018) - PDF</a
       >
+        Errata de la tesis doctoral (PhD) <em>
+          Geometric Representation and Algebraic Formalization of Musical
+          Structures
+        </em> (2018)
+      </a>
     </li>
     <li class={BULLET_SQUARE_LIST.li}>
       <span class={BULLET_SQUARE_LIST.span}></span>
       <a
-        class="text-primary hover:underline"
+        class={LINKS_TO}
         href="/resources-files/errata-figuratenum.pdf"
-        title="Errata of Figurate Numbers (2012) in PDF format"
         target="_blank"
         rel="noopener"
-        >Errata of <em> Figurate Numbers</em> (2012) - PDF
+      >
+        Errata of <em>Figurate Numbers</em> (2012)
       </a>
     </li>
   </ul>

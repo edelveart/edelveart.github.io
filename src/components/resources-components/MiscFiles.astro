@@ -2,205 +2,111 @@
 interface Props {
   title: string;
 }
+
 import { BULLET_SQUARE_LIST } from "@ts-config-path/pages/about.astro";
+import { LINKS_TO } from "@styles/utilsCSS";
+
 const { title } = Astro.props;
+
+const resources = [
+  {
+    href: "/resources-files/misc-torsion-ell-number-fields.pdf",
+    title: "Cuando tuerces curvas elípticas sobre cuerpos numéricos",
+  },
+  {
+    href: "/resources-files/misc-primes-top.pdf",
+    title: "Pegado de números primos antes de tomar café en la noche",
+  },
+  {
+    href: "/resources-files/misc-axioms-alg-top.pdf",
+    title: "Un comentario sobre axiomática vegetal antes de tomar café",
+  },
+  {
+    href: "/resources-files/misc-geo-inversion-human-earth.pdf",
+    title: "Ayer se invirtieron volumétricamente los humanos y la Tierra",
+  },
+  {
+    href: "/resources-files/misc-counterpoint-fux.pdf",
+    title: "Consonancia y disonancia en Fux: La función de polaridad",
+  },
+  {
+    href: "/resources-files/misc-circular-saw-fourier.pdf",
+    title: "Carpintería al máximo detalle con los dientes de Fourier",
+  },
+  {
+    href: "/resources-files/misc-beyond-fibonacci.pdf",
+    title: "De Fibonacci al Super-Nacci: tropiezo a tropiezo",
+  },
+  {
+    href: "/resources-files/misc-currying-ts.pdf",
+    title: "Funciones currificadas en TypeScript",
+  },
+  {
+    href: "/resources-files/misc-r-pearson.pdf",
+    title: "R de Pearson, cortesía de Sonic Visualiser",
+  },
+  {
+    href: "/resources-files/misc-mat-bourbaki.pdf",
+    title: "Matrices que no se ven como matrices",
+  },
+  {
+    href: "/resources-files/misc-microphones-multiplication.pdf",
+    title: "Micrófonos de Gauss y tablas de multiplicar",
+  },
+  {
+    href: "/resources-files/misc-magdalena-park.pdf",
+    title: "Astroides y el parque de Magdalena del Mar en GeoGebra",
+  },
+  {
+    href: "/resources-files/misc-math-style-sound-interface.pdf",
+    title: "Pensamiento y estilo matemático como interfaz sonora",
+  },
+  {
+    href: "/resources-files/misc-alternating-groups-cycles.pdf",
+    title: "Recorte de paridad y grupos alternantes",
+  },
+  {
+    href: "/resources-files/misc-poetry-math-physics.pdf",
+    title: "El poema perdido de Fourier",
+  },
+  {
+    href: "/resources-files/misc-motzkin-numbers.pdf",
+    title: "Números de Motzkin en teoría musical",
+  },
+  {
+    href: "/resources-files/misc-log-cents-midi.pdf",
+    title: "Logaritmos, cents y MIDI: una guía básica",
+  },
+  {
+    href: "/resources-files/misc-envisioning-primes.pdf",
+    title: "Envisioning Primes: Topology and Geometry",
+  },
+  {
+    href: "/resources-files/misc-garcilaso-de-la-vega.pdf",
+    title: "Tercetos Garcilasianos y las simetrías del triángulo",
+  },
+] as const;
 ---
 
 <section class="mb-10">
   <h2 class="text-2xl font-semibold my-5">{title}</h2>
+
   <ul class="flex flex-col gap-y-2">
-    <li class={BULLET_SQUARE_LIST.li}>
-      <span class={BULLET_SQUARE_LIST.span}></span>
-      <a
-        class="text-primary hover:underline"
-        href="/resources-files/misc-torsion-ell-number-fields.pdf"
-        title="misc-torsion-ell-number-fields.pdf"
-        target="_blank"
-        rel="noopener">Cuando tuerces curvas elípticas sobre cuerpos numéricos - PDF</a
-      >
-    </li>
-    <li class={BULLET_SQUARE_LIST.li}>
-      <span class={BULLET_SQUARE_LIST.span}></span>
-      <a
-        class="text-primary hover:underline"
-        href="/resources-files/misc-primes-top.pdf"
-        title="misc-primes-top.pdf"
-        target="_blank"
-        rel="noopener">Pegado de números primos antes de tomar café en la noche - PDF</a
-      >
-    </li>
-    <li class={BULLET_SQUARE_LIST.li}>
-      <span class={BULLET_SQUARE_LIST.span}></span>
-      <a
-        class="text-primary hover:underline"
-        href="/resources-files/misc-axioms-alg-top.pdf"
-        title="misc-axioms-alg-top.pdf"
-        target="_blank"
-        rel="noopener">Un comentario sobre axiomática vegetal antes de tomar café - PDF</a
-      >
-    </li>
-    <li class={BULLET_SQUARE_LIST.li}>
-      <span class={BULLET_SQUARE_LIST.span}></span>
-      <a
-        class="text-primary hover:underline"
-        href="/resources-files/misc-geo-inversion-human-earth.pdf"
-        title="misc-geo-inversion-human-earth.pdf"
-        target="_blank"
-        rel="noopener">Ayer se invirtieron volumétricamente los humanos y la Tierra - PDF</a
-      >
-    </li>
+    {
+      resources.map((resource) => (
+        <li class={BULLET_SQUARE_LIST.li}>
+          <span class={BULLET_SQUARE_LIST.span} />
 
-    <li class={BULLET_SQUARE_LIST.li}>
-      <span class={BULLET_SQUARE_LIST.span}></span>
-      <a
-        class="text-primary hover:underline"
-        href="/resources-files/misc-counterpoint-fux.pdf"
-        title="misc-counterpoint-fux.pdf"
-        target="_blank"
-        rel="noopener">Consonancia y disonancia en Fux: La función de polaridad - PDF</a
-      >
-    </li>
-    <li class={BULLET_SQUARE_LIST.li}>
-      <span class={BULLET_SQUARE_LIST.span}></span>
-      <a
-        class="text-primary hover:underline"
-        href="/resources-files/misc-circular-saw-fourier.pdf"
-        title="misc-circular-saw-fourier.pdf"
-        target="_blank"
-        rel="noopener">Carpintería al máximo detalle con los dientes de Fourier - PDF</a
-      >
-    </li>
-
-    <li class={BULLET_SQUARE_LIST.li}>
-      <span class={BULLET_SQUARE_LIST.span}></span>
-      <a
-        class="text-primary hover:underline"
-        href="/resources-files/misc-beyond-fibonacci.pdf"
-        title="misc-beyond-fibonacci.pdf"
-        target="_blank"
-        rel="noopener">De Fibonacci al Super-Nacci: tropiezo a tropiezo - PDF</a
-      >
-    </li>
-
-    <li class={BULLET_SQUARE_LIST.li}>
-      <span class={BULLET_SQUARE_LIST.span}></span>
-      <a
-        class="text-primary hover:underline"
-        href="/resources-files/misc-currying-ts.pdf"
-        title="misc-currying-ts.pdf"
-        target="_blank"
-        rel="noopener">Funciones currificadas en TypeScript - PDF</a
-      >
-    </li>
-    <li class={BULLET_SQUARE_LIST.li}>
-      <span class={BULLET_SQUARE_LIST.span}></span>
-      <a
-        class="text-primary hover:underline"
-        href="/resources-files/misc-r-pearson.pdf"
-        title="misc-r-pearson.pdf"
-        target="_blank"
-        rel="noopener">R de Pearson, cortesía de Sonic Visualiser - PDF</a
-      >
-    </li>
-    <li class={BULLET_SQUARE_LIST.li}>
-      <span class={BULLET_SQUARE_LIST.span}></span>
-      <a
-        class="text-primary hover:underline"
-        href="/resources-files/misc-mat-bourbaki.pdf"
-        title="misc-mat-bourbaki.pdf"
-        target="_blank"
-        rel="noopener">Matrices que no se ven como matrices - PDF</a
-      >
-    </li>
-    <li class={BULLET_SQUARE_LIST.li}>
-      <span class={BULLET_SQUARE_LIST.span}></span>
-      <a
-        class="text-primary hover:underline"
-        href="/resources-files/misc-microphones-multiplication.pdf"
-        title="misc-microphones-multiplication.pdf"
-        target="_blank"
-        rel="noopener">Micrófonos de Gauss y tablas de multiplicar - PDF</a
-      >
-    </li>
-    <li class={BULLET_SQUARE_LIST.li}>
-      <span class={BULLET_SQUARE_LIST.span}></span>
-      <a
-        class="text-primary hover:underline"
-        href="/resources-files/misc-magdalena-park.pdf"
-        title="misc-magdalena-park.pdf"
-        target="_blank"
-        rel="noopener">Astroides y el parque de Magdalena del Mar en GeoGebra - PDF</a
-      >
-    </li>
-    <li class={BULLET_SQUARE_LIST.li}>
-      <span class={BULLET_SQUARE_LIST.span}></span>
-      <a
-        class="text-primary hover:underline"
-        href="/resources-files/misc-math-style-sound-interface.pdf"
-        title="misc-math-style-sound-interface.pdf"
-        target="_blank"
-        rel="noopener">Pensamiento y estilo matemático como interfaz sonora - PDF</a
-      >
-    </li>
-    <li class={BULLET_SQUARE_LIST.li}>
-      <span class={BULLET_SQUARE_LIST.span}></span>
-      <a
-        class="text-primary hover:underline"
-        href="/resources-files/misc-alternating-groups-cycles.pdf"
-        title="misc-alternating-groups-cycles.pdf"
-        target="_blank"
-        rel="noopener">Recorte de paridad y grupos alternantes - PDF</a
-      >
-    </li>
-    <li class={BULLET_SQUARE_LIST.li}>
-      <span class={BULLET_SQUARE_LIST.span}></span>
-      <a
-        class="text-primary hover:underline"
-        href="/resources-files/misc-poetry-math-physics.pdf"
-        title="misc-poetry-math-physics.pdf"
-        target="_blank"
-        rel="noopener">El poema perdido de Fourier - PDF</a
-      >
-    </li>
-    <li class={BULLET_SQUARE_LIST.li}>
-      <span class={BULLET_SQUARE_LIST.span}></span>
-      <a
-        class="text-primary hover:underline"
-        href="/resources-files/misc-motzkin-numbers.pdf"
-        title="misc-motzkin-numbers.pdf"
-        target="_blank"
-        rel="noopener">Números de Motzkin en teoría musical - PDF</a
-      >
-    </li>
-    <li class={BULLET_SQUARE_LIST.li}>
-      <span class={BULLET_SQUARE_LIST.span}></span>
-      <a
-        class="text-primary hover:underline"
-        href="/resources-files/misc-log-cents-midi.pdf"
-        title="misc-log-cents-midi.pdf"
-        target="_blank"
-        rel="noopener">Logaritmos, cents y MIDI: una guía básica - PDF</a
-      >
-    </li>
-    <li class={BULLET_SQUARE_LIST.li}>
-      <span class={BULLET_SQUARE_LIST.span}></span>
-      <a
-        class="text-primary hover:underline"
-        href="/resources-files/misc-envisioning-primes.pdf"
-        title="misc-envisioning-primes.pdf"
-        target="_blank"
-        rel="noopener">Envisioning Primes: Topology and Geometry - PDF</a
-      >
-    </li>
-    <li class={BULLET_SQUARE_LIST.li}>
-      <span class={BULLET_SQUARE_LIST.span}></span>
-      <a
-        class="text-primary hover:underline"
-        href="/resources-files/misc-garcilaso-de-la-vega.pdf"
-        title="misc-garcilaso-de-la-vega.pdf"
-        target="_blank"
-        rel="noopener">Tercetos Garcilasianos y las simetrías del triángulo - PDF</a
-      >
-    </li>
+          <a
+            class={LINKS_TO}
+            href={resource.href}
+            target="_blank"
+            rel="noopener"
+          >
+            {resource.title}
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </section>

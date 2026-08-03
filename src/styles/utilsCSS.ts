@@ -5,7 +5,7 @@ export const NAV_LINKS_PAGES = {
   nextRight: "justify-end",
   prevNext: "text-sm uppercase tracking-wider text-base-content/75 font-light",
   pageTitle:
-    "text-base line-clamp-2 transition-colors duration-150 group-hover:text-primary group-hover:underline underline-offset-2 group-hover:decoration-2 font-normal",
+    "text-base line-clamp-2 group-hover:text-primary group-hover:underline underline-offset-2 group-hover:decoration-2 font-normal transition-colors duration-150 ease-in-out",
 
   arrowSpan: "transition-colors duration-150 group-hover:text-primary",
 };
@@ -14,7 +14,7 @@ export const BORDER_OPACITY =
   "border border-base-content/12 hover:border-primary/20 transition-colors duration-150 ease-in-out";
 
 export const LINKS_TO =
-  "text-primary underline underline-offset-2 decoration-1 transition-[text-underline-offset,text-decoration-thickness] duration-150 hover:decoration-2";
+  "text-primary/90 underline underline-offset-2 hover:decoration-2 hover:text-primary transition-[color,text-underline-offset,text-decoration-thickness] duration-150 ease-in-out";
 
 export const BORDER_INFO =
   "relative border-l-2 pl-4 border-base-content/20 before:absolute before:left-[-5px] before:top-1/2 before:-translate-y-1/2 before:h-2 before:w-2 before:rounded-xs before:border before:border-primary/40 before:bg-base-100";
