@@ -31,7 +31,7 @@ Un **frame** corto toma curvas más rápido, aunque pierde detalle para distingu
 
 > Además, los frames suelen solaparse (*overlap*). Por ejemplificar, una FFT de $2048$ muestras  puede avanzar $512$ o $1024$ muestras antes de tomar la siguiente curva. Así evitamos dejar huecos en la pista. Pero esa carrera la dejamos para otra vuelta.
 
-Para resolver el problema es que se idearon las ventanas y si te pones a leer (hay muchas, pero yo voy a tocar solo algunas que penden de SV) y parten de una idea muy antigua en trigonometría: el coseno. Y sí, estamos en **Familia** como en rápidos y furiosos.
+Para resolver el problema es que se idearon las ventanas y si te pones a leer (hay muchas, pero yo voy a tocar solo algunas que penden de SV) y parten de una idea muy antigua en trigonometría: el coseno. Y sí, estamos en **Familia** como en *Rápidos y Furiosos*.
 
 ## El coseno
 
@@ -73,7 +73,7 @@ $$
 \Omega(n) = a_0 + \sum_{t=1}^w  (-1)^{t}a_t \cos \left(\frac{2 t \pi n}{N-1}\right).
 $$
 
-Tranquilo, ese $w$, es la cantidad de términos de nuestra ventana, no exageremos con $w \ge 100$. Esta es la **evolución general**, el ancestro de toda la familia, nuestro motor $V-100$ del Dodge de los 70s.
+Tranquilidad aquí, ese $w$, es la cantidad de términos de nuestra ventana, no exageremos con $w \ge 100$. Esta es la **evolución general**, el ancestro de toda la familia, nuestro motor V-$100$ del *Charger* de los 70.
 
 > Un filósofo dijo que los autos tienen el mismo chasis, pero cambia cómo repartimos los *HP* entre distintos armónicos.
 
