@@ -3,7 +3,7 @@ title: "Sonic Visualiser conoce a Toretto y su familia de cosenos"
 description: "Muchas ventanas como Hann, Blackman, Nuttall son un combinado de chifa de cosenos antes de la carrera. Aquí las vemos con algo de generalidad en lectura a primera vista."
 pubDate: "August 1 2026"
 badge: "misc notes"
-updatedDate: "August 2 2026"
+updatedDate: "August 3 2026"
 tags: ["Sonic Visualiser", "FFT", "window functions", "DSP", "spectral analysis", "Fourier analysis"]
 ---
 
