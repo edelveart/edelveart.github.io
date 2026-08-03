@@ -1,6 +1,6 @@
 ---
 title: "Sonic Visualiser conoce a Toretto y su familia de cosenos"
-description: "Muchas ventanas como Hann, Blackman, Nuttall son un combinado de chifa de cosenos antes de la carrera. Aquí las vemos con algo de generalidad."
+description: "Muchas ventanas como Hann, Blackman, Nuttall son un combinado de chifa de cosenos antes de la carrera. Aquí las vemos con algo de generalidad en lectura a primera vista."
 pubDate: "August 1 2026"
 badge: "misc notes"
 updatedDate: "August 2 2026"
@@ -8,9 +8,13 @@ tags: ["Sonic Visualiser", "FFT", "window functions", "DSP", "spectral analysis"
 ---
 
 Recuerdo que una vez preguntaron (realmente lo imaginé) qué era eso de las ventanas que aparecen en [Sonic Visualiser](https://www.sonicvisualiser.org/) durante el análisis del espectro.
-Desde luego, me vino a la mente, la primera vez que intenté comprender de qué va esto de las ventanas en audio y por supuesto, el enfoque de tratar de meter cosas en iteraciones y bucles, como todo músico que adora los patrones.
+Desde luego, me vino a la mente la primera vez que intenté comprender de qué va esto de las ventanas en audio y por supuesto, el enfoque de tratar de meter cosas en iteraciones y bucles, como todo músico que adora los patrones.
 
 > Muchas ventanas (Hann, Blackman, Nuttall, etc) son un combinado de chifa de cosenos.
+
+Solamente haremos un *drag* corto, **raspando la pintura** sobre este tema (hay muchas otras ventanas, como las Gaussianas, Parzen y demás vidrios tintados especiales, más allá de las lunas cosenoidales). Me salen rimas torpes a raudales.
+
+## ¿Qué me cuenta Sonic Visualiser?
 
 Escucha la [Ventanita](https://www.youtube.com/watch?v=znJ1HPAGAlc) silenciosa de los Embajadores Criollos (versión `5.2.1`).
 Ve al menú  `File` y luego hazle click en `Preferences` y selecciona la pestaña de temible nombre `Analysis`:
@@ -91,17 +95,17 @@ $$
 
 Soltaré a continuación la tabla de la iluminación (usa tu Casio o tu lápiz):
 
-| Sample index $n$ | Cosine term $\cos(\frac{2\pi n}{8})$ | Hann Window $\Omega(n)$ |
-| :--------------: | :----------------------------------: | :---------------------: |
-|       $0$        |                 $1$                  |         $0.000$         |
-|       $1$        |               $0.707$                |         $0.146$         |
-|       $2$        |                 $0$                  |         $0.500$         |
-|       $3$        |               $-0.707$               |         $0.854$         |
-|       $4$        |                 $-1$                 |         $1.000$         |
-|       $5$        |               $-0.707$               |         $0.854$         |
-|       $6$        |                 $0$                  |         $0.500$         |
-|       $7$        |               $0.707$                |         $0.146$         |
-|       $8$        |                 $1$                  |         $0.000$         |
+| Índice de muestra $n$ | Valor $\cos(\frac{2\pi n}{8})$ | Ventanita de Hann $\Omega(n)$ |
+| :-------------------: | :----------------------------: | :---------------------------: |
+|          $0$          |              $1$               |            $0.000$            |
+|          $1$          |            $0.707$             |            $0.146$            |
+|          $2$          |              $0$               |            $0.500$            |
+|          $3$          |            $-0.707$            |            $0.854$            |
+|          $4$          |              $-1$              |            $1.000$            |
+|          $5$          |            $-0.707$            |            $0.854$            |
+|          $6$          |              $0$               |            $0.500$            |
+|          $7$          |            $0.707$             |            $0.146$            |
+|          $8$          |              $1$               |            $0.000$            |
 
 Observa la imagen arriba, en $n=0$ y $n=8$ son cero y el centro es exactamente el máximo $1$. Bien, lo que hará esta ventana es multiplicar la señal original punto por punto.
 
