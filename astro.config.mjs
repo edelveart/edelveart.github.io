@@ -22,6 +22,7 @@ export default defineConfig({
       },
     }),
   ],
+  //   compressHTML: true,
 
   vite: {
     plugins: [tailwindcss()],
@@ -34,7 +35,7 @@ export default defineConfig({
     }),
 
     shikiConfig: {
-      theme: "catppuccin-mocha",
+      theme: "catppuccin-macchiato",
       wrap: false,
       transformers: [
         addCopyButton({

@@ -1,10 +1,10 @@
 import { createCatppuccinPlugin } from "@catppuccin/daisyui";
 
 export default createCatppuccinPlugin(
-  "mocha",
+  "macchiato",
   {
     primary: "lavender", // primary: default = mauve
-    secondary: "green",
+    secondary: "teal",
     info: "rosewater", //  info: default = sky, optional good is teal
     accent: "peach",
     // "accent-content": "sapphire",
