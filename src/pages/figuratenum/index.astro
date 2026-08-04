@@ -191,13 +191,13 @@ const CARD_BUTTONS = {
     <ul class="mt-6">
       {
         figurateNumPosts.map((post) => (
-          <li class={`${BULLET_SQUARE_LIST.li} mt-2`}>
+          <li class={`${BULLET_SQUARE_LIST.li} mt-2 `}>
             <span class={BULLET_SQUARE_LIST.span} />
             <a href={`/blog/${createSlug(post.data.title, post.id)}/`}>
               <span class={LINKS_TO}>{post.data.title}</span>
-              <span class={CARD_OP.muteData}>
-                {" "}
-                · {dayjs(post.data.pubDate).format("ll")}
+              <span class={`${CARD_OP.muteData} block md:inline`}>
+                <span class="hidden md:inline"> · </span>
+                {dayjs(post.data.pubDate).format("ll")}
               </span>
             </a>
           </li>

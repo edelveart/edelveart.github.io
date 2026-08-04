@@ -19,27 +19,25 @@ const displayDate = dayjs(pubDate).format("ll");
 import { BORDER_OPACITY, CARD_OP, GET_COLORS_METADATA } from "@styles/utilsCSS";
 ---
 
-<!-- min-h-32  -->
 <a
   href={url}
   target={target}
   class=`group flex ${BORDER_OPACITY} p-4 my-4 mx-auto flex-col`
 >
-  <div class="flex items-center gap-2">
+  <h2
+    class=`${CARD_OP.title} group-hover:text-primary line-clamp-2 md:line-clamp-none transition-colors`
+  >
+    {title}
+  </h2>
+
+  <div class="flex items-center gap-2 mt-1">
     <span class={CARD_OP.muteData}>{displayDate}</span>
     <span class={CARD_OP.muteData}>·</span>
 
-    <!-- <span class="text-base-content/60 text-sm font-medium">{badge}</span> -->
     <span class={GET_COLORS_METADATA(badge)}>
       {badge}
     </span>
   </div>
-
-  <h2
-    class=`mt-1 ${CARD_OP.title} group-hover:text-primary line-clamp-2 md:line-clamp-none transition-colors `
-  >
-    {title}
-  </h2>
 
   <p class=`mt-2 ${CARD_OP.parr} md:line-clamp-none line-clamp-2`>
     {desc}

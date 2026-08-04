@@ -6,16 +6,15 @@ export const NAV_LINKS_PAGES = {
   prevNext: "text-sm uppercase tracking-wider text-base-content/75 font-light",
   pageTitle:
     "text-base line-clamp-2 group-hover:text-primary group-hover:underline underline-offset-2 group-hover:decoration-2 font-normal transition-colors duration-150 ease-in-out",
-
   arrowSpan: "transition-colors duration-150 group-hover:text-primary",
 };
 
 export const BASE_BORDER = `border border-base-content/15 rounded-md`;
-
-export const BASE_BORDER_IMG = `border border-base-content/12 rounded-md shadow-sm shadow-base-300/20`;
 export const BORDER_OPACITY = `${BASE_BORDER} hover:border-primary/25 transition-colors duration-150 ease-in-out`;
+
+export const BASE_BORDER_IMG = `border border-base-content/12 rounded-md shadow-sm shadow-base-300/20`; // .astro
 export const PROSE_IMG_BORDER =
-  "prose-img:border prose-img:border-base-content/12 prose-img:rounded-md";
+  "prose-img:border prose-img:border-base-content/12 prose-img:rounded-md prose-img:shadow-sm prose-img:shadow-base-300/15"; // blog
 
 export const LINKS_TO =
   "text-primary/90 underline underline-offset-2 hover:decoration-2 hover:text-primary transition-[color,text-underline-offset,text-decoration-thickness] duration-150 ease-in-out";
