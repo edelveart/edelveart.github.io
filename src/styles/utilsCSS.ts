@@ -20,8 +20,9 @@ export const PROSE_IMG_BORDER =
 export const LINKS_TO =
   "text-primary/90 underline underline-offset-2 hover:decoration-2 hover:text-primary transition-[color,text-underline-offset,text-decoration-thickness] duration-150 ease-in-out";
 
+// w-2.5 h-2.5 = size-2.5 => left-[-6px], size-2 => left-[-5px]
 export const BORDER_INFO =
-  "relative border-l-2 pl-4 border-base-content/20 before:absolute before:left-[-5px] before:top-1/2 before:-translate-y-1/2 before:h-2 before:w-2 before:rounded-xs before:border before:border-primary/40 before:bg-base-100";
+  "relative border-l-2 pl-4 border-base-content/20 before:absolute before:left-[-6px] before:top-1/2 before:-translate-y-1/2 before:size-2.5 before:rounded-xs before:border before:border-primary/40 before:bg-base-100";
 
 export const CARD_OP = {
   title: "text-lg font-semibold text-base-content",
