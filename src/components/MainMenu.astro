@@ -1,0 +1,138 @@
+---
+// import Home from "@icons/Home.astro";
+// import Branch from "@icons/Branch.astro";
+// import Curriculum from "@icons/Curriculum.astro";
+// import Writing from "@icons/Writing.astro";
+// import Blog from "@icons/Blog.astro";
+// import FigLogo from "@icons/FigLogo.astro";
+
+// // type Props = {
+// //   homeMenu: string;
+// //   hrefHome: string;
+// //   cvMenu: string;
+// //   hrefCV: string;
+// //   projectsMenu: string;
+// //   hrefProjects: string;
+// //   resourcesMenu: string;
+// //   hrefResources: string;
+// //   notesMenu: string;
+// //   hrefNotes: string;
+// //   figurateMenu: string;
+// //   hrefFigurate: string;
+// // };
+
+type Props = {
+  items: {
+    text: string;
+    href: string;
+    icon: any;
+    exact?: boolean;
+    section?: boolean;
+  }[];
+};
+
+const { items } = Astro.props;
+
+// const {
+//   homeMenu,
+//   hrefHome,
+//   cvMenu,
+//   hrefCV,
+//   projectsMenu,
+//   hrefProjects,
+//   resourcesMenu,
+//   hrefResources,
+//   notesMenu,
+//   hrefNotes,
+//   figurateMenu,
+//   hrefFigurate,
+// } = Astro.props;
+
+const current = Astro.url.pathname;
+import { isExactActive, isSectionActive } from "@ts-config-path/lib/routes";
+import { menuClass, sideMenuCss } from "@styles/menuCss";
+---
+
+<!--
+<ul class="w-full h-full flex-1 flex flex-col p-2">
+  <li>
+    <a class={menuClass(isExactActive(current, hrefHome))} href={hrefHome}>
+      <span class={sideMenuCss.iconBox}>
+        <Home />
+      </span>
+      <span class={sideMenuCss.spanText}>{homeMenu}</span>
+    </a>
+  </li>
+  <li>
+    <a class={menuClass(isExactActive(current, hrefCV))} href={hrefCV}>
+      <span class={sideMenuCss.iconBox}>
+        <Curriculum />
+      </span>
+      <span class={sideMenuCss.spanText}>{cvMenu}</span>
+    </a>
+  </li>
+  <li>
+    <a
+      class={menuClass(isExactActive(current, hrefProjects))}
+      href={hrefProjects}
+    >
+      <span class={sideMenuCss.iconBox}>
+        <Branch />
+      </span>
+      <span class={sideMenuCss.spanText}>{projectsMenu}</span>
+    </a>
+  </li>
+  <li>
+    <a
+      class={menuClass(isExactActive(current, hrefResources))}
+      href={hrefResources}
+    >
+      <span class={sideMenuCss.iconBox}>
+        <Writing />
+      </span>
+      <span class={sideMenuCss.spanText}>{resourcesMenu}</span>
+    </a>
+  </li>
+  <li>
+    <a class={menuClass(isSectionActive(current, hrefNotes))} href={hrefNotes}>
+      <span class={sideMenuCss.iconBox}>
+        <Blog />
+      </span>
+      <span class={sideMenuCss.spanText}>{notesMenu}</span>
+    </a>
+  </li>
+  <li>
+    <a
+      class={menuClass(isSectionActive(current, hrefFigurate))}
+      href={hrefFigurate}
+    >
+      <span class={sideMenuCss.iconBox}>
+        <FigLogo />
+      </span>
+      <span class={sideMenuCss.spanText}>{figurateMenu}</span>
+    </a>
+  </li>
+</ul> -->
+<ul class="w-full h-full flex-1 flex flex-col p-2">
+  {
+    items.map((item) => {
+      const Icon = item.icon;
+
+      const active = item.section
+        ? isSectionActive(current, item.href)
+        : isExactActive(current, item.href);
+
+      return (
+        <li>
+          <a class={menuClass(active)} href={item.href}>
+            <span class={sideMenuCss.iconBox}>
+              <Icon />
+            </span>
+
+            <span class={sideMenuCss.spanText}>{item.text}</span>
+          </a>
+        </li>
+      );
+    })
+  }
+</ul>

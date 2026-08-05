@@ -1,34 +1,11 @@
 ---
-import SideBarMenu from "@components/SideBarMenu.astro";
+import MainMenu from "@components/MainMenu.astro";
+import FigurateDocsMenu from "@components/FigurateDocsMenu.astro";
+
 import PhotoProfile from "@components/img-components/PhotoProfile.astro";
 import LinkIconsGroup from "@components/LinkIconsGroup.astro";
 
-export const menuEnglish = {
-  homeMenu: {
-    text: "Home",
-    href: "/",
-  },
-  projectsMenu: {
-    text: "Software",
-    href: "/projects/",
-  },
-  cvMenu: {
-    text: "About me",
-    href: "/about/",
-  },
-  resourcesMenu: {
-    text: "Resources",
-    href: "/resources/",
-  },
-  notesMenu: {
-    text: "Notes",
-    href: "/blog/",
-  },
-  figurateMenu: {
-    text: "FigurateNum",
-    href: "/figuratenum/",
-  },
-};
+import { menuEnglish } from "@ts-config-path/lib/menu";
 ---
 
 <div class="drawer-side z-40" id="sidebar-scroll-container">
@@ -39,7 +16,8 @@ export const menuEnglish = {
     <div class="w-fit mx-auto mt-12 mb-6">
       <PhotoProfile class="w-32 avatar m-auto" />
     </div>
-    <SideBarMenu
+    <MainMenu items={menuEnglish} />
+    <!-- <MainMenu
       homeMenu={menuEnglish.homeMenu.text}
       hrefHome={menuEnglish.homeMenu.href}
       cvMenu={menuEnglish.cvMenu.text}
@@ -52,7 +30,23 @@ export const menuEnglish = {
       hrefNotes={menuEnglish.notesMenu.href}
       figurateMenu={menuEnglish.figurateMenu.text}
       hrefFigurate={menuEnglish.figurateMenu.href}
-    />
+    /> -->
+
+    <FigurateDocsMenu />
+    <!-- <SideBarMenu
+      homeMenu={menuEnglish.homeMenu.text}
+      hrefHome={menuEnglish.homeMenu.href}
+      cvMenu={menuEnglish.cvMenu.text}
+      hrefCV={menuEnglish.cvMenu.href}
+      projectsMenu={menuEnglish.projectsMenu.text}
+      hrefProjects={menuEnglish.projectsMenu.href}
+      resourcesMenu={menuEnglish.resourcesMenu.text}
+      hrefResources={menuEnglish.resourcesMenu.href}
+      notesMenu={menuEnglish.notesMenu.text}
+      hrefNotes={menuEnglish.notesMenu.href}
+      figurateMenu={menuEnglish.figurateMenu.text}
+      hrefFigurate={menuEnglish.figurateMenu.href}
+    /> -->
     <footer
       class="footer footer-center flex gap-x-2 justify-center-safe items-center pt-0 mt-auto mb-6"
     >

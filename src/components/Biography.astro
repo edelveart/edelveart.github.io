@@ -1,5 +1,5 @@
 ---
-import { menuEnglish } from "./SideBar.astro";
+import { routes } from "@ts-config-path/lib/routes";
 import { LINKS_TO } from "@styles/utilsCSS";
 ---
 
@@ -18,12 +18,7 @@ import { LINKS_TO } from "@styles/utilsCSS";
     >
       modular forms
     </a> (SageMath/LMFDB-inspired) and {" "}
-    <a
-      id="projects"
-      href={menuEnglish.projectsMenu.href}
-      rel="noopener"
-      class={LINKS_TO}
-    >
+    <a id="projects" href={routes.projects} rel="noopener" class={LINKS_TO}>
       multidimensional figurate number
     </a>{" "}
     libraries with over <strong>26,000 downloads</strong>, as well as

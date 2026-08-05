@@ -1,0 +1,33 @@
+---
+import { transitionMenu } from "@styles/menuCss";
+
+const currentLang = Astro.url.pathname.startsWith("/es") ? "es" : "en";
+
+const spanishFlag = "fi fi-es fis";
+const englishFlag = "fi fi-gb fis";
+
+const langClass = (active: boolean) =>
+  `
+flex items-center gap-2 no-underline
+${
+  active
+    ? "text-primary font-medium"
+    : "text-neutral-content hover:text-primary"
+}
+${transitionMenu}
+`;
+---
+
+{
+  currentLang === "es" ? (
+    <a class={langClass(false)} href="/">
+      <span class={`${englishFlag} w-5 h-5 shrink-0`} />
+      ENG
+    </a>
+  ) : (
+    <a class={langClass(false)} href="/es/">
+      <span class={`${spanishFlag} w-5 h-5 shrink-0`} />
+      ESP
+    </a>
+  )
+}

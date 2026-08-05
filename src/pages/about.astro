@@ -3,7 +3,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import ListOfSkills from "@components/ListOfSkills.astro";
 import { techSkillsEnglish } from "@components/ListOfSkills.astro";
 import Education from "@components/Education.astro";
-import { menuEnglish } from "@components/SideBar.astro";
+import { routes } from "@ts-config-path/lib/routes";
 import { LINKS_TO } from "@styles/utilsCSS";
 import SonicPiModFormsImage from "@components/img-components/SonicPiModFormsImage.astro";
 import FigurateNumImages from "@components/img-components/FigurateNumImages.astro";
@@ -36,7 +36,7 @@ import { BLOCK_QUOTE } from "@styles/utilsCSS";
         My vision is to create abstractions through structural analogies that
         naturally lead to mathematical discovery from the musical perspective
         and vice versa. To this end, I design {" "}
-        <a class={LINKS_TO} id="projects" href={menuEnglish.projectsMenu.href}>
+        <a class={LINKS_TO} id="projects" href={routes.projects}>
           code libraries
         </a>
         {" "} that enable tackling complex problems in creative ways.

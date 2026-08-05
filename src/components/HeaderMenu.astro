@@ -1,0 +1,23 @@
+---
+import { headerMenuClass } from "@styles/menuCss";
+import { isExactActive, isSectionActive } from "@ts-config-path/lib/routes";
+
+const current = Astro.url.pathname;
+const { items } = Astro.props;
+---
+
+<nav class="flex items-center gap-x-6">
+  {
+    items.map((item: any) => {
+      const active = item.section
+        ? isSectionActive(current, item.href)
+        : isExactActive(current, item.href);
+
+      return (
+        <a href={item.href} class={headerMenuClass(active)}>
+          {item.text}
+        </a>
+      );
+    })
+  }
+</nav>

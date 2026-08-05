@@ -1,45 +1,49 @@
 ---
-import Home from "@icons/Home.astro";
-import Branch from "@icons/Branch.astro";
-import Curriculum from "@icons/Curriculum.astro";
-import Writing from "@icons/Writing.astro";
-import Blog from "@icons/Blog.astro";
-import FigLogo from "@icons/FigLogo.astro";
+// import Home from "@icons/Home.astro";
+// import Branch from "@icons/Branch.astro";
+// import Curriculum from "@icons/Curriculum.astro";
+// import Writing from "@icons/Writing.astro";
+// import Blog from "@icons/Blog.astro";
+// import FigLogo from "@icons/FigLogo.astro";
 
-type Props = {
-  homeMenu: string;
-  hrefHome: string;
-  cvMenu: string;
-  hrefCV: string;
-  projectsMenu: string;
-  hrefProjects: string;
-  resourcesMenu: string;
-  hrefResources: string;
-  notesMenu: string;
-  hrefNotes: string;
-  figurateMenu: string;
-  hrefFigurate: string;
-};
+// type Props = {
+//   homeMenu: string;
+//   hrefHome: string;
+//   cvMenu: string;
+//   hrefCV: string;
+//   projectsMenu: string;
+//   hrefProjects: string;
+//   resourcesMenu: string;
+//   hrefResources: string;
+//   notesMenu: string;
+//   hrefNotes: string;
+//   figurateMenu: string;
+//   hrefFigurate: string;
+// };
 
-const {
-  homeMenu,
-  hrefHome,
-  cvMenu,
-  hrefCV,
-  projectsMenu,
-  hrefProjects,
-  resourcesMenu,
-  hrefResources,
-  notesMenu,
-  hrefNotes,
-  figurateMenu,
-  hrefFigurate,
-} = Astro.props;
+type Props = {};
+
+// const {
+//   homeMenu,
+//   hrefHome,
+//   cvMenu,
+//   hrefCV,
+//   projectsMenu,
+//   hrefProjects,
+//   resourcesMenu,
+//   hrefResources,
+//   notesMenu,
+//   hrefNotes,
+//   figurateMenu,
+//   hrefFigurate,
+// } = Astro.props;
 
 // REPLACE SIDEBARIDACTIVEITEM
 import { getCollection } from "astro:content";
 import createSlug from "@ts-config-path/lib/createSlug";
 import { isExactActive, isSectionActive } from "@ts-config-path/lib/routes";
+// import { sideMenuCss, transitionMenu } from "./MainMenu.astro"; // NEW
+import { sideMenuCss, transitionMenu } from "@styles/menuCss"; // NEW
 
 const current = Astro.url.pathname;
 const figuratePosts = await getCollection("figurate");
@@ -56,29 +60,29 @@ const figurateLinks = sortedFigurate.map((post) => {
   };
 });
 
-export const transitionMenu =
-  "transition-[color,opacity] duration-150 ease-in-out";
+// export const transitionMenu =
+//   "transition-[color,opacity] duration-150 ease-in-out";
 
-export const sideMenuCss = {
-  base: `
-    flex items-center gap-3 w-full rounded-md px-3 h-10
-    ${transitionMenu}
-  `,
-  inactive: "text-neutral-content hover:text-primary",
-  active: "text-primary font-semibold ", // bg-primary/5
-  spanText: "text-base",
-  iconBox: "w-5 h-5 flex items-center justify-center shrink-0",
-};
+// export const sideMenuCss = {
+//   base: `
+//     flex items-center gap-3 w-full rounded-md px-3 h-10
+//     ${transitionMenu}
+//   `,
+//   inactive: "text-neutral-content hover:text-primary",
+//   active: "text-primary font-semibold ", // bg-primary/5
+//   spanText: "text-base",
+//   iconBox: "w-5 h-5 flex items-center justify-center shrink-0",
+// };
 
-export const menuClass = (active: boolean) =>
-  `${sideMenuCss.base} ${active ? sideMenuCss.active : sideMenuCss.inactive}`;
+// export const menuClass = (active: boolean) =>
+//   `${sideMenuCss.base} ${active ? sideMenuCss.active : sideMenuCss.inactive}`;
 ---
 
-<strong class=`flex justify-center mb-5 mt-0  md:hidden font-semibold text-lg`>
+<!-- <strong class=`flex justify-center mb-5 mt-0  md:hidden font-semibold text-lg`>
   Edgar Delgado Vega
-</strong>
+</strong> -->
 <div class="flex flex-col w-full mb-5">
-  <ul class="w-full h-full flex-1 flex flex-col p-2">
+  <!-- <ul class="w-full h-full flex-1 flex flex-col p-2">
     <li>
       <a class={menuClass(isExactActive(current, hrefHome))} href={hrefHome}>
         <span class={sideMenuCss.iconBox}>
@@ -138,32 +142,32 @@ export const menuClass = (active: boolean) =>
         </span>
         <span class={sideMenuCss.spanText}>{figurateMenu}</span>
       </a>
-    </li>
+    </li> -->
 
-    <!-- CONDITIONAL SUBMENU OF DOCS -->
-    {
-      isSectionActive(current, "/figuratenum/") && (
-        <li>
-          <ul class="ml-2">
-            {figurateLinks.map((link) => (
-              <li>
-                <a
-                  href={link.href}
-                  class={`
+  <!-- CONDITIONAL SUBMENU OF DOCS -->
+  {
+    isSectionActive(current, "/figuratenum/") && (
+      <li>
+        <ul class="ml-2">
+          {figurateLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class={`
                 flex pl-4 text-sm items-center h-10 rounded-md
                 no-underline hover:text-primary hover:opacity-100 ${transitionMenu}
                 ${link.active ? `${sideMenuCss.active} opacity-100` : "opacity-80"}
               `}
-                >
-                  <span class="min-w-0 flex-1 truncate whitespace-nowrap text-sm">
-                    {link.title}
-                  </span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </li>
-      )
-    }
-  </ul>
+              >
+                <span class="min-w-0 flex-1 truncate whitespace-nowrap text-sm">
+                  {link.title}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </li>
+    )
+  }
+  <!-- </ul> -->
 </div>

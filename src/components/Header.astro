@@ -1,36 +1,28 @@
 ---
-import { transitionMenu } from "./SideBarMenu.astro";
+import HeaderMenu from "@components/HeaderMenu.astro";
+import LanguageSwitcher from "@components/LanguageSwitcher.astro";
+import { menuEnglish } from "@ts-config-path/lib/menu";
+import { transitionMenu } from "@styles/menuCss";
 
 const currentLang = Astro.url.pathname.startsWith("/es") ? "es" : "en";
-export const spanishFlag = "fi fi-es fis";
-export const englishFlag = "fi fi-gb fis";
-
-// const btnsNavBar = `
-//   flex items-center gap-2
-//   text-neutral-content
-//   hover:text-primary
-//   no-underline
-//   ${transitionMenu}
-// `;
-const langClass = (active: boolean) =>
-  `
-  flex items-center gap-2 no-underline
-  ${
-    active
-      ? "text-primary font-medium"
-      : "text-neutral-content hover:text-primary"
-  }
-  ${transitionMenu}
-  `;
 
 const glassEffect = "bg-base-100/50 backdrop-blur-md border-b border-primary/8";
 ---
 
-<div class=`sticky xl:hidden top-0 z-30 w-full ${glassEffect}`>
+<!-- DESKTOP HEADER -->
+<div
+  class={`hidden xl:flex items-center justify-center gap-x-8 sticky top-0 z-30 ${glassEffect}`}
+>
+  <HeaderMenu items={menuEnglish} />
+  <LanguageSwitcher />
+</div>
+
+<!-- MOBILE HEADER -->
+<div class={`xl:hidden sticky top-0 z-30 w-full ${glassEffect}`}>
   <div
     class="navbar w-full flex items-center justify-between md:px-5 sm:px-3 px-6"
   >
-    <!-- LEFT -->
+    <!-- LEFT: Drawer -->
     <div class="navbar-start flex items-center">
       <label
         for="my-drawer"
@@ -54,57 +46,14 @@ const glassEffect = "bg-base-100/50 backdrop-blur-md border-b border-primary/8";
         </svg>
 
         <span>
-          {currentLang == "es" ? "Menú" : "Menu"}
+          {currentLang === "es" ? "Menú" : "Menu"}
         </span>
       </label>
     </div>
 
-    <!-- RIGHT -->
+    <!-- RIGHT: Language -->
     <div class="navbar-end flex items-center">
-      {
-        currentLang === "es" ? (
-          <a
-            class={langClass(false)}
-            href="/"
-            title="Switch to English"
-            aria-label="Switch to English"
-          >
-            <span class={`${englishFlag} w-5 h-5 shrink-0`} />
-            ENG
-          </a>
-        ) : (
-          <a
-            class={langClass(false)}
-            href="/es/"
-            title="Cambiar a Español"
-            aria-label="Cambiar a Español"
-          >
-            <span class={`${spanishFlag} w-5 h-5 shrink-0`} />
-            ESP
-          </a>
-        )
-      }
+      <LanguageSwitcher />
     </div>
   </div>
-</div>
-<!-- PC VIEW -->
-<div
-  class=`hidden xl:flex gap-x-8 flex-wrap justify-center sticky top-0 z-30 ${glassEffect}`
->
-  <a
-    class=`${langClass(currentLang === "en")} my-2 py-2`
-    href="/"
-    title="English"
-  >
-    <span class={`${englishFlag}`}></span>
-    English
-  </a>
-  <a
-    class=`${langClass(currentLang === "es")} my-2 py-2`
-    href="/es/"
-    title="Español"
-  >
-    <span class={`${spanishFlag}`}></span>
-    Español
-  </a>
 </div>
