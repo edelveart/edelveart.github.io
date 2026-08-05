@@ -18,6 +18,7 @@ const langClass = (active: boolean) =>
 
 const glassEffect = "bg-base-100/50 backdrop-blur-md relative";
 const marginSolved = "my-5";
+const NAME_ID = "Edgar Delgado";
 ---
 
 <div class=`sticky xl:hidden top-0 z-30 w-full ${glassEffect}`>
@@ -47,10 +48,19 @@ const marginSolved = "my-5";
           </path>
         </svg>
 
-        <span>
+        <!-- <span>
           {currentLang == "es" ? "Menú" : "Menu"}
-        </span>
+        </span> -->
       </label>
+    </div>
+    <!-- CENTER -->
+    <div class="navbar-center">
+      <a
+        href={currentLang === "en" ? "/" : "/es/"}
+        class={`font-medium text-neutral-content hover:text-primary ${transitionMenu}`}
+      >
+        {NAME_ID}
+      </a>
     </div>
 
     <!-- RIGHT -->
@@ -63,7 +73,7 @@ const marginSolved = "my-5";
             title="Switch to English"
             aria-label="Switch to English"
           >
-            <span class={`${englishFlag} w-5 h-5 shrink-0`} />
+            {/* <span class={`${englishFlag} w-5 h-5 shrink-0`} /> */}
             ENG
           </a>
         ) : (
@@ -73,7 +83,7 @@ const marginSolved = "my-5";
             title="Cambiar a Español"
             aria-label="Cambiar a Español"
           >
-            <span class={`${spanishFlag} w-5 h-5 shrink-0`} />
+            {/* <span class={`${spanishFlag} w-5 h-5 shrink-0`} /> */}
             ESP
           </a>
         )
@@ -94,19 +104,19 @@ const marginSolved = "my-5";
       href={currentLang == "en" ? "/" : "/es/"}
       class="no-underline text-neutral-content hover:text-primary font-medium"
     >
-      Edgar Delgado
+      {NAME_ID}
     </a>
   </div>
 
   <!-- RIGHT -->
-  <div class=`flex items-center gap-5 ${marginSolved}`>
+  <div class=`flex items-center gap-3 ${marginSolved}`>
     <a href="/" class={langClass(currentLang === "en")}>
-      <span class={`${englishFlag}`}></span>
+      <!-- <span class={`${englishFlag}`}></span> -->
       English
     </a>
-
+    <span class="text-neutral-content">·</span>
     <a href="/es/" class={langClass(currentLang === "es")}>
-      <span class={`${spanishFlag}`}></span>
+      <!-- <span class={`${spanishFlag}`}></span> -->
       Español
     </a>
 
@@ -115,26 +125,3 @@ const marginSolved = "my-5";
   </div>
   <div class="absolute bottom-0 left-0 w-full h-px bg-primary/8"></div>
 </div>
-
-<!-- <div
-  class=`hidden xl:flex gap-x-8 flex-wrap justify-center sticky top-0 z-30 ${glassEffect}`
->
-  <a
-    class=`${langClass(currentLang === "en")} my-2 py-2`
-    href="/"
-    title="English"
-  >
-    <span class={`${englishFlag}`}></span>
-    English
-  </a>
-  <a
-    class=`${langClass(currentLang === "es")} my-2 py-2`
-    href="/es/"
-    title="Español"
-  >
-    <span class={`${spanishFlag}`}></span>
-    Español
-  </a>
-
-  <div class="absolute bottom-0 left-0 w-full h-px bg-primary/8"></div>
-</div> -->
