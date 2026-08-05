@@ -8,7 +8,7 @@ export const sideMenuCss = {
   `,
   inactive: "text-neutral-content hover:text-primary",
   active: "text-primary font-semibold ", // bg-primary/5
-  spanText: "text-base",
+  spanText: "text-base flex-1",
   iconBox: "w-5 h-5 flex items-center justify-center shrink-0",
 };
 

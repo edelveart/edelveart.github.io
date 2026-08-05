@@ -23,7 +23,7 @@ const { menuItems, mobile = false } = Astro.props;
       </aside>
     </div>
   ) : (
-    <div class="hidden xl:block w-72 shrink-0 sticky top-16 h-[calc(100vh-4rem)]">
+    <div class="hidden xl:block w-72 shrink-0 sticky top-16 h-[calc(100vh-5rem)]">
       <aside class=" h-full  bg-base-100  flex flex-col px-3">
         <div class="w-fit mx-auto pt-12 mb-6">
           <PhotoProfile class="avatar w-24" />
@@ -31,7 +31,7 @@ const { menuItems, mobile = false } = Astro.props;
 
         <SideBarMenu menuItems={menuItems} />
 
-        <footer class="footer footer-center flex gap-x-2 justify-center items-center mt-auto mb-4">
+        <footer class="footer footer-center flex gap-x-2 justify-center items-center mt-auto mb-2">
           <LinkIconsGroup />
         </footer>
       </aside>
