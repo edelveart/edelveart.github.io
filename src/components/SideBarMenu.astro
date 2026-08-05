@@ -61,11 +61,11 @@ export const transitionMenu =
 
 export const sideMenuCss = {
   base: `
-    flex items-center gap-3 w-full rounded-md px-4 h-11
+    flex items-center gap-3 w-full rounded-md px-3 h-10
     ${transitionMenu}
   `,
   inactive: "text-neutral-content hover:text-primary",
-  active: "text-primary font-medium",
+  active: "text-primary font-semibold ", // bg-primary/5
   spanText: "text-base",
   iconBox: "w-5 h-5 flex items-center justify-center shrink-0",
 };
@@ -152,7 +152,7 @@ export const menuClass = (active: boolean) =>
                   class={`
                 flex pl-4 text-sm items-center h-10 rounded-md
                 no-underline hover:text-primary hover:opacity-100 ${transitionMenu}
-                ${link.active ? "text-primary font-medium opacity-100" : "opacity-80"}
+                ${link.active ? `${sideMenuCss.active} opacity-100` : "opacity-80"}
               `}
                 >
                   <span class="min-w-0 flex-1 truncate whitespace-nowrap text-sm">

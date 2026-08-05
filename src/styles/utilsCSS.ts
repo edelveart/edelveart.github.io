@@ -1,37 +1,30 @@
-export const NAV_LINKS_PAGES = {
-  aLink:
-    "group flex w-full min-h-14 items-center gap-3 rounded-md px-3 py-2 no-underline",
-  prevLeft: "justify-start",
-  nextRight: "justify-end",
-  prevNext: "text-sm uppercase tracking-wider text-base-content/75 font-light",
-  pageTitle:
-    "text-base line-clamp-2 group-hover:text-primary group-hover:underline underline-offset-2 group-hover:decoration-2 font-normal transition-[color,text-underline-offset,text-decoration-thickness] duration-150 ease-in-out",
-  arrowSpan:
-    "transition-colors duration-150 ease-in-out group-hover:text-primary",
-};
+const rounded = "rounded-md";
 
-export const BASE_BORDER = `border border-base-content/15 rounded-md`;
-export const BORDER_OPACITY = `${BASE_BORDER} hover:border-primary/25 transition-colors duration-150 ease-in-out`;
-
-export const BASE_BORDER_IMG = `border border-base-content/12 rounded-md shadow-sm shadow-base-300/15`; // .astro
-export const PROSE_IMG_BORDER =
-  "prose-img:border prose-img:border-base-content/12 prose-img:rounded-md prose-img:shadow-sm prose-img:shadow-base-300/15"; // blog
-
+// Links in .astro
 export const LINKS_TO =
   "text-primary/90 underline underline-offset-2 hover:decoration-2 hover:text-primary transition-[color,text-underline-offset,text-decoration-thickness] duration-150 ease-in-out";
 
-// w-2.5 h-2.5 = size-2.5 => left-[-6px], size-2 => left-[-5px]
-export const BORDER_INFO =
-  "relative border-l-2 pl-4 border-base-content/20 before:absolute before:left-[-6px] before:top-1/2 before:-translate-y-1/2 before:size-2.5 before:rounded-xs before:border before:border-primary/40 before:bg-base-100";
+// CARD-ARCTIONS BORDER
+export const BASE_BORDER = `border border-base-content/12 ${rounded}`;
+export const BORDER_OPACITY = `${BASE_BORDER} hover:border-primary/20 transition-colors duration-150 ease-in-out hover:shadow-sm hover:shadow-base-300/15`;
 
+// IMAGES BORDER
+export const BASE_BORDER_IMG = `${rounded} shadow-md shadow-base-300/15`; // .astro
+export const PROSE_IMG_BORDER = `prose-img:${rounded} prose-img:shadow-md prose-img:shadow-base-300/15`; // blog
+
+// CARD CONTENT: BLOG + SOFTWARE
 export const CARD_OP = {
   title: "text-lg font-semibold text-base-content",
   parr: "text-sm text-secondary-content",
   muteData: "text-sm text-neutral-content",
 };
 
+// DECORATION POST-BLOG BORDER
+export const BORDER_INFO =
+  "relative border-l-2 pl-4 border-base-content/20 before:absolute before:left-[-6px] before:top-1/2 before:-translate-y-1/2 before:size-2.5 before:rounded-xs before:border before:border-primary/40 before:bg-base-100";
 export const BLOCK_QUOTE = `text-right ${CARD_OP.muteData}`;
 
+// BADGES AND METADATA
 const metaBase = "text-sm tracking-wider uppercase font-light";
 export const BADGE_COLORS = {
   "field notes": `${metaBase} text-error/80`,
@@ -50,3 +43,14 @@ export type BadgeClass = (typeof BADGE_COLORS)[BadgeName];
 export function GET_COLORS_METADATA(badge?: BadgeName): BadgeClass {
   return BADGE_COLORS[badge ?? "NO_LISTED"];
 }
+
+export const NAV_LINKS_PAGES = {
+  aLink: `group flex w-full min-h-14 items-center gap-3 ${rounded} px-3 py-2 no-underline`,
+  prevLeft: "justify-start",
+  nextRight: "justify-end",
+  prevNext: "text-sm uppercase tracking-wider text-base-content/75 font-light",
+  pageTitle:
+    "text-base line-clamp-2 group-hover:text-primary group-hover:underline underline-offset-2 group-hover:decoration-2 font-normal transition-[color,text-underline-offset,text-decoration-thickness] duration-150 ease-in-out",
+  arrowSpan:
+    "transition-colors duration-150 ease-in-out group-hover:text-primary",
+};

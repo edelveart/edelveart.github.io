@@ -5,12 +5,15 @@ import LinkedIn from "@icons/LinkedIn.astro";
 import QR from "@icons/QR.astro";
 import Youtube from "@icons/Youtube.astro";
 import { SOCIAL_MEDIA } from "@ts-config-path/config";
+
 const cssIconsClass = `
-  mx-3
+  w-10 h-10
+  flex items-center justify-center
+  rounded-md
   text-base-content/70
   transition-all duration-200 ease-in-out
   hover:text-primary
-  hover:scale-110
+  hover:scale-105
   focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/30
 `;
 ---
@@ -47,7 +50,7 @@ const cssIconsClass = `
 
 <div class={cssIconsClass}>
   <label for="qr-modal" class="cursor-pointer">
-    <QR class="w-5 bg-white rounded-xs" alt="qr code" />
+    <QR class="w-5 h-5 bg-white rounded-xs" alt="qr code" />
   </label>
 
   <input type="checkbox" id="qr-modal" class="modal-toggle" />
@@ -62,15 +65,20 @@ const cssIconsClass = `
       />
       <p class="mt-4 text-center">
         Visit my web: <br />
-        <a href="https://edelveart.github.io/" target="_blank" class="underline text-primary mt-2"
-          >https://edelveart.github.io/</a
+        <a
+          href="https://edelveart.github.io/"
+          target="_blank"
+          class="underline text-primary mt-2"
         >
+          https://edelveart.github.io/
+        </a>
       </p>
       <label
         for="qr-modal"
         class="border border-base-content/20 px-3 py-1 absolute right-2 top-2 text-2xl rounded-md hover:shadow-sm hover:shadow-primary/20"
-        >✕</label
       >
+        ✕
+      </label>
     </div>
   </div>
 </div>

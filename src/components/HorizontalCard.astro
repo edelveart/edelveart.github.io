@@ -19,13 +19,12 @@ import { CARD_OP, GET_COLORS_METADATA, BORDER_OPACITY } from "@styles/utilsCSS";
     <div class="hero-content flex-col md:flex-row p-4">
       <div class="grow w-full">
         <span class={GET_COLORS_METADATA("cardsImg")}>{badge}</span>
-        <h1
-          class=`${CARD_OP.title} mt-0.5 group-hover:text-primary transition-colors`
+        <h2
+          class=`${CARD_OP.title} mt-1 group-hover:text-primary transition-colors`
         >
           {title}
-        </h1>
-
-        <p class=`text-balance pt-2 ${CARD_OP.parr}`>{desc}</p>
+        </h2>
+        <p class=`text-balance mt-2 ${CARD_OP.parr}`>{desc}</p>
       </div>
       {
         img && (

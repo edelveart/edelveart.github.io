@@ -5,14 +5,25 @@ const currentLang = Astro.url.pathname.startsWith("/es") ? "es" : "en";
 export const spanishFlag = "fi fi-es fis";
 export const englishFlag = "fi fi-gb fis";
 
-const btnsNavBar = `
-  flex items-center gap-2
-  text-neutral-content
-  hover:text-primary
-  no-underline
+// const btnsNavBar = `
+//   flex items-center gap-2
+//   text-neutral-content
+//   hover:text-primary
+//   no-underline
+//   ${transitionMenu}
+// `;
+const langClass = (active: boolean) =>
+  `
+  flex items-center gap-2 no-underline
+  ${
+    active
+      ? "text-primary font-medium"
+      : "text-neutral-content hover:text-primary"
+  }
   ${transitionMenu}
-`;
-const glassEffect = "bg-base-100/50 backdrop-blur";
+  `;
+
+const glassEffect = "bg-base-100/50 backdrop-blur-md border-b border-primary/8";
 ---
 
 <div class=`sticky xl:hidden top-0 z-30 w-full ${glassEffect}`>
@@ -53,7 +64,7 @@ const glassEffect = "bg-base-100/50 backdrop-blur";
       {
         currentLang === "es" ? (
           <a
-            class={btnsNavBar}
+            class={langClass(false)}
             href="/"
             title="Switch to English"
             aria-label="Switch to English"
@@ -63,7 +74,7 @@ const glassEffect = "bg-base-100/50 backdrop-blur";
           </a>
         ) : (
           <a
-            class={btnsNavBar}
+            class={langClass(false)}
             href="/es/"
             title="Cambiar a Español"
             aria-label="Cambiar a Español"
@@ -80,11 +91,19 @@ const glassEffect = "bg-base-100/50 backdrop-blur";
 <div
   class=`hidden xl:flex gap-x-8 flex-wrap justify-center sticky top-0 z-30 ${glassEffect}`
 >
-  <a class=`${btnsNavBar} my-2 py-2` href="/" title="English">
+  <a
+    class=`${langClass(currentLang === "en")} my-2 py-2`
+    href="/"
+    title="English"
+  >
     <span class={`${englishFlag}`}></span>
     English
   </a>
-  <a class=`${btnsNavBar} my-2 py-2` href="/es/" title="Español">
+  <a
+    class=`${langClass(currentLang === "es")} my-2 py-2`
+    href="/es/"
+    title="Español"
+  >
     <span class={`${spanishFlag}`}></span>
     Español
   </a>
