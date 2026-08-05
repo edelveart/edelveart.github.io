@@ -56,40 +56,40 @@ import "katex/dist/katex.min.css";
     /> -->
   </head>
   <body>
-    <Header title={SITE_TITLE} />
+    <div class="flex flex-col min-h-screen">
+      <Header title={SITE_TITLE} />
 
-    <!-- DESKTOP -->
-    <div class="hidden xl:flex bg-base-100 items-start">
-      <div class="sticky top-0 h-screen">
+      <!-- DESKTOP -->
+      <div class="hidden xl:flex bg-base-100 items-start">
         {includeSidebar && <SideBar menuItems={menuEnglish} />}
+
+        <div class="flex-1 min-w-0">
+          <main class="flex justify-center" transition:name="main-content">
+            <div class="w-full max-w-165 p-6 pt-10">
+              <slot />
+            </div>
+          </main>
+
+          <Footer />
+        </div>
       </div>
 
-      <div class="flex-1 min-w-0">
-        <main class="flex justify-center">
-          <div class="w-full max-w-165 p-6 pt-10">
-            <slot />
-          </div>
-        </main>
+      <!-- MOBILE -->
+      <div class="drawer bg-base-100 xl:hidden">
+        <input id="my-drawer" type="checkbox" class="drawer-toggle" />
 
-        <Footer />
+        <div class="drawer-content">
+          <main class="flex justify-center" transition:name="main-content">
+            <div class="w-full max-w-165 p-6 pt-10">
+              <slot />
+            </div>
+          </main>
+
+          <Footer />
+        </div>
+
+        {includeSidebar && <SideBar mobile menuItems={menuEnglish} />}
       </div>
-    </div>
-
-    <!-- MOBILE -->
-    <div class="drawer bg-base-100 xl:hidden">
-      <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-
-      <div class="drawer-content">
-        <main class="flex justify-center">
-          <div class="w-full max-w-165 p-6 pt-10">
-            <slot />
-          </div>
-        </main>
-
-        <Footer />
-      </div>
-
-      {includeSidebar && <SideBar mobile menuItems={menuEnglish} />}
     </div>
   </body><!--
   <script is:inline>

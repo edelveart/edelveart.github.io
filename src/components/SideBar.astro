@@ -17,7 +17,7 @@ const { menuItems, mobile = false } = Astro.props;
           <PhotoProfile class="w-24 avatar" />
         </div>
         <SideBarMenu menuItems={menuItems} />
-        <footer class="footer footer-center flex gap-x-2 justify-center-safe items-center pt-0 mt-auto mb-6">
+        <footer class="footer footer-center flex gap-x-2  items-center pt-0 mt-auto mb-6">
           <LinkIconsGroup />
         </footer>
       </aside>
@@ -42,13 +42,12 @@ const { menuItems, mobile = false } = Astro.props;
       "
       >
         <div class="w-fit mx-auto pt-12 mb-6">
-          {/* <div class="w-fit justify ml-6 pt-12 mb-6"> */}
           <PhotoProfile class="avatar w-24" />
         </div>
 
         <SideBarMenu menuItems={menuItems} />
 
-        <footer class="footer footer-center flex gap-x-2 justify-center-safe items-center pt-0 mt-auto mb-6">
+        <footer class="footer footer-center flex gap-x-2 justify-center-safe items-center mt-auto mb-4">
           <LinkIconsGroup />
         </footer>
       </aside>
