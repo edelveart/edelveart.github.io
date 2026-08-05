@@ -1,40 +1,5 @@
 ---
-import Home from "@icons/Home.astro";
-import Branch from "@icons/Branch.astro";
-import Curriculum from "@icons/Curriculum.astro";
-import Writing from "@icons/Writing.astro";
-import Blog from "@icons/Blog.astro";
-import FigLogo from "@icons/FigLogo.astro";
-
-type Props = {
-  homeMenu: string;
-  hrefHome: string;
-  cvMenu: string;
-  hrefCV: string;
-  projectsMenu: string;
-  hrefProjects: string;
-  resourcesMenu: string;
-  hrefResources: string;
-  notesMenu: string;
-  hrefNotes: string;
-  figurateMenu: string;
-  hrefFigurate: string;
-};
-
-const {
-  homeMenu,
-  hrefHome,
-  cvMenu,
-  hrefCV,
-  projectsMenu,
-  hrefProjects,
-  resourcesMenu,
-  hrefResources,
-  notesMenu,
-  hrefNotes,
-  figurateMenu,
-  hrefFigurate,
-} = Astro.props;
+const { items } = Astro.props;
 
 // REPLACE SIDEBARIDACTIVEITEM
 import { getCollection } from "astro:content";
@@ -56,22 +21,7 @@ const figurateLinks = sortedFigurate.map((post) => {
   };
 });
 
-export const transitionMenu =
-  "transition-[color,opacity] duration-150 ease-in-out";
-
-export const sideMenuCss = {
-  base: `
-    flex items-center gap-3 w-full rounded-md px-3 h-10
-    ${transitionMenu}
-  `,
-  inactive: "text-neutral-content hover:text-primary",
-  active: "text-primary font-semibold ", // bg-primary/5
-  spanText: "text-base",
-  iconBox: "w-5 h-5 flex items-center justify-center shrink-0",
-};
-
-export const menuClass = (active: boolean) =>
-  `${sideMenuCss.base} ${active ? sideMenuCss.active : sideMenuCss.inactive}`;
+import { menuClass, sideMenuCss, transitionMenu } from "@styles/menuCSS";
 ---
 
 <strong class=`flex justify-center mb-5 mt-0  md:hidden font-semibold text-lg`>
@@ -79,66 +29,28 @@ export const menuClass = (active: boolean) =>
 </strong>
 <div class="flex flex-col w-full mb-5">
   <ul class="w-full h-full flex-1 flex flex-col p-2">
-    <li>
-      <a class={menuClass(isExactActive(current, hrefHome))} href={hrefHome}>
-        <span class={sideMenuCss.iconBox}>
-          <Home />
-        </span>
-        <span class={sideMenuCss.spanText}>{homeMenu}</span>
-      </a>
-    </li>
-    <li>
-      <a class={menuClass(isExactActive(current, hrefCV))} href={hrefCV}>
-        <span class={sideMenuCss.iconBox}>
-          <Curriculum />
-        </span>
-        <span class={sideMenuCss.spanText}>{cvMenu}</span>
-      </a>
-    </li>
-    <li>
-      <a
-        class={menuClass(isExactActive(current, hrefProjects))}
-        href={hrefProjects}
-      >
-        <span class={sideMenuCss.iconBox}>
-          <Branch />
-        </span>
-        <span class={sideMenuCss.spanText}>{projectsMenu}</span>
-      </a>
-    </li>
-    <li>
-      <a
-        class={menuClass(isExactActive(current, hrefResources))}
-        href={hrefResources}
-      >
-        <span class={sideMenuCss.iconBox}>
-          <Writing />
-        </span>
-        <span class={sideMenuCss.spanText}>{resourcesMenu}</span>
-      </a>
-    </li>
-    <li>
-      <a
-        class={menuClass(isSectionActive(current, hrefNotes))}
-        href={hrefNotes}
-      >
-        <span class={sideMenuCss.iconBox}>
-          <Blog />
-        </span>
-        <span class={sideMenuCss.spanText}>{notesMenu}</span>
-      </a>
-    </li>
-    <li>
-      <a
-        class={menuClass(isSectionActive(current, hrefFigurate))}
-        href={hrefFigurate}
-      >
-        <span class={sideMenuCss.iconBox}>
-          <FigLogo />
-        </span>
-        <span class={sideMenuCss.spanText}>{figurateMenu}</span>
-      </a>
-    </li>
+    {
+      items.map((item: any) => {
+        const Icon = item.icon;
+
+        const active =
+          item.activeType === "section"
+            ? isSectionActive(current, item.href)
+            : isExactActive(current, item.href);
+
+        return (
+          <li>
+            <a class={menuClass(active)} href={item.href}>
+              <span class={sideMenuCss.iconBox}>
+                <Icon />
+              </span>
+
+              <span class={sideMenuCss.spanText}>{item.text}</span>
+            </a>
+          </li>
+        );
+      })
+    }
 
     <!-- CONDITIONAL SUBMENU OF DOCS -->
     {

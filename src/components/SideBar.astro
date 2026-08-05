@@ -2,61 +2,56 @@
 import SideBarMenu from "@components/SideBarMenu.astro";
 import PhotoProfile from "@components/img-components/PhotoProfile.astro";
 import LinkIconsGroup from "@components/LinkIconsGroup.astro";
+import { menuEnglish } from "@ts-config-path/lib/menu";
 
-export const menuEnglish = {
-  homeMenu: {
-    text: "Home",
-    href: "/",
-  },
-  projectsMenu: {
-    text: "Software",
-    href: "/projects/",
-  },
-  cvMenu: {
-    text: "About me",
-    href: "/about/",
-  },
-  resourcesMenu: {
-    text: "Resources",
-    href: "/resources/",
-  },
-  notesMenu: {
-    text: "Notes",
-    href: "/blog/",
-  },
-  figurateMenu: {
-    text: "FigurateNum",
-    href: "/figuratenum/",
-  },
-};
+const { mobile = false } = Astro.props;
 ---
 
-<div class="drawer-side z-40" id="sidebar-scroll-container">
-  <label for="my-drawer" class="drawer-overlay"></label>
-  <aside
-    class="px-2 pt-2 h-full min-h-full w-72 max-w-72 bg-base-100 flex flex-col"
-  >
-    <div class="w-fit mx-auto mt-12 mb-6">
-      <PhotoProfile class="w-32 avatar m-auto" />
+{
+  mobile ? (
+    <div class="drawer-side z-40">
+      <label for="my-drawer" class="drawer-overlay" />
+
+      <aside class="w-72 min-h-full bg-base-100 flex flex-col px-2">
+        {" "}
+        <div class="w-fit mx-auto mt-12 mb-6">
+          <PhotoProfile class="w-32 avatar m-auto" />
+        </div>
+        <SideBarMenu items={menuEnglish} />
+        <footer class="footer footer-center flex gap-x-2 justify-center-safe items-center pt-0 mt-auto mb-6">
+          <LinkIconsGroup />
+        </footer>
+      </aside>
     </div>
-    <SideBarMenu
-      homeMenu={menuEnglish.homeMenu.text}
-      hrefHome={menuEnglish.homeMenu.href}
-      cvMenu={menuEnglish.cvMenu.text}
-      hrefCV={menuEnglish.cvMenu.href}
-      projectsMenu={menuEnglish.projectsMenu.text}
-      hrefProjects={menuEnglish.projectsMenu.href}
-      resourcesMenu={menuEnglish.resourcesMenu.text}
-      hrefResources={menuEnglish.resourcesMenu.href}
-      notesMenu={menuEnglish.notesMenu.text}
-      hrefNotes={menuEnglish.notesMenu.href}
-      figurateMenu={menuEnglish.figurateMenu.text}
-      hrefFigurate={menuEnglish.figurateMenu.href}
-    />
-    <footer
-      class="footer footer-center flex gap-x-2 justify-center-safe items-center pt-0 mt-auto mb-6"
+  ) : (
+    <div
+      class="
+      hidden xl:block
+      w-72
+      shrink-0
+      sticky
+      top-14
+      h-[calc(100vh-4rem)]
+    "
     >
-      <LinkIconsGroup />
-    </footer>
-  </aside>
-</div>
+      <aside
+        class="
+        h-full
+        bg-base-100
+        flex flex-col
+        px-2
+      "
+      >
+        <div class="w-fit mx-auto pt-12 mb-6">
+          <PhotoProfile class="w-32 avatar m-auto" />
+        </div>
+
+        <SideBarMenu items={menuEnglish} />
+
+        <footer class="footer footer-center flex gap-x-2 justify-center-safe items-center pt-0 mt-auto mb-6">
+          <LinkIconsGroup />
+        </footer>
+      </aside>
+    </div>
+  )
+}

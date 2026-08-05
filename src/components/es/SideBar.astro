@@ -1,60 +1,57 @@
 ---
 import SideBarMenu from "@components/es/SideBarMenu.astro";
-// import SideBarFooter from "@components/SideBarFooter.astro";
 import PhotoProfile from "@components/img-components/PhotoProfile.astro";
 import LinkIconsGroup from "@components/LinkIconsGroup.astro";
-
-export const menuSpanish = {
-  homeMenu: {
-    text: "Inicio",
-    href: "/es/",
-  },
-  projectsMenu: {
-    text: "Bibliotecas",
-    href: "/es/projects/",
-  },
-  cvMenu: {
-    text: "Acerca de mí",
-    href: "/es/about/",
-  },
-  resourcesMenu: {
-    text: "Recursos",
-    href: "/es/resources/",
-  },
-  notesMenu: {
-    text: "Notas",
-    href: "/blog/",
-  },
-};
+import { menuSpanish } from "@ts-config-path/lib/menu";
+const { mobile = false } = Astro.props;
 ---
 
-<div class="drawer-side z-40" id="sidebar-scroll-container">
-  <label for="my-drawer" class="drawer-overlay"></label>
-  <aside
-    class="px-2 pt-2 h-full min-h-full w-72 max-w-72 bg-base-100 flex flex-col"
-  >
-    <div class="w-fit mx-auto mt-12 mb-6">
-      <PhotoProfile class="w-32 avatar m-auto" />
-    </div>
+{
+  mobile ? (
+    <div class="drawer-side z-40">
+      <label for="my-drawer" class="drawer-overlay" />
 
-    <SideBarMenu
-      homeMenu={menuSpanish.homeMenu.text}
-      hrefHome={menuSpanish.homeMenu.href}
-      cvMenu={menuSpanish.cvMenu.text}
-      hrefCV={menuSpanish.cvMenu.href}
-      projectsMenu={menuSpanish.projectsMenu.text}
-      hrefProjects={menuSpanish.projectsMenu.href}
-      resourcesMenu={menuSpanish.resourcesMenu.text}
-      hrefResources={menuSpanish.resourcesMenu.href}
-      notesMenu={menuSpanish.notesMenu.text}
-      hrefNotes={menuSpanish.notesMenu.href}
-    />
-    <!-- figurateMenu={menuSpanish.figurateMenu.text}
-      hrefFigurate={menuSpanish.figurateMenu.href} -->
-    <footer
-      class="footer footer-center flex justify-center-safe gap-x-1 items-center pt-0 mt-auto mb-6"
+      <aside class="w-72 min-h-full bg-base-100 flex flex-col px-2">
+        <div class="w-fit mx-auto mt-12 mb-6">
+          <PhotoProfile class="w-32 avatar m-auto" />
+        </div>
+
+        <SideBarMenu items={menuSpanish} />
+
+        <footer class="footer footer-center flex justify-center-safe gap-x-1 items-center pt-0 mt-auto mb-6">
+          <LinkIconsGroup />
+        </footer>
+      </aside>
+    </div>
+  ) : (
+    <div
+      class="
+      hidden xl:block
+      w-72
+      shrink-0
+      sticky
+      top-14
+      h-[calc(100vh-4rem)]
+      "
     >
-      <LinkIconsGroup />
-    </footer>
-  </aside>
-</div>
+      <aside
+        class="
+        h-full
+        bg-base-100
+        flex flex-col
+        px-2
+        "
+      >
+        <div class="w-fit mx-auto pt-12 mb-6">
+          <PhotoProfile class="w-32 avatar m-auto" />
+        </div>
+
+        <SideBarMenu items={menuSpanish} />
+
+        <footer class="footer footer-center flex justify-center-safe gap-x-1 items-center pt-0 mt-auto mb-6">
+          <LinkIconsGroup />
+        </footer>
+      </aside>
+    </div>
+  )
+}

@@ -1,17 +1,10 @@
 ---
-import { transitionMenu } from "./SideBarMenu.astro";
+import { transitionMenu } from "@styles/menuCSS";
 
 const currentLang = Astro.url.pathname.startsWith("/es") ? "es" : "en";
 export const spanishFlag = "fi fi-es fis";
 export const englishFlag = "fi fi-gb fis";
 
-// const btnsNavBar = `
-//   flex items-center gap-2
-//   text-neutral-content
-//   hover:text-primary
-//   no-underline
-//   ${transitionMenu}
-// `;
 const langClass = (active: boolean) =>
   `
   flex items-center gap-2 no-underline
@@ -23,7 +16,7 @@ const langClass = (active: boolean) =>
   ${transitionMenu}
   `;
 
-const glassEffect = "bg-base-100/50 backdrop-blur-md border-b border-primary/8";
+const glassEffect = "bg-base-100/50 backdrop-blur-md relative";
 ---
 
 <div class=`sticky xl:hidden top-0 z-30 w-full ${glassEffect}`>
@@ -86,6 +79,8 @@ const glassEffect = "bg-base-100/50 backdrop-blur-md border-b border-primary/8";
       }
     </div>
   </div>
+  <!-- // PROBLEM WITH STICKY -->
+  <div class="absolute bottom-0 left-0 w-full h-px bg-primary/8"></div>
 </div>
 <!-- PC VIEW -->
 <div
@@ -107,4 +102,6 @@ const glassEffect = "bg-base-100/50 backdrop-blur-md border-b border-primary/8";
     <span class={`${spanishFlag}`}></span>
     Español
   </a>
+  <!-- // PROBLEM WITH STICKY -->
+  <div class="absolute bottom-0 left-0 w-full h-px bg-primary/8"></div>
 </div>

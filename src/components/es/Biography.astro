@@ -1,5 +1,5 @@
 ---
-import { menuSpanish } from "./SideBar.astro";
+import { routeSpanish } from "@ts-config-path/lib/menu";
 import { LINKS_TO } from "@styles/utilsCSS";
 ---
 
@@ -24,7 +24,7 @@ import { LINKS_TO } from "@styles/utilsCSS";
     {" "}
     (inspirados en SageMath/LMFDB) y
     {" "}
-    <a id="projects" href={menuSpanish.projectsMenu.href} class={LINKS_TO}>
+    <a id="projects" href={routeSpanish.projects} class={LINKS_TO}>
       generadores de números figurados multidimensionales
     </a>{" "}
     con más de <strong>26 000 descargas</strong>, así como {" "}
@@ -57,7 +57,8 @@ import { LINKS_TO } from "@styles/utilsCSS";
       href="https://orcid.org/0000-0002-9672-9087"
       target="_blank"
       rel="me noopener noreferrer"
-      >{" "}
+    >
+      {" "}
       revisor por pares
     </a>
     {" "}

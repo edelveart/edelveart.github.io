@@ -1,5 +1,5 @@
 ---
-import { menuEnglish } from "./SideBar.astro";
+import { routeEnglish } from "@ts-config-path/lib/menu";
 import { LINKS_TO } from "@styles/utilsCSS";
 ---
 
@@ -20,7 +20,7 @@ import { LINKS_TO } from "@styles/utilsCSS";
     </a> (SageMath/LMFDB-inspired) and {" "}
     <a
       id="projects"
-      href={menuEnglish.projectsMenu.href}
+      href={routeEnglish.projects}
       rel="noopener"
       class={LINKS_TO}
     >

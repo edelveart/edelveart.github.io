@@ -3,7 +3,7 @@ import BaseLayout from "@layouts/es/BaseLayout.astro";
 import ListOfSkills from "@components/ListOfSkills.astro";
 import { techSkillsSpanish } from "@components/ListOfSkills.astro";
 import Education from "@components/es/Education.astro";
-import { menuSpanish } from "@components/es/SideBar.astro";
+import { routeSpanish } from "@ts-config-path/lib/menu";
 import { LINKS_TO } from "@styles/utilsCSS";
 import SonicPiModFormsImage from "@components/img-components/SonicPiModFormsImage.astro";
 import FigurateNumImages from "@components/img-components/FigurateNumImages.astro";
@@ -33,7 +33,7 @@ import { BLOCK_QUOTE } from "@styles/utilsCSS";
         Mi visión es crear abstracciones mediante analogías estructurales que
         conduzcan naturalmente al descubrimiento matemático desde lo musical y
         viceversa. Para esto diseño {" "}
-        <a class={LINKS_TO} id="projects" href={menuSpanish.projectsMenu.href}>
+        <a class={LINKS_TO} id="projects" href={routeSpanish.projects}>
           bibliotecas de código
         </a> que permiten abordar problemas complejos de manera creativa.
       </p>
