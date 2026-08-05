@@ -2,7 +2,6 @@
 import SideBarMenu from "@components/SideBarMenu.astro";
 import PhotoProfile from "@components/img-components/PhotoProfile.astro";
 import LinkIconsGroup from "@components/LinkIconsGroup.astro";
-// import { menuEnglish } from "@ts-config-path/lib/menu";
 
 const { menuItems, mobile = false } = Astro.props;
 ---
@@ -15,7 +14,7 @@ const { menuItems, mobile = false } = Astro.props;
       <aside class="w-72 min-h-full bg-base-100 flex flex-col px-2">
         {" "}
         <div class="w-fit mx-auto mt-12 mb-6">
-          <PhotoProfile class="w-32 avatar m-auto" />
+          <PhotoProfile class="w-24 avatar" />
         </div>
         <SideBarMenu menuItems={menuItems} />
         <footer class="footer footer-center flex gap-x-2 justify-center-safe items-center pt-0 mt-auto mb-6">
@@ -30,7 +29,7 @@ const { menuItems, mobile = false } = Astro.props;
       w-72
       shrink-0
       sticky
-      top-14
+      top-16
       h-[calc(100vh-4rem)]
     "
     >
@@ -43,7 +42,8 @@ const { menuItems, mobile = false } = Astro.props;
       "
       >
         <div class="w-fit mx-auto pt-12 mb-6">
-          <PhotoProfile class="w-32 avatar m-auto" />
+          {/* <div class="w-fit justify ml-6 pt-12 mb-6"> */}
+          <PhotoProfile class="avatar w-24" />
         </div>
 
         <SideBarMenu menuItems={menuItems} />
