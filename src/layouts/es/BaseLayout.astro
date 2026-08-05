@@ -14,7 +14,8 @@ import "@fontsource-variable/source-sans-3/wght.css";
 import BaseHead from "@components/BaseHead.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import SideBar from "@components/es/SideBar.astro";
+import SideBar from "@components/SideBar.astro";
+import { menuSpanish } from "@ts-config-path/lib/menu";
 import { ClientRouter } from "astro:transitions";
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../../config";
 
@@ -49,7 +50,7 @@ const {
     <!-- DESKTOP -->
     <div class="hidden xl:flex bg-base-100 items-start">
       <div class="sticky top-0 h-screen">
-        {includeSidebar && <SideBar />}
+        {includeSidebar && <SideBar menuItems={menuSpanish} />}
       </div>
 
       <div class="flex-1 min-w-0">
@@ -75,7 +76,7 @@ const {
         <Footer />
       </div>
 
-      {includeSidebar && <SideBar mobile />}
+      {includeSidebar && <SideBar mobile menuItems={menuSpanish} />}
     </div>
   </body>
 </html>

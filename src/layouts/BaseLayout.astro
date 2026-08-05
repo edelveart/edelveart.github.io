@@ -19,6 +19,7 @@ import BaseHead from "@components/BaseHead.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import SideBar from "@components/SideBar.astro"; // This must be different
+import { menuEnglish } from "@ts-config-path/lib/menu";
 import { ClientRouter } from "astro:transitions";
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
 const {
@@ -60,7 +61,7 @@ import "katex/dist/katex.min.css";
     <!-- DESKTOP -->
     <div class="hidden xl:flex bg-base-100 items-start">
       <div class="sticky top-0 h-screen">
-        {includeSidebar && <SideBar />}
+        {includeSidebar && <SideBar menuItems={menuEnglish} />}
       </div>
 
       <div class="flex-1 min-w-0">
@@ -88,7 +89,7 @@ import "katex/dist/katex.min.css";
         <Footer />
       </div>
 
-      {includeSidebar && <SideBar mobile />}
+      {includeSidebar && <SideBar mobile menuItems={menuEnglish} />}
     </div>
   </body><!--
   <script is:inline>
