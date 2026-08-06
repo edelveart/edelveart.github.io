@@ -97,26 +97,22 @@ const KBD = "kbd bg-base-100 rounded-sm";
   <!-- END-QR  -->
 </div>
 
-<script is:inline>
+<script>
   const keyToBtnId = {
     l: "linkedin-btn",
     g: "github-btn",
     y: "youtube-btn",
-    // q: "qr-modal",
-  };
+  } as const;
 
   window.addEventListener("keydown", (e) => {
     const tag = document.activeElement?.tagName.toLowerCase();
     if (tag === "input" || tag === "textarea") return;
 
     const key = e.key.toLowerCase();
-    const btnId = keyToBtnId[key];
 
-    if (btnId) {
-      const btn = document.getElementById(btnId);
-      if (btn) {
-        btn.click();
-      }
+    if (key in keyToBtnId) {
+      const btnId = keyToBtnId[key as keyof typeof keyToBtnId];
+      document.getElementById(btnId)?.click();
     }
   });
 </script>
