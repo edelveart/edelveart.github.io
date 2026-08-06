@@ -1,7 +1,7 @@
 ---
 title: "Sonic Visualiser conoce a Toretto y su familia de cosenos"
 description: "Muchas ventanas como Hann, Blackman, Nuttall son un combinado de chifa de cosenos antes de la carrera. Aquí las vemos con algo de generalidad en lectura a primera vista."
-heroImage: "./cosine-window-a.png"
+heroImage: "./hero-cosine-window-a.png"
 pubDate: "August 1 2026"
 badge: "misc notes"
 updatedDate: "August 3 2026"
@@ -20,7 +20,7 @@ Solamente haremos un *drag* corto, **raspando la pintura** sobre este tema (hay 
 Escucha la [Ventanita](https://www.youtube.com/watch?v=znJ1HPAGAlc) silenciosa de los Embajadores Criollos (versión `5.2.1`).
 Ve al menú  `File` y luego hazle click en `Preferences` y selecciona la pestaña de temible nombre `Analysis`:
 
-![Sonic Visualiser - Preferences](cosine-window-a.png)
+![Sonic Visualiser - Preferences](hero-cosine-window-a.png)
 
 Para analizar audio digital, los algoritmos de **DSP** no toman toda la señal de golpe, sino que la dividen en pequeños bloques de queso llamados ***frames***.
 

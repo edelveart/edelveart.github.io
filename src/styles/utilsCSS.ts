@@ -10,7 +10,7 @@ export const BORDER_OPACITY = `${BASE_BORDER} hover:border-primary/20 transition
 
 // IMAGES BORDER
 export const BASE_BORDER_IMG = `${rounded} shadow-md shadow-base-300/15`; // .astro
-export const PROSE_IMG_BORDER = `prose-img:${rounded} prose-img:shadow-md prose-img:shadow-base-300/15`; // blog
+export const PROSE_IMG_BORDER = `prose-img:rounded-md prose-img:shadow-md prose-img:shadow-base-300/15`; // blog
 
 // CARD CONTENT: BLOG + SOFTWARE
 export const CARD_OP = {

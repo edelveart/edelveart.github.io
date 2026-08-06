@@ -1,10 +1,4 @@
 ---
-import {
-  BORDER_INFO,
-  CARD_OP,
-  GET_COLORS_METADATA,
-  PROSE_IMG_BORDER,
-} from "@styles/utilsCSS";
 import { type BlogSchema } from "../content.config";
 import BaseLayout from "./BaseLayout.astro";
 import dayjs from "dayjs";
@@ -35,6 +29,12 @@ const displayDate = dayjs(pubDate).format("ll");
 //   format: "webp"
 // }
 const ogImage = heroImage?.src ?? `/og/${id}.png`;
+import {
+  BORDER_INFO,
+  CARD_OP,
+  GET_COLORS_METADATA,
+  PROSE_IMG_BORDER,
+} from "@styles/utilsCSS";
 ---
 
 <BaseLayout
@@ -92,9 +92,8 @@ const ogImage = heroImage?.src ?? `/og/${id}.png`;
       </div>
 
       <div
-        class=`prose-table:overflow-x-auto prose-table:block break-normal
-        [&_th]:whitespace-nowrap ${PROSE_IMG_BORDER}
-       `
+        class={`prose-table:overflow-x-auto prose-table:block break-normal [&_th]:whitespace-nowrap
+        ${PROSE_IMG_BORDER}`}
       >
         <slot />
       </div>
