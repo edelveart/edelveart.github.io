@@ -1,7 +1,8 @@
 ---
+import { Image } from "astro:assets";
 const {
   title,
-  img,
+  heroImage,
   desc,
   url,
   badge,
@@ -16,7 +17,8 @@ import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 dayjs.extend(localizedFormat);
 const displayDate = dayjs(pubDate).format("ll");
-import { BORDER_OPACITY, CARD_OP, GET_COLORS_METADATA } from "@styles/utilsCSS";
+import { BORDER_OPACITY, CARD_OP, GET_COLORS_METADATA, BASE_BORDER_IMG } from "@styles/utilsCSS";
+// console.log("CARD HERO:", heroImage);
 ---
 
 <a
@@ -38,8 +40,56 @@ import { BORDER_OPACITY, CARD_OP, GET_COLORS_METADATA } from "@styles/utilsCSS";
       {badge}
     </span>
   </div>
+  {
+    heroImage && (
+      <div class="flex justify-center">
+        <Image
+          src={heroImage}
+          alt={title}
+          class=`my-2 rounded-sm max-w-56 max-h-48  ${BASE_BORDER_IMG}`
+          height={240}
+          width={320}
+        />
+      </div>
+    )
+  }
 
   <p class=`mt-2 ${CARD_OP.parr} md:line-clamp-none line-clamp-2`>
     {desc}
   </p>
 </a>
+
+<!--
+src/content/blog/misc-fields/sonic-pi-v5/
+├── index.md
+└── sp5-docs.png
+
+index.md
+---
+heroImage: "./sp5-docs.png"
+---
+
+        ↓
+
+content.config.ts
+
+heroImage: image()
+
+        ↓
+
+entry.data.heroImage
+
+{
+  src,
+  width,
+  height,
+  format
+}
+
+        ↓
+
+<CardBlog heroImage={post.data.heroImage} />
+
+        ↓
+
+<Image src={heroImage} /> -->
