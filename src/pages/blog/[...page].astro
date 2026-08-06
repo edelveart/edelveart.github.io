@@ -5,16 +5,34 @@ import createSlug from "@ts-config-path/lib/createSlug";
 import CardBlog from "@components/CardBlog.astro";
 import Arrows from "@icons/Arrows.astro";
 import DividerNav from "@components/DividerNav.astro";
+import type { InferGetStaticPropsType } from "astro";
+import type { GetStaticPaths } from "astro";
+import type { CollectionEntry } from "astro:content";
+import {
+  NAV_LINKS_PAGES,
+  BORDER_INFO,
+  GET_COLORS_METADATA,
+} from "@styles/utilsCSS";
 
-import { NAV_LINKS_PAGES, BORDER_INFO, CARD_OP } from "@styles/utilsCSS";
-
-export async function getStaticPaths({ paginate }) {
+export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
   const posts = await getCollection("blog");
   posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
   return paginate(posts, { pageSize: 5 });
-}
-import { GET_COLORS_METADATA } from "@styles/utilsCSS";
-const { page } = Astro.props as any;
+};
+
+export type Props = {
+  page: {
+    data: CollectionEntry<"blog">[];
+    currentPage: number;
+    url: {
+      current: string;
+      prev?: string;
+      next?: string;
+    };
+  };
+};
+
+const { page } = Astro.props as Props;
 ---
 
 <BaseLayout
@@ -77,7 +95,7 @@ const { page } = Astro.props as any;
             <CardBlog
               title={post.data.title}
               url={"/blog/" + createSlug(post.data.title, post.id) + "/"}
-              img={post.data.heroImage}
+              heroImage={post.data.heroImage}
               desc={post.data.description}
               target="_self"
               badge={post.data.badge}

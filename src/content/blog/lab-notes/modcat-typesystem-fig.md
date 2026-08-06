@@ -1,9 +1,19 @@
 ---
 title: "Category of Modules and Type-Level Programming with Figurate Numbers"
 description: "I invite you to explore the intersection of figurate numbers and module theory, where type-level programming unlocks new possibilities for math and live coding music."
+heroImage: "./modcat-typesystem-fig.svg"
 pubDate: "October 25 2025"
 badge: "lab notes"
-tags: ["algebra", "typescript",  "type-level programming", "type-theory",  "figurate numbers", "module theory", "sonic pi"]
+tags:
+  [
+    "algebra",
+    "typescript",
+    "type-level programming",
+    "type-theory",
+    "figurate numbers",
+    "module theory",
+    "sonic pi",
+  ]
 ---
 
 Where do numbers live when a program computes them? Not in memory, exactly, that's just their temporary residence. I mean their abstract home, the mathematical space where sequences unfold according to their rules.
@@ -19,18 +29,23 @@ The technical challenges were immediate. I needed arbitrary-precision arithmetic
 ```ts
 type GenRecord = Record<
   string,
-  { generate: (...fignumbersParams: Record<string, bigint | undefined>[]) => Generator<bigint> }
+  {
+    generate: (
+      ...fignumbersParams: Record<string, bigint | undefined>[]
+    ) => Generator<bigint>;
+  }
 >;
 
 export type MappedTypeConfig<TMapStrategy extends GenRecord> = {
   [Key in keyof TMapStrategy]: Parameters<TMapStrategy[Key]["generate"]>[0];
 };
 ```
+
 These explorations raised a deeper question: could mathematical operations be computed at the type level, during compilation rather than runtime?
 
 This is indeed possible through Type-Level Programming, where TypeScript's type system becomes a computational medium in its own right.
 
-However, as I thought more about this, something even more fascinating came to mind:  a bridge between discrete sequences and continuous geometry, between compile-time types and algebraic structures.
+However, as I thought more about this, something even more fascinating came to mind: a bridge between discrete sequences and continuous geometry, between compile-time types and algebraic structures.
 What follows is a `low-level` narrative of that analogy.
 
 ## From Triangular Numbers to Polygonal Modules
@@ -46,6 +61,7 @@ Finally, we arrive at a unified framework where recursive definitions find their
 In the book Figurate Numbers (2012), polygonal numbers have two equivalent definitions. One is in closed form (which is efficient for `generators` in code), and the other is recursive. We will focus on the latter conception.
 
 In general, polyonal numbers can be expressed as one of the many possible non-homogeneous linear recurrences of order $k=1$ (a complicated name, but the idea is simple):
+
 $$
 a_n = \sum_{j=1}^{k} c_j a_{n-j} + f(n),
 $$
@@ -56,7 +72,7 @@ $$
 T_{n+1} = T_n + (n + 1), \quad T_1 = 1.
 $$
 
-What if, instead of adding numbers, we're adding *spaces*? I thought about reinterpreting this through **free modules over a ring $R$** (or vector spaces when $R = \mathbb{R}, \mathbb{C}$). Consider this recursive definition:
+What if, instead of adding numbers, we're adding _spaces_? I thought about reinterpreting this through **free modules over a ring $R$** (or vector spaces when $R = \mathbb{R}, \mathbb{C}$). Consider this recursive definition:
 
 We set the vector space $$V_1 = \mathbb{R}$$ for the base case $T_1$. Then recursively define
 
@@ -68,6 +84,7 @@ For example, when $n=1$, we have $V_2 =  \mathbb{R} \oplus \mathbb{R}^{1+1} \con
 if we try $n=2$, we have $V_3 =  \mathbb{R}^3 \oplus \mathbb{R}^{2+1} \cong \mathbb{R}^6$, an son on.
 
 We can see that the ranks under direct sums of modules behaves additively,
+
 $$
 \text{rank}(M \oplus N) = \text{rank}(M) + \text{rank}(N),
 $$
@@ -82,6 +99,7 @@ Borrowing the formula presented on page $5$ of <a href="https://www.worldscienti
 $$
 p_m(n+1) = p_m(n) +  (1 + (m − 2)n)
 $$
+
 with $ p_m(1) = 1$.
 
 In this formula, $m$ is the number of sides and controls how quickly the sequence grows.
@@ -90,7 +108,7 @@ In this formula, $m$ is the number of sides and controls how quickly the sequenc
 
 We can lift this entire family of $p_m$ polygonal numbers into the algebraic setting by mimicking the pattern at the level of modules.
 
-Let $R$ be a ring, and let $M_R$  be a free module over $R$. We call $\mathfrak{p}_m$ the set of polygonal modules with $m$ sides, defined by
+Let $R$ be a ring, and let $M_R$ be a free module over $R$. We call $\mathfrak{p}_m$ the set of polygonal modules with $m$ sides, defined by
 
 $$
 \mathfrak{p}_m = \left\{ M_n \mid M_{n+1} = M_n \oplus R^{1 + (m - 2)n} \right\}
@@ -98,7 +116,7 @@ $$
 
 where $M_1 = R$, with $m \geq 3$ and $n \geq 1$.
 
-This encodes the entire zoo of polygonal numbers: $m=3$ gives triangular modules, $m=4$ gives square modules, and so on. For instance, if we take $m = 5, n= 2$,  we compute the third pentagonal number:
+This encodes the entire zoo of polygonal numbers: $m=3$ gives triangular modules, $m=4$ gives square modules, and so on. For instance, if we take $m = 5, n= 2$, we compute the third pentagonal number:
 
 $$
 M_3 = \mathbb{C}^5 \oplus \mathbb{C}^{1+(5-2)2} \cong \mathbb{C}^{12}.
@@ -117,11 +135,14 @@ The foundation consists of two primitives. First, `VectorSpace<dim>` constructs 
 Second, `DirectSum<V, W>` concatenates two vector spaces, mirroring the module operation $M\oplus N$ where ranks add:
 
 ```ts
-type VectorSpace<dim extends number, A extends number[] = []> = A["length"] extends dim
-  ? A
-  : VectorSpace<dim, [number, ...A]>;
+type VectorSpace<
+  dim extends number,
+  A extends number[] = [],
+> = A["length"] extends dim ? A : VectorSpace<dim, [number, ...A]>;
 
-type DirectSum<V extends number[], W extends number[]> = VectorSpace<[...V, ...W]["length"]>;
+type DirectSum<V extends number[], W extends number[]> = VectorSpace<
+  [...V, ...W]["length"]
+>;
 
 type V1 = VectorSpace<200>;
 type V2 = VectorSpace<335>;
@@ -135,7 +156,7 @@ At each step, we extract the array length, this is our `dim` that encodes the $n
 type VecTriangular<
   n extends number,
   T_1 extends number[] = VectorSpace<1>,
-  IterCount extends number[] = [1]
+  IterCount extends number[] = [1],
 > = IterCount["length"] extends n
   ? T_1
   : VecTriangular<
@@ -150,7 +171,7 @@ type T_20 = VecTriangular<20>;
 type T_50 = VecTriangular<50>;
 ```
 
-One important thing here is that the type  `VectTriangular<n>` represents our triangular numbers in a vectorial way. But what happens if we set `n=50`?
+One important thing here is that the type `VectTriangular<n>` represents our triangular numbers in a vectorial way. But what happens if we set `n=50`?
 
 > Type instantiation is excessively deep and possibly infinite.
 
@@ -163,53 +184,64 @@ Other errors you might encounter include those that occur when you define differ
 These happen because TypeScript's type system struggles with heavy recursion.
 If you try using `BigInt`, you’ll find that even `1n` won’t work.
 
-We’re essentially hitting a type depth limit (I think of it as a kind of *Type Overflow*). While optimization techniques exist, that’s not our focus here.
+We’re essentially hitting a type depth limit (I think of it as a kind of _Type Overflow_). While optimization techniques exist, that’s not our focus here.
 
 ## Fibonacci as homogeneous case
 
-Here comes the twist. While Fibonacci numbers aren't figurate, they align with this framework as well. They exemplify a linear *homogeneous* recurrence of order $k=2$
+Here comes the twist. While Fibonacci numbers aren't figurate, they align with this framework as well. They exemplify a linear _homogeneous_ recurrence of order $k=2$
+
 $$
 a_n = a_{n-1} + a_{n-2} + 0
 $$
 
-with initial conditions  $a_0=0$ and $a_1 = 1$.
+with initial conditions $a_0=0$ and $a_1 = 1$.
 
-The key difference from polygonal numbers is that there's no external term $f(n)$, Fibonacci builds itself entirely from its own past.  Yet the module construction adapts seamlessly.
+The key difference from polygonal numbers is that there's no external term $f(n)$, Fibonacci builds itself entirely from its own past. Yet the module construction adapts seamlessly.
 
-We can again represent this in a module theory framework. Let $M_R^{\text{free}}$ be a  free module over $R$ and define
+We can again represent this in a module theory framework. Let $M_R^{\text{free}}$ be a free module over $R$ and define
 
 $$
 M_0 = \{0\}, \quad M_1 = R,
 $$
+
 with the recursive rule
+
 $$
 \quad M_n = M_{n-1} \oplus M_{n-2},
 $$
+
 for $n \geq 2$.
 
 For example, we immediately return the second term when we take
+
 $$
 M_2 = M_1 \oplus M_0 = \{0\} \oplus R \cong R,
 $$
-if we set $(0, r) \mapsto r$. The next term is  $M_3 = R \oplus R \cong R^2$, which has rank 2.
+
+if we set $(0, r) \mapsto r$. The next term is $M_3 = R \oplus R \cong R^2$, which has rank 2.
 
 Continuing this pattern, the set of ranks $\{\operatorname{rank}(M_n)\}_{n \ge 0}$ reflects the Fibonacci sequence in a natural algebraic way.
 
-What strikes me most is the asymmetry of initial conditions: one is the trivial space  $\{0\}$, the other is $R$  (homeomorphic to a line when $R=\mathbb{R}$). From this imbalanced seed, nothing and a line, the entire Fibonacci sequence unfolds through pure categorical structure, yesterday and the day before yesterday, adding past to past in an eternal recursion.
+What strikes me most is the asymmetry of initial conditions: one is the trivial space $\{0\}$, the other is $R$ (homeomorphic to a line when $R=\mathbb{R}$). From this imbalanced seed, nothing and a line, the entire Fibonacci sequence unfolds through pure categorical structure, yesterday and the day before yesterday, adding past to past in an eternal recursion.
 
 ### Fibonacci Types
 
-The Fibonacci construction translates naturally into types.  Here, `VecFib<n>` implements the module recursion $M_n=M_{n−1} \oplus M_{n−2}$ tracking two previous states and building forward through direct sums:
+The Fibonacci construction translates naturally into types. Here, `VecFib<n>` implements the module recursion $M_n=M_{n−1} \oplus M_{n−2}$ tracking two previous states and building forward through direct sums:
 
 ```ts
 type VecFib<
   n extends number,
   V_n_minus_2 extends number[] = VectorSpace<0>,
   V_n_minus_1 extends number[] = VectorSpace<1>,
-  IterCount extends number[] = []
+  IterCount extends number[] = [],
 > = IterCount["length"] extends n
   ? V_n_minus_2
-  : VecFib<n, V_n_minus_1, DirectSum<V_n_minus_2, V_n_minus_1>, [1, ...IterCount]>;
+  : VecFib<
+      n,
+      V_n_minus_1,
+      DirectSum<V_n_minus_2, V_n_minus_1>,
+      [1, ...IterCount]
+    >;
 
 type VecFib_15 = VecFib<15>;
 type DimVecFib_15 = VecFib<15>["length"];
@@ -226,11 +258,19 @@ function directSum(v1: number[], v2: number[]): number[] {
   return [...v1, ...v2];
 }
 
-function vecFib(n: number, V_n_minus_2 = vectorSpace(0), V_n_minus_1 = vectorSpace(1), iterCount: number[] = []): number[] {
+function vecFib(
+  n: number,
+  V_n_minus_2 = vectorSpace(0),
+  V_n_minus_1 = vectorSpace(1),
+  iterCount: number[] = [],
+): number[] {
   if (iterCount.length === n) {
     return V_n_minus_2;
   }
-  return vecFib(n, V_n_minus_1, directSum(V_n_minus_2, V_n_minus_1), [1, ...iterCount]);
+  return vecFib(n, V_n_minus_1, directSum(V_n_minus_2, V_n_minus_1), [
+    1,
+    ...iterCount,
+  ]);
 }
 ```
 
@@ -257,8 +297,8 @@ $$
 Here $k = 2$ for polygonal modules $\mathfrak{p}_m$, which are parametrized by $(m, n)$, and $k = 1$
 for the Fibonacci sequence, parametrized by $n$ alone.
 
-The structure is **built from within**.  Each module contains the previous as a submodule, preserving inclusions $M_n \hookrightarrow M_{n+1}$.
-We're not jumping to some external geometric space; rather, the sequence *grows* its geometry organically through recursion.
+The structure is **built from within**. Each module contains the previous as a submodule, preserving inclusions $M_n \hookrightarrow M_{n+1}$.
+We're not jumping to some external geometric space; rather, the sequence _grows_ its geometry organically through recursion.
 
 This recursive functorial mapping bridges discrete and continuous, a sequence of integers becomes a sequence of vector spaces.
 
@@ -309,13 +349,7 @@ Although Ruby lacks a type system, the approach described here hints at how thes
 
 It also proposes a dual implementation, integrating both runtime and compilation $\mathcal{C_{Time}}$, encompassing traditional numeric sequences and evolving modules over a ring, as shown in the diagram.
 
-<p align="center">
-    <img
-        src="/svg-ggb/system-type-mamuth.svg"
-        alt="Type System MaMuTh Diagram"
-        class="w-full h-full"
-      />
-</p>
+![Type System MaMuTh Diagram](modcat-typesystem-fig.svg)
 
 In fact, this framework is only one possibility. There exist other constructions with different mathematical objects, other structural fusions and immersions waiting to be explored.
 

@@ -2,7 +2,7 @@
 title: "Sonic Pi 5 RC First Impressions with What Is Love"
 description: "My first impressions of the Sonic Pi 5 release candidates, exploring new interface improvements, documentation workflow, musical features and their mathematical ideas, custom card decks, and the fixes I contributed to for Gabberkick validation and autocomplete issues. Includes my adaptation of What Is Love by Haddaway."
 pubDate: "July 20 2026"
-heroImage: "/hero-sonicpi-v5-node-tree.webp"
+heroImage: "./hero-sonicpi-v5-node-tree.webp"
 badge: "field notes"
 updatedDate: "July 31 2026"
 tags:
@@ -718,7 +718,7 @@ The new audio architecture gives us a much more **engineering-oriented** view of
 | BUFFERS    | SynthDefs, Buffers, Buf Bytes             |
 | ERRORS     | Dropped, Q Drop, Seq Gaps, Lates, Corrupt |
 
-<img src="/svg-ggb/blog-sonicpi-v5-node-tree.webp" alt="Sonic Pi v5 Node Tree">
+![Sonic Pi v5 Node Tree](hero-sonicpi-v5-node-tree.webp)
 
 We can also observe **`Groups`**, **`Synths`**, **`FX`**, and **`Samples`** interacting in real time within this graph structure. This makes it much easier to trace the flow of audio and see how the different components are connected during a performance.
 

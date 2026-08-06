@@ -1,6 +1,7 @@
 ---
 title: "A Field Extension Perspective on Formal Languages"
 description: "This post explores an analogy between formal languages and field extensions, using ideas from Galois theory to reframe truth, interpretation, and metalanguage hierarchies in logic."
+heroImage: "./formal-lang-galois.svg"
 pubDate: "September 27 2025"
 badge: "sketch notes"
 tags: ["field extensions", "formal logic", "Tarski hierarchy", "galois representation", "metalanguages", "mathematics"]
@@ -100,14 +101,11 @@ Here, $\rho_{\mathcal{L}}$ can be interpreted as a homomorphism that encodes the
 
 These transformations may correspond to semantic operations on models of the language $\mathcal{L}$, such as reinterpretations, definable permutations, or higher-level logical equivalences.
 
-<div align="center">
-  <img src="/svg-ggb/blog-FORMAL-LANG-GALOIS.svg" alt="Analogy Between Field Extensions and Logical Language Hierarchies" class="w-full" />
-  <p>Analogy Between Field Extensions and Logical Language Hierarchies</p>
-</div>
+![Analogy Between Field Extensions and Logical Language Hierarchies](formal-lang-galois.svg)
+<p>Analogy Between Field Extensions and Logical Language Hierarchies</p>
 
 ## What’s Going On?
 
 Of course, all of this still remains to be formalized with precise symbolic definitions.
-
 
 For now, I’m content to leave it as a metaphorical Leaning Tower of Pisa of Language, still incomplete and perhaps only suggestive of a deeper, fruitful structure waiting to be made rigorous.

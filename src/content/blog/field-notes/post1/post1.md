@@ -2,6 +2,7 @@
 title: "My Journey with Figurate Numbers"
 description: "How I developed two of my most downloaded libraries that fuse mathematics, art, and music."
 pubDate: "September 13 2025"
+heroImage: "./post-1-centered-hexagonal-pyramidal.svg"
 badge: "field notes"
 tags: ["python", "ruby", "figurate numbers", "sonic pi", "live coding", "integer sequences"]
 ---
@@ -12,14 +13,8 @@ The first thing that caught my attention was a  <a href="https://bffrepositorio.
 
 > If it is possible to represent space on a plane, this can only be done by destroying the form of what is represented" (Florensky, 2003, cited in Zalamea, 2010, p. 39).
 
-<p align="center">
-    <img
-        src="/svg-ggb/figurate-plane.svg"
-        alt="Figurate Number in Polar Coordinates"
-        class="w-72"
-      />
-  <p align="center"><em>Pentagonal and Triangular Numbers</em></p>
-</p>
+![Figurate Number in Polar Coordinates](post-1-tri-penta-number.svg)
+<p align="center"><em>Pentagonal and Triangular Numbers</em></p>
 
 ## The Foundation
 
@@ -81,14 +76,10 @@ Recently, I came across an autobiographical note by Rogelio Pérez Buendía, a M
 
 Thus, a new phase of the library was born, revealing fascinating mathematical symmetries in the representations of figurate numbers, and creating truly beautiful visualizations with just a few algorithms using `matplotlib` and `numpy`.
 
-<p class="center">
-    <img
-        src="/svg-ggb/centered-hexagonal-pyramidal.svg"
-        alt="Figurate Number in Polar Coordinates"
-        class="w-72 h-72 my-0 "
-      />
-  <p align="center"><em>Centered Hexagonal Pyramidal</em></p>
-</p>
+
+![Centered Hexagonal Pyramidal](post-1-centered-hexagonal-pyramidal.svg)
+<p align="center"><em>Centered Hexagonal Pyramidal</em></p>
+
 
 ## What’s Next?
 

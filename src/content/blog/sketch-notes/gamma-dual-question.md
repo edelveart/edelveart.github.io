@@ -1,6 +1,7 @@
 ---
 title: "Gamma Functions for Figurate Numbers"
 description: "I plant a question motivated by generalizing the GCD to varieties and inspired by Euler's interpolation: Does there exist a function attached to each figurate number that extends it to continuous domains, analogous to how the Gamma function extends the factorial?"
+heroImage: "./gamma-dual-question.svg"
 pubDate: "January 10 2026"
 badge: "sketch notes"
 tags: ["figurate numbers", "integer sequences", "gamma function", "factorial", "figuratenum", "python"]
@@ -77,10 +78,9 @@ As `Philip J. Davis` mentions, it was a matter of interpolation that invoked Eul
 
 I'll go straight to posing the analogy here, along with the diagram:
 
-<div align="center">
-  <img src="/svg-ggb/blog-gamma-analogue.svg" alt="Towards a New Class of Gamma Functions for Figurate Numbers" class="w-full" />
-  <p>Towards a New Class of Gamma Functions for Figurate Numbers</p>
-</div>
+
+![Towards a New Class of Gamma Functions for Figurate Numbers](gamma-dual-question.svg)
+<p>Towards a New Class of Gamma Functions for Figurate Numbers</p>
 
 Let's think of the figure in two components. Let's start with what we already have some grounding for: the left side. First, we observe that several operations occur simultaneously towards more general instances. The first is a transfer of notion by `substitution`: they are triangular figures, then it's factorial.
 

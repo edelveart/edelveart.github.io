@@ -1,6 +1,7 @@
 ---
 title: "Do Group Actions Define Regular Polytopes and Polytypes in Type Systems?"
 description: "I introduce an analogy between transitive group actions on flags of polytopes and type systems. This speculative concept aims to offer a naive way of understanding and classifying types through symmetry."
+heroImage: "./polytope-types.svg"
 pubDate: "January 17 2026"
 badge: "lab notes"
 tags: [ "type theory", "group theory", "polytopes", "abstract algebra","figurate numbers",  "typescript"]
@@ -16,13 +17,8 @@ The same thing happens when I think about  <a href="https://pypi.org/project/fig
 
 With the movement of numbers and boxes, with this simple action really hides something very profound in mathematics, which is that I am really making use of symmetries and group theory in an intuitive way.
 
-<p align="center">
-    <img
-        src="/svg-ggb/blog-polytypes.svg"
-        alt="Polytope and Polytype Diagram"
-        class="w-full h-full"
-      />
-</p>
+
+![Polytope and Polytype Diagram](polytope-types.svg)
 
 But as I like to do, not staying still on one side of the equation, I will make an exchange, since I will move from algebra and geometry and figurate numbers and exchange them for theory of computation, playing the game in `TypeScript`.
 

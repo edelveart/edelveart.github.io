@@ -17,7 +17,12 @@ import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 dayjs.extend(localizedFormat);
 const displayDate = dayjs(pubDate).format("ll");
-import { BORDER_OPACITY, CARD_OP, GET_COLORS_METADATA, BASE_BORDER_IMG } from "@styles/utilsCSS";
+import {
+  BORDER_OPACITY,
+  CARD_OP,
+  GET_COLORS_METADATA,
+  BASE_BORDER_IMG,
+} from "@styles/utilsCSS";
 // console.log("CARD HERO:", heroImage);
 ---
 
@@ -40,17 +45,30 @@ import { BORDER_OPACITY, CARD_OP, GET_COLORS_METADATA, BASE_BORDER_IMG } from "@
       {badge}
     </span>
   </div>
-  {
+  <!-- COMMENT => NOT SHOW -->
+  <!-- {
     heroImage && (
-      <div class="flex justify-center">
+      <div class="flex justify-center overflow-hidden">
         <Image
           src={heroImage}
           alt={title}
-          class=`my-2 rounded-sm max-w-56 max-h-48  ${BASE_BORDER_IMG}`
-          height={240}
-          width={320}
+          class={`my-2 w-full aspect-video object-cover rounded-sm ${BASE_BORDER_IMG}`}
         />
       </div>
+    )
+  } -->
+
+  {
+    heroImage && (
+      <div class="h-64 flex justify-center items-center overflow-hidden mt-2">
+        <Image
+          src={heroImage}
+          alt={title}
+          class={`max-w-full max-h-full object-contain rounded-sm ${BASE_BORDER_IMG}`}
+        />
+      </div>
+
+      //       class={`my-2 max-w-full max-h-64 object-contain rounded-sm ${BASE_BORDER_IMG}`}
     )
   }
 
