@@ -2,7 +2,7 @@
 title: "Sonic Pi 5 RC First Impressions with What Is Love"
 description: "My first impressions of the Sonic Pi 5 release candidates, exploring new interface improvements, documentation workflow, musical features and their mathematical ideas, custom card decks, and the fixes I contributed to for Gabberkick validation and autocomplete issues. Includes my adaptation of What Is Love by Haddaway."
 pubDate: "July 20 2026"
-heroImage: "/svg-ggb/blog-sonicpi-v5-node-tree.webp"
+heroImage: "/hero-sonicpi-v5-node-tree.webp"
 badge: "field notes"
 updatedDate: "July 31 2026"
 tags:
