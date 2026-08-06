@@ -11,6 +11,7 @@ import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 export interface Props extends BlogSchema {
   id: string;
+  heroImage?: ImageMetadata;
 }
 
 const {
@@ -25,7 +26,15 @@ const {
 } = Astro.props;
 dayjs.extend(localizedFormat);
 const displayDate = dayjs(pubDate).format("ll");
-const ogImage = heroImage ?? `/og/${id}.png`;
+// const ogImage = heroImage ?? `/og/${id}.png`;
+// IMAGE
+// {
+//   src: "/_astro/hero.hash.webp",
+//   width: 1200,
+//   height: 630,
+//   format: "webp"
+// }
+const ogImage = heroImage?.src ?? `/og/${id}.png`;
 ---
 
 <BaseLayout

@@ -37,7 +37,7 @@ import {
     {title}
   </h2>
 
-  <div class="flex items-center gap-2 mt-1">
+  <div class="flex items-center gap-2 mt-1 mb-0.5">
     <span class={CARD_OP.muteData}>{displayDate}</span>
     <span class={CARD_OP.muteData}>·</span>
 
@@ -46,33 +46,19 @@ import {
     </span>
   </div>
   <!-- COMMENT => NOT SHOW -->
-  <!-- {
-    heroImage && (
-      <div class="flex justify-center overflow-hidden">
-        <Image
-          src={heroImage}
-          alt={title}
-          class={`my-2 w-full aspect-video object-cover rounded-sm ${BASE_BORDER_IMG}`}
-        />
-      </div>
-    )
-  } -->
-
   {
     heroImage && (
-      <div class="h-64 flex justify-center items-center overflow-hidden mt-2">
+      <div class="flex justify-center overflow-hidden my-2">
         <Image
           src={heroImage}
           alt={title}
-          class={`max-w-full max-h-full object-contain rounded-sm ${BASE_BORDER_IMG}`}
+          class="max-h-40 sm:max-h-60 max-w-full object-contain rounded-md"
         />
       </div>
-
-      //       class={`my-2 max-w-full max-h-64 object-contain rounded-sm ${BASE_BORDER_IMG}`}
     )
   }
 
-  <p class=`mt-2 ${CARD_OP.parr} md:line-clamp-none line-clamp-2`>
+  <p class=`mt-1 ${CARD_OP.parr} md:line-clamp-none line-clamp-2`>
     {desc}
   </p>
 </a>
