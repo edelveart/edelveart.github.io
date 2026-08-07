@@ -7,6 +7,7 @@ const {
   url,
   badge,
   pubDate,
+  updatedDate,
   tags,
   target = "_blank",
 } = Astro.props;
@@ -39,12 +40,20 @@ import {
 
   <div class="flex items-center gap-2 mt-1 mb-0.5">
     <span class={CARD_OP.muteData}>{displayDate}</span>
-    <span class={CARD_OP.muteData}>·</span>
+
+    <span class={`${CARD_OP.muteData} hidden sm:inline`}>·</span>
 
     <span class={GET_COLORS_METADATA(badge)}>
       {badge}
     </span>
+
+    <!-- <span class={`${CARD_OP.muteData} hidden sm:inline`}>·</span>
+
+    <span class={CARD_OP.muteData}>
+      Updated {dayjs(updatedDate).format("ll")}
+    </span> -->
   </div>
+
   <!-- COMMENT => NOT SHOW -->
   {
     heroImage && (
