@@ -4,7 +4,7 @@ description: "A long walk through the Sonic Pi 5 release candidates, including m
 pubDate: "July 20 2026"
 heroImage: "./hero-sonicpi-v5-node-tree.webp"
 badge: "field notes"
-updatedDate: "August 6 2026"
+updatedDate: "August 7 2026"
 tags:
   [
     "sonic pi",
@@ -490,29 +490,38 @@ This is only a design observation from my experience using the interface, but I 
 
 ## Music materials: new scales, samples and methods
 
-Using `puts scale_names`, I found some new scales available in this version:
+Using `puts scale_names`, I found some new scales available in this version, some of which are only new aliases:
 
 ```rb
 (ring
-  :acoustic,
-  :altered,
-  :byzantine,
-  :lydian_dominant,
-  :phrygian_dominant
+    :acoustic
+    :altered
+    :byzantine
+    :double_harmonic
+    :lydian_dominant
+    :phrygian_dominant
+    :sababin
 )
 ```
 
-Likewise, with `puts chord_names`, I found these new chord options:
+Likewise, with `puts chord_names`, shows some new chord options, with a few entries being aliases.
 
 ```rb
 (ring
-  "7+9",
-  "9-5",
-  "mM7",
-  "maj13",
-  "min7",
-  "minor_major7",
-  "mmaj7"
+    '7+9'
+    '9-5'
+    'mM7'
+    'maj7'
+    'maj13'
+    'major11'
+    'major6'
+    'major9'
+    'minor11'
+    'minor13'
+    'minor6'
+    'minor9'
+    'minor_major7'
+    'mmaj7'
 )
 ```
 
