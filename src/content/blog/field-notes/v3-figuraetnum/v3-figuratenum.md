@@ -1,7 +1,8 @@
 ---
 title: "Two Years Leading to FigurateNum v3 Visualizations in the Complex Plane"
-description: "A short personal note on the visualization layer of FigurateNum v3, where figurate numbers enter the complex plane through domain coloring."
+description: "A short personal note on a new way of visualizing figurate numbers in FigurateNum v3, bringing them into the complex plane through generating functions and domain coloring."
 pubDate: "June 28 2026"
+updatedDate: August 8 2026
 heroImage: "./v3-figuratenum.svg"
 badge: "field notes"
 tags:
