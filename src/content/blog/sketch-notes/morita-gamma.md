@@ -3,7 +3,7 @@ title: "A Brief Flight of Morita's p-adic Gamma in Sonic Pi"
 description: "Orbiting around figurate numbers, Morita's p-adic Gamma function, and a small return to sound through Sonic Pi."
 pubDate: "August 10 2026"
 badge: "sketch notes"
-heroImage: "./morita-gamma-sp.svg"
+heroImage: "./morita-gamma.svg"
 # updatedDate: "2026"
 tags: ["p-adic numbers", "p-adic gamma", "Sonic Pi",  "Morita gamma", "figurate numbers", "number theory"]
 ---
