@@ -5,7 +5,7 @@ pubDate: "August 9 2026"
 badge: "sketch notes"
 heroImage: "./morita-gamma.svg"
 # updatedDate: "2026"
-tags: ["p-adic numbers", "p-adic gamma", "Sonic Pi",  "Morita gamma", "figurate numbers", "number theory"]
+tags: ["p-adic numbers", "p-adic gamma", "Sonic Pi",  "Morita gamma", "gamma-function", "figurate numbers", "number theory"]
 ---
 
 I often like to think about the same mathematical object through different representations, e.g. musical, geometric, arithmetic, combinatorial, [type-theoretic](https://edelveart.github.io/blog/category-of-modules-and-type-level-programming-with-figurate-numbers/), and so on.
