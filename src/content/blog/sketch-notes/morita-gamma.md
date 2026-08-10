@@ -1,7 +1,7 @@
 ---
 title: "A Brief Flight of Morita's p-adic Gamma in Sonic Pi"
 description: "Orbiting around figurate numbers, Morita's p-adic Gamma function, and a small return to sound through Sonic Pi."
-pubDate: "August 10 2026"
+pubDate: "August 9 2026"
 badge: "sketch notes"
 heroImage: "./morita-gamma.svg"
 # updatedDate: "2026"
