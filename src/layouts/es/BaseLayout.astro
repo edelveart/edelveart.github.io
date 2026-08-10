@@ -38,10 +38,6 @@ const {
       ogType={ogType}
     />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <!-- <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"
-    /> -->
     {TRANSITION_API && <ClientRouter />}
   </head>
   <body>
@@ -52,7 +48,7 @@ const {
       {includeSidebar && <SideBar menuItems={menuSpanish} />}
 
       <div class="flex-1 min-w-0">
-        <main class="flex justify-center">
+        <main class="flex justify-center" transition:animate="none">
           <div class="w-full max-w-165 p-6 pt-10">
             <slot />
           </div>
@@ -66,7 +62,7 @@ const {
     <div class="drawer bg-base-100 xl:hidden">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content">
-        <main class="flex justify-center">
+        <main class="flex justify-center" transition:animate="none">
           <div class="w-full max-w-165 p-6 pt-10">
             <slot />
           </div>

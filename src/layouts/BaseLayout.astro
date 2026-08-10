@@ -42,10 +42,6 @@ import "katex/dist/katex.min.css";
       ogType={ogType}
     />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <!-- <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"
-    /> -->
     {TRANSITION_API && <ClientRouter />}
     <!-- KaTeX VIA:  remarkPlugins: [remarkMath],   rehypePlugins: [rehypeKatex] -->
     <!-- <link
@@ -64,7 +60,7 @@ import "katex/dist/katex.min.css";
         {includeSidebar && <SideBar menuItems={menuEnglish} />}
 
         <div class="flex-1 min-w-0">
-          <main class="flex justify-center" transition:name="main-content">
+          <main class="flex justify-center" transition:animate="none">
             <div class="w-full max-w-165 p-6 pt-10">
               <slot />
             </div>
@@ -79,7 +75,7 @@ import "katex/dist/katex.min.css";
         <input id="my-drawer" type="checkbox" class="drawer-toggle" />
 
         <div class="drawer-content">
-          <main class="flex justify-center" transition:name="main-content">
+          <main class="flex justify-center" transition:animate="none">
             <div class="w-full max-w-165 p-6 pt-10">
               <slot />
             </div>
@@ -91,22 +87,36 @@ import "katex/dist/katex.min.css";
         {includeSidebar && <SideBar mobile menuItems={menuEnglish} />}
       </div>
     </div>
-  </body><!--
-  <script is:inline>
-    const STORAGE_KEY = "sidebar-scroll-position";
+  </body><script is:inline>
+    const KEY = "desktop-sidebar-scroll";
 
-    function initScroll() {
-      const el = document.getElementById("sidebar-scroll-container");
-      if (!el) return;
-
-      const saved = sessionStorage.getItem(STORAGE_KEY);
-      if (saved) el.scrollTop = Number(saved);
-
-      el.onscroll = () => {
-        sessionStorage.setItem(STORAGE_KEY, el.scrollTop);
-      };
+    function getSidebar() {
+      return document.getElementById("desktop-sidebar-scroll");
     }
 
-    document.addEventListener("astro:page-load", initScroll);
-  </script>-->
+    function saveSidebarScroll() {
+      const sidebar = getSidebar();
+      if (!sidebar) return;
+
+      sessionStorage.setItem(KEY, String(sidebar.scrollTop));
+    }
+
+    function restoreSidebarScroll() {
+      const sidebar = getSidebar();
+      if (!sidebar) return;
+
+      const saved = sessionStorage.getItem(KEY);
+
+      if (saved !== null) {
+        requestAnimationFrame(() => {
+          sidebar.scrollTop = Number(saved);
+        });
+      }
+
+      sidebar.onscroll = saveSidebarScroll;
+    }
+
+    document.addEventListener("astro:before-preparation", saveSidebarScroll);
+    document.addEventListener("astro:page-load", restoreSidebarScroll);
+  </script>
 </html>
