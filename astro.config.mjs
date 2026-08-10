@@ -4,9 +4,10 @@ import { unified } from "@astrojs/markdown-remark";
 import sitemap from "@astrojs/sitemap";
 import remarkMath from "remark-math"; // KaTeX
 import rehypeKatex from "rehype-katex"; // KaTeX
+import rehypeExternalLinks from "rehype-external-links";
 import tailwindcss from "@tailwindcss/vite";
 import { addCopyButton } from "shiki-transformer-copy-button";
-
+// expresivecode
 export default defineConfig({
   site: "https://edelveart.github.io",
   trailingSlash: "always",
@@ -31,7 +32,13 @@ export default defineConfig({
   markdown: {
     processor: unified({
       remarkPlugins: [remarkMath],
-      rehypePlugins: [rehypeKatex],
+      rehypePlugins: [
+        rehypeKatex,
+        [
+          rehypeExternalLinks,
+          { rel: ["noreferrer", "noopener"], target: "_blank" },
+        ],
+      ],
     }),
 
     shikiConfig: {
