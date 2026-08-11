@@ -22,7 +22,7 @@ With the movement of numbers and boxes, with this simple action really hides som
 
 But as I like to do, not staying still on one side of the equation, I will make an exchange, since I will move from algebra and geometry and figurate numbers and exchange them for theory of computation, playing the game in `TypeScript`.
 
-## The actions $\star$ of a group on X
+## The action of a group on X
 
 We recall that a `group` is one of the algebraic structures par excellence that appears everywhere. From particle physics, Mazur's theorem for elliptic curves over $\mathbb{Q}$ (what beauty), and, of course, in the music of Beethoven's 9th Symphony or Xenakis. I will not put references because there are hundreds. I present here, then, for the solution of memory, what a `group action` is.
 
@@ -52,7 +52,7 @@ $$
 
 This that looks very strange, is simple. If we say it with our verb: if we apply $g_2$ and then apply $g_1$ on $p$, the result will be exactly the same as if we apply the product $g_1 g_2$.
 
-## Triangular numbers $T(n)$ are usually, the Best
+## Triangular numbers T(n) are usually, the Best
 
 I usually use <a href="https://www.worldscientific.com/worldscibooks/10.1142/8188#t=aboutBook" target="_blank" rel="noopener noreferrer">triagular figurate numbers</a> as an example, they are as simple and as profound as the $k$-simplices used in algebraic topology.
 

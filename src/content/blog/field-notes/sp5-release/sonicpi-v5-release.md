@@ -25,32 +25,6 @@ I'll cover the new interface, documentation workflow, some of the mathematical i
 
 > I also tested my two **Ruby** gems, [figurate_numbers](https://rubygems.org/gems/figurate_numbers) and [modular_forms](https://rubygems.org/gems/modular_forms/versions/0.0.5), and they continue to work correctly in this version.
 
-<details class="[&_li]:my-0 [&_ul]:my-0.5">
-<summary>Contents</summary>
-
-- [Preferences: First look at the new interface](#preferences-first-look-at-the-new-interface)
-  - [Editor Visuals](#editor-visuals)
-  - [Skope Kinds](#skope-kinds)
-  - [Larger Editor Buffer](#larger-editor-buffer)
-  - [Shortcuts](#shortcuts)
-  - [Audio and Recording](#audio-and-recording)
-- [The documentation is a live learning tool](#the-documentation-is-a-live-learning-tool)
-- [Fixing a Gabberkick validation issue in RC-3](#fixing-a-gabberkick-validation-issue-in-rc-3)
-- [Autocomplete ownership issue in RC-4](#autocomplete-ownership-issue-in-rc-4)
-  - [Possible solution](#possible-solution)
-  - [scintilla\_api.h](#scintillaapih)
-  - [scintilla\_api.cpp](#scintillaapicpp)
-  - [qt-doc.rb](#qt-docrb)
-- [Music materials: new scales, samples and methods](#music-materials-new-scales-samples-and-methods)
-- [Card Decks: A Tutorial](#card-decks-a-tutorial)
-  - [Removed steps for v5](#removed-steps-for-v5)
-- [Phase and the oscilloscope](#phase-and-the-oscilloscope)
-- [SuperSonic, node tree and live metrics](#supersonic-node-tree-and-live-metrics)
-- [Performance and code](#performance-and-code)
-- [Closing thoughts](#closing-thoughts)
-
-</details>
-
 ## Preferences: First look at the new interface
 
 The interface redesign also made a great impression on me. It feels more modern, cleaner, and more enjoyable to work with.
