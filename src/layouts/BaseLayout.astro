@@ -43,51 +43,38 @@ import "katex/dist/katex.min.css";
     />
     <link rel="sitemap" href="/sitemap-index.xml" />
     {TRANSITION_API && <ClientRouter />}
-    <!-- KaTeX VIA:  remarkPlugins: [remarkMath],   rehypePlugins: [rehypeKatex] -->
-    <!-- <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.min.css"
-      integrity="sha384-vlBdW0r3AcZO/HboRPznQNowvexd3fY8qHOWkBi5q7KGgqJ+F48+DceybYmrVbmB"
-      crossorigin="anonymous"
-    /> -->
   </head>
   <body>
     <div class="flex flex-col min-h-screen">
       <Header title={SITE_TITLE} />
 
-      <!-- DESKTOP -->
-      <div class="hidden xl:flex bg-base-100 items-start">
-        {includeSidebar && <SideBar menuItems={menuEnglish} />}
+      <div class="flex-1 bg-base-100">
+        <div class="flex items-start">
+          <!-- SIDEBAR DESKTOP -->
+          {includeSidebar && <SideBar menuItems={menuEnglish} />}
 
-        <div class="flex-1 min-w-0">
-          <main class="flex justify-center" transition:animate="none">
-            <div class="w-full max-w-165 p-6 pt-10">
-              <slot />
-            </div>
-          </main>
+          <!-- UNIQUE CONTENT -->
+          <div class="flex-1 min-w-0">
+            <main class="flex justify-center" transition:animate="none">
+              <div class="w-full max-w-165 p-6 pt-10">
+                <slot />
+              </div>
+            </main>
 
-          <Footer />
+            <Footer />
+          </div>
         </div>
       </div>
 
-      <!-- MOBILE -->
-      <div class="drawer bg-base-100 xl:hidden">
+      <!-- MOBILE DRAWER -->
+      <div class="drawer xl:hidden">
         <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-
-        <div class="drawer-content">
-          <main class="flex justify-center" transition:animate="none">
-            <div class="w-full max-w-165 p-6 pt-10">
-              <slot />
-            </div>
-          </main>
-
-          <Footer />
-        </div>
 
         {includeSidebar && <SideBar mobile menuItems={menuEnglish} />}
       </div>
     </div>
-  </body><script is:inline>
+  </body><!-- SCRIPT -->
+  <script is:inline>
     const KEY = "desktop-sidebar-scroll";
 
     function getSidebar() {

@@ -41,36 +41,33 @@ const {
     {TRANSITION_API && <ClientRouter />}
   </head>
   <body>
-    <Header title={SITE_TITLE} />
+    <div class="flex flex-col min-h-screen">
+      <Header title={SITE_TITLE} />
 
-    <!-- DESKTOP -->
-    <div class="hidden xl:flex bg-base-100 items-start">
-      {includeSidebar && <SideBar menuItems={menuSpanish} />}
+      <div class="flex-1 bg-base-100">
+        <div class="flex items-start">
+          <!-- SIDEBAR DESKTOP -->
+          {includeSidebar && <SideBar menuItems={menuSpanish} />}
 
-      <div class="flex-1 min-w-0">
-        <main class="flex justify-center" transition:animate="none">
-          <div class="w-full max-w-165 p-6 pt-10">
-            <slot />
+          <!-- UNIQUE CONTENT -->
+          <div class="flex-1 min-w-0">
+            <main class="flex justify-center" transition:animate="none">
+              <div class="w-full max-w-165 p-6 pt-10">
+                <slot />
+              </div>
+            </main>
+
+            <Footer />
           </div>
-        </main>
-
-        <Footer />
-      </div>
-    </div>
-
-    <!-- MOBILE -->
-    <div class="drawer bg-base-100 xl:hidden">
-      <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content">
-        <main class="flex justify-center" transition:animate="none">
-          <div class="w-full max-w-165 p-6 pt-10">
-            <slot />
-          </div>
-        </main>
-        <Footer />
+        </div>
       </div>
 
-      {includeSidebar && <SideBar mobile menuItems={menuSpanish} />}
+      <!-- MOBILE DRAWER -->
+      <div class="drawer xl:hidden">
+        <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+
+        {includeSidebar && <SideBar mobile menuItems={menuSpanish} />}
+      </div>
     </div>
   </body>
 </html>
