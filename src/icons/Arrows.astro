@@ -1,11 +1,12 @@
 ---
 type Props = {
   direction?: "left" | "right" | "down" | "up";
-  size?: "sm" | "md" | "lg";
+  size?: "xs" | "sm" | "md" | "lg";
 };
 
 const { direction = "right", size = "md" }: Props = Astro.props;
 const sizeClass = {
+  xs: "h-3.5 w-3.5",
   sm: "h-4 w-4",
   md: "h-4 w-4",
   lg: "h-4 w-4 md:h-5 md:w-5",
