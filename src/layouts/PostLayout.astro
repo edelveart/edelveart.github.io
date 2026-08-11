@@ -42,6 +42,7 @@ import {
   description={description}
   image={ogImage ?? "/LinkedInProfile.webp"}
   ogType="article"
+  wide
 >
   <main>
     <article class="prose prose-img:mx-auto">
@@ -79,17 +80,17 @@ import {
         }
       </div>
 
-      <div class=`${BORDER_INFO} mt-4 mb-10`>
-        <div class="flex flex-wrap gap-2">
-          {
-            tags?.map((tag) => (
-              <a href={`/blog/tag/${tag}/`} class={GET_COLORS_METADATA("tags")}>
-                {tag}
-              </a>
-            ))
-          }
-        </div>
+      <!-- <div class=`${BORDER_INFO} mt-4 mb-6`> -->
+      <div class="flex flex-wrap gap-x-3 gap-y-1 mt-4 mb-6">
+        {
+          tags?.map((tag) => (
+            <a href={`/blog/tag/${tag}/`} class={GET_COLORS_METADATA("tags")}>
+              {tag}
+            </a>
+          ))
+        }
       </div>
+      <!-- </div> -->
 
       <div
         class={`prose-table:overflow-x-auto prose-table:block break-normal [&_th]:whitespace-nowrap

@@ -1,0 +1,138 @@
+---
+/**
+ * Based on code from MultiTerm Astro
+ * Copyright 2025 Stel Clementine
+ *
+ * Licensed under the MIT License.
+ * See the original project:
+ * https://github.com/stelcodes/multiterm-astro
+ */
+
+import type { MarkdownHeading } from "astro";
+import TOCHeading from "./TableOfContentsHeading.astro";
+import Arrow from "@icons/Arrows.astro";
+
+interface Props {
+  headings: MarkdownHeading[];
+}
+
+const { headings } = Astro.props;
+
+const filteredHeadings = headings.filter(
+  ({ depth }) => depth >= 2 && depth <= 3,
+);
+---
+
+<details open class="not-prose toc group relative">
+  <summary
+    class="list-none marker:hidden cursor-pointer flex items-center gap-2
+           text-neutral-content hover:text-primary
+           transition-colors duration-150"
+  >
+    <span class="text-sm font-medium tracking-wide">Table of Contents</span>
+
+    <span class="group-open:rotate-180 transition-transform duration-150">
+      <Arrow direction="down" size="xs" />
+    </span>
+  </summary>
+
+  <nav class="w-full xl:max-h-[calc(100vh-4rem)] xl:overflow-y-auto">
+    <ul class="mt-1 flex max-w-full flex-col">
+      {filteredHeadings.map((heading) => <TOCHeading heading={heading} />)}
+    </ul>
+  </nav>
+</details>
+
+<!-- <script>
+  function initTOC() {
+    const anchors = document.querySelectorAll("h2[id], h3[id]");
+    const links = document.querySelectorAll("details.toc > nav > ul > li");
+
+    if (anchors.length !== links.length || anchors.length === 0) {
+      return;
+    }
+
+    function updateActiveHeading() {
+      const scrollTop = window.scrollY;
+      let highlighted = false;
+
+      for (let i = anchors.length - 1; i >= 0; i--) {
+        const anchor = anchors[i] as HTMLElement;
+
+        if (!highlighted && scrollTop > anchor.offsetTop - 100) {
+          links[i].classList.add("active-heading");
+          highlighted = true;
+        } else {
+          links[i].classList.remove("active-heading");
+        }
+      }
+    }
+
+    window.addEventListener("scroll", updateActiveHeading, {
+      passive: true,
+    });
+
+    updateActiveHeading();
+  }
+
+  initTOC();
+
+  document.addEventListener("astro:page-load", initTOC);
+</script> -->
+
+<script>
+  function initTOC() {
+    const anchors = document.querySelectorAll("h2[id], h3[id]");
+    const links = document.querySelectorAll("details.toc > nav > ul > li");
+
+    if (anchors.length !== links.length || anchors.length === 0) {
+      return;
+    }
+
+    function updateActiveHeading() {
+      const scrollTop = window.scrollY;
+      const viewportHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      const isAtBottom =
+        Math.ceil(scrollTop + viewportHeight) >= documentHeight - 20;
+
+      let highlighted = false;
+
+      if (isAtBottom) {
+        links[links.length - 1].classList.add("active-heading");
+
+        for (let i = 0; i < links.length - 1; i++) {
+          links[i].classList.remove("active-heading");
+        }
+
+        return;
+      }
+
+      const activationOffset = 150;
+
+      for (let i = anchors.length - 1; i >= 0; i--) {
+        const anchor = anchors[i] as HTMLElement;
+
+        if (!highlighted && scrollTop > anchor.offsetTop - activationOffset) {
+          links[i].classList.add("active-heading");
+          highlighted = true;
+        } else {
+          links[i].classList.remove("active-heading");
+        }
+      }
+    }
+
+    window.addEventListener("scroll", updateActiveHeading, {
+      passive: true,
+    });
+
+    window.addEventListener("resize", updateActiveHeading);
+
+    updateActiveHeading();
+  }
+
+  initTOC();
+
+  document.addEventListener("astro:page-load", initTOC);
+</script>

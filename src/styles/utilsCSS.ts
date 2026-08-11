@@ -27,14 +27,14 @@ export const BLOCK_QUOTE = `text-right ${CARD_OP.muteData}`;
 // BADGES AND METADATA
 const metaBase = "text-sm tracking-wider uppercase font-light";
 export const BADGE_COLORS = {
-  "field notes": `${metaBase} text-error/80`,
-  "lab notes": `${metaBase} text-accent/80`,
-  "sketch notes": `${metaBase} text-secondary/80`,
-  "misc notes": `${metaBase} text-info/80`,
+  "field notes": `${metaBase} text-error/85`,
+  "lab notes": `${metaBase} text-accent/85`,
+  "sketch notes": `${metaBase} text-secondary/85`,
+  "misc notes": `${metaBase} text-info/85`,
   tags: "text-sm text-primary/75 hover:text-primary underline transition-colors underline-offset-2 font-normal hover:decoration-2",
-  warning: `${metaBase} text-warning/80`,
-  cardsImg: `${metaBase} text-primary/80`,
-  NO_LISTED: `${metaBase} text-base-content/80`,
+  warning: `${metaBase} text-warning/85`,
+  cardsImg: `${metaBase} text-primary/85`,
+  NO_LISTED: `${metaBase} text-base-content/85`,
 } as const;
 
 export type BadgeName = keyof typeof BADGE_COLORS;

@@ -162,10 +162,31 @@ pre button.my-copy-button {
     color 200ms ease,
     text-decoration-thickness 200ms ease;
 }
+
 .prose :not(div) > a:hover {
   color: rgb(from var(--color-primary) r g b / 1);
   text-decoration-thickness: 2px;
 }
+
+/* TOC */
+.prose .toc a {
+    color: var(--color-neutral-content);
+  /* color: rgb(from var(--color-primary) r g b / 0.75); */
+}
+
+.prose .toc a:hover {
+   color: rgb(from var(--color-primary) r g b / 1);
+}
+.prose .toc li.active-heading a {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.prose h2,
+.prose h3 {
+  scroll-margin-top: 5rem;
+}
+
 
 /* SOLVE GLITCHS PROBLEMS WITH SVG IMAGES */
 /* svg, img[src$=".svg"] {

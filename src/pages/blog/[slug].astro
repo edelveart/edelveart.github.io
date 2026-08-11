@@ -1,6 +1,7 @@
 ---
 import { type CollectionEntry, getCollection, render } from "astro:content";
 import PostLayout from "@layouts/PostLayout.astro";
+import TableOfContents from "@components/TableOfContents.astro";
 import createSlug from "@ts-config-path/lib/createSlug";
 import PhotoProfile from "@components/img-components/PhotoProfile.astro";
 import DividerNav from "@components/DividerNav.astro";
@@ -53,7 +54,7 @@ interface Props {
 
 const { entry, prevPost, nextPost } = Astro.props;
 const { data: post } = entry;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 
 import { NAV_LINKS_PAGES } from "@styles/utilsCSS";
 ---
@@ -68,7 +69,19 @@ import { NAV_LINKS_PAGES } from "@styles/utilsCSS";
   badge={post.badge}
   tags={post.tags}
 >
-  <Content />
+  <div class="flex flex-col gap-6 xl:flex-row xl:items-start xl:gap-12">
+    <!-- Table of Contents -->
+    <div
+      class="order-1 xl:order-2 xl:sticky xl:top-24 xl:w-56 xl:shrink-0 xl:self-start xl:mt-5 mt-3"
+    >
+      <TableOfContents headings={headings} />
+    </div>
+
+    <!-- Post content -->
+    <div class="order-2 min-w-0 flex-1 xl:order-1">
+      <Content />
+    </div>
+  </div>
 
   <div class="not-prose flex items-center gap-4 mt-10 mb-2">
     <PhotoProfile class="not-prose size-16 shrink-0" />
