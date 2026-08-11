@@ -6,6 +6,7 @@ import localizedFormat from "dayjs/plugin/localizedFormat";
 export interface Props extends BlogSchema {
   id: string;
   heroImage?: ImageMetadata;
+  wide?: boolean;
 }
 
 const {
@@ -30,7 +31,7 @@ const displayDate = dayjs(pubDate).format("ll");
 // }
 const ogImage = heroImage?.src ?? `/og/${id}.png`;
 import {
-  BORDER_INFO,
+  MAX_W_CONTENT,
   CARD_OP,
   GET_COLORS_METADATA,
   PROSE_IMG_BORDER,
@@ -46,7 +47,9 @@ import {
 >
   <main>
     <article class="prose prose-img:mx-auto">
-      <h1 class="title mt-5 text-3xl font-bold break-normal mb-2 text-primary">
+      <h1
+        class={`title mt-5 text-3xl font-bold break-normal mb-2 text-primary ${MAX_W_CONTENT}`}
+      >
         {title}
       </h1>
 
@@ -80,8 +83,11 @@ import {
         }
       </div>
 
-      <!-- <div class=`${BORDER_INFO} mt-4 mb-6`> -->
-      <div class="flex flex-wrap gap-x-3 gap-y-1 mt-4 mb-6">
+      <!-- TAGS -->
+      <!-- <div class=`${BORDER_INFO}`> -->
+      <div
+        class={`flex flex-wrap gap-x-3 gap-y-1 mt-3 mb-5 w-full ${MAX_W_CONTENT}`}
+      >
         {
           tags?.map((tag) => (
             <a href={`/blog/tag/${tag}/`} class={GET_COLORS_METADATA("tags")}>

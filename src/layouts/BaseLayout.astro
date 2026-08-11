@@ -60,14 +60,15 @@ import "katex/dist/katex.min.css";
               <div
                 class:list={[
                   "w-full p-6 pt-10",
-                  wide ? "max-w-225" : "max-w-165",
+                  wide ? "max-w-220" : "max-w-165",
                 ]}
               >
                 <slot />
               </div>
             </main>
-
-            <Footer />
+            <div class:list={wide ? "items-end" : "w-full"}>
+              <Footer />
+            </div>
           </div>
         </div>
       </div>
