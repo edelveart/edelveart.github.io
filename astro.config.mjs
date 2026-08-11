@@ -7,7 +7,8 @@ import rehypeKatex from "rehype-katex"; // KaTeX
 import rehypeExternalLinks from "rehype-external-links";
 import tailwindcss from "@tailwindcss/vite";
 import { addCopyButton } from "shiki-transformer-copy-button";
-// expresivecode
+// expressive-code
+
 export default defineConfig({
   site: "https://edelveart.github.io",
   trailingSlash: "always",

@@ -55,4 +55,4 @@ export const NAV_LINKS_PAGES = {
     "transition-colors duration-150 ease-in-out group-hover:text-primary",
 };
 
-export const MAX_W_CONTENT = "xl:max-w-150";
+export const MAX_W_CONTENT = "xl:max-w-145";

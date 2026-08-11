@@ -179,7 +179,7 @@ pre button.my-copy-button {
 }
 .prose .toc li.active-heading a {
   color: var(--color-primary);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .prose h2,

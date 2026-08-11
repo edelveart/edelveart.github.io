@@ -23,7 +23,7 @@ const filteredHeadings = headings.filter(
 );
 ---
 
-<details open class="not-prose toc group relative">
+<details open class="toc group relative">
   <summary
     class="list-none marker:hidden cursor-pointer flex items-center gap-2
            text-neutral-content hover:text-primary
@@ -36,8 +36,10 @@ const filteredHeadings = headings.filter(
     </span>
   </summary>
 
-  <nav class="w-full xl:max-h-[calc(100vh-4rem)] xl:overflow-y-auto">
-    <ul class="mt-1 flex max-w-full flex-col">
+  <nav
+    class="not-prose w-full xl:max-h-[calc(100vh-10rem)] xl:overflow-y-auto ml-3 mt-2"
+  >
+    <ul class="mt-1 flex flex-col max-w-full">
       {filteredHeadings.map((heading) => <TOCHeading heading={heading} />)}
     </ul>
   </nav>

@@ -67,6 +67,8 @@ This kind of feedback creates a natural connection between programming and mathe
 
 Likewise, the visual representation of the `cutoff` through bars (visible in the image above) provides an immediate view of how **filtering changes** the frequency range, particularly the attenuation of higher frequencies, without relying only on numerical values.
 
+> Do you want more lines for your buffer $2$ or $6$? It will now support up to $2.5$k lines of code.
+
 ### Editor Visuals
 
 I noticed the new **dynamic event visualization** features added to the editor. Now, every triggered sound event can generate visual feedback through three customizable options, each with adjustable brightness:
@@ -85,9 +87,6 @@ I’ll probably leave the last option disabled and use the flash brightness set 
 
 RC-4 brings together all the classic visualization modes: `Mono`, `Spectrum`, `Stereo`, `Mirror Stereo`, and `Lissajous` (see below), while introducing the new `Levels` mode.
 
-### Larger Editor Buffer
-
-Do you want more lines for your buffer $2$ or $6$? It will now support up to $2.5$k lines of code.
 
 ### Shortcuts
 
@@ -244,8 +243,6 @@ The autocomplete popup for depth was showing the documentation from the wrong ow
 In this case, the depth option from `:fm`was displaying the `depth` documentation from `:flanger`. The same happened with `:tremolo`, which also received the `:flanger` documentation.
 
 The issue seems to be that docs are currently stored globally by option name. Since multiple synths/FX share option names (`depth`, `room`, etc.), the last registered owner can overwrite the displayed docs.
-
-### Possible solution
 
 A possible solution is to keep the current global docs as a fallback, but add owner-specific docs (`setDocFor` and `setSummaryFor`) when an option belongs to a particular synth or FX. I **compiled Sonic Pi** locally and tested the change.
 The autocomplete now resolves the documentation using the current `synth/FX` context (see images below):
@@ -462,7 +459,7 @@ Additionally, it would be great if the lists inside **`Tutorial`**, **`Examples`
 
 This is only a design observation from my experience using the interface, but I think these small details could make Sonic Pi even more comfortable for a wider range of users. -->
 
-## Music materials: new scales, samples and methods
+## New scales, chords and methods
 
 Using `puts scale_names`, I found some new scales available in this version, some of which are only new aliases:
 
@@ -563,7 +560,7 @@ The functionality to create your own decks was removed in the latest RCs. Sam Aa
 
 > Also, the quickstart card loading functionality was dev-only - I've not put enough thought into the file format and features yet to open that up fully - so it won't feature in v5.
 
-### Removed steps for v5
+#### Removed steps for v5
 
 The following steps show how this dev-only functionality worked before it was removed.
 
