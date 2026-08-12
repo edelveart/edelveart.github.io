@@ -55,6 +55,7 @@ import {
   </div>
 
   <!-- COMMENT => NOT SHOW -->
+
   {
     heroImage && (
       <div class="flex justify-center overflow-hidden my-2">
@@ -66,6 +67,18 @@ import {
       </div>
     )
   }
+
+  <!-- {
+    heroImage && (
+      <div class="flex h-40 sm:h-52 items-center justify-center overflow-hidden my-2">
+        <Image
+          src={heroImage}
+          alt={title}
+          class="max-h-full max-w-full object-contain rounded-md"
+        />
+      </div>
+    )
+  } -->
 
   <p class=`mt-1 ${CARD_OP.parr} md:line-clamp-none line-clamp-2`>
     {desc}

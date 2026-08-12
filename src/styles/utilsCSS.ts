@@ -55,4 +55,18 @@ export const NAV_LINKS_PAGES = {
     "transition-colors duration-150 ease-in-out group-hover:text-primary",
 };
 
-export const MAX_W_CONTENT = "xl:max-w-145";
+export const MAX_W_CONTENT = "xl:max-w-136";
+
+// export const DRAWER_BREAKPOINTS = {
+//   sideBar: "hidden xl:block",
+//   baseLayout: "drawer xl:hidden",
+//   headerPC: "hidden xl:flex",
+//   headerMobile: "xl:hidden",
+// };
+
+export const DRAWER_BREAKPOINTS = {
+  sideBar: "hidden min-[1400px]:block",
+  baseLayout: "drawer min-[1400px]:hidden",
+  headerPC: "hidden min-[1400px]:flex",
+  headerMobile: "min-[1400px]:hidden",
+};

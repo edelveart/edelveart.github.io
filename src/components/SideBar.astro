@@ -2,8 +2,9 @@
 import SideBarMenu from "@components/SideBarMenu.astro";
 import PhotoProfile from "@components/img-components/PhotoProfile.astro";
 import LinkIconsGroup from "@components/LinkIconsGroup.astro";
+import { DRAWER_BREAKPOINTS } from "@styles/utilsCSS";
 
-const { menuItems, mobile = false, id } = Astro.props;
+const { menuItems, mobile = false } = Astro.props;
 ---
 
 {
@@ -24,7 +25,9 @@ const { menuItems, mobile = false, id } = Astro.props;
       </aside>
     </div>
   ) : (
-    <div class="hidden xl:block w-72 shrink-0 sticky top-16 h-[calc(100vh-5rem)]">
+    <div
+      class={` ${DRAWER_BREAKPOINTS.sideBar} w-72 shrink-0 sticky top-16 h-[calc(100vh-5rem)]`}
+    >
       <aside class="h-full bg-base-100 flex flex-col px-3">
         <div class="w-fit mx-auto pt-12 mb-6 shrink-0">
           <PhotoProfile class="avatar w-24" />

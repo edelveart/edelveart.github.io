@@ -1,9 +1,8 @@
 ---
 import { transitionMenu } from "@styles/menuCSS";
+import { DRAWER_BREAKPOINTS } from "@styles/utilsCSS";
 
 const currentLang = Astro.url.pathname.startsWith("/es") ? "es" : "en";
-export const spanishFlag = "fi fi-es fis";
-export const englishFlag = "fi fi-gb fis";
 
 const langClass = (active: boolean) =>
   `
@@ -21,7 +20,9 @@ const marginSolved = "my-5";
 const NAME_ID = "Edgar Delgado";
 ---
 
-<div class=`sticky xl:hidden top-0 z-30 w-full ${glassEffect}`>
+<div
+  class=`sticky ${DRAWER_BREAKPOINTS.headerMobile} top-0 z-30 w-full ${glassEffect}`
+>
   <div
     class="navbar w-full flex items-center justify-between md:px-5 sm:px-3 px-6"
   >
@@ -73,7 +74,6 @@ const NAME_ID = "Edgar Delgado";
             title="Switch to English"
             aria-label="Switch to English"
           >
-            {/* <span class={`${englishFlag} w-5 h-5 shrink-0`} /> */}
             ENG
           </a>
         ) : (
@@ -83,7 +83,6 @@ const NAME_ID = "Edgar Delgado";
             title="Cambiar a Español"
             aria-label="Cambiar a Español"
           >
-            {/* <span class={`${spanishFlag} w-5 h-5 shrink-0`} /> */}
             ESP
           </a>
         )
@@ -96,7 +95,7 @@ const NAME_ID = "Edgar Delgado";
 
 <!-- PC VIEW -->
 <div
-  class={`hidden xl:flex items-center justify-between sticky top-0 z-30 px-8 h-16 ${glassEffect}`}
+  class={`${DRAWER_BREAKPOINTS.headerPC} items-center justify-between sticky top-0 z-30 px-8 h-16 ${glassEffect}`}
 >
   <!-- LEFT -->
   <div class=`flex items-center ${marginSolved}`>
