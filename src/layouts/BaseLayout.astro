@@ -20,6 +20,7 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import SideBar from "@components/SideBar.astro"; // This must be different
 import { menuEnglish } from "@ts-config-path/lib/menu";
+import { DRAWER_BREAKPOINTS } from "@styles/utilsCSS";
 import { ClientRouter } from "astro:transitions";
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
 const {
@@ -66,15 +67,13 @@ import "katex/dist/katex.min.css";
                 <slot />
               </div>
             </main>
-            <div class:list={wide ? "items-end" : "w-full"}>
-              <Footer />
-            </div>
+            <Footer />
           </div>
         </div>
       </div>
 
       <!-- MOBILE DRAWER -->
-      <div class="drawer xl:hidden">
+      <div class={DRAWER_BREAKPOINTS.baseLayout}>
         <input id="my-drawer" type="checkbox" class="drawer-toggle" />
 
         {includeSidebar && <SideBar mobile menuItems={menuEnglish} />}
