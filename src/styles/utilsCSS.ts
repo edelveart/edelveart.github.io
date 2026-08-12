@@ -65,8 +65,8 @@ export const MAX_W_CONTENT = "xl:max-w-136";
 // };
 
 export const DRAWER_BREAKPOINTS = {
-  sideBar: "hidden min-[1400px]:block",
-  baseLayout: "drawer min-[1400px]:hidden",
-  headerPC: "hidden min-[1400px]:flex",
-  headerMobile: "min-[1400px]:hidden",
+  sideBar: "hidden min-[1280px]:block",
+  baseLayout: "drawer min-[1280px]:hidden",
+  headerPC: "hidden min-[1280px]:flex",
+  headerMobile: "min-[1280px]:hidden",
 };
