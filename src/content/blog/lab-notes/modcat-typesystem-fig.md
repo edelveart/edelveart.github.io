@@ -3,6 +3,7 @@ title: "Category of Modules and Type-Level Programming with Figurate Numbers"
 description: "I invite you to explore the intersection of figurate numbers and module theory, where type-level programming unlocks new possibilities for math and live coding music."
 heroImage: "./modcat-typesystem-fig.svg"
 pubDate: "October 25 2025"
+updatedDate: "August 13 2026"
 badge: "lab notes"
 tags:
   [
@@ -16,7 +17,7 @@ tags:
   ]
 ---
 
-Where do numbers live when a program computes them? Not in memory, exactly, that's just their temporary residence. I mean their abstract home, the mathematical space where sequences unfold according to their rules.
+Where do numbers live when a program computes them? By this, I mean their abstract home, the mathematical space where sequences unfold according to their rules.
 
 While reviewing basics notions in category theory, I found myself contemplating this question: where, in some platonic sense, do my libraries that generate figurate numbers actually perform their work?
 
@@ -226,7 +227,7 @@ What strikes me most is the asymmetry of initial conditions: one is the trivial 
 
 ### Fibonacci Types
 
-The Fibonacci construction translates naturally into types. Here, `VecFib<n>` implements the module recursion $M_n=M_{n−1} \oplus M_{n−2}$ tracking two previous states and building forward through direct sums:
+The Fibonacci construction translates naturally into types. Here, `VecFib<n>` implements the module recursion $M_n=M_{n−1} \oplus M_{n−2}$ tracking two previous states and building forward through direct sums.
 
 ```ts
 type VecFib<
@@ -247,7 +248,7 @@ type VecFib_15 = VecFib<15>;
 type DimVecFib_15 = VecFib<15>["length"];
 ```
 
-Of course, at runtime we can simulate the same logic with ordinary functions:
+Of course, at runtime we can simulate the same logic with ordinary functions.
 
 ```ts
 function vectorSpace(n: number): number[] {
@@ -274,7 +275,7 @@ function vecFib(
 }
 ```
 
-This runtime version mirrors the type-level construction, though we traditionally compute Fibonacci with simpler direct recursion, without the apparatus of arrays and concatenation. The point here isn't efficiency, but conceptual fidelity.
+This runtime version mirrors the type-level construction, though we traditionally compute Fibonacci with simpler direct recursion, without the apparatus of arrays and concatenation.
 
 Both implementations, at compile-time $\mathcal{C_{Time}}$ and runtime $\mathcal{E_{Time}}$, faithfully express the algebraic structure we defined with modules.
 
@@ -282,7 +283,7 @@ Both implementations, at compile-time $\mathcal{C_{Time}}$ and runtime $\mathcal
 
 We've constructed sequences as modules, sequences as types, sequences as runtime values. But step back: what have we actually built? There's a kind of discrete dynamics here, where modules over rings evolve as abstract entities.
 
-This construction admits two complementary interpretations, two paths that arrive at the same destination through different landscapes.
+In fact, this construction admits two complementary interpretations, two paths that arrive at the same destination through different landscapes.
 
 ### Internal path
 
@@ -298,29 +299,26 @@ Here $k = 2$ for polygonal modules $\mathfrak{p}_m$, which are parametrized by $
 for the Fibonacci sequence, parametrized by $n$ alone.
 
 The structure is **built from within**. Each module contains the previous as a submodule, preserving inclusions $M_n \hookrightarrow M_{n+1}$.
-We're not jumping to some external geometric space; rather, the sequence _grows_ its geometry organically through recursion.
+Our sequence **grows** its geometry organically through recursion. In simple words, we have a sequence of integers becomes a sequence of vector spaces.
 
-This recursive functorial mapping bridges discrete and continuous, a sequence of integers becomes a sequence of vector spaces.
-
-Instead of focusing on numbers, we now think in terms of lines, planes, and higher-dimensional Euclidean (or possibly non-Euclidean, if we choose a different bilinear form) spaces, all connected through their underlying topological nature.
-
-Dimension, that quintessential geometric concept, encodes our arithmetic.
+> We now think in terms of lines, planes, and higher-dimensional Euclidean (or possibly non-Euclidean, if we choose a different bilinear form) spaces, all connected through their topological nature.
 
 ### External path
 
-On the other hand, let’s consider a more naive approach and, for such, we set $R = \mathbb{R}$. We’re thinking of calculating and implementing a space focused purely on dimensionality, a functor that doesn’t account for any internal constructive structure:
+On the other hand, let’s consider a more naive approach and, for such, we set $R = \mathbb{R}$. We’re thinking of calculating and implementing a space focused purely on dimensionality, a functor that doesn’t account for any internal constructive skeleton:
 
 $$
 n \xrightarrow{\psi}a_n \xrightarrow{\;\mathbb{R}^{[\cdot]}\;} \mathbb{R}^{a_n}.
 $$
 
-First we perform arithmetically ($\psi$ could be any figurate number sequence), then we inject into geometry ($R^{[\cdot]}$ builds the free module of that rank). The composite functor is:
+First we perform arithmetically ($\psi$ could be any figurate number sequence), then we inject into geometry ($R^{[\cdot]}$ builds the free module of that rank). The composite functor is
 
 $$
-\mathbb{R}^{[\cdot]} \circ \psi : \mathbb{N}^{k} \longrightarrow \mathbf{Mod}_R^{\text{free}}
+\mathbb{R}^{[\cdot]} \circ \psi : \mathbb{N}^{k} \longrightarrow \mathbf{Mod}_R^{\text{free}}.
 $$
 
-Both paths isomorphic structures. The ranks match and the modules are equivalent. Yet they emphasize different philosophies: one builds through recursive construction, preserving history at each step; the other composes through direct calculation, caring only about the final destination.
+In summary, both paths have isomorphic structures. Their ranks match, and their modules are equivalent.
+However, they follow different philosophies: one is built recursively, preserving the history at each step, while the other uses direct calculation and focuses only on the final result.
 
 ## A Broader View
 

@@ -1,15 +1,17 @@
 ---
 title: "A Brief Flight of Morita's p-adic Gamma in Sonic Pi"
-description: "Orbiting around figurate numbers, Morita's p-adic Gamma function, and a small return to sound through Sonic Pi."
+description: "Yes, the Gamma function appears in countless mathematical places and now I’m putting it to work in Sonic Pi with a little twist of p-adic numbers."
 pubDate: "August 9 2026"
 badge: "sketch notes"
 heroImage: "./morita-gamma.svg"
-# updatedDate: "2026"
+updatedDate: "August 13 2026"
 tags: ["p-adic numbers", "p-adic gamma", "Sonic Pi",  "Morita gamma", "gamma-function", "figurate numbers", "number theory"]
 ---
 
 I often like to think about the same mathematical object through different representations, e.g. musical, geometric, arithmetic, combinatorial, [type-theoretic](https://edelveart.github.io/blog/category-of-modules-and-type-level-programming-with-figurate-numbers/), and so on.
-One notion that has fascinated me ever since [Emil Artin's book](https://ncatlab.org/nlab/files/Artin-TheGammaFunction.pdf), dedicated entirely to the **Gamma function** $\Gamma$, keeps showing up in definitions across different contexts.
+One notion that has fascinated me ever since [Emil Artin's book](https://ncatlab.org/nlab/files/Artin-TheGammaFunction.pdf), dedicated entirely to the **Gamma function** $\Gamma$.
+
+> Yes, the function appears in countless mathematical places and now I'm going to bring it to Sonic Pi with a little spice of prime numbers.
 
 I'll reproduce here some material from my earlier [post](https://edelveart.github.io/blog/generators-as-symbolic-exploration/).
 These formulas for the hypertetrahedral numbers will not be particularly useful for what follows, but they are what led me here.
