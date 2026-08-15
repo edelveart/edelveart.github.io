@@ -2,7 +2,7 @@ const rounded = "rounded-md";
 
 // Links in .astro
 export const LINKS_TO =
-  "text-primary/90 underline underline-offset-2 hover:decoration-2 hover:text-primary transition-[color,text-underline-offset,text-decoration-thickness] duration-150 ease-in-out";
+  "text-primary/95 underline underline-offset-2 hover:decoration-2 hover:text-primary transition-[color,text-underline-offset,text-decoration-thickness] duration-150 ease-in-out";
 
 // CARD-ARCTIONS BORDER
 export const BASE_BORDER = `border border-base-content/12 ${rounded}`;
