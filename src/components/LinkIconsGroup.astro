@@ -7,14 +7,14 @@ import Youtube from "@icons/Youtube.astro";
 import { SOCIAL_MEDIA } from "@ts-config-path/config";
 
 const cssIconsClass = `
-  w-10 h-10
+  size-10
   flex items-center justify-center
   rounded-md
   text-base-content/70
   transition-all duration-200 ease-in-out
   hover:text-primary
-  focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/30
 `;
+const size = "size-4 shrink-0";
 ---
 
 <a
@@ -24,7 +24,7 @@ const cssIconsClass = `
   class={cssIconsClass}
   aria-label="LinkedIn"
 >
-  <LinkedIn class="size-5" />
+  <LinkedIn class={size} />
 </a>
 
 <a
@@ -34,7 +34,7 @@ const cssIconsClass = `
   class={cssIconsClass}
   aria-label="GitHub"
 >
-  <GitHub class="size-5" />
+  <GitHub class={size} />
 </a>
 
 <a
@@ -44,7 +44,7 @@ const cssIconsClass = `
   class={cssIconsClass}
   aria-label="Youtube"
 >
-  <Youtube class="size-5" } />
+  <Youtube class={size} />
 </a>
 <!--
 <div class={cssIconsClass}>
