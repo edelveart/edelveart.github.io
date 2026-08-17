@@ -6,35 +6,29 @@ import QR from "@icons/QR.astro";
 import { SOCIAL_MEDIA } from "../config";
 import { BORDER_OPACITY } from "@styles/utilsCSS";
 
-export interface Props {
-  contactText?: string;
-  linkedin: string;
-  github: string;
-  youtube: string;
-}
-const { contactText, linkedin, github, youtube } = Astro.props;
 const aLinkBorder = `
-    flex items-center justify-center gap-x-2
-    h-12 px-3
-    ${BORDER_OPACITY}
-    text-sm
-    w-36
-    hover:text-primary
-    no-underline
+  flex items-center justify-center gap-x-2
+  h-12 px-3
+  ${BORDER_OPACITY}
+  text-sm
+  w-full sm:w-36
+  hover:text-primary
+  no-underline
 `;
 const KBD = "kbd bg-base-100 rounded-sm";
 ---
 
-<div class="my-12 flex justify-start gap-x-4 gap-y-4 flex-wrap items-center">
+<div
+  class="my-12 flex flex-col sm:flex-row gap-4 items-stretch sm:items-center"
+>
   <a
     id="linkedin-btn"
     class={aLinkBorder}
     href={SOCIAL_MEDIA.linkedin}
-    target="
-    _blank"
+    target="_blank"
   >
     <LinkedIn class="size-5" alt="LinkedIn" />
-    {contactText}
+    LinkedIn
     <kbd class={KBD}>L</kbd>
   </a>
   <a
@@ -43,7 +37,7 @@ const KBD = "kbd bg-base-100 rounded-sm";
     href={SOCIAL_MEDIA.github}
     target="_blank"
   >
-    <GitHub class="size-5" alt="github" />
+    <GitHub class="size-5" alt="GitHub" />
     GitHub
     <kbd class={KBD}>G</kbd>
   </a>
@@ -54,7 +48,7 @@ const KBD = "kbd bg-base-100 rounded-sm";
     href={SOCIAL_MEDIA.youtube}
     target="_blank"
   >
-    <Youtube class="size-5" alt="youtube" />
+    <Youtube class="size-5" alt="Youtube" />
     YouTube
     <kbd class={KBD}>Y</kbd>
   </a>
