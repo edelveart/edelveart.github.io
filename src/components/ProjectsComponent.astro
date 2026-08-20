@@ -1,6 +1,5 @@
 ---
 import HorizontalCard from "./HorizontalCard.astro";
-import type { ProjectType } from "./HorizontalCard.astro";
 
 import ModularFormsImg from "@assets/modular_forms.webp";
 import ToposImg from "@assets/topos-docs.webp";
@@ -10,8 +9,30 @@ import FigurateNumbersLua from "@assets/figurate-numbers-lua.webp";
 import FigNumbersTS from "@assets/fignumbers-ts.webp";
 import FiguratenumPython from "@assets/figuratenum-v3.webp";
 
-export const allProjects = [
+export const projectIds = [
+  "topos",
+  "modular-forms",
+  "figuratenum-python",
+  "ts-tonnetz",
+  "figurate-numbers-ruby",
+  "fignumbers-ts",
+  "figurate-numbers-lua",
+] as const;
+
+export type ProjectId = (typeof projectIds)[number];
+
+export type ProjectType = {
+  id: ProjectId;
+  title: string;
+  img: ImageMetadata;
+  desc: string;
+  url: string;
+  badge: string;
+};
+
+export const allProjects: ProjectType[] = [
   {
+    id: "topos",
     title: "ts-tonnetz in the New Live Coding Environment Topos",
     img: ToposImg,
     desc: "Since December 2023, my library 'ts-tonnetz' is part of the Topos live coding environment created by Raphaël Forment and Miika Alonen. It serves as a dependency for Ziffers, a numerical notation system. For your convenience, I wrote documentation that synthesizes two PhD theses on Mathematical Music Theory and other key research.",
@@ -19,6 +40,7 @@ export const allProjects = [
     badge: "Topos · TypeScript",
   },
   {
+    id: "modular-forms",
     title: "Fermat’s Last Theorem on Sonic Pi",
     img: ModularFormsImg,
     desc: "An early-stage toolkit for exploring modular forms and elliptic curves through Sonic Pi. It makes abstract math concepts like Eisenstein series Eₖ(τ), Dedekind eta functions η(τ), SL(2,ℤ) group, theta functions ϑ, Hecke operators Tₚ, Dirichlet characters χ, elliptic curves over ℚ and 𝔽ₚ, p-adic fields, creatively accessible. Inspired by SageMath, Pari/GP, and LMFDB database, it aims to bridge deep number theory with algorithmic music.",
@@ -26,6 +48,7 @@ export const allProjects = [
     badge: "RubyGems · 2k downloads",
   },
   {
+    id: "figuratenum-python",
     title: "Figurate Numbers for Python",
     img: FiguratenumPython,
     desc: `Generates 235 infinite figurate number sequences and visualizes their generating functions in the complex plane across multiple dimensions. Based on the book "Figurate Numbers" (2012) by Elena Deza and Michel Deza, and "Visual Complex Functions" by Elias Wegert (2012).`,
@@ -33,14 +56,15 @@ export const allProjects = [
     badge: "PyPI · 20k downloads",
   },
   {
+    id: "ts-tonnetz",
     title: "ts-tonnetz: Neo-Riemannian Theory Toolkit for Live Coding",
     img: TsTonnetz,
     desc: "A comprehensive Neo-Riemannian Theory library featuring 67 transformations, graphs, and cycles, designed for musicians, mathematicians, and engineers. Built upon two doctoral theses and foundational research.",
-
     url: "https://www.npmjs.com/package/ts-tonnetz",
     badge: "npm · 500 downloads",
   },
   {
+    id: "figurate-numbers-ruby",
     title: "Figurate Numbers for Sonic Pi",
     img: FigurateNumbersRuby,
     desc: `This Ruby gem enables the generation of 241 infinite sequences of plane, spatial, and multidimensional figurate numbers. It is designed for use in your math projects or with Sonic Pi. Based on the book "Figurate Numbers" (2012) by Elena Deza and Michel Deza.`,
@@ -48,6 +72,7 @@ export const allProjects = [
     badge: "RubyGems · 6.2k downloads",
   },
   {
+    id: "fignumbers-ts",
     title: "npm Package for Figurate Numbers",
     img: FigNumbersTS,
     desc: `A library for generating infinite figurate number sequences, connected to geometric shapes in multiple dimensions. Based on "Figurate Numbers" (2012) by Elena Deza and Michel Deza.`,
@@ -55,6 +80,7 @@ export const allProjects = [
     badge: "npm · 1.3k downloads",
   },
   {
+    id: "figurate-numbers-lua",
     title: "Figurate Numbers Library for Lua",
     img: FigurateNumbersLua,
     desc: "Figurate-numbers is the most comprehensive and specialized module for figurate numbers written in Lua to date. It implements 235 infinite number sequences based on the remarkable book Figurate Numbers by Elena Deza and Michel Deza, published in 2012.",
@@ -65,13 +91,16 @@ export const allProjects = [
 
 type Props = {
   projects: ProjectType[];
-  indices: number[];
+  order?: ProjectId[];
   headTitle: string;
 };
 
-const { projects, indices, headTitle }: Props = Astro.props;
-const filteredProjects = indices
-  ? indices.map((index: number) => projects[index]).filter(Boolean)
+const { projects, order, headTitle }: Props = Astro.props;
+
+const orderedProjects: ProjectType[] = order
+  ? order
+      .map((id) => projects.find((project) => project.id === id))
+      .filter((project): project is ProjectType => project !== undefined)
   : projects;
 ---
 
@@ -81,20 +110,15 @@ const filteredProjects = indices
 
 <section class="flex flex-col gap-4 mt-10">
   {
-    filteredProjects.map((project: ProjectType, index: number) => (
-      <>
-        <HorizontalCard
-          key={index}
-          title={project.title}
-          img={project.img}
-          desc={project.desc}
-          url={project.url}
-          badge={project.badge}
-        />
-        {/* {index < filteredProjects.length - 1 && (
-          <div class="divider my-1 before:bg-transparent after:bg-transparent" />
-        )} */}
-      </>
+    orderedProjects.map((project, index) => (
+      <HorizontalCard
+        key={index}
+        title={project.title}
+        img={project.img}
+        desc={project.desc}
+        url={project.url}
+        badge={project.badge}
+      />
     ))
   }
 </section>

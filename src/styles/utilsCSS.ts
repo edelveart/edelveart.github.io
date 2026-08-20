@@ -6,7 +6,7 @@ export const LINKS_TO =
 
 // CARD-ARCTIONS BORDER
 export const BASE_BORDER = `border border-base-content/12 ${rounded}`;
-export const BORDER_OPACITY = `${BASE_BORDER} hover:border-primary/20 transition-colors duration-150 ease-in-out hover:shadow-sm hover:shadow-base-300/15`;
+export const BORDER_OPACITY = `${BASE_BORDER} hover:border-primary/40 transition-colors duration-150 ease-in-out hover:shadow-sm hover:shadow-base-300/15`;
 
 // IMAGES BORDER
 export const BASE_BORDER_IMG = `${rounded} shadow-md shadow-base-300/15`; // .astro
