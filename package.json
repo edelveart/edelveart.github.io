@@ -17,7 +17,7 @@
     "@fontsource-variable/source-code-pro": "^5.2.7",
     "@fontsource-variable/source-sans-3": "^5.2.9",
     "@tailwindcss/vite": "^4.1.13",
-    "astro": "^7.1.6",
+    "astro": "^7.2.4",
     "dayjs": "^1.11.9",
     "satori": "^0.28.2",
     "sharp": "^0.35.3",
@@ -32,9 +32,9 @@
     "@types/katex": "^0.16.8",
     "daisyui": "^5.6.0",
     "katex": "0.17.0",
+    "rehype-external-links": "^3.0.0",
     "rehype-katex": "7.0.1",
     "remark-math": "6.0.0",
-    "shiki-transformer-copy-button": "^0.0.6",
-    "rehype-external-links": "^3.0.0"
+    "shiki-transformer-copy-button": "^0.0.6"
   }
 }
