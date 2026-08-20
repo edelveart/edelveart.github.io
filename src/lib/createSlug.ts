@@ -5,6 +5,8 @@ export default function createSlug(title: string, staticSlug?: string): string {
 
   // Fallback
   return title
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .trim()
     .replace(/[_\s]+/g, "-")
