@@ -79,7 +79,7 @@ import { NAV_LINKS_PAGES, MAX_W_CONTENT } from "@styles/utilsCSS";
     <div
       class="order-1 xl:order-2 xl:sticky xl:top-24 xl:w-56 xl:shrink-0 xl:self-start xl:mt-5 mt-3"
     >
-      <TableOfContents headings={headings} />
+      <TableOfContents headings={headings} lang={post.lang} />
     </div>
   </div>
 
@@ -89,13 +89,17 @@ import { NAV_LINKS_PAGES, MAX_W_CONTENT } from "@styles/utilsCSS";
 
       <div class="flex-1 min-w-0">
         <div class="text-xs text-base-content/75 my-0 uppercase font-light">
-          Written by
+          {post.lang === "es" ? "Escrito por" : "Written by"}
         </div>
 
         <div class="my-0 text-lg font-semibold">Edgar Delgado Vega</div>
 
         <div class="my-0 text-sm text-base-content/70">
-          Mathematical music geek, open-source tool builder, quirky thinker.
+          {
+            post.lang === "es"
+              ? "Geek de la matemática musical, creador de herramientas de código abierto y pensador peculiar."
+              : "Mathematical music geek, open-source tool builder, quirky thinker."
+          }
         </div>
       </div>
     </div>

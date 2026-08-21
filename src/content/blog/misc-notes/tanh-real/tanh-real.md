@@ -4,6 +4,7 @@ description: "Sofrito matemático de tanh, seno, saturación y armónicos desde 
 pubDate: "August 20 2026"
 heroImage: "./tanhreal-sp5.png"
 badge: "misc notes"
+lang: "es"
 tags: ["tanh", "dsp", "sonic pi", "nonlinear distortion", "harmonics"]
 ---
 

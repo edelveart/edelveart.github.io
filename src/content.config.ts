@@ -12,6 +12,8 @@ const blogSchema = ({ image }: SchemaContext) =>
     pubDate: z.coerce.date(),
     updatedDate: z.string().optional(),
 
+    lang: z.literal("es").optional(),
+
     heroImage: image().optional(),
 
     badge: z

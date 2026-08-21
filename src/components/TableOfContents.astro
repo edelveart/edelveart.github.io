@@ -14,13 +14,16 @@ import Arrow from "@icons/Arrows.astro";
 
 interface Props {
   headings: MarkdownHeading[];
+  lang?: "es";
 }
 
-const { headings } = Astro.props;
+const { headings, lang = "en" } = Astro.props;
 
 const filteredHeadings = headings.filter(
   ({ depth }) => depth >= 2 && depth <= 3,
 );
+
+const tocLabel = lang === "es" ? "Tabla de contenidos" : "Table of Contents";
 ---
 
 <details open class="toc group relative">
@@ -29,7 +32,9 @@ const filteredHeadings = headings.filter(
            text-neutral-content hover:text-primary
            transition-colors duration-150"
   >
-    <span class="text-sm font-medium tracking-wide">Table of Contents</span>
+    <span class="text-sm font-medium tracking-wide">
+      {tocLabel}
+    </span>
 
     <span class="group-open:rotate-180 transition-transform duration-150">
       <Arrow direction="down" size="xs" />

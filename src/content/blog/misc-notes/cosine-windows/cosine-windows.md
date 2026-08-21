@@ -5,6 +5,7 @@ heroImage: "./hero-cosine-window-a.png"
 pubDate: "August 1 2026"
 badge: "misc notes"
 updatedDate: "August 3 2026"
+lang: "es"
 tags: ["Sonic Visualiser", "FFT", "window functions", "DSP", "spectral analysis", "Fourier analysis"]
 ---
 

@@ -12,9 +12,15 @@ import CardBlog from "@components/CardBlog.astro";
 import PreviousPosts from "@components/PreviousPosts.astro";
 import DividerNav from "@components/DividerNav.astro";
 
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+// const posts = (await getCollection("blog")).sort(
+//   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+// );
+
+// ONLY ENGLISH NOTES
+const posts = (await getCollection("blog"))
+  .filter((post) => post.data.lang !== "es")
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
 const last_posts = posts.slice(0, 3);
 ---
 

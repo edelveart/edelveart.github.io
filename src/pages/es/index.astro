@@ -11,9 +11,13 @@ import createSlug from "@ts-config-path/lib/createSlug";
 import { getCollection } from "astro:content";
 import PreviousPosts from "@components/PreviousPosts.astro";
 import DividerNav from "@components/DividerNav.astro";
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+// const posts = (await getCollection("blog")).sort(
+//   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+// );
+// Only Spanish Pages
+const posts = (await getCollection("blog"))
+  .filter((post) => post.data.lang === "es")
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const last_posts = posts.slice(0, 3);
 ---
@@ -52,6 +56,6 @@ const last_posts = posts.slice(0, 3);
       ))
     }
     <DividerNav />
-    <PreviousPosts />
+    <PreviousPosts lang="es" />
   </section>
 </BaseLayout>
