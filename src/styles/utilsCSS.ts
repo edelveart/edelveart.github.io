@@ -25,7 +25,7 @@ export const BORDER_INFO =
 export const BLOCK_QUOTE = `text-right ${CARD_OP.muteData}`;
 
 // BADGES AND METADATA
-const metaBase = "text-sm tracking-wider uppercase font-light";
+const metaBase = "text-sm tracking-wide uppercase font-light";
 export const BADGE_COLORS = {
   "field notes": `${metaBase} text-error/85`,
   "lab notes": `${metaBase} text-accent/85`,
@@ -48,7 +48,7 @@ export const NAV_LINKS_PAGES = {
   aLink: `group flex w-full min-h-14 items-center gap-3 ${rounded} px-3 py-2 no-underline`,
   prevLeft: "justify-start",
   nextRight: "justify-end",
-  prevNext: "text-sm uppercase tracking-wider text-base-content/75 font-light",
+  prevNext: "text-sm uppercase tracking-wide text-base-content/75 font-light",
   pageTitle:
     "text-base line-clamp-2 group-hover:text-primary group-hover:underline underline-offset-2 group-hover:decoration-2 font-normal transition-[color,text-underline-offset,text-decoration-thickness] duration-150 ease-in-out",
   arrowSpan:

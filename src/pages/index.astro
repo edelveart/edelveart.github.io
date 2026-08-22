@@ -26,15 +26,18 @@ const last_posts = posts.slice(0, 3);
 
 <BaseLayout title="Edgar Delgado Vega - Creative Math Systems Developer">
   <section class="mt-4">
-    <h1 class="text-4xl font-bold leading-snug flex">Edgar Delgado</h1>
-    <h2 class="py-3 text-xl font-bold text-primary">
+    <h2 class="text-xs uppercase tracking-wide font-semibold text-primary mb-2">
       Creative Math Systems Developer
     </h2>
+
+    <h1 class="text-4xl font-bold leading-snug mb-8">Edgar Delgado</h1>
     <HeroTopProjects />
+
     <div class="mt-10 mb-12">
       <Biography />
       <MainLinks contactText="LinkedIn" linkedin="L" github="G" youtube="Y" />
     </div>
+
     <Experience workExperiences={allExperiences} indices={[0, 1]} />
 
     <!-- BLOG-NOTES -->

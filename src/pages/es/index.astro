@@ -22,17 +22,23 @@ const posts = (await getCollection("blog"))
 const last_posts = posts.slice(0, 3);
 ---
 
-<BaseLayout title="Edgar Delgado Vega - Creative Math Systems Developer">
+<BaseLayout
+  title="Edgar Delgado Vega - Desarrollador de sistemas matemáticos creativos"
+>
   <section class="mt-4">
-    <h1 class="text-4xl font-bold leading-snug pt-0 flex">Edgar Delgado</h1>
-    <h2 class="py-3 text-xl font-bold text-primary">
+    <h2 class="text-xs uppercase tracking-wide font-semibold text-primary mb-2">
       Desarrollador de sistemas matemáticos creativos
     </h2>
+
+    <h1 class="text-4xl font-bold leading-snug mb-8">Edgar Delgado</h1>
+
     <HeroTopProjects />
+
     <div class="mt-10 mb-12">
       <Biography />
       <MainLinks contactText="LinkedIn" linkedin="L" github="G" youtube="Y" />
     </div>
+
     <Experience workExperiences={allExperiences} indices={[0, 1]} />
     <!-- BLOG-NOTES -->
     <h2 class="text-3xl w-full font-bold flex items-center mt-12 mb-10">

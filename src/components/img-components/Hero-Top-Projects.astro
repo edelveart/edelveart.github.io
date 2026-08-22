@@ -3,67 +3,86 @@ import { allProjects } from "@components/ProjectsComponent.astro";
 import { Image } from "astro:assets";
 import { BORDER_OPACITY, GET_COLORS_METADATA } from "@styles/utilsCSS";
 
-const divisor = "my-5";
-const UrlArray = allProjects;
-
-const cardDisplay = "aspect-[16/8]";
-const imagePadding = "p-0";
-const cardBase = `
-  block relative w-full ${cardDisplay}
-  max-h-72
-  ${imagePadding}
-  ${BORDER_OPACITY}
-`;
-
-const badge = `absolute top-0 left-0 m-2 p-1 bg-base-100 rounded-sm ${GET_COLORS_METADATA("cardsImg")} text-xs z-5`;
-
 import MainFigurateNumImage from "@assets/main-figuratenum.webp";
 import MainTonnetzImage from "@assets/main-tonnetz.webp";
 import MainModularImage from "@assets/main-modular.webp";
+
+const cardBase = `
+  block relative w-full
+  p-0
+  ${BORDER_OPACITY}
+  overflow-hidden
+  aspect-[16/8]
+  lg:aspect-auto
+`;
+
+const badge = `
+  absolute top-0 left-0
+  m-2 p-1
+  bg-base-100
+  rounded-sm
+  ${GET_COLORS_METADATA("cardsImg")}
+  text-xs
+  z-5
+`;
 ---
 
-<!-- https://svgomg.net/  --><!-- https://vecta.io/nano -->
-<div class={divisor}></div>
-<a
-  href={UrlArray[2].url}
-  target="_blank"
-  rel="noopener noreferrer"
-  class={cardBase}
+<!-- https://svgomg.net/ --><!-- https://vecta.io/nano -->
+<section
+  class="grid
+    grid-cols-1
+    lg:grid-cols-3
+    gap-x-4
+    gap-y-5
+    lg:auto-rows-fr"
 >
-  <div class={badge}>
-    <span>FigurateNum</span>
-    <!-- <span>FigurateNum • PyPI</span> -->
-  </div>
-
-  <Image
-    src={MainFigurateNumImage}
-    class="w-full h-full object-cover"
-    width={400}
-    height={260}
-    format="webp"
-    fetchpriority="high"
-    loading="eager"
-    alt="FigurateNumber - Phase Portrait"
-  />
-</a>
-
-<div class={divisor}></div>
-
-<section class="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-5">
-  <!-- // 1 -->
+  <!-- 1 — FIGURATENUM / GRANDE -->
   <a
-    href={UrlArray[1].url}
+    href={allProjects[2].url}
     target="_blank"
     rel="noopener noreferrer"
-    class={cardBase}
+    class={`${cardBase} lg:col-span-2 lg:row-span-2`}
   >
     <div class={badge}>
-      <span>Modular Forms</span>
+      <span>FIGURATENUM</span>
+      <!-- <span>FigurateNum • PyPI</span> -->
+    </div>
+
+    <Image
+      src={MainFigurateNumImage}
+      class="w-full
+        h-full
+        object-cover
+        object-center"
+      width={800}
+      height={520}
+      format="webp"
+      fetchpriority="high"
+      loading="eager"
+      alt="FigurateNumber - Phase Portrait"
+    />
+  </a>
+
+  <!-- 2 — MODULAR FORMS -->
+  <a
+    href={allProjects[1].url}
+    target="_blank"
+    rel="noopener noreferrer"
+    class={`${cardBase} lg:col-span-1`}
+  >
+    <div class={badge}>
+      <span>MODULAR FORMS</span>
       <!-- <span>Modular Forms • RubyGems</span> -->
     </div>
+
     <Image
       src={MainModularImage}
-      class={`w-full h-full object-cover invert hue-rotate-270`}
+      class="w-full
+        h-full
+        object-cover
+        object-center
+        invert
+        hue-rotate-270"
       width={400}
       height={280}
       format="webp"
@@ -72,26 +91,33 @@ import MainModularImage from "@assets/main-modular.webp";
       alt="Math-Modular-Elliptic-Image"
     />
   </a>
-  <!-- // 2 -->
+
+  <!-- 3 — TS-TONNETZ -->
   <a
-    href={UrlArray[0].url}
+    href={allProjects[0].url}
     target="_blank"
     rel="noopener noreferrer"
-    class={cardBase}
+    class={`${cardBase} lg:col-span-1`}
   >
     <div class={badge}>
+      <span>TS-TONNETZ</span>
       <!-- <span>TS-Tonnetz • npm</span> -->
-      <span>TS-Tonnetz</span>
     </div>
+
     <Image
       src={MainTonnetzImage}
-      alt="ts-tonnetz simplices portrait"
-      class={`w-full h-full object-cover invert  hue-rotate-180`}
-      format="webp"
+      class="w-full
+        h-full
+        object-cover
+        object-center
+        invert
+        hue-rotate-180"
       width={400}
       height={280}
+      format="webp"
       loading="lazy"
       fetchpriority="low"
+      alt="ts-tonnetz simplices portrait"
     />
   </a>
 </section>
