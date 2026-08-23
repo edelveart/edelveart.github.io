@@ -26,26 +26,21 @@ const last_posts = posts.slice(0, 3);
 >
   <section class="mt-4">
     <h2
-      class="text-xs uppercase tracking-wider font-semibold text-primary mb-2"
+      class="text-xs uppercase tracking-wider font-semibold text-primary mb-1.5"
     >
       Desarrollador de sistemas matemáticos creativos
     </h2>
-
     <h1 class="text-4xl font-bold leading-snug mb-8">Edgar Delgado</h1>
-
     <HeroTopProjects />
-
+    <!-- BIO -->
     <div class="mt-10 mb-12">
       <Biography />
       <MainLinks contactText="LinkedIn" linkedin="L" github="G" youtube="Y" />
     </div>
-
     <!-- BLOG-NOTES -->
-    <div class="flex justify-between items-center gap-2 mt-12 mb-10">
+    <div class="flex justify-between items-center gap-2 my-8">
       <h2 class="text-3xl font-bold">Notas</h2>
-      <div>
-        <PreviousPosts lang="es" />
-      </div>
+      <div><PreviousPosts lang="es" /></div>
     </div>
     {
       last_posts.map((post) => (
