@@ -1,15 +1,15 @@
 ---
 import BaseLayout from "@layouts/es/BaseLayout.astro";
 
-import Biography from "@components/es/Biography.astro";
 import MainLinks from "@components/MainLinks.astro";
-import Experience, { allExperiences } from "@components/es/Experience.astro";
+import Experience from "@components/Experience.astro";
 import HeroTopProjects from "@components/img-components/Hero-Top-Projects.astro";
 import CardBlog from "@components/CardBlog.astro";
 // BLOG
 import createSlug from "@ts-config-path/lib/createSlug";
 import { getCollection } from "astro:content";
 import PreviousPosts from "@components/PreviousPosts.astro";
+import BiographyES from "@components/BiographyES.astro";
 // const posts = (await getCollection("blog")).sort(
 //   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 // );
@@ -24,17 +24,17 @@ const last_posts = posts.slice(0, 3);
 <BaseLayout
   title="Edgar Delgado Vega - Desarrollador de sistemas matemáticos creativos"
 >
-  <section class="mt-4">
+  <section class="mt-5 pb-3">
     <h2
       class="text-xs uppercase tracking-wider font-semibold text-primary mb-1.5"
     >
       Desarrollador de sistemas matemáticos creativos
     </h2>
-    <h1 class="text-4xl font-bold leading-snug mb-8">Edgar Delgado</h1>
+    <h1 class="text-4xl font-bold leading-snug mb-10">Edgar Delgado</h1>
     <HeroTopProjects />
     <!-- BIO -->
     <div class="mt-10 mb-12">
-      <Biography />
+      <BiographyES />
       <MainLinks contactText="LinkedIn" linkedin="L" github="G" youtube="Y" />
     </div>
     <!-- BLOG-NOTES -->
@@ -60,6 +60,6 @@ const last_posts = posts.slice(0, 3);
       ))
     }
     <div class="mb-14"></div>
-    <Experience workExperiences={allExperiences} indices={[0, 1]} />
+    <Experience lang="es" indices={[0, 1]} />
   </section>
 </BaseLayout>

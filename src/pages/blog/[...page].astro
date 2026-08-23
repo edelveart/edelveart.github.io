@@ -38,10 +38,8 @@ const { page } = Astro.props as Props;
   title="Edgar Delgado - Notes"
   sideBarActiveItemID="NOTES_ACTIVE_PAGE"
 >
-  <article class="pb-0 mt-5">
-    <div class="mb-5 mt-5" id="Notes">
-      <div class="text-3xl w-full font-bold flex items-center">Notes</div>
-    </div>
+  <article class="pb-3 mt-5">
+    <div class="text-3xl w-full font-bold flex items-center">Notes</div>
 
     {
       page.currentPage === 1 && (

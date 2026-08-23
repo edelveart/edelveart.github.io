@@ -1,30 +1,70 @@
 ---
 import TimeLine from "@components/TimeLine.astro";
 
-const masterGradesAndAverage = {
-  title: "UNIR · Master's Degree in Music Research",
-  subtitle: "2019 – 2020 · Spain",
-  description: `I received the highest distinction with a perfect score in Computational Music Analysis.
-    Overall average: Outstanding
-    · TFM: I applied the theory of simplicial complexes (MaMuTh) to analyze a musical style using specialized software.
-    💻 HexaChord, Geogebra, LaTex`,
+type Language = "en" | "es";
+
+type Education = {
+  title: string;
+  subtitle: string;
+  description?: string;
 };
+
+const education: Record<Language, Education[]> = {
+  en: [
+    {
+      title: "UNIR · Master's Degree in Music Research",
+      subtitle: "2019–2020 · Spain",
+      description: `I received the highest distinction with a perfect score in Computational Music Analysis.
+      Overall average: Outstanding.
+      · TFM: I applied the theory of simplicial complexes (MaMuTh) to analyze a musical style using specialized software.
+      💻 HexaChord, Geogebra, LaTex`,
+    },
+    {
+      title: "USMP · B.A. in Music",
+      subtitle: "2009–2015 · Peru",
+    },
+  ],
+
+  es: [
+    {
+      title: "UNIR · Máster en Investigación Musical",
+      subtitle: "2019–2020 · España",
+      description: `Obtuve una matrícula de honor y puntaje perfecto en Análisis Musical Informatizado.
+      Promedio general: Sobresaliente.
+      · TFM: Apliqué la teoría de complejos simpliciales (MaMuTh) para analizar un estilo musical mediante software especializado.
+      💻 HexaChord, Geogebra, LaTex`,
+    },
+    {
+      title: "USMP · Bachiller y Licenciatura en Música",
+      subtitle: "2009–2015 · Perú",
+    },
+  ],
+};
+
+interface Props {
+  lang?: Language;
+}
+
+const { lang = "en" } = Astro.props;
+
+const educationItems = education[lang];
 ---
 
 <section class="my-5" id="EDUCATION">
-  <div class="text-2xl w-full font-semibold flex items-center mt-10 mb-6">
-    <!-- <EducationSVG class="ml-0 mr-4" /> -->
-    Education
+  <div class="text-2xl w-full font-semibold flex items-center mt-10 mb-8">
+    {lang === "es" ? "Educación" : "Education"}
   </div>
 
   <div class="time-line-container grid gap-3 mb-0 mt-5">
-    <TimeLine
-      title={masterGradesAndAverage.title}
-      subtitle={masterGradesAndAverage.subtitle}
-      description={masterGradesAndAverage.description}
-      moreInfo="See more"
-    />
-
-    <TimeLine title={`USMP · B.A. in Music`} subtitle="2009 – 2015 · Peru" />
+    {
+      educationItems.map((item, index) => (
+        <TimeLine
+          key={index}
+          title={item.title}
+          subtitle={item.subtitle}
+          description={item.description}
+        />
+      ))
+    }
   </div>
 </section>

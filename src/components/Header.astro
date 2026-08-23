@@ -16,13 +16,14 @@ const langClass = (active: boolean) =>
   `;
 
 const glassEffect = "bg-base-100/50 backdrop-blur-md relative";
-const marginSolved = "my-5";
+const marginSolved = "py-1";
+const NAVBAR_HEIGHT = "h-[64px]";
 const NAME_ID = "Edgar Delgado";
 ---
 
 <!-- MOBILE VIEW -->
 <div
-  class=`sticky ${DRAWER_BREAKPOINTS.headerMobile} top-0 z-30 w-full ${glassEffect}`
+  class=`sticky ${DRAWER_BREAKPOINTS.headerMobile} top-0 z-30 w-full ${NAVBAR_HEIGHT} ${glassEffect}`
 >
   <div
     class="navbar w-full flex items-center justify-between md:px-5 sm:px-3 px-6"
@@ -92,7 +93,7 @@ const NAME_ID = "Edgar Delgado";
 
 <!-- PC VIEW -->
 <div
-  class={`${DRAWER_BREAKPOINTS.headerPC} items-center justify-between sticky top-0 z-30 px-8 h-16 ${glassEffect}`}
+  class={`${DRAWER_BREAKPOINTS.headerPC} items-center justify-between sticky top-0 z-30 px-8  ${NAVBAR_HEIGHT} ${glassEffect}`}
 >
   <!-- LEFT -->
   <div class=`flex items-center ${marginSolved}`>

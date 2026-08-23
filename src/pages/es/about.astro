@@ -2,7 +2,7 @@
 import BaseLayout from "@layouts/es/BaseLayout.astro";
 import ListOfSkills from "@components/ListOfSkills.astro";
 import { techSkillsSpanish } from "@components/ListOfSkills.astro";
-import Education from "@components/es/Education.astro";
+import Education from "@components/Education.astro";
 import { routeSpanish } from "@ts-config-path/lib/menu";
 import { LINKS_TO } from "@styles/utilsCSS";
 import SonicPiModFormsImage from "@components/img-components/SonicPiModFormsImage.astro";
@@ -14,11 +14,9 @@ import { BLOCK_QUOTE } from "@styles/utilsCSS";
 <!-- https://math.uchicago.edu/~chonoles/miscellany/quotations/ -->
 <BaseLayout title="Edgar Delgado Vega - About me">
   <section class="pb-3 mt-5">
-    <div class="mb-5 mt-5" id="CURRICULUM">
-      <div class="text-3xl w-full font-bold flex items-center">¿Quién soy?</div>
-    </div>
+    <div class="text-3xl w-full font-bold flex items-center">¿Quién soy?</div>
 
-    <article class="mb-10 mt-10">
+    <article class="mb-10 mt-8">
       <blockquote class=`my-10 ${BLOCK_QUOTE}`>
         <p>La geometría determina la aritmética.</p>
         <footer>— M. Hindry y J. Silverman</footer>
@@ -125,7 +123,7 @@ import { BLOCK_QUOTE } from "@styles/utilsCSS";
       alt="GitHub Stats"
       class="rounded-lg py-6"
     /> -->
-      <Education />
+      <Education lang="es" />
     </article>
 
     <!-- <h2 class="my-4">El origen de mi interés por las matemáticas</h2>

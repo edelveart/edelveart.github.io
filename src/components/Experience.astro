@@ -5,22 +5,23 @@ export type Experience = {
   subtitle: string;
   description: string | undefined;
 };
-export const allExperiences = [
-  {
-    title: `ZifferJS · TypeScript Developer`,
-    subtitle: "Oct 2023 – Present · Finland · Remote",
-    description: `I contribute to the development of ZifferJS, a generative music notation and parser. It is designed to fit into any live coding environment that supports web technologies.
+export const allExperiences: Record<"en" | "es", Experience[]> = {
+  en: [
+    {
+      title: `ZifferJS · TypeScript Developer`,
+      subtitle: "Oct 2023 – Present · Finland · Remote",
+      description: `I contribute to the development of ZifferJS, a generative music notation and parser. It is designed to fit into any live coding environment that supports web technologies.
 
     · Implementing mathematical algorithms based on simplicial complexes and graph theory
     · Creating unit tests and writing documentation
     · Creating generator functions to work with infinite sequences
     `,
-  },
-  {
-    title:
-      "Escuela de Posgrado Newman · Lecturer in Master's Musicology, Music Pedagogy, and Teaching in Higher Education",
-    subtitle: "May 2024 – Present · Tacna, Perú · Remote",
-    description: `I teach courses in the following Master's programs:
+    },
+    {
+      title:
+        "Escuela de Posgrado Newman · Lecturer in Master's Musicology, Music Pedagogy, and Teaching in Higher Education",
+      subtitle: "May 2024 – Present · Tacna, Perú · Remote",
+      description: `I teach courses in the following Master's programs:
 
     Master's in Musicology
     · Search, Documentation, and Dissemination Techniques in Musicological Research
@@ -36,44 +37,112 @@ export const allExperiences = [
     Master's in Teaching in Higher Education
     · Basic Educational Strategies for University Teaching
     `,
-  },
-  {
-    title:
-      "Toulouse Lautrec, EEST · Instructor of Music Production and Electronic Production",
-    subtitle: "Jun 2022 – Present · Lima, Perú · Remote",
-    description: `Subjects I teach in the programs include:
+    },
+    {
+      title:
+        "Toulouse Lautrec, EEST · Instructor of Music Production and Electronic Production",
+      subtitle: "Jun 2022 – Present · Lima, Perú · Remote",
+      description: `Subjects I teach in the programs include:
     · Applied synthesis: Physical modeling, additive synthesis, subtractive synthesis, frequency modulation (FM) synthesis, and sampling
     · Fundamentals and tools of music production
     · Music theory, functional harmony and arrangements
     💻 MuseScore 4, Reaper 7`,
-  },
-  {
-    title: "National University Daniel Alomía Robles · Full-time Professor",
-    subtitle: "may.2019 - dec.2019 · Huánuco, Perú · In-person",
-    description: `Subjects I taught in the degree:
+    },
+    {
+      title: "National University Daniel Alomía Robles · Full-time Professor",
+      subtitle: "may.2019 - dec.2019 · Huánuco, Perú · In-person",
+      description: `Subjects I taught in the degree:
     · General didactics of education
     · Psychology of learning
     · Music didactics
     💻 MuseScore 3, LaTex`,
-  },
-  {
-    title: "PAENFTS · Music Educator",
-    subtitle: "jun.2015 - oct.2017 · Lima, Perú · In-person",
-    description: `Teaching music theory and performance.
+    },
+    {
+      title: "PAENFTS · Music Educator",
+      subtitle: "jun.2015 - oct.2017 · Lima, Perú · In-person",
+      description: `Teaching music theory and performance.
     💻 MuseScore 2`,
-  },
-];
+    },
+  ],
+  es: [
+    {
+      title: "ZifferJS · TypeScript Developer",
+      subtitle: "octubre 2023–actualidad · Finlandia · En remoto",
+      description: `Contribuyo al desarrollo de ZifferJS, una notación musical generativa y analizador. Está diseñado para adaptarse a cualquier entorno de live coding que admita tecnologías web.
 
-const { workExperiences, indices } = Astro.props;
+    · Implementar algoritmos matemáticos de complejos simpliciales y teoría de grafos
+    · Crear pruebas unitarias y escribir documentación
+    · Crear funciones generadoras para trabajar con secuencias infinitas
+    💻 TypeScript, Vitest, Git`,
+    },
+    {
+      title: `Escuela de Posgrado Newman ·
+
+    Docente de las Maestrías en Musicología, Pedagogía Musical y Docencia Universitaria`,
+      subtitle: "mayo 2024–actualidad · Tacna, Perú · En remoto",
+      description: `Imparto asignaturas en los siguientes programas de maestría:
+
+    Maestría en Musicología
+    · Técnicas de búsqueda, documentación y difusión en investigación musicológica
+    · Industrias musicales
+    · Investigación performativa: perspectivas históricas y analíticas de la interpretación
+    · La escucha musical: una aproximación histórica y cultural
+
+    Maestría en Pedagogía Musical
+    · Comunicación, conocimiento y aprendizaje digital aplicadas a la enseñanza de la música
+    · Enseñanza de la Música y Atención a la Diversidad
+    · La Música en el Contexto Educativo y Social
+
+    Maestría en Docencia Universitaria
+    · Estrategias Educativas Básicas para la Docencia Universitaria
+   `,
+    },
+    {
+      title:
+        "Toulouse Lautrec, EEST · Docente de producción musical y producción electrónica",
+      subtitle: "jun.2022 - actualidad · Lima, Perú · En remoto",
+
+      description: `Módulos que imparto en los programas:
+    · Síntesis aplicada: modelado físico, síntesis aditiva, síntesis sustractiva, síntesis por modulación de frecuencia (FM) y sampling
+    · Fundamentos y herramientas de producción musical
+    · Teoría musical, armonía funcional y arreglos
+    💻 MuseScore 4, Reaper 7`,
+    },
+    {
+      title:
+        "Universidad Nacional Daniel Alomía Robles · Docente a tiempo completo",
+      subtitle: "may.2019 - dic.2019 · Huánuco, Perú · Presencial",
+      description: `Asignaturas que impartí en la licenciatura:
+    · Didáctica general de la educación
+    · Psicología del aprendizaje
+    · Didáctica de la música
+    💻 MuseScore 3, LaTex`,
+    },
+    {
+      title: "PAENFTS · Docente del área de música",
+      subtitle: "jun.2015 - oct.2017 · Lima, Perú · Presencial",
+      description: `Enseñanza de teoría e interpretación musical.
+    💻 MuseScore 2`,
+    },
+  ],
+};
+
+interface Props {
+  lang?: "en" | "es";
+  indices?: number[];
+}
+
+const { lang = "en", indices } = Astro.props;
+
+const workExperiences = allExperiences[lang];
+
 const filteredExperiences = indices
-  ? indices
-      .map((index: string | number) => workExperiences[index])
-      .filter(Boolean)
+  ? indices.map((index) => workExperiences[index]).filter(Boolean)
   : workExperiences;
 ---
 
-<div class="text-3xl w-full font-bold flex items-center my-10" id="EXPERIENCE">
-  Experience
+<div class="text-3xl w-full font-bold flex items-center my-10">
+  {lang === "es" ? "Experiencia" : "Experience"}
 </div>
 
 <div class="time-line-container mb-8 grid gap-3">
@@ -85,7 +154,6 @@ const filteredExperiences = indices
           title={experience.title}
           subtitle={experience.subtitle}
           description={experience.description}
-          moreInfo="See more"
         />
       </>
     ))
