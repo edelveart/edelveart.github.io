@@ -20,6 +20,7 @@ const marginSolved = "my-5";
 const NAME_ID = "Edgar Delgado";
 ---
 
+<!-- MOBILE VIEW -->
 <div
   class=`sticky ${DRAWER_BREAKPOINTS.headerMobile} top-0 z-30 w-full ${glassEffect}`
 >
@@ -48,24 +49,20 @@ const NAME_ID = "Edgar Delgado";
           >
           </path>
         </svg>
-
-        <!-- <span>
-          {currentLang == "es" ? "Menú" : "Menu"}
-        </span> -->
       </label>
     </div>
     <!-- CENTER -->
     <div class="navbar-center">
       <a
         href={currentLang === "en" ? "/" : "/es/"}
-        class={`font-medium text-neutral-content hover:text-primary ${transitionMenu}`}
+        class={`font-semibold text-neutral-content hover:text-primary text-sm tracking-wide ${transitionMenu}`}
       >
         {NAME_ID}
       </a>
     </div>
 
     <!-- RIGHT -->
-    <div class="navbar-end flex items-center">
+    <div class="navbar-end flex items-center text-xs tracking-wide">
       {
         currentLang === "es" ? (
           <a
@@ -101,14 +98,14 @@ const NAME_ID = "Edgar Delgado";
   <div class=`flex items-center ${marginSolved}`>
     <a
       href={currentLang == "en" ? "/" : "/es/"}
-      class=`no-underline text-neutral-content hover:text-primary font-medium ${transitionMenu}`
+      class=`no-underline text-neutral-content hover:text-primary font-semibold tracking-wide ${transitionMenu}`
     >
       {NAME_ID}
     </a>
   </div>
 
   <!-- RIGHT -->
-  <div class=`flex items-center gap-3 ${marginSolved}`>
+  <div class=`flex items-center gap-3 text-sm  ${marginSolved}`>
     <a href="/" class={langClass(currentLang === "en")}>
       <!-- <span class={`${englishFlag}`}></span> -->
       English
