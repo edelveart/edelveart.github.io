@@ -108,54 +108,50 @@ import { NAV_LINKS_PAGES, MAX_W_CONTENT } from "@styles/utilsCSS";
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
       {
-        prevPost ? (
-          <a
-            class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`}
-            href={"/blog/" + prevPost.slug + "/"}
-          >
-            <span class={NAV_LINKS_PAGES.arrowSpan}>
-              <Arrows direction="left" />
-            </span>
-
-            <div>
-              <div class={NAV_LINKS_PAGES.prevNext}>NEWER</div>
-              <div class={NAV_LINKS_PAGES.pageTitle}>{prevPost.title}</div>
-            </div>
-          </a>
-        ) : (
-          <a
-            class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`}
-            href="/blog/"
-          >
-            <span class={NAV_LINKS_PAGES.arrowSpan}>
-              <Arrows direction="left" />
-            </span>
-
-            <div>
-              <div class={NAV_LINKS_PAGES.prevNext}>NOTES</div>
-              <div class={NAV_LINKS_PAGES.pageTitle}>Back to notes</div>
-            </div>
-          </a>
-        )
-      }
-
-      {
         nextPost ? (
           <a
-            class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`}
+            class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`}
             href={"/blog/" + nextPost.slug + "/"}
           >
-            <div class="text-right">
+            <span class={NAV_LINKS_PAGES.arrowSpan}>
+              <Arrows direction="left" />
+            </span>
+            <div class="text-left">
               <div class={NAV_LINKS_PAGES.prevNext}>OLDER</div>
               <div class={NAV_LINKS_PAGES.pageTitle}>{nextPost.title}</div>
             </div>
-
+          </a>
+        ) : (
+          <div />
+        )
+      }
+      {
+        prevPost ? (
+          <a
+            class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`}
+            href={"/blog/" + prevPost.slug + "/"}
+          >
+            <div class="text-right">
+              <div class={NAV_LINKS_PAGES.prevNext}>NEWER</div>
+              <div class={NAV_LINKS_PAGES.pageTitle}>{prevPost.title}</div>
+            </div>
             <span class={NAV_LINKS_PAGES.arrowSpan}>
               <Arrows direction="right" />
             </span>
           </a>
         ) : (
-          <div />
+          <a
+            class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`}
+            href="/blog/"
+          >
+            <div class="text-right">
+              <div class={NAV_LINKS_PAGES.prevNext}>NOTES</div>
+              <div class={NAV_LINKS_PAGES.pageTitle}>Back to notes</div>
+            </div>
+            <span class={NAV_LINKS_PAGES.arrowSpan}>
+              <Arrows direction="right" />
+            </span>
+          </a>
         )
       }
     </div>

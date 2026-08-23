@@ -10,14 +10,14 @@ import type { CollectionEntry } from "astro:content";
 import { BORDER_INFO, NAV_LINKS_PAGES } from "@styles/utilsCSS";
 
 export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
-  const all_posts = await getCollection("blog");
+  const posts = await getCollection("blog");
 
-  const all_tags = [
-    ...new Set(all_posts.flatMap((post) => post.data.tags || [])),
-  ];
+  posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+  const all_tags = [...new Set(posts.flatMap((post) => post.data.tags || []))];
 
   return all_tags.flatMap((tag) => {
-    const filtered_posts = all_posts.filter((post) =>
+    const filtered_posts = posts.filter((post) =>
       post.data.tags?.includes(tag),
     );
 
