@@ -2,7 +2,7 @@
 import SideBarMenu from "@components/SideBarMenu.astro";
 import PhotoProfile from "@components/img-components/PhotoProfile.astro";
 import LinkIconsGroup from "@components/LinkIconsGroup.astro";
-import { DRAWER_BREAKPOINTS } from "@styles/utilsCSS";
+import { DRAWER_BREAKPOINTS, NAV_HEADER_CALC } from "@styles/utilsCSS";
 
 const { menuItems, mobile = false } = Astro.props;
 ---
@@ -26,7 +26,7 @@ const { menuItems, mobile = false } = Astro.props;
     </div>
   ) : (
     <div
-      class={` ${DRAWER_BREAKPOINTS.sideBar} w-68 shrink-0 sticky top-16 h-[calc(100vh-5rem)]`}
+      class={` ${DRAWER_BREAKPOINTS.sideBar} w-68 shrink-0 sticky ${NAV_HEADER_CALC.sideBarTop} h-[calc(100vh-5rem)]`}
     >
       <aside class="h-full bg-base-100 flex flex-col px-3">
         <div class="w-fit mx-auto pt-15 mb-6 shrink-0">
@@ -37,7 +37,7 @@ const { menuItems, mobile = false } = Astro.props;
           <SideBarMenu menuItems={menuItems} />
         </div>
 
-        <footer class="shrink-0 footer footer-center flex gap-x-2 justify-center items-center mb-2 mt-4">
+        <footer class="shrink-0 footer footer-center flex gap-x-2 justify-center items-center mb-0 pb-0 mt-4">
           <LinkIconsGroup />
         </footer>
       </aside>

@@ -1,6 +1,6 @@
 ---
 import { transitionMenu } from "@styles/menuCSS";
-import { DRAWER_BREAKPOINTS } from "@styles/utilsCSS";
+import { DRAWER_BREAKPOINTS, NAV_HEADER_CALC } from "@styles/utilsCSS";
 
 const currentLang = Astro.url.pathname.startsWith("/es") ? "es" : "en";
 
@@ -17,13 +17,12 @@ const langClass = (active: boolean) =>
 
 const glassEffect = "bg-base-100/50 backdrop-blur-md relative";
 const marginSolved = "py-1";
-const NAVBAR_HEIGHT = "h-[64px]";
 const NAME_ID = "Edgar Delgado";
 ---
 
 <!-- MOBILE VIEW -->
 <div
-  class=`sticky ${DRAWER_BREAKPOINTS.headerMobile} top-0 z-30 w-full ${NAVBAR_HEIGHT} ${glassEffect}`
+  class=`sticky ${DRAWER_BREAKPOINTS.headerMobile} top-0 z-30 w-full ${NAV_HEADER_CALC.navBarHeight} ${glassEffect}`
 >
   <div
     class="navbar w-full flex items-center justify-between md:px-5 sm:px-3 px-6"
@@ -93,7 +92,7 @@ const NAME_ID = "Edgar Delgado";
 
 <!-- PC VIEW -->
 <div
-  class={`${DRAWER_BREAKPOINTS.headerPC} items-center justify-between sticky top-0 z-30 px-8  ${NAVBAR_HEIGHT} ${glassEffect}`}
+  class={`${DRAWER_BREAKPOINTS.headerPC} items-center justify-between sticky top-0 z-30 px-8  ${NAV_HEADER_CALC.navBarHeight} ${glassEffect}`}
 >
   <!-- LEFT -->
   <div class=`flex items-center ${marginSolved}`>

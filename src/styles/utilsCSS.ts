@@ -70,3 +70,8 @@ export const DRAWER_BREAKPOINTS = {
   headerPC: "hidden min-[1280px]:flex",
   headerMobile: "min-[1280px]:hidden",
 };
+
+export const NAV_HEADER_CALC = {
+  sideBarTop: "top-[64px]",
+  navBarHeight: "h-[64px]",
+};
