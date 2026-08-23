@@ -10,7 +10,6 @@ import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug";
 import CardBlog from "@components/CardBlog.astro";
 import PreviousPosts from "@components/PreviousPosts.astro";
-import DividerNav from "@components/DividerNav.astro";
 
 // const posts = (await getCollection("blog")).sort(
 //   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -40,12 +39,13 @@ const last_posts = posts.slice(0, 3);
       <MainLinks contactText="LinkedIn" linkedin="L" github="G" youtube="Y" />
     </div>
 
-    <Experience workExperiences={allExperiences} indices={[0, 1]} />
+    <div class="flex justify-between items-center gap-2 mt-12 mb-10">
+      <h2 class="text-3xl font-bold">Notes</h2>
+      <div>
+        <PreviousPosts />
+      </div>
+    </div>
 
-    <!-- BLOG-NOTES -->
-    <h2 class="text-3xl w-full font-bold flex items-center mt-12 mb-10">
-      Recent Notes
-    </h2>
     {
       last_posts.map((post) => (
         <>
@@ -63,7 +63,8 @@ const last_posts = posts.slice(0, 3);
         </>
       ))
     }
-    <DividerNav />
-    <PreviousPosts />
+    <div class="mb-10"></div>
+
+    <Experience workExperiences={allExperiences} indices={[0, 1]} />
   </section>
 </BaseLayout>

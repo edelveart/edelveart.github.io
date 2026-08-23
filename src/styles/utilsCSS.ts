@@ -45,7 +45,7 @@ export function GET_COLORS_METADATA(badge?: BadgeName): BadgeClass {
 }
 
 export const NAV_LINKS_PAGES = {
-  aLink: `group flex w-full min-h-14 items-center gap-3 ${rounded} px-3 py-2 no-underline`,
+  aLink: `group flex w-full min-h-14 items-center gap-1.5 ${rounded} px-1 py-2 no-underline`,
   prevLeft: "justify-start",
   nextRight: "justify-end",
   prevNext: "text-sm uppercase tracking-wide text-base-content/75 font-light",
