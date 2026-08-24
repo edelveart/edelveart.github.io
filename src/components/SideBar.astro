@@ -13,7 +13,7 @@ const { menuItems, mobile = false } = Astro.props;
       <label for="my-drawer" class="drawer-overlay" />
 
       <aside class="w-72 min-h-full bg-base-100 flex flex-col px-2">
-        <div class="w-fit mx-auto mt-12 mb-6">
+        <div class="w-fit mx-auto mt-15 mb-8 shrink-0">
           <PhotoProfile class="w-24 avatar" />
         </div>
 
@@ -29,7 +29,7 @@ const { menuItems, mobile = false } = Astro.props;
       class={` ${DRAWER_BREAKPOINTS.sideBar} w-68 shrink-0 sticky ${NAV_HEADER_CALC.sideBarTop} h-[calc(100vh-5rem)]`}
     >
       <aside class="h-full bg-base-100 flex flex-col px-3">
-        <div class="w-fit mx-auto pt-15 mb-6 shrink-0">
+        <div class="w-fit mx-auto mt-15 mb-8 shrink-0">
           <PhotoProfile class="avatar w-24" />
         </div>
 
