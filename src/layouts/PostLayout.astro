@@ -45,7 +45,12 @@ const displayDate = dayjs(pubDate).format("ll");
 const ogImage = heroImage
   ? await getImage({
       src: heroImage,
+      width: 1200,
+      height: 630,
       format: "png",
+      fit: "contain",
+      position: "center",
+      background: "#24273a",
     })
   : undefined;
 
