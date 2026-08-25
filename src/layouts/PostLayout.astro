@@ -43,15 +43,19 @@ const displayDate = dayjs(pubDate).format("ll");
 //   : undefined;
 
 const ogImage = heroImage
-  ? await getImage({
-      src: heroImage,
-      width: 1200,
-      height: 630,
-      format: "png",
-      fit: "contain",
-      position: "center",
-      background: "#24273a",
-    })
+  ? heroImage.format === "svg"
+    ? await getImage({
+        src: heroImage,
+        format: "png",
+        // width: 1200,
+        // height: 630,
+        fit: "contain",
+        position: "center",
+        background: "#24273a",
+      })
+    : await getImage({
+        src: heroImage,
+      })
   : undefined;
 
 import {
