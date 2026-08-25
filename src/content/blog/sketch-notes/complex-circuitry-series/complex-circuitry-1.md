@@ -8,9 +8,11 @@ heroImage: "./complex-circuitry-1.svg"
 tags: ["complex variable", "tanh", "complex plane", "complex analysis"]
 ---
 
-Es un título de electricista, pero planeo escribir unas cuantas cuestiones sobre cómo atisbo la variable compleja $\mathbb{C}$, cálculo en el sentido más elemental (me gustan las ideas simples y que se repiten como una especie de canon por imitación directa a un intervalo cualquiera, solo variando la voz).
+Es un título de electricista, pero planeo escribir unas cuantas cuestiones sobre cómo atisbo la variable compleja $\mathbb{C}$, cálculo en el sentido más elemental.
 
-Veremos cosas, como las que en la versión `3` de mi librería [figuratenum](https://pypi.org/project/figuratenum/), incluí la técnica de coloración de dominio (*phase portraits* en inglés), que por causalidades del sino coinciden con lo que traeré a la maleza.
+> Me gustan las ideas simples y que se repiten como una especie de canon por imitación directa a un intervalo cualquiera, solo variando la voz.
+
+Veremos cosas, como las que incluí en la versión `3` de mi librería [figuratenum](https://pypi.org/project/figuratenum/), que fue la técnica de coloración de dominio (*phase portraits* en inglés), que por causalidades del sino coinciden con lo que traeré a la maleza.
 
 Antes de pasar al siguiente nivel de Mario Bros en el frame $19$, es deber mío confesar que esta serie nació porque me volví a encontrar una función ($\tanh$) que tiene algunos niveles secretos (realmente son muy sabidos), pero puede dar algo de reverberación a cómo suelo degustar la geometría compleja.
 
