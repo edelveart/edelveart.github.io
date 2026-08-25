@@ -58,6 +58,6 @@ export default defineConfig({
   },
 
   image: {
-    service: passthroughImageService(),
+    // service: passthroughImageService(),
   },
 });
