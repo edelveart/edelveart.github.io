@@ -1,4 +1,4 @@
-import { defineConfig, passthroughImageService } from "astro/config";
+import { defineConfig } from "astro/config";
 import { unified } from "@astrojs/markdown-remark";
 // import mdx from "@astrojs/mdx"; // NOT INSTALLED (only .md content)
 import sitemap from "@astrojs/sitemap";
@@ -58,6 +58,6 @@ export default defineConfig({
   },
 
   image: {
-    // service: passthroughImageService(),
+    dangerouslyProcessSVG: true,
   },
 });
