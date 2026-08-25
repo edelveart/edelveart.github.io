@@ -21,7 +21,9 @@ const { title, subtitle, description }: Props = Astro.props;
   <div class="experience__data pl-4 pb-4 w-full">
     <details class="group">
       <summary class="cursor-pointer list-none">
-        <h3 class=`${CARD_OP.title}  mb-1  transition-colors duration-150 group-hover:text-primary`>
+        <h3
+          class=`${CARD_OP.title}  mb-1  transition-colors duration-150 group-hover:text-primary`
+        >
           {title}
         </h3>
 
@@ -40,7 +42,9 @@ const { title, subtitle, description }: Props = Astro.props;
 
       {
         description && (
-          <p class={`mt-4 whitespace-pre-line max-w-180 ${CARD_OP.parr}`}>{description}</p>
+          <p class={`mt-4 whitespace-pre-line max-w-180 ${CARD_OP.parr}`}>
+            {description}
+          </p>
         )
       }
     </details>
