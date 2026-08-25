@@ -25,38 +25,29 @@ const {
 dayjs.extend(localizedFormat);
 const displayDate = dayjs(pubDate).format("ll");
 
-// IMAGE
-// {
-//   src: "/_astro/hero.hash.webp",
-//   width: 1200,
-//   height: 630,
-//   format: "webp"
-// }
-// const ogImage = heroImage?.src ?? `/og/${id}.png`;
-// const ogImage = heroImage
-//   ? await getImage({
-//       src: heroImage,
-//       width: 1200,
-//       height: 630,
-//       format: "png",
-//     })
-//   : undefined;
+const generateOgImage = async () => {
+  // SVG images need to be converted to PNG for Open Graph.
+  if (heroImage?.format === "svg") {
+    const image = await getImage({
+      src: heroImage,
+      format: "png",
+      width: 1200,
+      height: 630,
+      fit: "contain",
+      position: "center",
+      background: "#24273a",
+    });
+    return image.src;
+  }
+  // Use the original image if the post has one.
+  if (heroImage) {
+    return heroImage.src;
+  }
+  // Generate a default OG image with Satori.
+  return `/og/${id}.png`;
+};
 
-const ogImage = heroImage
-  ? heroImage.format === "svg"
-    ? await getImage({
-        src: heroImage,
-        format: "png",
-        // width: 1200,
-        // height: 630,
-        fit: "contain",
-        position: "center",
-        background: "#24273a",
-      })
-    : await getImage({
-        src: heroImage,
-      })
-  : undefined;
+const ogImage = await generateOgImage();
 
 import {
   MAX_W_CONTENT,
@@ -69,7 +60,7 @@ import {
 <BaseLayout
   title={title}
   description={description}
-  image={ogImage?.src ?? "/LinkedInProfile.webp"}
+  image={ogImage}
   ogType="article"
   wide
 >
