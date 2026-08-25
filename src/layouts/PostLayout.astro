@@ -1,8 +1,10 @@
 ---
+import { getImage } from "astro:assets";
 import { type BlogSchema } from "../content.config";
 import BaseLayout from "./BaseLayout.astro";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+
 export interface Props extends BlogSchema {
   id: string;
   heroImage?: ImageMetadata;
@@ -19,9 +21,10 @@ const {
   heroImage,
   tags = [],
 } = Astro.props;
+
 dayjs.extend(localizedFormat);
 const displayDate = dayjs(pubDate).format("ll");
-// const ogImage = heroImage ?? `/og/${id}.png`;
+
 // IMAGE
 // {
 //   src: "/_astro/hero.hash.webp",
@@ -29,7 +32,23 @@ const displayDate = dayjs(pubDate).format("ll");
 //   height: 630,
 //   format: "webp"
 // }
-const ogImage = heroImage?.src ?? `/og/${id}.png`;
+// const ogImage = heroImage?.src ?? `/og/${id}.png`;
+// const ogImage = heroImage
+//   ? await getImage({
+//       src: heroImage,
+//       width: 1200,
+//       height: 630,
+//       format: "png",
+//     })
+//   : undefined;
+
+const ogImage = heroImage
+  ? await getImage({
+      src: heroImage,
+      format: "png",
+    })
+  : undefined;
+
 import {
   MAX_W_CONTENT,
   CARD_OP,
@@ -41,7 +60,7 @@ import {
 <BaseLayout
   title={title}
   description={description}
-  image={ogImage ?? "/LinkedInProfile.webp"}
+  image={ogImage?.src ?? "/LinkedInProfile.webp"}
   ogType="article"
   wide
 >
