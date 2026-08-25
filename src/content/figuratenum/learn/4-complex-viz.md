@@ -11,7 +11,11 @@ The technique is domain coloring, producing a phase portrait following Wegert (2
 from figuratenum.figurate_viz import ComplexViz
 
 c = ComplexViz()
-c.visualize_plane("triangular", cmap_color="viridis", disk_radius=2.0)
+c.visualize_plane(
+    "triangular",
+    cmap_color="viridis",
+    disk_radius=2.0
+)
 ```
 
 ## Three methods, one per dimension
@@ -34,12 +38,14 @@ c.visualize_plane("triangular", cmap_color="viridis", disk_radius=2.0)
 c.visualize_space(
     "tetrahedral",
     plot_type="modulus_contours",
-    xlim=(-0.5, 0.5), ylim=(-0.5, 0.5), disk_radius=0.5
+    xlim=(-0.5, 0.5), ylim=(-0.5, 0.5),
+    disk_radius=0.5
 )
 
 c.visualize_multidim(
-    "k_dim_centered_hypertetrahedron", k=4,
-    cmap_color="cividis", disk_radius=2.0
+    "k_dim_centered_hypertetrahedron",
+    k=4, cmap_color="cividis",
+    disk_radius=2.0
 )
 ```
 

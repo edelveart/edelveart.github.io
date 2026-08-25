@@ -10,7 +10,11 @@ order: 5
 from figuratenum.figurate_viz import DiscreteViz
 
 d = DiscreteViz()
-d.visualize_plane("polygonal", m=17, n_terms=330, circ_color="g", bg_color="k")
+d.visualize_plane(
+    "polygonal",
+    m=17, n_terms=330,
+    circ_color="g", bg_color="k"
+)
 ```
 
 ## Three methods, one per dimension
@@ -32,8 +36,10 @@ d.visualize_plane("polygonal", m=17, n_terms=330, circ_color="g", bg_color="k")
 d.visualize_space("icosahedral", n_terms=300)
 
 d.visualize_multidim(
-    "k_dim_hyperoctahedron", k=5, n_terms=704,
-    circ_color="m", bg_color="k", ext_circle=True, rotate=-1
+    "k_dim_hyperoctahedron",
+    k=5, n_terms=704,
+    circ_color="m", bg_color="k",
+    ext_circle=True, rotate=-1
 )
 ```
 
