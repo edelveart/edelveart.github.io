@@ -1,7 +1,7 @@
 ---
 title: "Circuitería de variable compleja I"
 description: "Primer episodio a lenta voz de funciones de variable compleja como sucesiones de transformaciones geométricas, con un pequeño toque de DSP y una pregunta."
-pubDate: "August 24 2026"
+pubDate: "August 25 2026"
 badge: "sketch notes"
 lang: "es"
 heroImage: "./complex-circuitry-1.svg"
@@ -149,11 +149,11 @@ O, ¿qué pasaría si descomponemos en dos exponenciales? ¿Es `depth=2` o `dept
 
 Frente a las preguntas, cabríamos esperar también la reducción a un patrón (vuelvo nuevamente a la idea de iteración). Mi pregunta natural es:
 
-> ¿Existe un operador aritmético $\varTheta$ base que pueda iterarse simplemente y detenerse en esta función $\tanh(z)$ de manera natural?
+> ¿Existe alguna composición de  mapeos complejos  (con un aroma aritmético) $T$ base que pueda iterarse simplemente y detenerse en esta función $\tanh(z)$ de manera natural?
 
-Conviene parar nuestro coche nuevamente y cuestionarnos o elaborar algo más formal para establecer qué entendemos por natural. Al respecto, ese operador aritmético elemental quizás pudiera generar una familia bella de funciones.
+Conviene parar nuestro coche nuevamente y cuestionarnos o elaborar algo más formal para establecer **qué entendemos por natural**. Al respecto, ese operador aritmético elemental quizás pudiera generar una familia bella de funciones.
 
 Es más, iría un tramo de la panamericana más lejos. Una vez pensada con algo más de tiempo la idea de profundidad, me pregunto:
 
-> Si existe ese tal $\varTheta$, ¿cuál es el momento congelado más natural (función) de la cadena infinita de transformaciones $\vartheta_j$?
+> Si existe ese tal $T$, ¿cuál es el momento congelado más natural (función) de la cadena infinita de transformaciones $\vartheta_j$?
 
