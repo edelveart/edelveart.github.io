@@ -2,7 +2,7 @@
 title: "Circuitería de variable compleja II"
 description: "Segundo episodio en directo con la sigmoide y la tangente hiperbólica hacia ciertos límites."
 pubDate: "August 26 2026"
-badge: "misc notes"
+badge: "sketch notes"
 lang: "es"
 heroImage: "./complex-circuitry-2.svg"
 tags: ["complex variable", "tanh",  "sigmoid function", "complex analysis", "operator"]
