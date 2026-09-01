@@ -190,10 +190,9 @@ $$
 $$
 for all vertices $p_0$ and ${p_0}^{'}$.
 
-This leads us to say that each vertex is found in the same number $r=2$ of edges.
-This uniformity is not a coincidence, it is a consequence of the `transitive action`. Since the symmetry group can transform any vertex into any other vertex, and the group preserves the structure, every vertex must "look the same" from the perspective of the polytope.
+This leads us to say that each vertex is found in the same number $r=2$ of edges. Since the symmetry group can transform any vertex into any other vertex, and the group preserves the structure, every vertex must "look the same" from the perspective of the polytope.
 
-In our triangle, each vertex meets exactly $2$ edges, each edge connects exactly $2$ vertices, and each face is bounded by exactly $3$ edges. This is the combinatorial fingerprint of regularity.
+In our triangle, each vertex meets exactly $2$ edges, each edge connects exactly $2$ vertices, and each face is bounded by exactly $3$ edges.
 
 ## Construing Regular PolyTypes
 
