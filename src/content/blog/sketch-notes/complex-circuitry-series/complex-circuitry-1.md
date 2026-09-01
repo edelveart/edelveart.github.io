@@ -2,7 +2,7 @@
 title: "Circuitería de variable compleja I"
 description: "Primer episodio a lenta voz de funciones de variable compleja como sucesiones de transformaciones geométricas, con un pequeño toque de DSP y una pregunta."
 pubDate: "August 24 2026"
-badge: "lab notes"
+badge: "sketch notes"
 lang: "es"
 heroImage: "./complex-circuitry-1.svg"
 updatedDate: "August 25 2026"

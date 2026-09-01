@@ -2,7 +2,7 @@
 title: "Circuitería de variable compleja III"
 description: "Tercer episodio en directo con un retrato de la sigmoide compleja y la tangente hiperbólica, con sus polos norte y sur y sus ceros en la torre imaginaria."
 pubDate: "August 29 2026"
-badge: "lab notes"
+badge: "sketch notes"
 lang: "es"
 heroImage: "./complex-circuitry-3-product-tanhz-sigmoidz.png"
 tags: ["phase portrait", "tanh", "sigmoid function", "complex analysis", "domain coloring"]
