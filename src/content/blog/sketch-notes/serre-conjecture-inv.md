@@ -1,7 +1,7 @@
 ---
 title: "Conjetura de Serre e inversiones"
-description: "Otro de los motivos de mis amanecidas son las inversiones que aparecen por doquier en multitud de preguntas y definiciones ingenuas. Cuento tres ejemplos."
-pubDate: "August 30 2026"
+description: "Otro motivo de mis amanecidas es pensar en invertir asociaciones que aparecen por doquier, en preguntas y definiciones cuya respuesta simula sencillez. Cuento tres ejemplos, uno asimétrico."
+pubDate: "September 1 2026"
 badge: "sketch notes"
 heroImage: "serre-conjecture-inv.svg"
 lang: "es"
