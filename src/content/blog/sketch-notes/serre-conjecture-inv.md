@@ -3,6 +3,7 @@ title: "Conjetura de Serre e inversiones"
 description: "Otro motivo de mis amanecidas es pensar en invertir asociaciones que aparecen por doquier, en preguntas y definiciones cuya respuesta simula sencillez. Cuento tres ejemplos, uno asimétrico."
 pubDate: "September 1 2026"
 badge: "sketch notes"
+updatedDate: "September 3 2026"
 heroImage: "serre-conjecture-inv.svg"
 lang: "es"
 tags: ["modular forms", "live coding", "galois representation", "elliptic curves", "Serre conjecture", "number theory"]
