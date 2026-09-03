@@ -20,7 +20,7 @@ El germen fueron las curvas elípticas $E(K)$, un tipo de objeto geométrico que
 Luego, vinieron las formas modulares $f$, esas hermosas funciones generadoras que subsumen aritmética de forma natural.
 Para mí son un punto de luz en una naturaleza muerta.
 
-> Muchas de las verificaciones numéricas y los *tests* de `modular_forms` las cotejé con [LMFDB](https://www.lmfdb.org/). Aún queda mucho por determinar, sobre todo en lo relativo al *DSL*. Aquí tienes el [código fuente](https://github.com/edelveart/modular_forms). Si lo usas en tu proyecto, cítalo mediante [**Zenodo**](https://doi.org/10.5281/zenodo.19503416).
+> Contrasté muchas de las verificaciones numéricas y los *tests* de `modular_forms` con [LMFDB](https://www.lmfdb.org/). Aún queda mucho por determinar, especialmente en lo relativo al *DSL*. Aquí tienes el [código fuente](https://github.com/edelveart/modular_forms). Si utilizas este código en tu proyecto, cítalo mediante [**Zenodo**](https://doi.org/10.5281/zenodo.19503416).
 
 Al respecto, luego leí muy someramente sobre la **conjetura de Serre**, cuyos objetos llamados representaciones de Galois aún no he implementado computacionalmente, y no espero hacerlo hasta que tengan para mí ese sabor natural y espontáneo.
 
