@@ -30,7 +30,7 @@ import {
 <a
   href={url}
   target={target}
-  class=`group flex ${BORDER_OPACITY} p-4 my-4 mx-auto flex-col`
+  class=`group flex ${BORDER_OPACITY} p-4  mx-auto flex-col`
 >
   <h2
     class=`${CARD_OP.title} group-hover:text-primary line-clamp-2 md:line-clamp-none transition-colors`
@@ -62,23 +62,13 @@ import {
         <Image
           src={heroImage}
           alt={title}
-          class="max-h-40 sm:max-h-60 max-w-full object-contain rounded-md"
+          class="h-auto max-w-full object-contain rounded-md max-h-40 sm:max-h-24"
         />
       </div>
     )
   }
 
-  <!-- {
-    heroImage && (
-      <div class="flex h-40 sm:h-52 items-center justify-center overflow-hidden my-2">
-        <Image
-          src={heroImage}
-          alt={title}
-          class="max-h-full max-w-full object-contain rounded-md"
-        />
-      </div>
-    )
-  } -->
+  <!-- class="max-h-40 sm:max-h-60 max-w-full object-contain rounded-md" -->
 
   <p class=`mt-1 ${CARD_OP.parr} md:line-clamp-none line-clamp-2`>
     {desc}

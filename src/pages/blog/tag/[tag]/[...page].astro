@@ -23,7 +23,7 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
 
     return paginate(filtered_posts, {
       params: { tag },
-      pageSize: 5,
+      pageSize: 8,
     });
   });
 };
@@ -72,20 +72,22 @@ const params = Astro.params;
           </div>
         ) : (
           <div class="mt-10">
-            {page.data.map((post) => (
-              <>
-                <CardBlog
-                  title={post.data.title}
-                  url={"/blog/" + createSlug(post.data.title, post.id) + "/"}
-                  heroImage={post.data.heroImage}
-                  desc={post.data.description}
-                  target="_self"
-                  pubDate={post.data.pubDate}
-                  tags={post.data.tags}
-                  badge={post.data.badge}
-                />
-              </>
-            ))}
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {page.data.map((post) => (
+                <>
+                  <CardBlog
+                    title={post.data.title}
+                    url={"/blog/" + createSlug(post.data.title, post.id) + "/"}
+                    heroImage={post.data.heroImage}
+                    desc={post.data.description}
+                    target="_self"
+                    pubDate={post.data.pubDate}
+                    tags={post.data.tags}
+                    badge={post.data.badge}
+                  />
+                </>
+              ))}
+            </div>
           </div>
         )
       }
