@@ -30,7 +30,7 @@ This post is probably the least technical and most lazy-Sunday thing I've writte
 
 ## Prelude
 
-My suspicion that something big was brewing in the Sonic Pi world started a few days ago, when I'd been watching some pretty long `commits` over on the [repository](https://github.com/sonic-pi-net/sonic-pi), especially this juicy [`commit c522300`](https://github.com/sonic-pi-net/sonic-pi/commit/c52230084d4255ef4c4bde9d365d78d016ac3328).
+My suspicion that something big was brewing in the Sonic Pi world started a few days ago, when I'd been watching some pretty long `commits` over on the repository (`dev branch`), especially this juicy [`commit c522300`](https://github.com/sonic-pi-net/sonic-pi/commit/c52230084d4255ef4c4bde9d365d78d016ac3328).
 
 It introduces the **mruby runtime** and makes a massive shift in the **GUI** toward the versatility that comes from writing things in a web environment. Without further ado, you can read the more technical notes on capabilities and more in [a Patreon post by Sam Aaron](https://www.patreon.com/samaaron/posts/sonic-pi-on-web-170441491).
 
@@ -51,7 +51,7 @@ Right there, as you already saw in one of the images, I clicked the **`+`** icon
 On the [Figurate Numbers GitHub repo](https://github.com/edelveart/figurate_numbers) I decided to build 3 `tools` (simple scripts, formatted with a little help from AI) to generate two versions of my gem.
 The first one is a clean, human-readable version, which I generated at [`./dist/sonic_pi_web/`](https://github.com/edelveart/figurate_numbers/tree/main/dist/sonic_pi_web), and the second one (also readable, technically), is clunkier, and it's the one I actually recommend in the README, over at [`./dist/sonic_pi_web_min`](https://github.com/edelveart/figurate_numbers/tree/main/dist/sonic_pi_web_min).
 
-If you go into that last one, you'll find several `.rb` files, which you can and should **download**, or just click the README and open it in your browser.
+If you go into that last one, you'll find several `.rb` files, which you can and should **download**, or just click the [links in the README](https://github.com/edelveart/figurate_numbers/blob/main/README.md#how-to-use-in-sonic-pi-web) and open it in your browser.
 
 ## Load and play
 
@@ -59,8 +59,7 @@ Once you've loaded, say, the `plane_figurate_numbers.min.rb` file, it'll show up
 
 ![Loaded minified bundle of plane figurate numbers](sp-web-minified.png)
 
-You need to hit run with `ctrl+r`, or click the `play` button. Done, now all that's left is switching buffers, and you can run things like the examples and lists that show up in the dropdowns in the [`README.md`](https://github.com/edelveart/figurate_numbers/blob/main/README.md). I went with the generalized pentagonal numbers for their connection to the partition function ([see the advanced theory](https://edelveart.github.io/figuratenum/advanced-theory/)).
-
+You need to hit run with `ctrl+r`, or click the `play` button. Done, now all that's left is switching buffers, and you can run things like the **examples and lists** that show up in the dropdowns in the README file. I went with the generalized pentagonal numbers for their connection to the partition function ([check out some advanced theory in my `figuratenum` docs](https://edelveart.github.io/figuratenum/advanced-theory/)).
 
 ![Readme Basic Snippet of Use](sp-web-basic-snippet.png)
 
@@ -99,6 +98,6 @@ Guess which bundles in my library won't let you see their QR code, even minified
 
 ## Before we go
 
-Well, this is a great new possibility for browser-based tech, for the benefit of the community and everyone looking for a practically instant way into live coding. I'll leave the thread about this web launch right here: [community discussion](https://in-thread.sonic-pi.net/t/sonic-pi-now-runs-in-the-web/10058/3).
+Well, this is a great new possibility for browser-based tech, for the benefit of the community and everyone looking for a practically instant way into live coding. I'll leave the thread about this web launch right here: [Sonic Pi now runs in the web](https://in-thread.sonic-pi.net/t/sonic-pi-now-runs-in-the-web/10058/3).
 
-Don't forget to drop a twinkly little star on the repo, so I can keep smashing `require` blocks like Mario Bros, for this Sonic Pi Web surprise we just got.
+Don't forget to drop a twinkly little star on my [repo](https://github.com/edelveart/figurate_numbers/), so I can keep smashing `require` blocks like Mario Bros, for this Sonic Pi Web surprise we just got.
