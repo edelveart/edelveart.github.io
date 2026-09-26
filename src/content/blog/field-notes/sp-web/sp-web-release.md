@@ -105,9 +105,10 @@ It also shows the process nodes, just like the installable version, and introduc
 
 ## A Few Things I Noticed
 
-I also noticed a tiny issue in the documentation: some longer synth names (`Sc808 Closed Hihat`) overlap slightly. It's a very minor visual glitch.
+I also noticed a tiny issue in the documentation. Some longer synth names overlap slightly, and there are a few small naming inconsistencies between the search panel and the documentation, for example **Sc808 Closed Hihat** vs. **SC-808 Closed Hi-Hat**.
+It might be worth standardizing the names across both. It’s a very minor visual glitch.
 
-![Glitch ith Synths Name](sp-web-docs-issue.png)
+![Docs glitch synth names](sp-web-docs-issue-names.png)
 
 ## Before we go, another QR for you
 
