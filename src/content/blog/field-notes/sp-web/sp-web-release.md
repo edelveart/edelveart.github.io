@@ -1,6 +1,6 @@
 ---
 title: "Sonic Pi Web and Figurate Numbers, Minified"
-description: "Sonic Pi landed on the web in September. Do you remember? I spent an afternoon minifying my own gem just to make it play smoothly What is Love from a QR code."
+description: "Sonic Pi landed on the web in September. Do you remember? I spent an afternoon minifying my own Ruby gem just to make it play smoothly What is Love from a QR code."
 pubDate: "September 25 2026"
 heroImage: "./sp-web-pianoroll.png"
 badge: "field notes"
