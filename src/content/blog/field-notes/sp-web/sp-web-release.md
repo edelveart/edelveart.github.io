@@ -39,7 +39,7 @@ So I could copy the parts of my gem that didn't have any `require` straight into
 
 Right there, as you already saw in one of the images, I clicked the **`+`** icon. Clicking it lets you load `.rb` or `.txt` files into an empty buffer. And then I thought to myself: what if I **minify** the necessary parts so I can load and use them in another buffer?
 
-## Splitting and minifying the thing
+## Splitting and minifying the Ruby gem
 
 On the [Figurate Numbers GitHub repo](https://github.com/edelveart/figurate_numbers) I decided to build 3 `tools` (simple scripts, formatted with a little help from AI) to generate two versions of my gem.
 The first one is a clean, human-readable version, which I generated at [`./dist/sonic_pi_web/`](https://github.com/edelveart/figurate_numbers/tree/main/dist/sonic_pi_web), and the second one (also readable, technically), is clunkier, and it's the one I actually recommend in the README, over at [`./dist/sonic_pi_web_min`](https://github.com/edelveart/figurate_numbers/tree/main/dist/sonic_pi_web_min).
@@ -89,7 +89,7 @@ Guess which bundles in my library won't let you see their QR code, even minified
 
 > This program is too big for a QR code a phone can read: copy the link or save it as a file instead.
 
-## Piano roll and other little things
+## Piano roll and timeline
 
 Missed your DAW environment? Well, this new GUI comes with a **Piano roll** so you can feel right at home.
 Clicking on the little chocolate bars will immediately take you to the corresponding line of code in the buffer.
@@ -103,7 +103,7 @@ It also shows the process nodes, just like the installable version, and introduc
 
 ![TimeLine in Sonic Pi Web](sp-web-timeline.png)
 
-## A Few Things I Noticed
+## A few things Inoticed
 
 I also noticed a tiny issue in the documentation. Some longer synth names overlap slightly, and there are a few small naming inconsistencies between the search panel and the documentation, for example **Sc808 Closed Hihat** vs. **SC-808 Closed Hi-Hat**.
 It might be worth standardizing the names across both. It’s a very minor visual glitch.
