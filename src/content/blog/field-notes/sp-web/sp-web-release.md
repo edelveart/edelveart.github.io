@@ -105,9 +105,9 @@ It also shows the process nodes, just like the installable version, and introduc
 
 ## A Few Things I Noticed
 
-The main problem is that I don't see the beautiful **wave**, **lissajous**, or **bars** visuals in the scope view. It only shows the **line** option at the top.
+I also noticed a tiny issue in the documentation: some longer synth names (`Sc808 Closed Hihat`) overlap slightly. It's a very minor visual glitch.
 
-![Sonic Pi Web - Scope Issue](sp-web-scope-issue.png)
+![Glitch ith Synths Name](sp-web-docs-issue.png)
 
 ## Before we go, another QR for you
 
