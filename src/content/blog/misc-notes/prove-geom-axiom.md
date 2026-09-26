@@ -4,10 +4,11 @@ description: "A Saturday reflection on imagining a geometry of axiomatic systems
 pubDate: "July 18 2026"
 badge: "misc notes"
 updatedDate: "September 1 2026"
+heroImage: "./prove-geom-axiom.png"
 tags: ["logic", "axiomatic method", "type theory", "philosophy of mathematics", "lean"]
 ---
 
-Every once in a while, after long stretches of time, and again this Saturday, I have wondered about the future of the axiomatic method ever since I read Robert Blanché's [*La axiomática*](https://books.google.com.pe/books/about/La_Axiom%C3%A1tica.html?id=Rf--PQAACAAJ&redir_esc=y).
+Every once in a while, after long stretches of time, and again this Saturday, I have wondered about the future of the axiomatic method ever since I read Robert Blanché's [*La axiomática*](https://books.google.com.pe/books/about/La_Axiom%C3%A1tica.html?id=Rf--PQAACAAJ).
 
 I've also been circling an idea about how to build new intuitions about formal objects out of things from the past.
 Along those lines, questions like these come to me.
