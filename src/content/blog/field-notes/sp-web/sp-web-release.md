@@ -1,18 +1,11 @@
 ---
 title: "Sonic Pi Web and Figurate Numbers, Minified"
-description: "Sonic Pi landed on the web in September. Do you remember? I spent an afternoon minifying my own gem just to make it play nice."
+description: "Sonic Pi landed on the web in September. Do you remember? I spent an afternoon minifying my own gem just to make it play smoothly What is Love from a QR code."
 pubDate: "September 25 2026"
-heroImage: "./sp-web-minified.png"
+heroImage: "./sp-web-pianoroll.png"
 badge: "field notes"
-# updatedDate: "September 25 2026"
-tags:   ["sonic pi", "live coding", "ruby",
-    "creative coding",
-    "figurate numbers",
-    "sonic pi tutorial",
-    "music technology",
-    "algorithmic composition",
-    "mathematics",
-  ]
+updatedDate: "September 26 2026"
+tags: ["sonic pi", "live coding", "ruby", "creative coding", "figurate numbers", "sonic pi tutorial",  "music technology", "algorithmic composition", "mathematics"]
 ---
 
 Between July and August this year came a qualitatively huge leap with Sonic Pi version 5, which I reviewed and shared some code to play with ([read it here](https://edelveart.github.io/blog/sonic-pi-5-rc-first-impressions-with-what-is-love/)), and just a few hours ago, in September, **Earth, Wind, and Fire moved**, as [Sonic Pi for the Web](https://sonic-pi.net/code.html) dropped.
@@ -96,8 +89,35 @@ Guess which bundles in my library won't let you see their QR code, even minified
 
 > This program is too big for a QR code a phone can read: copy the link or save it as a file instead.
 
-## Before we go
+## Piano roll and other little things
 
-Well, this is a great new possibility for browser-based tech, for the benefit of the community and everyone looking for a practically instant way into live coding. I'll leave the thread about this web launch right here: [Sonic Pi now runs in the web](https://in-thread.sonic-pi.net/t/sonic-pi-now-runs-in-the-web/10058/3).
+Missed your DAW environment? Well, this new GUI comes with a **Piano roll** so you can feel right at home.
+Clicking on the little chocolate bars will immediately take you to the corresponding line of code in the buffer.
+
+Still no way to **quantize notes with mouse gestures** yet, though.
+
+![Piano Roll in Sonic Pi Web](sp-web-pianoroll.png)
+
+Well, a lot of the work here comes from the `SuperSonic` runtime engine.
+It also shows the process nodes, just like the installable version, and introduces a new **Timeline** section.
+
+![TimeLine in Sonic Pi Web](sp-web-timeline.png)
+
+## A Few Things I Noticed
+
+The main problem is that I don't see the beautiful **wave**, **lissajous**, or **bars** visuals in the scope view. It only shows the **line** option at the top.
+
+![Sonic Pi Web - Scope Issue](sp-web-scope-issue.png)
+
+## Before we go, another QR for you
+
+Before I say goodbye, I want to share once again my version of **What Is Love** by Haddaway.
+
+![What Is Love by Edgar Delgado Vega in Sonic Pi Web QR code](sp-web-qr-what-is-love.png)
+
+I'll be uploading another one of my favorite tracks in a future post, and I'll share it with you too.
+
+Well, this is a great new possibility for browser-based tech, for the benefit of the community and everyone looking for a practically instant way into live coding.
+I'll leave the thread about this web launch right here: [Sonic Pi now runs in the web](https://in-thread.sonic-pi.net/t/sonic-pi-now-runs-in-the-web/10058/3).
 
 Don't forget to drop a twinkly little star on my [repo](https://github.com/edelveart/figurate_numbers/), so I can keep smashing `require` blocks like Mario Bros, for this Sonic Pi Web surprise we just got.
