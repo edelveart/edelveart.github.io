@@ -41,7 +41,7 @@ Right there, as you already saw in one of the images, I clicked the **`+`** icon
 
 ## Splitting and minifying the Ruby gem
 
-On the [Figurate Numbers GitHub repo](https://github.com/edelveart/figurate_numbers) I decided to build 3 `tools` (simple scripts, formatted with a little help from AI) to generate two versions of my gem.
+On the [Figurate Numbers GitHub repo](https://github.com/edelveart/figurate_numbers) I decided to build 2 `tools` (simple scripts, formatted with a little help from AI) to generate two versions of my gem.
 The first one is a clean, human-readable version, which I generated at [`./dist/sonic_pi_web/`](https://github.com/edelveart/figurate_numbers/tree/main/dist/sonic_pi_web), and the second one (also readable, technically), is clunkier, and it's the one I actually recommend in the README, over at [`./dist/sonic_pi_web_min`](https://github.com/edelveart/figurate_numbers/tree/main/dist/sonic_pi_web_min).
 
 If you go into that last one, you'll find several `.rb` files, which you can and should **download**, or just click the [links in the README](https://github.com/edelveart/figurate_numbers/blob/main/README.md#how-to-use-in-sonic-pi-web) and open it in your browser.
