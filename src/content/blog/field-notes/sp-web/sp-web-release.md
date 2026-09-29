@@ -4,7 +4,7 @@ description: "Sonic Pi landed on the web in September. Do you remember? I spent 
 pubDate: "September 25 2026"
 heroImage: "./sp-web-pianoroll.png"
 badge: "field notes"
-updatedDate: "September 26 2026"
+updatedDate: "September 29 2026"
 tags: ["sonic pi", "live coding", "ruby", "creative coding", "figurate numbers", "sonic pi tutorial",  "music technology", "algorithmic composition", "mathematics"]
 ---
 
@@ -109,6 +109,15 @@ I also noticed a tiny issue in the documentation. Some longer synth names overla
 It might be worth standardizing the names across both. It’s a very minor visual glitch.
 
 ![Docs glitch synth names](sp-web-docs-issue-names.png)
+
+Both issues were fixed in this GitHub commit:
+
+- [`c598aa2`](https://github.com/sonic-pi-net/sonic-pi/commit/c598aa25e621fff3f465366825e91f1719bade9b)
+
+```txt
+Web - name synths and FX the same
+in the docs list as on their cards
+```
 
 ## Before we go, another QR for you
 
