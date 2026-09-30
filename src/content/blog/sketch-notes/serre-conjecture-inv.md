@@ -53,7 +53,7 @@ Ahora lo que haremos es sumar esos recíprocos hasta el infinito. Aquí mezclamo
 Y además, la inversión que mencionamos.
 
 $$
-\sum_{a=1}^{\infty}\frac{1}{a}
+\sum_{a=1}^{\infty}\frac{1}{a}.
 $$
 
 Por último, el proceso de convertirla en función zeta es la introducción de un parámetro $s$, inicilamente en la región $\Re(s) > 1$, usando los inversos de las potencias $a^{s}$ sobre un objeto ya iterado y acumulado, y luego la continuación analítica. Cuando probamos que la serie diverge, realmente pienso que el peso de los recuerdos es inabordable, desborda a la creatura matemática.
