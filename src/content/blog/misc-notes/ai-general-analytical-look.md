@@ -2,7 +2,7 @@
 title: "Mirada somera y analítica con inteligencia artificial"
 description: "Algunas reflexiones sobre mi modo de trabajo con inteligencia artificial en la escritura, las matemáticas, el software y la música."
 pubDate: "August 15 2026"
-heroImage: "ai-general-analytical-look.png"
+heroImage: "ai-general-analytical-look.svg"
 updatedDate: "October 1 2026"
 badge: "misc notes"
 lang: "es"
@@ -100,7 +100,7 @@ Lo que no delego es porque me gusta construir argumentos, conservar en memoria, 
 
 Para culminar la sección, los de tipo $1$ son tareas que bien podría hacer yo si tuviera la variable tiempo $t$ a discreción. Pero $t$ no está a discreción y, por ello, debo decidir dónde poner los *watts* de  potencia mental $P$, pues al final $E = Pt$, donde $E$ es la energía mental invertida en joules.
 
-![Energía humana versus IA](ai-general-analytical-look.png)
+![Energía humana versus IA](ai-general-analytical-look.svg)
 
 ## Síntesis aditiva
 
