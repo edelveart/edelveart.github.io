@@ -13,11 +13,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "^7.2.2",
+    "@astrojs/markdown-remark": "^7.3.1",
     "@fontsource-variable/source-code-pro": "^5.2.7",
     "@fontsource-variable/source-sans-3": "^5.2.9",
     "@tailwindcss/vite": "^4.1.13",
-    "astro": "^7.2.4",
+    "astro": "^7.3.5",
     "dayjs": "^1.11.9",
     "satori": "^0.28.2",
     "sharp": "^0.35.3",
@@ -25,8 +25,8 @@
     "typescript": "^6.0.3"
   },
   "devDependencies": {
-    "@astrojs/rss": "^4.0.18",
-    "@astrojs/sitemap": "^3.7.2",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
     "@catppuccin/daisyui": "^2.1.1",
     "@tailwindcss/typography": "^0.5.10",
     "@types/katex": "^0.16.8",
