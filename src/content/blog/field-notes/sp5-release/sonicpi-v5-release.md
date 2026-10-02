@@ -750,7 +750,7 @@ end
 with_fx :panslicer, invert_wave: 1, phase: 1.0/4 do
   live_loop :splash,  delay: 32 * 1 do
     use_random_seed 43
-    sample :ambi_lunar_land, release: 0.25, amp: rrand(0.2,0.3)*1
+    sample :ambi_lunar_land, release: 0.25, amp: rrand(0.08,0.12)*1
     sleep 0.5
   end
 end
