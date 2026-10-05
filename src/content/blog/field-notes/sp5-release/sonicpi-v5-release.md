@@ -560,7 +560,7 @@ The functionality to create your own decks was removed in the latest RCs. Sam Aa
 
 > Also, the quickstart card loading functionality was dev-only - I've not put enough thought into the file format and features yet to open that up fully - so it won't feature in v5.
 
-#### Removed steps for v5
+### Removed steps for v5
 
 The following steps show how this dev-only functionality worked before it was removed.
 
