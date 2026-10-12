@@ -1,0 +1,90 @@
+export const MISC_RESOURCES = [
+  {
+    href: "/resources-files/misc-torsion-ell-number-fields.pdf",
+    title: "Cuando tuerces curvas elípticas sobre cuerpos numéricos",
+  },
+  {
+    href: "/resources-files/misc-primes-top.pdf",
+    title: "Pegado de números primos antes de tomar café en la noche",
+  },
+  {
+    href: "/resources-files/misc-axioms-alg-top.pdf",
+    title: "Un comentario sobre axiomática vegetal antes de tomar café",
+  },
+  {
+    href: "/resources-files/misc-geo-inversion-human-earth.pdf",
+    title: "Ayer se invirtieron volumétricamente los humanos y la Tierra",
+  },
+  {
+    href: "/resources-files/misc-counterpoint-fux.pdf",
+    title: "Consonancia y disonancia en Fux: La función de polaridad",
+  },
+  {
+    href: "/resources-files/misc-circular-saw-fourier.pdf",
+    title: "Carpintería al máximo detalle con los dientes de Fourier",
+  },
+  {
+    href: "/resources-files/misc-beyond-fibonacci.pdf",
+    title: "De Fibonacci al Super-Nacci: tropiezo a tropiezo",
+  },
+  {
+    href: "/resources-files/misc-currying-ts.pdf",
+    title: "Funciones currificadas en TypeScript",
+  },
+  {
+    href: "/resources-files/misc-r-pearson.pdf",
+    title: "R de Pearson, cortesía de Sonic Visualiser",
+  },
+  {
+    href: "/resources-files/misc-mat-bourbaki.pdf",
+    title: "Matrices que no se ven como matrices",
+  },
+  {
+    href: "/resources-files/misc-microphones-multiplication.pdf",
+    title: "Micrófonos de Gauss y tablas de multiplicar",
+  },
+  {
+    href: "/resources-files/misc-magdalena-park.pdf",
+    title: "Astroides y el parque de Magdalena del Mar en GeoGebra",
+  },
+  {
+    href: "/resources-files/misc-math-style-sound-interface.pdf",
+    title: "Pensamiento y estilo matemático como interfaz sonora",
+  },
+  {
+    href: "/resources-files/misc-alternating-groups-cycles.pdf",
+    title: "Recorte de paridad y grupos alternantes",
+  },
+  {
+    href: "/resources-files/misc-poetry-math-physics.pdf",
+    title: "El poema perdido de Fourier",
+  },
+  {
+    href: "/resources-files/misc-motzkin-numbers.pdf",
+    title: "Números de Motzkin en teoría musical",
+  },
+  {
+    href: "/resources-files/misc-log-cents-midi.pdf",
+    title: "Logaritmos, cents y MIDI: una guía básica",
+  },
+  {
+    href: "/resources-files/misc-envisioning-primes.pdf",
+    title: "Envisioning Primes: Topology and Geometry",
+  },
+  {
+    href: "/resources-files/misc-garcilaso-de-la-vega.pdf",
+    title: "Tercetos Garcilasianos y las simetrías del triángulo",
+  },
+] as const;
+
+export const ERRATA_RESOURCES = [
+  {
+    href: "/resources-files/errata-phd-thesis-cannas.pdf",
+    title:
+      " Errata de la tesis doctoral (PhD) Geometric Representation and Algebraic Formalization of Musical Structures (2018)",
+  },
+  {
+    href: "/resources-files/errata-figuratenum.pdf",
+    title: "Errata of Figurate Numbers (2012)",
+  },
+] as const;

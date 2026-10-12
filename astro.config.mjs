@@ -7,6 +7,10 @@ import rehypeKatex from "rehype-katex"; // KaTeX
 import rehypeExternalLinks from "rehype-external-links";
 import tailwindcss from "@tailwindcss/vite";
 import { addCopyButton } from "shiki-transformer-copy-button";
+import {
+  MISC_RESOURCES,
+  ERRATA_RESOURCES,
+} from "@ts-config-path/lib/resources-paths";
 // expressive-code
 
 export default defineConfig({
@@ -22,6 +26,14 @@ export default defineConfig({
           !page.startsWith("https://edelveart.github.io/services/")
         );
       },
+      customPages: [
+        ...MISC_RESOURCES.map(
+          ({ href }) => "https://edelveart.github.io" + href,
+        ),
+        ...ERRATA_RESOURCES.map(
+          ({ href }) => "https://edelveart.github.io" + href,
+        ),
+      ],
     }),
   ],
   //   compressHTML: true,
