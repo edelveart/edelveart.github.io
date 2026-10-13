@@ -108,7 +108,8 @@ Volvemos a la interpretación desde arriba, los decibelios de escala completa, $
 $$
 \Lambda_{\text{dBFS}} = \dfrac{20}{\displaystyle \left(\int_1^{10} \frac{1}{u} du\right)} \int_1^{\frac{m}{1}} \frac{1}{t} dt
 $$
-Por supuesto, hay que concretar la misma escala de amplitud. Abramos Vital y arriba a la derecha aparecerá un medidor de pico digital.
+
+Por supuesto, hay que concretar la misma escala de amplitud. Abramos [Vital](https://vital.audio/) y arriba a la derecha aparecerá un medidor de pico digital.
 
 ![Vital Synth - dBFS](logarithm-music-db.png)
 
