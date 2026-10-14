@@ -189,7 +189,7 @@ $$
 
 Como observas, ese $K\in\mathbb{R}^+$ es el que determina la escala y el nivel de la *PSD*. Cuando comparas las razones, $K$ se cancela, por lo que realmente no necesitamos conocer su valor para calcular la pendiente espectral.
 
-Entonces, desde nuestro vistazo general con $\Lambda$, podemos utilizar la función logarítmica que venimos trabajando para expresar estas razones en decibelios. Para generalizarlo, nos basta seguir con lo visto arriba para los diferentes tipos de ruido. Consideremos una *PSD* de la forma
+Entonces, desde nuestro vistazo general con $\Lambda$, podemos utilizar la función logarítmica que venimos trabajando para expresar estas razones en decibelios. Para generalizarlo, nos basta seguir con lo visto arriba en los dos ejemplos. Consideremos una *PSD* de la forma
 
 $$
 S_x(f)=Kf^\alpha,
@@ -205,7 +205,7 @@ $$
 2^\alpha.
 $$
 
-Por tanto, nuestra función se concreta para cualquier ruido si sustituimos la razón $\frac{m}{m_0}=S_x(2f)/S_x(f)$, en el límite de la integral
+Por tanto, nuestra función se concreta en determinado ruido si sustituimos la razón $\dfrac{m}{m_0}=\dfrac{S_x(2f)}{S_x(f)}$, en el límite de la integral
 
 $$
 \Lambda_{\text{RUIDOS}}
@@ -224,7 +224,7 @@ $$
 
 $$
 
-Para el ruido rosa (con lo de arriba), llegamos a decibelios negativos con un par de decimales aproximados:
+Para el ruido rosa $\alpha = 2^{-1}$ llegamos a decibelios negativos con un par de decimales aproximados:
 
 $$
 \Lambda_{\text{ROSA}}
