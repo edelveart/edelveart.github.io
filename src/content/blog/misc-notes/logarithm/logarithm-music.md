@@ -146,7 +146,8 @@ En efecto, es la nota $\text{A} \mapsto 69$. Te la repito en semifusas para que 
 ![Musescore - A note](logarithm-music-note-a.png)
 
 ¿Qué otra cosa esperabas?
-## Ruido de colores
+
+### Ruido de colores
 
 Baja el volumen de tu fiesta, escuchamos a medianoche gritar a un transeúnte. Para el ruido usamos la densidad espectral de potencia (*PSD*), que nos permite analizar cómo se distribuye la potencia de una señal en función de la frecuencia. Sí, suena técnico, pero es matemáticamente simple (sin unidades).
 
