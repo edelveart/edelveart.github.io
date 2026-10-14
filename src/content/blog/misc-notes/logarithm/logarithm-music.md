@@ -198,7 +198,7 @@ $$
 \approx -3.01\ \text{dB/octava}.
 $$
 
-Para generalizarlo, nos basta seguir con lo visto arriba para los diferentes tipos de ruido. Consideremos una PSD de la forma
+Para generalizarlo, nos basta seguir con lo visto arriba para los diferentes tipos de ruido. Consideremos una *PSD* de la forma
 
 $$
 S_x(f)=Kf^\alpha,
