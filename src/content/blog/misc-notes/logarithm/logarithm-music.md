@@ -1,18 +1,19 @@
 ---
 title: "El logaritmo y su aroma geométrico en la música"
-description: "Estampo una función logarítmica mediante integrales que reduce los decibelios, cents y notas MIDI a un juego de parámetros manipulables en el sintetizador Vital. Por mientras, desfilo varias aproximaciones personales del logaritmo con fuerte énfasis geométrico y aroma multiplicativo."
+description: "Estampo una función logarítmica mediante integrales que reduce los decibelios, cents, notas MIDI y ruido a un juego de parámetros manipulables en el sintetizador Vital. Por mientras, desfilo varias aproximaciones personales del logaritmo con fuerte énfasis geométrico y aroma multiplicativo."
 pubDate: "October 12 2026"
 badge: "misc notes"
 lang: "es"
 heroImage: "./logarithm-music-cents.png"
-# updatedDate: "2026"
-tags: ["logarithm", "mathematics", "DSP", "audio", "music-theory", "MIDI"]
+updatedDate: "October 14 2026"
+tags: ["logarithm", "DSP", "MIDI", "synthesizers", "vital", "audio", "music-theory", "mathematics"]
 ---
 
 Es natural escuchar hablar de decibelios $\text{dB}$ en cualquier estudio de grabación, de hecho en cualquier etapa de la producción. Como sabemos, los decibelios están basados matemáticamente en algo llamado logaritmo.
-Entonces, me propuse pensar qué entiendo por logaritmo de una forma ligeramente demorada y abstraerla para algunas **aplicaciones musicales** que llaman a esta función. De paso, tendremos un par de cosas para un sintetizador digital.
 
-Por cierto, obviaré toda la parte histórica y también las interpretaciones físicas, que abundan en múltiples lugares. Me centraré sobre todo en abstraer la idea.
+Entonces, me propuse pensar qué entiendo por logaritmo de una forma ligeramente demorada y abstraerla para algunas **aplicaciones musicales** que llaman a esta función. De paso, veremos un par de cosas en el conocido sintetizador [Vital](https://vital.audio/) (ruido, MIDI, cents, decibelios) .
+
+Antes de proseguir al destino, obviaré toda la parte histórica y también las interpretaciones físicas (unidades de medida), que abundan en múltiples textuales. Me centraré sobre todo en abstraer la idea.
 
 ## La familia de curvas
 
@@ -49,7 +50,7 @@ $$
 (x,y) \mapsto (y, x),
 $$
 aparecen naturalmente los puntos enteros, reflejamos respecto de la recta $y=x$, de una familia de funciones que también puede aproximar la exponencial.
-En ambos casos, usamos el mascroscopio de aproximar una función mediante una familia de curvas plana, a través de la convergencia puntual.
+En ambos casos, usamos el macroscopio de aproximar una función mediante una familia de curvas plana, a través de la convergencia puntual.
 Suficiente sobre este lado del mirador.
 
 ## El área de una cónica
@@ -80,7 +81,7 @@ Y la función resultante arroja $ \ln(x) < 0$. De hecho, cabe reescribir la inte
 $$
 \lim_{n}\sum_{k=1}^n \frac{x-1}{n+k(x-1)}.
 $$
-Por izquierda, lo único que cambia son los índices. En otras palabras, los índices van de $k=0$ hasta $n-1$; mucho más al gusto de un arreglo computacional.
+Por izquierda del intervalo, lo único que cambia son los índices. En otras palabras, los índices van de $k=0$ hasta $n-1$; mucho más al gusto de un arreglo computacional.
 
 > ¿Qué condiciones debe cumplir mi figurita diferente a un rectángulo para que pueda aproximar un área mediante sumas infinitesimales?
 
@@ -145,6 +146,110 @@ En efecto, es la nota $\text{A} \mapsto 69$. Te la repito en semifusas para que 
 ![Musescore - A note](logarithm-music-note-a.png)
 
 ¿Qué otra cosa esperabas?
+## Ruido de colores
+
+Baja el volumen de tu fiesta, escuchamos a medianoche gritar a un transeúnte. Para el ruido usamos la densidad espectral de potencia (*PSD*), que nos permite analizar cómo se distribuye la potencia de una señal en función de la frecuencia. Sí, suena técnico, pero es matemáticamente simple (sin unidades).
+
+Una búsqueda natural es saber cómo cambia esta densidad espectral en decibelios por octava ($2f$) o por década ($10f$), según los diferentes colores de ruido. Este que viene es el conocido como **ruido rosa**, cuya *PSD* es inversamente proporcional a la frecuencia:
+
+$$
+S_x(f)=\frac{K}{f}.
+$$
+
+Para conocer su caída por octava, comparamos la **PSD** en dos frecuencias cuya razón sea exactamente $2$ (recuerda que una octava arriba es el doble de una frecuencia). Lo que nos queda es una razón entre estas densidades:
+
+$$
+\frac{S_x(2f)}{S_x(f)}
+=
+\frac{\frac{K}{2f}}{\frac{K}{f}}
+=
+\frac{1}{2}
+=
+2^{-1}.
+$$
+
+Si seguimos con el ruido marrón, su *PSD* disminuye con el cuadrado de la frecuencia:
+
+$$
+S_x(f)=\frac{K}{f^2}.
+$$
+
+Así, sacamos la razón y nos da:
+
+$$
+\frac{S_x(2f)}{S_x(f)}
+=
+\frac{\frac{K}{(2f)^2}}{\frac{K}{f^2}}
+=
+\frac{1}{4}
+=
+2^{-2}.
+$$
+
+Como observas, ese $K\in\mathbb{R}^+$ es el que determina la escala y el nivel de la *PSD*. Cuando comparas las razones, $K$ se cancela, por lo que realmente no necesitamos conocer su valor para calcular la pendiente espectral.
+
+Entonces, desde nuestro vistazo general con $\Lambda$, podemos utilizar la función logarítmica que venimos trabajando para expresar estas razones en decibelios.
+
+Para el ruido rosa, sustituimos la razón $m/m_0=S_x(2f)/S_x(f)$, correspondiente a la octava de arriba, y llegamos a decibelios negativos con un par de decimales aproximados:
+
+$$
+\Lambda_{\text{ROSA}}
+\approx -3.01\ \text{dB/octava}.
+$$
+
+Para generalizarlo, nos basta seguir con lo visto arriba para los diferentes tipos de ruido. Consideremos una PSD de la forma
+
+$$
+S_x(f)=Kf^\alpha,
+$$
+
+donde $\alpha$ es el exponente de la frecuencia que determina la pendiente espectral. Al comparar una octava, aparece la siguiente expresión:
+
+$$
+\frac{S_x(2f)}{S_x(f)}
+=
+\frac{K(2f)^\alpha}{Kf^\alpha}
+=
+2^\alpha.
+$$
+
+Por tanto, nuestra función queda:
+
+$$
+\Lambda_{\text{RUIDOS}}
+=
+\frac{10}{\displaystyle\int_1^{10}\frac{1}{u}\,du}
+\int_1^{2^\alpha}\frac{1}{t}\,dt.
+$$
+
+Y, para gusto del comensal, por las propiedades logarítmicas y calculísticas:
+
+$$
+\Lambda_{\text{RUIDOS}}
+=
+\frac{10\alpha}{\displaystyle\int_1^{10}\frac{1}{u}\,du}
+\int_1^2\frac{1}{t}\,dt
+
+$$
+
+![Vital - Samples - Noise](logarithm-music-noise.png)
+
+Perfecto, sale la pendiente en decibelios por octava, $ 10\alpha\frac{\ln 2}{\ln 10}$.
+Intercambia ese $2^\alpha$ por $10^\alpha$ y tendrás el vaivén en decibelios por década.
+
+La montaña sonora de cinco colores descrita por esta familia de potencias son, en esencia, exponentes enteros.
+
+| Ruido   | PSD     | $\alpha$ | dB/octava | dB/década |
+| ------- | ------- | -------: | --------: | --------: |
+| Rosa    | $K/f$   |     $-1$ |   $-3.01$ |     $-10$ |
+| Marrón  | $K/f^2$ |     $-2$ |   $-6.02$ |     $-20$ |
+| Blanco  | $K$     |      $0$ |       $0$ |       $0$ |
+| Azul    | $Kf$    |      $1$ |   $+3.01$ |     $+10$ |
+| Violeta | $Kf^2$  |      $2$ |   $+6.02$ |     $+20$ |
+
+El único que desentona aquí es el ruido blanco que tiene una *PSD* constante. Por cierto, me faltó agregar el ruido ultramagenta $\alpha = 7$  y el ruido ultrapantera rosa $\alpha = -11$.
+
+> El ruido gris queda fuera de esta familia de potencias enteras. Solo diré que se define mediante una ponderación relacionada con la percepción auditiva.
 
 ## Otras representaciones
 
@@ -172,7 +277,7 @@ Listo, garantizamos que el límite superior esté en eso admitido. Prueba a rees
 
 ## Como ecuación diferencial ordinaria (EDO)
 
-Otra de las maneras en que contemplé el logaritmo, nace nuevamente de la geometría. Es sencillamente agregar una $'$. Observa, planteo la transformación mediante substituir $y$ por su derivada $y' = \frac{dy}{dx}$ desde la hipérbola
+Otra de las maneras en que contemplé el logaritmo, nace nuevamente de la geometría. Es sencillamente agregar una $'$. Observa, planteo la transformación mediante sustituir $y$ por su derivada $y' = \frac{dy}{dx}$ desde la hipérbola
 
 $$
 xy = 1 \mapsto xy'= 1,
