@@ -87,7 +87,7 @@ Por izquierda del intervalo, lo único que cambia son los índices. En otras pal
 
 ## Hacia el logaritmo musical
 
-¿Para qué tanto floro con esto? Pues en la música, además de los decibelios (en sus diferentes tipos que no veremos aquí), los cents y las notas de un teclado MIDI forman la cancha de los logaritmos. A decir verdad, lo que haremos es mover unos cuántos parámetros y listo, bastará interpretarlos en su entorno necesario, desde lo físico hasta lo digital.
+¿Para qué tanto floro con esto? Pues en la música, además de los decibelios (en sus diferentes tipos que no veremos aquí), los cents, las notas de un teclado MIDI y los tipos de ruido forman la cancha de los logaritmos. A decir verdad, lo que haremos es mover unos cuántos parámetros y listo, bastará interpretarlos en su entorno necesario, desde lo físico hasta lo digital.
 
 Sin más, te invito al desfile de la función musical con parámetros $A \in \mathbb{R}^+$, $b > 0$ con $b \neq 1$, $m_0, m > 0$ y $C \in \mathbb{R}$.
 
