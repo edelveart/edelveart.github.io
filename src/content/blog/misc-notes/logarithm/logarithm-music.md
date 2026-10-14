@@ -151,13 +151,13 @@ En efecto, es la nota $\text{A} \mapsto 69$. Te la repito en semifusas para que 
 
 Baja el volumen de tu fiesta, escuchamos a medianoche gritar a un transeúnte. Para el ruido usamos la densidad espectral de potencia (*PSD*), que nos permite analizar cómo se distribuye la potencia de una señal en función de la frecuencia. Sí, suena técnico, pero es matemáticamente simple (sin unidades).
 
-Una búsqueda natural es saber cómo cambia esta densidad espectral en decibelios por octava ($2f$) o por década ($10f$), según los diferentes colores de ruido. Este que viene es el conocido como **ruido rosa**, cuya *PSD* es inversamente proporcional a la frecuencia:
+Una búsqueda natural es saber cómo cambia esta densidad espectral en decibelios por octava ($2f$) o por década ($10f$), según los diferentes colores de ruido. Este que viene es el conocido como **ruido rosa**, cuya *PSD* es inversamente proporcional a la frecuencia
 
 $$
 S_x(f)=\frac{K}{f}.
 $$
 
-Para conocer su caída por octava, comparamos la **PSD** en dos frecuencias cuya razón sea exactamente $2$ (recuerda que una octava arriba es el doble de una frecuencia). Lo que nos queda es una razón entre estas densidades:
+Para conocer su caída por octava, comparamos la **PSD** en dos frecuencias cuya razón sea exactamente $2$ (recuerda que una octava arriba es el doble de una frecuencia). Lo que nos queda es una razón entre estas densidades
 
 $$
 \frac{S_x(2f)}{S_x(f)}
@@ -169,13 +169,13 @@ $$
 2^{-1}.
 $$
 
-Si seguimos con el ruido marrón, su *PSD* disminuye con el cuadrado de la frecuencia:
+Si seguimos con el ruido marrón, su *PSD* disminuye con el cuadrado de la frecuencia mediante
 
 $$
 S_x(f)=\frac{K}{f^2}.
 $$
 
-Así, sacamos la razón y nos da:
+Así, sacamos la razón y nos da
 
 $$
 \frac{S_x(2f)}{S_x(f)}
@@ -189,22 +189,13 @@ $$
 
 Como observas, ese $K\in\mathbb{R}^+$ es el que determina la escala y el nivel de la *PSD*. Cuando comparas las razones, $K$ se cancela, por lo que realmente no necesitamos conocer su valor para calcular la pendiente espectral.
 
-Entonces, desde nuestro vistazo general con $\Lambda$, podemos utilizar la función logarítmica que venimos trabajando para expresar estas razones en decibelios.
-
-Para el ruido rosa, sustituimos la razón $m/m_0=S_x(2f)/S_x(f)$, correspondiente a la octava de arriba, y llegamos a decibelios negativos con un par de decimales aproximados:
-
-$$
-\Lambda_{\text{ROSA}}
-\approx -3.01\ \text{dB/octava}.
-$$
-
-Para generalizarlo, nos basta seguir con lo visto arriba para los diferentes tipos de ruido. Consideremos una *PSD* de la forma
+Entonces, desde nuestro vistazo general con $\Lambda$, podemos utilizar la función logarítmica que venimos trabajando para expresar estas razones en decibelios. Para generalizarlo, nos basta seguir con lo visto arriba para los diferentes tipos de ruido. Consideremos una *PSD* de la forma
 
 $$
 S_x(f)=Kf^\alpha,
 $$
 
-donde $\alpha$ es el exponente de la frecuencia que determina la pendiente espectral. Al comparar una octava, aparece la siguiente expresión:
+donde $\alpha$ es el exponente de la frecuencia que determina la pendiente espectral. Al comparar una octava, aparece la potencia
 
 $$
 \frac{S_x(2f)}{S_x(f)}
@@ -214,13 +205,13 @@ $$
 2^\alpha.
 $$
 
-Por tanto, nuestra función queda:
+Por tanto, nuestra función se concreta para cualquier ruido si sustituimos la razón $\frac{m}{m_0}=S_x(2f)/S_x(f)$, en el límite de la integral
 
 $$
 \Lambda_{\text{RUIDOS}}
 =
 \frac{10}{\displaystyle\int_1^{10}\frac{1}{u}\,du}
-\int_1^{2^\alpha}\frac{1}{t}\,dt.
+\int_1^{\frac{S_x(2f)}{S_x(f)}}\frac{1}{t}\,dt.
 $$
 
 Y, para gusto del comensal, por las propiedades logarítmicas y calculísticas:
@@ -231,6 +222,13 @@ $$
 \frac{10\alpha}{\displaystyle\int_1^{10}\frac{1}{u}\,du}
 \int_1^2\frac{1}{t}\,dt
 
+$$
+
+Para el ruido rosa (con lo de arriba), llegamos a decibelios negativos con un par de decimales aproximados:
+
+$$
+\Lambda_{\text{ROSA}}
+\approx -3.01\ \text{dB/octava}.
 $$
 
 ![Vital - Samples - Noise](logarithm-music-noise.png)
