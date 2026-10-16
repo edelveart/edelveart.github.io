@@ -9,7 +9,7 @@ export const sideMenuCss = {
   inactive: "text-neutral-content hover:text-primary",
   active: "text-primary font-medium ", // bg-primary/5
   spanText: "text-base flex-1",
-  iconBox: "w-5 h-5 flex items-center justify-center shrink-0",
+  iconBox: "size-5 flex items-center justify-center shrink-0",
 };
 
 export const menuClass = (active: boolean) =>
