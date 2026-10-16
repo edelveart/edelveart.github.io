@@ -64,6 +64,10 @@ export const MISC_RESOURCES = [
     title: "Números de Motzkin en teoría musical",
   },
   {
+    href: "/resources-files/misc-exponential-series.pdf",
+    title: "La exponencial y el combinado",
+  },
+  {
     href: "/resources-files/misc-log-cents-midi.pdf",
     title: "Logaritmos, cents y MIDI: una guía básica",
   },
