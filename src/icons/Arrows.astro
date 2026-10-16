@@ -1,4 +1,12 @@
 ---
+// BOOTSTRAP CHEVRON ICON
+// const sizeClass = {
+//   xs: "h-3.5 w-3.5",
+//   sm: "h-4 w-4",
+//   md: "h-4 w-4",
+//   lg: "h-4 w-4 md:h-5 md:w-5",
+// }[size];
+
 type Props = {
   direction?: "left" | "right" | "down" | "up";
   size?: "xs" | "sm" | "md" | "lg";
@@ -7,9 +15,9 @@ type Props = {
 const { direction = "right", size = "md" }: Props = Astro.props;
 const sizeClass = {
   xs: "h-3.5 w-3.5",
-  sm: "h-4 w-4",
-  md: "h-4 w-4",
-  lg: "h-4 w-4 md:h-5 md:w-5",
+  sm: "h-4.5 w-4.5",
+  md: "h-4.5 w-4.5",
+  lg: "h-5 w-5 md:h-5.5 md:w-5.5",
 }[size];
 
 const rotationClass = {
@@ -20,7 +28,7 @@ const rotationClass = {
 }[direction];
 ---
 
-<svg
+<!-- <svg
   class={`shrink-0 ${sizeClass} ${rotationClass}`}
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 16 16"
@@ -30,4 +38,17 @@ const rotationClass = {
     d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
   >
   </path>
+</svg> -->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class={`shrink-0 ${sizeClass} ${rotationClass}`}
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+  <path d="M9 6l6 6l-6 6"></path>
 </svg>
