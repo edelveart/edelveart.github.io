@@ -41,7 +41,7 @@ const { page } = Astro.props as Props;
 >
   <article class="pb-3 mt-5">
     <article class="pb-3 mt-5">
-      <div class="flex w-full items-start justify-between gap-4">
+      <div class="flex w-full items-start justify-between gap-2">
         <h2 class="shrink-0 text-3xl font-bold">Notas</h2>
 
         <a
@@ -62,9 +62,7 @@ const { page } = Astro.props as Props;
 
       {
         page.currentPage === 1 && (
-          <section
-            class={`grid gap-4 sm:grid-cols-2 ${BORDER_INFO} mt-10 mb-0`}
-          >
+          <section class={`grid gap-4 sm:grid-cols-2 ${BORDER_INFO} mt-5`}>
             <div>
               <h3 class={GET_COLORS_METADATA("field notes")}>Notas de campo</h3>
               <p class="text-sm">
