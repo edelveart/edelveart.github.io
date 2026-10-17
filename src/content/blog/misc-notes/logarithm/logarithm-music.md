@@ -5,8 +5,8 @@ pubDate: "October 12 2026"
 badge: "misc notes"
 lang: "es"
 heroImage: "./logarithm-music-cents.png"
-updatedDate: "October 14 2026"
 tags: ["logarithm", "DSP", "MIDI", "synthesizers", "vital", "audio", "music-theory", "mathematics"]
+updatedDate: "October 17 2026"
 ---
 
 Es natural escuchar hablar de decibelios $\text{dB}$ en cualquier estudio de grabación, de hecho en cualquier etapa de la producción. Como sabemos, los decibelios están basados matemáticamente en algo llamado logaritmo.
@@ -250,7 +250,7 @@ El único que desentona aquí es el ruido blanco que tiene una *PSD* constante. 
 
 > El ruido gris queda fuera de esta familia de potencias enteras. Solo diré que se define mediante una ponderación relacionada con la percepción auditiva.
 
-## Otras representaciones
+## El logaritmo desde la tangente hiperbólica
 
 Anteriormente había desarrollado en varios posts, que puedes ver, sobre [la tangente hiperbólica real](https://edelveart.github.io/blog/ensalada-real-de-la-tangente-hiperbolica-de-sonic-pi/) y luego en una serie de notas sobre la tangente hiperbólica compleja y su relación con la función sigmoide en tres partes: [1](https://edelveart.github.io/blog/circuiteria-de-variable-compleja-i/), [2](https://edelveart.github.io/blog/circuiteria-de-variable-compleja-ii/), [3](https://edelveart.github.io/blog/circuiteria-de-variable-compleja-iii/).
 
@@ -285,9 +285,38 @@ con una condición inicial $y(1)=0$. Quedamos en que se trata de una ecuación d
 
 > Dejaré la serie de Taylor del logaritmo para otro momento, porque merece un tratamiento especial, para ver desde dónde lo saco a la manera de un mago que sabe el truco que todos saben, pero haciéndolo en cámara lenta.
 
+## Deformación en q-logaritmo
+
+Aunque no lo creas, también deformar las cosas es válido. Por ejemplo, coloquemos una potencia $\ell$ en el denominador de la hipérbola unitaria por simple manipulación algebraica. Así, su conversión queda como
+
+$$
+y = \frac{1}{x^{\ell}}.
+$$
+
+Para saber qué ocurre, repetimos la integración y evaluamos en los mismos límites, de modo que tenemos
+
+$$
+\int_1^x \frac{dt}{t^{\ell}} = \left[\frac{t^{1-\ell}}{1-\ell}\right]_1^x.
+$$
+
+Pero si por casualidad identificamos $\ell=q$, la expresión racional que tenemos existe por derecho propio y se llama $q$-logaritmo de Tsallis.
+A decir verdad, este cambio de último minuto parece innecesario. Sin embargo, fue precisamente mediante dicha sustitución como me encontré con esta versión deforme.
+
+$$
+\int_1^x \frac{dt}{t^{q}} = \frac{x^{1-q}-1}{1-q} = \ln_q(x),
+\qquad q\neq 1.
+$$
+
+Bien, devolvámosle su contorno no deformado. Si tomamos el límite cuando $q\to 1$, volvemos a dar con el logaritmo natural
+
+$$
+\lim_{q\to 1}\ln_q(x)=\ln(x).
+$$
+
+
 ## Coda musical y logarítmica
 
-Probablemente sepas varias aplicaciones más para $\Lambda$ en el mundo del audio y la música. En algún punto de estas notas, quizás las toque a modo de vista cenital, como lo he hecho aquí con los cents, los decibelios y el MIDI.
+Probablemente sepas varias aplicaciones más para $\Lambda$ en el mundo del audio y la música. En algún punto de estas notas, quizás las toque a modo de vista cenital, como lo he hecho aquí con los cents, los decibelios, ruido y el MIDI.
 
 Para terminar, solo quiero decir que casi todo el ambiente logarítmico está perfumado por un aroma multiplicativo. Algebraicamente, el logaritmo traduce multiplicaciones en sumas. La conocida identidad que sirve para calcular a primera vista
 $$
