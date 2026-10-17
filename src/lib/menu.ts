@@ -13,6 +13,7 @@ export const routeEnglish = {
   resources: "/resources/",
   blog: "/blog/",
   figuratenum: "/figuratenum/",
+  archive: "/blog/archive/",
 } as const;
 
 export const menuEnglish = [

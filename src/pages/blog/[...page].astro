@@ -12,6 +12,7 @@ import {
   BORDER_INFO,
   GET_COLORS_METADATA,
 } from "@styles/utilsCSS";
+import { routeEnglish } from "@ts-config-path/lib/menu";
 
 export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
   const posts = await getCollection("blog", ({ data }) => data.lang !== "es");
@@ -40,7 +41,24 @@ const { page } = Astro.props as Props;
   sideBarActiveItemID="NOTES_ACTIVE_PAGE"
 >
   <article class="pb-3 mt-5">
-    <div class="text-3xl w-full font-bold flex items-center">Notes</div>
+    <div class="flex w-full items-center justify-between gap-4">
+      <h2 class="shrink-0 text-3xl font-bold">Notes</h2>
+
+      <a
+        class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight} flex max-w-[65%] `}
+        href={routeEnglish.archive}
+      >
+        <span
+          class={`${NAV_LINKS_PAGES.pageTitle} min-w-0 text-right text-sm text-neutral-content`}
+        >
+          View all posts
+        </span>
+
+        <span class={`${NAV_LINKS_PAGES.arrowSpan}`}>
+          <Arrows direction="right" size="sm" />
+        </span>
+      </a>
+    </div>
 
     {
       page.currentPage === 1 && (
