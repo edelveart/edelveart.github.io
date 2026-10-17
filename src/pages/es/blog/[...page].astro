@@ -40,98 +40,95 @@ const { page } = Astro.props as Props;
   sideBarActiveItemID="NOTES_ACTIVE_PAGE"
 >
   <article class="pb-3 mt-5">
-    <article class="pb-3 mt-5">
-      <div class="flex w-full items-start justify-between gap-2">
-        <h2 class="shrink-0 text-3xl font-bold">Notas</h2>
+    <div class="flex w-full items-start justify-between gap-2">
+      <h2 class="shrink-0 text-3xl font-bold">Notas</h2>
 
-        <a
-          class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight} flex max-w-[65%] items-start`}
-          href={routeEnglish.archive}
+      <a
+        class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight} flex max-w-[65%] items-start`}
+        href={routeEnglish.archive}
+      >
+        <span
+          class={`${NAV_LINKS_PAGES.pageTitle} min-w-0 text-right text-sm text-neutral-content`}
         >
-          <span
-            class={`${NAV_LINKS_PAGES.pageTitle} min-w-0 text-right text-sm text-neutral-content`}
-          >
-            Ver todas las publicaciones
-          </span>
+          Ver todas las publicaciones
+        </span>
 
-          <span class={`${NAV_LINKS_PAGES.arrowSpan}`}>
-            <Arrows direction="right" size="sm" />
-          </span>
-        </a>
-      </div>
+        <span class={`${NAV_LINKS_PAGES.arrowSpan}`}>
+          <Arrows direction="right" size="sm" />
+        </span>
+      </a>
+    </div>
 
-      {
-        page.currentPage === 1 && (
-          <section class={`grid gap-4 sm:grid-cols-2 ${BORDER_INFO} mt-5`}>
-            <div>
-              <h3 class={GET_COLORS_METADATA("field notes")}>Notas de campo</h3>
-              <p class="text-sm">
-                Experimentos completados, implementaciones y reflexiones en
-                torno a proyectos en curso.
-              </p>
-            </div>
-
-            <div>
-              <h3 class={GET_COLORS_METADATA("lab notes")}>
-                Notas de laboratorio
-              </h3>
-              <p class="text-sm">
-                Exploraciones en profundidad de conceptos, estructuras e ideas
-                matemáticas y musicales.
-              </p>
-            </div>
-
-            <div>
-              <h3 class={GET_COLORS_METADATA("sketch notes")}>
-                Notas de boceto
-              </h3>
-              <p class="text-sm">
-                Ideas iniciales, caminos inacabados y preguntas sobre
-                matemáticas y música que sigo explorando.
-              </p>
-            </div>
-
-            <div>
-              <h3 class={GET_COLORS_METADATA("misc notes")}>Notas diversas</h3>
-              <p class="text-sm">
-                Notas personales sobre herramientas, prácticas creativas,
-                programación en vivo, música, humanidades y otros ámbitos de
-                interés.
-              </p>
-            </div>
-          </section>
-        )
-      }
-
-      {
-        page.data.length === 0 ? (
-          <div class={`bg-base-200 ${BORDER_INFO} w-full p-4 min-w-full`}>
-            <p class="font-bold">Sorry!</p>
-            <p>
-              There are no blog posts to show at the moment. Check back later!
+    {
+      page.currentPage === 1 && (
+        <section class={`grid gap-4 sm:grid-cols-2 ${BORDER_INFO} mt-5`}>
+          <div>
+            <h3 class={GET_COLORS_METADATA("field notes")}>Notas de campo</h3>
+            <p class="text-sm">
+              Experimentos completados, implementaciones y reflexiones en torno
+              a proyectos en curso.
             </p>
           </div>
-        ) : (
-          <div class="mt-10">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {page.data.map((post) => (
-                <CardBlog
-                  title={post.data.title}
-                  url={"/es/blog/" + createSlug(post.data.title, post.id) + "/"}
-                  heroImage={post.data.heroImage}
-                  desc={post.data.description}
-                  target="_self"
-                  badge={post.data.badge}
-                  pubDate={post.data.pubDate}
-                  tags={post.data.tags}
-                />
-              ))}
-            </div>
+
+          <div>
+            <h3 class={GET_COLORS_METADATA("lab notes")}>
+              Notas de laboratorio
+            </h3>
+            <p class="text-sm">
+              Exploraciones en profundidad de conceptos, estructuras e ideas
+              matemáticas y musicales.
+            </p>
           </div>
-        )
-      }
-    </article>
-    <!-- {
+
+          <div>
+            <h3 class={GET_COLORS_METADATA("sketch notes")}>Notas de boceto</h3>
+            <p class="text-sm">
+              Ideas iniciales, caminos inacabados y preguntas sobre matemáticas
+              y música que sigo explorando.
+            </p>
+          </div>
+
+          <div>
+            <h3 class={GET_COLORS_METADATA("misc notes")}>Notas diversas</h3>
+            <p class="text-sm">
+              Notas personales sobre herramientas, prácticas creativas,
+              programación en vivo, música, humanidades y otros ámbitos de
+              interés.
+            </p>
+          </div>
+        </section>
+      )
+    }
+
+    {
+      page.data.length === 0 ? (
+        <div class={`bg-base-200 ${BORDER_INFO} w-full p-4 min-w-full`}>
+          <p class="font-bold">Sorry!</p>
+          <p>
+            There are no blog posts to show at the moment. Check back later!
+          </p>
+        </div>
+      ) : (
+        <div class="mt-10">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {page.data.map((post) => (
+              <CardBlog
+                title={post.data.title}
+                url={"/es/blog/" + createSlug(post.data.title, post.id) + "/"}
+                heroImage={post.data.heroImage}
+                desc={post.data.description}
+                target="_self"
+                badge={post.data.badge}
+                pubDate={post.data.pubDate}
+                tags={post.data.tags}
+              />
+            ))}
+          </div>
+        </div>
+      )
+    }
+  </article>
+  <!-- {
     page.currentPage === 1 && (
       <section class={`text-sm mb-8 mt-12 ${BORDER_INFO}`}>
         <h3 class={GET_COLORS_METADATA("warning")}>AI Assistance</h3>
@@ -143,61 +140,60 @@ const { page } = Astro.props as Props;
     )
   } -->
 
-    <DividerNav />
+  <DividerNav />
 
-    <div class="grid grid-cols-2 gap-2">
-      <!-- <div class="grid grid-cols-1 sm:grid-cols-2 gap-2"> -->
-      {
-        page.url.prev ? (
-          <a
-            class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`}
-            href={page.url.prev}
-          >
-            <span class={NAV_LINKS_PAGES.arrowSpan}>
-              <Arrows direction="left" />
-            </span>
+  <div class="grid grid-cols-2 gap-2">
+    <!-- <div class="grid grid-cols-1 sm:grid-cols-2 gap-2"> -->
+    {
+      page.url.prev ? (
+        <a
+          class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`}
+          href={page.url.prev}
+        >
+          <span class={NAV_LINKS_PAGES.arrowSpan}>
+            <Arrows direction="left" />
+          </span>
 
-            <div>
-              <div class={NAV_LINKS_PAGES.prevNext}>NUEVAS</div>
-              <div class={NAV_LINKS_PAGES.pageTitle}>Notas recientes</div>
-            </div>
-          </a>
-        ) : (
-          <a
-            class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`}
-            href={"/es/"}
-          >
-            <span class={NAV_LINKS_PAGES.arrowSpan}>
-              <Arrows direction="left" />
-            </span>
+          <div>
+            <div class={NAV_LINKS_PAGES.prevNext}>NUEVAS</div>
+            <div class={NAV_LINKS_PAGES.pageTitle}>Notas recientes</div>
+          </div>
+        </a>
+      ) : (
+        <a
+          class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`}
+          href={"/es/"}
+        >
+          <span class={NAV_LINKS_PAGES.arrowSpan}>
+            <Arrows direction="left" />
+          </span>
 
-            <div>
-              <div class={NAV_LINKS_PAGES.prevNext}>INICIO</div>
-              <div class={NAV_LINKS_PAGES.pageTitle}>Volver al inicio</div>
-            </div>
-          </a>
-        )
-      }
+          <div>
+            <div class={NAV_LINKS_PAGES.prevNext}>INICIO</div>
+            <div class={NAV_LINKS_PAGES.pageTitle}>Volver al inicio</div>
+          </div>
+        </a>
+      )
+    }
 
-      {
-        page.url.next ? (
-          <a
-            class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`}
-            href={page.url.next}
-          >
-            <div class="text-right">
-              <div class={NAV_LINKS_PAGES.prevNext}>ANTERIORES</div>
-              <div class={NAV_LINKS_PAGES.pageTitle}>Notas previas</div>
-            </div>
+    {
+      page.url.next ? (
+        <a
+          class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`}
+          href={page.url.next}
+        >
+          <div class="text-right">
+            <div class={NAV_LINKS_PAGES.prevNext}>ANTERIORES</div>
+            <div class={NAV_LINKS_PAGES.pageTitle}>Notas previas</div>
+          </div>
 
-            <span class={NAV_LINKS_PAGES.arrowSpan}>
-              <Arrows direction="right" />
-            </span>
-          </a>
-        ) : (
-          <div />
-        )
-      }
-    </div>
-  </article>
+          <span class={NAV_LINKS_PAGES.arrowSpan}>
+            <Arrows direction="right" />
+          </span>
+        </a>
+      ) : (
+        <div />
+      )
+    }
+  </div>
 </BaseLayout>
