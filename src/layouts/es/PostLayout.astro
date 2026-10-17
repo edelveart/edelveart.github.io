@@ -1,0 +1,137 @@
+---
+import { getImage } from "astro:assets";
+import { type BlogSchema } from "@ts-config-path/content.config";
+import BaseLayout from "@layouts/es/BaseLayout.astro";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+
+export interface Props extends BlogSchema {
+  id: string;
+  heroImage?: ImageMetadata;
+  wide?: boolean;
+}
+
+const {
+  id,
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  badge,
+  heroImage,
+  tags = [],
+} = Astro.props;
+
+dayjs.extend(localizedFormat);
+const displayDate = dayjs(pubDate).format("ll");
+
+const generateOgImage = async () => {
+  // SVG images need to be converted to PNG for Open Graph.
+  if (heroImage?.format === "svg") {
+    const image = await getImage({
+      src: heroImage,
+      format: "png",
+      width: 1200,
+      height: 630,
+      fit: "contain",
+      position: "center",
+      background: "#24273a",
+    });
+    return image.src;
+  }
+  // Use the original image if the post has one.
+  if (heroImage) {
+    return heroImage.src;
+  }
+  // Generate a default OG image with Satori.
+  return `/og/${id}.png`;
+};
+
+const ogImage = await generateOgImage();
+
+import {
+  MAX_W_CONTENT,
+  CARD_OP,
+  GET_COLORS_METADATA,
+  PROSE_IMG_BORDER,
+} from "@styles/utilsCSS";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={ogImage}
+  ogType="article"
+  wide
+>
+  <main>
+    <article class="prose prose-img:mx-auto">
+      <h1
+        class={`title mt-5 text-3xl font-bold break-normal mb-2 text-primary ${MAX_W_CONTENT}`}
+      >
+        {title}
+      </h1>
+
+      <div class="flex flex-col md:flex-row md:items-start md:gap-2">
+        <div class="flex items-center gap-2">
+          {
+            pubDate && (
+              <span class={`${CARD_OP.muteData} whitespace-nowrap`}>
+                {displayDate}
+              </span>
+            )
+          }
+
+          <span class="text-base-content/60 hidden md:inline">·</span>
+
+          <span class={GET_COLORS_METADATA(badge)}>
+            {badge}
+          </span>
+        </div>
+
+        {
+          updatedDate && (
+            <div class="flex items-center gap-2">
+              <span class="text-base-content/60 hidden md:inline">·</span>
+
+              <span class={`${CARD_OP.muteData} whitespace-nowrap`}>
+                Updated {dayjs(updatedDate).format("ll")}
+              </span>
+            </div>
+          )
+        }
+      </div>
+
+      <!-- TAGS -->
+      <!-- <div class=`${BORDER_INFO}`> -->
+      <div
+        class={`flex flex-wrap gap-x-3 gap-y-1 mt-3 mb-5 w-full ${MAX_W_CONTENT}`}
+      >
+        {
+          tags?.map((tag) => (
+            <a
+              href={`/es/blog/tag/${tag}/`}
+              class={GET_COLORS_METADATA("tags")}
+            >
+              {tag}
+            </a>
+          ))
+        }
+      </div>
+      <!-- </div> -->
+
+      <div
+        class={`prose-table:overflow-x-auto prose-table:block break-normal [&_th]:whitespace-nowrap
+        ${PROSE_IMG_BORDER}`}
+      >
+        <slot />
+      </div>
+    </article>
+  </main>
+</BaseLayout>
+<!-- [&_th]:py-1
+    [&_td]:py-1 -->
+<!-- [&_th]:whitespace-nowrap -->
+<!-- [&_td]:whitespace-nowrap -->
+<!-- [&_th]:px-3
+    [&_td]:px-3 -->

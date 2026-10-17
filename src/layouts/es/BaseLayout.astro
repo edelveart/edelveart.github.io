@@ -27,7 +27,9 @@ const {
   description = SITE_DESCRIPTION,
   includeSidebar = true,
   ogType,
+  wide = false,
 } = Astro.props;
+import "katex/dist/katex.min.css";
 ---
 
 <!doctype html>
@@ -54,7 +56,12 @@ const {
           <!-- UNIQUE CONTENT -->
           <div class="flex-1 min-w-0">
             <main class="flex justify-center" transition:animate="none">
-              <div class="w-full max-w-165 p-6 pt-10">
+              <div
+                class:list={[
+                  "w-full p-6 pt-10",
+                  wide ? "max-w-220" : "max-w-165",
+                ]}
+              >
                 <slot />
               </div>
             </main>

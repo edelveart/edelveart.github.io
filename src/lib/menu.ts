@@ -60,7 +60,7 @@ export const routeSpanish = {
   projects: "/es/projects/",
   about: "/es/about/",
   resources: "/es/resources/",
-  blog: "/blog/",
+  blog: "/es/blog/",
 } as const;
 
 export const menuSpanish = [

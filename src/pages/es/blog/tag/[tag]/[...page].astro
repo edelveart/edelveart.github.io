@@ -1,0 +1,155 @@
+---
+import BaseLayout from "@layouts/es/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import createSlug from "@ts-config-path/lib/createSlug";
+import CardBlog from "@components/CardBlog.astro";
+import Arrows from "@icons/Arrows.astro";
+import DividerNav from "@components/DividerNav.astro";
+import type { GetStaticPaths } from "astro";
+import type { CollectionEntry } from "astro:content";
+import { BORDER_INFO, NAV_LINKS_PAGES } from "@styles/utilsCSS";
+
+export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
+  const posts = await getCollection("blog", ({ data }) => data.lang === "es");
+
+  posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+  const all_tags = [...new Set(posts.flatMap((post) => post.data.tags || []))];
+
+  return all_tags.flatMap((tag) => {
+    const filtered_posts = posts.filter((post) =>
+      post.data.tags?.includes(tag),
+    );
+
+    return paginate(filtered_posts, {
+      params: { tag },
+      pageSize: 8,
+    });
+  });
+};
+
+export type Props = {
+  page: {
+    data: CollectionEntry<"blog">[];
+    currentPage: number;
+    url: {
+      current: string;
+      prev?: string;
+      next?: string;
+    };
+  };
+};
+
+const { page } = Astro.props as Props;
+const params = Astro.params;
+---
+
+<BaseLayout
+  title={"Notas / tag / " + params.tag}
+  sideBarActiveItemID="NOTES_ACTIVE_PAGE"
+>
+  <section class="pb-3 mt-5">
+    <div class="mb-5 mt-5" id="BLOG-TAGS">
+      <div class="text-3xl w-full font-bold flex justify-start">
+        <div class="flex flex-col md:flex-row md:items-center">
+          Notas
+          <div
+            class="md:ml-2 translate-y-px text-lg uppercase tracking-wider text-primary/80"
+          >
+            <span class="hidden md:inline text-info/60">{" "}·{" "}</span>
+            <span class="font-light">{params.tag}</span>
+          </div>
+        </div>
+      </div>
+
+      {
+        page.data.length === 0 ? (
+          <div class={`bg-base-200 ${BORDER_INFO} w-full p-4 min-w-full`}>
+            <p class="font-bold">Sorry!</p>
+            <p>
+              There are no blog posts to show at the moment. Check back later!
+            </p>
+          </div>
+        ) : (
+          <div class="mt-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {page.data.map((post) => (
+                <>
+                  <CardBlog
+                    title={post.data.title}
+                    url={
+                      "/es/blog/" + createSlug(post.data.title, post.id) + "/"
+                    }
+                    heroImage={post.data.heroImage}
+                    desc={post.data.description}
+                    target="_self"
+                    pubDate={post.data.pubDate}
+                    tags={post.data.tags}
+                    badge={post.data.badge}
+                  />
+                </>
+              ))}
+            </div>
+          </div>
+        )
+      }
+
+      <!-- {
+        page.currentPage === 1 && (
+          <section class={`text-sm mb-8 mt-12 ${BORDER_INFO}`}>
+            <h3 class={GET_COLORS_METADATA("warning")}>AI Assistance</h3>
+            <p class={CARD_OP.parr}>
+              AI tools are used to assist with grammar and occasional discussion
+              of ideas. Final review remains with the author.
+            </p>
+          </section>
+        )
+      } -->
+
+      <DividerNav />
+
+      <div class="grid grid-cols-2 gap-2">
+        <!-- <div class="grid grid-cols-1 sm:grid-cols-2 gap-2"> -->
+        {
+          page.url.prev ? (
+            <a
+              class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`}
+              href={page.url.prev}
+            >
+              <span class={NAV_LINKS_PAGES.arrowSpan}>
+                <Arrows direction="left" />
+              </span>
+
+              <div>
+                <div class={NAV_LINKS_PAGES.prevNext}>NEWER</div>
+                <div class={NAV_LINKS_PAGES.pageTitle}>Recent notes</div>
+              </div>
+            </a>
+          ) : (
+            <div />
+          )
+        }
+
+        {
+          page.url.next ? (
+            <a
+              class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`}
+              href={page.url.next}
+            >
+              <div class="text-right">
+                <div class={NAV_LINKS_PAGES.prevNext}>OLDER</div>
+                <div class={NAV_LINKS_PAGES.pageTitle}>Earlier notes</div>
+              </div>
+
+              <span class={NAV_LINKS_PAGES.arrowSpan}>
+                <Arrows direction="right" />
+              </span>
+            </a>
+          ) : (
+            <div />
+          )
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

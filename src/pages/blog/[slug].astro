@@ -8,8 +8,10 @@ import DividerNav from "@components/DividerNav.astro";
 import Arrows from "@icons/Arrows.astro";
 
 export async function getStaticPaths() {
-  const postEntries = await getCollection("blog");
-
+  const postEntries = await getCollection(
+    "blog",
+    ({ data }) => data.lang !== "es",
+  );
   const sorted = postEntries.sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
   );
