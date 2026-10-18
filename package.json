@@ -17,7 +17,7 @@
     "@fontsource-variable/source-code-pro": "^5.2.7",
     "@fontsource-variable/source-sans-3": "^5.2.9",
     "@tailwindcss/vite": "^4.1.13",
-    "astro": "^7.3.5",
+    "astro": "^7.4.0",
     "dayjs": "^1.11.9",
     "satori": "^0.28.2",
     "sharp": "^0.35.3",

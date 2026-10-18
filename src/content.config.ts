@@ -28,19 +28,6 @@ const blogSchema = ({ image }: SchemaContext) =>
       .optional(),
   });
 
-const storeSchema = z.object({
-  title: z.string(),
-  description: z.string(),
-  custom_link_label: z.string(),
-  custom_link: z.string().optional(),
-  updatedDate: z.coerce.date(),
-  pricing: z.string().optional(),
-  oldPricing: z.string().optional(),
-  badge: z.string().optional(),
-  checkoutUrl: z.string().optional(),
-  heroImage: z.string().optional(),
-});
-
 const FigurateSchema = z.object({
   title: z.string(),
   description: z.string(),
@@ -57,29 +44,52 @@ const FigurateSchema = z.object({
   //     .optional(),
 });
 
-export type FigurateSchema = z.infer<typeof FigurateSchema>;
+// const storeSchema = z.object({
+//   title: z.string(),
+//   description: z.string(),
+//   custom_link_label: z.string(),
+//   custom_link: z.string().optional(),
+//   updatedDate: z.coerce.date(),
+//   pricing: z.string().optional(),
+//   oldPricing: z.string().optional(),
+//   badge: z.string().optional(),
+//   checkoutUrl: z.string().optional(),
+//   heroImage: z.string().optional(),
+// });
+
 // export type BlogSchema = z.infer<typeof blogSchema>;
 export type BlogSchema = z.infer<ReturnType<typeof blogSchema>>;
-
-export type StoreSchema = z.infer<typeof storeSchema>;
-
-const figurateCollection = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/figuratenum" }),
-  schema: FigurateSchema,
-});
-
 const blogCollection = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
+  loader: glob({
+    pattern: "**/*.md",
+    base: "./src/content/blog",
+    deferRender: true,
+  }),
   schema: blogSchema,
 });
 
-const storeCollection = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/store" }),
-  schema: storeSchema,
+export type FigurateSchema = z.infer<typeof FigurateSchema>;
+const figurateCollection = defineCollection({
+  loader: glob({
+    pattern: "**/*.md",
+    base: "./src/content/figuratenum",
+    deferRender: true,
+  }),
+  schema: FigurateSchema,
 });
+
+// export type StoreSchema = z.infer<typeof storeSchema>;
+// const storeCollection = defineCollection({
+//   loader: glob({
+//     pattern: "**/*.md",
+//     base: "./src/content/store",
+//     deferRender: true,
+//   }),
+//   schema: storeSchema,
+// });
 
 export const collections = {
   blog: blogCollection,
-  store: storeCollection,
   figurate: figurateCollection,
+  //   store: storeCollection,
 };
