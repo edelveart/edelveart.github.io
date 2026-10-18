@@ -22,7 +22,7 @@ c.visualize_plane(
 
 `visualize_plane` handles 2D sequences, `visualize_space` handles 3D, and `visualize_multidim` handles k-dimensional and generalized families.
 
- <figure class="mb-8">
+ <!-- <figure class="mb-8">
   <img
     src="/svg-ggb/four-dim-centered-hypertetrahedron.webp"
     alt="4D dimensional centered hypertetrahedron"
@@ -31,8 +31,12 @@ c.visualize_plane(
   <figcaption class="not-prose text-neutral-content text-sm mt-2 text-center">
     <em>A 4D centered hypertetrahedron (reproduce it using the code below)</em>
   </figcaption>
-</figure>
+</figure> -->
 
+![A 4D centered hypertetrahedron (reproduce it using the code below)](four-dim-centered-hypertetrahedron.webp)
+<figcaption class="not-prose text-neutral-content text-sm mb-8 text-center">
+    <em>A 4D centered hypertetrahedron (reproduce it using the code below)</em>
+</figcaption>
 
 ```python
 c.visualize_space(

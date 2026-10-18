@@ -21,7 +21,7 @@ d.visualize_plane(
 
 `visualize_plane` handles 2D sequences, `visualize_space` handles 3D, and `visualize_multidim` handles $k$-dimensional and generalized families.
 
-<figure class="mb-8">
+<!-- <figure class="mb-8">
   <img
     src="/svg-ggb/five-dim-hyperoctahedron.webp"
     alt="Five dimensional hyperoctahedron"
@@ -30,7 +30,12 @@ d.visualize_plane(
   <figcaption class="not-prose text-neutral-content text-sm mt-2 text-center">
     <em>A 5D hyperoctahedron (reproduce it using the code below)</em>
   </figcaption>
-</figure>
+</figure> -->
+
+![A 5D hyperoctahedron (reproduce it using the code below)](five-dim-hyperoctahedron.webp)
+<figcaption class="not-prose text-neutral-content text-sm mb-8 text-center">
+    <em>A 5D hyperoctahedron (reproduce it using the code below)</em>
+</figcaption>
 
 ```python
 d.visualize_space("icosahedral", n_terms=300)
