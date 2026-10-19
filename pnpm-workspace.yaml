@@ -6,3 +6,10 @@ minimumReleaseAge: 1440
 onlyBuiltDependencies:
   - esbuild
   - sharp
+
+# Fix KaTeX 0.16.47/0.19.0 version conflict:
+# remark-math/rehype-katex resolved KaTeX 0.16.47 while the project
+# loaded KaTeX 0.19.0 CSS, causing mismatched internal class names
+# (.sizing vs .katex-sizing) and oversized superscripts, subscripts and fractions.
+overrides:
+  katex: 0.19.0
