@@ -516,7 +516,7 @@ S_4(v) = O(w).
 $$
 
 Desde un inicio solo nos interesa la parte natural, entonces removemos el $(0, 0)$ y los puntos se reducen a $4$.
-Y de esos cuatro puntos, debemos elevar al cuadrado la ordenada para recuperar el número figurado en común; como $y$ e $-y$ dan el mismo cuadrado, quedan únicamente $2$ puntos con coordenadas enteras positivas, $(1,1)$ y $(12,34)$.
+Y de esos cuatro puntos, debemos elevar al cuadrado la ordenada para recuperar el número figurado en común; como $y$ y $-y$ dan el mismo cuadrado, quedan únicamente $2$ puntos con coordenadas enteras positivas, $(1,1)$ y $(12,34)$.
 
 ### El punto cuadrado sin relleno
 
@@ -524,7 +524,7 @@ Con todo lo dicho, hemos demostrado un **corolario** que sabe a teorema con pres
 
 > $\textbf{Proposición}$. Los únicos números figurados octaédricos $O(n)$ y cuadrados $S_4(n)$ a la vez son $1$ y $1156$.
 
-El porqué está en $O(1)= 1^2=1$, mientras que $O(12)= 34^2= 1156$ y en la **belleza a media sombra del teorema de finitud de Siegel**.
+El porqué está en $O(1)= 1^2=1$, mientras que $O(12)= 34^2= 1156$, y en la **belleza a media sombra del teorema de finitud de Siegel**, con su contrapunto de especie elíptica en la base datos.
 
 
 ## Clausura elíptica
