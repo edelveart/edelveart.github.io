@@ -397,11 +397,11 @@ Tiene rango $r=1$ y subgrupo de torsión de orden dos.
 
 Volvamos a los números figurados, porque estamos ya muy inmersos en los racionales; el foco no debe irse mucho de donde están en los enteros.
 
-Según el **teorema de Siegel**,
+Según el **teorema de Siegel del año diecinueve veintinueve**,
 
-> Una curva elíptica como la nuestra y, en general, $E : y^2 = x^3 + Ax + B$  sobre $\mathbb{Q}$, con $A, B$ enteros, tiene solamente un conjunto finito de puntos enteros.
+> Una curva elíptica como la nuestra y, en general, $E : y^2 = x^3 + Ax + B$  sobre $\mathbb{Q}$, con $A, B$ enteros, tiene solamente un conjunto finito de puntos integrales.
 
-Seguro pensarás que este teorema de Siegel nos da una fórmula para hallar los puntos, pero no es así. Es la **belleza a media sombra de un teorema de finitud**.
+Seguro pensarás que este teorema de Siegel nos da una fórmula para hallar los puntos, pero no es así.
 
 Lo que buscamos ahora tiene la forma
 
@@ -516,11 +516,15 @@ S_4(v) = O(w).
 $$
 
 Desde un inicio solo nos interesa la parte natural, entonces removemos el $(0, 0)$ y los puntos se reducen a $4$.
-Y de esos cuatro puntos, debemos elevar al cuadrado la ordenada para recuperar el número figurado en común; como $y$ e $-y$ dan el mismo cuadrado, quedan únicamente $2$ puntos con coordenadas enteras positivas, $(1,1)$ y $(12,34)$, y un **corolario** que sabe a teorema con presentación de proposición que es el plato insignia del huarique visitado en la nota.
+Y de esos cuatro puntos, debemos elevar al cuadrado la ordenada para recuperar el número figurado en común; como $y$ e $-y$ dan el mismo cuadrado, quedan únicamente $2$ puntos con coordenadas enteras positivas, $(1,1)$ y $(12,34)$.
+
+### El punto cuadrado sin relleno
+
+Con todo lo dicho, hemos demostrado un **corolario** que sabe a teorema con presentación de proposición que es el plato insignia del huarique visitado en la nota.
 
 > $\textbf{Proposición}$. Los únicos números figurados octaédricos $O(n)$ y cuadrados $S_4(n)$ a la vez son $1$ y $1156$.
 
-El porqué está en $O(1)= 1^2=1$, mientras que $O(12)= 34^2= 1156$.
+El porqué está en $O(1)= 1^2=1$, mientras que $O(12)= 34^2= 1156$ y en la **belleza a media sombra del teorema de finitud de Siegel**.
 
 
 ## Clausura elíptica
