@@ -5,6 +5,7 @@ heroImage: "./ell-octahedral-notebook-2.webp"
 pubDate: "October 23 2026"
 badge: "lab notes"
 lang: "es"
+updatedDate: "October 24 2026"
 tags: [ "elliptic curves", "figurate numbers", "octahedral", "diophantine equation", "octaedro", "sólidos platónicos", "platonic solids", "octahedron"]
 ---
 
@@ -279,7 +280,7 @@ Allí verás su gráfica que con un `script.py` tenemos
 Como mi motivación estuvo dada por el álgebra de grupos, aquí introduciré la idea de **grupo de Mordell-Weil** de una curva elíptica.
 El truco está en **enunciar cómo es la idea** que considero de lo más interesante por sí misma:
 
-> Existe una ley de composición binaria geométrica que permite dotar de estructura de grupo a los puntos $E(K)$ de una curva elíptica $E/K$.
+> Existe una ley de composición binaria geométrica que permite dotar de estructura de grupo al conjunto de puntos $K$-racionales de una curva elíptica $E/K$.
 
 
 ### Una ley geométrica
