@@ -45,7 +45,7 @@ print([next(pentagonal) for _ in range(1000)])
 > O, mejor aún para computar cosas más fácilmente, ¿si elijo para el problema un número figurado plano ($k_1=2$) y un número figurado espacial ($k_2=3$)?
 
 Entiéndase por $k$ un entero mayor o igual a $2$ como la dimensión del número figurado.
-Previo a ver cómo llegué al asunto central de esta nota de laboratorio, retomo mi énfasis en que las ideas sean naturales: fue así y solo así como caigo en las curvas elípticas, pues, si no hubiera ido al desvío con esa búsqueda de **mixturización**, no habría llegado a ellas. Ahora toca decirte qué es un número figurado.
+Previo a ver cómo llegué al asunto central de esta nota de laboratorio, retomo mi énfasis en que las ideas sean naturales, pues fue así y solo así como caigo en las curvas elípticas; si no me hubiera ido al desvío con esa búsqueda de **mixturización**, no habría llegado a ellas. Ahora toca decirte qué es un número figurado.
 
 ## Mi forma de ver los números figurados
 
