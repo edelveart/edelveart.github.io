@@ -137,7 +137,10 @@ Una **curva elíptica sobre los racionales** $E/\mathbb{Q}$ es una curva proyect
 En el llano en llamas tenemos lo que se llama un **modelo** de Weierstraß (ojo con la Eszett) de $E / \mathbb{Q}$ dado por
 
 $$
- y^2 + a_1xy +a_3y = x^3+a_2x^2 + a_4x +  a_6
+\begin{aligned}
+y^2 + a_1xy + a_3y &= x^3 + a_2x^2 \\
+                  &\quad + a_4x + a_6,
+\end{aligned}
 $$
 con cada $a_j$ entero, lo que completa el apellido de modelo **integral**.
 Impresiona la primera vez que se ve este tipo de curva por su complejidad, pero en nuestro desarrollo todo será más simple. Para más información, marca el [2 de Silverman](https://link.springer.com/book/10.1007/978-0-387-09494-6).
@@ -402,7 +405,10 @@ Seguro pensarás que este teorema nos da una fórmula para hallar los puntos, pe
 Lo que buscamos ahora tiene la forma
 
 $$
-E'_{O}(\mathbb{Z}) = \{(X, Y) \in \mathbb{Z}^2 : Y^2 = X^3 + 18X\}.
+\begin{aligned}
+E'_O(\mathbb{Z}) = \bigl\{(X,Y) \in \mathbb{Z}^2 : \\
+\qquad Y^2 = X^3 + 18X \bigr\}.
+\end{aligned}
 $$
 Y Siegel solamente nos confirma que
 
