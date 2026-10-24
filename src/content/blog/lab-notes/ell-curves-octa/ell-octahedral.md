@@ -314,7 +314,7 @@ mantiene intacta $x_R$ e invierte el signo de $y_R$.
 Veamos el cálculo explícito ahora. Partimos que $E'_{O}$ (nuevamente en minúsculas), con dos puntos diferentes $P \neq Q$ y $x_P \neq x_Q$, la pendiente de $\mathcal{L}_S$ es la archiconocida
 
 $$
-\lambda = \frac{y_Q- y_P}{x_Q - x_P}
+\lambda = \frac{y_Q- y_P}{x_Q - x_P}.
 $$
 
 Así, el punto $P \oplus Q = (x_3, y_3)$ viene dado por las coordenadas racionales
@@ -451,7 +451,7 @@ Es menester entonces aclarar que el isomorfismo solo se da sobre racionales, per
 
 Nosotros buscamos, según el inverso, retomar los puntos enteros de la curva original. Escribiremos como hicimos más arriba pero ahora pensando en puntos con coordenadas enteras
 $$
-x = \frac{X}{6}, y= \frac{Y}{18}
+P = (x = \frac{X}{6}, y= \frac{Y}{18}).
 $$
 Así, que lo que buscamos es el conjunto de puntos
 
