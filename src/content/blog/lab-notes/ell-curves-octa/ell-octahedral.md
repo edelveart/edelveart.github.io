@@ -224,7 +224,7 @@ $$
 A_{\mathfrak{f}^3} \in \operatorname{GL}(2, \mathbb{Q}).
 $$
 
-Es decir, cuyo determinante $\det (A) $ diferente de $0$ permita la inversión sobre $\mathbb{Q}$. Así, que $T$ es un isomorfismo de espacios vectoriales sobre $\mathbb{Q}$, en otras palabras, es inyectiva y sobreyectiva.
+Es decir, cuyo determinante $\det (A) $ diferente de $0$ permita la inversión sobre $\mathbb{Q}$. Así, $T$ es un isomorfismo de espacios vectoriales sobre $\mathbb{Q}$ o, en otras palabras, $T$ es inyectivo y sobreyectivo.
 
 ![Pic of my notebook Surco - handwritten ](./ell-octahedral-notebook.webp)
 
@@ -234,20 +234,20 @@ Es decir, cuyo determinante $\det (A) $ diferente de $0$ permita la inversión s
 
 ### La curva elíptica octaédrica
 
-Reemplacemos entonces el cambio es $X=6x$ y $Y=18y$ y, si despejamos las variables
+Reemplacemos entonces. El cambio de variables es $X=6x$ y $Y=18y$ y, si despejamos en las variables de la ecuación base, tenemos
 
 $$
 x=\frac{X}{6},\qquad y=\frac{Y}{18}.
 $$
 
-Reemplazamos por este cambio y llegamos a
+Sustituimos $x$ e $y$ en la curva original $E_O$, de modo que
 $$
 \left(\frac{Y}{18}\right)^2
 =
 \frac{2\left(\frac{X}{6}\right)^3+\frac{X}{6}}{3}.
 $$
 
-El denominador mayor que encontrarás es $324$.
+El denominador mayor que encontrarás en ambos lados del océano elíptico es $324$.
 
 $$
 \frac{Y^2}{324} = \frac{X^3}{324} + \frac{X}{18}
@@ -401,7 +401,7 @@ Según el **teorema de Siegel**,
 
 > Una curva elíptica como la nuestra y, en general, $E : y^2 = x^3 + Ax + B$  sobre $\mathbb{Q}$, con $A, B$ enteros, tiene solamente un conjunto finito de puntos enteros.
 
-Seguro pensarás que este teorema nos da una fórmula para hallar los puntos, pero no es así.
+Seguro pensarás que este teorema de Siegel nos da una fórmula para hallar los puntos, pero no es así. Es la **belleza a media sombra de un teorema de finitud**.
 
 Lo que buscamos ahora tiene la forma
 
@@ -418,7 +418,7 @@ $$
 $$
 sin ninguna cota ni nada por el estilo.
 
-Según la LMFDB, ya visto, en total hay $7$ puntos.  A saber,
+Según la LMFDB, en total hay $7$ puntos. A saber,
 
 $$
 \begin{aligned}
@@ -516,9 +516,9 @@ S_4(v) = O(w).
 $$
 
 Desde un inicio solo nos interesa la parte natural, entonces removemos el $(0, 0)$ y los puntos se reducen a $4$.
-Y de esos cuatro puntos, debemos elevar al cuadrado la ordenada para recuperar el número figurado en común; como $y$ y $-y$ dan el mismo cuadrado, quedan únicamente $2$ puntos con coordenadas enteras positivas, $(1,1)$ y $(12,34)$, y un corolario que sabe a **teorema** con presentación de proposición que es el plato insignia del huarique visitado en la nota.
+Y de esos cuatro puntos, debemos elevar al cuadrado la ordenada para recuperar el número figurado en común; como $y$ e $-y$ dan el mismo cuadrado, quedan únicamente $2$ puntos con coordenadas enteras positivas, $(1,1)$ y $(12,34)$, y un **corolario** que sabe a teorema con presentación de proposición que es el plato insignia del huarique visitado en la nota.
 
-> $\textbf{Proposición}$. Los únicos números figurados octaédricos  y cuadrados a la vez (positivos) son $1$ y $1156$.
+> $\textbf{Proposición}$. Los únicos números figurados octaédricos $O(n)$ y cuadrados $S_4(n)$ a la vez son $1$ y $1156$.
 
 El porqué está en $O(1)= 1^2=1$, mientras que $O(12)= 34^2= 1156$.
 
