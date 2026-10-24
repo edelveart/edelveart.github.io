@@ -434,7 +434,7 @@ $$
 A_O^{-1} = \begin{pmatrix}
 \frac{1}{6} & 0 \\
 0 & \frac{1}{18}
-\end{pmatrix}
+\end{pmatrix},
 $$
 
 así que ocurren tres situaciones:
