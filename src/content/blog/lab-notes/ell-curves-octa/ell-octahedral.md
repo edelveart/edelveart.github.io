@@ -522,7 +522,7 @@ Y de esos cuatro puntos, debemos elevar al cuadrado la ordenada para recuperar e
 
 Con todo lo dicho, hemos demostrado un **corolario** que sabe a teorema con presentación de proposición que es el plato insignia del huarique visitado en la nota.
 
-> $\textbf{Proposición}$. Los únicos números figurados octaédricos $O(n)$ y cuadrados $S_4(n)$ a la vez son $1$ y $1156$.
+> $\textbf{Proposición}$. Los únicos números figurados octaédricos $O(w)$ y cuadrados $S_4(v)$ a la vez son $1$ y $1156$.
 
 El porqué está en $O(1)= 1^2=1$, mientras que $O(12)= 34^2= 1156$, y en la **belleza a media sombra del teorema de finitud de Siegel**, con su contrapunto de especie elíptica en la base datos.
 
