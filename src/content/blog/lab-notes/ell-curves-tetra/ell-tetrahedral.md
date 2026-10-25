@@ -9,11 +9,14 @@ lang: "es"
 tags: [ "elliptic curves", "figurate numbers", "tetrahedral", "diophantine equation", "sólidos platónicos", "platonic solids", "tetrahedron"]
 ---
 
-En la nota anterior encontramos un paiche del Amazonas dando un brinco diez metros hacia arriba; una curva elíptica nos dio un giro espontáneo para estudiar cuándo un número octaédrico $O(w)$ es también un cuadrado $S_4(v)$. Dejé un riachuelo y ahora vamos a replicar el experimento divagante con otro figurado espacial del libro de Elena Deza y Michel Deza [*Figurate Numbers* (2012)](https://www.worldscientific.com/worldscibooks/10.1142/8188).
+En la nota anterior encontramos un paiche del Amazonas dando un brinco diez metros hacia arriba; una curva elíptica nos dio un giro espontáneo para estudiar cuándo un número octaédrico $O(w)$ es también un cuadrado $S_4(v)$.
+Dejé un riachuelo y ahora vamos a replicar el experimento divagante con otro figurado espacial del libro de Elena Deza y Michel Deza [*Figurate Numbers* (2012)](https://www.worldscientific.com/worldscibooks/10.1142/8188).
 
 > Para leer esta nota de forma natural, consultar debes la [nota común preliminar](https://edelveart.github.io/es/blog/divagaciones-diofanticas-entre-numeros-figurados-y-curvas-elipticas/). Allí está Tokio.
 
 ## Los números triangulares en tres dimensiones
+
+> De hecho, salta la página 97 de [libro cabecera *Figurate Numbers* ](https://www.worldscientific.com/worldscibooks/10.1142/8188), donde se enumera ya la respuesta a la pregunta para llegar a ella divagando por aquí.
 
 Recordemos que los números tetraédricos tienen dimensión $k=3$ y vienen dados por
 
@@ -126,7 +129,17 @@ $$
 
 Espero no haberme confundido, ya que la suavidad está asegurada y tenemos una curva elíptica sobre $\mathbb Q$ para abordar nuestra ecuación diofántica.
 
-### El huevito y las ramas
+### El grupo de Mordell-Weil
+
+En adelanto de un par de cosas de la LMFDB que veremos más abajo, en la clasificación completa de **15 grupos posibles** finitamente generados de Barry Mazur, el subgrupo de torsión que nos corresponde es de la forma $E(\mathbb{Q})_T \cong C_2 \oplus C_2$, particularmente
+$$
+E'_{S_3^3}(\mathbb{Q}) \cong \mathbb{Z} \oplus \mathbb{Z}/{2}\mathbb{Z} \oplus \mathbb{Z}/{2}\mathbb{Z}.
+$$
+
+Asimismo, presenta rango $r=1$. Y puesto que dejé de lado en la nota anterior algún punto ejemplar, quiero quedarme con el punto de orden infinito $P_{E'}= (-3, 9)$.
+
+
+## El huevito y las ramas
 
 Antes de seguir, haré una divagación más. A diferencia de la gráfica de la ecuación de los números octaédricos $E'_O (\mathbb{R})$, estamos frente a una curva que tiene dos **componentes conexas** (en la topología euclídea).
 Esto ha pasado porque el discriminante $\Delta_{E'}$ es mayor a cero, que en geometría se dice:
@@ -198,7 +211,7 @@ Aunque pareciera que es un isomorfismo entre espacios vectoriales sobre $\mathbb
 
 > En mirada geométrica, $T$ preserva el paralelismo entre rectas. Asimismo, me gusta pensar en los vectores actuando de dos maneras, como puntos y como desplazamientos, lo que implica perder el $(0, 0)$.
 
-### Condensar en un solo lugar homogéneo
+### Condensar en un solo lugar lo homogéneo
 
 Desde el modelo prototipo prefiero pensar en un solo objeto matricial que es el engranaje entre número figurado y curva elíptica. Tener un vector de traslación cercano pero aparte me hace pensar en dos objetos.
 Por eso recurriré a una técnica prohibida que leí hace mucho tiempo en visión computacional.
@@ -345,5 +358,4 @@ El porqué deviene nuevamente de la **belleza a media sombra del teorema de fini
 
 ## Clausura elíptica tetraédrica
 
-Un corolario más, que sabe a teorema, pero es proposición. De hecho, salté la página 97 del libro cabecera, donde se enumera ya la respuesta a la pregunta.
-Lo bueno es que refiné el prototipo de matriz asociada a un número figurado y me detuve a contemplar la curva en $\mathbb{R}$. Nos vemos en la siguiente divagación.
+Un corolario más, que sabe a teorema, pero es proposición (página 97, como dijimos al inicio). Lo bueno es que refiné el prototipo de matriz asociada a un número figurado y me detuve a contemplar la curva en $\mathbb{R}$. Nos vemos en la siguiente divagación.

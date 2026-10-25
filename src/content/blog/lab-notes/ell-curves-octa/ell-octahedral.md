@@ -5,7 +5,7 @@ heroImage: "./ell-octahedral-notebook-2.webp"
 pubDate: "October 23 2026"
 badge: "lab notes"
 lang: "es"
-updatedDate: "October 24 2026"
+updatedDate: "October 25 2026"
 tags: [ "elliptic curves", "figurate numbers", "octahedral", "diophantine equation", "octaedro", "sólidos platónicos", "platonic solids", "octahedron"]
 ---
 
@@ -524,7 +524,7 @@ Con todo lo dicho, hemos demostrado un **corolario** que sabe a teorema con pres
 
 > $\textbf{Proposición}$. Los únicos números figurados octaédricos $O(w)$ y cuadrados $S_4(v)$ a la vez son $1$ y $1156$.
 
-El porqué está en $O(1)= 1^2=1$, mientras que $O(12)= 34^2= 1156$, y en la **belleza a media sombra del teorema de finitud de Siegel**, con su contrapunto de especie elíptica en la base datos.
+El porqué está en $O(1)= 1^2=1$, mientras que $O(12)= 34^2= 1156$, y en la **belleza a media sombra del teorema de finitud de Siegel**, con su contrapunto de especie elíptica en la base datos. $\square$
 
 
 ## Clausura elíptica
