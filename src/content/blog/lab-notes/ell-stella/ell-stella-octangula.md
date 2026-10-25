@@ -1,7 +1,7 @@
 ---
 title: "Divagaciones diofánticas entre la estrella octángula y curvas elípticas"
 description: "Tercera divagación, pero ahora sobre los números de la estrella octángula y los cuadrados mediante curvas elípticas. Menciono una condición suficiente para la integralidad que pasé por alto en las notas previas."
-pubDate: "October 26 2026"
+pubDate: "October 25 2026"
 heroImage: "./ell-stella-octangula-notebook.webp"
 badge: "lab notes"
 lang: "es"
