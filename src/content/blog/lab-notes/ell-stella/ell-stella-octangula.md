@@ -1,12 +1,12 @@
 ---
 title: "Divagaciones diofánticas entre la estrella octángula y curvas elípticas"
 description: "Tercera divagación, pero ahora sobre los números de la estrella octángula y los cuadrados mediante curvas elípticas. Menciono una condición suficiente para la integralidad que pasé por alto en las notas previas."
-pubDate: "October 25 2026"
+pubDate: "October 26 2026"
 heroImage: "./ell-stella-octangula-notebook.webp"
 badge: "lab notes"
 lang: "es"
 # updatedDate: "October 24 2026"
-tags: [ "elliptic curves", "figurate numbers", "stella octangula", "diophantine equation", "octaedro estrellado", "platonic solids", "octaedro estrellado", "kepler"]
+tags: [ "elliptic curves", "figurate numbers", "stella octangula", "diophantine equation", "octaedro estrellado", "platonic solids", "kepler"]
 ---
 
 Otro nombre para el número figurado que tomaremos hoy es octaedro estrellado y que aparece también como figurado espacial en el libro de Elena Deza y Michel Deza [*Figurate Numbers* (2012)](https://www.worldscientific.com/worldscibooks/10.1142/8188). Y el resultado al que llegaré también ya se encuentra allí mencionado, específicamente en la página 120.
