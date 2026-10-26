@@ -5,7 +5,7 @@ pubDate: "October 26 2026"
 heroImage: "./ell-stella-octangula-notebook.webp"
 badge: "lab notes"
 lang: "es"
-# updatedDate: "October 24 2026"
+updatedDate: "October 26 2026"
 tags: [ "elliptic curves", "figurate numbers", "stella octangula", "diophantine equation", "octaedro estrellado", "platonic solids", "kepler"]
 ---
 
@@ -79,7 +79,17 @@ Aparece en LMFDB en el modelo
 Su grupo de Mordell-Weil es cíclico de orden dos en torsión y la parte libre de rango $r=1$, es decir $E'_{SO} \cong \mathbb{Z} \oplus \mathbb{Z}/2\mathbb{Z}$.
 
 A lo que vinimos es a ver los puntos enteros que son finitos siempre por el teorema de Siegel $\# E(\mathbb{Z}) < \infty$.
-Cito los **siete puntos** de $E'_{SO}(\mathbb{Z}) = \{​(−1,1),(−1,−1),(0,0),(2,2),(2,−2),(338,6214),(338,−6214)\}$.
+Cito los **siete puntos** de
+$$
+\begin{aligned}
+E'_{SO}(\mathbb{Z}) = \{&
+(-1,1), \quad (-1,-1),\\
+&(0,0), \quad (2,2),\\
+&(2,-2), \quad (338,6214),\\
+&(338,-6214)
+\}
+\end{aligned}
+$$
 
 Lo que buscamos en todas estas notas son los puntos de $E_{SO}$, cuyas coordenadas cumplan simultáneamente el filtro de paridad mediante las congruencias
 
