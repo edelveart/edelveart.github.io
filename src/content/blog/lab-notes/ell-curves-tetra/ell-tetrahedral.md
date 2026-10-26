@@ -5,7 +5,7 @@ pubDate: "October 25 2026"
 heroImage: "./ell-tetrahedral-notebook.webp"
 badge: "lab notes"
 lang: "es"
-# updatedDate: "October 24 2026"
+updatedDate: "October 26 2026"
 tags: [ "elliptic curves", "figurate numbers", "tetrahedral", "diophantine equation", "sólidos platónicos", "platonic solids", "tetrahedron"]
 ---
 
@@ -59,7 +59,7 @@ Como hicimos con los números octaédricos, vamos a geometrizar la ecuación cú
 ### Tuve que mover el bote de la matriz
 
 El riachuelo que dejé en fluidez nos dice ahora que debemos encontrar una matriz $A_{\mathfrak{f}^3}$ invertible asociada a $S_3^3$ para el día de hoy.
-Como el número $6$ se pega a $y$, debemos ver dónde lo dejamos. Primero, fijemos la transformación lineal isomorfa $T:\mathbb Q^2\longrightarrow\mathbb Q^2$ sobre los puntos racionales, donde le planteamos una matriz asociada
+Como el número $6$ se pega a $y$, debemos ver dónde lo dejamos. Primero, fijemos el automorfismo lineal $T:\mathbb Q^2\longrightarrow\mathbb Q^2$ sobre los puntos racionales, donde le planteamos una matriz asociada
 
 $$
 A_{S_3^3} = \begin{pmatrix}
