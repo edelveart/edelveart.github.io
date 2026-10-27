@@ -5,7 +5,7 @@ pubDate: "October 26 2026"
 heroImage: "./ell-solid-notebook.webp"
 badge: "lab notes"
 lang: "es"
-# updatedDate: "October 24 2026"
+updatedDate: "October 27 2026"
 tags: [ "elliptic curves", "figurate numbers", "cubic", "dodecahedral", "icosahedral", "diophantine equation", "sólidos platónicos", "platonic solids", "cube", "dodecahedron", "icosahedron", "dodecaedro", "icosaedro", "cubo"]
 ---
 
@@ -104,6 +104,10 @@ Así que el caso platónico del cubo, la proposición es
 Para ejemplificar, los puntos $(1, 1), (4, 8), (9, 27), (16, 64), \ldots $ corresponden a los números $1, 64, 729, 4096, \ldots$, es decir, las sextas potencias.
 
 ![My Personal Notebook - Cubic numbers -Singular Curve](ell-solid-notebook.webp)
+
+<figcaption class="not-prose text-neutral-content text-sm mb-8 text-center">
+    <em>Esbozo de la curva singular de los cúbicos en mi cuaderno cuadriculado .</em>
+</figcaption>
 
 ## Hacia la curva elíptica del dodecaedro
 
