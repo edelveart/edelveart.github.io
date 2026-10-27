@@ -34,6 +34,8 @@ Te recuerdo que las definiciones polinomiales vienen del libro de cajón para la
 Además, puesto que vimos bastante teoría, abreviaré gran parte de las técnicas que necesitamos e iremos más directo al objeto, salvo con el primer caso.
 
 > Para leer esta nota de forma natural, consultar debes la [nota común preliminar](https://edelveart.github.io/es/blog/divagaciones-diofanticas-entre-numeros-figurados-y-curvas-elipticas/). Allí está casi Tokio y en las dos notas previas también.
+>
+> Para calcular las secuencias en los fragmentos de código de mis notas, usa mi librería [`figuratenum`](https://pypi.org/project/figuratenum/)
 
 ## Los números cúbicos
 
@@ -42,6 +44,15 @@ Muchas veces nos recordamos diciendo:
 
 La respuesta viene desde la antigüedad. Si unas ocho canicas traslúcidas se imantan por arte sin magia potagia entre sí y las coloco como formando los vértices de una cajita, tendrás un cubo, o al menos los vértices.
 Si ganaste $19$ canicas más a las ocho que tenías, es decir, $27$, podrás armarte una cajita más grande con $3^3$ canicas. Los números, para mí, son dependientes de la geometría y la geometría también de los números.
+
+```python
+from figuratenum import FigurateNum
+
+cubic = FigurateNum().cubic()
+print([next(cubic) for _ in range(20)])
+# [1, 8, 27, 64, 125, 216, 343, 512, 729, 1000, 1331,
+# 1728, 2197, 2744, 3375, 4096, 4913, 5832, 6859, 8000]
+```
 
 ### La degeneración de la curva elíptica de los cúbicos
 
@@ -88,7 +99,7 @@ Es fácil  comprobar que $y^2 = (n^3)^2 = n^6 = (n^2)^3 = x^3$ (sirvió mucho el
 
 Así que el caso platónico del cubo, la proposición es
 
-> **Proposición.** Hay infinitos números que son cúbicos $C(w)$ y cuadrados perfectos $S_4(v)$ a la vez.
+> $\textbf{Proposición}$.  Hay infinitos números que son cúbicos $C(w)$ y cuadrados perfectos $S_4(v)$ a la vez.
 
 Para ejemplificar, los puntos $(1, 1), (4, 8), (9, 27), (16, 64), \ldots $ corresponden a los números $1, 64, 729, 4096, \ldots$, es decir, las sextas potencias.
 
@@ -101,6 +112,16 @@ Planteo directamente la curva elíptica base asociada al dodecaedro en el plano 
 $$
 E_{D}:  y^2 = \frac{x(3x-1)(3x-2)}{2}
 $$
+
+```python
+from figuratenum import FigurateNum
+
+dodecahedral = FigurateNum().dodecahedral()
+print([next(dodecahedral) for _ in range(20)])
+
+# [1, 20, 84, 220, 455, 816, 1330, 2024, 2925, 4060, 5456,
+# 7140, 9139, 11480, 14190, 17296, 20825, 24804, 29260, 34220]
+```
 
 Bien, la matriz que nos va a representar nuestra transformación afín (automorfismo afín sobre $\mathbb{Q}^2$) definido por
 
@@ -206,7 +227,7 @@ $$
 E_D(\mathbb{Z}) = \{(0, 0), (1, \pm 1)\}.
 $$
 
-> **Proposición.** El $1$ es el único número que es a la vez dodecaédrico $D(w)$ y cuadrado perfecto $S_4(v)$ (positivo).
+> $\textbf{Proposición}$.  El $1$ es el único número que es a la vez dodecaédrico $D(w)$ y cuadrado perfecto $S_4(v)$ (positivo).
 
 Garantizado por el teorema de Siegel (que asegura la finitud) y LMFDB (que nos dice cuáles son). $\square$
 
@@ -219,6 +240,15 @@ A estas alturas $h$ logarítmicas no elípticas de las notas iré de frente. La 
 $$
 E_I: y^2 = \frac{x(5x^2-5x+2)}{2}
 $$
+
+```python
+from figuratenum import FigurateNum
+
+icosahedral = FigurateNum().icosahedral()
+print([next(icosahedral) for _ in range(20)])
+# [1, 12, 48, 124, 255, 456, 742, 1128, 1629, 2260, 3036,
+# 3972, 5083, 6384, 7890, 9616, 11577, 13788, 16264, 19020]
+```
 
 La transformación que necesitamos es del tipo afín $T: \mathbb{Q}^2\rightarrow \mathbb{Q}^2$, cuya matriz invertible asociada sobre racionales, representada en coordenadas homogéneas, es
 
@@ -294,7 +324,7 @@ $$
 
 Como queremos  la parte positiva $x, y > 0$, hemos dado con el siguiente corolario.
 
-> **Proposición.** El $1$ es el único número que es a la vez icosaédrico $I(w)$ y cuadrado perfecto $S_4(v)$.
+> $\textbf{Proposición}$.  El $1$ es el único número que es a la vez icosaédrico $I(w)$ y cuadrado perfecto $S_4(v)$.
 
 La prueba se ampara en la finitud del teorema de Siegel y de LMFDB. $\square$
 
