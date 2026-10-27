@@ -35,7 +35,7 @@ Además, puesto que vimos bastante teoría, abreviaré gran parte de las técnic
 
 > Para leer esta nota de forma natural, consultar debes la [nota común preliminar](https://edelveart.github.io/es/blog/divagaciones-diofanticas-entre-numeros-figurados-y-curvas-elipticas/). Allí está casi Tokio y en las dos notas previas también.
 >
-> Para calcular las secuencias en los fragmentos de código de mis notas, usa mi librería [`figuratenum`](https://pypi.org/project/figuratenum/)
+> Para calcular las secuencias en los fragmentos de código de mis notas, usa mi librería [`figuratenum` en PyPI](https://pypi.org/project/figuratenum/)
 
 ## Los números cúbicos
 
