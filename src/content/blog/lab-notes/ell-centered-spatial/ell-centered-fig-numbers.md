@@ -29,7 +29,7 @@ Asimismo, enunciaré la matriz que representa el automorfismo afín o lineal $A_
 >
 > Para calcular las secuencias en los fragmentos de código de mis notas, usa mi librería [`figuratenum` en PyPI](https://pypi.org/project/figuratenum/)
 
-En palabras **simples y comunes**, seré bastante seco respecto de las anteriores entregas.
+En palabras **simples y comunes**, seré bastante seco respecto de las anteriores entregas y repetiré el mismo argumento de demostración.
 
 ## El primo A en la curva elíptica de los cúbicos centrados
 
@@ -194,7 +194,10 @@ La prueba se ampara en la finitud del teorema de Siegel y de LMFDB. $\square$
 La ecuación diofántica correspondiente en su forma de cúbica viene dada por
 
 $$
-E_{\bar{D}}: y^2 = (2x - 1)(3x^2 - 3x + 1) = 6x^3 - 9x^2 + 5x - 1
+\begin{aligned}
+E_{\bar{D}}: \quad y^2 &= (2x - 1)(3x^2 - 3x + 1) \\
+&= 6x^3 - 9x^2 + 5x - 1
+\end{aligned}
 $$
 
 ```python
@@ -357,9 +360,12 @@ $$
 Ahora, la lista de puntos enteros es algo más extensa de lo que hemos visto en la nota,
 $$
 \begin{aligned}
-E'_{\bar{S}_3^3}(\mathbb{Z}) = \{&(0, 0), (1, 10), (1, -10), (3, 18), (3, -18), \\
-&(12, 54), (12, -54), (33, 198), (33, -198), \\
-&(49, 350), (49, -350), (99, 990), (99, -990), \\
+E'_{\bar{S}_3^3}(\mathbb{Z}) = \{&(0, 0), (1, 10), (1, -10), \\
+&(3, 18), (3, -18), \\
+&(12, 54), (12, -54), \\
+&(33, 198), (33, -198), \\
+&(49, 350), (49, -350),\\
+&(99, 990), (99, -990), \\
 &(192, 2664), (192, -2664)\}.
 \end{aligned}
 $$
@@ -419,9 +425,12 @@ Los puntos enteros que aparecen sobre los enteros
 
 $$
 \begin{aligned}
-E'_{\bar{O}}(\mathbb{Z}) = \{&(0, 0), (4, 28), (4, -28), (6, 36), (6, -36), \\
-&(30, 180), (30, -180), (45, 315), (45, -315), \\
-&(1014, 32292), (1014, -32292)\}.
+E'_{\bar{O}}(\mathbb{Z}) = \{&(0, 0), (4, 28), (4, -28),  \\
+&(6, 36), (6, -36), \\
+&(30, 180), (30, -180), \\
+&(45, 315), (45, -315), \\
+&(1014, 32292),\\
+& (1014, -32292)\}.
 \end{aligned}
 $$
 
