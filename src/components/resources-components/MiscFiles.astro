@@ -4,23 +4,23 @@ interface Props {
 }
 
 import { BULLET_SQUARE_LIST } from "@ts-config-path/pages/about.astro";
-import { LINKS_TO } from "@styles/utilsCSS";
+import { LINKS_TO_NO_UNDERLINE } from "@styles/utilsCSS";
 import { MISC_RESOURCES } from "@ts-config-path/lib/resources-paths";
 
 const { title } = Astro.props;
 ---
 
-<section class="mb-10">
+<section class="mb-5">
   <h2 class="text-2xl font-semibold my-5">{title}</h2>
 
-  <ul class="flex flex-col gap-y-2">
+  <ul class="flex flex-col gap-y-0">
     {
       MISC_RESOURCES.map((resource) => (
         <li class={BULLET_SQUARE_LIST.li}>
           <span class={BULLET_SQUARE_LIST.span} />
 
           <a
-            class={LINKS_TO}
+            class={LINKS_TO_NO_UNDERLINE}
             href={resource.href}
             target="_blank"
             rel="noopener"

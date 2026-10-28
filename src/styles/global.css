@@ -47,6 +47,9 @@ section .katex,
 .prose .katex {
   font-size: 1.1em;
 }
+/* SCROLL-X for Large Display Squation */
+/* .katex-display { overflow: auto hidden } */
+
 
 aside {
   scrollbar-gutter: stable;

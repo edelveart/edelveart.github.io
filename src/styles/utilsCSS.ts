@@ -3,6 +3,8 @@ const rounded = "rounded-md";
 // Links in .astro
 export const LINKS_TO =
   "text-primary/95 underline underline-offset-2 hover:decoration-2 hover:text-primary transition-[color,text-underline-offset,text-decoration-thickness] duration-150 ease-in-out";
+export const LINKS_TO_NO_UNDERLINE =
+  "text-primary/90 hover:text-primary transition-[color] duration-150 ease-in-out";
 
 // CARD-ARCTIONS BORDER
 export const BASE_BORDER = `border border-base-content/12 ${rounded}`;
@@ -21,7 +23,7 @@ export const CARD_OP = {
 
 // DECORATION POST-BLOG BORDER
 export const BORDER_INFO =
-  "relative border-l-2 pl-4 border-base-content/20 before:absolute before:left-[-6px] before:top-1/2 before:-translate-y-1/2 before:size-2.5 before:rounded-xs before:border before:border-primary/40 before:bg-base-100";
+  "relative border-l-2 pl-4 border-base-content/20 before:absolute before:left-[-6px] before:top-1/2 before:-translate-y-1/2 before:size-2.5 before:rounded-xs before:border before:border-primary/30 before:bg-base-100";
 export const BLOCK_QUOTE = `text-right ${CARD_OP.muteData}`;
 
 // BADGES AND METADATA
