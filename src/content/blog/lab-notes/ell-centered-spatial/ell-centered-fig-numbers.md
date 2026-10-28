@@ -29,7 +29,7 @@ Asimismo, enunciaré la matriz que representa el automorfismo afín o lineal $A_
 >
 > Para calcular las secuencias en los fragmentos de código de mis notas, usa mi librería [`figuratenum` en PyPI](https://pypi.org/project/figuratenum/)
 
-En palabras **simples y comunes**, seré bastante seco respecto de las anteriores entregas y repetiré el mismo argumento de demostración.
+En palabras **simples y comunes**, seré bastante seco respecto de las anteriores entregas y repetiré, cual guacamayo, el mismo argumento de demostración.
 
 ## El primo A en la curva elíptica de los cúbicos centrados
 
