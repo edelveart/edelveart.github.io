@@ -12,10 +12,10 @@ import localizedFormat from "dayjs/plugin/localizedFormat";
 dayjs.extend(localizedFormat);
 
 import {
-  BORDER_OPACITY,
   CARD_OP,
   GET_COLORS_METADATA,
   LINKS_TO,
+  LINKS_TO_NO_UNDERLINE,
   NAV_LINKS_PAGES,
 } from "@styles/utilsCSS";
 
@@ -59,22 +59,23 @@ const { page } = Astro.props as Props;
             createSlug(post.data.title, post.id) +
             "/";
           return (
-            <article class="group my-2">
-              <div class="flex flex-wrap items-start gap-x-4 gap-y-2">
-                <div class="flex flex-wrap items-center justify-left gap-x-4 gap-y-2 w-full">
+            <article class="group my-1">
+              <div class="flex flex-wrap items-start gap-x-4 gap-y-0">
+                <div class="flex flex-wrap items-center justify-left gap-x-4 gap-y-0 w-full">
                   <a
                     href={POST_URL_ENG_ESP}
-                    class="flex flex-1 min-w-0 items-start gap-x-4"
+                    class="flex flex-1 min-w-0 items-start  gap-y-0"
                   >
                     <time class={`${CARD_OP.muteData} w-24 shrink-0 text-left`}>
                       {dayjs(post.data.pubDate).format("ll")}
                     </time>
 
-                    <span class={`min-w-0 ${LINKS_TO}`}>{post.data.title}</span>
+                    <span class={` ${LINKS_TO} line-clamp-2`}>
+                      {post.data.title}
+                    </span>
                   </a>
-
                   <span
-                    class={`ml-2  ${GET_COLORS_METADATA(post.data.badge)} text-xs`}
+                    class={`ml-0.5  ${GET_COLORS_METADATA(post.data.badge)} text-xs`}
                   >
                     {post.data.badge}
                   </span>
