@@ -3,7 +3,7 @@ interface Props {
   title: string;
 }
 import { BULLET_SQUARE_LIST } from "@ts-config-path/pages/about.astro";
-import { LINKS_TO_NO_UNDERLINE } from "@styles/utilsCSS";
+import { LINKS_TO, LINKS_TO_NO_UNDERLINE } from "@styles/utilsCSS";
 const { title } = Astro.props;
 import { ERRATA_RESOURCES } from "@ts-config-path/lib/resources-paths";
 ---
@@ -11,7 +11,7 @@ import { ERRATA_RESOURCES } from "@ts-config-path/lib/resources-paths";
 <section class="mb-5">
   <h2 class="text-2xl font-semibold my-5">{title}</h2>
 
-  <ul class="flex flex-col gap-y-0">
+  <ul class="flex flex-col gap-y-0.5">
     {
       ERRATA_RESOURCES.map((resource) => (
         <li class={BULLET_SQUARE_LIST.li}>
