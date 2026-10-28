@@ -5,7 +5,7 @@ pubDate: "October 26 2026"
 heroImage: "./ell-solid-notebook.webp"
 badge: "lab notes"
 lang: "es"
-updatedDate: "October 27 2026"
+updatedDate: "October 28 2026"
 tags: [ "elliptic curves", "figurate numbers", "cubic", "dodecahedral", "icosahedral", "diophantine equation", "sólidos platónicos", "platonic solids", "cube", "dodecahedron", "icosahedron", "dodecaedro", "icosaedro", "cubo"]
 ---
 
@@ -167,10 +167,13 @@ Si multiplico los denominadores del lado derecho me queda  $1296$, así que mult
 el lado izquierdo por lo mismo y llegamos a
 
 $$
-E'_{D}: Y^2=X(X+6)(X-6) = X^3-36X
+\begin{aligned}
+E'_{D}: Y^2 & =X(X+6)(X-6)\\
+& = X^3-36X,
+\end{aligned}
 $$
 
-Cuyo discriminante cumple $\Delta_{E} \neq 0$ (es el mismo de la nota anterior, $2^{12}\cdot 3^6$), lo que indica no singularidad sobre racionales.
+cuyo discriminante cumple $\Delta_{E} \neq 0$ (es el mismo de la nota anterior, $2^{12}\cdot 3^6$), lo que indica no singularidad sobre racionales.
 
 ![Elliptic curve associated to dodecahedral numbers](../ell-curves-tetra/ell-tetrahedral-inv-color.webp)
 
@@ -189,7 +192,8 @@ $$
 \begin{aligned}
 E'_{D}(\mathbb Z)=\{&
 (-6,0),(-3,9),(-3,-9),\\
-&(-2,8),(-2,-8),(0,0),(6,0),\\
+&(-2,8),(-2,-8),\\
+&(0,0),(6,0),\\
 &(12,36),(12,-36),\\
 &(18,72),(18,-72),\\
 &(294,5040),(294,-5040)
@@ -293,7 +297,7 @@ Bueno, veamos, copio aquí la lista de **cinco enteros** propuesta en la base de
 $$
 E'_I(\mathbb{Z}) =
 \left\{
-(-3,0), (1,8),(1,-8), (7,20), (7,-20)
+(-3,0), (1,\pm 8), (7,\pm 20)
 \right\}.
 $$
 
