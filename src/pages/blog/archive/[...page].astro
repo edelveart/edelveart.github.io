@@ -60,37 +60,31 @@ const { page } = Astro.props as Props;
             "/";
           return (
             <article class="group my-1">
-              <div class="flex flex-wrap items-start gap-x-4 gap-y-0">
-                <div class="flex flex-wrap items-center justify-left gap-x-4 gap-y-0 w-full">
-                  <a
-                    href={POST_URL_ENG_ESP}
-                    class="flex flex-1 min-w-0 items-start  gap-y-0"
-                  >
-                    <time class={`${CARD_OP.muteData} w-24 shrink-0 text-left`}>
-                      {dayjs(post.data.pubDate).format("ll")}
-                    </time>
+              <div class="flex w-full items-start gap-x-0">
+                <div class="flex w-24 shrink-0 flex-col items-start gap-y-1 ">
+                  <time class={`${CARD_OP.muteData} leading-5`}>
+                    {dayjs(post.data.pubDate).format("ll")}
+                  </time>
 
-                    <span class={` ${LINKS_TO} line-clamp-2`}>
-                      {post.data.title}
-                    </span>
-                  </a>
                   <span
-                    class={`ml-0.5  ${GET_COLORS_METADATA(post.data.badge)} text-xs`}
+                    class={`text-xs sm:hidden ${GET_COLORS_METADATA(post.data.badge)}`}
                   >
                     {post.data.badge}
                   </span>
-
-                  {/* <div
-                    class={`shrink-0 px-2 py-0.5 uppercase tracking-wide ${badge_color}`}
-                    lang={isSpanish ? "es" : "en"}
-                  >
-                    {isSpanish ? "ES" : "EN"}
-                  </div> */}
-
-                  {/* <p class={`mt-1 ${CARD_OP.parr} line-clamp-2`}>
-                    {post.data.description}
-                  </p> */}
                 </div>
+
+                <a
+                  href={POST_URL_ENG_ESP}
+                  class={`min-w-0 flex-1 leading-5 ${LINKS_TO} line-clamp-2`}
+                >
+                  {post.data.title}
+                </a>
+
+                <span
+                  class={`ml-5 hidden shrink-0 text-xs leading-5 sm:inline ${GET_COLORS_METADATA(post.data.badge)} `}
+                >
+                  {post.data.badge}
+                </span>
               </div>
             </article>
           );
@@ -151,3 +145,18 @@ const { page } = Astro.props as Props;
     </nav>
   </article>
 </BaseLayout>
+
+{
+  /* <div
+                        class={`shrink-0 px-2 py-0.5 uppercase tracking-wide ${badge_color}`}
+                        lang={isSpanish ? "es" : "en"}
+                      >
+                        {isSpanish ? "ES" : "EN"}
+                      </div> */
+}
+
+{
+  /* <p class={`mt-1 ${CARD_OP.parr} line-clamp-2`}>
+                        {post.data.description}
+                      </p> */
+}
