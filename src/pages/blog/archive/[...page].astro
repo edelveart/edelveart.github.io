@@ -14,7 +14,7 @@ dayjs.extend(localizedFormat);
 import {
   CARD_OP,
   GET_COLORS_METADATA,
-  LINKS_TO,
+  //   LINKS_TO,
   LINKS_TO_NO_UNDERLINE,
   NAV_LINKS_PAGES,
 } from "@styles/utilsCSS";
@@ -75,7 +75,7 @@ const { page } = Astro.props as Props;
 
                 <a
                   href={POST_URL_ENG_ESP}
-                  class={`min-w-0 flex-1 leading-5 ${LINKS_TO} line-clamp-2`}
+                  class={`min-w-0 flex-1 leading-5 ${LINKS_TO_NO_UNDERLINE} line-clamp-2`}
                 >
                   {post.data.title}
                 </a>

@@ -78,7 +78,7 @@ export const menuSpanish = [
     activeType: "exact",
   },
   {
-    text: "Bibliotecas",
+    text: "Software",
     href: routeSpanish.projects,
     icon: Branch,
     activeType: "exact",
