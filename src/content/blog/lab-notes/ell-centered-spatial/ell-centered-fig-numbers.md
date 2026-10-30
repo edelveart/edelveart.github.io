@@ -5,7 +5,7 @@ pubDate: "October 27 2026"
 heroImage: "./ell-centered-notebook.webp"
 badge: "lab notes"
 lang: "es"
-# updatedDate: "October 24 2026"
+updatedDate: "October 30 2026"
 tags: [ "elliptic curves", "figurate numbers", "diophantine equation", "centered platonic solids", "centered cube", "centered dodecahedron", "centered icosahedron",  "centered octahedron", "centered tetrahedron", "dodecaedro centrado", "icosaedro centrado", "cubo centrado", "octaedro centrado", "tetraedro centrado"]
 ---
 
@@ -51,6 +51,8 @@ print([next(centered_cube) for _ in range(20)])
 # [1, 9, 35, 91, 189, 341, 559, 855, 1241, 1729, 2331,
 # 3059, 3925, 4941, 6119, 7471, 9009, 10745, 12691, 14859]
 ```
+
+- El décimo número cúbico centrado $\bar{C}(10) = 1729$, coincide con el número de [Hardy-Ramanujan](https://mathworld.wolfram.com/Hardy-RamanujanNumber.html). Esta observación la noté ayer debido a las bromas y conversaciones con un amigo músico hace cierto tiempo.
 
 La transformación $T$ que necesitamos para llevar a forma de Weierstraß se representa en coordenadas homogéneas con la matriz
 
