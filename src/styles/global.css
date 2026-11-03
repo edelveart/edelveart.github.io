@@ -40,7 +40,7 @@
 html {
   scrollbar-gutter: stable;
   overflow-y: auto;
-  font-size: 16px;
+  font-size: 16.7px;
 }
 
 section .katex,
@@ -75,7 +75,7 @@ code {
 }
 
 :root {
-  --font-size-code: 0.88rem;
+  --font-size-code: 0.86rem;
 }
 
 /* Only with Shiki */
