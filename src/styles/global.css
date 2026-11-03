@@ -61,7 +61,7 @@ aside {
 
 body {
   font-family: 'Manrope Variable', sans-serif;
-  font-weight: 450;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -75,7 +75,7 @@ code {
 }
 
 :root {
-  --font-size-code: 0.9rem;
+  --font-size-code: 0.88rem;
 }
 
 /* Only with Shiki */
