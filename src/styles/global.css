@@ -75,7 +75,7 @@ code {
 }
 
 :root {
-  --font-size-code: 0.92rem;
+  --font-size-code: 0.9rem;
 }
 
 /* Only with Shiki */
