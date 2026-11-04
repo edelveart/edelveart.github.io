@@ -4,7 +4,7 @@ description: "Una optimización de lo más simple para generar término por tér
 pubDate: "November 03 2026"
 lang: "es"
 badge: "misc notes"
-# updatedDate: "Nov 02 2026"
+updatedDate: "Nov 04 2026"
 tags: ["figurate numbers", "finite differences", "optimization", "generators", "big o", "figuratenum"]
 ---
 
@@ -300,7 +300,7 @@ $$
 \mathfrak{F}_n \longmapsto M\mathfrak{F}_n = \mathfrak{F}_{n+1}.
 $$
 
-(El generador de arriba arranca en $\mathfrak{F}_1 = M\mathfrak{F}_0$; por eso en el caso triangular `a=1`, `b=2`, `c=1`, mientras que $\mathfrak{F}_0 = (0, 1, 1)^T$.)
+El generador de arriba acelera en $\mathfrak{F}_1 = M\mathfrak{F}_0$; por eso en el caso triangular `a=1`, `b=2`, `c=1`, mientras que $\mathfrak{F}_0 = (0, 1, 1)^T$.
 
 ## Otra vez a lo mismo
 
@@ -332,10 +332,10 @@ $$
 =
 \sum_{j=0}^{k}
 \binom{n}{j}
-\Delta_+^j \mathfrak{f}^k(0)
+\Delta_+^j \mathfrak{f}^k(0).
 $$
 
-(con $\binom{n}{j}$ generalizado, vale también para $n$ negativo).
+Añado, si pensamos en $\binom{n}{j}$ generalizado, es válido también para términos $n$ negativos.
 
 Y este cuento casi ha comenzado, porque aún falta implementar para dimensiones $k \ge 5$. Al respecto, tuve problemas porque dentro de los generadores auxiliares necesité colocar un bucle, y eso reducía bastante la velocidad. Pensé también en crear funciones como plantillas, aunque eso me pareció no muy natural.
 
