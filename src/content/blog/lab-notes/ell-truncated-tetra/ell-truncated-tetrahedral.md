@@ -230,7 +230,7 @@ Como ya tenemos los puntos listados, elevo al cuadrado la coordenada de ordenada
 
 La prueba deviene de la finitud de puntos integrales del teorema de Siegel y de la lista exhaustiva y certificada que calcula SageMath con `integral_points`. $\square$
 
-## Reorden del pase de abordaje diofantino
+## Pase de abordaje diofántico
 
 El caso diofántico con el número figurado truncado $TS_3^3(n)$ llega en buena hora, al lonchecito. Por un instante, me dio algo de desazón mental el ver que no encontré esta curva elíptica en LMFDB luego de calcular su $j$-invariante con mi otra librería y hacer la búsqueda en la base de $L$-funciones y formas modulares nuevamente sin hallarla. Como ya estaba con `modular_forms`, pensé,
 
