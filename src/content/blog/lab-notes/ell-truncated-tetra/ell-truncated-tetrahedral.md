@@ -5,7 +5,7 @@ pubDate: "November 03 2026"
 heroImage: "./ell-trun-tetra-notebook.webp"
 badge: "lab notes"
 lang: "es"
-# updatedDate: "November 3 2026"
+updatedDate: "November 4 2026"
 tags: [ "elliptic curves", "figurate numbers", "diophantine equation", "truncated tetrahedral", "tetraedro truncado", "sagemath", "number theory"]
 ---
 
@@ -206,15 +206,17 @@ for p in puntos_originales:
 ```
 
 Por acortar la nota dado que ya hemos hecho muchas veces este marco procedimental, también introduje la transformación inversa $T^{-1}$, $(X, Y) \longmapsto \left(\frac{X+54}{138}, \frac{Y}{828}\right)$, en el código de arriba (recuerda que $T$ es $X = 138x-54$, $Y=828y$).
-De los $39$ puntos enteros, solo perduraron un subconjunto de nueve puntos $S \subseteq E'(\mathbb{Z}) $  y que con $T^{-1}$ me imprimieron las coordenadas en la curva original
 
 $$
 \begin{aligned}
-E_{TS_3^3}(\mathbb{Z}) = \{&(0, 0), (1, -1), (1, 1),\\
-&(2, -4), (2, 4), (6, -26),\\
-&(6, 26), (20, -170), (20, 170)\}.
+E_{TS_3^3}(\mathbb{Z}) = \{&(0, 0), (1, -1), \\
+& (1, 1), (2, -4), (2, 4),\\
+& (6, -26), (6, 26), \\
+& (20, -170), (20, 170)\}.
 \end{aligned}
 $$
+
+De los $39$ puntos enteros, solo perduraron un subconjunto de **nueve puntos** $S \subseteq E'(\mathbb{Z}) $  y que con $T^{-1}$ me imprimieron las coordenadas en la curva original $E_{TS_3^3}$.
 
 ## El corolario
 
