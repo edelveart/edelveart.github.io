@@ -5,7 +5,7 @@ pubDate: "October 27 2026"
 heroImage: "./ell-centered-notebook.webp"
 badge: "lab notes"
 lang: "es"
-updatedDate: "October 30 2026"
+updatedDate: "November 05 2026"
 tags: [ "elliptic curves", "figurate numbers", "diophantine equation", "centered platonic solids", "centered cube", "centered dodecahedron", "centered icosahedron",  "centered octahedron", "centered tetrahedron", "dodecaedro centrado", "icosaedro centrado", "cubo centrado", "octaedro centrado", "tetraedro centrado"]
 ---
 
@@ -453,7 +453,7 @@ Para no olvidarme, el rango $r$ de la parte libre merece su comentario. No esper
 
 ![Notebook - Mordell-Weil groups](ell-centered-notebook.webp)
 <figcaption class="not-prose text-neutral-content text-sm mb-8 text-center">
-    <em>Una página de cuaderno cuadriculado mientras clasifico los grupos de Mordell-Weil.</em>
+    <em>Una página de mi cuaderno cuadriculado mientras clasifico los grupos de Mordell-Weil.</em>
 </figcaption>
 
 Antes de culminar, quiero cerrar esta **V nota mía** con un escondrijo musical de ley aparte. Hice uso de puras transformaciones afines $T$ para biyectar puntos entre $E_{\mathfrak{f}}$ y $E'_{\mathfrak{f}^k}$ sobre racionales.
