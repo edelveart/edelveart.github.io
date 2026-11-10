@@ -4,7 +4,7 @@ description: "Una optimización de lo más simple para generar término por tér
 pubDate: "November 03 2026"
 lang: "es"
 badge: "misc notes"
-updatedDate: "Nov 04 2026"
+updatedDate: "Nov 10 2026"
 tags: ["figurate numbers", "finite differences", "optimization", "generators", "big o", "figuratenum"]
 ---
 
@@ -230,10 +230,9 @@ $$
 donde $a_k$ es el coeficiente principal del polinomio de grado $k \ge 2$. El método de diferencias con el que planteé el algoritmo para `figuratenum` es
 
 $$
-\Delta_+^{j} \mathfrak{f}^k(n) = \Delta_+^{j-1}\mathfrak{f}^{k}(n+1) - \Delta_+^{j-1}\mathfrak{f}^k(n), \quad j \ge 1,
+\Delta_+^{j} \mathfrak{f}^k(n) = \Delta_+^{j-1}\mathfrak{f}^{k}(n+1) - \Delta_+^{j-1}\mathfrak{f}^k(n),
 $$
-
-con $\Delta_+^0 \mathfrak{f}^k(n) = \mathfrak{f}^k(n)$. Pues lo bonito es que cada diferencia va bajándole los tablones al grado $k$.
+donde $j \ge 1$, con $\Delta_+^0 \mathfrak{f}^k(n) = \mathfrak{f}^k(n)$. Pues lo bonito es que cada diferencia va bajándole los tablones al grado $k$.
 
 La primera diferencia, lo deja en grado $k-1$, la segunda en $k-2$ y así hasta la $k$-ésima diferencia lo deja en $0$.
 De aquí es natural saber que
