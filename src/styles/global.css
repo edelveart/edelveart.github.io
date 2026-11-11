@@ -27,7 +27,7 @@ section .katex,
   font-size: 1.18em;
 }
 /* SCROLL-X for Large Display Squation */
-/* .katex-display { overflow: auto hidden } */
+.katex-display { overflow: auto hidden }
 
 aside {
   scrollbar-gutter: stable;
