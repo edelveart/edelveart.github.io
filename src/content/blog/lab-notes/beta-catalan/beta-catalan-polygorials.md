@@ -3,6 +3,7 @@ title: "A Catalan Beta Function from Figurate Numbers?"
 description: "I wanted to construct a Beta-like function from figurate numbers that generate the Catalan numbers through a quotient of finite products."
 heroImage: "./notebook-beta-catalan.webp"
 pubDate: "November 10 2026"
+updatedDate: "November 11 2026"
 badge: "lab notes"
 tags: ["catalan numbers", "figurate numbers", "gamma function", "beta function", "polygorials", "python"]
 ---
@@ -13,7 +14,7 @@ I've found several corollaries along the way.
 Well, what got me going a few weeks ago, and what I'll develop here, is a simple idea: instead of *adding* figurate numbers (which is already done, and we'll see it shortly), let's *multiply* them.
 To be specific, I'm referring to the article on the Wayback Machine called [Polygorials by Daniel Dockery](https://web.archive.org/web/20140617132401/http://danieldockery.com/res/math/polygorials.pdf).
 
-> Separately, on August 16 I released version 1.6 of my Ruby gem for making algorithmic music with Sonic Pi, [figurate_numbers](https://github.com/edelveart/figurate_numbers).  It includes `ArithTransform.figuratenomial(n, k, seq)`, which takes a sequence of figurate numbers `seq` and constructs a Fibonomial from them.
+> Separately, on August 16 I released `version 1.6` of my Ruby gem for making algorithmic music with Sonic Pi, [figurate_numbers](https://github.com/edelveart/figurate_numbers).  It includes `ArithTransform.figuratenomial(n, k, seq)`, which takes a sequence of figurate numbers `seq` and constructs a Fibonomial from them.
 
 But since I haven't yet defined what I mean by **figurate number** around here, I should start unifying how I write them from now on.
 The reference I use and will keep using is [Figurate Numbers (2012) by Elena Deza and Michel Deza](https://www.worldscientific.com/worldscibooks/10.1142/8188), whose notation I'll also keep, though for now I'll stay general.
@@ -22,7 +23,8 @@ The reference I use and will keep using is [Figurate Numbers (2012) by Elena Dez
 ```shell
 pip install figuratenum[figurate-viz]
 ```
-## The versatile figurate number
+
+## Versatile figurate numbers
 
 I call it versatile because I think it's the most comfortable way to understand it and to communicate it with lots of study techniques. Consider a polynomial $\mathfrak{f} \in \mathbb{Q}[X]$ of degree $\deg(\mathfrak{f})= k \ge  2$, which plays the role of the geometric dimension (planar, spatial, or multidimensional). It induces a function
 $$
@@ -31,13 +33,14 @@ $$
         n                     & \longmapsto\mathfrak f(n).
     \end{aligned}
 $$
-In particular, if
+
+In particular, let
 
 $$
-\mathfrak{f}(X) = \sum_{j=0}^k a_j X^j, \quad a_j \in \mathbb{Q},\quad a_k \neq 0
+\mathfrak{f}(X) = \sum_{j=0}^k a_j X^j \in \mathbb{Q}[X],\quad a_k \neq 0
 $$
 
-(only the leading coefficient needs to be nonzero; the triangular numbers, for instance, have $a_0=0$), the bilateral sequence induced by $\mathfrak{f}$ is given by
+The only restriction on the coefficients is that the leading coefficient needs to be nonzero ($S_3$, for instance, have $a_0=0$). Well, the bilateral sequence induced by $\mathfrak{f}$ is given by
 
 $$
     \bigl(\mathfrak f(n)\bigr)_{n\in\mathbb Z}
@@ -47,7 +50,7 @@ $$
     \right)_{n\in\mathbb Z}.
 $$
 
-This is what I understand by a figurate number: in essence, the polynomial that carries its nature. That said, let me move on to the prelude of the topic at hand: first the sum, and then the main course, the multiplication.
+This is what I understand by a figurate number; in essence, the polynomial that carries its nature. That said, let me move on to the prelude of the topic at hand, first the sum, and then the main course, the multiplication.
 
 ## Sums of figurate numbers
 
@@ -60,7 +63,7 @@ $$
 S_3(n) = \frac{n(n+1)}{2}.
 $$
 
-> $\textbf{Remark}$. In some places you'll find this written as $T_n = S_3(n)$.
+> $\textbf{Remark}$. In many places you'll find this written as $T_n = S_3(n)$.
 
 ```py
 from figuratenum import FigurateNum
@@ -173,8 +176,9 @@ What struck me about the table is that what counts is the iteration, additive on
 
 I've taken the naturals $1,2,3, \ldots$, but it's natural to start thinking about the same thing with a different sequence.
 
-### The triangulars
-For example, with the triangular numbers, the terrain expands a bit beyond the simple factorial to combinations of factorials
+### Triangular numbers
+
+For example, with triangular numbers, the terrain expands a bit beyond the simple factorial to combinations of factorials
 
 $$
 \prod_{j=1}^n S_3(j) = \frac{n!(n+1)!}{2^n}
@@ -186,9 +190,9 @@ $$
 $$
 which is evidently $\frac{1}{2^n}n! (n+1)!$, as claimed. $\square$
 
-### The hexagonals
+### Hexagonal numbers
 
-What surprised me on the Wayback Machine was that if I do the same with the hexagonal numbers
+What surprised me on the Wayback Machine was that if I do the same with hexagonal numbers
 
 $$
 \prod_{j=1}^n S_6(j) = \frac{(2n)!}{2^n}
@@ -210,11 +214,11 @@ $$
 (1\cdot 3 \cdot 5 \cdots (2n-1)) = \frac{(2n)!}{2^n n!}.
 $$
 
-Finally, multiplying by $n!$ and solving, the identity above for the hexagonals is proved. $\square$
+Finally, multiplying by $n!$ and solving, the identity above for hexagonals is proved. $\square$
 
-### The Catalan quotient
+### Catalan numbers as quotient
 
-Why the hexagonal? Well, here's the answer: just put a quotient of hexagonals over triangulars (where the $2^n$ cancel) and out comes
+Why the hexagonal numbers? Well, here's the answer, just put a quotient of hexagonals over triangulars (where the $2^n$ cancel) and out comes
 
 $$
 \frac{\prod_{j=1}^n S_6(j)}{\prod_{j=1}^n  S_3(j)} = \frac{(2n)!}{n!(n+1)!} = C_n
@@ -236,7 +240,7 @@ But, as with many of these identities, a few naive exploratory questions come to
 
 > What harm could there be in extending this form of the Catalan numbers, a quotient of factorialized triangulars and hexagonals, to the complex numbers?
 
-## The Catalan Gamma function
+## Building a Catalan gamma function
 
 Every time I see a factorial $!$ I think of the Gamma function $\Gamma$; as I've said many times, this association comes from the very short book by [Emil Artin](https://ncatlab.org/nlab/files/Artin-TheGammaFunction.pdf).
 
@@ -267,7 +271,7 @@ C\left(\frac{1}{2}\right)
 = \frac{8}{3\pi}
 $$
 
-### The integral
+### Its integral aspect
 
 To get back to the explicit continuum, I'll write the following integral representation of the Catalan numbers (valid for $\Re(x) > -\frac{1}{2}$),
 
@@ -276,27 +280,35 @@ C(x) = \frac{2\cdot 4^x}{\pi} \int_0^1 t^{x - \frac{1}{2}} (1-t)^{\frac{1}{2}} d
 $$
 
 $\textit{Proof}$. I need three well-known facts. First, by Legendre's duplication formula,
+
 $$
 \Gamma(z) \Gamma(z + \frac{1}{2}) = 2^{1-2z}\sqrt{\pi} \Gamma(2z)
 $$
+
 taking $z = x + \frac{1}{2}$, we get
+
 $$
 \Gamma (2x+1) = \frac{4^x}{\sqrt{\pi}} \Gamma(x+1)\Gamma(x + \frac{1}{2})
 $$
+
 From which, partway through solving, it follows that
+
 $$
 C(x)= \frac{4^x \Gamma(x + \frac{1}{2})}{\sqrt{\pi}\Gamma(x+2)}
 $$
+
 Now I also need this well-known identity for quotients of Gamma
+
 $$
 \frac{\Gamma(a)}{\Gamma(a+b)} = \frac{1}{\Gamma(b)} \int_0^1 t^{a-1}(1-t)^{b-1} dt
 $$
+
 We know that $a = x + \frac{1}{2}$, and $b$ has to be determined by the denominator $\Gamma(x+2)$, so $a+b = x+2$, which means solving $ x + \frac{1}{2} + b = x+ 2 $, giving $b=\frac{3}{2}$.
 Almost done: since $\Gamma(\frac{3}{2}) = \frac{\sqrt{\pi}}{2}$, the integral form is proved by substituting $a$ and $b$ into the quotient identity. $\square$
 
 I switched from $z$ to $x$ for the variable because I want to think of a function that goes hand in hand with $\Gamma$.
 
-## The Eulerian Beta function of Catalan
+## An Eulerian beta function of Catalan numbers
 
 Well, since we already have the Gamma version, it's natural to say again: what if we build a Euler-type Beta function for it? In other symbols, I'll write
 
@@ -447,7 +459,7 @@ By one of life's coincidences, it's exactly the same sequence that appears in
 
 - [OEIS - A002939](https://oeis.org/A002939)
 
-starting at index $2$. But it's identical if we evaluate $L(n)$ at values $n \ge -1$, that is, it produces $0, 2, 12, 30, \ldots$
+starting at index $2$. But it coincides when $L(n)$ is injected at values $n \ge -1$, that is, it produces $0, 2, 12, 30, \ldots$
 
 
 ## A small proposal to look into
