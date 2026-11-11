@@ -1,6 +1,6 @@
 ---
 title: "A Catalan Beta Function from Figurate Numbers?"
-description: "I wanted to construct a Beta-like function from the figurate numbers that generate the Catalan numbers through a quotient of finite products."
+description: "I wanted to construct a Beta-like function from figurate numbers that generate the Catalan numbers through a quotient of finite products."
 heroImage: "./notebook-beta-catalan.webp"
 pubDate: "November 10 2026"
 badge: "lab notes"
