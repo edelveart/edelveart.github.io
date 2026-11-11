@@ -3,7 +3,7 @@ title: "Optimización de generadores de números figurados con recurrencia incre
 description: "Una optimización de lo más simple para generar término por término números figurados en figuratenum mediante diferencias finitas. No válido en casas de más de cien dimensiones, al día de hoy."
 pubDate: "November 03 2026"
 lang: "es"
-badge: "misc notes"
+badge: "field notes"
 updatedDate: "Nov 10 2026"
 tags: ["figurate numbers", "finite differences", "optimization", "generators", "big o", "figuratenum"]
 ---
