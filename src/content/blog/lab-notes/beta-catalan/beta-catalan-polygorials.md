@@ -172,7 +172,7 @@ we get the **superfactorial**. This is, for me, the multiplicative mirror of the
 
 What struck me about the table is that what counts is the iteration, additive on one side and multiplicative on the other, much like reductions modulo $p$ (which have nothing to do with anything here), but I associated them almost spontaneously.
 
-## Catalan numbers from planar figurate numbers
+## Catalan numbers from plane figurate numbers
 
 I've taken the naturals $1,2,3, \ldots$, but it's natural to start thinking about the same thing with a different sequence.
 
@@ -242,7 +242,7 @@ But, as with many of these identities, a few naive exploratory questions come to
 
 ## Building a Catalan gamma function
 
-Every time I see a factorial $!$ I think of the Gamma function $\Gamma$; as I've said many times, this association comes from the very short book by [Emil Artin](https://ncatlab.org/nlab/files/Artin-TheGammaFunction.pdf).
+Every time I see a factorial $!$ I think of the gamma function $\Gamma$; as I've said many times, this association comes from the very short book by [Emil Artin](https://ncatlab.org/nlab/files/Artin-TheGammaFunction.pdf).
 
 What I'll do is a naive extension from the integers to a complex variable, $n \mapsto z \in \mathbb{C}$.
 Here, just as a reminder to myself, I write
@@ -297,7 +297,7 @@ $$
 C(x)= \frac{4^x \Gamma(x + \frac{1}{2})}{\sqrt{\pi}\Gamma(x+2)}
 $$
 
-Now I also need this well-known identity for quotients of Gamma
+Now I also need this well-known identity for quotients of gamma functions
 
 $$
 \frac{\Gamma(a)}{\Gamma(a+b)} = \frac{1}{\Gamma(b)} \int_0^1 t^{a-1}(1-t)^{b-1} dt
@@ -310,7 +310,7 @@ I switched from $z$ to $x$ for the variable because I want to think of a functio
 
 ## An Eulerian beta function of Catalan numbers
 
-Well, since we already have the Gamma version, it's natural to say again: what if we build a Euler-type Beta function for it? In other symbols, I'll write
+Well, since we already have the gamma version, it's natural to say again: what if we build a Euler-type beta function for it? In other symbols, I'll write
 
 $$
 B_C(x,y)=\frac{C(x)C(y)}{C(x+y)}
@@ -348,7 +348,7 @@ B_C(x,y)=
  }
 $$
 
-It landed in my lap like a gift. Now, it has the most expected properties of such a function; for example, it's symmetric, that is, $ B_C(x,y) = B_C(y, x)$. With a nose for algebra, I also get $B_C(x, 0) = C(0) = 1$. And above all, the associativity-type identity (the same one the classical Beta satisfies)
+It landed in my lap like a gift. Now, it has the most expected properties of such a function; for example, it's symmetric, that is, $ B_C(x,y) = B_C(y, x)$. With a nose for algebra, I also get $B_C(x, 0) = C(0) = 1$. And above all, the associativity-type identity (the same one the classical beta satisfies)
 
 $$
 B_C(x,y)B_C(x+y,z) = B_C(y,z)B_C(x, y+z)
@@ -360,7 +360,7 @@ Something I could study in the future would be the special values. For example, 
 
 ## Integral of the Catalan pseudo-beta
 
-Since we've already made the Gamma function explicit, let me also recall the traditional Euler Beta
+Since we've already made the gamma function explicit, let me also recall the traditional Euler beta function
 
 $$
 B(x,y) = \int_0^1 t^{x-1}(1-t)^{y-1} dt
@@ -395,9 +395,9 @@ My idea would be to write it as a single integral rather than a quotient, but I 
 
 ## Catalan numbers from the classical Beta function
 
-For a bit of variety, I'll plot both functions in the complex plane using the `cplot` library. For the moment I have to think about whether to implement these Gamma factorials visually in $\mathbb{C}$ in `figuratenum`, so nothing is available to date.
+For a bit of variety, I'll plot both functions in the complex plane using the `cplot` library. For the moment I have to think about whether to implement these gamma factorials visually in $\mathbb{C}$ in `figuratenum`, so nothing is available to date.
 
-Well, going back to the beginning to deal with the triangular polygorial in terms of the Gamma function
+Well, going back to the beginning to deal with the triangular polygorial in terms of the gamma function
 
 $$
 \frac{\Gamma(n+1)\Gamma(n+2)}{2^n} = \prod_{j=1}^n S_3(j)
@@ -417,7 +417,7 @@ In that spirit, by the classical identity (I'll use $a,b$, but it's the same as 
 $$
 B(n+1, n+2) = \frac{\Gamma(n+1)\Gamma(n+2)}{\Gamma(2n+3)}
 $$
-Since we want to reach the Catalan function in terms of Gamma, which was (I'll write it again)
+Since we want to reach the Catalan function in terms of gamma, which was (I'll write it again)
 $$
 C_n = \frac{\Gamma(2n+1)}{\Gamma(n+1)\Gamma(n+2)}
 $$
@@ -426,7 +426,7 @@ $$
 \frac{1}{B(n+1, n+2)} = \frac{\Gamma(2n+3)}{\Gamma(n+1)\Gamma(n+2)}
 $$
 
-How do we convert it to match? Well, among the thousands of properties of Gamma, there's the functional equation
+How do we convert it to match? Well, among the thousands of properties of gamma, there's the functional equation
 
 $$
 \Gamma(2n+3) = (2n+ 2)(2n+ 1) \Gamma(2n+1),
@@ -483,4 +483,4 @@ I could try this in dimension $k=2$, exploring different pairs of figurate numbe
 </figcaption>
 
 
-I'll leave these identities and the quotient of two polygorials here, along with its naive pseudo-Beta function.
+I'll leave these identities and the quotient of two polygorials here, along with its naive pseudo-beta $B$ function.
