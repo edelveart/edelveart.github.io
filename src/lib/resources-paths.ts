@@ -1,6 +1,6 @@
 export const MISC_RESOURCES = [
   {
-    href: "/resources-files/misc-integral-representation-A054602.pdf",
+    href: "/resources-files/misc-integral-representation-a054602.pdf",
     title:
       "Una representación integral de A054602 mediante números pentagonales generalizados",
   },
