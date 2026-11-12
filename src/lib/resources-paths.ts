@@ -1,8 +1,7 @@
 export const MISC_RESOURCES = [
   {
     href: "/resources-files/misc-integral-representation-a054602.pdf",
-    title:
-      "Una representación integral de A054602 mediante números pentagonales generalizados",
+    title: "Una representación integral de A054602 con pentagonales",
   },
   {
     href: "/resources-files/misc-torsion-ell-number-fields.pdf",
