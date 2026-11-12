@@ -18,6 +18,8 @@ print([next(seq) for _ in range(8)])
 [1, 4, 9, 16, 25, 36, 49, 64]
 ```
 
+> Following the notation used in *Figurate Numbers* (2012), square numbers are denoted by  $S_4(n) = n^2$, for $n \in \mathbb{N}$.
+
 ## Families of figurate sequences
 
 Triangular, square, pentagonal, and hexagonal numbers belong to the same family. The only difference is the number of sides.
@@ -34,6 +36,8 @@ print([next(seq) for _ in range(8)])
 
 At $m=3$ this is the triangular numbers; raise it to $m=4$ and the squares from the first example reappear.
 
+> As stated in *Figurate Numbers* (2012), the formula defining triangular numbers is given by $S_3(n) = \frac{n(n+1)}{2}$.
+
 ## Into three dimensions
 
 The same logic that builds a triangle out of rows of points builds a tetrahedron out of layers of triangles. The tetrahedral numbers count the points in three-dimensional stacks of triangles, forming one of the five Platonic solids.
@@ -46,6 +50,8 @@ print([next(seq) for _ in range(8)])
 ```python
 [1, 4, 10, 20, 35, 56, 84, 120]
 ```
+
+> Another name for tetrahedral numbers is **triangular pyramidal numbers**, which are defined by the formula $S_3^3(n) = \frac{n(n+1)(n+2)}{6}$ (Deza & Deza, 2012, p.89).
 
 ## Past three dimensions
 

@@ -8,7 +8,7 @@ Every sequence in FigurateNum is infinite, and yet none of them are ever fully c
 
 ## Retrieving terms one at a time
 
-Each call to `next()` advances the internal state of the generator and returns the following term. We use $m = 17$ here as a small nod to Gauss, who proved that a regular $17$-gon is constructible with ruler and compass.
+Each call to `next()` advances the internal state of the generator and returns the following term. We use $m = 17$ here as a small nod to Gauss, who proved that a regular $17$-gon is **constructible with ruler and compass**.
 
 ```python
 from figuratenum import FigurateNum
@@ -39,9 +39,12 @@ print([next(seq) for _ in range(20)])
 5083, 6525, 8217, 10179, 12431, 14993, 17885, 21127, 24739]
 ```
 
+> According to *Figurate Numbers* (2012, p. 134), the general formula for this sequence is given by
+> $ \bar{I}(n) = \frac{(2n-1)(5n^2-5n+3)}{3}$.
+
 ## Generator independence
 
-Each call to a sequence method returns a new generator with its own internal state. Generators created from the same sequence or family evolve independently, without sharing position, counters, or memory.
+Each call to a sequence method **returns a new generator** with its own internal state. Generators created from the same sequence or family evolve independently, without sharing position, counters, or memory.
 
 ```python
 a = FigurateNum().square()
@@ -57,5 +60,7 @@ print(next(b))
 1
 ```
 
-Observe that `a` has already moved two steps ahead, while `b` starts from the initial position.
-Multiple generators can run in parallel from the same sequence, each following its own path through the infinite family.
+> Notice that $a$ produces $S_4(1)$ and $S_4(2)$, whereas $b$ starts independently from $S_4(1)$.
+
+Observe that a has advanced two positions in the sequence, while `b` remains at its initial position.
+This allows **multiple generators** to traverse the same infinite sequence simultaneously, each maintaining its own progression.

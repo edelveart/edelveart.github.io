@@ -72,7 +72,7 @@ Both leave characteristic signatures in the coloring.
 
 ## Modular structure
 
-Instead of the values $a_k$ themselves, consider their residues modulo a fixed integer $n$,
+Instead of the values $a_k$ themselves, consider their residues modulo a fixed $n\in \mathbb{Z}$,
 
 $$
 r_k \equiv a_k \bmod n,
