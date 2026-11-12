@@ -59,6 +59,9 @@ export const NAV_LINKS_PAGES = {
 
 export const MAX_W_CONTENT = "xl:max-w-136";
 
+// DOCS_MAX_WIDTH its the same as = wide ? "max-w-240" in BaseLayout.astro, aprox 651px
+export const DOCS_MAX_WIDTH = "max-w-156";
+
 // export const DRAWER_BREAKPOINTS = {
 //   sideBar: "hidden xl:block",
 //   baseLayout: "drawer xl:hidden",
