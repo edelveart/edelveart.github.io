@@ -9,8 +9,6 @@
 // import "@fontsource/fira-sans/900.css";
 // import "@fontsource/fira-sans/400-italic.css";
 
-// Supports weights 200-900
-// import "@fontsource-variable/manrope";
 // import "@fontsource-variable/source-sans-3/wght.css";
 // import "@fontsource-variable/source-sans-3/wght-italic.css";
 // import "@fontsource-variable/source-code-pro/wght.css";
@@ -27,6 +25,7 @@ import { menuEnglish } from "@ts-config-path/lib/menu";
 import { DRAWER_BREAKPOINTS } from "@styles/utilsCSS";
 import { ClientRouter } from "astro:transitions";
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
+
 const {
   image,
   title = SITE_TITLE,
@@ -65,7 +64,7 @@ import "katex/dist/katex.min.css";
               <div
                 class:list={[
                   "w-full p-6 pt-10",
-                  wide ? "max-w-220" : "max-w-165",
+                  wide ? "max-w-240" : "max-w-185",
                 ]}
               >
                 <slot />
