@@ -2,12 +2,12 @@
 const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
 import { Image } from "astro:assets";
 // const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
-import { CARD_OP, GET_COLORS_METADATA, BORDER_OPACITY } from "@styles/utilsCSS";
+import { CARD_OP, GET_COLORS_METADATA, BORDER_OPACITY, SPACES_BETWEEN_CARDS } from "@styles/utilsCSS";
 ---
 
 <div class=`group ${BORDER_OPACITY}`>
   <a href={url} target={target} rel="noopener">
-    <div class="hero-content flex-col md:flex-row p-4">
+    <div class={`hero-content flex-col md:flex-row ${SPACES_BETWEEN_CARDS.PADDING}`}>
       <div class="grow w-full">
         <span class={GET_COLORS_METADATA("cardsImg")}>{badge}</span>
         <h2

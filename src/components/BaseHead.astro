@@ -10,19 +10,24 @@ export interface Props {
   ogType?: string;
 }
 
-const { title, description, image = "/LinkedInProfile.webp", ogType = "website" } = Astro.props;
+const {
+  title,
+  description,
+  image = "./LinkedInProfile.webp",
+  ogType = "website",
+} = Astro.props;
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+<link rel="icon" href="/favicon.ico" />
 <meta name="generator" content={Astro.generator} />
 <meta
   name="keywords"
-  content="code, math, software, live coding,  mathematics, algorithms, open-source"
+  content="mathematics, code, software, live coding, algorithms, open-source"
 />
-<meta name="author" content="Edgar Armando Delgado Vega" />
+<meta name="author" content="Edgar Delgado Vega" />
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
@@ -31,14 +36,17 @@ const { title, description, image = "/LinkedInProfile.webp", ogType = "website" 
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={ogType} />
+<meta property="og:site_name" content="Edgar Delgado Vega" />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image:alt" content={title} />
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={Astro.url} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={new URL(image, Astro.url)} />
+<meta name="twitter:image:alt" content={title} />

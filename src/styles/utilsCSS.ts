@@ -56,7 +56,10 @@ export const NAV_LINKS_PAGES = {
   arrowSpan:
     "transition-colors duration-150 ease-in-out group-hover:text-primary",
 };
-export const GAP_BETWEEN_CARDS = "gap-x-6 gap-y-4 sm:gap-y-6";
+export const SPACES_BETWEEN_CARDS = {
+  GAP: "gap-x-6 gap-y-4 sm:gap-y-6",
+  PADDING: "p-5",
+};
 export const GAP_LIST_RESOURCES = "gap-y-0";
 export const MAX_W_CONTENT = "xl:max-w-136";
 

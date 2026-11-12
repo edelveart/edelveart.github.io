@@ -22,7 +22,7 @@ import {
   BORDER_OPACITY,
   CARD_OP,
   GET_COLORS_METADATA,
-  BASE_BORDER_IMG,
+  SPACES_BETWEEN_CARDS,
 } from "@styles/utilsCSS";
 // console.log("CARD HERO:", heroImage);
 ---
@@ -30,7 +30,7 @@ import {
 <a
   href={url}
   target={target}
-  class=`group flex ${BORDER_OPACITY} p-4  mx-auto flex-col`
+  class=`group flex ${BORDER_OPACITY} ${SPACES_BETWEEN_CARDS.PADDING}  mx-auto flex-col`
 >
   <h2
     class=`${CARD_OP.title} group-hover:text-primary line-clamp-2 md:line-clamp-none transition-colors`

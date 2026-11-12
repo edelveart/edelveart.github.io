@@ -10,7 +10,7 @@ import createSlug from "@ts-config-path/lib/createSlug";
 import { getCollection } from "astro:content";
 import PreviousPosts from "@components/PreviousPosts.astro";
 import BiographyES from "@components/BiographyES.astro";
-import { GAP_BETWEEN_CARDS } from "@styles/utilsCSS";
+import { SPACES_BETWEEN_CARDS } from "@styles/utilsCSS";
 // const posts = (await getCollection("blog")).sort(
 //   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 // );
@@ -41,7 +41,7 @@ const last_posts = posts.slice(0, 4);
       <h2 class="text-3xl font-bold">Notas</h2>
       <div><PreviousPosts lang="es" /></div>
     </div>
-    <div class={`grid grid-cols-1 sm:grid-cols-2 ${GAP_BETWEEN_CARDS}`}>
+    <div class={`grid grid-cols-1 sm:grid-cols-2 ${SPACES_BETWEEN_CARDS.GAP}`}>
       {
         last_posts.map((post) => (
           <CardBlog

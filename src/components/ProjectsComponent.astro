@@ -8,7 +8,7 @@ import FigurateNumbersRuby from "@assets/figurate_numbers.webp";
 import FigurateNumbersLua from "@assets/figurate-numbers-lua.webp";
 import FigNumbersTS from "@assets/fignumbers-ts.webp";
 import FiguratenumPython from "@assets/figuratenum-v3.webp";
-import { GAP_BETWEEN_CARDS } from "@styles/utilsCSS";
+import { SPACES_BETWEEN_CARDS } from "@styles/utilsCSS";
 
 export const projectIds = [
   "topos",
@@ -109,7 +109,7 @@ const orderedProjects: ProjectType[] = order
   {headTitle}
 </div>
 
-<section class={`flex flex-col ${GAP_BETWEEN_CARDS} mt-10`}>
+<section class={`flex flex-col ${SPACES_BETWEEN_CARDS.GAP} mt-10`}>
   {
     orderedProjects.map((project, index) => (
       <HorizontalCard
