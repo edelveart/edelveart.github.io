@@ -57,7 +57,7 @@ export const NAV_LINKS_PAGES = {
     "transition-colors duration-150 ease-in-out group-hover:text-primary",
 };
 export const GAP_BETWEEN_CARDS = "gap-x-6 gap-y-4 sm:gap-y-6";
-
+export const GAP_LIST_RESOURCES = "gap-y-0";
 export const MAX_W_CONTENT = "xl:max-w-136";
 
 // DOCS_MAX_WIDTH its the same as = wide ? "max-w-240" in BaseLayout.astro, aprox 651px
