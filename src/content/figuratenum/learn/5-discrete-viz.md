@@ -56,6 +56,8 @@ Symmetry in the orbit depends on the modulus $n$, not on the dimension of the fa
 
 Trying different values of `n_terms` and `h_modulo` on the same sequence is the way to find where the structure shows up.
 
+- See [Fundamentals - Modular structure](https://edelveart.github.io/figuratenum/fundamentals/) for a more detailed explanation.
+
 ## Parameters
 
 - `figuratenum_name`: the sequence, passed positionally.

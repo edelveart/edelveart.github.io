@@ -58,7 +58,9 @@ c.visualize_multidim(
 ## Interpretation
 
 The portrait encodes phase and magnitude through color, following [Wegert (2012)](https://doi.org/10.1007/978-3-0348-0180-5). Certain regions stand out immediately, where $f(z)$ changes rapidly.
-For generating functions of figurate numbers, this behavior is typically observed near $z = 1$. See [Theory](/figuratenum/theory#generating-functions) for a more detailed explanation.
+For generating functions of figurate numbers, this behavior is typically observed near $z = 1$.
+
+- See [Fundamentals - Generating functions and analysis](https://edelveart.github.io/figuratenum/fundamentals/) for a more detailed explanation.
 
 ## Main controls
 
