@@ -7,7 +7,7 @@ import Arrows from "@icons/Arrows.astro";
 import DividerNav from "@components/DividerNav.astro";
 import type { GetStaticPaths } from "astro";
 import type { CollectionEntry } from "astro:content";
-import { BORDER_INFO, NAV_LINKS_PAGES } from "@styles/utilsCSS";
+import { BORDER_INFO, GAP_BETWEEN_CARDS, NAV_LINKS_PAGES } from "@styles/utilsCSS";
 
 export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
   const posts = await getCollection("blog", ({ data }) => data.lang === "es");
@@ -72,7 +72,7 @@ const params = Astro.params;
           </div>
         ) : (
           <div class="mt-10">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class={`grid grid-cols-1 sm:grid-cols-2 ${GAP_BETWEEN_CARDS}`}>
               {page.data.map((post) => (
                 <>
                   <CardBlog

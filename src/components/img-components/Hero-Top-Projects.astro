@@ -1,7 +1,7 @@
 ---
 import { allProjects } from "@components/ProjectsComponent.astro";
 import { Image } from "astro:assets";
-import { BORDER_OPACITY, GET_COLORS_METADATA } from "@styles/utilsCSS";
+import { BORDER_OPACITY, GAP_BETWEEN_CARDS, GET_COLORS_METADATA } from "@styles/utilsCSS";
 
 import MainFigurateNumWebp from "@assets/main-figuratenum.webp";
 import MainTonnetzWebp from "@assets/main-tonnetz.webp";
@@ -29,12 +29,11 @@ const badge = `
 
 <!-- https://svgomg.net/ --><!-- https://vecta.io/nano -->
 <section
-  class="grid
+  class={`grid
     grid-cols-1
     lg:grid-cols-3
-    gap-x-3
-    gap-y-4
-    lg:auto-rows-fr"
+    ${GAP_BETWEEN_CARDS}
+    lg:auto-rows-fr`}
 >
   <!-- 1 — FIGURATENUM / GRANDE -->
   <a
