@@ -1,13 +1,21 @@
 ---
 import { routeSpanish } from "@ts-config-path/lib/menu";
 import { LINKS_TO } from "@styles/utilsCSS";
+import Math from "@components/Math.astro";
 ---
 
 <section class="mb-8 break-normal hyphens-auto">
   <p class="mb-4">
     Construyo sistemas creativos para explorar matemáticas, computación y música
-    mediante analogías estructurales. Con el tiempo, he notado que los sistemas
-    formales están en el corazón de mis intereses.
+    mediante analogías estructurales. Suelo hablar mientras pienso y esbozar
+    símbolos, flechas y preguntas en pequeños cuadernos. Mis <a
+      href="https://edelveart.github.io/es/blog/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class={LINKS_TO}
+    >
+      notas
+    </a>{" "} son una especie de percolación de estas ideas.
   </p>
 
   <p class="mb-4">
@@ -19,7 +27,7 @@ import { LINKS_TO } from "@styles/utilsCSS";
       class={LINKS_TO}
     >
       modular forms
-    </a>{" "} (inspirada en SageMath y LMFDB), {" "}
+    </a>{" "} (inspirada en SageMath y LMFDB, y diseñada para Sonic Pi), {" "}
     <a id="projects" href={routeSpanish.projects} class={LINKS_TO}>
       números figurados multidimensionales
     </a>{" "} con más de <strong>30 000 descargas</strong>, así como{" "}
