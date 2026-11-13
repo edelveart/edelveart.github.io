@@ -2,31 +2,39 @@
 const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
 import { Image } from "astro:assets";
 // const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
-import { CARD_OP, GET_COLORS_METADATA, BORDER_OPACITY, SPACES_BETWEEN_CARDS } from "@styles/utilsCSS";
+import {
+  CARD_OP,
+  GET_COLORS_METADATA,
+  BORDER_OPACITY,
+  SPACES_BETWEEN_CARDS,
+} from "@styles/utilsCSS";
 ---
 
-<div class=`group ${BORDER_OPACITY}`>
+<div class={`group ${BORDER_OPACITY}`}>
   <a href={url} target={target} rel="noopener">
-    <div class={`hero-content flex-col md:flex-row ${SPACES_BETWEEN_CARDS.PADDING}`}>
-      <div class="grow w-full">
+    <div
+      class={`hero-content flex flex-col  md:flex-row ${SPACES_BETWEEN_CARDS.PADDING}`}
+    >
+      <div class="grow w-full text-left order-1 md:order-2 md:ml-5">
         <span class={GET_COLORS_METADATA("cardsImg")}>{badge}</span>
+
         <h2
-          class=`${CARD_OP.title} mt-1 group-hover:text-primary transition-colors`
+          class={`${CARD_OP.title} mt-1 group-hover:text-primary transition-colors`}
         >
           {title}
         </h2>
-        <p class=`text-balance mt-2 ${CARD_OP.parr}`>{desc}</p>
+
+        <p class={`text-balance mt-2 ${CARD_OP.parr}`}>{desc}</p>
       </div>
-      {
-        img && (
-          <Image
-            src={img}
-            format="webp"
-            alt={title}
-            class="max-w-full md:max-w-52 rounded-lg"
-          />
-        )
-      }
+
+      {img && (
+        <Image
+          src={img}
+          format="webp"
+          alt={title}
+          class="max-w-full md:max-w-60 rounded-md order-2 md:order-1"
+        />
+      )}
     </div>
   </a>
 </div>
