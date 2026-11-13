@@ -24,9 +24,7 @@ const last_posts = posts.slice(0, 4);
 
 <BaseLayout title="Edgar Delgado Vega | Sistemas Matemáticos Creativos">
   <section class="mt-5 pb-3">
-    <h2
-      class="text-xs uppercase tracking-wider font-semibold text-primary/85 mb-1.5"
-    >
+    <h2 class="text-xs uppercase tracking-wider font-medium text-secondary/85 mb-1.5">
       Desarrollador de sistemas matemáticos creativos
     </h2>
     <h1 class="text-4xl font-bold leading-snug mb-10">Edgar Delgado</h1>
@@ -39,22 +37,22 @@ const last_posts = posts.slice(0, 4);
     <!-- BLOG-NOTES -->
     <div class="flex justify-between items-center gap-2 my-8">
       <h2 class="text-3xl font-bold">Notas</h2>
-      <div><PreviousPosts lang="es" /></div>
+      <div>
+        <PreviousPosts lang="es" />
+      </div>
     </div>
     <div class={`grid grid-cols-1 sm:grid-cols-2 ${SPACES_BETWEEN_CARDS.GAP}`}>
-      {
-        last_posts.map((post) => (
-          <CardBlog
-            pubDate={post.data.pubDate}
-            title={post.data.title}
-            badge={post.data.badge}
-            heroImage={post.data.heroImage}
-            desc={post.data.description}
-            url={"/es/blog/" + createSlug(post.data.title, post.id) + "/"}
-            target="_self"
-          />
-        ))
-      }
+      {last_posts.map((post) => (
+        <CardBlog
+          pubDate={post.data.pubDate}
+          title={post.data.title}
+          badge={post.data.badge}
+          heroImage={post.data.heroImage}
+          desc={post.data.description}
+          url={"/es/blog/" + createSlug(post.data.title, post.id) + "/"}
+          target="_self"
+        />
+      ))}
     </div>
     <div class="mb-14"></div>
     <Experience lang="es" indices={[0, 1]} />
