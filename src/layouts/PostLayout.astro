@@ -66,11 +66,7 @@ import {
 >
   <main>
     <article class="prose prose-img:mx-auto">
-      <h1
-        class={`title mt-5 text-3xl font-bold break-normal mb-6 text-primary ${MAX_W_CONTENT}`}
-      >
-        {title}
-      </h1>
+
 
       <div class="flex flex-col md:flex-row md:items-start md:gap-2">
         <div class="flex items-center gap-2">
@@ -89,6 +85,7 @@ import {
           </span>
         </div>
 
+
         {
           updatedDate && (
             <div class="flex items-center gap-2">
@@ -101,6 +98,12 @@ import {
           )
         }
       </div>
+
+    <h1
+        class={`title mt-5 mb-5 text-3xl font-bold break-normal text-primary ${MAX_W_CONTENT}`}
+      >
+        {title}
+      </h1>
 
       <!-- TAGS -->
       <!-- <div class=`${BORDER_INFO}`> -->

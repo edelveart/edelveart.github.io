@@ -32,13 +32,8 @@ import {
   target={target}
   class=`group flex ${BORDER_OPACITY} ${SPACES_BETWEEN_CARDS.PADDING}  mx-auto flex-col`
 >
-  <h2
-    class=`${CARD_OP.title} group-hover:text-primary line-clamp-2 md:line-clamp-none transition-colors`
-  >
-    {title}
-  </h2>
 
-  <div class="flex items-center gap-2 mt-1 mb-0.5">
+  <div class="flex items-center gap-2 mt-1 mb-1.5">
     <span class={CARD_OP.muteData}>{displayDate}</span>
 
     <span class={`${CARD_OP.muteData} hidden sm:inline`}>·</span>
@@ -53,7 +48,11 @@ import {
       Updated {dayjs(updatedDate).format("ll")}
     </span> -->
   </div>
-
+ <h2
+    class=`${CARD_OP.title} group-hover:text-primary line-clamp-2 md:line-clamp-none transition-colors`
+  >
+    {title}
+  </h2>
   <!-- COMMENT => NOT SHOW -->
 
   {
