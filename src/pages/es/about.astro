@@ -4,11 +4,10 @@ import ListOfSkills from "@components/ListOfSkills.astro";
 import { techSkillsSpanish } from "@components/ListOfSkills.astro";
 import Education from "@components/Education.astro";
 import { routeSpanish } from "@ts-config-path/lib/menu";
-import { LINKS_TO } from "@styles/utilsCSS";
 import SonicPiModFormsImage from "@components/img-components/SonicPiModFormsImage.astro";
 import FigurateNumImages from "@components/img-components/FigurateNumImages.astro";
 import { BULLET_SQUARE_LIST } from "../about.astro";
-import { BLOCK_QUOTE } from "@styles/utilsCSS";
+import { CARD_OP, LINKS_TO } from "@styles/utilsCSS";
 ---
 
 <!-- https://math.uchicago.edu/~chonoles/miscellany/quotations/ -->
@@ -17,32 +16,33 @@ import { BLOCK_QUOTE } from "@styles/utilsCSS";
     <div class="text-3xl w-full font-bold flex items-center">¿Quién soy?</div>
 
     <article class="mb-10 mt-8">
-      <blockquote class=`my-10 ${BLOCK_QUOTE}`>
-        <p>La geometría determina la aritmética.</p>
-        <footer>— M. Hindry y J. Silverman</footer>
+      <blockquote
+        class={`${CARD_OP.muteData} text-xs text-right text-balance mb-4`}
+      >
+        La geometría determina la aritmética.
+        <p>— M. Hindry y J. Silverman</p>
       </blockquote>
 
       <p class="mb-4">
-        Soy Edgar Delgado Vega, músico nacido en Lima, Perú, que desarrolla {
-          " "
-        }
+        Soy Edgar Delgado Vega, músico nacido en Lima, Perú, que desarrolla{" "}
         <a class={LINKS_TO} id="projects" href={routeSpanish.projects}>
           software
         </a>{" "}
-        para explorar el tránsito entre las matemáticas, la computación y la música.
+        para explorar el tránsito entre las matemáticas, la computación y la
+        música.
       </p>
       <p class="mb-4">
         Muchas veces parto de una idea matemática o musical y me pregunto qué
         sucede cuando llevo su estructura a otro dominio.
       </p>
 
-      <blockquote class=`my-10 ${BLOCK_QUOTE}`>
-        <p class="text-balance">
-          El código debe apreciarse tanto visualmente como auditivamente, y los
-          algoritmos subyacentes deben contemplarse tanto como su resultado
-          visual.
-        </p>
-        <footer>— TOPLAP Manifesto</footer>
+      <blockquote
+        class={`${CARD_OP.muteData} text-xs text-right text-balance mb-4`}
+      >
+        El código debe apreciarse tanto visualmente como auditivamente, y los
+        algoritmos subyacentes deben contemplarse tanto como su resultado
+        visual.
+        <p>— TOPLAP Manifesto</p>
       </blockquote>
       <!-- <Code code={`gem install modular_forms`} lang="shell" theme="catppuccin-mocha" /> -->
       <SonicPiModFormsImage />
@@ -55,14 +55,15 @@ import { BLOCK_QUOTE } from "@styles/utilsCSS";
         sistemático puede llevar a nuevos conceptos.
       </p>
 
-      <blockquote class=`my-10 ${BLOCK_QUOTE}`>
-        <p class="text-balance">
-          El conocimiento preciso del comportamiento de una función analítica
-          cerca de sus puntos singulares es una fuente de teoremas en teoría de
-          números.
-        </p>
-        <footer>— E. Hecke</footer>
+      <blockquote
+        class={`${CARD_OP.muteData} text-xs text-right text-balance mb-4`}
+      >
+        El conocimiento preciso del comportamiento de una función analítica
+        cerca de sus puntos singulares es una fuente de teoremas en teoría de
+        números.
+        <p>— E. Hecke</p>
       </blockquote>
+
       <!-- <Code code={`pip install figuratenum`} lang="shell" theme="catppuccin-mocha" /> -->
       <FigurateNumImages />
 
@@ -92,26 +93,12 @@ import { BLOCK_QUOTE } from "@styles/utilsCSS";
       <p class="mb-10">
         Tengo experiencia docente a nivel de pregrado y posgrado, especialmente
         en programación en vivo (<em>live coding</em>) y musicología enfocada a
-        la tecnología. Puedes leer los comentarios de mi práctica docente
-        {" "}
-        <a class={LINKS_TO} id="testimonials" href={`/testimonials`}>aquí</a>.
+        la tecnología. Puedes leer los comentarios de mi práctica docente{" "}
+        <a class={LINKS_TO} id="testimonials" href={`/testimonials`}>
+          aquí
+        </a>
+        .
       </p>
-
-      <blockquote class=`my-10 ${BLOCK_QUOTE}`>
-        <p class="text-balance">
-          He intentado descubrir la belleza oculta en diversas cosas, pero, aún
-          hoy, en muchos campos la fuente de mi interés sigue siendo un misterio
-          absoluto. Mi hipótesis es que, con demasiada frecuencia, las personas
-          proyectan sus debilidades o características humanas sobre su actividad
-          matemática. <br />
-          Existen ejemplos claros a simple vista: por ejemplo, la idea de clasificar
-          objetos es una manifestación de los instintos de coleccionista; la búsqueda
-          de valores máximos, una forma de codicia; y la computabilidad o decidibilidad,
-          un reflejo del deseo de control absoluto. La fascinación por las iteraciones
-          guarda una similitud con el hipnotismo generado por la música rítmica.
-        </p>
-        <footer>— Maxim Kontsevich</footer>
-      </blockquote>
 
       <ListOfSkills
         title="Tecnologías"
@@ -123,6 +110,24 @@ import { BLOCK_QUOTE } from "@styles/utilsCSS";
       alt="GitHub Stats"
       class="rounded-lg py-6"
     /> -->
+      <blockquote
+        class={`${CARD_OP.muteData} text-xs text-balance pb-0 mb-0 text-center`}
+      >
+        <p class="text-center">
+          He intentado descubrir la belleza oculta en diversas cosas, pero, aún
+          hoy, en muchos campos la fuente de mi interés sigue siendo un misterio
+          absoluto. Mi hipótesis es que, con demasiada frecuencia, las personas
+          proyectan sus debilidades o características humanas sobre su actividad
+          matemática. <br />
+          Existen ejemplos claros a simple vista: por ejemplo, la idea de
+          clasificar objetos es una manifestación de los instintos de
+          coleccionista; la búsqueda de valores máximos, una forma de codicia; y
+          la computabilidad o decidibilidad, un reflejo del deseo de control
+          absoluto. La fascinación por las iteraciones guarda una similitud con
+          el hipnotismo generado por la música rítmica.
+        </p>
+        <p>— Maxim Kontsevich</p>
+      </blockquote>
       <Education lang="es" />
     </article>
 

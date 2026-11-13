@@ -74,6 +74,7 @@ dayjs.extend(localizedFormat);
 const blog = await getCollection("blog");
 const blogMap = Object.fromEntries(blog.map((post) => [post.data.title, post]));
 const figurateNumTitles = [
+  "A Catalan Beta Function from Figurate Numbers?",
   "Two Years Leading to FigurateNum v3 Visualizations in the Complex Plane",
   "Gamma Functions for Figurate Numbers",
   "Generators as Symbolic Exploration",

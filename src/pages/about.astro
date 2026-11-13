@@ -4,15 +4,13 @@ import ListOfSkills from "@components/ListOfSkills.astro";
 import { techSkillsEnglish } from "@components/ListOfSkills.astro";
 import Education from "@components/Education.astro";
 import { routeEnglish } from "@ts-config-path/lib/menu";
-import { LINKS_TO } from "@styles/utilsCSS";
+import { CARD_OP, LINKS_TO } from "@styles/utilsCSS";
 import SonicPiModFormsImage from "@components/img-components/SonicPiModFormsImage.astro";
 import FigurateNumImages from "@components/img-components/FigurateNumImages.astro";
 export const BULLET_SQUARE_LIST = {
   li: "flex items-center gap-2",
   span: "w-1.25 h-1.25 bg-primary/30 rounded-[1.5px] shrink-0",
 };
-
-import { BLOCK_QUOTE } from "@styles/utilsCSS";
 ---
 
 <!-- https://math.uchicago.edu/~chonoles/miscellany/quotations/ -->
@@ -21,13 +19,13 @@ import { BLOCK_QUOTE } from "@styles/utilsCSS";
     <h1 class="text-3xl w-full font-bold flex items-center">Who am I?</h1>
 
     <article class="mb-10 mt-8">
-      <blockquote class=`my-10 ${BLOCK_QUOTE}`>
-        <p class="">Geometry determines arithmetic.</p>
-        <footer>— M. Hindry and J. Silverman</footer>
+      <blockquote class={`${CARD_OP.muteData} text-xs text-right mb-4`}>
+        Geometry determines arithmetic.
+        <p>— M. Hindry and J. Silverman</p>
       </blockquote>
 
       <p class="mb-4">
-        I'm Edgar Delgado Vega, a musician from Lima, Peru, who develops {" "}
+        I'm Edgar Delgado Vega, a musician from Lima, Peru, who develops{" "}
         <a class={LINKS_TO} id="projects" href={routeEnglish.projects}>
           software
         </a>{" "}
@@ -39,12 +37,10 @@ import { BLOCK_QUOTE } from "@styles/utilsCSS";
         happens when I carry its structure into another domain.
       </p>
 
-      <blockquote class=`my-10 ${BLOCK_QUOTE}`>
-        <p class="text-balance">
-          Code should be seen as well as heard, underlying algorithms viewed as
-          well as their visual outcome.
-        </p>
-        <footer>— TOPLAP Manifesto</footer>
+      <blockquote class={`${CARD_OP.muteData} text-xs text-right mb-4`}>
+        Code should be seen as well as heard, underlying algorithms viewed as
+        well as their visual outcome.
+        <p>— TOPLAP Manifesto</p>
       </blockquote>
 
       <!-- <Code code={`gem install modular_forms`} lang="shell" theme="catppuccin-mocha" /> -->
@@ -58,13 +54,13 @@ import { BLOCK_QUOTE } from "@styles/utilsCSS";
         approach can lead to new concepts.
       </p>
 
-      <blockquote class=`my-10 ${BLOCK_QUOTE}`>
+      <blockquote class={`${CARD_OP.muteData} text-xs text-right mb-4`}>
         <p class="text-balance">
           Precise knowledge of the behavior of an analytic function in the
           neighborhood of its singular points is a source of number-theoretic
           theorems.
         </p>
-        <footer>— E. Hecke</footer>
+        <p>— E. Hecke</p>
       </blockquote>
 
       <!-- <Code code={`pip install figuratenum`} lang="shell" theme="catppuccin-mocha" /> -->
@@ -97,40 +93,42 @@ import { BLOCK_QUOTE } from "@styles/utilsCSS";
       <p class="mb-10">
         I have teaching experience at both undergraduate and postgraduate
         levels, particularly in live coding and musicology with a technological
-        focus. See my teaching {" "}
+        focus. See my teaching{" "}
         <a class={LINKS_TO} id="testimonials" href={`/testimonials`}>
           feedback
-        </a>.
+        </a>
+        .
       </p>
+
+      <ListOfSkills
+        title="Technologies"
+        techSkills={techSkillsEnglish}
+        indices={[0, 1, 2, 3]}
+      />
+      <blockquote
+        class={`${CARD_OP.muteData} text-xs text-balance pb-0 mb-0 text-center`}
+      >
+        I've tried to learn the hidden beauty in various things, but still for
+        many areas the source of interest is for me a complete mystery. My
+        theory is that too often people project their human
+        weaknesses/properties onto their mathematical activity. There are
+        obvious examples on the surface: for example, the idea of a
+        classification of some objects is an incarnation of collector instincts,
+        the search for maximal values is another form of greed,
+        computability/decidability comes from the desire of a total control.{" "}
+        <br /> Fascination with iterations is similar to the hypnotism of
+        rhythmic music.
+        <p>— Maxim Kontsevich</p>
+      </blockquote>
+      <Education lang="en" />
     </article>
   </section>
 
-  <blockquote class=`mb-12 ${BLOCK_QUOTE}`>
-    <p class="text-balance">
-      I've tried to learn the hidden beauty in various things, but still for
-      many areas the source of interest is for me a complete mystery. My theory
-      is that too often people project their human weaknesses/properties onto
-      their mathematical activity. There are obvious examples on the surface:
-      for example, the idea of a classification of some objects is an
-      incarnation of collector instincts, the search for maximal values is
-      another form of greed, computability/decidability comes from the desire of
-      a total control. <br /> Fascination with iterations is similar to the hypnotism
-      of rhythmic music.
-    </p>
-    <footer>— Maxim Kontsevich</footer>
-  </blockquote>
-
-  <ListOfSkills
-    title="Technologies"
-    techSkills={techSkillsEnglish}
-    indices={[0, 1, 2, 3]}
-  />
   <!-- <img
       src="https://githubcard.com/edelveart.svg?d=JDU5hnct"
       alt="GitHub Stats"
       class="rounded-lg py-6"
     /> -->
-  <Education lang="en" />
 </BaseLayout>
 
 <!-- <Experience workExperiences={allExperiences} /> -->
