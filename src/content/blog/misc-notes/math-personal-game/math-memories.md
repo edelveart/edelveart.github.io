@@ -5,7 +5,7 @@ pubDate: "November 13 2026"
 heroImage: "./playgo-basa.webp"
 badge: "misc notes"
 lang: "es"
-# updatedDate: "November 14 2026"
+updatedDate: "November 14 2026"
 tags: ["math games", "recreational mathematics", "figurate numbers", "elliptic curves", "number theory", "cartesian plane", "symmetry"]
 ---
 
