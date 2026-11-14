@@ -1,12 +1,12 @@
 ---
 title: "Mi historia con las matemáticas fue mi propio juego"
-description: "Recuerdo cuando aprendí el concepto de plano cartesiano, cómo usé la calculadora para crear mi propio juego de clasificación entre geometría y aritmética y cómo, de pronto, hago música con números figurados."
+description: "Me aburrieron casi siempre las matemáticas. Tal vez te identifiques con ese desinterés en mi historia, con lo único tema que me gustó en segundo de primaria y con cómo mi mente asoció, sin percatarme en aquel entonces, esa idea al crear mi propio juego. ¿Por qué compongo música con números figurados? Apto para cualquier persona que sepa sumar y restar."
 pubDate: "November 13 2026"
 heroImage: "./playgo-basa.webp"
 badge: "misc notes"
 lang: "es"
 # updatedDate: "November 14 2026"
-tags: ["math games", "recreational mathematics", "figurate numbers", "elliptic curves", "number theory", "cartesian plane", "symmetry", "memories"]
+tags: ["math games", "recreational mathematics", "figurate numbers", "elliptic curves", "number theory", "cartesian plane", "symmetry"]
 ---
 
 > A mí nunca me gustaron ni me interesaron las matemáticas en la escuela más que cualquier otro curso, **salvo una única idea y el juego que me inventé**.
@@ -28,7 +28,7 @@ Axioma primero a considerar:
 
 ## El aburrimiento
 
-Recuerdo que, de niño, nunca estuve especialmente interesado en las matemáticas. En la escuela pública de mi país, Perú, la recuerdo como cualquier otra asignatura, como ciencias, donde tenías que armar tu maqueta de la célula, o como lenguaje, donde tenías que identificar el objeto indirecto de una oración. En aquellos años, la mayor parte de mi tiempo fuera de la escuela, además de hacer música y danzar, solía pasarla leyendo mi Atlas de Geografía e Historia y varios libros de ciencia que me regalaron por Navidad.
+Recuerdo que, de niño, **nunca estuve especialmente interesado en las matemáticas**. En la escuela pública de mi país, Perú, la recuerdo como cualquier otra asignatura, como ciencias, donde tenías que armar tu maqueta de la célula, o como lenguaje, donde tenías que identificar el objeto indirecto de una oración. En aquellos años, la mayor parte de mi tiempo fuera de la escuela, además de hacer música y danzar, **solía pasarla leyendo** mi Atlas de Geografía e Historia y varios libros de ciencia que me regalaron por Navidad.
 
 En el colegio, recuerdo con claridad que había que resolver sumas y aprender a llevar el $1$, en adiciones como esta
 
@@ -43,10 +43,9 @@ $$
 
 Luego subieron a tres cifras, y así también con la multiplicación $\times$ y la división $\div$. Una vez que conocí el algoritmo, me pareció bastante trillado repetirlo constantemente.
 
-En los exámenes solía ser medianamente preciso y, a veces, bueno. Entendía el algoritmo aritmético, pero muchas de las tareas parecidas a estas sumas que me dejaban simplemente no las hacía. Solo prestaba atención durante el horario de clase y esa era toda la matemática que conservaba conmigo.
+En los exámenes solía ser medianamente preciso y, a veces, muy bueno. Entendía el algoritmo aritmético, pero muchas de las tareas parecidas a estas sumas que me dejaban simplemente no las hacía. Solo prestaba atención durante el horario de clase y esa era toda la matemática que conservaba conmigo. La mayor parte de las tareas las hacía en el aula.
 
-Recuerdo que, al volver del colegio, sí le dedicaba un muy buen tiempo a jugar con mis bloques de armar y, posteriormente, a mi trompo, con el que me fascinaba hacer la voladita (en el parque o en el recreo).
-
+Recuerdo que, al volver del colegio, sí le dedicaba un muy buen tiempo a jugar con mis bloques de *PLAYGO* y, posteriormente, a mi **trompo**, con el que me fascinaba hacer la voladita (en el parque o en el recreo).
 
 > Una de las actividades que solían dejar en el salón de clase y que me aburría de sobremanera era, por ejemplo, determinar en cuántos días construía una casa determinada cantidad de albañiles (un problema de regla de tres simple inversa). Me parecía totalmente irrelevante y sin sentido.
 
@@ -54,9 +53,10 @@ Con esta anécdota de la regla de tres me doy cuenta de que **me aburrían** alg
 
 Por supuesto, pensaba en otras variables que el problema no contemplaba y que tampoco pregunté, como que alguno pudiera faltar o llegar tarde a la construcción, o que se le malograra su bicicleta a medio camino.
 
-## Los números, el plano y sus figuras
+## Segundo de primaria y las figuras
 
-Bueno, ahora sí viene la parte innata, y va justo a **contracorriente** de eso que se dice de que las **matemáticas para la vida diaria** son las que más pueden interesar y motivar a aprenderlas. En ese entonces, como niño, las matemáticas, al igual que las otras asignaturas y sus temarios, eran simplemente focos de averiguación posterior en libros o atención exclusiva durante la sesión, más allá de que fueran útiles o de que pudiera imaginarlas representando alguna actividad de la vida cotidiana.
+Bueno, ahora sí viene la parte innata, y va justo a **contracorriente** de eso que se dice de que las **matemáticas para la vida diaria** son las que más pueden interesar y motivar a aprenderlas.
+En ese entonces, como niño, las matemáticas, al igual que las otras asignaturas y sus temarios, eran simplemente focos de **averiguación posterior en libros** o **atención exclusiva durante el horario del colegio**, más allá de que fueran útiles o de que pudiera imaginarlas representando alguna actividad de la vida cotidiana.
 
 > Tampoco encontré interesantes los problemas sobre tiempo y distancias entre ciudades cuando se viaja en un vehículo.
 
@@ -72,14 +72,15 @@ los puedes **dibujar** en el plano, donde debes hallar el punto donde coincidan 
 
 ![Triángulo con vértices P, Q y R en el plano cartesiano](triangle.webp)
 
-Mi profesora no dijo nada sobre si era un triángulo equilátero, ni isósceles; simplemente era un triángulo y fue suficiente y, creo, formidable que fuera así. Al mirar hacia atrás, me doy cuenta de que, al no pensar en esas cuestiones, pude capturar la idea más importante del plano cartesiano de manera ingenua.
+Mi profesora no exigió precisar nada sobre si era un triángulo equilátero o isósceles; simplemente era un triángulo y fue suficiente. Creo que fue formidable que fuera así. Al mirar hacia atrás, me doy cuenta de que, al no pensar en esas cuestiones, pude capturar la idea más importante del plano cartesiano de **manera ingenua**.
+
 A un par ordenado de números que forman lo que llamamos un punto $P= (x,y)$ y que viven sin espacio (existen de manera abstracta), uno puede descubrirle un significado geométrico al representarlo en una posición del plano.
 
 Es decir, los números, que no tenían más sentido por sí solos que el de hacer cuentas con manzanas, con fracciones de tortas o restando chapitas de botellas para jugar al fútbol en los pasadizos del colegio, ahora tenían una figura, una geometría que los hacía visibles en un **objeto abstracto**.
 
 > Supongo que intuitivamente pensé que los **números crean una geometría** y viceversa, que una **geometría nace de un conjunto de números**, y que solo basta averiguar cuáles son.
 
-La diferencia con los otros temas de matemáticas es que aquí sí hice más ejercicios y me propuse algunos propios con puntos al azar. Me encantó averiguar qué geometría aparecía. Con cuatro puntos, por ejemplo, uno puede hallar un cuadrilátero cualquiera, un rectángulo, un cuadrado, un rombo u otra figura extraña.
+La diferencia con los otros temas de matemáticas es que aquí sí hice más ejercicios y me propuse algunos propios con puntos al azar. **Me encantó averiguar qué geometría aparecía**. Con cuatro puntos, por ejemplo, uno puede hallar un cuadrilátero cualquiera, un rectángulo, un cuadrado, un rombo u otra figura extraña.
 
 ## Mi juego
 
@@ -131,11 +132,11 @@ Antes de que se me olvide, nota que si uno suma los valores de las filas de arri
 Entonces, a un lado de cada tablero escribía la forma geométrica y su simetría que generaba el valor invariante.
 
 Para terminar esta sección, debo decir que tampoco le presté mayor atención que la de unas cuantas horas o minutos libres, sobre todo en vacaciones o durante algunos recreos.
-Mi afán era muy ingenuo, trataba de codificar todos los tipos de valores y simetrías que los permitían. Detrás de ello,  buscaba una forma de clasificación que, al **observar muchos patrones**, me permitiera encontrar el **porqué** de estas propiedades.
+Mi afán era muy ingenuo, trataba de codificar todos los tipos de valores y simetrías que los permitían. Detrás de ello,  buscaba una forma de clasificación que, al **observar muchos patrones**, me permitiera encontrar el **porqué** de estas cualidades.
 
 ## Retrospectiva hasta hoy
 
-Tuve un interés genuino a partir de un objeto aritmético y geométrico a la vez,  muy alejado del mundo del quehacer diario. Solamente era un juego abstracto, con objetos abstractos.
+Tuve un interés genuino a partir de un objeto aritmético y geométrico a la vez, muy alejado del mundo del quehacer diario. Solamente era un juego abstracto, con objetos abstractos.
 
 En retrospectiva noto que
 
@@ -143,7 +144,7 @@ En retrospectiva noto que
 
 La suma dentro del anillo de enteros $\mathbb{Z}= (\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots)$ se enriquece si coloco los elementos en una posición específica a la manera de un plano combinatorio, sin considerar estructura métrica alguna. Las posibilidades de estas geometrías, que casi espontáneamente imaginé con simetrías desde un inicio (reflexión, espejos, permutación, subpartes), generan elementos que satisfacen ciertas propiedades aritméticas particulares.
 
-En ese sentido, lo que hice intuitivamente con mi juego fue una búsqueda por clasificar invariantes aritméticos bajo simetrías de trayectorias geométricas y luego darles una codificación por medio diagramas personales rudimentarios para hallar el porqué.
+En ese sentido, lo que hice intuitivamente con mi juego fue una búsqueda por **clasificar una invariantes aritméticos bajo simetrías de trayectorias geométricas** y luego darles una codificación por medio diagramas personales rudimentarios para hallar el **porqué **de dichos números de forma **sistemática**.
 
 Muchos años después supe que existía algo llamado [cuadrado mágico](https://es.wikipedia.org/wiki/Cuadrado_m%C3%A1gico), en el que las filas, las columnas y las diagonales deben producir el mismo número (el mío no lo era, sus filas suman $14, 15$ y $16$). Mi idea trataba con subinvariantes de esta forma de matriz para diferentes operaciones y simetrías aritméticas.
 Esas dos cosas, el plano cartesiano y mi juego, fueron lo único de las matemáticas que me interesó verdaderamente.
@@ -152,24 +153,37 @@ Esas dos cosas, el plano cartesiano y mi juego, fueron lo único de las matemát
 
 Probablemente, de allí viene mi afinidad actual con las curvas elípticas $E/\mathbb{Q}$, las formas modulares $f(q)$ y, por supuesto, los números figurados $\mathfrak{f}_k(n)$, que son una extensión natural de esas preguntas sobre simetría y clasificación que me hice hace muchos años y que no volví a recordar hasta hoy.
 
-Brevemente, puedo contarte muy someramente que, en las curvas elípticas, una de las cosas más llamativas son sus puntos racionales $E(\mathbb{Q})$. Esto es porque, al realizar una suma geométria de dos puntos $P \oplus Q = R$, produce otro punto que cae dentro de la misma curva. En álgebra, a tal jueguito se le llama grupo finitamente generado.
+Puedo contarte muy someramente que, en las curvas elípticas, una de las cosas más llamativas son sus puntos racionales $E(\mathbb{Q})$. Esto es porque, al realizar una suma geométrica de dos puntos $P \oplus Q = R$, produce otro punto que cae dentro de la misma curva. En álgebra, a tal jueguito se le llama grupo finitamente generado. Según el teorema de Mordell-Weil,
 $$
-E(\mathbb{Q}) \cong \mathbb{Z}^{r} \oplus E(\mathbb{Q})_{\textrm{tors}}
+E(\mathbb{Q}) \cong \mathbb{Z}^{r} \oplus E(\mathbb{Q})_{\textrm{tors}}.
 $$
 Para darte un ejemplo, aquí tienes la curva elíptica $E'_{I}$ asociada a los números icosaédricos $I(n)$
 
 ![Pic - Elliptic curve of Icosahedron I(n)](../../lab-notes/ell-curves-cube-dodeca-icosa/ell-solid-icosahedral.webp)
 
-Puedes ver mi serie de [notas de laboratorio sobre curvas elípticas](https://edelveart.github.io/es/blog/divagaciones-diofanticas-entre-numeros-cubicos-dodecaedricos-icosaedricos-y-curvas-elipticas/).
+Te comento que también puedes leer mi serie de [notas de laboratorio sobre curvas elípticas](https://edelveart.github.io/es/blog/divagaciones-diofanticas-entre-numeros-cubicos-dodecaedricos-icosaedricos-y-curvas-elipticas/).
 
-Por otra parte, con un tipo especial de formas modulares $f(q)$, cada coeficiente en un índice número primo $p$, que se suele escribir $a_p$, se conecta con el conteo de puntos de una curva elíptica, pero donde la suma y multiplicación se dan en un conjunto reducido de números.
+Por otra parte, con un tipo especial de [formas modulares](https://github.com/edelveart/modular_forms) $f(q)$, cada coeficiente con índice primo $p$, que se suele escribir $a_p$, se conecta con el conteo de puntos de una curva elíptica, pero donde la suma y multiplicación se dan en un conjunto reducido de números (un cuerpo finito).
 
 Asimismo, los números figurados cuentan disposiciones geométricas en dos, tres o múltiples dimensiones y tienen representaciones muy variadas. Por ejemplo, mediante una función generadora puedes representar en el plano complejo el [hipertetraedro centrado](https://edelveart.github.io/figuratenum/phase-portraits/) en cuatro dimensiones
 $$
-G_{\bar{S}_3^4} = \sum_{n=1}^{\infty} \bar{S}_3^4(n)z^n
+G_{\bar{S}_3^4}(z) = \sum_{n=1}^{\infty} \bar{S}_3^4(n)z^n
 $$
+
 
 ![Pic - Phase portrait of Four Dimensional Centered Hypertetraedron](../../../figuratenum/learn/four-dim-centered-hypertetrahedron.webp)
 
+```py
+from figuratenum.figurate_viz import ComplexViz
 
-> Y quizá por eso hoy esas preguntas de otrora terminan convertidas en librerías de software para crear música algorítmica y hacer conciertos de live coding.
+c = ComplexViz()
+c.visualize_multidim(
+    "k_dim_centered_hypertetrahedron",
+    k=4, cmap_color="cividis",
+    disk_radius=2.0
+)
+```
+
+En esta bella imagen creada con mi librería `figuratenum`, atisbas contenido analítico, como los ceros y polos, expresados artísticamente en una coloración de dominio.
+
+> Y quizá por eso hoy esas preguntas de otrora las transformo en bibliotecas de software para crear música algorítmica y hacer conciertos de live coding.
