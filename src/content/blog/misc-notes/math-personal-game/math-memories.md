@@ -114,7 +114,9 @@ Las operaciones las imaginé siguiendo una figura geométrica (más abajo hay un
 Ahora otra figura, por ejemplo en forma de cuadrado, $3-4-2-5 = -8$, y lo mismo si se hace por reflexión, $9-4-8-5=-8$.
 O por ejemplo, con las esquinas de un rectángulo, $1-6-3-4 = -12$, igualmente por reflexión, $7-6-9-4= -12$, nuevamente el mismo número.
 
-O, sumando las diagonales, $1+ 5+9=15$ y $7+5+3=15$. Así mismo busqué otras *calculadoras* (así llamaba yo a esas disposiciones de los números) que tuvieran simetrías que generaran el mismo valor con formas de triángulos o figuras de tetris, etc.
+O, sumando las diagonales, $1+ 5+9=15$ y $7+5+3=15$.
+
+> En ese sentido, busqué otras *calculadoras* (así llamaba yo a esas disposiciones de los números) que tuvieran simetrías que generaran el mismo valor con formas de triángulos, cuadrados, figuras de tetris, trayectorias con saltos o partes quebradas. La única restricción era que siempre pudiera crearles un par simétrico.
 
 Lo que me fascinó fue que, usualmente, la suma es un algoritmo en forma de serrucho; aquí, en cambio, podía sumar y restar en otro orden, determinado por una **trayectoria geométrica** que terminaba formando una figura, no necesariamente regular, aunque fuera lo primero que buscaba. Después de tantas sumas, encontré lo que me pareció un juego matemático ideal, hecho con mis propias reglas y con infinitas posibilidades de crear muchas más.
 
@@ -131,6 +133,8 @@ Aunque perdí el cuaderno, reconstruí en la siguiente captura de pantalla el bo
 Antes de que se me olvide, nota que si uno suma los valores de las filas de arriba hacia abajo, obtienes $14, 15, 16$ y si los restas de derecha a izquierda, $7-6-1 = 0$, $8-5-2=1$, $9-4-3 = 2$. Nuevamente, un patrón ascendente de $n+1$. Quise apuntar cada patrón.
 Entonces, a un lado de cada tablero escribía la forma geométrica y su simetría que generaba el valor invariante.
 
+> También probaba con alternancia de signos $(-1)^n$; es decir, una suma, una resta y una suma y una resta o al revés. De hecho, también busca simetría en las operaciones aritméticas.
+
 Para terminar esta sección, debo decir que tampoco le presté mayor atención que la de unas cuantas horas o minutos libres, sobre todo en vacaciones o durante algunos recreos.
 Mi afán era muy ingenuo, trataba de codificar todos los tipos de valores y simetrías que los permitían. Detrás de ello,  buscaba una forma de clasificación que, al **observar muchos patrones**, me permitiera encontrar el **porqué** de estas cualidades.
 
@@ -144,16 +148,21 @@ En retrospectiva noto que
 
 La suma dentro del anillo de enteros $\mathbb{Z}= (\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots)$ se enriquece si coloco los elementos en una posición específica a la manera de un plano combinatorio, sin considerar estructura métrica alguna. Las posibilidades de estas geometrías, que casi espontáneamente imaginé con simetrías desde un inicio (reflexión, espejos, permutación, subpartes), generan elementos que satisfacen ciertas propiedades aritméticas particulares.
 
-En ese sentido, lo que hice intuitivamente con mi juego fue una búsqueda por **clasificar una invariantes aritméticos bajo simetrías de trayectorias geométricas** y luego darles una codificación por medio diagramas personales rudimentarios para hallar el **porqué **de dichos números de forma **sistemática**.
+En ese sentido, lo que hice intuitivamente con mi juego fue una búsqueda por **clasificar una invariantes aritméticos bajo simetrías de trayectorias geométricas** y luego darles una codificación, registrarlos por medio diagramas personales rudimentarios para hallar el **porqué** de dichos números de forma **sistemática** al observarlos en conjunto.
 
-Muchos años después supe que existía algo llamado [cuadrado mágico](https://es.wikipedia.org/wiki/Cuadrado_m%C3%A1gico), en el que las filas, las columnas y las diagonales deben producir el mismo número (el mío no lo era, sus filas suman $14, 15$ y $16$). Mi idea trataba con subinvariantes de esta forma de matriz para diferentes operaciones y simetrías aritméticas.
-Esas dos cosas, el plano cartesiano y mi juego, fueron lo único de las matemáticas que me interesó verdaderamente.
+A diferencia, creo, de lo habitual que es que **alguien proponga un problema o una ecuación en la pizarra**, me planteaba un objeto nuevo a mi modo de ver. En el fondo, me gustaba tener diferentes representaciones para una misma idea.
+
+Además, noto que habrían tres visiones en simultáneo a intentar formalizar. Por un lado, tenía la geometría de los trayectos $S$; por otro, la función $f(S)$ con las operaciones aritméticas de suma o resta $\pm$ que realizaba sobre $S$; y, por último, el amalgama entre geometría y el aspecto aritmético, que se sostiene como una nota aguda proyectada con todo el diafragma, con afinación invariante.
+
+Muchos años después, ya adulto, supe que existía algo llamado [cuadrado mágico](https://es.wikipedia.org/wiki/Cuadrado_m%C3%A1gico), en el que las filas, las columnas y las diagonales deben producir el mismo número (el mío no lo era, sus filas suman $14, 15$ y $16$). Mi idea trataba con subinvariantes de esta forma de matriz para diferentes operaciones y simetrías.
+
+Para rectificar lo dicho, esas dos cosas, el **plano cartesiano y mi juego**, fueron lo único de las matemáticas que **me interesó verdaderamente**.
 
 ### El rastro de los números figurados, las curvas elípticas y las formas modulares
 
-Probablemente, de allí viene mi afinidad actual con las curvas elípticas $E/\mathbb{Q}$, las formas modulares $f(q)$ y, por supuesto, los números figurados $\mathfrak{f}_k(n)$, que son una extensión natural de esas preguntas sobre simetría y clasificación que me hice hace muchos años y que no volví a recordar hasta hoy.
+El salto al presente tiene aún un último paso que quizás suba al blog. Sin embargo, es probable que de allí, de aquel juego inocente, viene mi afinidad actual con las curvas elípticas $E/\mathbb{Q}$, las formas modulares $f(q)$ y, por supuesto, los números figurados $\mathfrak{f}_k(n)$. Creo que son una extensión natural de esas preguntas sobre simetría y clasificación que me hice hace muchos años y que no volví a recordar hasta hoy.
 
-Puedo contarte muy someramente que, en las curvas elípticas, una de las cosas más llamativas son sus puntos racionales $E(\mathbb{Q})$. Esto es porque, al realizar una suma geométrica de dos puntos $P \oplus Q = R$, produce otro punto que cae dentro de la misma curva. En álgebra, a tal jueguito se le llama grupo finitamente generado. Según el teorema de Mordell-Weil,
+Para compartirte el contexto general de tales conceptos ajenos al léxico del día a día, puedo contarte muy someramente que, en las curvas elípticas, una de las cosas más llamativas son sus puntos racionales $E(\mathbb{Q})$. Esto es porque, al realizar una suma geométrica de dos puntos $P \oplus Q = R$, produce otro punto que cae dentro de la misma curva. En álgebra, a tal jueguito se le llama grupo finitamente generado. Según el teorema de Mordell-Weil,
 $$
 E(\mathbb{Q}) \cong \mathbb{Z}^{r} \oplus E(\mathbb{Q})_{\textrm{tors}}.
 $$
