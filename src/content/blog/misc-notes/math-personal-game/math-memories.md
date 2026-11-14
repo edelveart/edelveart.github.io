@@ -6,7 +6,7 @@ heroImage: "./playgo-basa.webp"
 badge: "misc notes"
 lang: "es"
 # updatedDate: "November 14 2026"
-tags: [ "figurate numbers", "elliptic curves", "number theory", "cartesian plane", "symmetry", "memories"]
+tags: ["math games", "recreational mathematics", "figurate numbers", "elliptic curves", "number theory", "cartesian plane", "symmetry", "memories"]
 ---
 
 > A mí nunca me gustaron ni me interesaron las matemáticas en la escuela más que cualquier otro curso, **salvo una única idea y el juego que me inventé**.
