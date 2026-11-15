@@ -39,7 +39,7 @@ $$
 
 In general, FigurateNum `generators` evaluate the polynomial sequentially over integer values of $n$.
 
-> To date (`v3.0.0`), alternative enumerations (e.g. symmetric indexing $0, \pm1, \pm2, \ldots$) are not part of the computational model, but can be obtained by reordering evaluations.
+> To date (`v3.0.0`), alternative enumerations (e.g., symmetric indexing $0, \pm1, \pm2, \ldots$) are not part of the computational model, but can be obtained by reordering evaluations.
 
 ## Computational Representation
 
