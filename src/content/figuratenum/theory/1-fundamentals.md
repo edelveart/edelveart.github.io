@@ -35,11 +35,16 @@ Setting $m = 3$ recovers the triangular numbers; $m = 4$ gives the squares.
 
 The idea is old enough that it has had time to prove itself useful. Diophantus studied figurate numbers in the 3rd century, and over a thousand years later Fermat conjectured that every positive integer is a sum of at most three triangular numbers, four squares, five pentagonal numbers, and so on: the **Polygonal Number Theorem**.
 
-Gauss proved the triangular case in 1796, writing in his diary: *ΕΥΡΗΚΑ! num = Δ + Δ + Δ*. The general theorem took until 1813, when Cauchy finally closed it. These results place polygonal numbers in the context of additive number theory.
+**Gauss** proved the triangular case in July 1796, famously writing in [his mathematical diary:](https://commons.wikimedia.org/wiki/File%3AEureka_Gauss.png)
+$$
+\textit{ΕΥΡΗΚΑ! } \quad \text{num} = \Delta + \Delta + \Delta
+$$
+
+The general theorem took until 1813, when Cauchy finally closed it. These results place polygonal numbers in the context of additive number theory.
 
 > A set $A$  is called an additive basis of order $h$ if every nonnegative integer can be expressed as the sum of at most $h$ elements of $A$, with repetitions allowed.
 
-Classical examples include the squares (Lagrange), polygonal numbers (Fermat–Cauchy), and $k$-th powers (Waring), while the primes appear in Goldbach-type problems.
+Classical examples include the squares (**Lagrange**), polygonal numbers (**Fermat–Cauchy**), and $k$-th powers (**Waring)**, while the primes appear in Goldbach-type problems.
 
 ## Sequences and generating functions by dimension
 
@@ -53,20 +58,20 @@ FigurateNum organizes the 235+ sequences and families into three groups by dimen
 
 ## Generating functions and analysis
 
-Figurate numbers admit a rational generating function. In general, for $(a_n)_{n \geq 0}$, we have
+Figurate numbers $\mathfrak{f}(n)$ admit a rational generating function. In general, for $(\mathfrak{f}(n))_{n \geq 0}$, we have
 
 $$
-f(z) = \sum_{n=1}^{\infty} a_n z^n.
+G_{\mathfrak{f}}(z) = \sum_{n=0}^{\infty} \mathfrak{f}(n) z^n.
 $$
 
-For the triangular numbers, $f(z) = \frac{z}{(1-z)^3}$, and for the squares, $f(z) = \frac{z(z+1)}{(1-z)^3}$. Both share the denominator $(1-z)^3$ and both vanish at $z=0$.
+For the triangular numbers, $G_{S_3}(z) = \frac{z}{(1-z)^3}$, and for the squares, $G_{S_4}(z) = \frac{z(z+1)}{(1-z)^3}$. Both share the denominator $(1-z)^3$ and both vanish at $z=0$.
 
 For $m$-gonal numbers in general, the denominator is always $(1-z)^3$, with $m$ encoded in the numerator. The degree of the denominator tracks dimension. Pyramidal numbers have $(1-z)^4$, and $k$-dimensional analogues have $(1-z)^{k+1}$.
 
-**ComplexViz** renders the phase portrait of $f(z)$ in $\mathbb{C}$, via domain coloring after [Wegert (2012)](https://doi.org/10.1007/978-3-0348-0180-5). The enhanced phase portrait makes the analytic structure of $f(z)$ directly readable:
+**ComplexViz** renders the phase portrait of $G_{\mathfrak{f}}(z)$ in $\mathbb{C}$, via domain coloring after [Wegert (2012)](https://doi.org/10.1007/978-3-0348-0180-5). The enhanced phase portrait makes the analytic structure directly readable:
 
-- poles, typically at $z = 1$ for these families, where $|f(z)| \to \infty$
-- zeros, where $f(z) = 0$
+- poles, typically at $z = 1$ for these families, where $|G_{\mathfrak{f}}(z)| \to \infty$
+- zeros, where $G_{\mathfrak{f}}(z) = 0$
 
 Both leave characteristic signatures in the coloring.
 
