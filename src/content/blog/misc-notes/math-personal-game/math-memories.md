@@ -158,9 +158,9 @@ Muchos años después, ya adulto, supe que existía algo llamado [cuadrado mági
 
 Para rectificar lo dicho, esas dos cosas, el **plano cartesiano y mi juego**, fueron lo único de las matemáticas que **me interesó verdaderamente**.
 
-### El rastro de los números figurados, las curvas elípticas y las formas modulares
-
 El salto al presente tiene aún un último paso que quizás suba al blog. Sin embargo, es probable que de allí, de aquel juego inocente, viene mi afinidad actual con las curvas elípticas $E/\mathbb{Q}$, las formas modulares $f(q)$ y, por supuesto, los números figurados $\mathfrak{f}_k(n)$. Creo que son una extensión natural de esas preguntas sobre simetría y clasificación que me hice hace muchos años y que no volví a recordar hasta hoy.
+
+### El rastro de las curvas elípticas
 
 Para compartirte el contexto general de tales conceptos ajenos al léxico del día a día, puedo contarte muy someramente que, en las curvas elípticas, una de las cosas más llamativas son sus puntos racionales $E(\mathbb{Q})$. Esto es porque, al realizar una suma geométrica de dos puntos $P \oplus Q = R$, produce otro punto que cae dentro de la misma curva. En álgebra, a tal jueguito se le llama grupo finitamente generado. Según el teorema de Mordell-Weil,
 $$
@@ -172,7 +172,11 @@ Para darte un ejemplo, aquí tienes la curva elíptica $E'_{I}$ asociada a los n
 
 Te comento que también puedes leer mi serie de [notas de laboratorio sobre curvas elípticas](https://edelveart.github.io/es/blog/divagaciones-diofanticas-entre-numeros-cubicos-dodecaedricos-icosaedricos-y-curvas-elipticas/).
 
+### Mi biblioteca de formas modulares
+
 Por otra parte, con un tipo especial de [formas modulares](https://github.com/edelveart/modular_forms) $f(q)$, cada coeficiente con índice primo $p$, que se suele escribir $a_p$, se conecta con el conteo de puntos de una curva elíptica, pero donde la suma y multiplicación se dan en un conjunto reducido de números (un cuerpo finito).
+
+### El espectro de los números figurados
 
 Asimismo, los números figurados cuentan disposiciones geométricas en dos, tres o múltiples dimensiones y tienen representaciones muy variadas. Por ejemplo, mediante una función generadora puedes representar en el plano complejo el [hipertetraedro centrado](https://edelveart.github.io/figuratenum/phase-portraits/) en cuatro dimensiones
 $$
