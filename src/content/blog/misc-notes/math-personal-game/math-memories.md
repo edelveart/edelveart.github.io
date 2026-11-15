@@ -180,7 +180,7 @@ Por otra parte, con un tipo especial de [formas modulares](https://github.com/ed
 
 Asimismo, los números figurados cuentan disposiciones geométricas en dos, tres o múltiples dimensiones y tienen representaciones muy variadas. Por ejemplo, mediante una función generadora puedes representar en el plano complejo el [hipertetraedro centrado](https://edelveart.github.io/figuratenum/phase-portraits/) en cuatro dimensiones
 $$
-G_{\bar{S}_3^4}(z) = \sum_{n=0}^{\infty} \bar{S}_3^4(n)z^n
+G_{\bar{S}_3^4}(z) = \sum_{n=1}^{\infty} \bar{S}_3^4(n)z^n
 $$
 
 

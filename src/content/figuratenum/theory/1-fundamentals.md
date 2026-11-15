@@ -58,10 +58,10 @@ FigurateNum organizes the 235+ sequences and families into three groups by dimen
 
 ## Generating functions and analysis
 
-Figurate numbers $\mathfrak{f}(n)$ admit a rational generating function. In general, for $(\mathfrak{f}(n))_{n \geq 0}$, we have
+Figurate numbers $\mathfrak{f}(n)$ admit a rational generating function. In general, for $(\mathfrak{f}(n))_{n \geq 1}$, we have
 
 $$
-G_{\mathfrak{f}}(z) = \sum_{n=0}^{\infty} \mathfrak{f}(n) z^n.
+G_{\mathfrak{f}}(z) = \sum_{n=1}^{\infty} \mathfrak{f}(n) z^n.
 $$
 
 For the triangular numbers, $G_{S_3}(z) = \frac{z}{(1-z)^3}$, and for the squares, $G_{S_4}(z) = \frac{z(z+1)}{(1-z)^3}$. Both share the denominator $(1-z)^3$ and both vanish at $z=0$.
