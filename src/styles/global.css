@@ -20,6 +20,7 @@ html {
   scrollbar-gutter: stable;
   overflow-y: auto;
   font-size: 16.7px;
+  scroll-behavior: smooth;
 }
 
 section .katex,

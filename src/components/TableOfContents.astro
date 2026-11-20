@@ -29,7 +29,7 @@ const tocLabel = lang === "es" ? "Contenidos" : "Contents";
     class="list-none marker:hidden cursor-pointer flex items-center gap-2
            text-neutral-content hover:text-primary
            transition-colors duration-150"
-    onclick="window.scrollTo({ top: 0, behavior: 'smooth'})"
+    onclick="window.scrollTo({ top: 0})"
   >
     <span class="text-xs font-ligth uppercase tracking-wide">{tocLabel}</span>
 
@@ -106,7 +106,6 @@ const tocLabel = lang === "es" ? "Contenidos" : "Contents";
     window.addEventListener("resize", updateActiveHeading);
     updateActiveHeading();
   }
-  document.documentElement.style.scrollBehavior = "smooth";
 
   initTOC();
 
