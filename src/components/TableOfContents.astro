@@ -31,7 +31,7 @@ const tocLabel = lang === "es" ? "Contenidos" : "Contents";
            transition-colors duration-150"
     onclick="window.scrollTo({ top: 0, behavior: 'smooth'})"
   >
-    <span class="text-xs font-normal uppercase tracking-wide">{tocLabel}</span>
+    <span class="text-xs font-ligth uppercase tracking-wide">{tocLabel}</span>
 
     <span class="group-open:rotate-180 transition-transform duration-150">
       <Arrow direction="down" size="sm" />
@@ -53,10 +53,11 @@ const tocLabel = lang === "es" ? "Contenidos" : "Contents";
     const links = document.querySelectorAll("details.toc > nav > ul > li");
 
     const toc = document.querySelector<HTMLDetailsElement>("details.toc");
-    const desktopQuery = window.matchMedia("(min-width: 1280px)");
-    toc?.addEventListener("toggle", () => {
-      if (desktopQuery.matches && !toc.open) {
-        toc.open = true;
+    const desktopQuery = window.matchMedia("(min-width: 1024px)");
+
+    toc?.querySelector("summary")?.addEventListener("click", (event) => {
+      if (desktopQuery.matches) {
+        event.preventDefault();
       }
     });
 
