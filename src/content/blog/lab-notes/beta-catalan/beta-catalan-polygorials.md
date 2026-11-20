@@ -266,7 +266,7 @@ $$
 These values are already tabulated in plenty of sources, and we get
 $$
 C\left(\frac{1}{2}\right)
-= \frac{1}{\frac{\sqrt{\pi}}{2}\cdot\frac{3\sqrt{\pi}}{4}}
+= \frac{1}{\frac{\sqrt{\pi}}{2}\frac{3\sqrt{\pi}}{4}}
 = \frac{1}{\frac{3\pi}{8}}
 = \frac{8}{3\pi}
 $$
@@ -282,13 +282,13 @@ $$
 $\textit{Proof}$. I need three well-known facts. First, by Legendre's duplication formula,
 
 $$
-\Gamma(z) \Gamma(z + \frac{1}{2}) = 2^{1-2z}\sqrt{\pi} \Gamma(2z)
+\Gamma(z) \Gamma\left(z + \frac{1}{2}\right) = 2^{1-2z}\sqrt{\pi} \Gamma(2z)
 $$
 
 taking $z = x + \frac{1}{2}$, we get
 
 $$
-\Gamma (2x+1) = \frac{4^x}{\sqrt{\pi}} \Gamma(x+1)\Gamma(x + \frac{1}{2})
+\Gamma (2x+1) = \frac{4^x}{\sqrt{\pi}} \Gamma(x+1)\Gamma\left(x + \frac{1}{2}\right)
 $$
 
 From which, partway through solving, it follows that
@@ -321,16 +321,15 @@ The expanded result is practically direct; it's enough to substitute everything 
 $$
 B_C(x,y)=
 \frac{
-\displaystyle
-\frac{\Gamma(2x+1)}
-{\Gamma(x+1)\Gamma(x+2)}
-\cdot
-\frac{\Gamma(2y+1)}
-{\Gamma(y+1)\Gamma(y+2)}
-}{
-\displaystyle
-\frac{\Gamma(2(x+y)+1)}
-{\Gamma(x+y+1)\Gamma(x+y+2)}
+    \displaystyle
+    \frac{\Gamma(2x+1)}
+    {\Gamma(x+1)\Gamma(x+2)}
+    \frac{\Gamma(2y+1)}
+    {\Gamma(y+1)\Gamma(y+2)}
+    }{
+    \displaystyle
+    \frac{\Gamma(2(x+y)+1)}
+    {\Gamma(x+y+1)\Gamma(x+y+2)}
 }
 $$
 

@@ -152,7 +152,7 @@ $$
 1 + \pi^4 + \pi^5 + \pi^3,
 $$
 
-because $3\pi = \pi^3 \cdot \pi = \pi^4$ and $3\pi^2 = \pi^3 \cdot \pi^2 = \pi^5$. Every term has order $\geq 3$. Topologically, this is of small size (with respect to the $\pi$-adic topology). So we have
+because $3\pi = \pi^3  \pi = \pi^4$ and $3\pi^2 = \pi^3 \pi^2 = \pi^5$. Every term has order $\geq 3$. Topologically, this is of small size (with respect to the $\pi$-adic topology). So we have
 
 $$
 (1 + \pi)^3 \equiv 1 \pmod{\pi^3}
@@ -172,7 +172,7 @@ So far, we haven’t tried anything new. Before serving the main course, what fo
 use_bpm 30
 a_i = (ring 1.0, 1.0/3, 1.0/9, 1.0/27)
 
-# a_0, large-scale structure ::
+# a_0, large-scale structure
 with_fx :reverb, room: 0.9, mix:  0.7 do
   live_loop :a_0 do
     synth :organ_tonewheel, note: :a1, amp: a_i[0],
@@ -181,7 +181,7 @@ with_fx :reverb, room: 0.9, mix:  0.7 do
   end
 end
 
-# a_1·3^(1/3) ::
+# a_1·3^(1/3)
 with_fx :reverb, room: 0.7, mix:  0.7 do
   live_loop :a_1 do
     synth :prophet, note: (chord :a3, :m).choose,
@@ -190,7 +190,7 @@ with_fx :reverb, room: 0.7, mix:  0.7 do
   end
 end
 
-# a_2·3^(1/9) ::
+# a_2·3^(1/9)
 with_fx :reverb, room: 0.5, mix:  0.7 do
   live_loop :a_2 do
     synth :rhodey, note: (chord :a2, :m).choose,
@@ -200,7 +200,7 @@ with_fx :reverb, room: 0.5, mix:  0.7 do
 end
 
 # a_3·3^(1/27), almost imperceptible 1 + 3^{1/3} \equiv 1 \pmod{\pi}
-# muting this changes nothing fundamental ::
+# muting this changes nothing fundamental
 with_fx :reverb, room: 0.3, mix:  0.7 do
   live_loop :a_3 do
     synth :fm, note: (chord :a4, :m).choose,
