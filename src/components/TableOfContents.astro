@@ -54,7 +54,6 @@ const tocLabel = lang === "es" ? "Contenidos" : "Contents";
 
     const toc = document.querySelector<HTMLDetailsElement>("details.toc");
     const desktopQuery = window.matchMedia("(min-width: 1024px)");
-
     toc?.querySelector("summary")?.addEventListener("click", (event) => {
       if (desktopQuery.matches) {
         event.preventDefault();
