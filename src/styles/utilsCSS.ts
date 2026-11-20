@@ -53,18 +53,17 @@ export const NAV_LINKS_PAGES = {
   prevNext: "text-sm uppercase tracking-wide text-base-content/75 font-light",
   pageTitle:
     "text-base line-clamp-2 group-hover:text-primary group-hover:underline underline-offset-2 group-hover:decoration-2 font-normal transition-[color,text-underline-offset,text-decoration-thickness] duration-150 ease-in-out",
-  arrowSpan:
-    "transition-colors duration-150 ease-in-out group-hover:text-primary",
+  arrowSpan: "transition-colors duration-150 ease-in-out group-hover:text-primary",
 };
 export const SPACES_BETWEEN_CARDS = {
   GAP: "gap-x-5 gap-y-4 sm:gap-y-5",
   PADDING: "p-4",
 };
 export const GAP_LIST_RESOURCES = "gap-y-0";
-export const MAX_W_CONTENT = "xl:max-w-136";
 
-// DOCS_MAX_WIDTH its the same as = wide ? "max-w-240" in BaseLayout.astro, aprox 651px
-export const DOCS_MAX_WIDTH = "max-w-156";
+// POST BLOG AND DOCS TITLE AND NAVEGATION AND WRITTEN BY MAX-W-CONTENT
+// its the same as = wide ? "max-w-240" in BaseLayout.astro, aprox 651px
+export const MAX_W_CONTENT = "xl:max-w-156";
 
 // export const DRAWER_BREAKPOINTS = {
 //   sideBar: "hidden xl:block",
