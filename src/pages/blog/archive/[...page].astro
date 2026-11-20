@@ -51,112 +51,99 @@ const { page } = Astro.props as Props;
     </div>
 
     <div class="flex flex-col">
-      {
-        page.data.map((post) => {
-          const isSpanish = post.data.lang === "es";
-          const POST_URL_ENG_ESP =
-            (isSpanish ? "/es/blog/" : "/blog/") +
-            createSlug(post.data.title, post.id) +
-            "/";
-          return (
-            <article class="group my-1">
-              <div class="flex w-full items-start gap-x-0">
-                <div class="flex w-24 shrink-0 flex-col items-start gap-y-1 ">
-                  <time class={`${CARD_OP.muteData} leading-5`}>
-                    {dayjs(post.data.pubDate).format("ll")}
-                  </time>
-
-                  <span
-                    class={`text-xs sm:hidden ${GET_COLORS_METADATA(post.data.badge)}`}
-                  >
-                    {post.data.badge}
-                  </span>
-                </div>
-
-                <a
-                  href={POST_URL_ENG_ESP}
-                  class={`min-w-0 flex-1 leading-5 ${LINKS_TO_NO_UNDERLINE} line-clamp-2`}
-                >
-                  {post.data.title}
-                </a>
+      {page.data.map((post) => {
+        const isSpanish = post.data.lang === "es";
+        const POST_URL_ENG_ESP =
+          (isSpanish ? "/es/blog/" : "/blog/") +
+          createSlug(post.data.title, post.id) +
+          "/";
+        return (
+          <article class="group my-1">
+            <div class="flex w-full items-start gap-x-0.5">
+              <div class="flex w-24 shrink-0 flex-col items-start gap-y-1">
+                <time class={`${CARD_OP.muteData} leading-5`}>
+                  {dayjs(post.data.pubDate).format("ll")}
+                </time>
 
                 <span
-                  class={`ml-5 hidden shrink-0 text-xs leading-5 sm:inline ${GET_COLORS_METADATA(post.data.badge)} `}
+                  class={`text-xs sm:hidden ${GET_COLORS_METADATA(post.data.badge)}`}
                 >
                   {post.data.badge}
                 </span>
               </div>
-            </article>
-          );
-        })
-      }
+
+              <a
+                href={POST_URL_ENG_ESP}
+                class={`min-w-0 flex-1 leading-5 ${LINKS_TO_NO_UNDERLINE} line-clamp-2`}
+              >
+                {post.data.title}
+              </a>
+
+              <span
+                class={`ml-5 hidden shrink-0 text-xs leading-5 sm:inline ${GET_COLORS_METADATA(post.data.badge)} `}
+              >
+                {post.data.badge}
+              </span>
+            </div>
+          </article>
+        );
+      })}
     </div>
     <DividerNav />
 
     <nav class="grid grid-cols-2 gap-2" aria-label="Archive pagination">
-      {
-        page.url.prev ? (
-          <a
-            class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`}
-            href={page.url.prev}
-          >
-            <span class={NAV_LINKS_PAGES.arrowSpan}>
-              <Arrows direction="left" />
-            </span>
-            <div>
-              <div class={NAV_LINKS_PAGES.prevNext}>NEWER</div>
-              <div class={NAV_LINKS_PAGES.pageTitle}>Recent entries</div>
-            </div>
-          </a>
-        ) : (
-          <a
-            class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`}
-            href="/"
-          >
-            <span class={NAV_LINKS_PAGES.arrowSpan}>
-              <Arrows direction="left" />
-            </span>
-            <div>
-              <div class={NAV_LINKS_PAGES.prevNext}>HOME</div>
-              <div class={NAV_LINKS_PAGES.pageTitle}>Homepage</div>
-            </div>
-          </a>
-        )
-      }
+      {page.url.prev ? (
+        <a
+          class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`}
+          href={page.url.prev}
+        >
+          <span class={NAV_LINKS_PAGES.arrowSpan}>
+            <Arrows direction="left" />
+          </span>
+          <div>
+            <div class={NAV_LINKS_PAGES.prevNext}>NEWER</div>
+            <div class={NAV_LINKS_PAGES.pageTitle}>Recent entries</div>
+          </div>
+        </a>
+      ) : (
+        <a class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`} href="/">
+          <span class={NAV_LINKS_PAGES.arrowSpan}>
+            <Arrows direction="left" />
+          </span>
+          <div>
+            <div class={NAV_LINKS_PAGES.prevNext}>HOME</div>
+            <div class={NAV_LINKS_PAGES.pageTitle}>Homepage</div>
+          </div>
+        </a>
+      )}
 
-      {
-        page.url.next ? (
-          <a
-            class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`}
-            href={page.url.next}
-          >
-            <div class="text-right">
-              <div class={NAV_LINKS_PAGES.prevNext}>OLDER</div>
-              <div class={NAV_LINKS_PAGES.pageTitle}>Earlier entries</div>
-            </div>
-            <span class={NAV_LINKS_PAGES.arrowSpan}>
-              <Arrows direction="right" />
-            </span>
-          </a>
-        ) : (
-          <div />
-        )
-      }
+      {page.url.next ? (
+        <a
+          class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`}
+          href={page.url.next}
+        >
+          <div class="text-right">
+            <div class={NAV_LINKS_PAGES.prevNext}>OLDER</div>
+            <div class={NAV_LINKS_PAGES.pageTitle}>Earlier entries</div>
+          </div>
+          <span class={NAV_LINKS_PAGES.arrowSpan}>
+            <Arrows direction="right" />
+          </span>
+        </a>
+      ) : (
+        <div />
+      )}
     </nav>
   </article>
 </BaseLayout>
 
-{
-  /* <div
+{/* <div
                         class={`shrink-0 px-2 py-0.5 uppercase tracking-wide ${badge_color}`}
                         lang={isSpanish ? "es" : "en"}
                       >
                         {isSpanish ? "ES" : "EN"}
-                      </div> */
-}
+                      </div> */}
 
-{
-  /* <p class={`mt-1 ${CARD_OP.parr} line-clamp-2`}>
+{/* <p class={`mt-1 ${CARD_OP.parr} line-clamp-2`}>
                         {post.data.description}
-                      </p> */
-}
+                      </p> */}
