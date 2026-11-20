@@ -19,11 +19,9 @@ interface Props {
 
 const { headings, lang = "en" } = Astro.props;
 
-const filteredHeadings = headings.filter(
-  ({ depth }) => depth >= 2 && depth <= 3,
-);
+const filteredHeadings = headings.filter(({ depth }) => depth >= 2 && depth <= 3);
 
-const tocLabel = lang === "es" ? "Tabla de contenidos" : "Table of Contents";
+const tocLabel = lang === "es" ? "Contenidos" : "Contents";
 ---
 
 <details open class="toc group relative">
@@ -31,66 +29,36 @@ const tocLabel = lang === "es" ? "Tabla de contenidos" : "Table of Contents";
     class="list-none marker:hidden cursor-pointer flex items-center gap-2
            text-neutral-content hover:text-primary
            transition-colors duration-150"
+    onclick="window.scrollTo({ top: 0, behavior: 'smooth'})"
   >
-    <span class="text-sm font-medium tracking-wide">
-      {tocLabel}
-    </span>
+    <span class="text-xs font-normal uppercase tracking-wide">{tocLabel}</span>
 
     <span class="group-open:rotate-180 transition-transform duration-150">
-      <Arrow direction="down" size="xs" />
+      <Arrow direction="down" size="sm" />
     </span>
   </summary>
 
-  <nav
-    class="not-prose w-full xl:max-h-[calc(100vh-10rem)] xl:overflow-y-auto ml-3 mt-2"
-  >
+  <nav class="not-prose w-full xl:max-h-[calc(100vh-10rem)] xl:overflow-y-auto ml-3 mt-2">
     <ul class="mt-1 flex flex-col max-w-full">
-      {filteredHeadings.map((heading) => <TOCHeading heading={heading} />)}
+      {filteredHeadings.map((heading) => (
+        <TOCHeading heading={heading} />
+      ))}
     </ul>
   </nav>
 </details>
-
-<!-- <script>
-  function initTOC() {
-    const anchors = document.querySelectorAll("h2[id], h3[id]");
-    const links = document.querySelectorAll("details.toc > nav > ul > li");
-
-    if (anchors.length !== links.length || anchors.length === 0) {
-      return;
-    }
-
-    function updateActiveHeading() {
-      const scrollTop = window.scrollY;
-      let highlighted = false;
-
-      for (let i = anchors.length - 1; i >= 0; i--) {
-        const anchor = anchors[i] as HTMLElement;
-
-        if (!highlighted && scrollTop > anchor.offsetTop - 100) {
-          links[i].classList.add("active-heading");
-          highlighted = true;
-        } else {
-          links[i].classList.remove("active-heading");
-        }
-      }
-    }
-
-    window.addEventListener("scroll", updateActiveHeading, {
-      passive: true,
-    });
-
-    updateActiveHeading();
-  }
-
-  initTOC();
-
-  document.addEventListener("astro:page-load", initTOC);
-</script> -->
 
 <script>
   function initTOC() {
     const anchors = document.querySelectorAll("h2[id], h3[id]");
     const links = document.querySelectorAll("details.toc > nav > ul > li");
+
+    const toc = document.querySelector<HTMLDetailsElement>("details.toc");
+    const desktopQuery = window.matchMedia("(min-width: 1280px)");
+    toc?.addEventListener("toggle", () => {
+      if (desktopQuery.matches && !toc.open) {
+        toc.open = true;
+      }
+    });
 
     if (anchors.length !== links.length || anchors.length === 0) {
       return;
@@ -130,14 +98,15 @@ const tocLabel = lang === "es" ? "Tabla de contenidos" : "Table of Contents";
       }
     }
 
-    window.addEventListener("scroll", updateActiveHeading, {
-      passive: true,
-    });
+    // window.addEventListener("scroll", updateActiveHeading, {
+    //   passive: true,
+    // });
 
+    window.addEventListener("scrollend", updateActiveHeading);
     window.addEventListener("resize", updateActiveHeading);
-
     updateActiveHeading();
   }
+  document.documentElement.style.scrollBehavior = "smooth";
 
   initTOC();
 
