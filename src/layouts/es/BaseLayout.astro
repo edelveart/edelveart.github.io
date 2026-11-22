@@ -48,6 +48,12 @@ import "katex/dist/katex.min.css";
     />
     <link rel="sitemap" href="/sitemap-index.xml" />
     {TRANSITION_API && <ClientRouter />}
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={SITE_TITLE}
+      href="/rss.xml"
+    />
   </head>
   <body>
     <div class="flex flex-col min-h-screen">
@@ -62,10 +68,7 @@ import "katex/dist/katex.min.css";
           <div class="flex-1 min-w-0">
             <main class="flex justify-center" transition:animate="none">
               <div
-                class:list={[
-                  "w-full p-6 pt-10",
-                  wide ? "max-w-240" : "max-w-185",
-                ]}
+                class:list={["w-full p-6 pt-10", wide ? "max-w-240" : "max-w-185"]}
               >
                 <slot />
               </div>

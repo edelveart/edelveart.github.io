@@ -47,6 +47,12 @@ import "katex/dist/katex.min.css";
       ogType={ogType}
     />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={SITE_TITLE}
+      href="/rss.xml"
+    />
     {TRANSITION_API && <ClientRouter />}
   </head>
   <body>
@@ -62,10 +68,7 @@ import "katex/dist/katex.min.css";
           <div class="flex-1 min-w-0">
             <main class="flex justify-center" transition:animate="none">
               <div
-                class:list={[
-                  "w-full p-6 pt-10",
-                  wide ? "max-w-240" : "max-w-185",
-                ]}
+                class:list={["w-full p-6 pt-10", wide ? "max-w-240" : "max-w-185"]}
               >
                 <slot />
               </div>
@@ -82,7 +85,8 @@ import "katex/dist/katex.min.css";
         {includeSidebar && <SideBar mobile menuItems={menuEnglish} />}
       </div>
     </div>
-  </body><!-- SCRIPT -->
+  </body>
+  <!-- SCRIPT -->
   <script is:inline>
     const KEY = "desktop-sidebar-scroll";
 
