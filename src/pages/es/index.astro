@@ -1,9 +1,7 @@
 ---
 import BaseLayout from "@layouts/es/BaseLayout.astro";
 
-import MainLinks from "@components/MainLinks.astro";
 import Experience from "@components/Experience.astro";
-import HeroTopProjects from "@components/img-components/Hero-Top-Projects.astro";
 import CardBlog from "@components/CardBlog.astro";
 // BLOG
 import createSlug from "@ts-config-path/lib/createSlug";
@@ -11,6 +9,7 @@ import { getCollection } from "astro:content";
 import PreviousPosts from "@components/PreviousPosts.astro";
 import BiographyES from "@components/BiographyES.astro";
 import { SPACES_BETWEEN_CARDS } from "@styles/utilsCSS";
+import LinkIconsGroup from "@components/LinkIconsGroup.astro";
 // const posts = (await getCollection("blog")).sort(
 //   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 // );
@@ -27,12 +26,11 @@ const last_posts = posts.slice(0, 4);
     <h2 class="text-xs uppercase tracking-wider font-medium text-secondary/85 mb-1.5">
       Desarrollador de sistemas matemáticos creativos
     </h2>
-    <h1 class="text-4xl font-bold leading-snug mb-10">Edgar Delgado</h1>
-    <HeroTopProjects />
+    <h1 class="text-4xl font-bold leading-snug">Edgar Delgado</h1>
+    <LinkIconsGroup />
     <!-- BIO -->
-    <div class="mt-10 mb-12">
+    <div class="mt-8 mb-12">
       <BiographyES />
-      <MainLinks contactText="LinkedIn" linkedin="L" github="G" youtube="Y" />
     </div>
     <!-- BLOG-NOTES -->
     <div class="flex justify-between items-center gap-2 my-8">

@@ -70,7 +70,7 @@ export const allProjects: ProjectType[] = [
     img: FigurateNumbersRuby,
     desc: `This Ruby gem enables the generation of 241 infinite sequences of plane, spatial, and multidimensional figurate numbers. It is designed for use in your math projects or with Sonic Pi. Based on the book "Figurate Numbers" (2012) by Elena Deza and Michel Deza.`,
     url: "https://rubygems.org/gems/figurate_numbers",
-    badge: "RubyGems · 6.7k downloads",
+    badge: "RubyGems · 6.9k downloads",
   },
   {
     id: "fignumbers-ts",
@@ -78,7 +78,7 @@ export const allProjects: ProjectType[] = [
     img: FigNumbersTS,
     desc: `A library for generating infinite figurate number sequences, connected to geometric shapes in multiple dimensions. Based on "Figurate Numbers" (2012) by Elena Deza and Michel Deza.`,
     url: "https://www.npmjs.com/package/fignumbers",
-    badge: "npm · 1.5k downloads",
+    badge: "npm · 1.7k downloads",
   },
   {
     id: "figurate-numbers-lua",
@@ -105,21 +105,17 @@ const orderedProjects: ProjectType[] = order
   : projects;
 ---
 
-<div class="text-3xl w-full font-bold flex items-center">
-  {headTitle}
-</div>
+<div class="text-3xl w-full font-bold flex items-center">{headTitle}</div>
 
 <section class={`flex flex-col ${SPACES_BETWEEN_CARDS.GAP} mt-10`}>
-  {
-    orderedProjects.map((project, index) => (
-      <HorizontalCard
-        key={index}
-        title={project.title}
-        img={project.img}
-        desc={project.desc}
-        url={project.url}
-        badge={project.badge}
-      />
-    ))
-  }
+  {orderedProjects.map((project, index) => (
+    <HorizontalCard
+      key={index}
+      title={project.title}
+      img={project.img}
+      desc={project.desc}
+      url={project.url}
+      badge={project.badge}
+    />
+  ))}
 </section>

@@ -1,7 +1,11 @@
 ---
 import { allProjects } from "@components/ProjectsComponent.astro";
 import { Image } from "astro:assets";
-import { BORDER_OPACITY, SPACES_BETWEEN_CARDS, GET_COLORS_METADATA } from "@styles/utilsCSS";
+import {
+  BORDER_OPACITY,
+  SPACES_BETWEEN_CARDS,
+  GET_COLORS_METADATA,
+} from "@styles/utilsCSS";
 
 import MainFigurateNumWebp from "@assets/main-figuratenum.webp";
 import MainTonnetzWebp from "@assets/main-tonnetz.webp";
@@ -27,7 +31,8 @@ const badge = `
 `;
 ---
 
-<!-- https://svgomg.net/ --><!-- https://vecta.io/nano -->
+<!-- https://svgomg.net/ -->
+<!-- https://vecta.io/nano -->
 <section
   class={`grid
     grid-cols-1
@@ -35,16 +40,14 @@ const badge = `
     ${SPACES_BETWEEN_CARDS.GAP}
     lg:auto-rows-fr`}
 >
-  <!-- 1 — FIGURATENUM / GRANDE -->
   <a
     href={allProjects[2].url}
     target="_blank"
     rel="noopener noreferrer"
-    class={`${cardBase} lg:col-span-2 lg:row-span-2`}
+    class={`${cardBase} lg:col-span-1 lg:row-span-1`}
   >
     <div class={badge}>
       <span>FIGURATENUM</span>
-      <!-- <span>FigurateNum • PyPI</span> -->
     </div>
 
     <Image
@@ -61,7 +64,6 @@ const badge = `
     />
   </a>
 
-  <!-- 2 — MODULAR FORMS -->
   <a
     href={allProjects[1].url}
     target="_blank"
@@ -70,7 +72,6 @@ const badge = `
   >
     <div class={badge}>
       <span>MODULAR FORMS</span>
-      <!-- <span>Modular Forms • RubyGems</span> -->
     </div>
 
     <Image
@@ -88,7 +89,6 @@ const badge = `
     />
   </a>
 
-  <!-- 3 — TS-TONNETZ -->
   <a
     href={allProjects[0].url}
     target="_blank"
@@ -97,7 +97,6 @@ const badge = `
   >
     <div class={badge}>
       <span>TS-TONNETZ</span>
-      <!-- <span>TS-Tonnetz • npm</span> -->
     </div>
 
     <Image

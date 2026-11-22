@@ -1,6 +1,7 @@
 ---
 import { routeEnglish } from "@ts-config-path/lib/menu";
 import { LINKS_TO } from "@styles/utilsCSS";
+import HeroTopProjects from "./img-components/Hero-Top-Projects.astro";
 ---
 
 <section class="break-normal hyphens-auto">
@@ -21,28 +22,26 @@ import { LINKS_TO } from "@styles/utilsCSS";
 
   <p class="mb-4">
     Among my libraries are{" "}
-    <a
+    <!-- <a
       href="https://rubygems.org/gems/modular_forms"
       target="_blank"
       rel="noopener"
       class={LINKS_TO}
-    >
-      modular forms
-    </a>{" "}
+    > -->
+    <strong>modular forms</strong> <!-- </a>{" "} -->
     (inspired by SageMath and LMFDB, and designed for Sonic Pi),{" "}
     <a id="projects" href={routeEnglish.projects} rel="noopener" class={LINKS_TO}>
       multidimensional figurate numbers
     </a>{" "}
     with over <strong>30,000 downloads</strong>, and{" "}
-    <a
+    <!-- <a
       href="https://topos.live/#ziffers_tonnetz"
       target="_blank"
       rel="noopener"
       class={LINKS_TO}
-    >
-      ts-tonnetz
-    </a>
-    .
+    > -->
+    <strong>ts-tonnetz</strong>
+    <!-- </a> -->.
   </p>
 
   <p class="mb-4">
@@ -69,4 +68,7 @@ import { LINKS_TO } from "@styles/utilsCSS";
     on Mathematical Music Theory, contribute to international open-source projects,
     and teach postgraduate courses.
   </p>
+  <div class="my-10">
+    <HeroTopProjects />
+  </div>
 </section>
