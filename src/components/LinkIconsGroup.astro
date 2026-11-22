@@ -4,21 +4,21 @@ import GitHub from "@icons/GitHub.astro";
 import LinkedIn from "@icons/LinkedIn.astro";
 import QR from "@icons/QR.astro";
 import Youtube from "@icons/Youtube.astro";
+import RSS from "@icons/RSS.astro";
 import { SOCIAL_MEDIA } from "@ts-config-path/config";
 
 const cssIconsClass = `
-  size-8
+  size-10
   flex items-center justify-start
   text-base-content/65
   transition-colors duration-200
   hover:text-primary
 `;
 
-const size = "size-5 shrink-1";
+const size = "size-5 shrink-0";
 ---
 
-<!-- <div class="mb-4 mt-0 flex flex-row gap-1 sm:gap-2 items-center"> -->
-<div class="mb-2 mt-3 flex items-center justify-start gap-3">
+<div class="mb-1 mt-2 flex items-center justify-start gap-1.5">
   <a
     href={SOCIAL_MEDIA.linkedin}
     target="_blank"
@@ -48,6 +48,18 @@ const size = "size-5 shrink-1";
   >
     <Youtube class={size} />
   </a>
+
+  <a
+    href="/rss.xml"
+    title="Subscribe to RSS feed"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Subscribe to RSS feed"
+    class={cssIconsClass}
+  >
+    <RSS class={size} />
+  </a>
+
   <!--
 <div class={cssIconsClass}>
   <label for="qr-modal" class="cursor-pointer">

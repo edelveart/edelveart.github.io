@@ -6,12 +6,10 @@ import createSlug from "@ts-config-path/lib/createSlug";
 import PhotoProfile from "@components/img-components/PhotoProfile.astro";
 import DividerNav from "@components/DividerNav.astro";
 import Arrows from "@icons/Arrows.astro";
+import RSS from "@icons/RSS.astro";
 
 export async function getStaticPaths() {
-  const postEntries = await getCollection(
-    "blog",
-    ({ data }) => data.lang === "es",
-  );
+  const postEntries = await getCollection("blog", ({ data }) => data.lang === "es");
 
   const sorted = postEntries.sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -79,9 +77,7 @@ import { NAV_LINKS_PAGES, MAX_W_CONTENT } from "@styles/utilsCSS";
     </div>
 
     <!-- Table of Contents -->
-    <div
-      class="order-1 xl:order-2 xl:sticky xl:top-24 xl:w-56 xl:shrink-0 xl:self-start xl:mt-5 mt-4"
-    >
+    <div class="order-1 xl:order-2 xl:sticky xl:top-24 xl:w-56 xl:shrink-0 xl:self-start xl:mt-5 mt-4">
       <TableOfContents headings={headings} lang={post.lang} />
     </div>
   </div>
@@ -92,71 +88,76 @@ import { NAV_LINKS_PAGES, MAX_W_CONTENT } from "@styles/utilsCSS";
 
       <div class="flex-1 min-w-0">
         <div class="text-xs text-base-content/75 my-0 uppercase font-light">
-          {post.lang === "es" ? "Escrito por" : "Written by"}
+          Escrito por
         </div>
 
         <div class="my-0 text-lg font-semibold">Edgar Delgado Vega</div>
 
         <div class="my-0 text-sm text-base-content/70">
-          {
-            post.lang === "es"
-              ? "Geek de la matemática musical, creador de herramientas de código abierto y pensador peculiar."
-              : "Mathematical music geek, open-source tool builder, quirky thinker."
-          }
+          Geek de la matemática musical, creador de herramientas de código abierto y
+          pensador peculiar.
         </div>
+        <a
+          href="/rss.xml"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 mt-1.5
+         text-sm text-base-content/70
+         hover:text-primary transition-colors"
+          aria-label="Subscribe to my RSS feed"
+        >
+          <RSS class="size-4 text-primary" />
+          <span>Suscríbete a mi feed RSS</span>
+        </a>
       </div>
     </div>
 
     <DividerNav />
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-      {
-        nextPost ? (
-          <a
-            class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`}
-            href={"/es/blog/" + nextPost.slug + "/"}
-          >
-            <span class={NAV_LINKS_PAGES.arrowSpan}>
-              <Arrows direction="left" />
-            </span>
-            <div class="text-left">
-              <div class={NAV_LINKS_PAGES.prevNext}>ANTERIOR</div>
-              <div class={NAV_LINKS_PAGES.pageTitle}>{nextPost.title}</div>
-            </div>
-          </a>
-        ) : (
-          <div />
-        )
-      }
-      {
-        prevPost ? (
-          <a
-            class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`}
-            href={"/es/blog/" + prevPost.slug + "/"}
-          >
-            <div class="text-right">
-              <div class={NAV_LINKS_PAGES.prevNext}>SIGUIENTE</div>
-              <div class={NAV_LINKS_PAGES.pageTitle}>{prevPost.title}</div>
-            </div>
-            <span class={NAV_LINKS_PAGES.arrowSpan}>
-              <Arrows direction="right" />
-            </span>
-          </a>
-        ) : (
-          <a
-            class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`}
-            href="/es/blog/"
-          >
-            <div class="text-right">
-              <div class={NAV_LINKS_PAGES.prevNext}>NOTAS</div>
-              <div class={NAV_LINKS_PAGES.pageTitle}>Volver a las notas</div>
-            </div>
-            <span class={NAV_LINKS_PAGES.arrowSpan}>
-              <Arrows direction="right" />
-            </span>
-          </a>
-        )
-      }
+      {nextPost ? (
+        <a
+          class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`}
+          href={"/es/blog/" + nextPost.slug + "/"}
+        >
+          <span class={NAV_LINKS_PAGES.arrowSpan}>
+            <Arrows direction="left" />
+          </span>
+          <div class="text-left">
+            <div class={NAV_LINKS_PAGES.prevNext}>ANTERIOR</div>
+            <div class={NAV_LINKS_PAGES.pageTitle}>{nextPost.title}</div>
+          </div>
+        </a>
+      ) : (
+        <div />
+      )}
+      {prevPost ? (
+        <a
+          class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`}
+          href={"/es/blog/" + prevPost.slug + "/"}
+        >
+          <div class="text-right">
+            <div class={NAV_LINKS_PAGES.prevNext}>SIGUIENTE</div>
+            <div class={NAV_LINKS_PAGES.pageTitle}>{prevPost.title}</div>
+          </div>
+          <span class={NAV_LINKS_PAGES.arrowSpan}>
+            <Arrows direction="right" />
+          </span>
+        </a>
+      ) : (
+        <a
+          class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`}
+          href="/es/blog/"
+        >
+          <div class="text-right">
+            <div class={NAV_LINKS_PAGES.prevNext}>NOTAS</div>
+            <div class={NAV_LINKS_PAGES.pageTitle}>Volver a las notas</div>
+          </div>
+          <span class={NAV_LINKS_PAGES.arrowSpan}>
+            <Arrows direction="right" />
+          </span>
+        </a>
+      )}
     </div>
   </div>
 </PostLayout>
