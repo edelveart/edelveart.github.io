@@ -1,18 +1,20 @@
 ---
 import BaseLayout from "@layouts/es/BaseLayout.astro";
 
+import BiographyES from "@components/BiographyES.astro";
 import Experience from "@components/Experience.astro";
 import CardBlog from "@components/CardBlog.astro";
 // BLOG
 import createSlug from "@ts-config-path/lib/createSlug";
 import { getCollection } from "astro:content";
 import PreviousPosts from "@components/PreviousPosts.astro";
-import BiographyES from "@components/BiographyES.astro";
 import { SPACES_BETWEEN_CARDS } from "@styles/utilsCSS";
 import LinkIconsGroup from "@components/LinkIconsGroup.astro";
+
 // const posts = (await getCollection("blog")).sort(
 //   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 // );
+
 // Only Spanish Pages
 const posts = (await getCollection("blog"))
   .filter((post) => post.data.lang === "es")
@@ -23,13 +25,13 @@ const last_posts = posts.slice(0, 4);
 
 <BaseLayout title="Edgar Delgado Vega | Sistemas Matemáticos Creativos">
   <section class="mt-5 pb-3">
-    <h2 class="text-xs uppercase tracking-wider font-medium text-secondary/85 mb-1.5">
+    <h2 class="text-xs uppercase tracking-wider font-medium text-secondary/85 mb-2.5">
       Sistemas matemáticos creativos
     </h2>
     <h1 class="text-4xl font-bold leading-snug">Edgar Delgado</h1>
     <LinkIconsGroup />
     <!-- BIO -->
-    <div class="mt-8 mb-12">
+    <div class="mt-6 mb-12">
       <BiographyES />
     </div>
     <!-- BLOG-NOTES -->
