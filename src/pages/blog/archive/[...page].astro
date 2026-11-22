@@ -58,8 +58,8 @@ const { page } = Astro.props as Props;
           createSlug(post.data.title, post.id) +
           "/";
         return (
-          <article class="group my-1">
-            <div class="flex w-full items-start gap-x-0.5">
+          <article class="group my-1.5">
+            <div class="flex w-full items-start gap-x-1">
               <div class="flex w-24 shrink-0 flex-col items-start gap-y-1">
                 <time class={`${CARD_OP.muteData} leading-5`}>
                   {dayjs(post.data.pubDate).format("ll")}
