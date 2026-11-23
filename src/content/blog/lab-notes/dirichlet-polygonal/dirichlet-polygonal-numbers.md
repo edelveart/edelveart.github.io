@@ -1,11 +1,11 @@
 ---
 title: "Dirichlet Series of Figurate Numbers and Riemann Zeta Functions"
-description: "I'll tell you how I found zeta functions for figurate numbers, inspired by a very short conversation I had at IMCA in Peru this summer. It has the anecdote, code, and my way of looking again at some well-known things. It also contains some essential propositions and their proofs. To follow along, a bit of complex analysis and basic combinatorics is enough."
+description: "I'll tell you how I found zeta functions for figurate numbers, inspired by a very short conversation I had at IMCA in Peru this summer. It has the anecdotes, the code, the Bernoulli numbers, and my way of looking again at some well-known things. It also contains some essential propositions and their proofs, as well as a definition inspired by Diophantine equations. To follow along, a bit of complex analysis and basic combinatorics is enough."
 pubDate: "November 22 2026"
 heroImage: "./hero-dirichlet-trian-penta.webp"
 badge: "lab notes"
 updatedDate: "November 23 2026"
-tags: [ "figurate numbers", "zeta-function", "riemann-hypothesis", "dirichlet series",  "figuratenum",  "number theory", "phase portraits"]
+tags: [ "figurate numbers", "zeta-function", "riemann-hypothesis", "dirichlet series",  "figuratenum",  "bernoulli-numbers", "number theory", "phase portraits",]
 ---
 
 In the summer of this winterless year in Lima, during a geometry seminar at the [Instituto de Matemática y Ciencias Afines](https://imca.edu.pe/es/), I was thinking about what else to develop with my library for working with figurate numbers, `figuratenum`, totally inspired by the [book *Figurate Numbers* by Elena Deza and Michel Deza (2012)](https://www.worldscientific.com/worldscibooks/10.1142/8188).
@@ -24,7 +24,7 @@ Before moving on, I want to put in context that, unlike others I've written, thi
 
 The first will focus on anecdotes and the development of ideas, while the second will delve into the more mathematically interesting aspects.
 
-I'll develop a particular case of generalized Dirichlet series; there will be three pretty images and the anecdotes that led me to these ideas, and I'll also link my first contribution to **OEIS**.  Of course, I'll include some **essential propositions** and **their proofs**.
+I'll develop a particular case of generalized Dirichlet series; there will be three pretty images and the anecdotes that led me to these ideas, and I'll also link my first contribution to **OEIS**.  Of course, I'll include some special values computed using Bernoulli numbers, as well as some **essential propositions** and **their proofs**.
 
 Regarding the pictures, a rather beautiful analytic object available in version `3.0.0` of `figuratenum` is the **ordinary generating function** of these sequences in the style of [Wegert (2012)](https://link.springer.com/book/10.1007/978-3-0348-0180-5). In the image below, I define the one for the generalized triangular numbers $G_{S_3}(z)$. The code needed to reproduce it is extremely short.
 
