@@ -1,5 +1,5 @@
 ---
-title: "Dirichlet Series of Classical Figurate Numbers and Riemann Zeta Functions"
+title: "Dirichlet Series of Figurate Numbers and Riemann Zeta Functions"
 description: "I'll tell you how I found zeta functions for figurate numbers, inspired by a very short talk and conversation I had at IMCA in Peru this summer. It has the anecdote, code, and my way of looking again at some well-known things. To follow along, a bit of complex analysis and basic combinatorics is enough."
 pubDate: "November 22 2026"
 heroImage: "./hero-dirichlet-trian-penta.webp"
