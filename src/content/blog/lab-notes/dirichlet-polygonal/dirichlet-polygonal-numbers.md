@@ -20,11 +20,12 @@ pip install figuratenum[figurate-viz]
 
 Before moving on, I want to put in context that, unlike others I've written, this one is much more classical and conservative in its methods and ideas.
 
-## Overview
+#### Overview
 
-The first will focus on anecdotes and the development of ideas, while the second will delve into the more mathematically interesting aspects.
+The first part will be brief, covering some everyday things around figurate numbers, and how questions come up along the way, while the second will focus on the more mathematically interesting aspects.
 
-I'll develop a particular case of generalized Dirichlet series; there will be three pretty images and the anecdotes that led me to these ideas, and I'll also link my first contribution to **OEIS**.  Of course, I'll include some special values computed using Bernoulli numbers, as well as some **essential propositions** and **their proofs**.
+To be more specific, I'll work through a **particular case of generalized Dirichlet series**; there will be three pretty images and the anecdotes that led me to these ideas, and I'll also link my first contribution to **OEIS**.
+Of course, I'll include some special values computed using **Bernoulli numbers**, as well as some **essential propositions** and **their proofs**.
 
 Regarding the pictures, a rather beautiful analytic object available in version `3.0.0` of `figuratenum` is the **ordinary generating function** of these sequences in the style of [Wegert (2012)](https://link.springer.com/book/10.1007/978-3-0348-0180-5). In the image below, I define the one for the generalized triangular numbers $G_{S_3}(z)$. The code needed to reproduce it is extremely short.
 
@@ -71,7 +72,7 @@ The thing is, I implemented that function in a very preliminary version, without
 
 ![Truncated cubic numbers - Mertens](mertens-truncated-cubic-invert.webp)
 
-For example, unoptimized, it took my AMD computer `22m 2s 41ms` to compute the first $500\,000$ terms under the Mertens function that you see in the image for the truncated cubic numbers $TC(n)$.
+For example, unoptimized, it took my AMD processor `22m 2s 41ms` to compute the first $500\,000$ terms under the Mertens function that you see in the image for the truncated cubic numbers $TC(n)$.
 
 Also, some other sequences compute faster with more terms, [you can check this earlier field note on my blog](https://edelveart.github.io/blog/two-years-leading-to-figuratenum-v3-visualizations-in-the-complex-plane/) (I hope I haven't gotten the count wrong in this present note).
 
