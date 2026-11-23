@@ -58,7 +58,9 @@ $$
 $$
 where $N_0^s(T, 2T)$ denotes the number of simple zeros on the critical line $\Re(s) =\frac{1}{2}$ with imaginary parts between $T$ and $2T$, while $N(T, 2T)$ counts all nontrivial zeros in the same interval, but with multiplicity.
 
-On November 20, Levent Alpöge again said he had formally proved, in a brutal amount of Lean code (17 million lines of code), the hypothesis in this open [`remark.pdf`](https://alpo.ge/remark.pdf), and on November 21 this announcement came out on the [blog of Lean itself](https://leanprover-community.github.io/blog/posts/riemann-hypothesis/).
+On November 20, Levent Alpöge again said he had formally proved, in a brutal amount of Lean code (17 million lines of code), the hypothesis in this open [`remark.pdf`](https://alpo.ge/remark.pdf).
+
+A few hours later, a possible solution by [Alessandro M. Masullo (*The Music of Primes*), made without AI](https://sites.google.com/view/tmotp/home), surfaced before a complete review had taken place. And on November 21 this announcement came out on the [blog of Lean itself](https://leanprover-community.github.io/blog/posts/riemann-hypothesis/).
 
 ### Alpha version of figuratenum
 
@@ -458,7 +460,7 @@ $D_{\mathfrak{f}_j}(s) = \sum_{n \ge 1}\mathfrak{f}_j(n)n^{-s} \in \mathbb{D}_{\
 $$
  D_{\mathfrak{f}_1}(s) = D_{\mathfrak{f}_2}(s)
 $$
-whose solutions live in $\mathbb{Z}$ or are complex, $s \in \mathbb{C}$.
+whose solutions could live in $\mathbb{Z}$ or $\mathbb{Q}$, or in the complex domain, $s \in \mathbb{C}$.
 
 From this definition I deduce the base case with pure polygonal numbers.
 
