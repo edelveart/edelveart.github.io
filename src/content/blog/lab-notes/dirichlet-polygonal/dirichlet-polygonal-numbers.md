@@ -80,9 +80,9 @@ Also, some other sequences compute faster with more terms, [you can check this e
 
 ## The day of the talk
 
-He told those of us present about the work he had been doing together with [Harald Helfgott (known for proving the weak Goldbach conjecture)](https://webusers.imj-prg.fr/~harald.helfgott/), developing an analytic method of their own from scratch, because there were already problems with relying on numerical values from **old articles that turned out to be miscalculated** when revised over time.
+He told those of us present about the work he had been doing together with [Harald Helfgott (known for proving the weak Goldbach conjecture)](https://webusers.imj-prg.fr/~harald.helfgott/), developing an analytic method of their **own from scratch**, because there were already problems with relying on numerical values from **old articles that turned out to be miscalculated** when revised over time.
 
-A word on the $T$ that appears in the expression above. Very loosely speaking, in that approach of Chirre and Helfgott one can say that it provides an **explicit formula for systematically improving existing bounds** as more extensive computer-assisted computations rigorously verify that the zeros keep appearing where expected, that is, as the height $T$ up to which this is verified grows.
+A word on the $T$ that appears in the expression above. Very loosely speaking, Chirre and Helfgott's method provides an **explicit formula for systematically improving existing bounds** as more extensive computer calculations rigorously verify that the zeros keep appearing where expected, up to greater heights $T$.
 
 Moving on. At the end of his talk, which was extremely exciting, going from one end of the blackboard to the other with enthusiastic gestures, I approached to ask him a few questions about the kind of **zeta functions of figurate numbers** that I had written the day before in a great hurry.
 
