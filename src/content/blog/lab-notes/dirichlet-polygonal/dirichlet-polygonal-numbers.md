@@ -1,26 +1,32 @@
 ---
 title: "Dirichlet Series of Figurate Numbers and Riemann Zeta Functions"
-description: "I'll tell you how I found zeta functions for figurate numbers, inspired by a very short talk and conversation I had at IMCA in Peru this summer. It has the anecdote, code, and my way of looking again at some well-known things. To follow along, a bit of complex analysis and basic combinatorics is enough."
+description: "I'll tell you how I found zeta functions for figurate numbers, inspired by a very short conversation I had at IMCA in Peru this summer. It has the anecdote, code, and my way of looking again at some well-known things. It also contains some essential propositions and their proofs. To follow along, a bit of complex analysis and basic combinatorics is enough."
 pubDate: "November 22 2026"
 heroImage: "./hero-dirichlet-trian-penta.webp"
 badge: "lab notes"
-# updatedDate: "November 4 2026"
+updatedDate: "November 23 2026"
 tags: [ "figurate numbers", "zeta-function", "riemann-hypothesis", "dirichlet series",  "figuratenum",  "number theory", "phase portraits"]
 ---
 
 In the summer of this winterless year in Lima, during a geometry seminar at the [Instituto de Matemática y Ciencias Afines](https://imca.edu.pe/es/), I was thinking about what else to develop with my library for working with figurate numbers, `figuratenum`, totally inspired by the [book *Figurate Numbers* by Elena Deza and Michel Deza (2012)](https://www.worldscientific.com/worldscibooks/10.1142/8188).
 
-By March, I had brought something analytic about figurate numbers to discuss with some professors and listeners: the generating functions $G_{\mathfrak{f}}$ with enhanced phase portraits (modulus lines too). Installing my library from PyPI is done with
+By March, I had brought something analytic about figurate numbers to discuss with some professors and listeners, the generating functions $G_{\mathfrak{f}}$ with enhanced phase portraits (modulus lines too). Installing my library from PyPI is done with
 
 ```shell
 pip install figuratenum[figurate-viz]
 ```
 
-> My library `figuratenum` currently has documentation and a list of errata for the book. [Take a look here](https://edelveart.github.io/figuratenum/)
+> `figuratenum` currently has documentation and a list of errata for the book. [Take a look here](https://edelveart.github.io/figuratenum/)
 
-Before moving on, I want to put in context that, unlike others I've written, this one is much more classical and conservative in its methods and ideas. I'll develop a particular case of generalized Dirichlet series; there will be three pretty images and the anecdotes that led me to these ideas, and I'll also link my first contribution to **OEIS**.
+Before moving on, I want to put in context that, unlike others I've written, this one is much more classical and conservative in its methods and ideas.
 
-Regarding the pictures, a rather beautiful analytic object of version `3.0.0` is the **ordinary generating functions** of these sequences in the style of [Wegert (2012)](https://link.springer.com/book/10.1007/978-3-0348-0180-5). In the image I define the one for the generalized triangular numbers $G_{S_3}(z)$. The code is extremely short.
+## Overview
+
+The first will focus on anecdotes and the development of ideas, while the second will delve into the more mathematically interesting aspects.
+
+I'll develop a particular case of generalized Dirichlet series; there will be three pretty images and the anecdotes that led me to these ideas, and I'll also link my first contribution to **OEIS**.  Of course, I'll include some **essential propositions** and **their proofs**.
+
+Regarding the pictures, a rather beautiful analytic object available in version `3.0.0` of `figuratenum` is the **ordinary generating function** of these sequences in the style of [Wegert (2012)](https://link.springer.com/book/10.1007/978-3-0348-0180-5). In the image below, I define the one for the generalized triangular numbers $G_{S_3}(z)$. The code needed to reproduce it is extremely short.
 
 ```py
 from figuratenum.figurate_viz import ComplexViz
@@ -37,28 +43,28 @@ c.visualize_plane(
 ![Generalized triangular numbers](triang.webp)
 
 
-## The prelude
+## Prelude
 
 An announcement shared by IMCA said there would be a single seminar talk, given by [Prof. Andrés Chirre](https://sites.google.com/view/andreschirre/home), on Bounding partial sums of the Möbius function $\mu$, at bottom something related to the Riemann hypothesis, on **February 26** in the main lecture hall of IMCA.
 I decided to go practically at the last minute that I found out. So I started reading about this Möbius function; I already knew it from elementary number theory, and it's about divisibility.
 
 ### An aside on recent progress on the zeros of zeta
 
-A brief aside here. Perhaps ordinary people in Peru don't know that Chirre is cited in the August article by [Levent Alpöge (former doctoral student of Manjul Bhargava) and Ralph Furman on a breakthrough toward the Riemann hypothesis](https://arxiv.org/html/2608.13637v1), in which they claim that
+A brief aside here. Perhaps many people in Peru would be happy to know that [a 2018 paper by Andrés Chirre [GdL20]](https://arxiv.org/abs/1810.08843) is cited in an August 2026 article written with the assistance of AI by [Levent Alpöge (a former doctoral student of Manjul Bhargava) and Ralph Furman](https://arxiv.org/html/2608.13637v1), in which they prove unconditionally that
 
 $$
-\liminf_{T \rightarrow \infty} \frac{N_0 (T)}{N(T)} > \frac{2}{3}
+\liminf_{T \rightarrow \infty} \frac{N_0^s (T, 2T)}{N(T, 2T)} \ge \frac{2}{3},
 $$
-where $T$ is the upper bound for the imaginary part of the zeros, $N_0(T)$ is the number of simple zeros lying on the critical line $\Re(s) = \frac{1}{2}$ of $\zeta(s)$, and $N(T)$ is the count of nontrivial zeros up to that height. They specifically cite a 2018 paper of his with other collaborators, [Pair Correlation Estimates for the Zeros of the Zeta Function via Semidefinite Programming - [GdL20] ](https://arxiv.org/abs/1810.08843).
+where $N_0^s(T, 2T)$ denotes the number of simple zeros on the critical line $\Re(s) =\frac{1}{2}$ with imaginary parts between $T$ and $2T$, while $N(T, 2T)$ counts all nontrivial zeros in the same interval, but with multiplicity.
 
-On November 20, Levent Alpöge again said he had formally proved, in a brutal amount of Lean code (17 million lines of code), the hypothesis in this [`remark.pdf`](https://alpo.ge/remark.pdf), and on November 21 this announcement came out on the [blog of Lean itself](https://leanprover-community.github.io/blog/posts/riemann-hypothesis/).
+On November 20, Levent Alpöge again said he had formally proved, in a brutal amount of Lean code (17 million lines of code), the hypothesis in this open [`remark.pdf`](https://alpo.ge/remark.pdf), and on November 21 this announcement came out on the [blog of Lean itself](https://leanprover-community.github.io/blog/posts/riemann-hypothesis/).
 
 ### Alpha version of figuratenum
 
 Once I decided to go listen to the talk, I wondered whether I could also study the cumulative sums of the Möbius function for figurate numbers and add something to `figuratenum`. In short, something as simple as this:
 
 $$
-M_{\mathfrak{f}}(N) = \sum_{n = 1}^{N} \mu\bigl(\mathfrak{f}(n)\bigr)
+M_{\mathfrak{f}}(N) = \sum_{n = 1}^{N} \mu\bigl(\mathfrak{f}(n)\bigr).
 $$
 
 The thing is, I implemented that function in a very preliminary version, without thinking about optimization, with the sole goal of discussing it with Chirre the next day, so it isn't exposed in the main API of the [3.0.0a - February 25](https://pypi.org/project/figuratenum/3.0.0a0/) version of my library.
@@ -74,15 +80,15 @@ Also, some other sequences compute faster with more terms, [you can check this e
 
 ## The day of the talk
 
-He told those of us present about his work with an analytic method of his own from scratch, because there were already problems with relying on numerical values from old articles that turned out to be miscalculated when revised over time, together with [Harald Helfgott (known for proving the weak Goldbach conjecture)](https://webusers.imj-prg.fr/~harald.helfgott/anglais/).
+He told those of us present about the work he had been doing together with [Harald Helfgott (known for proving the weak Goldbach conjecture)](https://webusers.imj-prg.fr/~harald.helfgott/), developing an analytic method of their own from scratch, because there were already problems with relying on numerical values from **old articles that turned out to be miscalculated** when revised over time.
 
-A word on the $T$ that appears in the expression above. Very loosely speaking, in that approach of Chirre and Helfgott one can say that it provides an **explicit formula for automatic improvement** of such bounds as more computers certify that the zeros keep appearing where expected, that is, as the height $T$ up to which this is verified grows.
+A word on the $T$ that appears in the expression above. Very loosely speaking, in that approach of Chirre and Helfgott one can say that it provides an **explicit formula for systematically improving existing bounds** as more extensive computer-assisted computations rigorously verify that the zeros keep appearing where expected, that is, as the height $T$ up to which this is verified grows.
 
 Moving on. At the end of his talk, which was extremely exciting, going from one end of the blackboard to the other with enthusiastic gestures, I approached to ask him a few questions about the kind of **zeta functions of figurate numbers** that I had written the day before in a great hurry.
 
 Although I had never been interested in the Riemann zeta function, except as general knowledge from the real harmonic series and the harmonic numbers $H_n$, I then imagined a sort of figurate zeta
 $$
-\zeta_{\mathfrak{f}}(s) = \sum_{n \ge 1} \frac{1}{\mathfrak{f}(n)^s}
+\zeta_{\mathfrak{f}}(s) = \sum_{n \ge 1} \frac{1}{\mathfrak{f}(n)^s}.
 $$
 The difference with the classical zeta, where $n \in \mathbb{N}$ presented **linear growth**, is that with figurate numbers the growth is quadratic, cubic, or **polynomial** depending on the geometric dimension $k$.
 
@@ -155,7 +161,7 @@ Now I consider the vector space $\mathbb{Q}[X]$ of polynomials with rational coe
 $$
     \begin{aligned}
          D:\mathbb{Q}[X] & \longrightarrow\mathbb D_{\lambda},  \\
-        \mathfrak{f}                    & \longmapsto  D_{\mathfrak{f}}.
+        \mathfrak{f}                    & \longmapsto  D_{\mathfrak{f}},
     \end{aligned}
 $$
 where $\mathbb{D}_\lambda$ represents the space of functions generated by the generalized Dirichlet series corresponding to the polynomials of $\mathbb{Q}[X]$.
@@ -199,7 +205,7 @@ $$
 with $\Re (s) > k+1$. More formally, a basis of $\mathbb{Q}[X]$ is given by the monomials $B_1 = \{1, X, X^2, X^3, \ldots\}$
 and the basis of the shifted zetas is
 $$
-B_2 = \{ \zeta(s), \zeta(s-1), \zeta(s-2), \ldots\}
+B_2 = \{ \zeta(s), \zeta(s-1), \zeta(s-2), \ldots\}.
 $$
 
 Indeed, the zeta functions $\zeta(s-j)$ are linearly independent over $\mathbb{Q}$, because each one has a simple pole at a distinct point $s = j+1$, with residue equal to $1$. By the function $D$ that I defined above, I have
@@ -219,7 +225,7 @@ $\textit{Proof}$. A consequence of the linearity of $D$ and of the representatio
 According to [Deza and Deza (p. 21)](https://www.worldscientific.com/worldscibooks/10.1142/8188), the planar ($k=2$) polygonal numbers with $m \ge 3$ sides are defined through the sequence associated with the function
 
 $$
-S_m(n) = \frac{(m-2)n^2-(m-4)n}{2}
+S_m(n) = \frac{(m-2)n^2-(m-4)n}{2}.
 $$
 But for the construction of the isomorphism it suits me to separate the coefficients $\frac{m - 2}{ 2 }n^2-\frac{m-4}{2}n $.
 It is a polynomial with no constant term. Taking the infinite series, that is, the Dirichlet series with $\lambda(n)= \log(n)$ (natural logarithm), the one associated with $(S_m(n))_{n \in \mathbb{N}}$ is
@@ -357,6 +363,8 @@ This highlighted property is what makes it possible to define it with a single E
 What is immediate is that the even values of the square zeta vanish.
 > $\textbf{Proposition}$. Let $n \in \mathbb{N}_0$, then $D_{S_4}(-2n) = 0$.
 
+$\textit{Proof}$. Routine exercise for agility.
+
 ### Pentagonal zetas and their secrets
 
 With the pentagonal numbers I close this first explicit note on Dirichlet series.
@@ -407,6 +415,7 @@ $\textit{Proof}$. Homework for Sunday.
 ## Phase portrait of the pentagonal zeta and nontrivial zeros
 
 One of the most beautiful activities, artistically speaking, that one can do with the computer (or by hand if you're a painter) is the representation of $\zeta(s)$ in the complex plane, something I've postponed until this moment. In part, because I haven't implemented it completely in `figuratenum` yet and I still have to decide its structure.
+
 I made the plot with `cplot` and a couple of lines of Python code. The tricky part here is calibrating to taste the limits of the $\Re(s)$ part and the $\Im(s)$ part. In the end I made it square, as funny as that sounds given what I said.
 
 ![Dirichlet series of pentagonal numbers](./figzeta-penta.svg)
@@ -442,7 +451,7 @@ $$
 
 In it, the gamma function appears. As for the logarithm I used as the exponent $\lambda(n)$, as I said above, it is born from the integral of a hyperbola or from the differential equation that comes out by symbolic analogy, $xy'=1$ (you can read [my note on the logarithm in Spanish](https://edelveart.github.io/es/blog/el-logaritmo-y-su-aroma-geometrico-en-la-musica/)).
 
-In fact, since we wrote an equation above, and since I've been playing with these functions for some time now, it came to me very naturally (while I was coming back from buying at the bakery, and I think also because of what I did with elliptic curves) to think of a kind of Diophantine equation in integers of zeta functions, which I make explicit below. To put the penultimate touch on this note, I propose the following.
+In fact, since we wrote an equation above, and since I've been playing with these functions for some time now, it came to me very naturally (while I was coming back from buying at the bakery, and I think also because of what I did with elliptic curves $E/\mathbb{Q}$) to think of a kind of Diophantine equation in integers of zeta functions, which I make explicit below. To put the penultimate touch on this note, I propose the following.
 
 $\textbf{Definition}$. Let $\mathfrak{f}_1$ and $\mathfrak{f}_2$ be two figurate numbers of dimensions $k_1, k_2\ge 2$ and let their corresponding Dirichlet series be
 $D_{\mathfrak{f}_j}(s) = \sum_{n \ge 1}\mathfrak{f}_j(n)n^{-s} \in \mathbb{D}_{\log}, j=1,2$. I'll call the **Diophantine equation of figurate Dirichlet series** the equation
@@ -451,7 +460,7 @@ $$
 $$
 whose solutions live in $\mathbb{Z}$ or are complex, $s \in \mathbb{C}$.
 
-From this definition I deduce the base case with pure polygonals.
+From this definition I deduce the base case with pure polygonal numbers.
 
 
 $ \textbf{Proposition}$. Let $m_1, m_2 \ge 3, m_1 \neq m_2$. Then $D_{S_{m_1}}(s) = D_{S_{m_2}}(s)$ is equivalent to the zeta function equation
@@ -461,5 +470,5 @@ $$
 $$
 
 > $\textit{Proof}$. By the definition of the series $D_{S_m}$ above, if we equate both series and group the terms we get
-> $\frac{m_1 - m_2}{2} [ \zeta(s-2)- \zeta(s-1)] = 0$. Since $m_1$ and $m_2$ are different, it follows that $\zeta(s-2) = \zeta(s-1)$. Which proves it and, as a bonus, exemplifies the definition.
+> $\frac{m_1 - m_2}{2} [ \zeta(s-2)- \zeta(s-1)] = 0$. Since $m_1$ and $m_2$ are different, it follows that $\zeta(s-2) = \zeta(s-1)$. Which proves it and, as a bonus, exemplifies the equational idea.
 
