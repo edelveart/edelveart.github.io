@@ -1,9 +1,9 @@
 ---
 title: "A Catalan Beta Function from Figurate Numbers?"
-description: "I wanted to construct a Beta-like function from figurate numbers that generate the Catalan numbers through a quotient of finite products. At the end, I proposed finding other identities with interesting combinatorial interpretations."
+description: "I wanted to construct a Beta-like function from figurate numbers that generate the Catalan numbers through a quotient of finite products."
 heroImage: "./notebook-beta-catalan.webp"
 pubDate: "November 10 2026"
-updatedDate: "November 23 2026"
+updatedDate: "November 24 2026"
 badge: "lab notes"
 tags: ["catalan numbers", "figurate numbers", "gamma function", "beta function", "polygorials", "python"]
 ---

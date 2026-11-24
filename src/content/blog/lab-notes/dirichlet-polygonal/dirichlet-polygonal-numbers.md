@@ -1,10 +1,10 @@
 ---
 title: "Dirichlet Series of Figurate Numbers and Riemann Zeta Functions"
-description: "I'll tell you how I found zeta functions for figurate numbers, inspired by a very short conversation I had at IMCA in Peru this summer. It has the anecdotes, the code, the Bernoulli numbers, and my way of looking again at some well-known things. It also contains some essential propositions and their proofs, as well as a definition inspired by Diophantine equations. To follow along, a bit of complex analysis and basic combinatorics is enough."
+description: "I'll tell you how I found zeta functions for figurate numbers, inspired by a short conversation at IMCA in Peru this summer. I'll also include some proofs and a definition."
 pubDate: "November 22 2026"
 heroImage: "./hero-dirichlet-trian-penta.webp"
 badge: "lab notes"
-updatedDate: "November 23 2026"
+updatedDate: "November 24 2026"
 tags: [ "figurate numbers", "zeta-function", "riemann-hypothesis", "dirichlet series",  "figuratenum",  "bernoulli-numbers", "number theory", "phase portraits",]
 ---
 
