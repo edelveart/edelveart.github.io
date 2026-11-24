@@ -4,7 +4,11 @@ interface Props {
 }
 
 import { BULLET_SQUARE_LIST } from "@ts-config-path/pages/about.astro";
-import { GAP_LIST_RESOURCES, LINKS_TO, LINKS_TO_NO_UNDERLINE } from "@styles/utilsCSS";
+import {
+  GAP_LIST_RESOURCES,
+  LINKS_TO,
+  LINKS_TO_NO_UNDERLINE,
+} from "@styles/utilsCSS";
 import { MISC_RESOURCES } from "@ts-config-path/lib/resources-paths";
 
 const { title } = Astro.props;
@@ -13,21 +17,19 @@ const { title } = Astro.props;
 <section class="mb-5">
   <h2 class="text-2xl font-semibold my-5">{title}</h2>
   <ul class={`flex flex-col ${GAP_LIST_RESOURCES}`}>
-    {
-      MISC_RESOURCES.map((resource) => (
-        <li class={BULLET_SQUARE_LIST.li}>
-          <span class={BULLET_SQUARE_LIST.span} />
+    {MISC_RESOURCES.map((resource) => (
+      <li class={BULLET_SQUARE_LIST.li}>
+        <span class={BULLET_SQUARE_LIST.span} />
 
-          <a
-            class={LINKS_TO_NO_UNDERLINE}
-            href={resource.href}
-            target="_blank"
-            rel="noopener"
-          >
-            {resource.title}
-          </a>
-        </li>
-      ))
-    }
+        <a
+          class={LINKS_TO_NO_UNDERLINE}
+          href={resource.href}
+          target="_blank"
+          rel="noopener"
+        >
+          {resource.title}
+        </a>
+      </li>
+    ))}
   </ul>
 </section>

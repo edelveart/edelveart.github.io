@@ -25,18 +25,18 @@ const last_posts = posts.slice(0, 4);
 
 <BaseLayout title="Edgar Delgado Vega | Creative Math Systems">
   <section class="pb-3 mt-5">
-    <h2 class="text-xs uppercase tracking-wider font-medium text-secondary/85 mb-2.5">
+    <h2 class="text-xs uppercase tracking-wider font-medium text-secondary mb-1">
       Creative Math Systems Developer
     </h2>
     <h1 class="text-4xl font-bold leading-snug">Edgar Delgado</h1>
     <LinkIconsGroup />
     <!-- BIO -->
-    <div class="mt-6 mb-12">
+    <div class="mt-5 mb-12">
       <Biography />
       <!-- <MainLinks contactText="LinkedIn" linkedin="L" github="G" youtube="Y" /> -->
     </div>
     <!-- BLOG-NOTES -->
-    <div class="flex justify-between items-center gap-2 my-8">
+    <div class="flex justify-between items-center gap-2 my-5">
       <h2 class="text-3xl font-bold">Notes</h2>
       <div>
         <PreviousPosts />
@@ -56,7 +56,7 @@ const last_posts = posts.slice(0, 4);
       ))}
     </div>
 
-    <div class="mb-14"></div>
+    <div class="mt-12 mb-14"></div>
     <Experience indices={[0, 1]} />
   </section>
 </BaseLayout>

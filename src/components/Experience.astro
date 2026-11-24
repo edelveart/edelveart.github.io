@@ -109,8 +109,7 @@ export const allExperiences: Record<"en" | "es", Experience[]> = {
     💻 MuseScore 4, Reaper 7`,
     },
     {
-      title:
-        "Universidad Nacional Daniel Alomía Robles · Docente a tiempo completo",
+      title: "Universidad Nacional Daniel Alomía Robles · Docente a tiempo completo",
       subtitle: "may.2019 - dic.2019 · Huánuco, Perú · Presencial",
       description: `Asignaturas que impartí en la licenciatura:
     · Didáctica general de la educación
@@ -141,21 +140,19 @@ const filteredExperiences = indices
   : workExperiences;
 ---
 
-<div class="text-3xl w-full font-bold flex items-center my-10">
+<div class="text-3xl w-full font-bold flex items-center my-5">
   {lang === "es" ? "Experiencia" : "Experience"}
 </div>
 
 <div class="time-line-container mb-8 grid gap-3">
-  {
-    filteredExperiences.map((experience: Experience, index: number) => (
-      <>
-        <TimeLineElement
-          key={index}
-          title={experience.title}
-          subtitle={experience.subtitle}
-          description={experience.description}
-        />
-      </>
-    ))
-  }
+  {filteredExperiences.map((experience: Experience, index: number) => (
+    <>
+      <TimeLineElement
+        key={index}
+        title={experience.title}
+        subtitle={experience.subtitle}
+        description={experience.description}
+      />
+    </>
+  ))}
 </div>

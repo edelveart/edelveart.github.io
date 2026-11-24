@@ -51,20 +51,18 @@ const educationItems = education[lang];
 ---
 
 <section class="my-5" id="EDUCATION">
-  <div class="text-2xl w-full font-semibold flex items-center mt-10 mb-8">
+  <div class="text-2xl w-full font-semibold flex items-center mt-10 mb-5">
     {lang === "es" ? "Educación" : "Education"}
   </div>
 
   <div class="time-line-container grid gap-3 mb-0 mt-5">
-    {
-      educationItems.map((item, index) => (
-        <TimeLine
-          key={index}
-          title={item.title}
-          subtitle={item.subtitle}
-          description={item.description}
-        />
-      ))
-    }
+    {educationItems.map((item, index) => (
+      <TimeLine
+        key={index}
+        title={item.title}
+        subtitle={item.subtitle}
+        description={item.description}
+      />
+    ))}
   </div>
 </section>
