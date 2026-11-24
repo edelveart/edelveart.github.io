@@ -91,13 +91,13 @@ import {
       </div>
 
       <h1
-        class={`title mt-2.5 mb-5 text-3xl font-bold break-normal text-primary ${MAX_W_CONTENT}`}
+        class={`title mt-5 mb-4 text-3xl font-bold break-normal text-primary ${MAX_W_CONTENT}`}
       >
         {title}
       </h1>
       <!-- TAGS -->
 
-      <div class={`flex flex-wrap gap-x-3 gap-y-1 my-4 w-full ${MAX_W_CONTENT}`}>
+      <div class={`flex flex-wrap gap-x-3 gap-y-1 mb-4 w-full ${MAX_W_CONTENT}`}>
         {tags?.map((tag) => (
           <a href={`/es/blog/tag/${tag}/`} class={GET_COLORS_METADATA("tags")}>
             {tag}
