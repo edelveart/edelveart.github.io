@@ -54,7 +54,14 @@ const tocLabel = lang === "es" ? "Contenidos" : "Contents";
 
     const toc = document.querySelector<HTMLDetailsElement>("details.toc");
     const desktopQuery = window.matchMedia("(min-width: 1024px)");
-    toc?.querySelector("summary")?.addEventListener("click", (event) => {
+    if (!toc) return;
+
+    // Desktop Open | Mobile Closed
+    toc.open = desktopQuery.matches;
+    desktopQuery.addEventListener("change", (event) => {
+      toc.open = event.matches;
+    });
+    toc.querySelector("summary")?.addEventListener("click", (event) => {
       if (desktopQuery.matches) {
         event.preventDefault();
       }

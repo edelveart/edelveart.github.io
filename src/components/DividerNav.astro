@@ -1,2 +1,12 @@
-<!-- <div class="divider divider-primary mt-8 mb-1 opacity-10"></div> -->
-<div class="divider mt-8 mb-1 opacity-75"></div>
+---
+interface Props {
+  mt?: string;
+  mb?: string;
+  width?: string;
+  hidden?: string;
+}
+
+const { mt = "mt-8", mb = "mb-1", width } = Astro.props;
+---
+
+<div class={`divider ${mt} ${mb} opacity-75 ${width}`}></div>
