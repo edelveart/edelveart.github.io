@@ -12,6 +12,7 @@ import {
   BORDER_INFO,
   GET_COLORS_METADATA,
   SPACES_BETWEEN_CARDS,
+  CARD_OP,
 } from "@styles/utilsCSS";
 import { routeEnglish } from "@ts-config-path/lib/menu";
 
@@ -61,7 +62,7 @@ const { page } = Astro.props as Props;
       <section class={`grid gap-4 sm:grid-cols-2 ${BORDER_INFO} mt-2`}>
         <div>
           <h3 class={GET_COLORS_METADATA("field notes")}>Notas de campo</h3>
-          <p class="text-sm">
+          <p class={CARD_OP.parr}>
             Experimentos completados, implementaciones y reflexiones en torno a
             proyectos en curso.
           </p>
@@ -69,7 +70,7 @@ const { page } = Astro.props as Props;
 
         <div>
           <h3 class={GET_COLORS_METADATA("lab notes")}>Notas de laboratorio</h3>
-          <p class="text-sm">
+          <p class={CARD_OP.parr}>
             Exploraciones en profundidad de conceptos, estructuras e ideas
             matemáticas y musicales.
           </p>
@@ -77,7 +78,7 @@ const { page } = Astro.props as Props;
 
         <div>
           <h3 class={GET_COLORS_METADATA("sketch notes")}>Notas de boceto</h3>
-          <p class="text-sm">
+          <p class={CARD_OP.parr}>
             Ideas iniciales, caminos inacabados y preguntas sobre matemáticas y
             música que sigo explorando.
           </p>
@@ -85,7 +86,7 @@ const { page } = Astro.props as Props;
 
         <div>
           <h3 class={GET_COLORS_METADATA("misc notes")}>Notas diversas</h3>
-          <p class="text-sm">
+          <p class={CARD_OP.parr}>
             Notas personales sobre herramientas, prácticas creativas, música,
             humanidades y otros ámbitos.
           </p>
