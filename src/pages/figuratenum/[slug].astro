@@ -45,60 +45,52 @@ const nextDoc = sorted[index + 1] ?? null;
   <DividerNav />
 
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-    {
-      prevDoc ? (
-        <a
-          class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`}
-          href={
-            "/figuratenum/" + createSlug(prevDoc.data.title, prevDoc.id) + "/"
-          }
-        >
-          <span class={NAV_LINKS_PAGES.arrowSpan}>
-            <Arrows direction="left" />
-          </span>
+    {prevDoc ? (
+      <a
+        class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`}
+        href={"/figuratenum/" + createSlug(prevDoc.data.title, prevDoc.id) + "/"}
+      >
+        <span class={NAV_LINKS_PAGES.arrowSpan}>
+          <Arrows direction="left" />
+        </span>
 
-          <div>
-            <div class={NAV_LINKS_PAGES.prevNext}>PREVIOUS</div>
-            <div class={NAV_LINKS_PAGES.pageTitle}>{prevDoc.data.title}</div>
-          </div>
-        </a>
-      ) : (
-        <a
-          class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`}
-          href="/figuratenum/"
-        >
-          <span class={NAV_LINKS_PAGES.arrowSpan}>
-            <Arrows direction="left" />
-          </span>
+        <div>
+          <div class={NAV_LINKS_PAGES.prevNext}>PREVIOUS</div>
+          <div class={NAV_LINKS_PAGES.pageTitle}>{prevDoc.data.title}</div>
+        </div>
+      </a>
+    ) : (
+      <a
+        class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.prevLeft}`}
+        href="/figuratenum/"
+      >
+        <span class={NAV_LINKS_PAGES.arrowSpan}>
+          <Arrows direction="left" />
+        </span>
 
-          <div>
-            <div class={NAV_LINKS_PAGES.prevNext}>PREVIOUS</div>
-            <div class={NAV_LINKS_PAGES.pageTitle}>FigurateNum</div>
-          </div>
-        </a>
-      )
-    }
+        <div>
+          <div class={NAV_LINKS_PAGES.prevNext}>PREVIOUS</div>
+          <div class={NAV_LINKS_PAGES.pageTitle}>FigurateNum</div>
+        </div>
+      </a>
+    )}
 
-    {
-      nextDoc ? (
-        <a
-          class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`}
-          href={
-            "/figuratenum/" + createSlug(nextDoc.data.title, nextDoc.id) + "/"
-          }
-        >
-          <div class="text-right">
-            <div class={NAV_LINKS_PAGES.prevNext}>NEXT</div>
-            <div class={NAV_LINKS_PAGES.pageTitle}>{nextDoc.data.title}</div>
-          </div>
+    {nextDoc ? (
+      <a
+        class={`${NAV_LINKS_PAGES.aLink} ${NAV_LINKS_PAGES.nextRight}`}
+        href={"/figuratenum/" + createSlug(nextDoc.data.title, nextDoc.id) + "/"}
+      >
+        <div class="text-right">
+          <div class={NAV_LINKS_PAGES.prevNext}>NEXT</div>
+          <div class={NAV_LINKS_PAGES.pageTitle}>{nextDoc.data.title}</div>
+        </div>
 
-          <span class={NAV_LINKS_PAGES.arrowSpan}>
-            <Arrows direction="right" />
-          </span>
-        </a>
-      ) : (
-        <div />
-      )
-    }
+        <span class={NAV_LINKS_PAGES.arrowSpan}>
+          <Arrows direction="right" />
+        </span>
+      </a>
+    ) : (
+      <div />
+    )}
   </div>
 </DocsLayout>
