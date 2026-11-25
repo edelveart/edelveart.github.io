@@ -90,7 +90,7 @@ import { BULLET_SQUARE_LIST } from "../about.astro";
 const CARD_BUTTONS = {
   container: `${SPACES_BETWEEN_CARDS.PADDING} flex flex-col h-full min-h-52 ${BASE_BORDER}`,
   title: `${CARD_OP.title}`,
-  paragraps: `mt-2 mb-4 ${CARD_OP.parr}`,
+  paragraps: `mt-2 mb-4 ${CARD_OP.muteData}`,
   btns: `flex items-center justify-center h-12 mt-auto
     text-sm font-normal
     ${BORDER_OPACITY}
@@ -104,35 +104,27 @@ const CARD_BUTTONS = {
   sideBarActiveItemID="FIGURATENUM_ACTIVE_PAGE"
 >
   <article class="pb-3 mt-5">
-    <h1
-      class="text-3xl font-bold flex flex-col md:flex-row md:items-center mb-4"
-    >
+    <h1 class="text-3xl font-bold flex flex-col md:flex-row md:items-center mb-4">
       <div class="flex flex-col md:flex-row md:items-center">
         <div>FigurateNum</div>
-        <div
-          class="md:ml-2 translate-y-px text-lg uppercase tracking-wider text-primary/80"
-        >
-          <span class="hidden md:inline text-base-content/60">
-            {" "}·{" "}
-          </span>
+        <div class="md:ml-2 translate-y-px text-lg uppercase tracking-wider text-primary/80">
+          <span class="hidden md:inline text-base-content/60"> · </span>
           <span class="font-light">Documentation</span>
         </div>
       </div>
     </h1>
 
     <div class={`flex flex-wrap gap-x-4 gap-y-2 ${BORDER_INFO}`}>
-      {
-        metadataLinks.map((link) => (
-          <a
-            class={GET_COLORS_METADATA("tags")}
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {link.label}
-          </a>
-        ))
-      }
+      {metadataLinks.map((link) => (
+        <a
+          class={GET_COLORS_METADATA("tags")}
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {link.label}
+        </a>
+      ))}
     </div>
 
     <p class="mb-4 mt-10">
@@ -142,95 +134,83 @@ const CARD_BUTTONS = {
     </p>
 
     <p class="mt-3 mb-4">
-      Built on definitions from <a
+      Built on definitions from{" "}
+      <a
         class={LINKS_TO}
         href="https://doi.org/10.1142/8188"
         target="_blank"
         rel="noopener noreferrer"
       >
         Deza & Deza (2012)
-      </a>, every sequence is deterministic and reproducible. Optional
-      visualization tools cover phase portraits and modular patterns.
+      </a>
+      , every sequence is deterministic and reproducible. Optional visualization
+      tools cover phase portraits and modular patterns.
     </p>
 
     <div class={`grid grid-cols-1 md:grid-cols-2 ${SPACES_BETWEEN_CARDS.GAP} mt-10`}>
-      {
-        docsCards.map(
-          (card) =>
-            card.doc && (
-              <div class={CARD_BUTTONS.container}>
-                <h2 class={CARD_BUTTONS.title}>{card.title}</h2>
-                <p class={CARD_BUTTONS.paragraps}>{card.description}</p>
-                <a
-                  class={CARD_BUTTONS.btns}
-                  href={`/figuratenum/${createSlug(card.doc.data.title, card.doc.id)}/`}
-                >
-                  {card.button}
-                  <span class="ml-2">
-                    <Arrows direction="right" />
-                  </span>
-                </a>
-              </div>
-            ),
-        )
-      }
+      {docsCards.map(
+        (card) =>
+          card.doc && (
+            <div class={CARD_BUTTONS.container}>
+              <h2 class={CARD_BUTTONS.title}>{card.title}</h2>
+              <p class={CARD_BUTTONS.paragraps}>{card.description}</p>
+              <a
+                class={CARD_BUTTONS.btns}
+                href={`/figuratenum/${createSlug(card.doc.data.title, card.doc.id)}/`}
+              >
+                {card.button}
+                <span class="ml-2">
+                  <Arrows direction="right" />
+                </span>
+              </a>
+            </div>
+          ),
+      )}
     </div>
 
-    <h2
-      class="mt-12 text-2xl font-semibold flex flex-col md:flex-row md:items-center"
-    >
+    <h2 class="mt-12 text-2xl font-semibold flex flex-col md:flex-row md:items-center">
       <div>FigurateNum</div>
-      <div
-        class="md:ml-2 translate-y-px text-lg uppercase tracking-wider text-primary/80"
-      >
-        <span class="hidden md:inline text-base-content/60">
-          {" "}·{" "}
-        </span>
+      <div class="md:ml-2 translate-y-px text-lg uppercase tracking-wider text-primary/80">
+        <span class="hidden md:inline text-base-content/60"> · </span>
         <span class="font-light">Notes</span>
       </div>
     </h2>
 
     <ul class="mt-6">
-      {
-        figurateNumPosts.map((post) => (
-          <li class={`${BULLET_SQUARE_LIST.li} mt-2 `}>
-            <span class={BULLET_SQUARE_LIST.span} />
-            <a href={`/blog/${createSlug(post.data.title, post.id)}/`}>
-              <span class={LINKS_TO}>{post.data.title}</span>
-              <span class={`${CARD_OP.muteData} block md:inline`}>
-                <span class="hidden md:inline"> · </span>
-                {dayjs(post.data.pubDate).format("ll")}
-              </span>
-            </a>
-          </li>
-        ))
-      }
+      {figurateNumPosts.map((post) => (
+        <li class={`${BULLET_SQUARE_LIST.li} mt-2 `}>
+          <span class={BULLET_SQUARE_LIST.span} />
+          <a href={`/blog/${createSlug(post.data.title, post.id)}/`}>
+            <span class={LINKS_TO}>{post.data.title}</span>
+            <span class={`${CARD_OP.muteData} block md:inline`}>
+              <span class="hidden md:inline"> · </span>
+              {dayjs(post.data.pubDate).format("ll")}
+            </span>
+          </a>
+        </li>
+      ))}
     </ul>
   </article>
 
   <DividerNav />
 
   <div class="grid grid-cols-1 gap-2">
-    {
-      OVERVIEW && (
-        <a
-          class={`${NAV_LINKS_PAGES.aLink} justify-end`}
-          href={
-            "/figuratenum/" + createSlug(OVERVIEW.data.title, OVERVIEW.id) + "/"
-          }
-        >
-          <div class="text-right">
-            <div class={NAV_LINKS_PAGES.prevNext}>NEXT</div>
+    {OVERVIEW && (
+      <a
+        class={`${NAV_LINKS_PAGES.aLink} justify-end`}
+        href={"/figuratenum/" + createSlug(OVERVIEW.data.title, OVERVIEW.id) + "/"}
+      >
+        <div class="text-right">
+          <div class={NAV_LINKS_PAGES.prevNext}>NEXT</div>
 
-            <div class={NAV_LINKS_PAGES.pageTitle}>{OVERVIEW.data.title}</div>
-          </div>
+          <div class={NAV_LINKS_PAGES.pageTitle}>{OVERVIEW.data.title}</div>
+        </div>
 
-          <span class={NAV_LINKS_PAGES.arrowSpan}>
-            <Arrows direction="right" />
-          </span>
-        </a>
-      )
-    }
+        <span class={NAV_LINKS_PAGES.arrowSpan}>
+          <Arrows direction="right" />
+        </span>
+      </a>
+    )}
   </div>
 </BaseLayout>
 <!-- class={`${GET_COLORS_METADATA("tags")}`} -->

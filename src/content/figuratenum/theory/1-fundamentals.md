@@ -37,7 +37,7 @@ The idea is old enough that it has had time to prove itself useful. Diophantus s
 
 **Gauss** proved the triangular case in July 1796, famously writing in [his mathematical diary:](https://commons.wikimedia.org/wiki/File%3AEureka_Gauss.png)
 $$
-\textit{ΕΥΡΗΚΑ! } \quad \text{num} = \Delta + \Delta + \Delta
+\textit{EYPHKA! } \quad \text{num} = \Delta + \Delta + \Delta
 $$
 
 The general theorem took until 1813, when Cauchy finally closed it. These results place polygonal numbers in the context of additive number theory.

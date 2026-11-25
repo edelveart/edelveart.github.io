@@ -18,25 +18,25 @@ export const PROSE_IMG_BORDER = `prose-img:rounded-md prose-img:shadow-md prose-
 export const CARD_OP = {
   title: "text-lg font-medium text-base-content",
   parr: "text-sm text-secondary-content",
-  muteData: "text-xs text-neutral-content",
+  muteData: "text-sm text-neutral-content",
 };
 
 // DECORATION POST-BLOG BORDER
 export const BORDER_INFO =
   "relative border-l-2 pl-4 border-base-content/20 before:absolute before:left-[-6px] before:top-1/2 before:-translate-y-1/2 before:size-2.5 before:rounded-xs before:border before:border-primary/30 before:bg-base-100";
-export const BLOCK_QUOTE = `text-right ${CARD_OP.muteData}`;
+// export const BLOCK_QUOTE = `text-right ${CARD_OP.muteData}`;
 
 // BADGES AND METADATA
-const metaBase = "text-xs tracking-wide uppercase font-light";
+const metaBase = "text-sm tracking-wide uppercase font-light";
 export const BADGE_COLORS = {
-  "field notes": `${metaBase} text-error/85`,
-  "lab notes": `${metaBase} text-accent/85`,
-  "sketch notes": `${metaBase} text-secondary/85`,
-  "misc notes": `${metaBase} text-info/85`,
-  tags: "text-sm text-primary/85 hover:text-primary underline transition-colors underline-offset-2 font-normal hover:decoration-2",
-  warning: `${metaBase} text-warning/85`,
-  cardsImg: `${metaBase} text-primary/85`, // BEFORE primary
-  NO_LISTED: `${metaBase} text-base-content/85`,
+  "field notes": `${metaBase} text-error/75`,
+  "lab notes": `${metaBase} text-accent/75`,
+  "sketch notes": `${metaBase} text-secondary/75`,
+  "misc notes": `${metaBase} text-info/75`,
+  tags: "text-sm text-primary/75 hover:text-primary underline transition-colors underline-offset-2 font-normal hover:decoration-2",
+  warning: `${metaBase} text-warning/75`,
+  cardsImg: `${metaBase} text-primary/75`, // BEFORE primary
+  NO_LISTED: `${metaBase} text-base-content/75`,
 } as const;
 
 export type BadgeName = keyof typeof BADGE_COLORS;
