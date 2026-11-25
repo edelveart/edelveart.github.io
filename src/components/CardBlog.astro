@@ -32,15 +32,12 @@ import {
   target={target}
   class=`group flex ${BORDER_OPACITY} ${SPACES_BETWEEN_CARDS.PADDING}  mx-auto flex-col`
 >
-
   <div class="flex items-center gap-2 mt-1 mb-1.5">
     <span class={CARD_OP.muteData}>{displayDate}</span>
 
     <span class={`${CARD_OP.muteData} hidden sm:inline`}>·</span>
 
-    <span class={GET_COLORS_METADATA(badge)}>
-      {badge}
-    </span>
+    <span class={GET_COLORS_METADATA(badge)}>{badge}</span>
 
     <!-- <span class={`${CARD_OP.muteData} hidden sm:inline`}>·</span>
 
@@ -48,30 +45,26 @@ import {
       Updated {dayjs(updatedDate).format("ll")}
     </span> -->
   </div>
- <h2
+  <h2
     class=`${CARD_OP.title} group-hover:text-primary line-clamp-2 md:line-clamp-none transition-colors`
   >
     {title}
   </h2>
   <!-- COMMENT => NOT SHOW -->
 
-  {
-    heroImage && (
-      <div class="flex justify-center overflow-hidden my-2">
-        <Image
-          src={heroImage}
-          alt={title}
-          class="h-auto max-w-full object-contain rounded-md max-h-40 sm:max-h-24"
-        />
-      </div>
-    )
-  }
+  {heroImage && (
+    <div class="flex justify-center overflow-hidden my-2">
+      <Image
+        src={heroImage}
+        alt={title}
+        class="h-auto max-w-full object-contain rounded-md max-h-40 sm:max-h-24"
+      />
+    </div>
+  )}
 
   <!-- class="max-h-40 sm:max-h-60 max-w-full object-contain rounded-md" -->
 
-  <p class=`mt-1 ${CARD_OP.parr} md:line-clamp-none line-clamp-2`>
-    {desc}
-  </p>
+  <p class=`mt-1 ${CARD_OP.parr} text-xs md:line-clamp-none line-clamp-2`>{desc}</p>
 </a>
 
 <!--
