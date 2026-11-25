@@ -8,8 +8,13 @@ import CardBlog from "@components/CardBlog.astro";
 import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug";
 import PreviousPosts from "@components/PreviousPosts.astro";
-import { SPACES_BETWEEN_CARDS } from "@styles/utilsCSS";
-import LinkIconsGroup from "@components/LinkIconsGroup.astro";
+import {
+  BORDER_INFO,
+  GET_COLORS_METADATA,
+  SPACES_BETWEEN_CARDS,
+  LABEL_HEAD_INDEX,
+} from "@styles/utilsCSS";
+import { metadataLinks } from "@ts-config-path/config";
 
 // const posts = (await getCollection("blog")).sort(
 //   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -25,13 +30,23 @@ const last_posts = posts.slice(0, 4);
 
 <BaseLayout title="Edgar Delgado Vega | Creative Math Systems">
   <section class="pb-3 mt-5">
-    <h2 class="text-sm uppercase tracking-wider font-medium text-secondary/80 mb-1">
-      Creative Math Systems Developer
-    </h2>
-    <h1 class="text-4xl font-bold leading-snug">Edgar Delgado</h1>
-    <LinkIconsGroup />
+    <h2 class={LABEL_HEAD_INDEX}>Creative Math Systems Developer</h2>
+    <h1 class="text-4xl font-bold mb-5">Edgar Delgado</h1>
+
+    <div class={`flex flex-wrap gap-x-4 gap-y-2 ${BORDER_INFO}`}>
+      {metadataLinks.map((link) => (
+        <a
+          class={GET_COLORS_METADATA("tags")}
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
     <!-- BIO -->
-    <div class="mt-5 mb-12">
+    <div class="mt-8 mb-12">
       <Biography />
       <!-- <MainLinks contactText="LinkedIn" linkedin="L" github="G" youtube="Y" /> -->
     </div>

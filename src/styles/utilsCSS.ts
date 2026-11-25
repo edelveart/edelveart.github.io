@@ -1,5 +1,8 @@
 const rounded = "rounded-md";
 
+export const LABEL_HEAD_INDEX =
+  "text-xs uppercase tracking-wider font-medium text-secondary/70 mb-1";
+
 // Links in .astro
 export const LINKS_TO =
   "text-primary/95 underline underline-offset-2 hover:decoration-2 hover:text-primary transition-[color,text-underline-offset,text-decoration-thickness] duration-150 ease-in-out";
