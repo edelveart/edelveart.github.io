@@ -1,7 +1,7 @@
 const rounded = "rounded-md";
 
 export const LABEL_HEAD_INDEX =
-  "text-xs uppercase tracking-wider font-medium text-primary/70 mb-1";
+  "text-xs uppercase tracking-wider font-medium text-primary/80 mb-1";
 
 // Links in .astro
 export const LINKS_TO =
