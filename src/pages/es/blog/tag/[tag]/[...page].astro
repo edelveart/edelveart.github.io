@@ -68,7 +68,7 @@ const params = Astro.params;
       </div>
     ) : (
       <div class="mt-10">
-        <div class={`grid grid-cols-1 sm:grid-cols-2 ${SPACES_BETWEEN_CARDS.GAP}`}>
+        <div class={`${SPACES_BETWEEN_CARDS.GAP}`}>
           {page.data.map((post) => (
             <>
               <CardBlog

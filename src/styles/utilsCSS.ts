@@ -41,7 +41,7 @@ export const BADGE_COLORS = {
   tags: [
     "inline-flex items-center",
     "rounded-md",
-    "border border-base-content/15",
+    "border border-base-content/12",
     "px-2 py-1",
     "text-xs font-normal tracking-wide",
     "text-neutral-content",
