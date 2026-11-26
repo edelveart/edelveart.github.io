@@ -76,7 +76,7 @@ export const allProjects: ProjectType[] = [
     id: "fignumbers-ts",
     title: "npm Package for Figurate Numbers",
     img: FigNumbersTS,
-    desc: `A library for generating infinite figurate number sequences, connected to geometric shapes in multiple dimensions. Based on "Figurate Numbers" (2012) by Elena Deza and Michel Deza.`,
+    desc: `A library for generating infinite figurate number sequences, connected to geometric shapes in multiple dimensions. Based on "Figurate Numbers" (2012) by Elena Deza and Michel Deza. Built with BigInt to handle extremely large integers with arbitrary precision, avoiding numeric overflow and loss of accuracy.`,
     url: "https://www.npmjs.com/package/fignumbers",
     badge: "npm · 1.7k downloads",
   },
@@ -107,7 +107,7 @@ const orderedProjects: ProjectType[] = order
 
 <div class="text-3xl w-full font-bold flex items-center">{headTitle}</div>
 
-<section class={`flex flex-col ${SPACES_BETWEEN_CARDS.GAP} mt-10`}>
+<section class={`grid grid-cols-1 sm:grid-cols-2 ${SPACES_BETWEEN_CARDS.GAP} mt-10`}>
   {orderedProjects.map((project, index) => (
     <HorizontalCard
       key={index}

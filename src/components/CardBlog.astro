@@ -25,7 +25,6 @@ const displayDate = pubDate ? dayjs(pubDate).format("ll") : null;
   class:list={[
     "group block mx-auto border-b border-base-content/10",
     "py-5 first:pt-2 last:border-b-0",
-    "transition-colors ",
   ]}
 >
   <div class="flex items-center gap-4 sm:gap-6">
@@ -35,7 +34,7 @@ const displayDate = pubDate ? dayjs(pubDate).format("ll") : null;
         <Image
           src={heroImage}
           alt={title}
-          class="w-full h-auto max-h-32 sm:max-h-36 md:max-h-40 object-contain rounded-md transition-transform duration-300 group-hover:scale-[1.03]"
+          class="w-full h-auto max-h-32 sm:max-h-36 md:max-h-40 object-contain rounded-md transition-transform duration-300"
           loading="lazy"
         />
       </div>
@@ -59,7 +58,7 @@ const displayDate = pubDate ? dayjs(pubDate).format("ll") : null;
 
       <!-- TITLE -->
       <h2
-        class={`${CARD_OP.title} line-clamp-2 transition-colors group-hover:text-primary`}
+        class={`${CARD_OP.title} line-clamp-2 duration-150 group-hover:text-primary`}
       >
         {title}
       </h2>
