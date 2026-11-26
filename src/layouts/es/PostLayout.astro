@@ -4,6 +4,12 @@ import { type BlogSchema } from "@ts-config-path/content.config";
 import BaseLayout from "@layouts/es/BaseLayout.astro";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+import {
+  MAX_W_CONTENT,
+  CARD_OP,
+  GET_COLORS_METADATA,
+  PROSE_IMG_BORDER,
+} from "@styles/utilsCSS";
 
 export interface Props extends BlogSchema {
   id: string;
@@ -48,13 +54,6 @@ const generateOgImage = async () => {
 };
 
 const ogImage = await generateOgImage();
-
-import {
-  MAX_W_CONTENT,
-  CARD_OP,
-  GET_COLORS_METADATA,
-  PROSE_IMG_BORDER,
-} from "@styles/utilsCSS";
 ---
 
 <BaseLayout
@@ -91,7 +90,7 @@ import {
       </div>
 
       <h1
-        class={`title mt-5 mb-4 text-3xl font-bold break-normal text-primary ${MAX_W_CONTENT}`}
+        class={`title mt-1 mb-3 text-3xl font-bold break-normal text-primary ${MAX_W_CONTENT}`}
       >
         {title}
       </h1>
