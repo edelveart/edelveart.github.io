@@ -16,10 +16,6 @@ import {
 } from "@styles/utilsCSS";
 import { metadataLinks } from "@ts-config-path/config";
 
-// const posts = (await getCollection("blog")).sort(
-//   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-// );
-
 // Only Spanish Pages
 const posts = (await getCollection("blog"))
   .filter((post) => post.data.lang === "es")
@@ -31,7 +27,7 @@ const last_posts = posts.slice(0, 4);
 <BaseLayout title="Edgar Delgado Vega | Sistemas Matemáticos Creativos">
   <section class="mt-5 pb-3">
     <h2 class={LABEL_HEAD_INDEX}>Sistemas matemáticos creativos</h2>
-    <h1 class="text-4xl font-bold mb-5">Edgar Delgado</h1>
+    <h1 class="text-4xl font-bold mb-3">Edgar Delgado</h1>
 
     <div class={`flex flex-wrap gap-x-4 gap-y-2 ${BORDER_INFO}`}>
       {metadataLinks.map((link) => (

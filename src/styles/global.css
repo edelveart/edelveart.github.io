@@ -25,10 +25,14 @@ html {
 
 section .katex,
 .prose .katex {
-  font-size: 1.18em;
+  font-size: 1.2em;
 }
-/* SCROLL-X for Large Display Squation */
-.katex-display { overflow: auto hidden }
+/* SCROLL-X for Large Display Squation. Needs padding to avoid Crop of LaTeX superscripts, pt-px pb-px*/
+.katex-display {
+  overflow: auto hidden;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
 
 aside {
   scrollbar-gutter: stable;
