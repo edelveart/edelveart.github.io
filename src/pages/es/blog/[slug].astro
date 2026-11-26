@@ -86,39 +86,38 @@ const { Content, headings } = await render(entry);
   </div>
 
   <div class={`w-full ${MAX_W_CONTENT}`}>
-    <!-- AUTHOR -->
-    <div class="not-prose flex items-center gap-3 mt-5 mb-2">
-      <PhotoProfile class="not-prose size-12 shrink-0" />
+    <div class="not-prose mt-5 mb-0">
+      <div class="flex items-center gap-3">
+        <PhotoProfile class="size-12 shrink-0" />
 
-      <div class="flex-1 min-w-0">
-        <div class="text-sm font-semibold">Edgar Delgado Vega</div>
-        <div class="text-xs text-base-content/80">
-          Geek de la matemática musical · Creador de herramientas de código abierto
+        <div class="min-w-0 flex-1">
+          <div class="text-sm font-semibold">Edgar Delgado Vega</div>
+          <div class="text-sm text-base-content/80">
+            Geek de la matemática musical · Creador de herramientas de código abierto
+          </div>
         </div>
-      </div>
 
-      <a
-        href="/rss.xml"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="ml-auto shrink-0 text-base-content/80 hover:text-primary transition-colors"
-        aria-label="Subscribe to my RSS feed"
-      >
-        <RSS class="size-4" />
-      </a>
-    </div>
-
-    <!-- TAGS -->
-    <div class={`flex flex-wrap gap-2 mb-6`}>
-      {post.tags?.map((tag) => (
         <a
-          href={`/blog/tag/${tag}/`}
-          class={`${GET_COLORS_METADATA("tags")} text-sm`}
+          href="/rss.xml"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="shrink-0 text-base-content/80 transition-colors hover:text-primary"
+          aria-label="Subscribe to my RSS feed"
         >
-          {tag}
+          <RSS class="size-4" />
         </a>
-      ))}
+      </div>
+      <!-- TAGS -->
+
+      <div class="mt-0.5 flex flex-wrap gap-2 pl-15.5 mb-6">
+        {post.tags?.map((tag) => (
+          <a href={`/blog/tag/${tag}/`} class={GET_COLORS_METADATA("tags")}>
+            {tag}
+          </a>
+        ))}
+      </div>
     </div>
+
     <DividerNav />
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
