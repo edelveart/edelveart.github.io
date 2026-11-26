@@ -1,7 +1,7 @@
 const rounded = "rounded-md";
 
 export const LABEL_HEAD_INDEX =
-  "text-xs uppercase tracking-wider font-medium text-secondary/70 mb-1";
+  "text-xs uppercase tracking-wider font-medium text-primary/70 mb-1";
 
 // Links in .astro
 export const LINKS_TO =
@@ -37,7 +37,19 @@ export const BADGE_COLORS = {
   "lab notes": `${metaBase} text-accent/85`,
   "sketch notes": `${metaBase} text-secondary/85`,
   "misc notes": `${metaBase} text-info/85`,
-  tags: "text-sm text-primary/85 hover:text-primary underline transition-colors underline-offset-2 font-normal hover:decoration-2",
+  //   tags: "text-sm text-primary/85 hover:text-primary underline transition-colors underline-offset-2 font-normal
+  tags: [
+    "inline-flex items-center",
+    "rounded-md",
+    "border border-base-content/15",
+    "px-2 py-1",
+    "text-xs font-normal tracking-wide",
+    "text-neutral-content",
+    "no-underline",
+    "transition-colors duration-150 ease-in-out",
+    "hover:border-primary/40",
+    "hover:text-primary",
+  ].join(" "),
   warning: `${metaBase} text-warning/85`,
   cardsImg: `${metaBase} text-primary/85`,
   NO_LISTED: `${metaBase} text-base-content/85`,
