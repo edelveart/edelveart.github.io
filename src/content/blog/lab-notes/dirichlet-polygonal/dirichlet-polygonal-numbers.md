@@ -4,8 +4,8 @@ description: "I'll tell you how I found zeta functions for figurate numbers, ins
 pubDate: "November 22 2026"
 heroImage: "./hero-dirichlet-trian-penta.webp"
 badge: "lab notes"
-updatedDate: "November 24 2026"
-tags: [ "figurate numbers", "zeta-function", "riemann-hypothesis", "dirichlet series",  "figuratenum",  "bernoulli-numbers", "number theory", "phase portraits",]
+updatedDate: "November 26 2026"
+tags: [ "figurate numbers", "riemann-zeta-function", "dirichlet series",  "figuratenum",  "bernoulli-numbers", "number theory", "phase portraits"]
 ---
 
 In the summer of this winterless year in Lima, during a geometry seminar at the [Instituto de Matemática y Ciencias Afines](https://imca.edu.pe/es/), I was thinking about what else to develop with my library for working with figurate numbers, `figuratenum`, totally inspired by the [book *Figurate Numbers* by Elena Deza and Michel Deza (2012)](https://www.worldscientific.com/worldscibooks/10.1142/8188).
