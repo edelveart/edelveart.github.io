@@ -2,10 +2,10 @@
 title: "Mi historia con las matemáticas fue mi propio juego"
 description: "Me aburrieron casi siempre las matemáticas. Tal vez te identifiques con ese desinterés en mi historia, con el único tema que me gustó en segundo de primaria y con cómo mi mente asoció, sin percatarme en aquel entonces, esa idea al crear mi propio juego. ¿Por qué compongo música con números figurados? Apto para cualquier persona que sepa sumar y restar."
 pubDate: "November 13 2026"
-heroImage: "./playgo-basa.webp"
+heroImage: "./triangle.webp"
 badge: "misc notes"
 lang: "es"
-updatedDate: "November 14 2026"
+updatedDate: "November 27 2026"
 tags: ["math games", "recreational mathematics", "figurate numbers", "elliptic curves", "number theory", "cartesian plane", "symmetry"]
 ---
 
