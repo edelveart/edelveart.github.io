@@ -20,6 +20,7 @@ export const PROSE_IMG_BORDER = `prose-img:rounded-md prose-img:shadow-md prose-
 // CARD CONTENT: BLOG + SOFTWARE
 export const CARD_OP = {
   title: "text-lg font-medium text-base-content",
+  archiveTitle: "text-sm text-base-content/80",
   //   parr: "text-sm text-secondary-content",
   parr: "text-sm text-neutral-content", // Opaque
   muteData: "text-sm text-neutral-content",

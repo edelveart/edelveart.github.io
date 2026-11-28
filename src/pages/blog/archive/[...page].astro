@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 import createSlug from "@ts-config-path/lib/createSlug";
 import type { GetStaticPaths } from "astro";
 import type { CollectionEntry } from "astro:content";
+
 import DividerNav from "@components/DividerNav.astro";
 import Arrows from "@icons/Arrows.astro";
 
@@ -15,8 +16,6 @@ import {
   BORDER_INFO,
   CARD_OP,
   GET_COLORS_METADATA,
-  //   LINKS_TO,
-  LINKS_TO_NO_UNDERLINE,
   NAV_LINKS_PAGES,
 } from "@styles/utilsCSS";
 
@@ -41,52 +40,55 @@ const { page } = Astro.props as Props;
 
 <BaseLayout title="Archive - Edgar Delgado Vega">
   <section class="mt-5 pb-3">
-    <h1 class="text-3xl font-bold">Archive</h1>
-    <div class={`${BORDER_INFO} mt-5 mb-5 text-sm text-base-content/75`}>
+    <h1 class="text-3xl font-bold tracking-tight">Archive</h1>
+
+    <div class={`${BORDER_INFO} mt-5 mb-6 text-sm text-base-content/75`}>
       <p>A chronological index of all my blog posts in English and Spanish.</p>
-      <p class="uppercase tracking-wide">{page.data.length} entries on this page.</p>
+      <p class="mt-1 text-xs uppercase tracking-wide">
+        {page.data.length} entries on this page
+      </p>
     </div>
 
-    <div class="flex flex-col">
+    <ul class="mt-6">
       {page.data.map((post) => {
         const isSpanish = post.data.lang === "es";
-        const POST_URL_ENG_ESP =
+
+        const postUrl =
           (isSpanish ? "/es/blog/" : "/blog/") +
           createSlug(post.data.title, post.id) +
           "/";
-        return (
-          <article class="group my-1.5">
-            <div class="flex w-full items-start gap-x-1">
-              <div class="flex w-24 shrink-0 flex-col items-start gap-y-1">
-                <time class={`${CARD_OP.muteData} leading-5`}>
-                  {dayjs(post.data.pubDate).format("ll")}
-                </time>
 
+        return (
+          <li class="border-b border-base-content/10 last:border-b-0">
+            <a
+              href={postUrl}
+              lang={post.data.lang}
+              class="group flex items-center justify-between gap-4 py-1.5 transition-colors duration-200 hover:text-primary"
+            >
+              <div class="min-w-0 flex-1">
                 <span
-                  class={`text-xs sm:hidden ${GET_COLORS_METADATA(post.data.badge)}`}
+                  class={`block ${CARD_OP.archiveTitle} transition-colors group-hover:text-primary`}
                 >
-                  {post.data.badge}
+                  {post.data.title}
+                </span>
+
+                <span class={`${CARD_OP.muteData} mt-1 block text-xs`}>
+                  {dayjs(post.data.pubDate).format("ll")}
                 </span>
               </div>
 
-              <a
-                href={POST_URL_ENG_ESP}
-                class={`min-w-0 flex-1 leading-5 ${LINKS_TO_NO_UNDERLINE} line-clamp-2`}
-              >
-                {post.data.title}
-              </a>
-
               <span
-                class={`ml-5 hidden shrink-0 text-xs leading-5 sm:inline ${GET_COLORS_METADATA(post.data.badge)} `}
+                class={`shrink-0 text-xs ${GET_COLORS_METADATA(post.data.badge)}`}
               >
                 {post.data.badge}
               </span>
-            </div>
-          </article>
+            </a>
+          </li>
         );
       })}
-    </div>
-    <DividerNav />
+    </ul>
+
+    <DividerNav mt="mt-2" />
 
     <nav class="grid grid-cols-2 gap-2" aria-label="Archive pagination">
       {page.url.prev ? (
@@ -97,6 +99,7 @@ const { page } = Astro.props as Props;
           <span class={NAV_LINKS_PAGES.arrowSpan}>
             <Arrows direction="left" />
           </span>
+
           <div>
             <div class={NAV_LINKS_PAGES.prevNext}>NEWER</div>
             <div class={NAV_LINKS_PAGES.pageTitle}>Recent entries</div>
@@ -107,6 +110,7 @@ const { page } = Astro.props as Props;
           <span class={NAV_LINKS_PAGES.arrowSpan}>
             <Arrows direction="left" />
           </span>
+
           <div>
             <div class={NAV_LINKS_PAGES.prevNext}>HOME</div>
             <div class={NAV_LINKS_PAGES.pageTitle}>Homepage</div>
@@ -123,6 +127,7 @@ const { page } = Astro.props as Props;
             <div class={NAV_LINKS_PAGES.prevNext}>OLDER</div>
             <div class={NAV_LINKS_PAGES.pageTitle}>Earlier entries</div>
           </div>
+
           <span class={NAV_LINKS_PAGES.arrowSpan}>
             <Arrows direction="right" />
           </span>
@@ -133,14 +138,3 @@ const { page } = Astro.props as Props;
     </nav>
   </section>
 </BaseLayout>
-
-{/* <div
-                        class={`shrink-0 px-2 py-0.5 uppercase tracking-wide ${badge_color}`}
-                        lang={isSpanish ? "es" : "en"}
-                      >
-                        {isSpanish ? "ES" : "EN"}
-                      </div> */}
-
-{/* <p class={`mt-1 ${CARD_OP.parr} line-clamp-2`}>
-                        {post.data.description}
-                      </p> */}

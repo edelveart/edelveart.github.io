@@ -77,15 +77,15 @@ Both leave characteristic signatures in the coloring.
 
 ## Modular structure
 
-Instead of the values $a_k$ themselves, consider their residues modulo a fixed $n\in \mathbb{Z}$,
+Instead of the values $\mathfrak{f}(n)$ themselves, which are integers for every $n \in \mathbb{Z}$, consider their residues modulo a fixed $m \in \mathbb{Z}$,
 
 $$
-r_k \equiv a_k \bmod n,
+\mathfrak{f}(n) \equiv r_n \pmod m,
 $$
-with $r_k \in \{0, 1, \ldots, n-1\}.$  Place $n$ points evenly on a circle, indexed $0$ through $n-1$. Each term $a_k$ maps to position $r_k$, and consecutive terms are joined by an edge $r_k \to r_{k+1}$.
+
+with $r_n \in \{0, 1, \ldots, m-1\}.$ Place $m$ points evenly on a circle, indexed $0$ through $m-1$. Each term $\mathfrak{f}(n)$ maps to position $r_n$, and consecutive terms are joined by an edge $r_n \to r_{n+1}$.
 The resulting orbit (the modular pattern) is what **DiscreteViz** draws, inspired by [Pérez Buendía (2025)](https://yoyontzin.substack.com/p/espirografos-orbitas-y-relojes).
 
-Since $(a_k)$ is typically polynomial in $k$, the residue sequence $(r_k)$ becomes eventually periodic for any fixed $n$, and the orbit closes into a finite cycle in $\mathbb{Z}/n\mathbb{Z}$.
+Since $\mathfrak{f}$ is a polynomial with rational coefficients in $n$, the residue sequence $(r_n)$ is periodic for any fixed modulus $m$. Consequently, the orbit closes into a finite cycle in $\mathbb{Z}/m\mathbb{Z}$.
 
-Symmetry in the resulting pattern depends on the pair $(a_k, n)$ rather than on the sequence alone.
-A sequence may be symmetric for one modulus and asymmetric for another, while different sequences may exhibit similar patterns under a shared modulus.
+Symmetry in the resulting pattern depends on the pair $(\mathfrak{f}, m)$ rather than on the sequence alone.

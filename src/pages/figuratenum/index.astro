@@ -4,7 +4,6 @@ import { getCollection } from "astro:content";
 import createSlug from "@ts-config-path/lib/createSlug";
 import Arrows from "@icons/Arrows.astro";
 import {
-  BORDER_INFO,
   NAV_LINKS_PAGES,
   GET_COLORS_METADATA,
   BASE_BORDER,
@@ -48,7 +47,7 @@ const docsCards = [
   {
     title: "Mathematical Theory",
     description:
-      "Explore the basic definitions, notation, and core ideas behind figurate numbers and their geometric interpretations.",
+      "Explore the fundamental mathematical definitions, computational implementation and their geometric interpretations.",
     doc: THEORY,
     button: "Explore theory",
   },
@@ -87,7 +86,6 @@ const figurateNumPosts = figurateNumTitles
   .filter(Boolean);
 
 import { LINKS_TO, CARD_OP, BORDER_OPACITY } from "@styles/utilsCSS";
-import { BULLET_SQUARE_LIST } from "../about.astro";
 const CARD_BUTTONS = {
   container: `${SPACES_BETWEEN_CARDS.PADDING} flex flex-col h-full min-h-52 ${BASE_BORDER}`,
   title: `${CARD_OP.title}`,
@@ -172,13 +170,28 @@ const CARD_BUTTONS = {
 
     <ul class="mt-6">
       {figurateNumPosts.map((post) => (
-        <li class={`${BULLET_SQUARE_LIST.li} mt-2 `}>
-          <span class={BULLET_SQUARE_LIST.span} />
-          <a href={`/blog/${createSlug(post.data.title, post.id)}/`}>
-            <span class={LINKS_TO}>{post.data.title}</span>
-            <span class={`${CARD_OP.muteData} block md:inline`}>
-              <span class="hidden md:inline"> · </span>
-              {dayjs(post.data.pubDate).format("ll")}
+        <li class="border-b border-base-content/10 last:border-b-0">
+          <a
+            href={`/blog/${createSlug(post.data.title, post.id)}/`}
+            class="group flex items-center justify-between gap-4 py-2"
+          >
+            <div class="min-w-0 flex-1">
+              <span
+                class={`block ${CARD_OP.archiveTitle} transition-colors group-hover:text-primary`}
+              >
+                {post.data.title}
+              </span>
+
+              <time
+                datetime={dayjs(post.data.pubDate).format("YYYY-MM-DD")}
+                class={`${CARD_OP.muteData} mt-1 block text-xs`}
+              >
+                {dayjs(post.data.pubDate).format("ll")}
+              </time>
+            </div>
+
+            <span class={`shrink-0 text-xs ${GET_COLORS_METADATA(post.data.badge)}`}>
+              {post.data.badge}
             </span>
           </a>
         </li>
@@ -187,7 +200,6 @@ const CARD_BUTTONS = {
   </article>
 
   <DividerNav />
-
   <div class="grid grid-cols-1 gap-2">
     {OVERVIEW && (
       <a
