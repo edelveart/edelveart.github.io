@@ -14,33 +14,24 @@ import {
 <a
   href={url}
   target={target}
-  rel="noopener"
-  class={`group flex ${BORDER_OPACITY} ${SPACES_BETWEEN_CARDS.PADDING} mx-auto flex-col`}
+  rel={target === "_blank" ? "noopener noreferrer" : undefined}
+  class={`group flex h-full flex-col ${BORDER_OPACITY} ${SPACES_BETWEEN_CARDS.PADDING} mx-auto`}
 >
   <!-- BADGE -->
-  <div class="flex items-center gap-2 mt-1 mb-1.5">
+  <div class="flex items-center gap-2 mb-2">
     <span class={GET_COLORS_METADATA("cardsImg")}>{badge}</span>
   </div>
 
   <!-- TITLE -->
-  <h2
-    class={`${CARD_OP.title} group-hover:text-primary line-clamp-3 md:line-clamp-none transition-colors`}
-  >
+  <h2 class={`${CARD_OP.title}  group-hover:text-primary transition-colors`}>
     {title}
   </h2>
 
   <!-- IMAGE -->
-  {img && (
-    <div class="flex justify-center overflow-hidden my-5">
-      <Image
-        src={img}
-        format="webp"
-        alt={title}
-        class="max-w-full md:max-w-60 rounded-md"
-      />
-    </div>
-  )}
+  <div class="my-4 overflow-hidden rounded-md">
+    <Image src={img} format="webp" alt={title} class="w-full h-auto" />
+  </div>
 
   <!-- DESCRIPTION -->
-  <p class={`${CARD_OP.parr} md:line-clamp-none`}>{desc}</p>
+  <p class={`${CARD_OP.parr}`}>{desc}</p>
 </a>

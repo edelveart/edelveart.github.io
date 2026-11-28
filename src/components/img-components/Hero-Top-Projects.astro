@@ -41,30 +41,6 @@ const badge = `
     lg:auto-rows-fr`}
 >
   <a
-    href={allProjects[2].url}
-    target="_blank"
-    rel="noopener noreferrer"
-    class={`${cardBase} lg:col-span-1 lg:row-span-1`}
-  >
-    <div class={badge}>
-      <span>FIGURATENUM</span>
-    </div>
-
-    <Image
-      src={MainFigurateNumWebp}
-      class="w-full
-        h-full p-2
-        object-contain
-        object-center"
-      format="webp"
-      fetchpriority="high"
-      loading="eager"
-      decoding="async"
-      alt="FigurateNum library - Phase Portrait"
-    />
-  </a>
-
-  <a
     href={allProjects[1].url}
     target="_blank"
     rel="noopener noreferrer"
@@ -77,7 +53,7 @@ const badge = `
     <Image
       src={MainModularWebp}
       class="w-full
-        h-full p-2
+        h-full pt-4 p-2
         object-contain
         object-center
         invert
@@ -86,6 +62,30 @@ const badge = `
       loading="lazy"
       decoding="async"
       alt="Math-Modular-Elliptic-Image"
+    />
+  </a>
+
+  <a
+    href={allProjects[2].url}
+    target="_blank"
+    rel="noopener noreferrer"
+    class={`${cardBase} lg:col-span-1 lg:row-span-1`}
+  >
+    <div class={badge}>
+      <span>FIGURATENUM</span>
+    </div>
+
+    <Image
+      src={MainFigurateNumWebp}
+      class="w-full
+        h-full pt-4.5 p-2
+        object-contain
+        object-center"
+      format="webp"
+      fetchpriority="high"
+      loading="eager"
+      decoding="async"
+      alt="FigurateNum library - Phase Portrait"
     />
   </a>
 
@@ -102,7 +102,7 @@ const badge = `
     <Image
       src={MainTonnetzWebp}
       class="w-full
-        h-full p-3.5
+        h-full pt-7 p-2
         object-contain
         object-center
         invert

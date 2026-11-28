@@ -10,11 +10,7 @@ import HeroTopProjects from "@components/img-components/Hero-Top-Projects.astro"
     Construyo sistemas creativos para explorar matemáticas, computación y música a
     través de analogías. Suelo pensar voz alta mientras dibujo flechas y preguntas a
     mano. Mis{" "}
-    <a
-      href="https://edelveart.github.io/es/blog/"
-      rel="noopener noreferrer"
-      class={LINKS_TO}
-    >
+    <a href="/es/blog/" rel="noopener noreferrer" class={LINKS_TO}>
       notas
     </a>{" "}
     son una percolación de dichas ideas.
@@ -22,28 +18,32 @@ import HeroTopProjects from "@components/img-components/Hero-Top-Projects.astro"
 
   <p class="mb-4">
     Entre mis bibliotecas se encuentran{" "}
-    <!-- <a
+    <a
       href="https://rubygems.org/gems/modular_forms"
       target="_blank"
-      rel="noopener noreferrer"
+      rel="noopener"
       class={LINKS_TO}
-    > -->
-    <strong class="font-normal">modular_forms</strong>
-    <!-- </a>{" "} --> (inspirada en SageMath y LMFDB),{" "}
+    >
+      modular_forms
+    </a>{" "}
+    (inspirada en SageMath y LMFDB),{" "}
     <a id="projects" href={routeSpanish.projects} class={LINKS_TO}>
       números figurados multidimensionales
     </a>{" "}
     con más de <strong>30 000 descargas</strong>, así como{" "}
-    <!-- <a
+    <a
       href="https://topos.live/#ziffers_tonnetz"
       target="_blank"
       rel="noopener noreferrer"
       class={LINKS_TO}
-    > -->
-    <strong class="font-normal">ts-tonnetz</strong>
-    <!-- </a> -->.
+    >
+      ts-tonnetz
+    </a>
+    .
   </p>
-
+  <div class="my-8">
+    <HeroTopProjects />
+  </div>
   <p class="mb-4">
     He ejercido como{" "}
     <a
@@ -76,9 +76,6 @@ import HeroTopProjects from "@components/img-components/Hero-Top-Projects.astro"
     </a>{" "}
     y en proyectos de código abierto, y enseño en posgrado.
   </p>
-  <div class="my-8">
-    <HeroTopProjects />
-  </div>
 </section>
 
 <!--

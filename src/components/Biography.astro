@@ -8,33 +8,40 @@ import HeroTopProjects from "./img-components/Hero-Top-Projects.astro";
   <p class="mb-4">
     I build creative systems to explore math, computation and music through
     analogies. I think aloud, sketching arrows and questions by hand. My{" "}
-    <a
-      href="https://edelveart.github.io/blog/"
-      rel="noopener noreferrer"
-      class={LINKS_TO}
-    >
+    <a href="/blog/" rel="noopener noreferrer" class={LINKS_TO}>
       notes
     </a>{" "}
     are a percolation of these ideas.
   </p>
   <p class="mb-4">
-    Among my libraries are <strong class="font-normal">modular_forms</strong>{" "}
-    <!-- </a>{" "} -->
+    Among my libraries are{" "}
+    <a
+      href="https://rubygems.org/gems/modular_forms"
+      target="_blank"
+      rel="noopener"
+      class={LINKS_TO}
+    >
+      modular_forms
+    </a>{" "}
     (inspired by SageMath and LMFDB),{" "}
     <a id="projects" href={routeEnglish.projects} rel="noopener" class={LINKS_TO}>
       multidimensional figurate numbers
     </a>{" "}
     with over <strong> 30,000 downloads</strong>, and{" "}
-    <!-- <a
+    <a
       href="https://topos.live/#ziffers_tonnetz"
       target="_blank"
       rel="noopener"
       class={LINKS_TO}
-    > -->
-    <strong class="font-normal">ts-tonnetz</strong>
-    <!-- </a> -->.
+    >
+      {" "}
+      ts-tonnetz
+    </a>
+    .
   </p>
-
+  <div class="my-8">
+    <HeroTopProjects />
+  </div>
   <p class="mb-4">
     I have served as a{" "}
     <a
@@ -67,7 +74,4 @@ import HeroTopProjects from "./img-components/Hero-Top-Projects.astro";
     </a>{" "}
     and open-source projects, and teach postgraduate courses.
   </p>
-  <div class="my-8">
-    <HeroTopProjects />
-  </div>
 </section>
