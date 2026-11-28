@@ -67,15 +67,15 @@ Listo, es momento de ir a la especialidad de la nota. He tenido interés en esto
 
 Pero primero, pienso en el conjunto de clases de equivalencia, para cada $r \in \mathbb{Z}$,
 $$
-[r]_p = \{ m \in \mathbb{Z} \mid m \equiv r \pmod p \},
+[r]_p = \{ x \in \mathbb{Z} \mid x \equiv r \pmod p \},
 $$
+
 y en aquellas clases que contienen alguna potencia $C^k(n)$.
 
 Que la congruencia módulo $p$ sea una relación de equivalencia conlleva tres axiomas: reflexividad ($a - a = 0$), simetría (si $p \mid (b-a)$, entonces $p \mid (a-b)$) y transitividad (si $p \mid (a-b)$ y $p \mid (b-c)$, entonces $p \mid (a -c)$).
 Por curioso que parezca en este sempiterno estío 2026, la dimensión $k=2$ de los cuadrados coincide con el caso prototipo.
 
 > Obviaré, por abuso de notación, el denotar las clases $[r]_p$ a cada momento.
-
 
 ## Primer grupo Q
 
@@ -391,6 +391,11 @@ d.visualize_multidim(
 )
 ```
 
-En la [documentación oficial de FigurateNum](https://edelveart.github.io/figuratenum/fundamentals/) escribo $\mathfrak{f}_j \equiv r_j \pmod n$ y el respectivo algoritmo de trazado en el caso general. Aquí tenemos $C^{21}(j) \equiv r_j \pmod {710} $. Sí, es cierto que es un compuesto $n$, pero puedes probar por tu cuenta con números primos.
+En la [documentación oficial de FigurateNum](https://edelveart.github.io/figuratenum/fundamentals/) escribo $\mathfrak{f}(n) \equiv r_n \pmod m$ y el respectivo algoritmo de trazado en el caso general. Aquí tenemos
+$$
+C^{21}(n) \equiv r_n \pmod {710}.
+$$
+Sí, es cierto que $710$ es compuesto, pero puedes probar por tu cuenta con números primos y compartirme qué figuritas para tu álbum encuentras.
 
-Saludos desde la actual temporada estival sin fin.
+Saludos desde la tierra de la temporada estival sin fin.
+
