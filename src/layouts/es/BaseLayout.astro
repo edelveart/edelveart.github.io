@@ -24,7 +24,7 @@ import SideBar from "@components/SideBar.astro";
 import { menuSpanish } from "@ts-config-path/lib/menu";
 import { ClientRouter } from "astro:transitions";
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../../config";
-import { DRAWER_BREAKPOINTS } from "@styles/utilsCSS";
+import { BASE_LAYOUT_WIDTH, DRAWER_BREAKPOINTS } from "@styles/utilsCSS";
 
 const {
   image,
@@ -68,7 +68,10 @@ import "katex/dist/katex.min.css";
           <div class="flex-1 min-w-0">
             <main class="flex justify-center" transition:animate="none">
               <div
-                class:list={["w-full p-6 pt-10", wide ? "max-w-240" : "max-w-185"]}
+                class:list={[
+                  BASE_LAYOUT_WIDTH.generalMarginPaddins,
+                  wide ? BASE_LAYOUT_WIDTH.blogPages : BASE_LAYOUT_WIDTH.normalPages,
+                ]}
               >
                 <slot />
               </div>

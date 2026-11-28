@@ -63,43 +63,39 @@ const ogImage = await generateOgImage();
   ogType="article"
   wide
 >
-  <main>
-    <article class="prose prose-img:mx-auto">
-      <div class="flex flex-col md:flex-row md:items-start md:gap-2">
-        <div class="flex items-center gap-2">
-          {pubDate && (
-            <span class={`${CARD_OP.muteData} whitespace-nowrap`}>
-              {displayDate}
-            </span>
-          )}
+  <article class="prose prose-img:mx-auto">
+    <div class="flex flex-col md:flex-row md:items-start md:gap-2">
+      <div class="flex items-center gap-2">
+        {pubDate && (
+          <span class={`${CARD_OP.muteData} whitespace-nowrap`}>{displayDate}</span>
+        )}
 
-          <span class="text-base-content/60 hidden md:inline">·</span>
+        <span class="text-base-content/60 hidden md:inline">·</span>
 
-          <span class={GET_COLORS_METADATA(badge)}>{badge}</span>
-        </div>
+        <span class={GET_COLORS_METADATA(badge)}>{badge}</span>
       </div>
+    </div>
 
-      <h1
-        class={`title mt-2 mb-1.5 text-3xl font-bold break-normal text-primary ${MAX_W_CONTENT}`}
-      >
-        {title}
-      </h1>
-      {updatedDate && (
-        <div class="flex items-center mb-2">
-          <span class={`text-xs ${CARD_OP.muteData} whitespace-nowrap`}>
-            Updated {dayjs(updatedDate).format("ll")}
-          </span>
-        </div>
-      )}
+    <h1
+      class={`title mt-2 mb-1.5 text-3xl font-bold break-normal text-primary ${MAX_W_CONTENT}`}
+    >
+      {title}
+    </h1>
+    {updatedDate && (
+      <div class="flex items-center mb-2">
+        <span class={`text-xs ${CARD_OP.muteData} whitespace-nowrap`}>
+          Updated {dayjs(updatedDate).format("ll")}
+        </span>
+      </div>
+    )}
 
-      <div
-        class={`prose-table:overflow-x-auto prose-table:block break-normal [&_th]:whitespace-nowrap
+    <div
+      class={`prose-table:overflow-x-auto prose-table:block break-normal [&_th]:whitespace-nowrap
         ${PROSE_IMG_BORDER}`}
-      >
-        <slot />
-      </div>
-    </article>
-  </main>
+    >
+      <slot />
+    </div>
+  </article>
 </BaseLayout>
 <!-- [&_th]:py-1
     [&_td]:py-1 -->

@@ -1,12 +1,10 @@
 ---
 import BaseLayout from "@layouts/es/BaseLayout.astro";
-import ProjectsComponent, {
-  allProjects,
-} from "@components/ProjectsComponent.astro";
+import ProjectsComponent, { allProjects } from "@components/ProjectsComponent.astro";
 ---
 
 <BaseLayout title="Edgar Delgado Vega - Software projects">
-  <section class="pb-3 mt-5">
+  <section>
     <ProjectsComponent
       headTitle="Bibliotecas"
       projects={allProjects}

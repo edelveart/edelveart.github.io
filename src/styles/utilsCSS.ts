@@ -80,7 +80,7 @@ export const GAP_LIST_RESOURCES = "gap-y-0";
 
 // POST BLOG AND DOCS TITLE AND NAVEGATION AND WRITTEN BY MAX-W-CONTENT
 // its the same as = wide ? "max-w-240" in BaseLayout.astro, aprox 651px
-export const MAX_W_CONTENT = "xl:max-w-156";
+export const MAX_W_CONTENT = "xl:max-w-160";
 
 // export const DRAWER_BREAKPOINTS = {
 //   sideBar: "hidden xl:block",
@@ -99,4 +99,12 @@ export const DRAWER_BREAKPOINTS = {
 export const NAV_HEADER_CALC = {
   sideBarTop: "top-[64px]",
   navBarHeight: "h-[64px]",
+};
+
+export const BASE_LAYOUT_WIDTH = {
+  // bg-red-500/10
+  // global.css  font-size: 16px for exact px.
+  generalMarginPaddins: "w-full mt-10 mb-5 px-5",
+  normalPages: "max-w-179.5",
+  blogPages: "max-w-235",
 };

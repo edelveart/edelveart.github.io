@@ -19,7 +19,7 @@
 html {
   scrollbar-gutter: stable;
   overflow-y: auto;
-  font-size: 16.7px;
+  font-size: 17px;
   scroll-behavior: smooth;
 }
 

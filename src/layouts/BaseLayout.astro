@@ -22,7 +22,7 @@ import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import SideBar from "@components/SideBar.astro"; // This must be different
 import { menuEnglish } from "@ts-config-path/lib/menu";
-import { DRAWER_BREAKPOINTS } from "@styles/utilsCSS";
+import { DRAWER_BREAKPOINTS, BASE_LAYOUT_WIDTH } from "@styles/utilsCSS";
 import { ClientRouter } from "astro:transitions";
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
 
@@ -68,7 +68,10 @@ import "katex/dist/katex.min.css";
           <div class="flex-1 min-w-0">
             <main class="flex justify-center" transition:animate="none">
               <div
-                class:list={["w-full p-6 pt-10", wide ? "max-w-240" : "max-w-185"]}
+                class:list={[
+                  BASE_LAYOUT_WIDTH.generalMarginPaddins,
+                  wide ? BASE_LAYOUT_WIDTH.blogPages : BASE_LAYOUT_WIDTH.normalPages,
+                ]}
               >
                 <slot />
               </div>

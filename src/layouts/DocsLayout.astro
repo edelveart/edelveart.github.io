@@ -7,9 +7,7 @@ const { title, description } = Astro.props;
 
 <BaseLayout title={title} description={description} ogType="article">
   <article class="prose">
-    <h1 class="title mt-5 text-3xl font-bold wrap-break-word text-primary">
-      {title}
-    </h1>
+    <h1 class="title text-3xl font-bold wrap-break-word text-primary">{title}</h1>
     <div class={MAX_W_CONTENT}>
       <div
         class=`prose-table:overflow-x-auto prose-table:block break-normal ${PROSE_IMG_BORDER}`
